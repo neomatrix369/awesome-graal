@@ -2,11 +2,12 @@
 
 A curated list of awesome resources for Graal, Truffle and related topics.
 
-- Github links
-- Download links
-- Projects, Wikipedia pages, discussion forums & blog posts
-- Papers, presentations & videos
-- Hands-on pages
+- [Awesome Graal](https://github.com/neomatrix369/awesome-graal#awesome-graal)
+  - [Github links](https://github.com/neomatrix369/awesome-graal#github-links)
+  - [Download links](https://github.com/neomatrix369/awesome-graal#download-links)
+  - [Projects, Wikipedia pages, discussion forums & blog posts](https://github.com/neomatrix369/awesome-graal#projects-wikipedia-pages-discussion-forums--blog-posts)
+  - [Papers, presentations & videos](https://github.com/neomatrix369/awesome-graal#papers-presentations--videos)
+  - [Hands-on pages](https://github.com/neomatrix369/awesome-graal#hands-on-pages)
 
 ### Github links
 - [GitHub - graalvm/graalvm: Graal Multi-Language VM distribution](https://github.com/graalvm/graalvm)
