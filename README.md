@@ -2,7 +2,13 @@
 
 A curated list of awesome resources for Graal, Truffle and related topics.
 
-Github links
+- Github links
+- Download links
+- Projects, Wikipedia pages, discussion forums & blog posts
+- Papers, presentations & videos
+- Hands-on pages
+
+### Github links
 - [GitHub - graalvm/graalvm: Graal Multi-Language VM distribution](https://github.com/graalvm/graalvm)
 - [GraalVM - GitHub](https://github.com/graalvm)
 - [graalvm.github.io by graalvm](https://graalvm.github.io/)
@@ -11,7 +17,7 @@ Github links
 - [https://github.com/jruby/jruby/wiki/Truffle#jrubytruffle---a-high-performance-truffle-backend-for-jruby](https://github.com/jruby/jruby/wiki/Truffle#jrubytruffle---a-high-performance-truffle-backend-for-jruby)
 - [https://github.com/graalvm/truffleruby](https://github.com/graalvm/truffleruby)
 
-Download links
+### Download links
 - [Oracle Labs GraalVM: Programming Languages and Runtimes ...](http://www.oracle.com/technetwork/oracle-labs/program-languages/overview/index.html)
 - [Oracle Labs GraalVM: Overview](http://www.oracle.com/technetwork/oracle-labs/program-languages/overview/index.html)
 - [Oracle Labs GraalVM: Java](http://www.oracle.com/technetwork/oracle-labs/program-languages/java/index.html)
@@ -19,7 +25,7 @@ Download links
 - [Graal and Truffle Builds](http://lafo.ssw.uni-linz.ac.at/builds/)
 - [jruby graal-vm-0.19 on Homebrew - Libraries.io](https://libraries.io/homebrew/jruby/graal-vm-0.19)
 
-Project, Wikipedia pages, discussion forums & blog posts
+### Projects, Wikipedia pages, discussion forums & blog posts
 - [OpenJDK: Graal](http://openjdk.java.net/projects/graal/)
 - [Graal (compiler) - Wikipedia](https://en.wikipedia.org/wiki/Graal_(compiler))
 - [Chris Seaton’s blog](http://chrisseaton.com/)
@@ -37,7 +43,7 @@ Project, Wikipedia pages, discussion forums & blog posts
 - [Graal and Truffle could accelerate programming language design ...](http://cesquivias.github.io/tags/truffle.html)
 - [Oracle's Graal-JVM / Truffle for Scala? : scala - Reddit](https://www.reddit.com/r/scala/comments/3lshav/oracles_graaljvm_truffle_for_scala/)
 
-Papers, presentations & videos
+### Papers, presentations & videos
 - [JVM++: The Graal VM - SlideShare](https://www.slideshare.net/martintoshev/jvm-the-graal-vm)
 - [Graal VM: Multi-Language Execution Platform - SlideShare](https://www.slideshare.net/ThomasWuerthinger/jazoon2014-slides)
 - [GraalVM - Compiler and JVM Research at JKU - Complang](https://www.complang.tuwien.ac.at/lehre/ubvo/jku.pdf)
@@ -59,7 +65,7 @@ Papers, presentations & videos
   - [(JVMLS 2017): Ahead Of Time (AOT) Internals with Vladimir Kozlov and Igor Veresov](https://www.youtube.com/watch?v=yyDD_KRdQQU&list=PLX8CzqL3ArzXJ2EGftrmz4SzS6NRr6p2n&index=13)
   - [(JVMLS 2017): Polyglot Native: Java, Scala, Kotlin, & JVM languages w/ Christian Wimmer](https://www.youtube.com/watch?v=5BMHIeMXTqA&list=PLX8CzqL3ArzXJ2EGftrmz4SzS6NRr6p2n&index=5)
 
-Hands-on pages
+### Hands-on pages
 - [GraalVM - APIDesign](http://wiki.apidesign.org/wiki/GraalVM)
 - [LuaTruffle](http://www.luatruffle.org/)
 - [Compile and configure FastR in Linux | snatverk](http://snatverk.blogspot.com/2016/05/compile-and-configure-fastr-in-linux.html)
