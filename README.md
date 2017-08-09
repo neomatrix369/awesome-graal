@@ -71,3 +71,10 @@ A curated list of awesome resources for Graal, Truffle and related topics.
 - [LuaTruffle](http://www.luatruffle.org/)
 - [Compile and configure FastR in Linux | snatverk](http://snatverk.blogspot.com/2016/05/compile-and-configure-fastr-in-linux.html)
 - [Add Graal JIT Compilation to Your JVM Language in 5 Easy Steps ...](http://stefan-marr.de/2015/12/add-graal-jit-compilation-to-your-jvm-language-in-5-easy-steps-step-5/)
+
+
+# Contributing
+
+Contributions are very welcome!
+
+Please have a look at the [CONTRIBUTING](https://github.com/neomatrix369/awesome-graal/blob/master/CONTRIBUTING.md) guidelines, also have a read about our [licensing](https://github.com/neomatrix369/awesome-graal/blob/master/LICENSE.md) policy.
