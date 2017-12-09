@@ -8,6 +8,7 @@ A curated list of awesome resources for Graal, Truffle and related topics.
   - [Projects, Wikipedia pages, discussion forums & blog posts](https://github.com/neomatrix369/awesome-graal#projects-wikipedia-pages-discussion-forums--blog-posts)
   - [Papers, presentations & videos](https://github.com/neomatrix369/awesome-graal#papers-presentations--videos)
   - [Hands-on pages](https://github.com/neomatrix369/awesome-graal#hands-on-pages)
+  - [Special topics](#special-topics-java-graal-gpus-accelerators-etc)
 
 ### Github links
 - [graalvm.github.io by graalvm](https://graalvm.github.io/)
@@ -52,6 +53,15 @@ A curated list of awesome resources for Graal, Truffle and related topics.
 - [JVM++: The Graal VM - SlideShare](https://www.slideshare.net/martintoshev/jvm-the-graal-vm)
 - [New tricks of the GraalVM - Distributed Systems Group](http://ds.cs.ut.ee/courses/course-files/newTricksOfGraalVM.pdf)
 - [Sulong: Fast LLVM IR Execution on the JVM with Truffle ... - LLVM.org](http://llvm.org/devmtg/2016-01/slides/Sulong.pdf)
+- [Graal: A research platform for dynamic compilation and managed ...](http://cgo.org/cgo2015/event/graal-a-research-platform-for-dynamic-compilation-and-managed-languages/)
+- [Graal and Truffle - Modularity](modularity.info/conference/2014/sites/default/.../2014-04-24Graal_Modularity.pdf
+s)
+- [Projects That Are Making Blazing Fast Ruby a Reality — SitePoint](https://www.sitepoint.com/projects-that-are-making-blazing-fast-ruby-a-reality/)
+- [OpenCL JIT Compilation for Dynamic Programming Languages](https://www.researchgate.net/publication/316923303_OpenCL_JIT_Compilation_for_Dynamic_Programming_Languages)
+- [Adaptive Concurrency Control for Transactional Memory](http://www.dcs.gla.ac.uk/~jsinger/mmnet15/nisbet.pdf)
+- [Graal and Clojure discussions](https://marc.info/?l=openjdk-graal-dev&m=139406384928500&w=2)
+- [Bringing Performance and Scalability to Dynamic Languages](http://janvitek.org/events/PBD13/slides/MarioWolczko.pdf)
+- [FastR: Status  and Outlook](http://www.huber.embl.de/dsc/slides/FastR_DSC.pdf)
 
 - Videos
   - [(Devoxx BE): Graal.JS - high-performance JavaScript on the JVM by Christian Wirth](https://www.youtube.com/watch?v=OUo3BFMwQFo)
@@ -72,6 +82,31 @@ A curated list of awesome resources for Graal, Truffle and related topics.
 - [GraalVM - APIDesign](http://wiki.apidesign.org/wiki/GraalVM)
 - [LuaTruffle](http://www.luatruffle.org/)
 
+### Special topics (Java, Graal, GPUs, Accelerators, etc...)
+
+- GPUs
+   - [Wholly Graal: Accelerating GPU Offload for Java - YouTube](https://www.youtube.com/watch?v=uxDd5KfYdJU)
+   - [JVMLS 2013: Graal and GPU Offload - Oracle: Video Gallery](https://video.oracle.com/detail/videos/featured-videos/video/2623576344001)
+   - [Gpus graal - SlideShare](https://www.slideshare.net/jjfumero/gpus-graal)
+   - [PL-4042, Wholly Graal: Accelerating GPU offload for Java/Sumatra...](https://www.slideshare.net/DevCentralAMD/pl4042-vasanthvenkatachalam)
+   - [JEP draft: Enable execution of Java methods on GPU](http://openjdk.java.net/jeps/8047074)
+   - [Multicore Maximum Reuse Algorithm on CPU and GPU - graal](http://graal.ens-lyon.fr/~mjacquel/mmre_cpu_gpu.html)
+   - [Just-In-Time GPU Compilation for Interpreted Languages with Partial ...](http://www.research.ed.ac.uk/portal/files/33009999/vee.pdf)
+   - [{ projects } | snatverk](http://snatverk.blogspot.com/p/projects.html)
+   - [amd's prototype hsail-‐enabled jdk8 for the openjdk sumatra project](http://developer.amd.com/apu/wp-content/uploads/sites/3/.../HSA-4024_Eric_Caspole.pdf)
+   - [API for data parallel Java. Allows suitable code to be executed on GPU via OpenCL](https://code.google.com/archive/p/aparapi/)
+  - [OpenJDK Sumatra Project: Bringing the GPU to Java](https://www.youtube.com/watch?v=4ShyMMqjIJI)
+  - [A CPU–GPU hybrid approach for the unsymmetric multifrontal method](http://www.sciencedirect.com/science/article/pii/S0167819111001293)
+  - [Are Java 8 Lambda expressions using GPU? - Stackoverflow discussions](https://stackoverflow.com/questions/30555694/are-java-8-lambda-expressions-using-gpu)
+  - [juanfumero / marawacc — Bitbucket](https://bitbucket.org/juanfumero/marawacc)
+
+- Graphics Accelerators
+  - [Tornado: Accelerating Java Applications Using GPGPUs](http://on-demand.gputechconf.com/gtc/2016/posters/GTC_2016_Programming_Language_PL_01_P6341_WEB.pdf)
+  - [GRAAL: A Framework for LowPower 3D Graphics Accelerators](https://repository.tudelft.nl/islandora/object/uuid:e875b571-129e-4304-ba04-223bd73b2cc3/datastream/OBJ)
+  - [GRAAL -- A Development Framework for Embedded Graphics Accelerators](http://dl.acm.org/citation.cfm?id=969105)
+
+- APU
+  - [Applying AMD's "Kaveri" APU for Heterogeneous Computing](https://www.hotchips.org/wp-content/uploads/hc_archives/hc26/HC26-11-day1-epub/HC26.11-2-Mobile-Processors-epub/HC26.11.220-Bouvier-Kaveri-AMD-Final.pdf)
 
 # Contributing
 
