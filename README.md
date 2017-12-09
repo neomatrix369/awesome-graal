@@ -54,8 +54,7 @@ A curated list of awesome resources for Graal, Truffle and related topics.
 - [New tricks of the GraalVM - Distributed Systems Group](http://ds.cs.ut.ee/courses/course-files/newTricksOfGraalVM.pdf)
 - [Sulong: Fast LLVM IR Execution on the JVM with Truffle ... - LLVM.org](http://llvm.org/devmtg/2016-01/slides/Sulong.pdf)
 - [Graal: A research platform for dynamic compilation and managed ...](http://cgo.org/cgo2015/event/graal-a-research-platform-for-dynamic-compilation-and-managed-languages/)
-- [Graal and Truffle - Modularity](modularity.info/conference/2014/sites/default/.../2014-04-24Graal_Modularity.pdf
-s)
+- [Graal and Truffle - Modularity](https://www.slideshare.net/ThomasWuerthinger/2014-0424-graal-modularity)
 - [Projects That Are Making Blazing Fast Ruby a Reality — SitePoint](https://www.sitepoint.com/projects-that-are-making-blazing-fast-ruby-a-reality/)
 - [OpenCL JIT Compilation for Dynamic Programming Languages](https://www.researchgate.net/publication/316923303_OpenCL_JIT_Compilation_for_Dynamic_Programming_Languages)
 - [Adaptive Concurrency Control for Transactional Memory](http://www.dcs.gla.ac.uk/~jsinger/mmnet15/nisbet.pdf)
