@@ -10,7 +10,7 @@ A curated list of awesome resources for Graal, Truffle and related topics.
   - [Hands-on pages](https://github.com/neomatrix369/awesome-graal#hands-on-pages)
 
 ### Github links
-- [allr / FastR / wiki / Home — Bitbucket](https://www.google.co.uk/url?sa=t&rct=j&q=&esrc=s&source=web&cd=58&cad=rja&uact=8&ved=0ahUKEwiGo8b7hN_UAhUHIMAKHVegBko4MhAWCE4wBw&url=https%3A%2F%2Fbitbucket.org%2Fallr%2Ffastr%2Fwiki%2FHome&usg=AFQjCNGjakALFNgGvJ3loCrnM4lyE2VoRA)
+- [graalVM / FastR](https://github.com/graalvm/fastr) | [old Bitbucket location](https://www.google.co.uk/url?sa=t&rct=j&q=&esrc=s&source=web&cd=58&cad=rja&uact=8&ved=0ahUKEwiGo8b7hN_UAhUHIMAKHVegBko4MhAWCE4wBw&url=https%3A%2F%2Fbitbucket.org%2Fallr%2Ffastr%2Fwiki%2FHome&usg=AFQjCNGjakALFNgGvJ3loCrnM4lyE2VoRA)
 - [GitHub - graalvm/graalvm: Graal Multi-Language VM distribution](https://github.com/graalvm/graalvm)
 - [GraalVM - GitHub](https://github.com/graalvm)
 - [graalvm.github.io by graalvm](https://graalvm.github.io/)
