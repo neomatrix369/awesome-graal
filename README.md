@@ -2,12 +2,12 @@
 
 A curated list of awesome resources for Graal, Truffle and related topics.
 
-- [Awesome Graal](https://github.com/neomatrix369/awesome-graal#awesome-graal)
-  - [Github links](https://github.com/neomatrix369/awesome-graal#github-links)
-  - [Download links](https://github.com/neomatrix369/awesome-graal#download-links)
-  - [Projects, Wikipedia pages, discussion forums & blog posts](https://github.com/neomatrix369/awesome-graal#projects-wikipedia-pages-discussion-forums--blog-posts)
-  - [Papers, presentations & videos](https://github.com/neomatrix369/awesome-graal#papers-presentations--videos)
-  - [Hands-on pages](https://github.com/neomatrix369/awesome-graal#hands-on-pages)
+- [Awesome Graal](#awesome-graal)
+  - [Github links](#github-links)
+  - [Download links](#download-links)
+  - [Projects, Wikipedia pages, discussion forums & blog posts](#projects-wikipedia-pages-discussion-forums--blog-posts)
+  - [Papers, presentations & videos](#papers-presentations--videos)
+  - [Hands-on pages](#hands-on-pages)
   - [Special topics](#special-topics-java-graal-gpus-accelerators-etc)
 
 ### Github links
