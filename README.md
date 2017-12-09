@@ -10,14 +10,13 @@ A curated list of awesome resources for Graal, Truffle and related topics.
   - [Hands-on pages](https://github.com/neomatrix369/awesome-graal#hands-on-pages)
 
 ### Github links
-- [graalVM / FastR](https://github.com/graalvm/fastr) | [old Bitbucket location](https://www.google.co.uk/url?sa=t&rct=j&q=&esrc=s&source=web&cd=58&cad=rja&uact=8&ved=0ahUKEwiGo8b7hN_UAhUHIMAKHVegBko4MhAWCE4wBw&url=https%3A%2F%2Fbitbucket.org%2Fallr%2Ffastr%2Fwiki%2FHome&usg=AFQjCNGjakALFNgGvJ3loCrnM4lyE2VoRA)
-- [GitHub - graalvm/graalvm: Graal Multi-Language VM distribution](https://github.com/graalvm/graalvm)
-- [GraalVM - GitHub organisation](https://github.com/graalvm)
 - [graalvm.github.io by graalvm](https://graalvm.github.io/)
-- [graalvm/graalvm Graal Multi-Language VM distribution. by @graalvm ...](https://devhub.io/repos/graalvm-graalvm)
+- [GraalVM - GitHub organisation](https://github.com/graalvm)
+- [GitHub - graalvm/graalvm: Graal Multi-Language VM distribution](https://github.com/graalvm/graalvm)
 - [https://github.com/graalvm/truffleruby](https://github.com/graalvm/truffleruby)
-- [https://github.com/jruby/jruby/wiki/Truffle#jrubytruffle---a-high-performance-truffle-backend-for-jruby](https://github.com/jruby/jruby/wiki/Truffle#jrubytruffle---a-high-performance-truffle-backend-for-jruby)
+- [graalVM / FastR](https://github.com/graalvm/fastr) | [old Bitbucket location](https://www.google.co.uk/url?sa=t&rct=j&q=&esrc=s&source=web&cd=58&cad=rja&uact=8&ved=0ahUKEwiGo8b7hN_UAhUHIMAKHVegBko4MhAWCE4wBw&url=https%3A%2F%2Fbitbucket.org%2Fallr%2Ffastr%2Fwiki%2FHome&usg=AFQjCNGjakALFNgGvJ3loCrnM4lyE2VoRA)
 - [Truffle](https://github.com/graalvm/graal/blob/master/truffle/) | [Truffle documentation](http://graalvm.github.io/graal/truffle/javadoc/com/oracle/truffle/tutorial/package-summary.html)
+- [https://github.com/jruby/jruby/wiki/Truffle#jrubytruffle---a-high-performance-truffle-backend-for-jruby](https://github.com/jruby/jruby/wiki/Truffle#jrubytruffle---a-high-performance-truffle-backend-for-jruby)
 
 ### Download links
 - [Graal and Truffle Builds](http://lafo.ssw.uni-linz.ac.at/builds/)
