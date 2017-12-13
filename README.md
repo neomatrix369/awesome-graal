@@ -37,6 +37,7 @@ A curated list of awesome resources for Graal, Truffle and related topics.
 - [Graalvm (Programming) Questions & Answers - TechQA](http://techqa.info/programming/tag/graalvm)
 - [GraalVM and Truffle/JS: Programming Languages and Runtimes ...](https://news.ycombinator.com/item?id=8380627)
 - [OpenJDK: Graal](http://openjdk.java.net/projects/graal/)
+- [OpenJDK: Graal-dev mailing list](http://mail.openjdk.java.net/mailman/listinfo/graal-dev)
 - [Oracle's Graal project empowers language creation on the JVM ...](http://www.infoworld.com/article/2688340/application-development/oracles-graal-project-empowers-language-creation-on-the-jvm.html)
 - [Oracle's Graal-JVM / Truffle for Scala? : scala - Reddit](https://www.reddit.com/r/scala/comments/3lshav/oracles_graaljvm_truffle_for_scala/)
 - [Setup Graal VM on Mac OS X 10.11 El Capitan Howto Tutorial ...](http://www.mensch-und-maschine.de/2016/03/26/setup-graal-vm-on-mac-os-x-10-11-el-capitan-howto-tutorial-installation-prerequisites/)
