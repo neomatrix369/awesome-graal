@@ -45,6 +45,7 @@ A curated list of awesome resources for Graal, Truffle and related topics.
 - [TruffleRuby by Chris Seaton](http://chrisseaton.com/rubytruffle/)
 - [TruffleRuby on the Substrate VM - Kevin Menard's Weblog](http://nirvdrum.com/2017/02/15/truffleruby-on-the-substrate-vm.html)
 - [Writing a Language in Truffle ](http://cesquivias.github.io/tags/truffle.html)
+- [Truffle served in a Holy Graal: Graal and Truffle for polyglot language interpretation on the JVM](https://neomatrix369.wordpress.com/2017/12/07/truffle-served-in-a-holy-graal-graal-and-truffle-for-polyglot-language-interpretation-on-the-jvm/) [reblogged on [Java Advent Calendar](https://www.javaadvent.com/2017/12/truffle-served-holy-graal-graal-truffle-polyglot-language-interpretation-jvm.html)]
 
 ### Papers, presentations & videos
 - [Compile ahead of time. It's fine? - Hotspot & AOT](https://assets.contentful.com/oxjq45e8ilak/3VZgJf2jLWaQQGKaeSsecc/a015330e94f964d96df0b366321ec068/Dmitry_Chuyko_AOT.pdf)
@@ -81,6 +82,7 @@ A curated list of awesome resources for Graal, Truffle and related topics.
 - [Compile and configure FastR in Linux | snatverk](http://snatverk.blogspot.com/2016/05/compile-and-configure-fastr-in-linux.html)
 - [GraalVM - APIDesign](http://wiki.apidesign.org/wiki/GraalVM)
 - [LuaTruffle](http://www.luatruffle.org/)
+- [Learning to use Wholly GraalVM!](https://neomatrix369.wordpress.com/2017/12/12/learning-to-use-wholly-graalvm/) [reblogged on [Java Advent Calendar](https://www.javaadvent.com/2017/12/learning-use-wholly-graalvm.html)]
 
 ### Special topics (Java, Graal, GPUs, Accelerators, etc...)
 
