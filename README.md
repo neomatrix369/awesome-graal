@@ -11,6 +11,7 @@ A curated list of awesome resources for Graal, Truffle and related topics.
   - [Special topics](#special-topics-java-graal-gpus-accelerators-etc)
 
 ### Github links
+- [https://github.com/beehive-lab/Maxine-VM](https://github.com/beehive-lab/Maxine-VM) -- [[forks of the project](https://github.com/beehive-lab/Maxine-VM/network/members)]
 - [graalvm.github.io by graalvm](https://graalvm.github.io/)
 - [GraalVM - GitHub organisation](https://github.com/graalvm)
 - [GitHub - graalvm/graalvm: Graal Multi-Language VM distribution](https://github.com/graalvm/graalvm)
@@ -48,6 +49,7 @@ A curated list of awesome resources for Graal, Truffle and related topics.
 - [Truffle served in a Holy Graal: Graal and Truffle for polyglot language interpretation on the JVM](https://neomatrix369.wordpress.com/2017/12/07/truffle-served-in-a-holy-graal-graal-and-truffle-for-polyglot-language-interpretation-on-the-jvm/) [reblogged on [Java Advent Calendar](https://www.javaadvent.com/2017/12/truffle-served-holy-graal-graal-truffle-polyglot-language-interpretation-jvm.html)]
 
 ### Papers, presentations & videos
+- [Maxine A JVM in Java - JUG Saxon](https://jugsaxony.org/wp-content/uploads/2012/05/Maxine-A_JVM_in_Java.pdf)
 - [Compile ahead of time. It's fine? - Hotspot & AOT](https://assets.contentful.com/oxjq45e8ilak/3VZgJf2jLWaQQGKaeSsecc/a015330e94f964d96df0b366321ec068/Dmitry_Chuyko_AOT.pdf)
 - [Faster Ruby and JavaScript with GraalVM // Speaker Deck / Faster Ruby and JavaScript with GraalVM - Chris Seaton](https://speakerdeck.com/chrisseaton/faster-ruby-and-javascript-with-graalvm)
 - [Graal VM: Multi-Language Execution Platform - SlideShare](https://www.slideshare.net/ThomasWuerthinger/jazoon2014-slides)
@@ -63,6 +65,9 @@ A curated list of awesome resources for Graal, Truffle and related topics.
 - [Graal and Clojure discussions](https://marc.info/?l=openjdk-graal-dev&m=139406384928500&w=2)
 - [Bringing Performance and Scalability to Dynamic Languages](http://janvitek.org/events/PBD13/slides/MarioWolczko.pdf)
 - [FastR: Status  and Outlook](http://www.huber.embl.de/dsc/slides/FastR_DSC.pdf)
+- [JIT compiling a subset of Python to x86-64](http://www.elegantreader.com/item/15750700)
+- [FastR: R on the JVM with the FastR Runtime](http://webcache.googleusercontent.com/search?q=cache:7cz7MRozu-sJ:docs.huihoo.com/javaone/2015/CON5361-R-on-the-JVM-with-the-FastR-Runtime.pdf+&cd=1&hl=en&ct=clnk&gl=uk&client=ubuntu)
+- [Setup Graal VM on Mac OS X 10.11 El Capitan Howto Tutorial installation prerequisites](http://www.mensch-und-maschine.de/2016/03/26/setup-graal-vm-on-mac-os-x-10-11-el-capitan-howto-tutorial-installation-prerequisites/)
 
 - Videos
   - [(Devoxx BE): Graal.JS - high-performance JavaScript on the JVM by Christian Wirth](https://www.youtube.com/watch?v=OUo3BFMwQFo)
