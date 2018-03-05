@@ -47,6 +47,8 @@ A curated list of awesome resources for Graal, Truffle and related topics.
 - [TruffleRuby on the Substrate VM - Kevin Menard's Weblog](http://nirvdrum.com/2017/02/15/truffleruby-on-the-substrate-vm.html)
 - [Writing a Language in Truffle ](http://cesquivias.github.io/tags/truffle.html)
 - [Truffle served in a Holy Graal: Graal and Truffle for polyglot language interpretation on the JVM](https://neomatrix369.wordpress.com/2017/12/07/truffle-served-in-a-holy-graal-graal-and-truffle-for-polyglot-language-interpretation-on-the-jvm/) [reblogged on [Java Advent Calendar](https://www.javaadvent.com/2017/12/truffle-served-holy-graal-graal-truffle-polyglot-language-interpretation-jvm.html)]
+- [GraalVM at a glance - Martin Toshev's blog](http://martin-toshev.com/index.php/software-engineering/tools/87-graalvm)
+
 
 ### Papers, presentations & videos
 - [Maxine A JVM in Java - JUG Saxon](https://jugsaxony.org/wp-content/uploads/2012/05/Maxine-A_JVM_in_Java.pdf)
