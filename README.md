@@ -13,6 +13,7 @@ A curated list of awesome resources for Graal, Truffle and related topics.
 ### Github links
 - [https://github.com/beehive-lab/Maxine-VM](https://github.com/beehive-lab/Maxine-VM) -- [[forks of the project](https://github.com/beehive-lab/Maxine-VM/network/members)]
 - [graalvm.github.io by graalvm](https://graalvm.github.io/)
+- [Graal compiler](https://github.com/oracle/graal)
 - [GraalVM - GitHub organisation](https://github.com/graalvm)
 - [GitHub - graalvm/graalvm: Graal Multi-Language VM distribution](https://github.com/graalvm/graalvm)
 - [https://github.com/graalvm/truffleruby](https://github.com/graalvm/truffleruby)
