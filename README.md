@@ -81,6 +81,7 @@ A curated list of awesome resources for Graal, Truffle and related topics.
   - [(Voxxed days): One VM for all - Thomas Wuerthinger](https://www.youtube.com/watch?v=mMmOntDWSgw)
   - [Graal.JS - high-performance JavaScript on the JVM by Christian Wirth](https://www.youtube.com/watch?v=OUo3BFMwQFo)
   - [GraalVM – high performance multi language JVM @ Topconf Linz …](https://www.youtube.com/watch?v=9ACoOig_vSk)
+  - [Twitter's quest for a wholly Graal runtime by Chris Thalinger](https://www.youtube.com/watch?v=ZbccuoaLChk) 
 
 ### Hands-on pages
 - [Add Graal JIT Compilation to Your JVM Language in 5 Easy Steps ...](http://stefan-marr.de/2015/12/add-graal-jit-compilation-to-your-jvm-language-in-5-easy-steps-step-5/)
