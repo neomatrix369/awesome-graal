@@ -68,6 +68,7 @@ A curated list of awesome resources for Graal, Truffle and related topics.
 - [JIT compiling a subset of Python to x86-64](http://www.elegantreader.com/item/15750700)
 - [FastR: R on the JVM with the FastR Runtime](http://webcache.googleusercontent.com/search?q=cache:7cz7MRozu-sJ:docs.huihoo.com/javaone/2015/CON5361-R-on-the-JVM-with-the-FastR-Runtime.pdf+&cd=1&hl=en&ct=clnk&gl=uk&client=ubuntu)
 - [Setup Graal VM on Mac OS X 10.11 El Capitan Howto Tutorial installation prerequisites](http://www.mensch-und-maschine.de/2016/03/26/setup-graal-vm-on-mac-os-x-10-11-el-capitan-howto-tutorial-installation-prerequisites/)
+- [Graal, GraalVM, Truffle: What do they mean for polyglot developers?](http://bit.ly/graal-polyglot-devs)
 
 - Videos
   - [(Devoxx BE): Graal.JS - high-performance JavaScript on the JVM by Christian Wirth](https://www.youtube.com/watch?v=OUo3BFMwQFo)
@@ -81,7 +82,8 @@ A curated list of awesome resources for Graal, Truffle and related topics.
   - [(Voxxed days): One VM for all - Thomas Wuerthinger](https://www.youtube.com/watch?v=mMmOntDWSgw)
   - [Graal.JS - high-performance JavaScript on the JVM by Christian Wirth](https://www.youtube.com/watch?v=OUo3BFMwQFo)
   - [GraalVM – high performance multi language JVM @ Topconf Linz …](https://www.youtube.com/watch?v=9ACoOig_vSk)
-  - [Twitter's quest for a wholly Graal runtime by Chris Thalinger](https://www.youtube.com/watch?v=ZbccuoaLChk) 
+  - [Twitter's quest for a wholly Graal runtime by Chris Thalinger](https://www.youtube.com/watch?v=ZbccuoaLChk)
+  - Graal, GraalVM, Truffle: What do they mean for polyglot developers?[480p](http://crest.cs.ucl.ac.uk/cow/59/videos/sarkar_cow59_480p.mp4)|[720p](http://crest.cs.ucl.ac.uk/cow/59/videos/binkley_cow59_720p.mp4) 
 
 ### Hands-on pages
 - [Add Graal JIT Compilation to Your JVM Language in 5 Easy Steps ...](http://stefan-marr.de/2015/12/add-graal-jit-compilation-to-your-jvm-language-in-5-easy-steps-step-5/)
