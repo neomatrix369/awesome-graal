@@ -13,6 +13,7 @@ A curated list of awesome resources for Graal, Truffle and related topics.
 ### Github links
 - [https://github.com/beehive-lab/Maxine-VM](https://github.com/beehive-lab/Maxine-VM) -- [[forks of the project](https://github.com/beehive-lab/Maxine-VM/network/members)]
 - [graalvm.github.io by graalvm](https://graalvm.github.io/)
+- [Graal compiler](https://github.com/oracle/graal)
 - [GraalVM - GitHub organisation](https://github.com/graalvm)
 - [GitHub - graalvm/graalvm: Graal Multi-Language VM distribution](https://github.com/graalvm/graalvm)
 - [https://github.com/graalvm/truffleruby](https://github.com/graalvm/truffleruby)
@@ -47,6 +48,8 @@ A curated list of awesome resources for Graal, Truffle and related topics.
 - [TruffleRuby on the Substrate VM - Kevin Menard's Weblog](http://nirvdrum.com/2017/02/15/truffleruby-on-the-substrate-vm.html)
 - [Writing a Language in Truffle ](http://cesquivias.github.io/tags/truffle.html)
 - [Truffle served in a Holy Graal: Graal and Truffle for polyglot language interpretation on the JVM](https://neomatrix369.wordpress.com/2017/12/07/truffle-served-in-a-holy-graal-graal-and-truffle-for-polyglot-language-interpretation-on-the-jvm/) [reblogged on [Java Advent Calendar](https://www.javaadvent.com/2017/12/truffle-served-holy-graal-graal-truffle-polyglot-language-interpretation-jvm.html)]
+- [GraalVM at a glance - Martin Toshev's blog](http://martin-toshev.com/index.php/software-engineering/tools/87-graalvm)
+
 
 ### Papers, presentations & videos
 - [Maxine A JVM in Java - JUG Saxon](https://jugsaxony.org/wp-content/uploads/2012/05/Maxine-A_JVM_in_Java.pdf)
@@ -83,7 +86,7 @@ A curated list of awesome resources for Graal, Truffle and related topics.
   - [Graal.JS - high-performance JavaScript on the JVM by Christian Wirth](https://www.youtube.com/watch?v=OUo3BFMwQFo)
   - [GraalVM – high performance multi language JVM @ Topconf Linz …](https://www.youtube.com/watch?v=9ACoOig_vSk)
   - [Twitter's quest for a wholly Graal runtime by Chris Thalinger](https://www.youtube.com/watch?v=ZbccuoaLChk)
-  - Graal, GraalVM, Truffle: What do they mean for polyglot developers?[480p](http://crest.cs.ucl.ac.uk/cow/59/videos/sarkar_cow59_480p.mp4)|[720p](http://crest.cs.ucl.ac.uk/cow/59/videos/binkley_cow59_720p.mp4) 
+  - Graal, GraalVM, Truffle: What do they mean for polyglot developers?  [480p](http://crest.cs.ucl.ac.uk/cow/59/videos/sarkar_cow59_480p.mp4) | [720p](http://crest.cs.ucl.ac.uk/cow/59/videos/binkley_cow59_720p.mp4) 
 
 ### Hands-on pages
 - [Add Graal JIT Compilation to Your JVM Language in 5 Easy Steps ...](http://stefan-marr.de/2015/12/add-graal-jit-compilation-to-your-jvm-language-in-5-easy-steps-step-5/)
