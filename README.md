@@ -8,7 +8,7 @@ A curated list of awesome resources for Graal, Truffle and related topics.
   - [Github links](#github-links)
   - [Download links](#download-links)
   - [Projects, Wikipedia pages, discussion forums & blog posts](#projects-wikipedia-pages-discussion-forums--blog-posts)
-  - [Papers, presentations & videos](#papers-presentations--videos)
+  - [Papers, presentations/slides & videos](#papers-presentationsslides--videos)
   - [Hands-on pages](#hands-on-pages)
   - [Special topics](#special-topics-java-graal-gpus-accelerators-etc)
 
@@ -80,6 +80,7 @@ A curated list of awesome resources for Graal, Truffle and related topics.
 
 - [Graalvm (Programming) Questions & Answers - TechQA](http://techqa.info/programming/tag/graalvm)
 - [Oracle's Graal-JVM / Truffle for Scala? : scala - Reddit](https://www.reddit.com/r/scala/comments/3lshav/oracles_graaljvm_truffle_for_scala/)
+- [Graal and Clojure discussions](https://marc.info/?l=openjdk-graal-dev&m=139406384928500&w=2)
 
 #### Blog posts
 
@@ -94,6 +95,7 @@ A curated list of awesome resources for Graal, Truffle and related topics.
     - [Getting started with GraalVM - Koichi Sakata | A blog about Java](http://jyukutyo.hatenablog.jp/entry/2017/05/26/135438)
     - [GraalVM and Truffle/JS: Programming Languages and Runtimes ...](https://news.ycombinator.com/item?id=8380627)
     - [GraalVM at a glance - Martin Toshev's blog](http://martin-toshev.com/index.php/software-engineering/tools/87-graalvm)
+    - [Setup Graal VM on Mac OS X 10.11 El Capitan Howto Tutorial installation prerequisites](http://www.mensch-und-maschine.de/2016/03/26/setup-graal-vm-on-mac-os-x-10-11-el-capitan-howto-tutorial-installation-prerequisites/)
 
 - Graal, Truffle    
     - [Graal & Truffle – Mike's blog](https://blog.plan99.net/graal-truffle-134d8f28fb69)
@@ -106,29 +108,38 @@ A curated list of awesome resources for Graal, Truffle and related topics.
 - TruffleRuby
     - [TruffleRuby by Chris Seaton](http://chrisseaton.com/rubytruffle/)
     - [TruffleRuby on the Substrate VM - Kevin Menard's Weblog](http://nirvdrum.com/2017/02/15/truffleruby-on-the-substrate-vm.html)
+    - [Projects That Are Making Blazing Fast Ruby a Reality](https://www.sitepoint.com/projects-that-are-making-blazing-fast-ruby-a-reality/)
 
 
-### Papers, presentations & videos
-- [Maxine A JVM in Java - JUG Saxon](https://jugsaxony.org/wp-content/uploads/2012/05/Maxine-A_JVM_in_Java.pdf)
-- [Compile ahead of time. It's fine? - Hotspot & AOT](https://assets.contentful.com/oxjq45e8ilak/3VZgJf2jLWaQQGKaeSsecc/a015330e94f964d96df0b366321ec068/Dmitry_Chuyko_AOT.pdf)
-- [Faster Ruby and JavaScript with GraalVM // Speaker Deck / Faster Ruby and JavaScript with GraalVM - Chris Seaton](https://speakerdeck.com/chrisseaton/faster-ruby-and-javascript-with-graalvm)
-- [Graal VM: Multi-Language Execution Platform - SlideShare](https://www.slideshare.net/ThomasWuerthinger/jazoon2014-slides)
-- [GraalVM - Compiler and JVM Research at JKU - Complang](https://www.complang.tuwien.ac.at/lehre/ubvo/jku.pdf)
-- [JVM++: The Graal VM - SlideShare](https://www.slideshare.net/martintoshev/jvm-the-graal-vm)
-- [New tricks of the GraalVM - Distributed Systems Group](http://ds.cs.ut.ee/courses/course-files/newTricksOfGraalVM.pdf)
-- [Sulong: Fast LLVM IR Execution on the JVM with Truffle ... - LLVM.org](http://llvm.org/devmtg/2016-01/slides/Sulong.pdf)
-- [Graal: A research platform for dynamic compilation and managed ...](http://cgo.org/cgo2015/event/graal-a-research-platform-for-dynamic-compilation-and-managed-languages/)
-- [Graal and Truffle - Modularity](https://www.slideshare.net/ThomasWuerthinger/2014-0424-graal-modularity)
-- [Projects That Are Making Blazing Fast Ruby a Reality — SitePoint](https://www.sitepoint.com/projects-that-are-making-blazing-fast-ruby-a-reality/)
-- [OpenCL JIT Compilation for Dynamic Programming Languages](https://www.researchgate.net/publication/316923303_OpenCL_JIT_Compilation_for_Dynamic_Programming_Languages)
-- [Adaptive Concurrency Control for Transactional Memory](http://www.dcs.gla.ac.uk/~jsinger/mmnet15/nisbet.pdf)
-- [Graal and Clojure discussions](https://marc.info/?l=openjdk-graal-dev&m=139406384928500&w=2)
-- [Bringing Performance and Scalability to Dynamic Languages](http://janvitek.org/events/PBD13/slides/MarioWolczko.pdf)
-- [FastR: Status  and Outlook](http://www.huber.embl.de/dsc/slides/FastR_DSC.pdf)
-- [JIT compiling a subset of Python to x86-64](http://www.elegantreader.com/item/15750700)
-- [FastR: R on the JVM with the FastR Runtime](http://webcache.googleusercontent.com/search?q=cache:7cz7MRozu-sJ:docs.huihoo.com/javaone/2015/CON5361-R-on-the-JVM-with-the-FastR-Runtime.pdf+&cd=1&hl=en&ct=clnk&gl=uk&client=ubuntu)
-- [Setup Graal VM on Mac OS X 10.11 El Capitan Howto Tutorial installation prerequisites](http://www.mensch-und-maschine.de/2016/03/26/setup-graal-vm-on-mac-os-x-10-11-el-capitan-howto-tutorial-installation-prerequisites/)
-- [Graal, GraalVM, Truffle: What do they mean for polyglot developers?](http://bit.ly/graal-polyglot-devs)
+### Papers, presentations/slides & videos
+- General
+    - [OpenCL JIT Compilation for Dynamic Programming Languages](https://www.researchgate.net/publication/316923303_OpenCL_JIT_Compilation_for_Dynamic_Programming_Languages)
+    - [Adaptive Concurrency Control for Transactional Memory](http://www.dcs.gla.ac.uk/~jsinger/mmnet15/nisbet.pdf)
+    - [Bringing Performance and Scalability to Dynamic Languages](http://janvitek.org/events/PBD13/slides/MarioWolczko.pdf)
+    - [JIT compiling a subset of Python to x86-64](http://www.elegantreader.com/item/15750700)
+
+- Maxine
+    - Maxine A JVM in Java - JUG Saxon by Michael Haupt: [Slides](https://jugsaxony.org/wp-content/uploads/2012/05/Maxine-A_JVM_in_Java.pdf)
+
+- AOT    
+    - Compile ahead of time. It's fine? - Hotspot & AOT by Dmitry Chuyko: [Slides](https://assets.contentful.com/oxjq45e8ilak/3VZgJf2jLWaQQGKaeSsecc/a015330e94f964d96df0b366321ec068/Dmitry_Chuyko_AOT.pdf)
+
+- Graal, GraalVM
+    - Graal: A research platform for dynamic compilation and managed... by Christian Wimmer: [Slides](http://cgo.org/cgo2015/event/graal-a-research-platform-for-dynamic-compilation-and-managed-languages/)
+    - Graal and Truffle - Modularity by Thomas Wuerthinger: [Slides](https://www.slideshare.net/ThomasWuerthinger/2014-0424-graal-modularity)
+    - Graal VM: Multi-Language Execution Platform by Thomas Wuerthinger [Slides](https://www.slideshare.net/ThomasWuerthinger/jazoon2014-slides)        
+    - Faster Ruby and JavaScript with GraalVM by Chris Seaton: [Slides](https://speakerdeck.com/chrisseaton/faster-ruby-and-javascript-with-graalvm)    
+    - GraalVM - Compiler and JVM Research at JKU - Complang by Josef Eisl: [Slides](https://www.complang.tuwien.ac.at/lehre/ubvo/jku.pdf)
+    - JVM++: The Graal VM by Martin Toshev: [Slides](https://www.slideshare.net/martintoshev/jvm-the-graal-vm)
+    - New tricks of the GraalVM - Distributed Systems Group by Tõnis Pool: [Slides](http://ds.cs.ut.ee/courses/course-files/newTricksOfGraalVM.pdf)        
+    - Graal, GraalVM, Truffle: What do they mean for polyglot developers? by Mani Sarkar: [Slides](http://bit.ly/graal-polyglot-devs) 
+ 
+- Sulong
+    - Sulong: Fast LLVM IR Execution on the JVM with Truffle ... by Manuel Rigger: [Slides](http://llvm.org/devmtg/2016-01/slides/Sulong.pdf)
+
+- FastR
+    - FastR: Status and Outlook by Michael Haupt: [Slides](http://www.huber.embl.de/dsc/slides/FastR_DSC.pdf)
+    - FastR: R on the JVM with the FastR Runtime by Christian Humer: [Slides](http://webcache.googleusercontent.com/search?q=cache:7cz7MRozu-sJ:docs.huihoo.com/javaone/2015/CON5361-R-on-the-JVM-with-the-FastR-Runtime.pdf+&cd=1&hl=en&ct=clnk&gl=uk&client=ubuntu)
 
 - Videos
   - [(Devoxx BE): Graal.JS - high-performance JavaScript on the JVM by Christian Wirth](https://www.youtube.com/watch?v=OUo3BFMwQFo)
@@ -143,7 +154,7 @@ A curated list of awesome resources for Graal, Truffle and related topics.
   - [Graal.JS - high-performance JavaScript on the JVM by Christian Wirth](https://www.youtube.com/watch?v=OUo3BFMwQFo)
   - [GraalVM – high performance multi language JVM @ Topconf Linz …](https://www.youtube.com/watch?v=9ACoOig_vSk)
   - [Twitter's quest for a wholly Graal runtime by Chris Thalinger](https://www.youtube.com/watch?v=ZbccuoaLChk)
-  - Graal, GraalVM, Truffle: What do they mean for polyglot developers?  [480p](http://crest.cs.ucl.ac.uk/cow/59/videos/sarkar_cow59_480p.mp4) | [720p](http://crest.cs.ucl.ac.uk/cow/59/videos/binkley_cow59_720p.mp4) 
+  - Graal, GraalVM, Truffle: What do they mean for polyglot developers? (Videos: [480p](http://crest.cs.ucl.ac.uk/cow/59/videos/sarkar_cow59_480p.mp4) | [720p](http://crest.cs.ucl.ac.uk/cow/59/videos/binkley_cow59_720p.mp4)) 
 
 ### Hands-on pages
 
