@@ -3,9 +3,10 @@
 A curated list of awesome resources for Graal, Truffle and related topics.
 
 - [Awesome Graal](#awesome-graal)
-  - [Related JEPs](#github-links)
-  - [Community](#github-links)
+  - [Related JEPs](#related-jeps)
+  - [Community](#community)
   - [Github links](#github-links)
+  - [Mercurial links](#mercurial-links)
   - [Download links](#download-links)
   - [Projects, Wikipedia pages, discussion forums & blog posts](#projects-wikipedia-pages-discussion-forums--blog-posts)
   - [Papers, presentations/slides & videos](#papers-presentationsslides--videos)
@@ -81,6 +82,7 @@ A curated list of awesome resources for Graal, Truffle and related topics.
 - [Graalvm (Programming) Questions & Answers - TechQA](http://techqa.info/programming/tag/graalvm)
 - [Oracle's Graal-JVM / Truffle for Scala? : scala - Reddit](https://www.reddit.com/r/scala/comments/3lshav/oracles_graaljvm_truffle_for_scala/)
 - [Graal and Clojure discussions](https://marc.info/?l=openjdk-graal-dev&m=139406384928500&w=2)
+- [JIT compiling a subset of Python to x86-64](http://www.elegantreader.com/item/15750700)
 
 #### Blog posts
 
@@ -113,16 +115,15 @@ A curated list of awesome resources for Graal, Truffle and related topics.
 
 ### Papers, presentations/slides & videos
 - General
-    - [OpenCL JIT Compilation for Dynamic Programming Languages](https://www.researchgate.net/publication/316923303_OpenCL_JIT_Compilation_for_Dynamic_Programming_Languages)
-    - [Adaptive Concurrency Control for Transactional Memory](http://www.dcs.gla.ac.uk/~jsinger/mmnet15/nisbet.pdf)
-    - [Bringing Performance and Scalability to Dynamic Languages](http://janvitek.org/events/PBD13/slides/MarioWolczko.pdf)
-    - [JIT compiling a subset of Python to x86-64](http://www.elegantreader.com/item/15750700)
+    - OpenCL JIT Compilation for Dynamic Programming Languages by four authors: [Paper](https://www.researchgate.net/publication/316923303_OpenCL_JIT_Compilation_for_Dynamic_Programming_Languages)
+    - Adaptive Concurrency Control for Transactional Memory by Andy Nisbet: [Slides](http://www.dcs.gla.ac.uk/~jsinger/mmnet15/nisbet.pdf)
+    - Bringing Performance and Scalability to Dynamic Languages by Mario Wolczko: [Slides](http://janvitek.org/events/PBD13/slides/MarioWolczko.pdf)
 
 - Maxine
     - Maxine A JVM in Java - JUG Saxon by Michael Haupt: [Slides](https://jugsaxony.org/wp-content/uploads/2012/05/Maxine-A_JVM_in_Java.pdf)
 
 - AOT    
-    - Compile ahead of time. It's fine? - Hotspot & AOT by Dmitry Chuyko: [Slides](https://assets.contentful.com/oxjq45e8ilak/3VZgJf2jLWaQQGKaeSsecc/a015330e94f964d96df0b366321ec068/Dmitry_Chuyko_AOT.pdf)
+    - Compile ahead of time. It's fine? by Dmitry Chuyko: [Slides](https://assets.contentful.com/oxjq45e8ilak/3VZgJf2jLWaQQGKaeSsecc/a015330e94f964d96df0b366321ec068/Dmitry_Chuyko_AOT.pdf)
 
 - Graal, GraalVM
     - Graal: A research platform for dynamic compilation and managed... by Christian Wimmer: [Slides](http://cgo.org/cgo2015/event/graal-a-research-platform-for-dynamic-compilation-and-managed-languages/)
