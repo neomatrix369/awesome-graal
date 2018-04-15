@@ -3,6 +3,8 @@
 A curated list of awesome resources for Graal, Truffle and related topics.
 
 - [Awesome Graal](#awesome-graal)
+  - [Related JEPs](#github-links)
+  - [Community](#github-links)
   - [Github links](#github-links)
   - [Download links](#download-links)
   - [Projects, Wikipedia pages, discussion forums & blog posts](#projects-wikipedia-pages-discussion-forums--blog-posts)
@@ -10,19 +12,51 @@ A curated list of awesome resources for Graal, Truffle and related topics.
   - [Hands-on pages](#hands-on-pages)
   - [Special topics](#special-topics-java-graal-gpus-accelerators-etc)
 
+### Related JEPs
+
+- [JEP 317: Experimental Java-Based JIT Compiler - OpenJDK](http://openjdk.java.net/jeps/317)
+- [JEP 243: Java-Level JVM Compiler Interface - OpenJDK](http://openjdk.java.net/jeps/243)
+- [JEP 295: Ahead-of-Time Compilation](http://openjdk.java.net/jeps/295) 
+- ...others
+
+### Community
+
+- [graal-dev mailing list](http://mail.openjdk.java.net/mailman/listinfo/graal-dev)
+- [graal-changes mailing list](http://mail.openjdk.java.net/mailman/listinfo/graal-changes)
+- [Gitter channel: graal-core](https://gitter.im/graalvm/graal-core) 
+- [Gitter channel: truffleruby](https://gitter.im/graalvm/truffleruby) 
+
 ### Github links
 - [https://github.com/beehive-lab/Maxine-VM](https://github.com/beehive-lab/Maxine-VM) -- [[forks of the project](https://github.com/beehive-lab/Maxine-VM/network/members)]
 - [graalvm.github.io by graalvm](https://graalvm.github.io/)
-- [Graal compiler](https://github.com/oracle/graal)
 - [GraalVM - GitHub organisation](https://github.com/graalvm)
-- [GitHub - graalvm/graalvm: Graal Multi-Language VM distribution](https://github.com/graalvm/graalvm)
-- [https://github.com/graalvm/truffleruby](https://github.com/graalvm/truffleruby)
-- [graalVM / FastR](https://github.com/graalvm/fastr) | [old Bitbucket location](https://www.google.co.uk/url?sa=t&rct=j&q=&esrc=s&source=web&cd=58&cad=rja&uact=8&ved=0ahUKEwiGo8b7hN_UAhUHIMAKHVegBko4MhAWCE4wBw&url=https%3A%2F%2Fbitbucket.org%2Fallr%2Ffastr%2Fwiki%2FHome&usg=AFQjCNGjakALFNgGvJ3loCrnM4lyE2VoRA)
-- [Truffle](https://github.com/graalvm/graal/blob/master/truffle/) | [Truffle documentation](http://graalvm.github.io/graal/truffle/javadoc/com/oracle/truffle/tutorial/package-summary.html)
-- [https://github.com/jruby/jruby/wiki/Truffle#jrubytruffle---a-high-performance-truffle-backend-for-jruby](https://github.com/jruby/jruby/wiki/Truffle#jrubytruffle---a-high-performance-truffle-backend-for-jruby)
+    - [Graal compiler](https://github.com/oracle/graal)
+    - [GitHub - graalvm/graalvm: Graal Multi-Language VM distribution](https://github.com/graalvm/graalvm)
+    - [Truffle](https://github.com/graalvm/graal/blob/master/truffle/) | [Truffle documentation](http://graalvm.github.io/graal/truffle/javadoc/com/oracle/truffle/tutorial/package-summary.html)
+    - [https://github.com/graalvm/truffleruby](https://github.com/graalvm/truffleruby)
+        - [https://github.com/jruby/jruby/wiki/Truffle#jrubytruffle---a-high-performance-truffle-backend-for-jruby](https://github.com/jruby/jruby/wiki/Truffle#jrubytruffle---a-high-performance-truffle-backend-for-jruby)
+    - [https://github.com/oracle/truffleruby](https://github.com/oracle/truffleruby) (mirror of the above `truffleruby` repo)  
+    - [graalVM / FastR](https://github.com/graalvm/fastr) | [old Bitbucket location](https://www.google.co.uk/url?sa=t&rct=j&q=&esrc=s&source=web&cd=58&cad=rja&uact=8&ved=0ahUKEwiGo8b7hN_UAhUHIMAKHVegBko4MhAWCE4wBw&url=https%3A%2F%2Fbitbucket.org%2Fallr%2Ffastr%2Fwiki%2FHome&usg=AFQjCNGjakALFNgGvJ3loCrnM4lyE2VoRA) | [fastr](https://github.com/oracle/fastr) (mirror)
+    - [sulong](https://github.com/graalvm/sulong)
+    - [A simple demonstration language built using Truffle for the GraalVM.](https://github.com/graalvm/simplelanguage)
+- [GraalVM examples](https://github.com/graalvm/examples)
+    - [Node.js+Java Maven Archetype](https://github.com/graalvm/graal-js-archetype)
+- [mx - Command-line tool used for the development of Graal projects](https://github.com/graalvm/mx)
+- [Fork of jdk8u/hotspot with support for JVMCI](https://github.com/graalvm/graal-jvmci-8)
+
+### Mercurial links
+
+- [OpenJDK Graal forest](http://hg.openjdk.java.net/graal)
+- [Compiler](http://hg.openjdk.java.net/graal/graal)
+- [JavaScript parser](http://hg.openjdk.java.net/graal/graal-js-parser/)
+- [JVM Compiler Interface for JDK8](http://hg.openjdk.java.net/graal/graal-jvmci-8/)
+- [JVM Compiler Interface for JDK9](http://hg.openjdk.java.net/graal/graal-jvmci-9/)
+- Deprecated
+    - [Compiler (deprecated by graal-core)](http://hg.openjdk.java.net/graal/graal-compiler/)
+    - [Compiler (deprecated by graal)](http://hg.openjdk.java.net/graal/graal-core/)
 
 ### Download links
-- [Graal and Truffle Builds](http://lafo.ssw.uni-linz.ac.at/builds/)
+- [Graal and Truffle Builds (JDK8/OpenJDK8)](http://lafo.ssw.uni-linz.ac.at/builds/)
 - [jruby graal-vm-0.19 on Homebrew - Libraries.io](https://libraries.io/homebrew/jruby/graal-vm-0.19)
 - [Oracle Labs GraalVM: Download](http://www.oracle.com/technetwork/oracle-labs/program-languages/downloads/index.html)
 - [Oracle Labs GraalVM: Java](http://www.oracle.com/technetwork/oracle-labs/program-languages/java/index.html)
