@@ -39,6 +39,7 @@ A curated list of awesome resources for Graal, Truffle and related topics.
     - [graalVM / FastR](https://github.com/graalvm/fastr) | [old Bitbucket location](https://www.google.co.uk/url?sa=t&rct=j&q=&esrc=s&source=web&cd=58&cad=rja&uact=8&ved=0ahUKEwiGo8b7hN_UAhUHIMAKHVegBko4MhAWCE4wBw&url=https%3A%2F%2Fbitbucket.org%2Fallr%2Ffastr%2Fwiki%2FHome&usg=AFQjCNGjakALFNgGvJ3loCrnM4lyE2VoRA) | [fastr](https://github.com/oracle/fastr) (mirror)
     - [sulong](https://github.com/graalvm/sulong)
     - [A simple demonstration language built using Truffle for the GraalVM.](https://github.com/graalvm/simplelanguage)
+    - [Substrate VM](https://github.com/oracle/graal/tree/master/substratevm)
 - [GraalVM examples](https://github.com/graalvm/examples)
     - [Node.js+Java Maven Archetype](https://github.com/graalvm/graal-js-archetype)
 - [mx - Command-line tool used for the development of Graal projects](https://github.com/graalvm/mx)
@@ -64,25 +65,47 @@ A curated list of awesome resources for Graal, Truffle and related topics.
 - [Oracle Labs GraalVM: Programming Languages and Runtimes ...](http://www.oracle.com/technetwork/oracle-labs/program-languages/overview/index.html)
 
 ### Projects, Wikipedia pages, discussion forums & blog posts
-- [Benchmarking a Go AI in Ruby: CRuby vs. Rubinius vs. JRuby vs. Truffle](https://pragtob.wordpress.com/2017/01/24/benchmarking-a-go-ai-in-ruby-cruby-vs-rubinius-vs-jruby-vs-truffle-a-year-later/)
-- [Chris Seaton’s blog](http://chrisseaton.com/)
-- [Getting started with GraalVM - Koichi Sakata | A blog about Java](http://jyukutyo.hatenablog.jp/entry/2017/05/26/135438)
-- [Graal & Truffle – Mike's blog](https://blog.plan99.net/graal-truffle-134d8f28fb69)
-- [Graal (compiler) - Wikipedia](https://en.wikipedia.org/wiki/Graal_(compiler))
-- [Graal and Truffle could accelerate programming language design ...](http://cesquivias.github.io/tags/truffle.html)
-- [Graalvm (Programming) Questions & Answers - TechQA](http://techqa.info/programming/tag/graalvm)
-- [GraalVM and Truffle/JS: Programming Languages and Runtimes ...](https://news.ycombinator.com/item?id=8380627)
+
+#### Project(s)
+
 - [OpenJDK: Graal](http://openjdk.java.net/projects/graal/)
-- [OpenJDK: Graal-dev mailing list](http://mail.openjdk.java.net/mailman/listinfo/graal-dev)
-- [Oracle's Graal project empowers language creation on the JVM ...](http://www.infoworld.com/article/2688340/application-development/oracles-graal-project-empowers-language-creation-on-the-jvm.html)
+
+#### Wikipedia page(s), OpenJDK Wiki
+
+- [Graal (compiler) - Wikipedia](https://en.wikipedia.org/wiki/Graal_(compiler))
+- [OpenJDK Graal - Wiki](https://wiki.openjdk.java.net/display/Graal/Main)
+- [OpenJDK Graal - Publications and Presentations](https://wiki.openjdk.java.net/display/Graal/Publications+and+Presentations)
+
+#### Discussion forum(s)
+
+- [Graalvm (Programming) Questions & Answers - TechQA](http://techqa.info/programming/tag/graalvm)
 - [Oracle's Graal-JVM / Truffle for Scala? : scala - Reddit](https://www.reddit.com/r/scala/comments/3lshav/oracles_graaljvm_truffle_for_scala/)
-- [Setup Graal VM on Mac OS X 10.11 El Capitan Howto Tutorial ...](http://www.mensch-und-maschine.de/2016/03/26/setup-graal-vm-on-mac-os-x-10-11-el-capitan-howto-tutorial-installation-prerequisites/)
-- [The Graal Compiler - SSW - JKU](http://ssw.jku.at/Research/Projects/JVM/Graal.html)
-- [TruffleRuby by Chris Seaton](http://chrisseaton.com/rubytruffle/)
-- [TruffleRuby on the Substrate VM - Kevin Menard's Weblog](http://nirvdrum.com/2017/02/15/truffleruby-on-the-substrate-vm.html)
-- [Writing a Language in Truffle ](http://cesquivias.github.io/tags/truffle.html)
-- [Truffle served in a Holy Graal: Graal and Truffle for polyglot language interpretation on the JVM](https://neomatrix369.wordpress.com/2017/12/07/truffle-served-in-a-holy-graal-graal-and-truffle-for-polyglot-language-interpretation-on-the-jvm/) [reblogged on [Java Advent Calendar](https://www.javaadvent.com/2017/12/truffle-served-holy-graal-graal-truffle-polyglot-language-interpretation-jvm.html)]
-- [GraalVM at a glance - Martin Toshev's blog](http://martin-toshev.com/index.php/software-engineering/tools/87-graalvm)
+
+#### Blog posts
+
+- General
+    - [Chris Seaton’s blog](http://chrisseaton.com/)
+    - [Oracle's Graal project empowers language creation on the JVM ...](http://www.infoworld.com/article/2688340/application-development/oracles-graal-project-empowers-language-creation-on-the-jvm.html)
+    
+- Benchmarking    
+    - [Benchmarking a Go AI in Ruby: CRuby vs. Rubinius vs. JRuby vs. Truffle](https://pragtob.wordpress.com/2017/01/24/benchmarking-a-go-ai-in-ruby-cruby-vs-rubinius-vs-jruby-vs-truffle-a-year-later/)
+
+- GraalVM
+    - [Getting started with GraalVM - Koichi Sakata | A blog about Java](http://jyukutyo.hatenablog.jp/entry/2017/05/26/135438)
+    - [GraalVM and Truffle/JS: Programming Languages and Runtimes ...](https://news.ycombinator.com/item?id=8380627)
+    - [GraalVM at a glance - Martin Toshev's blog](http://martin-toshev.com/index.php/software-engineering/tools/87-graalvm)
+
+- Graal, Truffle    
+    - [Graal & Truffle – Mike's blog](https://blog.plan99.net/graal-truffle-134d8f28fb69)
+    - [Graal and Truffle could accelerate programming language design ...](http://cesquivias.github.io/tags/truffle.html)
+    - [Setup Graal VM on Mac OS X 10.11 El Capitan Howto Tutorial ...](http://www.mensch-und-maschine.de/2016/03/26/setup-graal-vm-on-mac-os-x-10-11-el-capitan-howto-tutorial-installation-prerequisites/)
+    - [The Graal Compiler - SSW - JKU](http://ssw.jku.at/Research/Projects/JVM/Graal.html)
+    - [Writing a Language in Truffle - Parts 1 thru 4](http://cesquivias.github.io/tags/truffle.html)
+    - [Truffle served in a Holy Graal: Graal and Truffle for polyglot language interpretation on the JVM](https://neomatrix369.wordpress.com/2017/12/07/truffle-served-in-a-holy-graal-graal-and-truffle-for-polyglot-language-interpretation-on-the-jvm/) [reblogged on [Java Advent Calendar](https://www.javaadvent.com/2017/12/truffle-served-holy-graal-graal-truffle-polyglot-language-interpretation-jvm.html)]
+
+- TruffleRuby
+    - [TruffleRuby by Chris Seaton](http://chrisseaton.com/rubytruffle/)
+    - [TruffleRuby on the Substrate VM - Kevin Menard's Weblog](http://nirvdrum.com/2017/02/15/truffleruby-on-the-substrate-vm.html)
 
 
 ### Papers, presentations & videos
@@ -123,29 +146,45 @@ A curated list of awesome resources for Graal, Truffle and related topics.
   - Graal, GraalVM, Truffle: What do they mean for polyglot developers?  [480p](http://crest.cs.ucl.ac.uk/cow/59/videos/sarkar_cow59_480p.mp4) | [720p](http://crest.cs.ucl.ac.uk/cow/59/videos/binkley_cow59_720p.mp4) 
 
 ### Hands-on pages
-- [Add Graal JIT Compilation to Your JVM Language in 5 Easy Steps ...](http://stefan-marr.de/2015/12/add-graal-jit-compilation-to-your-jvm-language-in-5-easy-steps-step-5/)
-- [Compile and configure FastR in Linux | snatverk](http://snatverk.blogspot.com/2016/05/compile-and-configure-fastr-in-linux.html)
-- [GraalVM - APIDesign](http://wiki.apidesign.org/wiki/GraalVM)
-- [LuaTruffle](http://www.luatruffle.org/)
-- [Learning to use Wholly GraalVM!](https://neomatrix369.wordpress.com/2017/12/12/learning-to-use-wholly-graalvm/) [reblogged on [Java Advent Calendar](https://www.javaadvent.com/2017/12/learning-use-wholly-graalvm.html)]
+
+- Graal
+    - [Add Graal JIT Compilation to Your JVM Language in 5 Easy Steps ...](http://stefan-marr.de/2015/12/add-graal-jit-compilation-to-your-jvm-language-in-5-easy-steps-step-5/)
+    
+- GraalVM
+    - [GraalVM - APIDesign](http://wiki.apidesign.org/wiki/GraalVM)
+    - [Learning to use Wholly GraalVM!](https://neomatrix369.wordpress.com/2017/12/12/learning-to-use-wholly-graalvm/) [reblogged on [Java Advent Calendar](https://www.javaadvent.com/2017/12/learning-use-wholly-graalvm.html)]
+    
+- Truffle    
+    - [LuaTruffle](http://www.luatruffle.org/)
+
+- FastR
+    - [Compile and configure FastR in Linux | snatverk](http://snatverk.blogspot.com/2016/05/compile-and-configure-fastr-in-linux.html)
 
 ### Special topics (Java, Graal, GPUs, Accelerators, etc...)
 
 - GPUs
-   - [Wholly Graal: Accelerating GPU Offload for Java - YouTube](https://www.youtube.com/watch?v=uxDd5KfYdJU)
-   - [JVMLS 2013: Graal and GPU Offload - Oracle: Video Gallery](https://video.oracle.com/detail/videos/featured-videos/video/2623576344001)
-   - [Gpus graal - SlideShare](https://www.slideshare.net/jjfumero/gpus-graal)
-   - [PL-4042, Wholly Graal: Accelerating GPU offload for Java/Sumatra...](https://www.slideshare.net/DevCentralAMD/pl4042-vasanthvenkatachalam)
-   - [JEP draft: Enable execution of Java methods on GPU](http://openjdk.java.net/jeps/8047074)
-   - [Multicore Maximum Reuse Algorithm on CPU and GPU - graal](http://graal.ens-lyon.fr/~mjacquel/mmre_cpu_gpu.html)
-   - [Just-In-Time GPU Compilation for Interpreted Languages with Partial ...](http://www.research.ed.ac.uk/portal/files/33009999/vee.pdf)
-   - [{ projects } | snatverk](http://snatverk.blogspot.com/p/projects.html)
-   - [amd's prototype hsail-‐enabled jdk8 for the openjdk sumatra project](http://developer.amd.com/apu/wp-content/uploads/sites/3/.../HSA-4024_Eric_Caspole.pdf)
-   - [API for data parallel Java. Allows suitable code to be executed on GPU via OpenCL](https://code.google.com/archive/p/aparapi/)
-  - [OpenJDK Sumatra Project: Bringing the GPU to Java](https://www.youtube.com/watch?v=4ShyMMqjIJI)
-  - [A CPU–GPU hybrid approach for the unsymmetric multifrontal method](http://www.sciencedirect.com/science/article/pii/S0167819111001293)
-  - [Are Java 8 Lambda expressions using GPU? - Stackoverflow discussions](https://stackoverflow.com/questions/30555694/are-java-8-lambda-expressions-using-gpu)
-  - [juanfumero / marawacc — Bitbucket](https://bitbucket.org/juanfumero/marawacc)
+   - General 
+        - [Just-In-Time GPU Compilation for Interpreted Languages with Partial ...](http://www.research.ed.ac.uk/portal/files/33009999/vee.pdf)
+        - [{ projects } | snatverk](http://snatverk.blogspot.com/p/projects.html)
+        - [AMD's prototype hsail-‐enabled jdk8 for the openjdk sumatra project](http://developer.amd.com/apu/wp-content/uploads/sites/3/.../HSA-4024_Eric_Caspole.pdf)
+        - [A CPU–GPU hybrid approach for the unsymmetric multifrontal method](http://www.sciencedirect.com/science/article/pii/S0167819111001293)
+
+   - Java     
+        - [JEP draft: Enable execution of Java methods on GPU](http://openjdk.java.net/jeps/8047074)
+        - [API for data parallel Java. Allows suitable code to be executed on GPU via OpenCL](https://code.google.com/archive/p/aparapi/)
+        - [OpenJDK Sumatra Project: Bringing the GPU to Java](https://www.youtube.com/watch?v=4ShyMMqjIJI)
+        - [Are Java 8 Lambda expressions using GPU? - Stackoverflow discussions](https://stackoverflow.com/questions/30555694/are-java-8-lambda-expressions-using-gpu)
+        - [juanfumero / marawacc — Bitbucket](https://bitbucket.org/juanfumero/marawacc)
+
+   - Graal
+        - [Wholly Graal: Accelerating GPU Offload for Java - YouTube](https://www.youtube.com/watch?v=uxDd5KfYdJU)
+        - [JVMLS 2013: Graal and GPU Offload - Oracle: Video Gallery](https://video.oracle.com/detail/videos/featured-videos/video/2623576344001)
+        - [Gpus graal - SlideShare](https://www.slideshare.net/jjfumero/gpus-graal)
+        - [PL-4042, Wholly Graal: Accelerating GPU offload for Java/Sumatra...](https://www.slideshare.net/DevCentralAMD/pl4042-vasanthvenkatachalam)
+        - [Multicore Maximum Reuse Algorithm on CPU and GPU - graal](http://graal.ens-lyon.fr/~mjacquel/mmre_cpu_gpu.html)
+
+   - FastR
+        - [FastR-OpenCL Compiler](https://bitbucket.org/juanfumero/fastr-gpu) 
 
 - Graphics Accelerators
   - [Tornado: Accelerating Java Applications Using GPGPUs](http://on-demand.gputechconf.com/gtc/2016/posters/GTC_2016_Programming_Language_PL_01_P6341_WEB.pdf)
