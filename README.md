@@ -1,4 +1,4 @@
-# Awesome Graal
+e# Awesome Graal
 
 A curated list of awesome resources for Graal, Truffle and related topics.
 
@@ -156,6 +156,8 @@ A curated list of awesome resources for Graal, Truffle and related topics.
 - Sulong
     - Sulong: Fast LLVM IR Execution on the JVM with Truffle by Manuel Rigger: [Slides](http://llvm.org/devmtg/2016-01/slides/Sulong.pdf)
     - (JVMLS 2017): Project Sulong, a LLVM bitcode interpreter on the Graal VM by Matthias Grimmer: [Video](https://www.youtube.com/watch?v=n5DCg6M2MDM&list=PLX8CzqL3ArzXJ2EGftrmz4SzS6NRr6p2n&index=14)
+    - Native Sulong: [Paper](http://ssw.jku.at/General/Staff/ManuelRigger/VMIL16.pdf) 
+    - Safe Sulong: [Paper](http://ssw.jku.at/General/Staff/ManuelRigger/ASPLOS18.pdf)
   
 - FastR
     - FastR: Status and Outlook by Michael Haupt: [Slides](http://www.huber.embl.de/dsc/slides/FastR_DSC.pdf)
