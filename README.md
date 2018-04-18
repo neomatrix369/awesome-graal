@@ -162,6 +162,9 @@ A curated list of awesome resources for Graal, Truffle and related topics.
 - FastR
     - FastR: Status and Outlook by Michael Haupt: [Slides](http://www.huber.embl.de/dsc/slides/FastR_DSC.pdf)
     - FastR: R on the JVM with the FastR Runtime by Christian Humer: [Slides](http://webcache.googleusercontent.com/search?q=cache:7cz7MRozu-sJ:docs.huihoo.com/javaone/2015/CON5361-R-on-the-JVM-with-the-FastR-Runtime.pdf+&cd=1&hl=en&ct=clnk&gl=uk&client=ubuntu)
+    
+- Video channel/playlists
+    - Graal, GraalVM, Truffle, and family of related tech: [YouTube playlist](https://www.youtube.com/playlist?list=PLUz6BqeCy21T3xPMlzaaIeeKqx-KTwjRC&disable_polymer=true)     
 
 ### Hands-on pages
 
