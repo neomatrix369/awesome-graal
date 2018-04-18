@@ -71,11 +71,12 @@ A curated list of awesome resources for Graal, Truffle and related topics.
 
 - [OpenJDK: Graal](http://openjdk.java.net/projects/graal/)
 
-#### Wikipedia page(s), OpenJDK Wiki
+#### Wikipedia page(s), OpenJDK Wiki, collection of useful links
 
 - [Graal (compiler) - Wikipedia](https://en.wikipedia.org/wiki/Graal_(compiler))
 - [OpenJDK Graal - Wiki](https://wiki.openjdk.java.net/display/Graal/Main)
 - [OpenJDK Graal - Publications and Presentations](https://wiki.openjdk.java.net/display/Graal/Publications+and+Presentations)
+- [List of useful resources from Stefan Marr](https://gist.github.com/smarr/d1f8f2101b5cc8e14e12)
 
 #### Discussion forum(s)
 
@@ -114,6 +115,7 @@ A curated list of awesome resources for Graal, Truffle and related topics.
 
 
 ### Papers, presentations/slides & videos
+
 - General
     - OpenCL JIT Compilation for Dynamic Programming Languages by four authors: [Paper](https://www.researchgate.net/publication/316923303_OpenCL_JIT_Compilation_for_Dynamic_Programming_Languages)
     - Adaptive Concurrency Control for Transactional Memory by Andy Nisbet: [Slides](http://www.dcs.gla.ac.uk/~jsinger/mmnet15/nisbet.pdf)
