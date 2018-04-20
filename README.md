@@ -35,7 +35,7 @@ A curated list of awesome resources for Graal, Truffle and related topics.
     - [GitHub - graalvm/graalvm: Graal Multi-Language VM distribution](https://github.com/graalvm/graalvm)
     - [Truffle](https://github.com/graalvm/graal/blob/master/truffle/) | [Truffle documentation](http://graalvm.github.io/graal/truffle/javadoc/com/oracle/truffle/tutorial/package-summary.html)
     - [TruffleRuby](https://github.com/oracle/truffleruby)
-    - [FastR](https://github.com/oracle/fastr) | [old Bitbucket location](https://www.google.co.uk/url?sa=t&rct=j&q=&esrc=s&source=web&cd=58&cad=rja&uact=8&ved=0ahUKEwiGo8b7hN_UAhUHIMAKHVegBko4MhAWCE4wBw&url=https%3A%2F%2Fbitbucket.org%2Fallr%2Ffastr%2Fwiki%2FHome&usg=AFQjCNGjakALFNgGvJ3loCrnM4lyE2VoRA)
+    - [FastR](https://github.com/oracle/fastr) | [old Bitbucket location](https://bitbucket.org/allr/fastr/wiki/Home)
     - [Sulong](https://github.com/graalvm/sulong)
     - [A simple demonstration language built using Truffle for the GraalVM.](https://github.com/graalvm/simplelanguage)
     - [Substrate VM](https://github.com/oracle/graal/tree/master/substratevm)
