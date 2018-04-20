@@ -1,4 +1,4 @@
-e# Awesome Graal
+# Awesome Graal
 
 A curated list of awesome resources for Graal, Truffle and related topics.
 
