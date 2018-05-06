@@ -82,7 +82,7 @@ A curated list of awesome resources for Graal, Truffle and related topics.
     - [Graal/GraalVM/Truffle Getting Started](http://www.graalvm.org/docs/getting-started/)
 - [Graal/GraalVM/Truffle official Reference Manual](http://www.graalvm.org/docs/reference-manual/)
 - [OpenJDK Graal - Publications and Presentations](https://wiki.openjdk.java.net/display/Graal/Publications+and+Presentations)
-- [Official list of publications from GraalVM](http://www.graalvm.org/community/publications/)
+- [GraalVM: Official list of publications](http://www.graalvm.org/community/publications/)
 - [List of useful resources from Stefan Marr](https://gist.github.com/smarr/d1f8f2101b5cc8e14e12)
 
 #### Discussion forum(s)
@@ -116,7 +116,7 @@ A curated list of awesome resources for Graal, Truffle and related topics.
     - [Setup Graal VM on Mac OS X 10.11 El Capitan Howto Tutorial ...](http://www.mensch-und-maschine.de/2016/03/26/setup-graal-vm-on-mac-os-x-10-11-el-capitan-howto-tutorial-installation-prerequisites/)
     - [The Graal Compiler - SSW - JKU](http://ssw.jku.at/Research/Projects/JVM/Graal.html)
     - [Writing a Language in Truffle - Parts 1 thru 4](http://cesquivias.github.io/tags/truffle.html)
-    - [Truffle served in a Holy Graal: Graal and Truffle for polyglot language interpretation on the JVM](https://neomatrix369.wordpress.com/2017/12/07/truffle-served-in-a-holy-graal-graal-and-truffle-for-polyglot-language-interpretation-on-the-jvm/) [reblogged on [Java Advent Calendar](https://www.javaadvent.com/2017/12/truffle-served-holy-graal-graal-truffle-polyglot-language-interpretation-jvm.html)]    
+    - [Truffle served in a Holy Graal: Graal and Truffle for polyglot language interpretation on the JVM](https://neomatrix369.wordpress.com/2017/12/07/truffle-served-in-a-holy-graal-graal-and-truffle-for-polyglot-language-interpretation-on-the-jvm/) [reblogged on [Java Advent Calendar](https://www.javaadvent.com/2017/12/truffle-served-holy-graal-graal-truffle-polyglot-language-interpretation-jvm.html)]
 
 - TruffleRuby
     - [TruffleRuby by Chris Seaton](http://chrisseaton.com/rubytruffle/)
@@ -133,6 +133,7 @@ A curated list of awesome resources for Graal, Truffle and related topics.
     - (JVMLS 2017): Ahead Of Time (AOT) Internals by Vladimir Kozlov and Igor Veresov: [Video](https://www.youtube.com/watch?v=yyDD_KRdQQU&list=PLX8CzqL3ArzXJ2EGftrmz4SzS6NRr6p2n&index=13)
     - (JCrete): Fastest VM on the planet: [Video](https://www.youtube.com/watch?v=yaWq20AFN9U)    
     - Make a graal-core pull request on GitHub: [Video](https://www.youtube.com/watch?v=A_OczfY-YSg)
+    - [GraalVM: Official videos list](http://www.graalvm.org/community/videos/)
 
 - Maxine
     - Maxine A JVM in Java - JUG Saxon by Michael Haupt: [Slides](https://jugsaxony.org/wp-content/uploads/2012/05/Maxine-A_JVM_in_Java.pdf)
