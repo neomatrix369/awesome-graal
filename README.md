@@ -109,6 +109,7 @@ A curated list of awesome resources for Graal, Truffle and related topics.
     - [Top 10 Things To Do With GraalVM](https://medium.com/graalvm/graalvm-ten-things-12d9111f307d)    
     - [Graal VM Options for Graal CE 1.0](https://chriswhocodes.com/graal_options_graal_ce_1.0.html)    
     - [Graal VM Options for Graal EE 1.0](https://chriswhocodes.com/graal_options_graal_ee_1.0.html)    
+    - [Evaluating JavaScript in Java with GraalVM](https://amarszalek.net/blog/2018/06/08/evaluating-javascript-in-java-graalvm/)    
 
 - Graal, Truffle    
     - [Graal & Truffle – Mike's blog](https://blog.plan99.net/graal-truffle-134d8f28fb69)
