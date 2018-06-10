@@ -1,0 +1,509 @@
+allexport      	off
+braceexpand    	on
+emacs          	off
+errexit        	on
+errtrace       	off
+functrace      	off
+hashall        	on
+histexpand     	off
+history        	off
+ignoreeof      	off
+interactive-comments	on
+keyword        	off
+monitor        	off
+noclobber      	off
+noexec         	off
+noglob         	off
+nolog          	off
+notify         	off
+nounset        	on
+onecmd         	off
+physical       	off
+pipefail       	off
+posix          	off
+privileged     	off
+verbose        	off
+vi             	off
+xtrace         	off
+>>> Working in /home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux
+>>> mx already exists: using the current version
+>>> graal-jvmci-8 already exists: using the current version
+>>> Building a JDK8 with JVMCI...
+>>>> Letting 'mx' build execute and pass-thru, even if the build fails
+JAVA_HOME: /usr/lib/jvm/jdk1.8.0_144
+EXTRA_JAVA_HOMES: 
+Archiving JVMCI_HOTSPOT... [/home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/mxbuild/dists/jvmci-hotspot.jar does not exist]
+Building HotSpot[product, server]... [/home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/build/linux/linux_amd64_compiler2/product/libjvm.so[does not exist] does not exist]
+--------------- make command line ----------------------
+make -C /home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/make ARCH_DATA_MODEL=64 HOTSPOT_BUILD_JOBS=8 ALT_BOOTDIR=/usr/lib/jvm/jdk1.8.0_144 MAKE_VERBOSE= USER_RELEASE_SUFFIX=jvmci-unknown-sai-XPS-15-9560-2018-06-10_19-58-37_BST INCLUDE_JVMCI=true ZIP_DEBUGINFO_FILES=0 product docs
+--------------------------------------------------------
+make: Entering directory '/home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/make'
+cd /home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/make; \
+make BUILD_DIR=/home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/build/linux/linux_amd64_compiler2 BUILD_FLAVOR=product VM_TARGET=product generic_build2 
+make[1]: Entering directory '/home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/make'
+INFO: ENABLE_FULL_DEBUG_SYMBOLS=1
+
+INFO: /usr/bin/objcopy cmd found so will create .debuginfo files.
+
+INFO: STRIP_POLICY=min_strip
+
+INFO: ZIP_DEBUGINFO_FILES=0
+
+mkdir -p /home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/build/linux
+cd /home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/build/linux; \
+    make -f /home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/make/linux/Makefile \
+	       LP64=1 BOOTDIR=/usr/lib/jvm/jdk1.8.0_144 OUTPUTDIR=/home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/build/linux GAMMADIR=/home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8 MAKE_VERBOSE= HOTSPOT_RELEASE_VERSION=25.71-b01 JRE_RELEASE_VERSION="1.8.0" HOTSPOT_BUILD_VERSION=internal-jvmci-unknown-sai-XPS-15-9560-2018-06-10_19-58-37_BST product
+make[2]: Entering directory '/home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/build/linux'
+INFO: ENABLE_FULL_DEBUG_SYMBOLS=1
+
+INFO: /usr/bin/objcopy cmd found so will create .debuginfo files.
+
+INFO: STRIP_POLICY=min_strip
+
+INFO: ZIP_DEBUGINFO_FILES=0
+
+cd linux_amd64_compiler2/product && make -w " LP64=1 "
+make[3]: Entering directory '/home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/build/linux/linux_amd64_compiler2/product'
+make[4]: Entering directory '/home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/build/linux/linux_amd64_compiler2/product'
+Rescanned ../generated/adfiles/linux_x86_64.ad  but encountered no changes.
+make[4]: Leaving directory '/home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/build/linux/linux_amd64_compiler2/product'
+make[4]: Entering directory '/home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/build/linux/linux_amd64_compiler2/product'
+make[4]: Nothing to be done for 'all'.
+make[4]: Leaving directory '/home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/build/linux/linux_amd64_compiler2/product'
+make[4]: Entering directory '/home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/build/linux/linux_amd64_compiler2/product'
+make[4]: Nothing to be done for 'all'.
+make[4]: Leaving directory '/home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/build/linux/linux_amd64_compiler2/product'
+make[4]: Entering directory '/home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/build/linux/linux_amd64_compiler2/product'
+INFO: ENABLE_FULL_DEBUG_SYMBOLS=1
+
+INFO: /usr/bin/objcopy cmd found so will create .debuginfo files.
+
+INFO: STRIP_POLICY=min_strip
+
+INFO: ZIP_DEBUGINFO_FILES=0
+
+if [ -d /home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/agent -a "x86" != "ia64" \
+             -a "x86" != "zero" ] ; then \
+   make -f sa.make /home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/build/linux/linux_amd64_compiler2/product/../generated/sa-jdi.jar; \
+fi
+make[5]: Entering directory '/home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/build/linux/linux_amd64_compiler2/product'
+INFO: ENABLE_FULL_DEBUG_SYMBOLS=1
+
+INFO: /usr/bin/objcopy cmd found so will create .debuginfo files.
+
+INFO: STRIP_POLICY=min_strip
+
+INFO: ZIP_DEBUGINFO_FILES=0
+
+make[5]: '/home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/build/linux/linux_amd64_compiler2/product/../generated/sa-jdi.jar' is up to date.
+make[5]: Leaving directory '/home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/build/linux/linux_amd64_compiler2/product'
+make[4]: Leaving directory '/home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/build/linux/linux_amd64_compiler2/product'
+make[4]: Entering directory '/home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/build/linux/linux_amd64_compiler2/product'
+INFO: ENABLE_FULL_DEBUG_SYMBOLS=1
+
+INFO: /usr/bin/objcopy cmd found so will create .debuginfo files.
+
+INFO: STRIP_POLICY=min_strip
+
+INFO: ZIP_DEBUGINFO_FILES=0
+
+make[4]: 'precompiled.hpp.gch' is up to date.
+make[4]: Leaving directory '/home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/build/linux/linux_amd64_compiler2/product'
+make[4]: Entering directory '/home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/build/linux/linux_amd64_compiler2/product'
+INFO: ENABLE_FULL_DEBUG_SYMBOLS=1
+
+INFO: /usr/bin/objcopy cmd found so will create .debuginfo files.
+
+INFO: STRIP_POLICY=min_strip
+
+INFO: ZIP_DEBUGINFO_FILES=0
+
+Compiling /home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/src/share/vm/code/dependencies.cpp
+Compiling /home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/src/share/vm/utilities/elfFuncDescTable.cpp
+Compiling /home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/src/share/vm/utilities/elfStringTable.cpp
+Compiling /home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/src/share/vm/utilities/elfSymbolTable.cpp
+Compiling /home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/src/share/vm/utilities/errorReporter.cpp
+Compiling /home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/src/share/vm/opto/escape.cpp
+Compiling /home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/src/share/vm/utilities/events.cpp
+Compiling /home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/src/share/vm/prims/evmCompat.cpp
+Compiling /home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/src/share/vm/code/exceptionHandlerTable.cpp
+Compiling /home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/src/share/vm/utilities/exceptions.cpp
+Compiling /home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/src/share/vm/runtime/fieldDescriptor.cpp
+Compiling /home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/src/share/vm/runtime/fieldType.cpp
+Compiling /home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/src/share/vm/memory/filemap.cpp
+Compiling /home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/src/share/vm/prims/forte.cpp
+/home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/src/share/vm/code/dependencies.cpp: In function ‘static void Dependencies::write_dependency_to(xmlStream*, Dependencies::DepType, GrowableArray<Dependencies::DepArgument>*, Klass*)’:
+
+/home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/src/share/vm/code/dependencies.cpp:784:6: error: ‘%d’ directive writing between 1 and 10 bytes into a region of size 9 [-Werror=format-overflow=]
+
+ void Dependencies::write_dependency_to(xmlStream* xtty,
+
+      ^~~~~~~~~~~~
+
+/home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/src/share/vm/code/dependencies.cpp:784:6: note: directive argument in the range [0, 2147483647]
+
+In file included from /usr/include/stdio.h:862:0,
+
+                 from /home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/src/share/vm/prims/jni.h:39,
+
+                 from /home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/src/share/vm/utilities/globalDefinitions_gcc.hpp:28,
+
+                 from /home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/src/share/vm/utilities/globalDefinitions.hpp:33,
+
+                 from /home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/src/share/vm/utilities/debug.hpp:28,
+
+                 from /home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/src/share/vm/runtime/globals.hpp:28,
+
+                 from /home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/src/share/vm/memory/allocation.hpp:28,
+
+                 from /home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/src/share/vm/memory/iterator.hpp:28,
+
+                 from /home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/src/share/vm/memory/genOopClosures.hpp:28,
+
+                 from /home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/src/share/vm/oops/klass.hpp:28,
+
+                 from /home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/src/share/vm/runtime/handles.hpp:28,
+
+                 from /home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/src/share/vm/memory/universe.hpp:28,
+
+                 from /home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/src/share/vm/code/oopRecorder.hpp:28,
+
+                 from /home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/src/share/vm/asm/codeBuffer.hpp:28,
+
+                 from /home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/src/share/vm/asm/assembler.hpp:28,
+
+                 from /home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/src/share/vm/precompiled/precompiled.hpp:29:
+
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:34:43: note: ‘__builtin___sprintf_chk’ output between 3 and 12 bytes into a destination of size 10
+
+       __bos (__s), __fmt, __va_arg_pack ());
+
+                                           ^
+
+Compiling /home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/src/share/vm/runtime/fprofiler.cpp
+Compiling /home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/src/share/vm/runtime/frame.cpp
+Compiling /home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/src/cpu/x86/vm/frame_x86.cpp
+Compiling /home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/src/share/vm/memory/freeBlockDictionary.cpp
+Compiling /home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/src/share/vm/gc_implementation/concurrentMarkSweep/freeChunk.cpp
+Compiling /home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/src/share/vm/memory/freeList.cpp
+Compiling /home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/src/share/vm/gc_implementation/g1/g1AllocRegion.cpp
+Compiling /home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/src/share/vm/gc_implementation/g1/g1Allocator.cpp
+Compiling /home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/src/share/vm/gc_implementation/g1/g1Allocator_ext.cpp
+/home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/src/share/vm/runtime/fprofiler.cpp: In member function ‘void ThreadProfiler::vm_update(TickPosition)’:
+
+/home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/src/share/vm/runtime/fprofiler.cpp:638:56: error: argument 1 null where non-null expected [-Werror=nonnull]
+
+   bool vm_match(const char* name) const { return strcmp(name, _name) == 0; }
+
+                                                  ~~~~~~^~~~~~~~~~~~~
+
+In file included from /home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/src/share/vm/utilities/globalDefinitions_gcc.hpp:35:0,
+
+                 from /home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/src/share/vm/utilities/globalDefinitions.hpp:33,
+
+                 from /home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/src/share/vm/utilities/debug.hpp:28,
+
+                 from /home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/src/share/vm/runtime/globals.hpp:28,
+
+                 from /home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/src/share/vm/memory/allocation.hpp:28,
+
+                 from /home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/src/share/vm/memory/iterator.hpp:28,
+
+                 from /home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/src/share/vm/memory/genOopClosures.hpp:28,
+
+                 from /home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/src/share/vm/oops/klass.hpp:28,
+
+                 from /home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/src/share/vm/runtime/handles.hpp:28,
+
+                 from /home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/src/share/vm/memory/universe.hpp:28,
+
+                 from /home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/src/share/vm/code/oopRecorder.hpp:28,
+
+                 from /home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/src/share/vm/asm/codeBuffer.hpp:28,
+
+                 from /home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/src/share/vm/asm/assembler.hpp:28,
+
+                 from /home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/src/share/vm/precompiled/precompiled.hpp:29:
+
+/usr/include/string.h:136:12: note: in a call to function ‘int strcmp(const char*, const char*)’ declared here
+
+ extern int strcmp (const char *__s1, const char *__s2)
+
+            ^~~~~~
+
+Compiling /home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/src/share/vm/gc_implementation/g1/g1BiasedArray.cpp
+Compiling /home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/src/share/vm/gc_implementation/g1/g1BlockOffsetTable.cpp
+Compiling /home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/src/share/vm/gc_implementation/g1/g1CardCounts.cpp
+Compiling /home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/src/share/vm/gc_implementation/g1/g1CodeCacheRemSet.cpp
+Compiling /home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/src/share/vm/gc_implementation/g1/g1CollectedHeap.cpp
+cc1plus: all warnings being treated as errors
+
+Compiling /home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/src/share/vm/gc_implementation/g1/g1CollectedHeap_ext.cpp
+/home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/make/linux/makefiles/rules.make:149: recipe for target 'fprofiler.o' failed
+make[4]: *** [fprofiler.o] Error 1
+
+make[4]: *** Waiting for unfinished jobs....
+
+cc1plus: all warnings being treated as errors
+
+/home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/make/linux/makefiles/rules.make:149: recipe for target 'dependencies.o' failed
+make[4]: *** [dependencies.o] Error 1
+
+make[4]: Leaving directory '/home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/build/linux/linux_amd64_compiler2/product'
+/home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/make/linux/makefiles/top.make:119: recipe for target 'the_vm' failed
+make[3]: Leaving directory '/home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/build/linux/linux_amd64_compiler2/product'
+make[3]: *** [the_vm] Error 2
+
+/home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/make/linux/Makefile:303: recipe for target 'product' failed
+make[2]: Leaving directory '/home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/build/linux'
+make[2]: *** [product] Error 2
+
+Makefile:231: recipe for target 'generic_build2' failed
+make[1]: Leaving directory '/home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/make'
+make[1]: *** [generic_build2] Error 2
+
+Makefile:182: recipe for target 'product' failed
+make: Leaving directory '/home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/make'
+make: *** [product] Error 2
+
+
+Building HotSpot[product, server] failed
+1 build tasks failed
+>>> Using /home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/jdk1.8.0_144/linux-amd64/product
+>>> Building Graal
+>>> graal already exists: using the current version
+Setting environment variable JVMCI_VERSION_CHECK=ignore
+JAVA_HOME: /home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/jdk1.8.0_144/linux-amd64/product
+EXTRA_JAVA_HOMES: 
+project org.graalvm.compiler.hotspot.jdk11 was removed as JDK 11 is not available
+project org.graalvm.compiler.serviceprovider.jdk9 was removed as JDK 9 is not available
+project org.graalvm.compiler.lir.aarch64.jdk11 was removed as JDK 11 is not available
+project com.oracle.truffle.dsl.processor.jdk9 was removed as JDK 9 is not available
+project org.graalvm.compiler.replacements.jdk9.test was removed as JDK 9 is not available
+project org.graalvm.compiler.hotspot.management.jdk11 was removed as JDK 11 is not available
+project org.graalvm.compiler.hotspot.jdk9 was removed as JDK 9 is not available
+Compiling org.graalvm.options with javac-daemon(JDK 1.8)... [/home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal/sdk/mxbuild/src/org.graalvm.options/bin/org/graalvm/options/OptionCategory.class does not exist]
+Compiling org.graalvm.collections with javac-daemon(JDK 1.8)... [/home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal/sdk/mxbuild/src/org.graalvm.collections/bin/org/graalvm/collections/EconomicMap.class does not exist]
+Compiling org.graalvm.compiler.api.directives with javac-daemon(JDK 1.8)... [/home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal/compiler/mxbuild/src/org.graalvm.compiler.api.directives/bin/org/graalvm/compiler/api/directives/GraalDirectives.class does not exist]
+Compiling org.graalvm.compiler.nodeinfo with javac-daemon(JDK 1.8)... [/home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal/compiler/mxbuild/src/org.graalvm.compiler.nodeinfo/bin/org/graalvm/compiler/nodeinfo/Verbosity.class does not exist]
+Compiling org.graalvm.word with javac-daemon(JDK 1.8)... [/home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal/sdk/mxbuild/src/org.graalvm.word/bin/org/graalvm/word/Pointer.class does not exist]
+Compiling org.graalvm.graphio with javac-daemon(JDK 1.8)... [/home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal/compiler/mxbuild/src/org.graalvm.graphio/bin/org/graalvm/graphio/ProtocolImpl.class does not exist]
+Compiling org.graalvm.compiler.processor with javac-daemon(JDK 1.8)... [/home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal/compiler/mxbuild/src/org.graalvm.compiler.processor/bin/org/graalvm/compiler/processor/SuppressFBWarnings.class does not exist]
+Compiling com.oracle.truffle.nfi.types with javac-daemon(JDK 1.8)... [/home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal/truffle/mxbuild/src/com.oracle.truffle.nfi.types/bin/com/oracle/truffle/nfi/types/NativeSimpleTypeMirror.class does not exist]
+Archiving TRUFFLE_PROFILER_GRAALVM_SUPPORT... [/home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal/tools/mxbuild/dists/truffle-profiler-graalvm-support.tar does not exist]
+Archiving GRAAL_PROCESSOR_COMMON... [dependency org.graalvm.compiler.processor updated]
+Compiling org.graalvm.compiler.nodeinfo.processor with javac-daemon(JDK 1.8)... [dependency org.graalvm.compiler.processor updated]
+Archiving CHROMEINSPECTOR_GRAALVM_SUPPORT... [/home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal/tools/mxbuild/dists/chromeinspector-graalvm-support.tar does not exist]
+Compiling org.graalvm.compiler.replacements.processor with javac-daemon(JDK 1.8)... [dependency org.graalvm.compiler.processor updated]
+Compiling org.graalvm.compiler.options.processor with javac-daemon(JDK 1.8)... [dependency org.graalvm.compiler.processor updated]
+Compiling org.graalvm.compiler.serviceprovider.processor with javac-daemon(JDK 1.8)... [dependency org.graalvm.compiler.processor updated]
+Archiving WORD_API... [dependency org.graalvm.word updated]
+Archiving GRAAL_NODEINFO... [dependency org.graalvm.compiler.nodeinfo updated]
+Compiling org.graalvm.nativeimage with javac-daemon(JDK 1.8)... [dependency org.graalvm.word updated]
+Compiling org.graalvm.compiler.core.match.processor with javac-daemon(JDK 1.8)... [dependency org.graalvm.compiler.processor updated]
+Compiling org.graalvm.compiler.serviceprovider with javac-daemon(JDK 1.8)... [/home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal/compiler/mxbuild/src/org.graalvm.compiler.serviceprovider/bin/org/graalvm/compiler/serviceprovider/ServiceProvider.class does not exist]
+Compiling org.graalvm.polyglot with javac-daemon(JDK 1.8)... [dependency org.graalvm.options updated]
+Compiling org.graalvm.compiler.bytecode with javac-daemon(JDK 1.8)... [/home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal/compiler/mxbuild/src/org.graalvm.compiler.bytecode/bin/org/graalvm/compiler/bytecode/BytecodeStream.class does not exist]
+Archiving GRAAL_GRAPHIO... [dependency org.graalvm.graphio updated]
+Compiling org.graalvm.compiler.api.replacements with javac-daemon(JDK 1.8)... [/home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal/compiler/mxbuild/src/org.graalvm.compiler.api.replacements/bin/org/graalvm/compiler/api/replacements/MethodSubstitutionRegistry.class does not exist]
+Archiving GRAAL_SERVICEPROVIDER... [dependency org.graalvm.compiler.serviceprovider updated]
+Archiving GRAAL_OPTIONS_PROCESSOR... [dependency org.graalvm.compiler.options.processor updated]
+Archiving GRAAL_COMPILER_MATCH_PROCESSOR... [dependency org.graalvm.compiler.core.match.processor updated]
+Compiling org.graalvm.micro.benchmarks with javac-daemon(JDK 1.8)... [/home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal/compiler/mxbuild/src/org.graalvm.micro.benchmarks/bin/micro/benchmarks/HashBenchmark.class does not exist]
+Compiling org.graalvm.compiler.api.runtime with javac-daemon(JDK 1.8)... [/home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal/compiler/mxbuild/src/org.graalvm.compiler.api.runtime/bin/org/graalvm/compiler/api/runtime/GraalJVMCICompiler.class does not exist]
+Archiving GRAAL_REPLACEMENTS_PROCESSOR... [dependency org.graalvm.compiler.replacements.processor updated]
+Archiving GRAAL_NODEINFO_PROCESSOR... [dependency org.graalvm.compiler.nodeinfo.processor updated]
+Compiling org.graalvm.collections.test with javac-daemon(JDK 1.8)... [dependency org.graalvm.collections updated]
+Compiling org.graalvm.polyglot.tck with javac-daemon(JDK 1.8)... [dependency org.graalvm.polyglot updated]
+Archiving GRAAL_SERVICEPROVIDER_PROCESSOR... [dependency org.graalvm.compiler.serviceprovider.processor updated]
+Compiling org.graalvm.launcher with javac-daemon(JDK 1.8)... [dependency org.graalvm.polyglot updated]
+Archiving GRAAL_SDK... [dependency org.graalvm.polyglot updated]
+Compiling org.graalvm.compiler.api.test with javac-daemon(JDK 1.8)... [dependency org.graalvm.compiler.api.runtime updated]
+Compiling com.oracle.truffle.api with javac-daemon(JDK 1.8)... [dependency GRAAL_SDK updated]
+Archiving SDK_TEST... [dependency org.graalvm.collections.test updated]
+Compiling org.graalvm.util with javac-daemon(JDK 1.8)... [dependency GRAAL_SDK updated]
+Compiling com.oracle.truffle.sl.launcher with javac-daemon(JDK 1.8)... [dependency GRAAL_SDK updated]
+Archiving POLYGLOT_TCK... [dependency org.graalvm.polyglot.tck updated]
+Compiling com.oracle.truffle.tck.common with javac-daemon(JDK 1.8)... [dependency POLYGLOT_TCK updated]
+Archiving TRUFFLE_SL_LAUNCHER... [dependency com.oracle.truffle.sl.launcher updated]
+Compiling org.graalvm.compiler.options with javac-daemon(JDK 1.8)... [dependency GRAAL_SDK updated]
+Archiving LAUNCHER_COMMON... [dependency org.graalvm.launcher updated]
+Compiling com.oracle.truffle.sl.tck with javac-daemon(JDK 1.8)... [dependency POLYGLOT_TCK updated]
+Compiling org.graalvm.compiler.debug with javac-daemon(JDK 1.8)... [dependency GRAAL_OPTIONS_PROCESSOR updated]
+Compiling org.graalvm.compiler.options.test with javac-daemon(JDK 1.8)... [dependency org.graalvm.compiler.options updated]
+Compiling com.oracle.truffle.tck.tests with javac-daemon(JDK 1.8)... [dependency POLYGLOT_TCK updated]
+Archiving GRAAL_OPTIONS... [dependency org.graalvm.compiler.options updated]
+Archiving TRUFFLE_TCK_COMMON... [dependency com.oracle.truffle.tck.common updated]
+Archiving TRUFFLE_SL_TCK... [dependency com.oracle.truffle.sl.tck updated]
+Compiling com.oracle.truffle.api.dsl with javac-daemon(JDK 1.8)... [dependency com.oracle.truffle.api updated]
+Compiling com.oracle.truffle.api.utilities with javac-daemon(JDK 1.8)... [dependency com.oracle.truffle.api updated]
+Compiling com.oracle.truffle.api.profiles with javac-daemon(JDK 1.8)... [dependency com.oracle.truffle.api updated]
+Archiving TRUFFLE_TCK_TESTS... [dependency com.oracle.truffle.tck.tests updated]
+Archiving GRAAL_COMPILER_MICRO_BENCHMARKS... [dependency org.graalvm.micro.benchmarks updated]
+Compiling org.graalvm.compiler.test with javac-daemon(JDK 1.8)... [dependency org.graalvm.compiler.debug updated]
+Compiling com.oracle.truffle.api.instrumentation with javac-daemon(JDK 1.8)... [dependency com.oracle.truffle.api.profiles updated]
+Compiling org.graalvm.compiler.core.common with javac-daemon(JDK 1.8)... [dependency GRAAL_OPTIONS_PROCESSOR updated]
+Compiling org.graalvm.compiler.debug.test with javac-daemon(JDK 1.8)... [dependency org.graalvm.compiler.debug updated]
+Compiling com.oracle.truffle.dsl.processor with javac-daemon(JDK 1.8)... [dependency com.oracle.truffle.api.dsl updated]
+Compiling org.graalvm.compiler.graph with javac-daemon(JDK 1.8)... [dependency GRAAL_OPTIONS_PROCESSOR updated]
+Compiling org.graalvm.compiler.asm with javac-daemon(JDK 1.8)... [dependency org.graalvm.compiler.core.common updated]
+Compiling org.graalvm.compiler.asm.amd64 with javac-daemon(JDK 1.8)... [dependency org.graalvm.compiler.asm updated]
+Compiling org.graalvm.compiler.asm.aarch64 with javac-daemon(JDK 1.8)... [dependency org.graalvm.compiler.asm updated]
+Compiling org.graalvm.compiler.asm.sparc with javac-daemon(JDK 1.8)... [dependency org.graalvm.compiler.asm updated]
+Compiling org.graalvm.compiler.code with javac-daemon(JDK 1.8)... [dependency GRAAL_SERVICEPROVIDER_PROCESSOR updated]
+Archiving GRAAL_API... [dependency org.graalvm.compiler.api.replacements updated]
+Compiling org.graalvm.compiler.graph.test with javac-daemon(JDK 1.8)... [dependency GRAAL_NODEINFO_PROCESSOR updated]
+Archiving TRUFFLE_DSL_PROCESSOR_INTERNAL... [dependency com.oracle.truffle.dsl.processor updated]
+Compiling org.graalvm.compiler.lir with javac-daemon(JDK 1.8)... [dependency GRAAL_OPTIONS_PROCESSOR updated]
+Compiling com.oracle.truffle.api.interop with javac-daemon(JDK 1.8)... [dependency TRUFFLE_DSL_PROCESSOR_INTERNAL updated]
+Compiling com.oracle.truffle.dsl.processor.interop with javac-daemon(JDK 1.8)... [dependency com.oracle.truffle.api.interop updated]
+Compiling com.oracle.truffle.api.object with javac-daemon(JDK 1.8)... [dependency com.oracle.truffle.api.interop updated]
+Compiling com.oracle.truffle.api.object.dsl with javac-daemon(JDK 1.8)... [dependency com.oracle.truffle.api.object updated]
+Compiling com.oracle.truffle.object with javac-daemon(JDK 1.8)... [dependency com.oracle.truffle.api.object updated]
+Archiving TRUFFLE_DSL_PROCESSOR_INTEROP_INTERNAL... [dependency com.oracle.truffle.dsl.processor updated]
+Compiling com.oracle.truffle.object.dsl.processor with javac-daemon(JDK 1.8)... [dependency com.oracle.truffle.api.object.dsl updated]
+Compiling com.oracle.truffle.api.interop.java with javac-daemon(JDK 1.8)... [dependency TRUFFLE_DSL_PROCESSOR_INTEROP_INTERNAL updated]
+Compiling com.oracle.truffle.object.basic with javac-daemon(JDK 1.8)... [dependency com.oracle.truffle.object updated]
+Compiling com.oracle.truffle.nfi with javac-daemon(JDK 1.8)... [dependency TRUFFLE_DSL_PROCESSOR_INTEROP_INTERNAL updated]
+Compiling com.oracle.truffle.api.metadata with javac-daemon(JDK 1.8)... [dependency TRUFFLE_DSL_PROCESSOR_INTEROP_INTERNAL updated]
+Compiling com.oracle.truffle.object.basic.test with javac-daemon(JDK 1.8)... [dependency com.oracle.truffle.object.basic updated]
+Compiling org.graalvm.compiler.nodes with javac-daemon(JDK 1.8)... [dependency GRAAL_NODEINFO_PROCESSOR updated]
+Compiling org.graalvm.compiler.lir.aarch64 with javac-daemon(JDK 1.8)... [dependency GRAAL_OPTIONS_PROCESSOR updated]
+Compiling org.graalvm.compiler.lir.test with javac-daemon(JDK 1.8)... [dependency org.graalvm.compiler.lir updated]
+Compiling org.graalvm.compiler.lir.amd64 with javac-daemon(JDK 1.8)... [dependency GRAAL_OPTIONS_PROCESSOR updated]
+Compiling org.graalvm.compiler.lir.sparc with javac-daemon(JDK 1.8)... [dependency org.graalvm.compiler.asm.sparc updated]
+Compiling com.oracle.truffle.api.vm with javac-daemon(JDK 1.8)... [dependency TRUFFLE_DSL_PROCESSOR_INTEROP_INTERNAL updated]
+Compiling com.oracle.truffle.api.debug with javac-daemon(JDK 1.8)... [dependency TRUFFLE_DSL_PROCESSOR_INTERNAL updated]
+Compiling org.graalvm.compiler.phases with javac-daemon(JDK 1.8)... [dependency GRAAL_OPTIONS_PROCESSOR updated]
+Compiling org.graalvm.compiler.truffle.common with javac-daemon(JDK 1.8)... [dependency GRAAL_NODEINFO_PROCESSOR updated]
+Compiling org.graalvm.compiler.loop with javac-daemon(JDK 1.8)... [dependency GRAAL_OPTIONS_PROCESSOR updated]
+Compiling org.graalvm.compiler.word with javac-daemon(JDK 1.8)... [dependency GRAAL_NODEINFO_PROCESSOR updated]
+Archiving TRUFFLE_API... [dependency com.oracle.truffle.api.interop.java updated]
+Compiling org.graalvm.compiler.truffle.common.hotspot with javac-daemon(JDK 1.8)... [dependency GRAAL_OPTIONS_PROCESSOR updated]
+Compiling org.graalvm.compiler.phases.common with javac-daemon(JDK 1.8)... [dependency GRAAL_NODEINFO_PROCESSOR updated]
+Compiling org.graalvm.compiler.java with javac-daemon(JDK 1.8)... [dependency GRAAL_OPTIONS_PROCESSOR updated]
+Archiving TRUFFLE_DSL_PROCESSOR... [dependency com.oracle.truffle.dsl.processor updated]
+Compiling com.oracle.truffle.tools with javac-daemon(JDK 1.8)... [dependency TRUFFLE_DSL_PROCESSOR updated]
+Compiling com.oracle.truffle.tck with javac-daemon(JDK 1.8)... [dependency TRUFFLE_DSL_PROCESSOR updated]
+Compiling com.oracle.truffle.tools.profiler with javac-daemon(JDK 1.8)... [dependency TRUFFLE_DSL_PROCESSOR updated]
+Compiling com.oracle.truffle.tck.instrumentation with javac-daemon(JDK 1.8)... [dependency TRUFFLE_DSL_PROCESSOR updated]
+Compiling com.oracle.truffle.api.test with javac-daemon(JDK 1.8)... [dependency TRUFFLE_DSL_PROCESSOR updated]
+Compiling com.oracle.truffle.api.object.dsl.test with javac-daemon(JDK 1.8)... [dependency TRUFFLE_DSL_PROCESSOR updated]
+Compiling com.oracle.truffle.sl with javac-daemon(JDK 1.8)... [dependency TRUFFLE_DSL_PROCESSOR updated]
+Archiving TRUFFLE_DEBUG... [dependency com.oracle.truffle.tools updated]
+Archiving TRUFFLE_TCK_INSTRUMENTATION... [dependency com.oracle.truffle.tck.instrumentation updated]
+Compiling org.graalvm.compiler.virtual with javac-daemon(JDK 1.8)... [dependency GRAAL_OPTIONS_PROCESSOR updated]
+Compiling org.graalvm.compiler.loop.phases with javac-daemon(JDK 1.8)... [dependency GRAAL_OPTIONS_PROCESSOR updated]
+Archiving TRUFFLE_PROFILER... [dependency com.oracle.truffle.tools.profiler updated]
+Compiling com.oracle.truffle.tools.chromeinspector with javac-daemon(JDK 1.8)... [dependency TRUFFLE_DSL_PROCESSOR updated]
+Compiling org.graalvm.compiler.replacements with javac-daemon(JDK 1.8)... [dependency GRAAL_OPTIONS_PROCESSOR updated]
+Compiling org.graalvm.compiler.core with javac-daemon(JDK 1.8)... [dependency GRAAL_SERVICEPROVIDER_PROCESSOR updated]
+Archiving TRUFFLE_TCK... [dependency com.oracle.truffle.tck updated]
+Archiving CHROMEINSPECTOR... [dependency com.oracle.truffle.tools.chromeinspector updated]
+Compiling org.graalvm.compiler.runtime with javac-daemon(JDK 1.8)... [dependency org.graalvm.compiler.core updated]
+Compiling org.graalvm.compiler.core.amd64 with javac-daemon(JDK 1.8)... [dependency GRAAL_NODEINFO_PROCESSOR updated]
+Compiling org.graalvm.compiler.core.sparc with javac-daemon(JDK 1.8)... [dependency GRAAL_NODEINFO_PROCESSOR updated]
+Compiling org.graalvm.compiler.truffle.runtime with javac-daemon(JDK 1.8)... [dependency TRUFFLE_DSL_PROCESSOR updated]
+Archiving GRAAL_COMPILER... [dependency org.graalvm.compiler.core updated]
+Compiling org.graalvm.compiler.printer with javac-daemon(JDK 1.8)... [dependency GRAAL_OPTIONS_PROCESSOR updated]
+Compiling org.graalvm.compiler.core.aarch64 with javac-daemon(JDK 1.8)... [dependency GRAAL_NODEINFO_PROCESSOR updated]
+Compiling org.graalvm.compiler.asm.test with javac-daemon(JDK 1.8)... [dependency org.graalvm.compiler.api.test updated]
+Compiling org.graalvm.compiler.phases.common.test with javac-daemon(JDK 1.8)... [dependency org.graalvm.compiler.api.test updated]
+Compiling org.graalvm.compiler.microbenchmarks with javac-daemon(JDK 1.8)... [dependency org.graalvm.compiler.api.test updated]
+Compiling com.oracle.truffle.sl.test with javac-daemon(JDK 1.8)... [dependency TRUFFLE_DSL_PROCESSOR updated]
+Archiving TRUFFLE_SL... [dependency com.oracle.truffle.sl updated]
+Compiling org.graalvm.compiler.replacements.sparc with javac-daemon(JDK 1.8)... [dependency org.graalvm.compiler.replacements updated]
+Compiling org.graalvm.compiler.replacements.aarch64 with javac-daemon(JDK 1.8)... [dependency GRAAL_NODEINFO_PROCESSOR updated]
+Compiling org.graalvm.compiler.asm.sparc.test with javac-daemon(JDK 1.8)... [dependency org.graalvm.compiler.asm.test updated]
+Compiling org.graalvm.compiler.truffle.compiler with javac-daemon(JDK 1.8)... [dependency GRAAL_NODEINFO_PROCESSOR updated]
+Compiling org.graalvm.compiler.replacements.amd64 with javac-daemon(JDK 1.8)... [dependency GRAAL_NODEINFO_PROCESSOR updated]
+Compiling org.graalvm.compiler.asm.amd64.test with javac-daemon(JDK 1.8)... [dependency org.graalvm.compiler.asm.test updated]
+Compiling org.graalvm.compiler.hotspot with javac-daemon(JDK 1.8)... [dependency GRAAL_NODEINFO_PROCESSOR updated]
+Compiling org.graalvm.compiler.asm.aarch64.test with javac-daemon(JDK 1.8)... [dependency org.graalvm.compiler.asm.test updated]
+Compiling org.graalvm.compiler.core.test with javac-daemon(JDK 1.8)... [dependency GRAAL_NODEINFO_PROCESSOR updated]
+Archiving TRUFFLE_SL_TEST... [dependency com.oracle.truffle.sl.test updated]
+Compiling com.oracle.truffle.api.dsl.test with javac-daemon(JDK 1.8)... [dependency TRUFFLE_DSL_PROCESSOR updated]
+Archiving GRAAL_RUNTIME... [dependency org.graalvm.compiler.replacements updated]
+Compiling com.oracle.truffle.api.interop.java.test with javac-daemon(JDK 1.8)... [dependency TRUFFLE_DSL_PROCESSOR updated]
+Archiving GRAAL_TRUFFLE_COMMON... [dependency org.graalvm.compiler.truffle.common updated]
+Archiving GRAAL_TRUFFLE_COMPILER... [dependency org.graalvm.compiler.truffle.compiler updated]
+Archiving GRAAL_TRUFFLE_RUNTIME... [dependency org.graalvm.compiler.truffle.runtime updated]
+Archiving GRAAL_TRUFFLE_COMMON_HOTSPOT... [dependency org.graalvm.compiler.truffle.common.hotspot updated]
+Compiling org.graalvm.compiler.virtual.bench with javac-daemon(JDK 1.8)... [dependency org.graalvm.compiler.microbenchmarks updated]
+Compiling org.graalvm.compiler.jtt with javac-daemon(JDK 1.8)... [dependency org.graalvm.compiler.core.test updated]
+Compiling org.graalvm.compiler.loop.test with javac-daemon(JDK 1.8)... [dependency org.graalvm.compiler.loop updated]
+Compiling org.graalvm.compiler.nodes.test with javac-daemon(JDK 1.8)... [dependency org.graalvm.compiler.core.test updated]
+Compiling org.graalvm.compiler.replacements.test with javac-daemon(JDK 1.8)... [dependency GRAAL_NODEINFO_PROCESSOR updated]
+Compiling org.graalvm.util.test with javac-daemon(JDK 1.8)... [dependency org.graalvm.util updated]
+Compiling org.graalvm.compiler.api.directives.test with javac-daemon(JDK 1.8)... [dependency org.graalvm.compiler.core.test updated]
+Compiling org.graalvm.compiler.truffle.compiler.hotspot with javac-daemon(JDK 1.8)... [dependency GRAAL_OPTIONS_PROCESSOR updated]
+Compiling org.graalvm.compiler.hotspot.management with javac-daemon(JDK 1.8)... [dependency GRAAL_SERVICEPROVIDER_PROCESSOR updated]
+Compiling org.graalvm.compiler.hotspot.sparc with javac-daemon(JDK 1.8)... [dependency GRAAL_SERVICEPROVIDER_PROCESSOR updated]
+Compiling org.graalvm.compiler.hotspot.aarch64 with javac-daemon(JDK 1.8)... [dependency GRAAL_SERVICEPROVIDER_PROCESSOR updated]
+Compiling org.graalvm.compiler.truffle.runtime.hotspot with javac-daemon(JDK 1.8)... [dependency GRAAL_OPTIONS_PROCESSOR updated]
+Compiling org.graalvm.compiler.hotspot.amd64 with javac-daemon(JDK 1.8)... [dependency GRAAL_SERVICEPROVIDER_PROCESSOR updated]
+Compiling org.graalvm.compiler.hotspot.test with javac-daemon(JDK 1.8)... [dependency GRAAL_NODEINFO_PROCESSOR updated]
+Compiling org.graalvm.compiler.truffle.compiler.hotspot.aarch64 with javac-daemon(JDK 1.8)... [dependency GRAAL_SERVICEPROVIDER_PROCESSOR updated]
+Compiling org.graalvm.compiler.truffle.compiler.hotspot.sparc with javac-daemon(JDK 1.8)... [dependency GRAAL_SERVICEPROVIDER_PROCESSOR updated]
+Archiving GRAAL_HOTSPOT... [dependency org.graalvm.compiler.hotspot.aarch64 updated]
+Compiling org.graalvm.compiler.truffle.compiler.hotspot.amd64 with javac-daemon(JDK 1.8)... [dependency GRAAL_SERVICEPROVIDER_PROCESSOR updated]
+Compiling org.graalvm.compiler.lir.jtt with javac-daemon(JDK 1.8)... [dependency GRAAL_NODEINFO_PROCESSOR updated]
+Archiving GRAAL... [dependency org.graalvm.compiler.options updated]
+Archiving GRAAL_TRUFFLE_RUNTIME_HOTSPOT... [dependency org.graalvm.compiler.truffle.runtime.hotspot updated]
+Archiving GRAAL_TRUFFLE_COMPILER_HOTSPOT... [dependency org.graalvm.compiler.truffle.compiler.hotspot.amd64 updated]
+Compiling org.graalvm.compiler.hotspot.aarch64.test with javac-daemon(JDK 1.8)... [dependency GRAAL_NODEINFO_PROCESSOR updated]
+Compiling org.graalvm.compiler.hotspot.sparc.test with javac-daemon(JDK 1.8)... [dependency org.graalvm.compiler.hotspot updated]
+Compiling org.graalvm.compiler.core.aarch64.test with javac-daemon(JDK 1.8)... [dependency org.graalvm.compiler.lir.jtt updated]
+Compiling org.graalvm.compiler.hotspot.amd64.test with javac-daemon(JDK 1.8)... [dependency GRAAL_NODEINFO_PROCESSOR updated]
+Compiling org.graalvm.compiler.core.amd64.test with javac-daemon(JDK 1.8)... [dependency org.graalvm.compiler.lir.jtt updated]
+Compiling org.graalvm.compiler.hotspot.lir.test with javac-daemon(JDK 1.8)... [dependency org.graalvm.compiler.hotspot updated]
+Compiling com.oracle.truffle.api.instrumentation.test with javac-daemon(JDK 1.8)... [dependency TRUFFLE_DSL_PROCESSOR updated]
+Archiving GRAAL_MANAGEMENT... [dependency org.graalvm.compiler.hotspot.management updated]
+Building com.oracle.truffle.nfi.native with GNU Make... [dependency com.oracle.truffle.nfi updated]
+CONFIGURE libffi
+CC bin/api.o
+CC bin/closure.o
+CC bin/jni.o
+CC bin/lookup.o
+CC bin/signature.o
+CC bin/intrinsics.o
+MAKE libffi
+ar: `u' modifier ignored since `D' is the default (see `U')
+ar: `u' modifier ignored since `D' is the default (see `U')
+LINK bin/libtrufflenfi.so
+Compiling com.oracle.truffle.api.debug.test with javac-daemon(JDK 1.8)... [dependency TRUFFLE_DSL_PROCESSOR_INTEROP_INTERNAL updated]
+Compiling com.oracle.truffle.api.metadata.test with javac-daemon(JDK 1.8)... [dependency TRUFFLE_DSL_PROCESSOR_INTEROP_INTERNAL updated]
+Archiving TRUFFLE_NFI_NATIVE... [dependency com.oracle.truffle.nfi.native updated]
+Archiving TRUFFLE_INSTRUMENT_TEST... [dependency com.oracle.truffle.api.instrumentation.test updated]
+Compiling com.oracle.truffle.tools.test with javac-daemon(JDK 1.8)... [dependency TRUFFLE_DSL_PROCESSOR updated]
+Archiving TRUFFLE_NFI... [dependency com.oracle.truffle.nfi updated]
+Archiving TRUFFLE_GRAALVM_SUPPORT... [dependency TRUFFLE_NFI updated]
+Compiling com.oracle.truffle.nfi.test with javac-daemon(JDK 1.8)... [dependency TRUFFLE_DSL_PROCESSOR updated]
+Compiling com.oracle.truffle.api.benchmark with javac-daemon(JDK 1.8)... [dependency TRUFFLE_DSL_PROCESSOR updated]
+Compiling com.oracle.truffle.tools.profiler.test with javac-daemon(JDK 1.8)... [dependency TRUFFLE_DSL_PROCESSOR updated]
+Compiling org.graalvm.compiler.truffle.test with javac-daemon(JDK 1.8)... [dependency GRAAL_NODEINFO_PROCESSOR updated]
+Archiving TRUFFLE_PROFILER_TEST... [dependency com.oracle.truffle.tools.profiler.test updated]
+Building com.oracle.truffle.nfi.test.native with GNU Make... [dependency TRUFFLE_NFI_NATIVE updated]
+CC bin/array.o
+CC bin/errno.o
+CXX bin/global.o
+CC bin/null.o
+CC bin/numeric.o
+CXX bin/object.o
+CC bin/package.o
+CC bin/string.o
+CC bin/varargs.o
+CC bin/vector.o
+LINK bin/libnativetest.so
+Archiving GRAAL_TEST... [dependency org.graalvm.compiler.api.test updated]
+Archiving TRUFFLE_TEST_NATIVE... [dependency com.oracle.truffle.nfi.test.native updated]
+Archiving TRUFFLE_TEST... [dependency com.oracle.truffle.api.test updated]
+Compiling com.oracle.truffle.tools.chromeinspector.test with javac-daemon(JDK 1.8)... [dependency TRUFFLE_DSL_PROCESSOR updated]
+Archiving CHROMEINSPECTOR_TEST... [dependency com.oracle.truffle.tools.chromeinspector.test updated]
+Archiving GRAAL_COMPILER_WHITEBOX_MICRO_BENCHMARKS... [dependency org.graalvm.compiler.virtual.bench updated]
+Creating /home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/jdk8-with-graal from /home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/jdk1.8.0_144/linux-amd64/product
+Copying /home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal/compiler/mxbuild/dists/graal.jar to /home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/jdk8-with-graal/jre/lib/jvmci
+Copying /home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal/compiler/mxbuild/dists/graal-management.jar to /home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/jdk8-with-graal/jre/lib/jvmci
+Copying /home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal/sdk/mxbuild/dists/graal-sdk.jar to /home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/jdk8-with-graal/jre/lib/boot
+Copying /home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal/truffle/mxbuild/dists/truffle-api.jar to /home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/jdk8-with-graal/jre/lib/truffle
+\n>>> All good, now pick your JDK from /home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/jdk8-with-graal :-)
