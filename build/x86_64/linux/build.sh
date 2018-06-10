@@ -48,10 +48,11 @@ fi
 
 echo ">>> Building a JDK8 with JVMCI..."
 cd graal-jvmci-8/
-${MX} --java-home ${JAVA_HOME} build
-export JAVA_HOME=$(mx --java-home /path/to/jdk8 jdkhome)
+echo ">>>> Letting 'mx' build execute and pass-thru, even if the build fails"
+${MX} --java-home ${JAVA_HOME} build || true
+export JAVA_HOME=$(${MX} --java-home ${JAVA_HOME} jdkhome)
 
-JDK8_JVMCI_IMAGE=$(mx jdkhome)
+JDK8_JVMCI_IMAGE=$(${MX} jdkhome)
 export JAVA_HOME=${JDK8_JVMCI_IMAGE}
 echo ">>> Using ${JDK8_JVMCI_IMAGE}"
 
@@ -63,8 +64,11 @@ else
     git clone --depth=1 git@github.com:oracle/graal.git
 fi
 cd graal/compiler
+
 export JVMCI_VERSION_CHECK='ignore'
+echo "Setting environment variable JVMCI_VERSION_CHECK=${JVMCI_VERSION_CHECK}"
 ${MX} build
 ${MX} makegraaljdk ${OUTPUT_DIR}
 
-echo "\n>>> All good, now pick your JDK in ${OUTPUT_DIR} :-)"
+echo ""
+echo ">>> All good, now pick your JDK from ${OUTPUT_DIR} :-)"
