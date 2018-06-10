@@ -18,28 +18,49 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
-set -euo pipefail
+
+set -e
+set -u
+set -o
+set pipefail
+
 IFS=$'\n\t'
 
 BASEDIR=$(pwd)
 OUTPUT_DIR=${BASEDIR}/jdk8-with-graal
 echo ">>> Working in ${BASEDIR}"
 
-echo ">>> Getting mx..."
-git clone --depth=1 git@github.com:graalvm/mx.git
+if [[ -e "mx/.git" ]]; then
+    echo ">>> mx already exists: using the current version"
+else
+    echo ">>> Getting mx: mx is a build tool created for managing the development of (primarily) Java code"
+    git clone --depth=1 git@github.com:graalvm/mx.git
+fi
+
 MX=${BASEDIR}/mx/mx
 
+if [[ -e "graal-jvmci-8/.git" ]]; then
+    echo ">>> graal-jvmci-8 already exists: using the current version"
+else
+    echo ">>> Getting Graal JVMCI for JDK8"
+    git clone --depth=1 git@github.com:graalvm/graal-jvmci-8.git
+fi
+
 echo ">>> Building a JDK8 with JVMCI..."
-git clone --depth=1 git@github.com:graalvm/graal-jvmci-8.git
 cd graal-jvmci-8/
 ${MX} build
+
 JDK8_JVMCI_IMAGE=$(mx jdkhome)
 export JAVA_HOME=${JDK8_JVMCI_IMAGE}
 echo ">>> Using ${JDK8_JVMCI_IMAGE}"
 
 echo ">>> Building Graal"
 cd ${BASEDIR}
-git clone --depth=1 git@github.com:oracle/graal.git
+if [[ -e "graal/.git" ]]; then
+    echo ">>> graal already exists: using the current version"
+else
+    git clone --depth=1 git@github.com:oracle/graal.git
+fi
 cd graal/compiler
 export JVMCI_VERSION_CHECK='ignore'
 ${MX} build
