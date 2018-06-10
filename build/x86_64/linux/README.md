@@ -10,15 +10,16 @@ Run the below command to start with the building process:
 ./build.sh
 ```
 
-Save `stdout` and `stderr` log messages to a file:
+if you wish to save the `stdout` and `stderr` log messages during the build to a file:
 
 ```
 ./build.sh &> lastBuildOutput.logs
 ```
 
-To check for consistency of the build, run the above build command twice.
+To check for consistency of the build script, run the above build command more than once.
 
-Expected success messages at the end of the build:
+Expected messages at the end of a successful build:
+
 ```
 [snipped]
 .

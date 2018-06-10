@@ -1,2 +1,4 @@
 mx
 graal-jvmci-8
+graal
+jdk8-with-graal
