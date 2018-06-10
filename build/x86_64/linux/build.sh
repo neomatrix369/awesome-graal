@@ -50,6 +50,10 @@ echo ">>> Building a JDK8 with JVMCI..."
 cd graal-jvmci-8/
 echo ">>>> Letting 'mx' build execute and pass-thru, even if the build fails"
 ${MX} --java-home ${JAVA_HOME} build || true
+
+### Uncomment when error is fixed
+### ${MX} --java-home ${JAVA_HOME} unittest
+
 export JAVA_HOME=$(${MX} --java-home ${JAVA_HOME} jdkhome)
 
 JDK8_JVMCI_IMAGE=$(${MX} jdkhome)
