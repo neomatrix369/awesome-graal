@@ -48,7 +48,8 @@ fi
 
 echo ">>> Building a JDK8 with JVMCI..."
 cd graal-jvmci-8/
-${MX} build
+${MX} --java-home ${JAVA_HOME} build
+export JAVA_HOME=$(mx --java-home /path/to/jdk8 jdkhome)
 
 JDK8_JVMCI_IMAGE=$(mx jdkhome)
 export JAVA_HOME=${JDK8_JVMCI_IMAGE}
