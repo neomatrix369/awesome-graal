@@ -1,0 +1,261 @@
+allexport      	off
+braceexpand    	on
+emacs          	off
+errexit        	on
+errtrace       	off
+functrace      	off
+hashall        	on
+histexpand     	off
+history        	off
+ignoreeof      	off
+interactive-comments	on
+keyword        	off
+monitor        	off
+noclobber      	off
+noexec         	off
+noglob         	off
+nolog          	off
+notify         	off
+nounset        	on
+onecmd         	off
+physical       	off
+pipefail       	off
+posix          	off
+privileged     	off
+verbose        	off
+vi             	off
+xtrace         	off
+>>> Working in /home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux
+>>> mx already exists: using the current version
+>>> graal-jvmci-8 already exists: using the current version
+>>> Building a JDK8 with JVMCI...
+JAVA_HOME: /usr/lib/jvm/jdk1.8.0_144
+EXTRA_JAVA_HOMES:
+Building HotSpot[product, server]... [/home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/build/linux/linux_amd64_compiler2/product/libjvm.so[does not exist] does not exist]
+--------------- make command line ----------------------
+make -C /home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/make ARCH_DATA_MODEL=64 HOTSPOT_BUILD_JOBS=8 ALT_BOOTDIR=/usr/lib/jvm/jdk1.8.0_144 MAKE_VERBOSE= USER_RELEASE_SUFFIX=jvmci-unknown-sai-XPS-15-9560-2018-06-10_19-26-13_BST INCLUDE_JVMCI=true ZIP_DEBUGINFO_FILES=0 product docs
+--------------------------------------------------------
+make: Entering directory '/home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/make'
+cd /home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/make; \
+make BUILD_DIR=/home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/build/linux/linux_amd64_compiler2 BUILD_FLAVOR=product VM_TARGET=product generic_build2
+make[1]: Entering directory '/home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/make'
+INFO: ENABLE_FULL_DEBUG_SYMBOLS=1
+
+INFO: /usr/bin/objcopy cmd found so will create .debuginfo files.
+
+INFO: STRIP_POLICY=min_strip
+
+INFO: ZIP_DEBUGINFO_FILES=0
+
+mkdir -p /home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/build/linux
+cd /home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/build/linux; \
+    make -f /home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/make/linux/Makefile \
+	       LP64=1 BOOTDIR=/usr/lib/jvm/jdk1.8.0_144 OUTPUTDIR=/home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/build/linux GAMMADIR=/home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8 MAKE_VERBOSE= HOTSPOT_RELEASE_VERSION=25.71-b01 JRE_RELEASE_VERSION="1.8.0" HOTSPOT_BUILD_VERSION=internal-jvmci-unknown-sai-XPS-15-9560-2018-06-10_19-26-13_BST product
+make[2]: Entering directory '/home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/build/linux'
+INFO: ENABLE_FULL_DEBUG_SYMBOLS=1
+
+INFO: /usr/bin/objcopy cmd found so will create .debuginfo files.
+
+INFO: STRIP_POLICY=min_strip
+
+INFO: ZIP_DEBUGINFO_FILES=0
+
+cd linux_amd64_compiler2/product && make -w " LP64=1 "
+make[3]: Entering directory '/home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/build/linux/linux_amd64_compiler2/product'
+make[4]: Entering directory '/home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/build/linux/linux_amd64_compiler2/product'
+Rescanned ../generated/adfiles/linux_x86_64.ad  but encountered no changes.
+make[4]: Leaving directory '/home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/build/linux/linux_amd64_compiler2/product'
+make[4]: Entering directory '/home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/build/linux/linux_amd64_compiler2/product'
+make[4]: Nothing to be done for 'all'.
+make[4]: Leaving directory '/home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/build/linux/linux_amd64_compiler2/product'
+make[4]: Entering directory '/home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/build/linux/linux_amd64_compiler2/product'
+make[4]: Nothing to be done for 'all'.
+make[4]: Leaving directory '/home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/build/linux/linux_amd64_compiler2/product'
+make[4]: Entering directory '/home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/build/linux/linux_amd64_compiler2/product'
+INFO: ENABLE_FULL_DEBUG_SYMBOLS=1
+
+INFO: /usr/bin/objcopy cmd found so will create .debuginfo files.
+
+INFO: STRIP_POLICY=min_strip
+
+INFO: ZIP_DEBUGINFO_FILES=0
+
+if [ -d /home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/agent -a "x86" != "ia64" \
+             -a "x86" != "zero" ] ; then \
+   make -f sa.make /home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/build/linux/linux_amd64_compiler2/product/../generated/sa-jdi.jar; \
+fi
+make[5]: Entering directory '/home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/build/linux/linux_amd64_compiler2/product'
+INFO: ENABLE_FULL_DEBUG_SYMBOLS=1
+
+INFO: /usr/bin/objcopy cmd found so will create .debuginfo files.
+
+INFO: STRIP_POLICY=min_strip
+
+INFO: ZIP_DEBUGINFO_FILES=0
+
+make[5]: '/home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/build/linux/linux_amd64_compiler2/product/../generated/sa-jdi.jar' is up to date.
+make[5]: Leaving directory '/home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/build/linux/linux_amd64_compiler2/product'
+make[4]: Leaving directory '/home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/build/linux/linux_amd64_compiler2/product'
+make[4]: Entering directory '/home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/build/linux/linux_amd64_compiler2/product'
+INFO: ENABLE_FULL_DEBUG_SYMBOLS=1
+
+INFO: /usr/bin/objcopy cmd found so will create .debuginfo files.
+
+INFO: STRIP_POLICY=min_strip
+
+INFO: ZIP_DEBUGINFO_FILES=0
+
+make[4]: 'precompiled.hpp.gch' is up to date.
+make[4]: Leaving directory '/home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/build/linux/linux_amd64_compiler2/product'
+make[4]: Entering directory '/home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/build/linux/linux_amd64_compiler2/product'
+INFO: ENABLE_FULL_DEBUG_SYMBOLS=1
+
+INFO: /usr/bin/objcopy cmd found so will create .debuginfo files.
+
+INFO: STRIP_POLICY=min_strip
+
+INFO: ZIP_DEBUGINFO_FILES=0
+
+Compiling /home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/src/share/vm/code/dependencies.cpp
+Compiling /home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/src/share/vm/runtime/fprofiler.cpp
+Compiling /home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/src/share/vm/gc_implementation/shared/gcAdaptivePolicyCounters.cpp
+Compiling /home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/src/share/vm/gc_interface/gcCause.cpp
+Compiling /home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/src/share/vm/gc_implementation/shared/gcId.cpp
+Compiling /home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/src/share/vm/memory/gcLocker.cpp
+Compiling /home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/src/share/vm/services/gcNotifier.cpp
+Compiling /home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/src/share/vm/gc_implementation/shared/gcPolicyCounters.cpp
+Compiling /home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/src/share/vm/gc_implementation/shared/gcStats.cpp
+Compiling /home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/src/share/vm/gc_implementation/parallelScavenge/gcTaskManager.cpp
+Compiling /home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/src/share/vm/gc_implementation/parallelScavenge/gcTaskThread.cpp
+Compiling /home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/src/share/vm/gc_implementation/shared/gcTimer.cpp
+Compiling /home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/src/share/vm/gc_implementation/shared/gcTrace.cpp
+/home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/src/share/vm/code/dependencies.cpp: In function ‘static void Dependencies::write_dependency_to(xmlStream*, Dependencies::DepType, GrowableArray<Dependencies::DepArgument>*, Klass*)’:
+
+/home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/src/share/vm/code/dependencies.cpp:784:6: error: ‘%d’ directive writing between 1 and 10 bytes into a region of size 9 [-Werror=format-overflow=]
+
+ void Dependencies::write_dependency_to(xmlStream* xtty,
+
+      ^~~~~~~~~~~~
+
+/home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/src/share/vm/code/dependencies.cpp:784:6: note: directive argument in the range [0, 2147483647]
+
+In file included from /usr/include/stdio.h:862:0,
+
+                 from /home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/src/share/vm/prims/jni.h:39,
+
+                 from /home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/src/share/vm/utilities/globalDefinitions_gcc.hpp:28,
+
+                 from /home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/src/share/vm/utilities/globalDefinitions.hpp:33,
+
+                 from /home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/src/share/vm/utilities/debug.hpp:28,
+
+                 from /home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/src/share/vm/runtime/globals.hpp:28,
+
+                 from /home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/src/share/vm/memory/allocation.hpp:28,
+
+                 from /home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/src/share/vm/memory/iterator.hpp:28,
+
+                 from /home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/src/share/vm/memory/genOopClosures.hpp:28,
+
+                 from /home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/src/share/vm/oops/klass.hpp:28,
+
+                 from /home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/src/share/vm/runtime/handles.hpp:28,
+
+                 from /home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/src/share/vm/memory/universe.hpp:28,
+
+                 from /home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/src/share/vm/code/oopRecorder.hpp:28,
+
+                 from /home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/src/share/vm/asm/codeBuffer.hpp:28,
+
+                 from /home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/src/share/vm/asm/assembler.hpp:28,
+
+                 from /home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/src/share/vm/precompiled/precompiled.hpp:29:
+
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:34:43: note: ‘__builtin___sprintf_chk’ output between 3 and 12 bytes into a destination of size 10
+
+       __bos (__s), __fmt, __va_arg_pack ());
+
+                                           ^
+
+/home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/src/share/vm/runtime/fprofiler.cpp: In member function ‘void ThreadProfiler::vm_update(TickPosition)’:
+
+/home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/src/share/vm/runtime/fprofiler.cpp:638:56: error: argument 1 null where non-null expected [-Werror=nonnull]
+
+   bool vm_match(const char* name) const { return strcmp(name, _name) == 0; }
+
+                                                  ~~~~~~^~~~~~~~~~~~~
+
+In file included from /home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/src/share/vm/utilities/globalDefinitions_gcc.hpp:35:0,
+
+                 from /home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/src/share/vm/utilities/globalDefinitions.hpp:33,
+
+                 from /home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/src/share/vm/utilities/debug.hpp:28,
+
+                 from /home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/src/share/vm/runtime/globals.hpp:28,
+
+                 from /home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/src/share/vm/memory/allocation.hpp:28,
+
+                 from /home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/src/share/vm/memory/iterator.hpp:28,
+
+                 from /home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/src/share/vm/memory/genOopClosures.hpp:28,
+
+                 from /home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/src/share/vm/oops/klass.hpp:28,
+
+                 from /home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/src/share/vm/runtime/handles.hpp:28,
+
+                 from /home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/src/share/vm/memory/universe.hpp:28,
+
+                 from /home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/src/share/vm/code/oopRecorder.hpp:28,
+
+                 from /home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/src/share/vm/asm/codeBuffer.hpp:28,
+
+                 from /home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/src/share/vm/asm/assembler.hpp:28,
+
+                 from /home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/src/share/vm/precompiled/precompiled.hpp:29:
+
+/usr/include/string.h:136:12: note: in a call to function ‘int strcmp(const char*, const char*)’ declared here
+
+ extern int strcmp (const char *__s1, const char *__s2)
+
+            ^~~~~~
+
+Compiling /home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/src/share/vm/gc_implementation/shared/gcTraceSend.cpp
+Compiling /home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/src/share/vm/gc_implementation/shared/gcTraceTime.cpp
+Compiling /home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/src/share/vm/gc_implementation/shared/gcUtil.cpp
+Compiling /home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/src/share/vm/opto/gcm.cpp
+Compiling /home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/src/share/vm/memory/genCollectedHeap.cpp
+Compiling /home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/src/share/vm/memory/genMarkSweep.cpp
+Compiling /home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/src/share/vm/memory/genRemSet.cpp
+Compiling /home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/src/share/vm/oops/generateOopMap.cpp
+cc1plus: all warnings being treated as errors
+
+/home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/make/linux/makefiles/rules.make:149: recipe for target 'fprofiler.o' failed
+make[4]: *** [fprofiler.o] Error 1
+
+make[4]: *** Waiting for unfinished jobs....
+
+cc1plus: all warnings being treated as errors
+
+/home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/make/linux/makefiles/rules.make:149: recipe for target 'dependencies.o' failed
+make[4]: *** [dependencies.o] Error 1
+
+make[4]: Leaving directory '/home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/build/linux/linux_amd64_compiler2/product'
+/home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/make/linux/makefiles/top.make:119: recipe for target 'the_vm' failed
+make[3]: Leaving directory '/home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/build/linux/linux_amd64_compiler2/product'
+make[3]: *** [the_vm] Error 2
+
+/home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/make/linux/Makefile:303: recipe for target 'product' failed
+make[2]: *** [product] Error 2
+
+make[2]: Leaving directory '/home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/build/linux'
+Makefile:231: recipe for target 'generic_build2' failed
+make[1]: Leaving directory '/home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/make'
+make[1]: *** [generic_build2] Error 2
+
+Makefile:182: recipe for target 'product' failed
+make: Leaving directory '/home/satyasai/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux/graal-jvmci-8/make'
+make: *** [product] Error 2
+
+
+Building HotSpot[product, server] failed
+1 build tasks failed
