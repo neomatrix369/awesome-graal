@@ -1,0 +1,1231 @@
+>>> Working in /home/graal
+>>> Getting mx: mx is a build tool created for managing the development of (primarily) Java code
+Cloning into 'mx'...
+>>> Getting Graal JVMCI for JDK8
+Cloning into 'graal-jvmci-8'...
+>>> Building a JDK8 with JVMCI...
+>>>> Letting 'mx' build execute and pass-thru, even if the build Ffails
+Creating /home/graal/graal-jvmci-8/openjdk1.8.0-adoptopenjdk/linux-amd64/product from /opt/java/openjdk/jdk8u172-b11
+Downloading hsdis from ['https://lafo.ssw.uni-linz.ac.at/pub/hsdis/intel/hsdis-amd64-linux-0d031013db9a80d6c88330c42c983fbfa7053193.so']
+Downloading https://lafo.ssw.uni-linz.ac.at/pub/hsdis/intel/hsdis-amd64-linux-0d031013db9a80d6c88330c42c983fbfa7053193.so to /home/graal/.mx/cache/hsdis_0d031013db9a80d6c88330c42c983fbfa7053193.so
+JAVA_HOME: /opt/java/openjdk/jdk8u172-b11
+EXTRA_JAVA_HOMES: 
+project jdk.vm.ci.hotspot.jfr was removed as dependency JFR is missing
+Compiling com.oracle.mxtool.compilerserver with javac(JDK 1.8)... [/home/graal/mx/mxbuild/java/com.oracle.mxtool.compilerserver/bin/com/oracle/mxtool/compilerserver/ECJDaemon.class does not exist]
+Compiling jdk.vm.ci.meta with javac-daemon(JDK 1.8)... [/home/graal/graal-jvmci-8/mxbuild/jvmci/jdk.vm.ci.meta/bin/jdk/vm/ci/meta/JavaType.class does not exist]
+Compiling jdk.vm.ci.services with javac-daemon(JDK 1.8)... [/home/graal/graal-jvmci-8/mxbuild/jvmci/jdk.vm.ci.services/bin/jdk/vm/ci/services/JVMCIClassLoaderFactory.class does not exist]
+Downloading ASM_DEBUG_ALL from ['https://repo1.maven.org/maven2/org/ow2/asm/asm-debug-all/5.0.4/asm-debug-all-5.0.4.jar', 'https://search.maven.org/remotecontent?filepath=org/ow2/asm/asm-debug-all/5.0.4/asm-debug-all-5.0.4.jar']
+Downloading https://repo1.maven.org/maven2/org/ow2/asm/asm-debug-all/5.0.4/asm-debug-all-5.0.4.jar to /home/graal/.mx/cache/ASM_DEBUG_ALL_702b8525fcf81454235e5e2fa2a35f15ffc0ec7e.jar
+Downloading COMMONS_MATH3_3_2 from ['https://repo1.maven.org/maven2/org/apache/commons/commons-math3/3.2/commons-math3-3.2.jar', 'https://search.maven.org/remotecontent?filepath=org/apache/commons/commons-math3/3.2/commons-math3-3.2.jar']
+Downloading https://repo1.maven.org/maven2/org/apache/commons/commons-math3/3.2/commons-math3-3.2.jar to /home/graal/.mx/cache/COMMONS_MATH3_3_2_ec2544ab27e110d2d431bdad7d538ed509b21e62.jar
+Downloading HAMCREST from ['https://repo1.maven.org/maven2/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar', 'https://search.maven.org/remotecontent?filepath=org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar']
+Downloading https://repo1.maven.org/maven2/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar to /home/graal/.mx/cache/HAMCREST_42a25dc3219429f0e5d060061f71acb49bf010a0.jar
+Compiling com.oracle.mxtool.checkcopy with javac-daemon(JDK 1.8)... [/home/graal/mx/mxbuild/java/com.oracle.mxtool.checkcopy/bin/com/oracle/mxtool/checkcopy/CheckCopyright.class does not exist]
+Compiling jdk.vm.ci.common with javac-daemon(JDK 1.8)... [/home/graal/graal-jvmci-8/mxbuild/jvmci/jdk.vm.ci.common/bin/jdk/vm/ci/common/InitTimer.class does not exist]
+Downloading JOPTSIMPLE_4_6 from ['https://repo1.maven.org/maven2/net/sf/jopt-simple/jopt-simple/4.6/jopt-simple-4.6.jar', 'https://search.maven.org/remotecontent?filepath=net/sf/jopt-simple/jopt-simple/4.6/jopt-simple-4.6.jar']
+Downloading https://repo1.maven.org/maven2/net/sf/jopt-simple/jopt-simple/4.6/jopt-simple-4.6.jar to /home/graal/.mx/cache/JOPTSIMPLE_4_6_306816fb57cf94f108a43c95731b08934dcae15c.jar
+Downloading sources HAMCREST from ['https://repo1.maven.org/maven2/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3-sources.jar', 'https://search.maven.org/remotecontent?filepath=org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3-sources.jar']
+Downloading https://repo1.maven.org/maven2/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3-sources.jar to /home/graal/.mx/cache/HAMCREST.sources_1dc37250fbc78e23a65a67fbbaf71d2e9cbc3c0b.jar
+Downloading JACOCOCORE from ['https://repo1.maven.org/maven2/org/jacoco/org.jacoco.core/0.7.9/org.jacoco.core-0.7.9.jar', 'https://search.maven.org/remotecontent?filepath=org/jacoco/org.jacoco.core/0.7.9/org.jacoco.core-0.7.9.jar']
+Downloading https://repo1.maven.org/maven2/org/jacoco/org.jacoco.core/0.7.9/org.jacoco.core-0.7.9.jar to /home/graal/.mx/cache/JACOCOCORE_66215826a684eb6866d4c14a5a4f9c344f1d1eef.jar
+Downloading JMH_GENERATOR_ANNPROCESS_1_21 from ['https://repo1.maven.org/maven2/org/openjdk/jmh/jmh-generator-annprocess/1.21/jmh-generator-annprocess-1.21.jar', 'https://search.maven.org/remotecontent?filepath=org/openjdk/jmh/jmh-generator-annprocess/1.21/jmh-generator-annprocess-1.21.jar']
+Downloading https://repo1.maven.org/maven2/org/openjdk/jmh/jmh-generator-annprocess/1.21/jmh-generator-annprocess-1.21.jar to /home/graal/.mx/cache/JMH_GENERATOR_ANNPROCESS_1_21_7aac374614a8a76cad16b91f1a4419d31a7dcda3.jar
+Archiving JVMCI_SERVICES... [dependency jdk.vm.ci.services updated]
+Downloading JUNIT from ['https://repo1.maven.org/maven2/junit/junit/4.12/junit-4.12.jar', 'https://search.maven.org/remotecontent?filepath=junit/junit/4.12/junit-4.12.jar']
+Downloading https://repo1.maven.org/maven2/junit/junit/4.12/junit-4.12.jar to /home/graal/.mx/cache/JUNIT_2973d150c0dc1fefe998f834810d68f278ea58ec.jar
+Downloading sources JOPTSIMPLE_4_6 from ['https://repo1.maven.org/maven2/net/sf/jopt-simple/jopt-simple/4.6/jopt-simple-4.6-sources.jar', 'https://search.maven.org/remotecontent?filepath=net/sf/jopt-simple/jopt-simple/4.6/jopt-simple-4.6-sources.jar']
+Downloading https://repo1.maven.org/maven2/net/sf/jopt-simple/jopt-simple/4.6/jopt-simple-4.6-sources.jar to /home/graal/.mx/cache/JOPTSIMPLE_4_6.sources_9cd14a61d7aa7d554f251ef285a6f2c65caf7b65.jar
+Compiling jdk.vm.ci.code with javac-daemon(JDK 1.8)... [dependency jdk.vm.ci.common updated]
+Compiling jdk.vm.ci.runtime with javac-daemon(JDK 1.8)... [dependency jdk.vm.ci.code updated]
+Compiling jdk.vm.ci.aarch64 with javac-daemon(JDK 1.8)... [dependency jdk.vm.ci.code updated]
+Compiling jdk.vm.ci.sparc with javac-daemon(JDK 1.8)... [dependency jdk.vm.ci.code updated]
+Downloading sources JMH_GENERATOR_ANNPROCESS_1_21 from ['https://repo1.maven.org/maven2/org/openjdk/jmh/jmh-generator-annprocess/1.21/jmh-generator-annprocess-1.21-sources.jar', 'https://search.maven.org/remotecontent?filepath=org/openjdk/jmh/jmh-generator-annprocess/1.21/jmh-generator-annprocess-1.21-sources.jar']
+Downloading https://repo1.maven.org/maven2/org/openjdk/jmh/jmh-generator-annprocess/1.21/jmh-generator-annprocess-1.21-sources.jar to /home/graal/.mx/cache/JMH_GENERATOR_ANNPROCESS_1_21.sources_fb48e2a97df95f8b9dced54a1a37749d2a64d2ae.jar
+Compiling jdk.vm.ci.amd64 with javac-daemon(JDK 1.8)... [dependency jdk.vm.ci.code updated]
+Compiling jdk.vm.ci.hotspot with javac-daemon(JDK 1.8)... [dependency jdk.vm.ci.services updated]
+Downloading sources JUNIT from ['https://repo1.maven.org/maven2/junit/junit/4.12/junit-4.12-sources.jar', 'https://search.maven.org/remotecontent?filepath=junit/junit/4.12/junit-4.12-sources.jar']
+Downloading https://repo1.maven.org/maven2/junit/junit/4.12/junit-4.12-sources.jar to /home/graal/.mx/cache/JUNIT.sources_a6c32b40bf3d76eca54e3c601e5d1470c86fcdfa.jar
+Downloading sources JACOCOCORE from ['https://repo1.maven.org/maven2/org/jacoco/org.jacoco.core/0.7.9/org.jacoco.core-0.7.9-sources.jar', 'https://search.maven.org/remotecontent?filepath=org/jacoco/org.jacoco.core/0.7.9/org.jacoco.core-0.7.9-sources.jar']
+Downloading https://repo1.maven.org/maven2/org/jacoco/org.jacoco.core/0.7.9/org.jacoco.core-0.7.9-sources.jar to /home/graal/.mx/cache/JACOCOCORE.sources_a365ee459836b2aa18028929923923d15f0c3af9.jar
+Archiving JVMCI_API... [dependency jdk.vm.ci.runtime updated]
+Compiling jdk.vm.ci.hotspot.aarch64 with javac-daemon(JDK 1.8)... [dependency jdk.vm.ci.aarch64 updated]
+Compiling jdk.vm.ci.hotspot.amd64 with javac-daemon(JDK 1.8)... [dependency jdk.vm.ci.amd64 updated]
+Compiling jdk.vm.ci.hotspot.sparc with javac-daemon(JDK 1.8)... [dependency jdk.vm.ci.sparc updated]
+Archiving JVMCI_HOTSPOT... [dependency jdk.vm.ci.hotspot.aarch64 updated]
+Compiling jdk.vm.ci.code.test with javac-daemon(JDK 1.8)... [dependency JUNIT updated]
+Compiling com.oracle.mxtool.junit with javac-daemon(JDK 1.8)... [dependency JUNIT updated]
+Compiling jdk.vm.ci.runtime.test with javac-daemon(JDK 1.8)... [dependency JUNIT updated]
+Archiving JUNIT_TOOL... [dependency com.oracle.mxtool.junit updated]
+Compiling jdk.vm.ci.hotspot.test with javac-daemon(JDK 1.8)... [dependency JUNIT updated]
+Archiving JVMCI_TEST... [dependency jdk.vm.ci.runtime.test updated]
+Downloading JACOCOREPORT from ['https://repo1.maven.org/maven2/org/jacoco/org.jacoco.report/0.7.9/org.jacoco.report-0.7.9.jar', 'https://search.maven.org/remotecontent?filepath=org/jacoco/org.jacoco.report/0.7.9/org.jacoco.report-0.7.9.jar']
+Downloading https://repo1.maven.org/maven2/org/jacoco/org.jacoco.report/0.7.9/org.jacoco.report-0.7.9.jar to /home/graal/.mx/cache/JACOCOREPORT_8a7f78fdf2a4e58762890d8e896a9298c2980c10.jar
+Downloading sources JACOCOREPORT from ['https://repo1.maven.org/maven2/org/jacoco/org.jacoco.report/0.7.9/org.jacoco.report-0.7.9-sources.jar', 'https://search.maven.org/remotecontent?filepath=org/jacoco/org.jacoco.report/0.7.9/org.jacoco.report-0.7.9-sources.jar']
+Downloading https://repo1.maven.org/maven2/org/jacoco/org.jacoco.report/0.7.9/org.jacoco.report-0.7.9-sources.jar to /home/graal/.mx/cache/JACOCOREPORT.sources_e6703ef288523a8e63fa756d8adeaa70858d41b0.jar
+Compiling com.oracle.mxtool.jacoco with javac-daemon(JDK 1.8)... [dependency JACOCOREPORT updated]
+Downloading sources COMMONS_MATH3_3_2 from ['https://repo1.maven.org/maven2/org/apache/commons/commons-math3/3.2/commons-math3-3.2-sources.jar', 'https://search.maven.org/remotecontent?filepath=org/apache/commons/commons-math3/3.2/commons-math3-3.2-sources.jar']
+Downloading https://repo1.maven.org/maven2/org/apache/commons/commons-math3/3.2/commons-math3-3.2-sources.jar to /home/graal/.mx/cache/COMMONS_MATH3_3_2.sources_cd098e055bf192a60c81d81893893e6e31a6482f.jar
+Archiving MX_JACOCO_REPORT... [dependency com.oracle.mxtool.jacoco updated]
+WARNING: /home/graal/mx/mxbuild/dists/mx-jacoco-report.jar: avoid overwrite of about.html
+  new: /home/graal/.mx/cache/JACOCOREPORT_8a7f78fdf2a4e58762890d8e896a9298c2980c10.jar!about.html
+  old: /home/graal/.mx/cache/JACOCOCORE_66215826a684eb6866d4c14a5a4f9c344f1d1eef.jar!about.html
+WARNING: /home/graal/mx/mxbuild/dists/mx-jacoco-report.jar: avoid overwrite of about.html
+  new: /home/graal/.mx/cache/JACOCOREPORT_8a7f78fdf2a4e58762890d8e896a9298c2980c10.jar!about.html
+  old: /home/graal/.mx/cache/JACOCOCORE_66215826a684eb6866d4c14a5a4f9c344f1d1eef.jar!about.html
+Building HotSpot[product, server]... [dependency jdk.vm.ci.hotspot updated]
+--------------- make command line ----------------------
+env LANG=C \
+make -C /home/graal/graal-jvmci-8/make ARCH_DATA_MODEL=64 HOTSPOT_BUILD_JOBS=8 ALT_BOOTDIR=/opt/java/openjdk/jdk8u172-b11 MAKE_VERBOSE= USER_RELEASE_SUFFIX=jvmci-unknown-65ab0d81702e-2018-06-11_14-11-20_UTC INCLUDE_JVMCI=true ZIP_DEBUGINFO_FILES=0 product docs
+--------------------------------------------------------
+make: Entering directory `/home/graal/graal-jvmci-8/make'
+cd /home/graal/graal-jvmci-8/make; \
+make BUILD_DIR=/home/graal/graal-jvmci-8/build/linux/linux_amd64_compiler2 BUILD_FLAVOR=product VM_TARGET=product generic_build2 
+INFO: ENABLE_FULL_DEBUG_SYMBOLS=1
+
+INFO: /usr/bin/objcopy cmd found so will create .debuginfo files.
+
+INFO: STRIP_POLICY=min_strip
+
+INFO: ZIP_DEBUGINFO_FILES=0
+
+make[1]: Entering directory `/home/graal/graal-jvmci-8/make'
+mkdir -p /home/graal/graal-jvmci-8/build/linux/linux_amd64_compiler2/product
+cat /home/graal/graal-jvmci-8/make/hotspot.script | sed -e 's|@@LIBARCH@@|amd64|g' | sed -e 's|@@JDK_IMPORT_PATH@@|/java/re/j2se/1.8.0/promoted/latest/binaries/linux-amd64|g' > /home/graal/graal-jvmci-8/build/linux/linux_amd64_compiler2/product/hotspot
+chmod +x /home/graal/graal-jvmci-8/build/linux/linux_amd64_compiler2/product/hotspot
+mkdir -p /home/graal/graal-jvmci-8/build/linux
+cd /home/graal/graal-jvmci-8/build/linux; \
+    make -f /home/graal/graal-jvmci-8/make/linux/Makefile \
+	       LP64=1 BOOTDIR=/opt/java/openjdk/jdk8u172-b11 OUTPUTDIR=/home/graal/graal-jvmci-8/build/linux GAMMADIR=/home/graal/graal-jvmci-8 MAKE_VERBOSE= HOTSPOT_RELEASE_VERSION=25.71-b01 JRE_RELEASE_VERSION="1.8.0" HOTSPOT_BUILD_VERSION=internal-jvmci-unknown-65ab0d81702e-2018-06-11_14-11-20_UTC product
+INFO: ENABLE_FULL_DEBUG_SYMBOLS=1
+
+INFO: /usr/bin/objcopy cmd found so will create .debuginfo files.
+
+INFO: STRIP_POLICY=min_strip
+
+INFO: ZIP_DEBUGINFO_FILES=0
+
+make[2]: Entering directory `/home/graal/graal-jvmci-8/build/linux'
+INFO: ENABLE_FULL_DEBUG_SYMBOLS=1
+
+INFO: /usr/bin/objcopy cmd found so will create .debuginfo files.
+
+INFO: STRIP_POLICY=min_strip
+
+INFO: ZIP_DEBUGINFO_FILES=0
+
+make[3]: Entering directory `/home/graal/graal-jvmci-8/build/linux'
+make[3]: Leaving directory `/home/graal/graal-jvmci-8/build/linux'
+make -f /home/graal/graal-jvmci-8/make/linux/makefiles/buildtree.make GAMMADIR=/home/graal/graal-jvmci-8 OS_FAMILY=linux SRCARCH=x86 BUILDARCH=amd64 LIBARCH=amd64 HOTSPOT_RELEASE_VERSION=25.71-b01 HOTSPOT_BUILD_VERSION=internal-jvmci-unknown-65ab0d81702e-2018-06-11_14-11-20_UTC JRE_RELEASE_VERSION=1.8.0 ENABLE_FULL_DEBUG_SYMBOLS=1 OBJCOPY=/usr/bin/objcopy STRIP_POLICY=min_strip ZIP_DEBUGINFO_FILES=0 ZIPEXE=zip VARIANT=tiered FORCE_TIERED=1
+INFO: ENABLE_FULL_DEBUG_SYMBOLS=1
+
+INFO: /usr/bin/objcopy cmd found so will create .debuginfo files.
+
+INFO: STRIP_POLICY=min_strip
+
+INFO: ZIP_DEBUGINFO_FILES=0
+
+make[3]: Entering directory `/home/graal/graal-jvmci-8/build/linux'
+INFO: ENABLE_FULL_DEBUG_SYMBOLS=1
+
+INFO: /usr/bin/objcopy cmd found so will create .debuginfo files.
+
+INFO: STRIP_POLICY=min_strip
+
+INFO: ZIP_DEBUGINFO_FILES=0
+
+make[4]: Entering directory `/home/graal/graal-jvmci-8/build/linux/linux_amd64_compiler2/debug'
+Creating Makefile ...
+Creating directory list ../shared_dirs.lst
+Creating flags.make ...
+Creating flags_vm.make ...
+Creating vm.make ...
+Creating adlc.make ...
+Creating jvmti.make ...
+Creating trace.make ...
+Creating sa.make ...
+make[4]: Leaving directory `/home/graal/graal-jvmci-8/build/linux/linux_amd64_compiler2/debug'
+INFO: ENABLE_FULL_DEBUG_SYMBOLS=1
+
+INFO: /usr/bin/objcopy cmd found so will create .debuginfo files.
+
+INFO: STRIP_POLICY=min_strip
+
+INFO: ZIP_DEBUGINFO_FILES=0
+
+make[4]: Entering directory `/home/graal/graal-jvmci-8/build/linux/linux_amd64_compiler2/fastdebug'
+Creating Makefile ...
+Creating flags.make ...
+Creating flags_vm.make ...
+Creating vm.make ...
+Creating adlc.make ...
+Creating jvmti.make ...
+Creating trace.make ...
+Creating sa.make ...
+make[4]: Leaving directory `/home/graal/graal-jvmci-8/build/linux/linux_amd64_compiler2/fastdebug'
+INFO: ENABLE_FULL_DEBUG_SYMBOLS=1
+
+INFO: /usr/bin/objcopy cmd found so will create .debuginfo files.
+
+INFO: STRIP_POLICY=min_strip
+
+INFO: ZIP_DEBUGINFO_FILES=0
+
+make[4]: Entering directory `/home/graal/graal-jvmci-8/build/linux/linux_amd64_compiler2/optimized'
+Creating Makefile ...
+Creating flags.make ...
+Creating flags_vm.make ...
+Creating vm.make ...
+Creating adlc.make ...
+Creating jvmti.make ...
+Creating trace.make ...
+Creating sa.make ...
+make[4]: Leaving directory `/home/graal/graal-jvmci-8/build/linux/linux_amd64_compiler2/optimized'
+INFO: ENABLE_FULL_DEBUG_SYMBOLS=1
+
+INFO: /usr/bin/objcopy cmd found so will create .debuginfo files.
+
+INFO: STRIP_POLICY=min_strip
+
+INFO: ZIP_DEBUGINFO_FILES=0
+
+make[4]: Entering directory `/home/graal/graal-jvmci-8/build/linux/linux_amd64_compiler2/product'
+Creating Makefile ...
+Creating flags.make ...
+Creating flags_vm.make ...
+Creating vm.make ...
+Creating adlc.make ...
+Creating jvmti.make ...
+Creating trace.make ...
+Creating sa.make ...
+make[4]: Leaving directory `/home/graal/graal-jvmci-8/build/linux/linux_amd64_compiler2/product'
+make[3]: Leaving directory `/home/graal/graal-jvmci-8/build/linux'
+cd linux_amd64_compiler2/product && make -w " LP64=1 "
+make[3]: Entering directory `/home/graal/graal-jvmci-8/build/linux/linux_amd64_compiler2/product'
+cd /home/graal/graal-jvmci-8/build/linux/linux_amd64_compiler2/product/../generated;  cp /home/graal/graal-jvmci-8/make/linux/platform_amd64 /home/graal/graal-jvmci-8/build/linux/linux_amd64_compiler2/product/../generated/platform.current
+make[4]: Entering directory `/home/graal/graal-jvmci-8/build/linux/linux_amd64_compiler2/product'
+Compiling /home/graal/graal-jvmci-8/src/share/vm/adlc/adlparse.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/adlc/archDesc.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/adlc/arena.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/adlc/dfa.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/adlc/dict2.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/adlc/filebuff.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/adlc/forms.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/adlc/formsopt.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/adlc/formssel.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/adlc/main.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/opto/opcodes.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/adlc/output_c.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/adlc/output_h.cpp
+Making adlc
+make[4]: Leaving directory `/home/graal/graal-jvmci-8/build/linux/linux_amd64_compiler2/product'
+make[4]: Entering directory `/home/graal/graal-jvmci-8/build/linux/linux_amd64_compiler2/product'
+warning: [options] bootstrap class path not set in conjunction with -source 1.6
+
+warning: [options] bootstrap class path not set in conjunction with -source 1.6
+
+1 warning
+
+Generating /home/graal/graal-jvmci-8/build/linux/linux_amd64_compiler2/product/../generated/jvmtifiles/jvmtiEnv.hpp
+1 warning
+
+Generating /home/graal/graal-jvmci-8/build/linux/linux_amd64_compiler2/product/../generated/jvmtifiles/jvmtiEnter.cpp
+Generating /home/graal/graal-jvmci-8/build/linux/linux_amd64_compiler2/product/../generated/jvmtifiles/jvmtiEnterTrace.cpp
+Generating /home/graal/graal-jvmci-8/build/linux/linux_amd64_compiler2/product/../generated/jvmtifiles/bytecodeInterpreterWithChecks.cpp
+Generating /home/graal/graal-jvmci-8/build/linux/linux_amd64_compiler2/product/../generated/jvmtifiles/jvmti.h
+Generating /home/graal/graal-jvmci-8/build/linux/linux_amd64_compiler2/product/../generated/jvmtifiles/jvmtiEnvRecommended.cpp
+make[4]: Leaving directory `/home/graal/graal-jvmci-8/build/linux/linux_amd64_compiler2/product'
+make[4]: Entering directory `/home/graal/graal-jvmci-8/build/linux/linux_amd64_compiler2/product'
+Generating /home/graal/graal-jvmci-8/build/linux/linux_amd64_compiler2/product/../generated/tracefiles/traceEventClasses.hpp
+Generating /home/graal/graal-jvmci-8/build/linux/linux_amd64_compiler2/product/../generated/tracefiles/traceEventIds.hpp
+Generating /home/graal/graal-jvmci-8/build/linux/linux_amd64_compiler2/product/../generated/tracefiles/traceTypes.hpp
+make[4]: Leaving directory `/home/graal/graal-jvmci-8/build/linux/linux_amd64_compiler2/product'
+INFO: ENABLE_FULL_DEBUG_SYMBOLS=1
+
+INFO: /usr/bin/objcopy cmd found so will create .debuginfo files.
+
+INFO: STRIP_POLICY=min_strip
+
+INFO: ZIP_DEBUGINFO_FILES=0
+
+make[4]: Entering directory `/home/graal/graal-jvmci-8/build/linux/linux_amd64_compiler2/product'
+if [ -d /home/graal/graal-jvmci-8/agent -a "x86" != "ia64" \
+             -a "x86" != "zero" ] ; then \
+   make -f sa.make /home/graal/graal-jvmci-8/build/linux/linux_amd64_compiler2/product/../generated/sa-jdi.jar; \
+fi
+INFO: ENABLE_FULL_DEBUG_SYMBOLS=1
+
+INFO: /usr/bin/objcopy cmd found so will create .debuginfo files.
+
+INFO: STRIP_POLICY=min_strip
+
+INFO: ZIP_DEBUGINFO_FILES=0
+
+make[5]: Entering directory `/home/graal/graal-jvmci-8/build/linux/linux_amd64_compiler2/product'
+Making /home/graal/graal-jvmci-8/build/linux/linux_amd64_compiler2/product/../generated/sa-jdi.jar
+warning: [options] bootstrap class path not set in conjunction with -source 1.6
+
+Note: Some input files use unchecked or unsafe operations.
+
+Note: Recompile with -Xlint:unchecked for details.
+
+1 warning
+
+Warning: generation and use of skeletons and static stubs for JRMP
+is deprecated. Skeletons are unnecessary, and static stubs have
+been superseded by dynamically generated stubs. Users are
+encouraged to migrate away from using rmic to generate skeletons and static
+stubs. See the documentation for java.rmi.server.UnicastRemoteObject.
+make[5]: Leaving directory `/home/graal/graal-jvmci-8/build/linux/linux_amd64_compiler2/product'
+make[4]: Leaving directory `/home/graal/graal-jvmci-8/build/linux/linux_amd64_compiler2/product'
+INFO: ENABLE_FULL_DEBUG_SYMBOLS=1
+
+INFO: /usr/bin/objcopy cmd found so will create .debuginfo files.
+
+INFO: STRIP_POLICY=min_strip
+
+INFO: ZIP_DEBUGINFO_FILES=0
+
+make[4]: Entering directory `/home/graal/graal-jvmci-8/build/linux/linux_amd64_compiler2/product'
+Generating precompiled header precompiled.hpp.gch
+make[4]: Leaving directory `/home/graal/graal-jvmci-8/build/linux/linux_amd64_compiler2/product'
+INFO: ENABLE_FULL_DEBUG_SYMBOLS=1
+
+INFO: /usr/bin/objcopy cmd found so will create .debuginfo files.
+
+INFO: STRIP_POLICY=min_strip
+
+INFO: ZIP_DEBUGINFO_FILES=0
+
+make[4]: Entering directory `/home/graal/graal-jvmci-8/build/linux/linux_amd64_compiler2/product'
+Compiling /home/graal/graal-jvmci-8/src/share/vm/compiler/abstractCompiler.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/utilities/accessFlags.cpp
+Compiling ../generated/adfiles/ad_x86_64.cpp
+Compiling ../generated/adfiles/ad_x86_64_clone.cpp
+Compiling ../generated/adfiles/ad_x86_64_expand.cpp
+Compiling ../generated/adfiles/ad_x86_64_format.cpp
+Compiling ../generated/adfiles/ad_x86_64_gen.cpp
+Compiling ../generated/adfiles/ad_x86_64_misc.cpp
+Compiling ../generated/adfiles/ad_x86_64_peephole.cpp
+Compiling ../generated/adfiles/ad_x86_64_pipeline.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/gc_implementation/concurrentMarkSweep/adaptiveFreeList.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/gc_implementation/shared/adaptiveSizePolicy.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/opto/addnode.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/gc_implementation/parallelScavenge/adjoiningGenerations.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/gc_implementation/parallelScavenge/adjoiningVirtualSpaces.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/runtime/advancedThresholdPolicy.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/gc_implementation/shared/ageTable.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/gc_interface/allocTracer.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/memory/allocation.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/gc_implementation/shared/allocationStats.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/classfile/altHashing.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/oops/annotations.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/runtime/arguments.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/utilities/array.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/oops/arrayKlass.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/oops/arrayOop.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/gc_implementation/parallelScavenge/asPSOldGen.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/gc_implementation/parallelScavenge/asPSYoungGen.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/gc_implementation/parNew/asParNewGeneration.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/asm/assembler.cpp
+Compiling /home/graal/graal-jvmci-8/src/os_cpu/linux_x86/vm/assembler_linux_x86.cpp
+Compiling /home/graal/graal-jvmci-8/src/cpu/x86/vm/assembler_x86.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/runtime/atomic.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/services/attachListener.cpp
+Compiling /home/graal/graal-jvmci-8/src/os/linux/vm/attachListener_linux.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/memory/barrierSet.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/runtime/basicLock.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/ci/bcEscapeAnalyzer.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/runtime/biasedLocking.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/memory/binaryTreeDictionary.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/utilities/bitMap.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/opto/block.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/memory/blockOffsetTable.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/gc_implementation/g1/bufferingOopClosure.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/opto/buildOopMap.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/interpreter/bytecode.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/classfile/bytecodeAssembler.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/interpreter/bytecodeHistogram.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/opto/bytecodeInfo.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/interpreter/bytecodeInterpreter.cpp
+Compiling ../generated/jvmtifiles/bytecodeInterpreterWithChecks.cpp
+Compiling /home/graal/graal-jvmci-8/src/cpu/x86/vm/bytecodeInterpreter_x86.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/interpreter/bytecodeStream.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/interpreter/bytecodeTracer.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/interpreter/bytecodes.cpp
+Compiling /home/graal/graal-jvmci-8/src/cpu/x86/vm/bytecodes_x86.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/c1/c1_CFGPrinter.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/c1/c1_Canonicalizer.cpp
+Compiling /home/graal/graal-jvmci-8/src/cpu/x86/vm/c1_CodeStubs_x86.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/c1/c1_Compilation.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/c1/c1_Compiler.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/c1/c1_Defs.cpp
+Compiling /home/graal/graal-jvmci-8/src/cpu/x86/vm/c1_FpuStackSim_x86.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/c1/c1_FrameMap.cpp
+Compiling /home/graal/graal-jvmci-8/src/cpu/x86/vm/c1_FrameMap_x86.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/c1/c1_GraphBuilder.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/c1/c1_IR.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/c1/c1_Instruction.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/c1/c1_InstructionPrinter.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/c1/c1_LIR.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/c1/c1_LIRAssembler.cpp
+Compiling /home/graal/graal-jvmci-8/src/cpu/x86/vm/c1_LIRAssembler_x86.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/c1/c1_LIRGenerator.cpp
+Compiling /home/graal/graal-jvmci-8/src/cpu/x86/vm/c1_LIRGenerator_x86.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/c1/c1_LinearScan.cpp
+Compiling /home/graal/graal-jvmci-8/src/cpu/x86/vm/c1_LinearScan_x86.cpp
+Compiling /home/graal/graal-jvmci-8/src/cpu/x86/vm/c1_MacroAssembler_x86.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/c1/c1_Optimizer.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/c1/c1_RangeCheckElimination.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/c1/c1_Runtime1.cpp
+Compiling /home/graal/graal-jvmci-8/src/cpu/x86/vm/c1_Runtime1_x86.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/c1/c1_ValueMap.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/c1/c1_ValueSet.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/c1/c1_ValueStack.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/c1/c1_ValueType.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/c1/c1_globals.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/opto/c2_globals.cpp
+Compiling /home/graal/graal-jvmci-8/src/cpu/x86/vm/c2_init_x86.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/opto/c2compiler.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/gc_implementation/shared/cSpaceCounters.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/opto/callGenerator.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/opto/callnode.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/gc_implementation/parallelScavenge/cardTableExtension.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/memory/cardTableModRefBS.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/memory/cardTableRS.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/opto/cfgnode.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/opto/chaitin.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/utilities/chunkedList.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/ci/ciArray.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/ci/ciArrayKlass.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/ci/ciBaseObject.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/ci/ciCallSite.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/ci/ciConstant.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/ci/ciConstantPoolCache.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/ci/ciEnv.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/ci/ciExceptionHandler.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/ci/ciField.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/ci/ciFlags.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/ci/ciInstance.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/ci/ciInstanceKlass.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/ci/ciKlass.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/ci/ciMemberName.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/ci/ciMetadata.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/ci/ciMethod.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/ci/ciMethodBlocks.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/ci/ciMethodData.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/ci/ciMethodHandle.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/ci/ciNullObject.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/ci/ciObjArray.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/ci/ciObjArrayKlass.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/ci/ciObject.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/ci/ciObjectFactory.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/ci/ciReplay.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/ci/ciSignature.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/ci/ciStreams.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/ci/ciSymbol.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/ci/ciType.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/ci/ciTypeArray.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/ci/ciTypeArrayKlass.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/ci/ciTypeFlow.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/ci/ciUtilities.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/classfile/classFileError.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/classfile/classFileParser.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/classfile/classFileStream.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/classfile/classLoader.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/classfile/classLoaderData.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/services/classLoadingService.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/opto/classes.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/gc_implementation/concurrentMarkSweep/cmsAdaptiveSizePolicy.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/gc_implementation/concurrentMarkSweep/cmsCollectorPolicy.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/gc_implementation/concurrentMarkSweep/cmsGCAdaptivePolicyCounters.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/gc_implementation/concurrentMarkSweep/cmsLockVerifier.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/opto/coalesce.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/code/codeBlob.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/asm/codeBuffer.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/code/codeCache.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/gc_interface/collectedHeap.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/gc_implementation/g1/collectionSetChooser.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/gc_implementation/shared/collectorCounters.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/memory/collectorPolicy.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/gc_implementation/concurrentMarkSweep/compactibleFreeListSpace.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/runtime/compilationPolicy.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/opto/compile.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/compiler/compileBroker.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/compiler/compileLog.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/code/compiledIC.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/oops/compiledICHolder.cpp
+Compiling /home/graal/graal-jvmci-8/src/cpu/x86/vm/compiledIC_x86.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/compiler/compilerOracle.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/code/compressedStream.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/gc_implementation/g1/concurrentG1Refine.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/gc_implementation/g1/concurrentG1RefineThread.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/gc_implementation/shared/concurrentGCThread.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/gc_implementation/g1/concurrentMark.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/gc_implementation/concurrentMarkSweep/concurrentMarkSweepGeneration.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/gc_implementation/concurrentMarkSweep/concurrentMarkSweepThread.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/gc_implementation/g1/concurrentMarkThread.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/opto/connode.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/oops/constMethod.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/oops/constantPool.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/utilities/constantTag.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/utilities/copy.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/oops/cpCache.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/interpreter/cppInterpreter.cpp
+Compiling /home/graal/graal-jvmci-8/src/cpu/x86/vm/cppInterpreter_x86.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/utilities/debug.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/code/debugInfo.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/code/debugInfoRec.cpp
+Compiling /home/graal/graal-jvmci-8/src/cpu/x86/vm/debug_x86.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/utilities/decoder.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/utilities/decoder_elf.cpp
+Compiling /home/graal/graal-jvmci-8/src/os/linux/vm/decoder_linux.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/memory/defNewGeneration.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/classfile/defaultMethods.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/runtime/deoptimization.cpp
+Compiling /home/graal/graal-jvmci-8/src/cpu/x86/vm/depChecker_x86.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/code/dependencies.cpp
+Compiling ../generated/adfiles/dfa_x86_64.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/services/diagnosticArgument.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/services/diagnosticCommand.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/services/diagnosticFramework.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/libadt/dict.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/classfile/dictionary.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/gc_implementation/g1/dirtyCardQueue.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/compiler/disassembler.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/opto/divnode.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/opto/doCall.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/opto/domgraph.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/services/dtraceAttacher.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/runtime/dtraceJSDT.cpp
+Compiling /home/graal/graal-jvmci-8/src/os/linux/vm/dtraceJSDT_linux.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/utilities/elfFile.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/utilities/elfFuncDescTable.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/utilities/elfStringTable.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/utilities/elfSymbolTable.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/utilities/errorReporter.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/opto/escape.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/utilities/events.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/prims/evmCompat.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/code/exceptionHandlerTable.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/utilities/exceptions.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/runtime/fieldDescriptor.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/runtime/fieldType.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/memory/filemap.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/prims/forte.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/runtime/fprofiler.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/runtime/frame.cpp
+Compiling /home/graal/graal-jvmci-8/src/cpu/x86/vm/frame_x86.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/memory/freeBlockDictionary.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/gc_implementation/concurrentMarkSweep/freeChunk.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/memory/freeList.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/gc_implementation/g1/g1AllocRegion.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/gc_implementation/g1/g1Allocator.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/gc_implementation/g1/g1Allocator_ext.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/gc_implementation/g1/g1BiasedArray.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/gc_implementation/g1/g1BlockOffsetTable.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/gc_implementation/g1/g1CardCounts.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/gc_implementation/g1/g1CodeCacheRemSet.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/gc_implementation/g1/g1CollectedHeap.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/gc_implementation/g1/g1CollectedHeap_ext.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/gc_implementation/g1/g1CollectorPolicy.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/gc_implementation/g1/g1ErgoVerbose.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/gc_implementation/g1/g1GCPhaseTimes.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/gc_implementation/g1/g1HRPrinter.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/gc_implementation/g1/g1HotCardCache.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/gc_implementation/g1/g1Log.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/gc_implementation/g1/g1MMUTracker.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/gc_implementation/g1/g1MarkSweep.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/gc_implementation/g1/g1MarkSweep_ext.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/services/g1MemoryPool.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/gc_implementation/g1/g1MonitoringSupport.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/gc_implementation/g1/g1OopClosures.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/gc_implementation/g1/g1PageBasedVirtualSpace.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/gc_implementation/g1/g1ParScanThreadState.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/gc_implementation/g1/g1RegionToSpaceMapper.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/gc_implementation/g1/g1RemSet.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/gc_implementation/g1/g1RemSetSummary.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/gc_implementation/g1/g1RootProcessor.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/gc_implementation/g1/g1SATBCardTableModRefBS.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/gc_implementation/g1/g1StringDedup.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/gc_implementation/g1/g1StringDedupQueue.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/gc_implementation/g1/g1StringDedupStat.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/gc_implementation/g1/g1StringDedupTable.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/gc_implementation/g1/g1StringDedupThread.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/gc_implementation/g1/g1_globals.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/gc_implementation/shared/gSpaceCounters.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/gc_implementation/shared/gcAdaptivePolicyCounters.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/gc_interface/gcCause.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/gc_implementation/shared/gcId.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/memory/gcLocker.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/services/gcNotifier.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/gc_implementation/shared/gcPolicyCounters.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/gc_implementation/shared/gcStats.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/gc_implementation/parallelScavenge/gcTaskManager.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/gc_implementation/parallelScavenge/gcTaskThread.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/gc_implementation/shared/gcTimer.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/gc_implementation/shared/gcTrace.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/gc_implementation/shared/gcTraceSend.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/gc_implementation/shared/gcTraceTime.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/gc_implementation/shared/gcUtil.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/opto/gcm.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/memory/genCollectedHeap.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/memory/genMarkSweep.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/memory/genRemSet.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/oops/generateOopMap.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/opto/generateOptoStub.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/memory/generation.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/gc_implementation/shared/generationCounters.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/gc_implementation/parallelScavenge/generationSizer.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/memory/generationSpec.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/utilities/globalDefinitions.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/runtime/globals.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/opto/graphKit.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/utilities/growableArray.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/memory/guardedMemory.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/gc_implementation/shared/hSpaceCounters.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/runtime/handles.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/utilities/hashtable.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/memory/heap.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/services/heapDumper.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/memory/heapInspection.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/gc_implementation/g1/heapRegion.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/gc_implementation/g1/heapRegionManager.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/gc_implementation/g1/heapRegionRemSet.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/gc_implementation/g1/heapRegionSet.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/gc_implementation/g1/heapRegionType.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/utilities/histogram.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/code/icBuffer.cpp
+Compiling /home/graal/graal-jvmci-8/src/cpu/x86/vm/icBuffer_x86.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/runtime/icache.cpp
+Compiling /home/graal/graal-jvmci-8/src/cpu/x86/vm/icache_x86.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/opto/idealGraphPrinter.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/opto/idealKit.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/opto/ifg.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/opto/ifnode.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/gc_implementation/shared/immutableSpace.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/opto/indexSet.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/runtime/init.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/oops/instanceClassLoaderKlass.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/oops/instanceKlass.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/oops/instanceMirrorKlass.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/oops/instanceOop.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/oops/instanceRefKlass.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/utilities/intHisto.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/runtime/interfaceSupport.cpp
+Compiling /home/graal/graal-jvmci-8/src/cpu/x86/vm/interp_masm_x86.cpp
+Compiling /home/graal/graal-jvmci-8/src/cpu/x86/vm/interp_masm_x86_64.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/interpreter/interpreter.cpp
+Compiling /home/graal/graal-jvmci-8/src/cpu/x86/vm/interpreterRT_x86_64.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/interpreter/interpreterRuntime.cpp
+Compiling /home/graal/graal-jvmci-8/src/cpu/x86/vm/interpreter_x86_64.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/interpreter/invocationCounter.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/memory/iterator.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/runtime/java.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/classfile/javaAssertions.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/runtime/javaCalls.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/classfile/javaClasses.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/prims/jni.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/prims/jniCheck.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/prims/jniFastGetField.cpp
+Compiling /home/graal/graal-jvmci-8/src/cpu/x86/vm/jniFastGetField_x86_64.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/runtime/jniHandles.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/runtime/jniPeriodicChecker.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/prims/jvm.cpp
+Compiling /home/graal/graal-jvmci-8/src/os/linux/vm/jvm_linux.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/jvmci/jvmciCodeInstaller.cpp
+Compiling /home/graal/graal-jvmci-8/src/cpu/x86/vm/jvmciCodeInstaller_x86.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/jvmci/jvmciCompiler.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/jvmci/jvmciCompilerToVM.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/jvmci/jvmciEnv.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/jvmci/jvmciJavaClasses.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/jvmci/jvmciRuntime.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/jvmci/jvmci_globals.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/prims/jvmtiClassFileReconstituter.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/prims/jvmtiCodeBlobEvents.cpp
+Compiling ../generated/jvmtifiles/jvmtiEnter.cpp
+Compiling ../generated/jvmtifiles/jvmtiEnterTrace.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/prims/jvmtiEnv.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/prims/jvmtiEnvBase.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/prims/jvmtiEnvThreadState.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/prims/jvmtiEventController.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/prims/jvmtiExport.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/prims/jvmtiExtensions.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/prims/jvmtiGetLoadedClasses.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/prims/jvmtiImpl.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/prims/jvmtiManageCapabilities.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/prims/jvmtiRawMonitor.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/prims/jvmtiRedefineClasses.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/prims/jvmtiTagMap.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/prims/jvmtiThreadState.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/prims/jvmtiTrace.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/prims/jvmtiUtil.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/oops/klass.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/oops/klassVtable.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/opto/lcm.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/opto/library_call.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/interpreter/linkResolver.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/utilities/linkedlist.cpp
+Assembling /home/graal/graal-jvmci-8/src/os_cpu/linux_x86/vm/linux_x86_64.s
+Compiling /home/graal/graal-jvmci-8/src/share/vm/opto/live.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/classfile/loaderConstraints.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/code/location.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/opto/locknode.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/opto/loopPredicate.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/opto/loopTransform.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/opto/loopUnswitch.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/opto/loopnode.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/opto/loopopts.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/services/lowMemoryDetector.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/opto/machnode.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/opto/macro.cpp
+Compiling /home/graal/graal-jvmci-8/src/cpu/x86/vm/macroAssembler_x86.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/services/mallocSiteTable.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/services/mallocTracker.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/services/management.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/oops/markOop.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/gc_implementation/shared/markSweep.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/opto/matcher.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/opto/mathexactnode.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/services/memBaseline.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/memory/memRegion.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/services/memReporter.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/services/memTracker.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/opto/memnode.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/services/memoryManager.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/services/memoryPool.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/services/memoryService.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/runtime/memprofiler.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/memory/metachunk.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/oops/metadata.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/classfile/metadataOnStackMark.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/memory/metaspace.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/memory/metaspaceCounters.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/memory/metaspaceShared.cpp
+Compiling /home/graal/graal-jvmci-8/src/cpu/x86/vm/metaspaceShared_x86_64.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/memory/metaspaceTracer.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/oops/method.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/prims/methodComparator.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/oops/methodCounters.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/oops/methodData.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/prims/methodHandles.cpp
+Compiling /home/graal/graal-jvmci-8/src/cpu/x86/vm/methodHandles_x86.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/compiler/methodLiveness.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/runtime/monitorChunk.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/opto/mulnode.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/opto/multnode.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/gc_implementation/shared/mutableNUMASpace.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/gc_implementation/shared/mutableSpace.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/runtime/mutex.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/runtime/mutexLocker.cpp
+Compiling /home/graal/graal-jvmci-8/src/os/linux/vm/mutex_linux.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/utilities/nativeCallStack.cpp
+Compiling /home/graal/graal-jvmci-8/src/cpu/x86/vm/nativeInst_x86.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/prims/nativeLookup.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/code/nmethod.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/services/nmtCommon.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/services/nmtDCmd.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/opto/node.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/utilities/numberSeq.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/oops/objArrayKlass.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/oops/objArrayOop.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/gc_implementation/shared/objectCountEventSender.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/runtime/objectMonitor.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/gc_implementation/parallelScavenge/objectStartArray.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/oops/oop.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/memory/oopFactory.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/compiler/oopMap.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/interpreter/oopMapCache.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/code/oopRecorder.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/oops/oopsHierarchy.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/opto/opcodes.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/runtime/orderAccess.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/runtime/os.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/runtime/osThread.cpp
+Compiling /home/graal/graal-jvmci-8/src/os/linux/vm/osThread_linux.cpp
+Compiling /home/graal/graal-jvmci-8/src/os/linux/vm/os_linux.cpp
+Compiling /home/graal/graal-jvmci-8/src/os_cpu/linux_x86/vm/os_linux_x86.cpp
+Compiling /home/graal/graal-jvmci-8/src/os/posix/vm/os_posix.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/utilities/ostream.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/opto/output.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/gc_implementation/parNew/parCardTableModRefBS.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/gc_implementation/shared/parGCAllocBuffer.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/gc_implementation/parallelScavenge/parMarkBitMap.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/gc_implementation/parNew/parNewGeneration.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/gc_implementation/parallelScavenge/parallelScavengeHeap.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/runtime/park.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/opto/parse1.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/opto/parse2.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/opto/parse3.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/opto/parseHelper.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/prims/wbtestmethods/parserTests.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/code/pcDesc.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/gc_implementation/parallelScavenge/pcTasks.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/prims/perf.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/runtime/perfData.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/runtime/perfMemory.cpp
+Compiling /home/graal/graal-jvmci-8/src/os/linux/vm/perfMemory_linux.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/opto/phase.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/opto/phaseX.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/classfile/placeholders.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/libadt/port.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/opto/postaloc.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/utilities/preserveException.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/prims/privilegedStack.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/gc_implementation/concurrentMarkSweep/promotionInfo.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/gc_implementation/parallelScavenge/psAdaptiveSizePolicy.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/gc_implementation/parallelScavenge/psCompactionManager.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/gc_implementation/parallelScavenge/psGCAdaptivePolicyCounters.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/gc_implementation/parallelScavenge/psGenerationCounters.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/gc_implementation/parallelScavenge/psMarkSweep.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/gc_implementation/parallelScavenge/psMarkSweepDecorator.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/services/psMemoryPool.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/gc_implementation/parallelScavenge/psOldGen.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/gc_implementation/parallelScavenge/psParallelCompact.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/gc_implementation/parallelScavenge/psPromotionLAB.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/gc_implementation/parallelScavenge/psPromotionManager.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/gc_implementation/parallelScavenge/psScavenge.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/gc_implementation/parallelScavenge/psTasks.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/gc_implementation/parallelScavenge/psVirtualspace.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/gc_implementation/parallelScavenge/psYoungGen.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/gc_implementation/g1/ptrQueue.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/utilities/quickSort.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/memory/referencePolicy.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/memory/referenceProcessor.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/runtime/reflection.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/runtime/reflectionUtils.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/opto/reg_split.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/opto/regalloc.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/asm/register.cpp
+Compiling /home/graal/graal-jvmci-8/src/cpu/x86/vm/registerMap_x86.cpp
+Compiling /home/graal/graal-jvmci-8/src/cpu/x86/vm/register_definitions_x86.cpp
+Compiling /home/graal/graal-jvmci-8/src/cpu/x86/vm/register_x86.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/opto/regmask.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/code/relocInfo.cpp
+Compiling /home/graal/graal-jvmci-8/src/cpu/x86/vm/relocInfo_x86.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/runtime/relocator.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/opto/replacednodes.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/classfile/resolutionErrors.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/memory/resourceArea.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/interpreter/rewriter.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/runtime/rframe.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/opto/rootnode.cpp
+Compiling /home/graal/graal-jvmci-8/src/cpu/x86/vm/rtmLocking.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/opto/runtime.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/services/runtimeService.cpp
+Compiling /home/graal/graal-jvmci-8/src/cpu/x86/vm/runtime_x86_64.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/runtime/safepoint.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/gc_implementation/g1/satbQueue.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/code/scopeDesc.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/runtime/serviceThread.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/libadt/set.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/memory/sharedHeap.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/classfile/sharedPathsMiscInfo.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/runtime/sharedRuntime.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/runtime/sharedRuntimeTrans.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/runtime/sharedRuntimeTrig.cpp
+Compiling /home/graal/graal-jvmci-8/src/cpu/x86/vm/sharedRuntime_x86.cpp
+Compiling /home/graal/graal-jvmci-8/src/cpu/x86/vm/sharedRuntime_x86_64.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/runtime/signature.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/runtime/simpleThresholdPolicy.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/utilities/sizes.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/memory/space.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/gc_implementation/shared/spaceCounters.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/gc_implementation/shared/spaceDecorator.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/gc_implementation/g1/sparsePRT.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/memory/specialized_oop_closures.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/opto/split_if.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/classfile/stackMapFrame.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/classfile/stackMapTable.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/runtime/stackValue.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/runtime/stackValueCollection.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/runtime/statSampler.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/utilities/stringUtils.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/opto/stringopts.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/runtime/stubCodeGenerator.cpp
+Compiling /home/graal/graal-jvmci-8/src/cpu/x86/vm/stubGenerator_x86_64.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/runtime/stubRoutines.cpp
+Compiling /home/graal/graal-jvmci-8/src/os/linux/vm/stubRoutines_linux.cpp
+Compiling /home/graal/graal-jvmci-8/src/cpu/x86/vm/stubRoutines_x86.cpp
+Compiling /home/graal/graal-jvmci-8/src/cpu/x86/vm/stubRoutines_x86_64.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/code/stubs.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/opto/subnode.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/opto/superword.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/gc_implementation/g1/survRateGroup.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/gc_implementation/shared/suspendibleThreadSet.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/runtime/sweeper.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/oops/symbol.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/classfile/symbolTable.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/runtime/synchronizer.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/classfile/systemDictionary.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/runtime/task.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/utilities/taskqueue.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/interpreter/templateInterpreter.cpp
+Compiling /home/graal/graal-jvmci-8/src/cpu/x86/vm/templateInterpreter_x86.cpp
+Compiling /home/graal/graal-jvmci-8/src/cpu/x86/vm/templateInterpreter_x86_64.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/interpreter/templateTable.cpp
+Compiling /home/graal/graal-jvmci-8/src/cpu/x86/vm/templateTable_x86_64.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/memory/tenuredGeneration.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/runtime/thread.cpp
+Compiling /home/graal/graal-jvmci-8/src/os/linux/vm/threadCritical_linux.cpp
+Compiling /home/graal/graal-jvmci-8/src/os_cpu/linux_x86/vm/threadLS_linux_x86.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/memory/threadLocalAllocBuffer.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/runtime/threadLocalStorage.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/services/threadService.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/runtime/thread_ext.cpp
+Compiling /home/graal/graal-jvmci-8/src/os_cpu/linux_x86/vm/thread_linux_x86.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/utilities/ticks.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/runtime/timer.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/opto/type.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/oops/typeArrayKlass.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/oops/typeArrayOop.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/runtime/unhandledOops.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/memory/universe.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/prims/unsafe.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/utilities/utf8.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/opto/vectornode.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/libadt/vectset.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/classfile/verificationType.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/classfile/verifier.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/runtime/vframe.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/runtime/vframeArray.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/runtime/vframe_hp.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/services/virtualMemoryTracker.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/runtime/virtualspace.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/gc_implementation/concurrentMarkSweep/vmCMSOperations.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/utilities/vmError.cpp
+Compiling /home/graal/graal-jvmci-8/src/os/linux/vm/vmError_linux.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/gc_implementation/shared/vmGCOperations.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/gc_implementation/parallelScavenge/vmPSOperations.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/runtime/vmStructs.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/classfile/vmSymbols.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/runtime/vmThread.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/runtime/vm_operations.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/gc_implementation/g1/vm_operations_g1.cpp
+Compiling /home/graal/graal-jvmci-8/src/os_cpu/linux_x86/vm/vm_version_linux_x86.cpp
+Compiling /home/graal/graal-jvmci-8/src/cpu/x86/vm/vm_version_x86.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/code/vmreg.cpp
+Compiling /home/graal/graal-jvmci-8/src/cpu/x86/vm/vmreg_x86.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/code/vtableStubs.cpp
+Compiling /home/graal/graal-jvmci-8/src/cpu/x86/vm/vtableStubs_x86_64.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/prims/whitebox.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/prims/whitebox_ext.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/utilities/workgroup.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/utilities/xmlstream.cpp
+Compiling /home/graal/graal-jvmci-8/src/share/vm/utilities/yieldingWorkgroup.cpp
+rm -f mapfile_ext
+touch mapfile_ext
+if [ -f /home/graal/graal-jvmci-8/make/closed/linux/makefiles/mapfile-ext ]; then \
+  cat /home/graal/graal-jvmci-8/make/closed/linux/makefiles/mapfile-ext > mapfile_ext; \
+fi
+Making signal interposition lib...
+Making SA debugger back-end...
+**NOTICE** Dtrace support disabled: /usr/include/sys/sdt.h not found
+Compiling /home/graal/graal-jvmci-8/src/share/vm/runtime/vm_version.cpp
+/bin/sh: 1: defined-only: not found
+
+rm -f mapfile
+awk '{ if ($0 ~ "INSERT VTABLE SYMBOLS HERE")	\
+                 { system ("cat mapfile_ext"); system ("cat vm.def"); } \
+               else					\
+                 { print $0 }				\
+             }' > mapfile < /home/graal/graal-jvmci-8/make/linux/makefiles/mapfile-vers-product
+rm -f mapfile_reorder
+cat mapfile > mapfile_reorder
+Linking vm...
+make[4]: Leaving directory `/home/graal/graal-jvmci-8/build/linux/linux_amd64_compiler2/product'
+All done.
+make[3]: Leaving directory `/home/graal/graal-jvmci-8/build/linux/linux_amd64_compiler2/product'
+make[2]: Leaving directory `/home/graal/graal-jvmci-8/build/linux'
+make[1]: Leaving directory `/home/graal/graal-jvmci-8/make'
+cd /home/graal/graal-jvmci-8/build/linux; \
+    make -f /home/graal/graal-jvmci-8/make/linux/Makefile \
+	       LP64=1 BOOTDIR=/opt/java/openjdk/jdk8u172-b11 OUTPUTDIR=/home/graal/graal-jvmci-8/build/linux GAMMADIR=/home/graal/graal-jvmci-8 MAKE_VERBOSE= HOTSPOT_RELEASE_VERSION=25.71-b01 JRE_RELEASE_VERSION="1.8.0" HOTSPOT_BUILD_VERSION=internal-jvmci-unknown-65ab0d81702e-2018-06-11_14-11-20_UTC BUILD_FLAVOR=product docs
+INFO: ENABLE_FULL_DEBUG_SYMBOLS=1
+
+INFO: /usr/bin/objcopy cmd found so will create .debuginfo files.
+
+INFO: STRIP_POLICY=min_strip
+
+INFO: ZIP_DEBUGINFO_FILES=0
+
+make[1]: Entering directory `/home/graal/graal-jvmci-8/build/linux'
+make -f /home/graal/graal-jvmci-8/make/linux/makefiles/jvmti.make -w " LP64=1 " GAMMADIR=/home/graal/graal-jvmci-8 OS_FAMILY=linux SRCARCH=x86 BUILDARCH=amd64 LIBARCH=amd64 HOTSPOT_RELEASE_VERSION=25.71-b01 HOTSPOT_BUILD_VERSION=internal-jvmci-unknown-65ab0d81702e-2018-06-11_14-11-20_UTC JRE_RELEASE_VERSION=1.8.0 ENABLE_FULL_DEBUG_SYMBOLS=1 OBJCOPY=/usr/bin/objcopy STRIP_POLICY=min_strip ZIP_DEBUGINFO_FILES=0 ZIPEXE=zip JvmtiOutDir=linux_amd64_docs BUILD_FLAVOR=product jvmtidocs
+make[2]: Entering directory `/home/graal/graal-jvmci-8/build/linux'
+warning: [options] bootstrap class path not set in conjunction with -source 1.6
+
+1 warning
+
+Generating linux_amd64_docs/jvmti.html
+make[2]: Leaving directory `/home/graal/graal-jvmci-8/build/linux'
+make[1]: Leaving directory `/home/graal/graal-jvmci-8/build/linux'
+make: Leaving directory `/home/graal/graal-jvmci-8/make'
+Downloading JMH_1_21 from ['https://repo1.maven.org/maven2/org/openjdk/jmh/jmh-core/1.21/jmh-core-1.21.jar', 'https://search.maven.org/remotecontent?filepath=org/openjdk/jmh/jmh-core/1.21/jmh-core-1.21.jar']
+Downloading https://repo1.maven.org/maven2/org/openjdk/jmh/jmh-core/1.21/jmh-core-1.21.jar to /home/graal/.mx/cache/JMH_1_21_442447101f63074c61063858033fbfde8a076873.jar
+Archiving JVM_PRODUCT_SERVER... [dependency hotspot updated]
+Downloading sources JMH_1_21 from ['https://repo1.maven.org/maven2/org/openjdk/jmh/jmh-core/1.21/jmh-core-1.21-sources.jar', 'https://search.maven.org/remotecontent?filepath=org/openjdk/jmh/jmh-core/1.21/jmh-core-1.21-sources.jar']
+Downloading https://repo1.maven.org/maven2/org/openjdk/jmh/jmh-core/1.21/jmh-core-1.21-sources.jar to /home/graal/.mx/cache/JMH_1_21.sources_a6fe84788bf8cf762b0e561bf48774c2ea74e370.jar
+Compiling com.oracle.mxtool.jmh_1_21 with javac-daemon(JDK 1.8)... [dependency JMH_1_21 updated]
+Archiving MX_MICRO_BENCHMARKS... [dependency com.oracle.mxtool.jmh_1_21 updated]
+Skipping unit tests, won't run them.
+>>> Using /home/graal/graal-jvmci-8/openjdk1.8.0-adoptopenjdk/linux-amd64/product
+>>> Building Graal
+Cloning into 'graal'...
+Setting environment variable JVMCI_VERSION_CHECK=ignore
+JAVA_HOME: /home/graal/graal-jvmci-8/openjdk1.8.0-adoptopenjdk/linux-amd64/product
+EXTRA_JAVA_HOMES: 
+project org.graalvm.compiler.hotspot.jdk11 was removed as JDK 11 is not available
+project org.graalvm.compiler.serviceprovider.jdk9 was removed as JDK 9 is not available
+project org.graalvm.compiler.lir.aarch64.jdk11 was removed as JDK 11 is not available
+project com.oracle.truffle.dsl.processor.jdk9 was removed as JDK 9 is not available
+project org.graalvm.compiler.replacements.jdk9.test was removed as JDK 9 is not available
+project org.graalvm.compiler.hotspot.management.jdk11 was removed as JDK 11 is not available
+project org.graalvm.compiler.hotspot.jdk9 was removed as JDK 9 is not available
+Compiling org.graalvm.options with javac-daemon(JDK 1.8)... [/home/graal/graal/sdk/mxbuild/src/org.graalvm.options/bin/org/graalvm/options/OptionType.class does not exist]
+Compiling org.graalvm.collections with javac-daemon(JDK 1.8)... [/home/graal/graal/sdk/mxbuild/src/org.graalvm.collections/bin/org/graalvm/collections/UnmodifiableEconomicSet.class does not exist]
+Compiling org.graalvm.compiler.api.directives with javac-daemon(JDK 1.8)... [/home/graal/graal/compiler/mxbuild/src/org.graalvm.compiler.api.directives/bin/org/graalvm/compiler/api/directives/GraalDirectives.class does not exist]
+Compiling org.graalvm.compiler.nodeinfo with javac-daemon(JDK 1.8)... [/home/graal/graal/compiler/mxbuild/src/org.graalvm.compiler.nodeinfo/bin/org/graalvm/compiler/nodeinfo/NodeInfo.class does not exist]
+Downloading JAVA_ALLOCATION_INSTRUMENTER from ['https://lafo.ssw.uni-linz.ac.at/pub/graal-external-deps/java-allocation-instrumenter/java-allocation-instrumenter-8f0db117e64e.jar']
+Downloading https://lafo.ssw.uni-linz.ac.at/pub/graal-external-deps/java-allocation-instrumenter/java-allocation-instrumenter-8f0db117e64e.jar to /home/graal/.mx/cache/JAVA_ALLOCATION_INSTRUMENTER_476d9a44cd19d6b55f81571077dfa972a4f8a083.jar
+Compiling org.graalvm.word with javac-daemon(JDK 1.8)... [/home/graal/graal/sdk/mxbuild/src/org.graalvm.word/bin/org/graalvm/word/Pointer.class does not exist]
+Downloading ANTLR4 from ['https://repo1.maven.org/maven2/org/antlr/antlr4-runtime/4.7/antlr4-runtime-4.7.jar', 'https://search.maven.org/remotecontent?filepath=org/antlr/antlr4-runtime/4.7/antlr4-runtime-4.7.jar']
+Downloading https://repo1.maven.org/maven2/org/antlr/antlr4-runtime/4.7/antlr4-runtime-4.7.jar to /home/graal/.mx/cache/ANTLR4_30b13b7efc55b7feea667691509cf59902375001.jar
+Compiling org.graalvm.compiler.processor with javac-daemon(JDK 1.8)... [/home/graal/graal/compiler/mxbuild/src/org.graalvm.compiler.processor/bin/org/graalvm/compiler/processor/AbstractProcessor.class does not exist]
+Downloading ASM5 from ['https://lafo.ssw.uni-linz.ac.at/pub/graal-external-deps/asm-5.0.4.jar']
+Downloading https://lafo.ssw.uni-linz.ac.at/pub/graal-external-deps/asm-5.0.4.jar to /home/graal/.mx/cache/ASM5_0da08b8cce7bbf903602a25a3a163ae252435795.jar
+Downloading NanoHTTPD from ['https://search.maven.org/remotecontent?filepath=org/nanohttpd/nanohttpd/2.3.1/nanohttpd-2.3.1.jar']
+Downloading https://search.maven.org/remotecontent?filepath=org/nanohttpd/nanohttpd/2.3.1/nanohttpd-2.3.1.jar to /home/graal/.mx/cache/NanoHTTPD_a8d54d1ca554a77f377eff6bf9e16ca8383c8f6c.jar
+Compiling com.oracle.truffle.nfi.types with javac-daemon(JDK 1.8)... [/home/graal/graal/truffle/mxbuild/src/com.oracle.truffle.nfi.types/bin/com/oracle/truffle/nfi/types/Parser.class does not exist]
+Compiling org.graalvm.graphio with javac-daemon(JDK 1.8)... [/home/graal/graal/compiler/mxbuild/src/org.graalvm.graphio/bin/org/graalvm/graphio/GraphBlocks.class does not exist]
+Downloading NanoHTTPD-WebSocket from ['https://search.maven.org/remotecontent?filepath=org/nanohttpd/nanohttpd-websocket/2.3.1/nanohttpd-websocket-2.3.1.jar']
+Downloading https://search.maven.org/remotecontent?filepath=org/nanohttpd/nanohttpd-websocket/2.3.1/nanohttpd-websocket-2.3.1.jar to /home/graal/.mx/cache/NanoHTTPD-WebSocket_f2cfb09cee12469ff64f0d698b13de19903bb4f7.jar
+Downloading TruffleJSON from ['https://lafo.ssw.uni-linz.ac.at/pub/graal-external-deps/trufflejson-20180130.jar']
+Downloading https://lafo.ssw.uni-linz.ac.at/pub/graal-external-deps/trufflejson-20180130.jar to /home/graal/.mx/cache/TruffleJSON_8819cea8bfe22c9c63f55465e296b3855ea41786.jar
+Downloading JLINE from ['https://repo1.maven.org/maven2/jline/jline/2.14.5/jline-2.14.5.jar', 'https://search.maven.org/remotecontent?filepath=jline/jline/2.14.5/jline-2.14.5.jar']
+Downloading https://repo1.maven.org/maven2/jline/jline/2.14.5/jline-2.14.5.jar to /home/graal/.mx/cache/JLINE_fdedd5f2522122102f0b3db85fe7aa563a009926.jar
+Archiving TRUFFLE_PROFILER_GRAALVM_SUPPORT... [/home/graal/graal/tools/mxbuild/dists/truffle-profiler-graalvm-support.tar does not exist]
+Archiving CHROMEINSPECTOR_GRAALVM_SUPPORT... [/home/graal/graal/tools/mxbuild/dists/chromeinspector-graalvm-support.tar does not exist]
+Compiling org.graalvm.compiler.serviceprovider with javac-daemon(JDK 1.8)... [/home/graal/graal/compiler/mxbuild/src/org.graalvm.compiler.serviceprovider/bin/org/graalvm/compiler/serviceprovider/GraalServices.class does not exist]
+Archiving GRAAL_PROCESSOR_COMMON... [dependency org.graalvm.compiler.processor updated]
+Compiling org.graalvm.compiler.serviceprovider.processor with javac-daemon(JDK 1.8)... [dependency org.graalvm.compiler.processor updated]
+Compiling org.graalvm.compiler.options.processor with javac-daemon(JDK 1.8)... [dependency org.graalvm.compiler.processor updated]
+Compiling org.graalvm.compiler.core.match.processor with javac-daemon(JDK 1.8)... [dependency org.graalvm.compiler.processor updated]
+Archiving GRAAL_NODEINFO... [dependency org.graalvm.compiler.nodeinfo updated]
+Compiling org.graalvm.compiler.nodeinfo.processor with javac-daemon(JDK 1.8)... [dependency org.graalvm.compiler.processor updated]
+Archiving WORD_API... [dependency org.graalvm.word updated]
+Compiling org.graalvm.nativeimage with javac-daemon(JDK 1.8)... [dependency org.graalvm.word updated]
+Archiving GRAAL_GRAPHIO... [dependency org.graalvm.graphio updated]
+Compiling org.graalvm.compiler.api.runtime with javac-daemon(JDK 1.8)... [/home/graal/graal/compiler/mxbuild/src/org.graalvm.compiler.api.runtime/bin/org/graalvm/compiler/api/runtime/GraalRuntime.class does not exist]
+Compiling org.graalvm.compiler.replacements.processor with javac-daemon(JDK 1.8)... [dependency org.graalvm.compiler.processor updated]
+Compiling org.graalvm.compiler.bytecode with javac-daemon(JDK 1.8)... [/home/graal/graal/compiler/mxbuild/src/org.graalvm.compiler.bytecode/bin/org/graalvm/compiler/bytecode/BytecodeStream.class does not exist]
+Compiling org.graalvm.polyglot with javac-daemon(JDK 1.8)... [dependency org.graalvm.options updated]
+Archiving GRAAL_SERVICEPROVIDER_PROCESSOR... [dependency org.graalvm.compiler.serviceprovider.processor updated]
+Compiling org.graalvm.compiler.api.replacements with javac-daemon(JDK 1.8)... [/home/graal/graal/compiler/mxbuild/src/org.graalvm.compiler.api.replacements/bin/org/graalvm/compiler/api/replacements/MethodSubstitution.class does not exist]
+Compiling org.graalvm.collections.test with javac-daemon(JDK 1.8)... [dependency org.graalvm.collections updated]
+Archiving GRAAL_OPTIONS_PROCESSOR... [dependency org.graalvm.compiler.options.processor updated]
+Archiving GRAAL_NODEINFO_PROCESSOR... [dependency org.graalvm.compiler.nodeinfo.processor updated]
+Compiling org.graalvm.micro.benchmarks with javac-daemon(JDK 1.8)... [/home/graal/graal/compiler/mxbuild/src/org.graalvm.micro.benchmarks/bin/micro/benchmarks/MathFunctionBenchmark.class does not exist]
+Archiving GRAAL_SERVICEPROVIDER... [dependency org.graalvm.compiler.serviceprovider updated]
+Archiving GRAAL_COMPILER_MATCH_PROCESSOR... [dependency org.graalvm.compiler.core.match.processor updated]
+Archiving GRAAL_REPLACEMENTS_PROCESSOR... [dependency org.graalvm.compiler.replacements.processor updated]
+Compiling org.graalvm.compiler.api.test with javac-daemon(JDK 1.8)... [dependency org.graalvm.compiler.api.runtime updated]
+Archiving GRAAL_SDK... [dependency org.graalvm.polyglot updated]
+Compiling org.graalvm.launcher with javac-daemon(JDK 1.8)... [dependency org.graalvm.polyglot updated]
+Compiling com.oracle.truffle.sl.launcher with javac-daemon(JDK 1.8)... [dependency GRAAL_SDK updated]
+Compiling org.graalvm.polyglot.tck with javac-daemon(JDK 1.8)... [dependency org.graalvm.polyglot updated]
+Compiling com.oracle.truffle.api with javac-daemon(JDK 1.8)... [dependency GRAAL_SDK updated]
+Compiling org.graalvm.util with javac-daemon(JDK 1.8)... [dependency GRAAL_SDK updated]
+Archiving TRUFFLE_SL_LAUNCHER... [dependency com.oracle.truffle.sl.launcher updated]
+Archiving POLYGLOT_TCK... [dependency org.graalvm.polyglot.tck updated]
+Archiving SDK_TEST... [dependency org.graalvm.collections.test updated]
+Archiving LAUNCHER_COMMON... [dependency org.graalvm.launcher updated]
+Compiling org.graalvm.compiler.options with javac-daemon(JDK 1.8)... [dependency GRAAL_SDK updated]
+Compiling com.oracle.truffle.tck.common with javac-daemon(JDK 1.8)... [dependency POLYGLOT_TCK updated]
+Compiling com.oracle.truffle.sl.tck with javac-daemon(JDK 1.8)... [dependency POLYGLOT_TCK updated]
+Archiving GRAAL_OPTIONS... [dependency org.graalvm.compiler.options updated]
+Compiling com.oracle.truffle.tck.tests with javac-daemon(JDK 1.8)... [dependency POLYGLOT_TCK updated]
+Compiling org.graalvm.compiler.debug with javac-daemon(JDK 1.8)... [dependency GRAAL_OPTIONS_PROCESSOR updated]
+Compiling org.graalvm.compiler.options.test with javac-daemon(JDK 1.8)... [dependency org.graalvm.compiler.options updated]
+Archiving TRUFFLE_SL_TCK... [dependency com.oracle.truffle.sl.tck updated]
+Compiling com.oracle.truffle.api.profiles with javac-daemon(JDK 1.8)... [dependency com.oracle.truffle.api updated]
+Archiving TRUFFLE_TCK_COMMON... [dependency com.oracle.truffle.tck.common updated]
+Archiving GRAAL_COMPILER_MICRO_BENCHMARKS... [dependency org.graalvm.micro.benchmarks updated]
+Compiling com.oracle.truffle.api.dsl with javac-daemon(JDK 1.8)... [dependency com.oracle.truffle.api updated]
+Compiling com.oracle.truffle.api.utilities with javac-daemon(JDK 1.8)... [dependency com.oracle.truffle.api updated]
+Archiving TRUFFLE_TCK_TESTS... [dependency com.oracle.truffle.tck.tests updated]
+Compiling com.oracle.truffle.api.instrumentation with javac-daemon(JDK 1.8)... [dependency com.oracle.truffle.api.profiles updated]
+Compiling org.graalvm.compiler.test with javac-daemon(JDK 1.8)... [dependency org.graalvm.compiler.debug updated]
+Compiling org.graalvm.compiler.core.common with javac-daemon(JDK 1.8)... [dependency GRAAL_OPTIONS_PROCESSOR updated]
+Compiling org.graalvm.compiler.debug.test with javac-daemon(JDK 1.8)... [dependency org.graalvm.compiler.debug updated]
+Compiling com.oracle.truffle.dsl.processor with javac-daemon(JDK 1.8)... [dependency com.oracle.truffle.api.dsl updated]
+Compiling org.graalvm.compiler.graph with javac-daemon(JDK 1.8)... [dependency GRAAL_OPTIONS_PROCESSOR updated]
+Compiling org.graalvm.compiler.asm with javac-daemon(JDK 1.8)... [dependency org.graalvm.compiler.core.common updated]
+Compiling org.graalvm.compiler.asm.amd64 with javac-daemon(JDK 1.8)... [dependency org.graalvm.compiler.asm updated]
+Compiling org.graalvm.compiler.asm.aarch64 with javac-daemon(JDK 1.8)... [dependency org.graalvm.compiler.asm updated]
+Compiling org.graalvm.compiler.asm.sparc with javac-daemon(JDK 1.8)... [dependency org.graalvm.compiler.asm updated]
+Archiving TRUFFLE_DSL_PROCESSOR_INTERNAL... [dependency com.oracle.truffle.dsl.processor updated]
+Compiling org.graalvm.compiler.graph.test with javac-daemon(JDK 1.8)... [dependency GRAAL_NODEINFO_PROCESSOR updated]
+Compiling org.graalvm.compiler.code with javac-daemon(JDK 1.8)... [dependency GRAAL_SERVICEPROVIDER_PROCESSOR updated]
+Archiving GRAAL_API... [dependency org.graalvm.compiler.api.replacements updated]
+Compiling com.oracle.truffle.api.interop with javac-daemon(JDK 1.8)... [dependency TRUFFLE_DSL_PROCESSOR_INTERNAL updated]
+Compiling org.graalvm.compiler.lir with javac-daemon(JDK 1.8)... [dependency GRAAL_OPTIONS_PROCESSOR updated]
+Compiling com.oracle.truffle.dsl.processor.interop with javac-daemon(JDK 1.8)... [dependency com.oracle.truffle.api.interop updated]
+Downloading ASM_TREE5 from ['https://lafo.ssw.uni-linz.ac.at/pub/graal-external-deps/asm-tree-5.0.4.jar']
+Downloading https://lafo.ssw.uni-linz.ac.at/pub/graal-external-deps/asm-tree-5.0.4.jar to /home/graal/.mx/cache/ASM_TREE5_396ce0c07ba2b481f25a70195c7c94922f0d1b0b.jar
+Compiling com.oracle.truffle.api.object with javac-daemon(JDK 1.8)... [dependency com.oracle.truffle.api.interop updated]
+Compiling com.oracle.truffle.api.object.dsl with javac-daemon(JDK 1.8)... [dependency com.oracle.truffle.api.object updated]
+Compiling com.oracle.truffle.object with javac-daemon(JDK 1.8)... [dependency com.oracle.truffle.api.object updated]
+Archiving TRUFFLE_DSL_PROCESSOR_INTEROP_INTERNAL... [dependency com.oracle.truffle.dsl.processor updated]
+Compiling com.oracle.truffle.object.dsl.processor with javac-daemon(JDK 1.8)... [dependency com.oracle.truffle.api.object.dsl updated]
+Compiling com.oracle.truffle.api.interop.java with javac-daemon(JDK 1.8)... [dependency TRUFFLE_DSL_PROCESSOR_INTEROP_INTERNAL updated]
+Compiling com.oracle.truffle.object.basic with javac-daemon(JDK 1.8)... [dependency com.oracle.truffle.object updated]
+Compiling com.oracle.truffle.api.metadata with javac-daemon(JDK 1.8)... [dependency TRUFFLE_DSL_PROCESSOR_INTEROP_INTERNAL updated]
+Compiling com.oracle.truffle.nfi with javac-daemon(JDK 1.8)... [dependency TRUFFLE_DSL_PROCESSOR_INTEROP_INTERNAL updated]
+Compiling com.oracle.truffle.object.basic.test with javac-daemon(JDK 1.8)... [dependency com.oracle.truffle.object.basic updated]
+Compiling org.graalvm.compiler.nodes with javac-daemon(JDK 1.8)... [dependency GRAAL_NODEINFO_PROCESSOR updated]
+Compiling org.graalvm.compiler.lir.aarch64 with javac-daemon(JDK 1.8)... [dependency GRAAL_OPTIONS_PROCESSOR updated]
+Compiling org.graalvm.compiler.lir.test with javac-daemon(JDK 1.8)... [dependency org.graalvm.compiler.lir updated]
+Compiling org.graalvm.compiler.lir.amd64 with javac-daemon(JDK 1.8)... [dependency GRAAL_OPTIONS_PROCESSOR updated]
+Compiling org.graalvm.compiler.lir.sparc with javac-daemon(JDK 1.8)... [dependency org.graalvm.compiler.asm.sparc updated]
+Compiling com.oracle.truffle.api.vm with javac-daemon(JDK 1.8)... [dependency TRUFFLE_DSL_PROCESSOR_INTEROP_INTERNAL updated]
+Building com.oracle.truffle.nfi.native with GNU Make... [dependency com.oracle.truffle.nfi updated]
+Downloading LIBFFI from ['https://lafo.ssw.uni-linz.ac.at/pub/graal-external-deps/libffi-3.2.1.tar.gz', 'ftp://sourceware.org/pub/libffi/libffi-3.2.1.tar.gz']
+Downloading https://lafo.ssw.uni-linz.ac.at/pub/graal-external-deps/libffi-3.2.1.tar.gz to /home/graal/.mx/cache/LIBFFI_280c265b789e041c02e5c97815793dfc283fb1e6.tar.gz
+CONFIGURE libffi
+CC bin/api.o
+CC bin/closure.o
+CC bin/intrinsics.o
+CC bin/jni.o
+CC bin/lookup.o
+CC bin/signature.o
+MAKE libffi
+ar: `u' modifier ignored since `D' is the default (see `U')
+ar: `u' modifier ignored since `D' is the default (see `U')
+LINK bin/libtrufflenfi.so
+Compiling org.graalvm.compiler.phases with javac-daemon(JDK 1.8)... [dependency GRAAL_OPTIONS_PROCESSOR updated]
+Compiling org.graalvm.compiler.truffle.common with javac-daemon(JDK 1.8)... [dependency GRAAL_NODEINFO_PROCESSOR updated]
+Compiling com.oracle.truffle.api.debug with javac-daemon(JDK 1.8)... [dependency TRUFFLE_DSL_PROCESSOR_INTERNAL updated]
+Compiling org.graalvm.compiler.word with javac-daemon(JDK 1.8)... [dependency GRAAL_NODEINFO_PROCESSOR updated]
+Compiling org.graalvm.compiler.loop with javac-daemon(JDK 1.8)... [dependency GRAAL_OPTIONS_PROCESSOR updated]
+Archiving TRUFFLE_NFI_NATIVE... [dependency com.oracle.truffle.nfi.native updated]
+Compiling org.graalvm.compiler.truffle.common.hotspot with javac-daemon(JDK 1.8)... [dependency GRAAL_OPTIONS_PROCESSOR updated]
+Compiling org.graalvm.compiler.phases.common with javac-daemon(JDK 1.8)... [dependency GRAAL_NODEINFO_PROCESSOR updated]
+Compiling org.graalvm.compiler.java with javac-daemon(JDK 1.8)... [dependency GRAAL_OPTIONS_PROCESSOR updated]
+Archiving TRUFFLE_API... [dependency com.oracle.truffle.api.interop.java updated]
+Archiving TRUFFLE_DSL_PROCESSOR... [dependency com.oracle.truffle.dsl.processor updated]
+Archiving TRUFFLE_NFI... [dependency com.oracle.truffle.nfi updated]
+Building com.oracle.truffle.nfi.test.native with GNU Make... [dependency TRUFFLE_NFI_NATIVE updated]
+CC bin/array.o
+CC bin/errno.o
+CXX bin/global.o
+CC bin/null.o
+CC bin/numeric.o
+CXX bin/object.o
+CC bin/package.o
+CC bin/string.o
+CC bin/varargs.o
+CC bin/vector.o
+LINK bin/libnativetest.so
+Compiling org.graalvm.compiler.virtual with javac-daemon(JDK 1.8)... [dependency GRAAL_OPTIONS_PROCESSOR updated]
+Compiling com.oracle.truffle.tools with javac-daemon(JDK 1.8)... [dependency TRUFFLE_DSL_PROCESSOR updated]
+Compiling com.oracle.truffle.tck with javac-daemon(JDK 1.8)... [dependency TRUFFLE_DSL_PROCESSOR updated]
+Compiling com.oracle.truffle.tools.profiler with javac-daemon(JDK 1.8)... [dependency TRUFFLE_DSL_PROCESSOR updated]
+Compiling com.oracle.truffle.tck.instrumentation with javac-daemon(JDK 1.8)... [dependency TRUFFLE_DSL_PROCESSOR updated]
+Archiving TRUFFLE_TEST_NATIVE... [dependency com.oracle.truffle.nfi.test.native updated]
+Compiling org.graalvm.compiler.loop.phases with javac-daemon(JDK 1.8)... [dependency GRAAL_OPTIONS_PROCESSOR updated]
+Compiling com.oracle.truffle.sl with javac-daemon(JDK 1.8)... [dependency TRUFFLE_DSL_PROCESSOR updated]
+Compiling com.oracle.truffle.api.test with javac-daemon(JDK 1.8)... [dependency TRUFFLE_DSL_PROCESSOR updated]
+Archiving TRUFFLE_DEBUG... [dependency com.oracle.truffle.tools updated]
+Compiling com.oracle.truffle.api.object.dsl.test with javac-daemon(JDK 1.8)... [dependency TRUFFLE_DSL_PROCESSOR updated]
+Archiving TRUFFLE_GRAALVM_SUPPORT... [dependency TRUFFLE_NFI updated]
+Compiling org.graalvm.compiler.replacements with javac-daemon(JDK 1.8)... [dependency GRAAL_OPTIONS_PROCESSOR updated]
+Archiving TRUFFLE_TCK_INSTRUMENTATION... [dependency com.oracle.truffle.tck.instrumentation updated]
+Archiving TRUFFLE_PROFILER... [dependency com.oracle.truffle.tools.profiler updated]
+Compiling com.oracle.truffle.tools.chromeinspector with javac-daemon(JDK 1.8)... [dependency TRUFFLE_DSL_PROCESSOR updated]
+Compiling org.graalvm.compiler.core with javac-daemon(JDK 1.8)... [dependency GRAAL_SERVICEPROVIDER_PROCESSOR updated]
+Archiving TRUFFLE_TCK... [dependency com.oracle.truffle.tck updated]
+Archiving CHROMEINSPECTOR... [dependency com.oracle.truffle.tools.chromeinspector updated]
+Compiling com.oracle.truffle.nfi.test with javac-daemon(JDK 1.8)... [dependency TRUFFLE_DSL_PROCESSOR updated]
+Compiling com.oracle.truffle.sl.test with javac-daemon(JDK 1.8)... [dependency TRUFFLE_DSL_PROCESSOR updated]
+Compiling org.graalvm.compiler.printer with javac-daemon(JDK 1.8)... [dependency GRAAL_OPTIONS_PROCESSOR updated]
+Compiling org.graalvm.compiler.core.aarch64 with javac-daemon(JDK 1.8)... [dependency GRAAL_NODEINFO_PROCESSOR updated]
+Archiving GRAAL_COMPILER... [dependency org.graalvm.compiler.core updated]
+Archiving TRUFFLE_SL... [dependency com.oracle.truffle.sl updated]
+Compiling org.graalvm.compiler.runtime with javac-daemon(JDK 1.8)... [dependency org.graalvm.compiler.core updated]
+Compiling org.graalvm.compiler.core.sparc with javac-daemon(JDK 1.8)... [dependency GRAAL_NODEINFO_PROCESSOR updated]
+Compiling org.graalvm.compiler.core.amd64 with javac-daemon(JDK 1.8)... [dependency GRAAL_NODEINFO_PROCESSOR updated]
+Compiling org.graalvm.compiler.replacements.aarch64 with javac-daemon(JDK 1.8)... [dependency GRAAL_NODEINFO_PROCESSOR updated]
+Compiling org.graalvm.compiler.truffle.runtime with javac-daemon(JDK 1.8)... [dependency TRUFFLE_DSL_PROCESSOR updated]
+Compiling org.graalvm.compiler.replacements.amd64 with javac-daemon(JDK 1.8)... [dependency GRAAL_NODEINFO_PROCESSOR updated]
+Compiling org.graalvm.compiler.replacements.sparc with javac-daemon(JDK 1.8)... [dependency org.graalvm.compiler.replacements updated]
+Compiling org.graalvm.compiler.truffle.compiler with javac-daemon(JDK 1.8)... [dependency GRAAL_NODEINFO_PROCESSOR updated]
+Compiling org.graalvm.compiler.asm.test with javac-daemon(JDK 1.8)... [dependency org.graalvm.compiler.api.test updated]
+Compiling org.graalvm.compiler.microbenchmarks with javac-daemon(JDK 1.8)... [dependency org.graalvm.compiler.api.test updated]
+Compiling org.graalvm.compiler.phases.common.test with javac-daemon(JDK 1.8)... [dependency org.graalvm.compiler.api.test updated]
+Compiling org.graalvm.compiler.core.test with javac-daemon(JDK 1.8)... [dependency GRAAL_NODEINFO_PROCESSOR updated]
+Compiling org.graalvm.compiler.hotspot with javac-daemon(JDK 1.8)... [dependency GRAAL_NODEINFO_PROCESSOR updated]
+Compiling com.oracle.truffle.api.dsl.test with javac-daemon(JDK 1.8)... [dependency TRUFFLE_DSL_PROCESSOR updated]
+Archiving TRUFFLE_SL_TEST... [dependency com.oracle.truffle.sl.test updated]
+Compiling org.graalvm.compiler.asm.amd64.test with javac-daemon(JDK 1.8)... [dependency org.graalvm.compiler.asm.test updated]
+Compiling com.oracle.truffle.api.interop.java.test with javac-daemon(JDK 1.8)... [dependency TRUFFLE_DSL_PROCESSOR updated]
+Compiling org.graalvm.compiler.asm.sparc.test with javac-daemon(JDK 1.8)... [dependency org.graalvm.compiler.asm.test updated]
+Compiling org.graalvm.compiler.asm.aarch64.test with javac-daemon(JDK 1.8)... [dependency org.graalvm.compiler.asm.test updated]
+Archiving GRAAL_RUNTIME... [dependency org.graalvm.compiler.replacements updated]
+Archiving GRAAL_TRUFFLE_COMMON... [dependency org.graalvm.compiler.truffle.common updated]
+Archiving GRAAL_TRUFFLE_COMPILER... [dependency org.graalvm.compiler.truffle.compiler updated]
+Archiving GRAAL_TRUFFLE_COMMON_HOTSPOT... [dependency org.graalvm.compiler.truffle.common.hotspot updated]
+Archiving GRAAL_TRUFFLE_RUNTIME... [dependency org.graalvm.compiler.truffle.runtime updated]
+Compiling org.graalvm.compiler.virtual.bench with javac-daemon(JDK 1.8)... [dependency org.graalvm.compiler.microbenchmarks updated]
+Compiling org.graalvm.compiler.jtt with javac-daemon(JDK 1.8)... [dependency org.graalvm.compiler.core.test updated]
+Compiling org.graalvm.compiler.loop.test with javac-daemon(JDK 1.8)... [dependency org.graalvm.compiler.loop updated]
+Compiling org.graalvm.compiler.nodes.test with javac-daemon(JDK 1.8)... [dependency org.graalvm.compiler.core.test updated]
+Compiling org.graalvm.compiler.replacements.test with javac-daemon(JDK 1.8)... [dependency GRAAL_NODEINFO_PROCESSOR updated]
+Compiling org.graalvm.compiler.api.directives.test with javac-daemon(JDK 1.8)... [dependency org.graalvm.compiler.core.test updated]
+Compiling org.graalvm.util.test with javac-daemon(JDK 1.8)... [dependency org.graalvm.util updated]
+Compiling org.graalvm.compiler.truffle.compiler.hotspot with javac-daemon(JDK 1.8)... [dependency GRAAL_OPTIONS_PROCESSOR updated]
+Compiling org.graalvm.compiler.hotspot.sparc with javac-daemon(JDK 1.8)... [dependency GRAAL_SERVICEPROVIDER_PROCESSOR updated]
+Compiling org.graalvm.compiler.hotspot.management with javac-daemon(JDK 1.8)... [dependency GRAAL_SERVICEPROVIDER_PROCESSOR updated]
+Compiling org.graalvm.compiler.hotspot.test with javac-daemon(JDK 1.8)... [dependency GRAAL_NODEINFO_PROCESSOR updated]
+Compiling org.graalvm.compiler.hotspot.aarch64 with javac-daemon(JDK 1.8)... [dependency GRAAL_SERVICEPROVIDER_PROCESSOR updated]
+Compiling org.graalvm.compiler.truffle.runtime.hotspot with javac-daemon(JDK 1.8)... [dependency GRAAL_OPTIONS_PROCESSOR updated]
+Compiling org.graalvm.compiler.hotspot.amd64 with javac-daemon(JDK 1.8)... [dependency GRAAL_SERVICEPROVIDER_PROCESSOR updated]
+Compiling org.graalvm.compiler.lir.jtt with javac-daemon(JDK 1.8)... [dependency GRAAL_NODEINFO_PROCESSOR updated]
+Compiling org.graalvm.compiler.truffle.compiler.hotspot.aarch64 with javac-daemon(JDK 1.8)... [dependency GRAAL_SERVICEPROVIDER_PROCESSOR updated]
+Compiling org.graalvm.compiler.hotspot.sparc.test with javac-daemon(JDK 1.8)... [dependency org.graalvm.compiler.hotspot updated]
+Compiling org.graalvm.compiler.core.aarch64.test with javac-daemon(JDK 1.8)... [dependency org.graalvm.compiler.lir.jtt updated]
+Compiling org.graalvm.compiler.truffle.compiler.hotspot.sparc with javac-daemon(JDK 1.8)... [dependency GRAAL_SERVICEPROVIDER_PROCESSOR updated]
+Compiling org.graalvm.compiler.hotspot.lir.test with javac-daemon(JDK 1.8)... [dependency org.graalvm.compiler.hotspot updated]
+Compiling org.graalvm.compiler.core.amd64.test with javac-daemon(JDK 1.8)... [dependency org.graalvm.compiler.lir.jtt updated]
+Archiving GRAAL_HOTSPOT... [dependency org.graalvm.compiler.hotspot.aarch64 updated]
+Compiling org.graalvm.compiler.truffle.compiler.hotspot.amd64 with javac-daemon(JDK 1.8)... [dependency GRAAL_SERVICEPROVIDER_PROCESSOR updated]
+Compiling org.graalvm.compiler.hotspot.aarch64.test with javac-daemon(JDK 1.8)... [dependency GRAAL_NODEINFO_PROCESSOR updated]
+Archiving GRAAL_TRUFFLE_RUNTIME_HOTSPOT... [dependency org.graalvm.compiler.truffle.runtime.hotspot updated]
+Compiling com.oracle.truffle.api.instrumentation.test with javac-daemon(JDK 1.8)... [dependency TRUFFLE_DSL_PROCESSOR updated]
+Compiling org.graalvm.compiler.hotspot.amd64.test with javac-daemon(JDK 1.8)... [dependency GRAAL_NODEINFO_PROCESSOR updated]
+Archiving GRAAL... [dependency org.graalvm.compiler.options updated]
+Archiving GRAAL_TRUFFLE_COMPILER_HOTSPOT... [dependency org.graalvm.compiler.truffle.compiler.hotspot.amd64 updated]
+Compiling com.oracle.truffle.api.debug.test with javac-daemon(JDK 1.8)... [dependency TRUFFLE_DSL_PROCESSOR_INTEROP_INTERNAL updated]
+Compiling com.oracle.truffle.api.metadata.test with javac-daemon(JDK 1.8)... [dependency TRUFFLE_DSL_PROCESSOR_INTEROP_INTERNAL updated]
+Archiving TRUFFLE_INSTRUMENT_TEST... [dependency com.oracle.truffle.api.instrumentation.test updated]
+Compiling com.oracle.truffle.tools.test with javac-daemon(JDK 1.8)... [dependency TRUFFLE_DSL_PROCESSOR updated]
+Archiving GRAAL_MANAGEMENT... [dependency org.graalvm.compiler.hotspot.management updated]
+Compiling com.oracle.truffle.api.benchmark with javac-daemon(JDK 1.8)... [dependency TRUFFLE_DSL_PROCESSOR updated]
+Compiling org.graalvm.compiler.truffle.test with javac-daemon(JDK 1.8)... [dependency GRAAL_NODEINFO_PROCESSOR updated]
+Compiling com.oracle.truffle.tools.profiler.test with javac-daemon(JDK 1.8)... [dependency TRUFFLE_DSL_PROCESSOR updated]
+Archiving TRUFFLE_PROFILER_TEST... [dependency com.oracle.truffle.tools.profiler.test updated]
+Archiving TRUFFLE_TEST... [dependency com.oracle.truffle.api.test updated]
+Archiving GRAAL_TEST... [dependency org.graalvm.compiler.api.test updated]
+Compiling com.oracle.truffle.tools.chromeinspector.test with javac-daemon(JDK 1.8)... [dependency TRUFFLE_DSL_PROCESSOR updated]
+Archiving CHROMEINSPECTOR_TEST... [dependency com.oracle.truffle.tools.chromeinspector.test updated]
+Archiving GRAAL_COMPILER_WHITEBOX_MICRO_BENCHMARKS... [dependency org.graalvm.compiler.virtual.bench updated]
+Creating /home/graal/jdk8-with-graal from /home/graal/graal-jvmci-8/openjdk1.8.0-adoptopenjdk/linux-amd64/product
+Copying /home/graal/graal/compiler/mxbuild/dists/graal.jar to /home/graal/jdk8-with-graal/jre/lib/jvmci
+Copying /home/graal/graal/compiler/mxbuild/dists/graal-management.jar to /home/graal/jdk8-with-graal/jre/lib/jvmci
+Copying /home/graal/graal/sdk/mxbuild/dists/graal-sdk.jar to /home/graal/jdk8-with-graal/jre/lib/boot
+Copying /home/graal/graal/truffle/mxbuild/dists/truffle-api.jar to /home/graal/jdk8-with-graal/jre/lib/truffle
+
+>>> All good, now pick your JDK from /home/graal/jdk8-with-graal :-)
+
+Creating Archive and SHA of the newly JDK8 with Graal & Truffle at /home/graal/jdk8-with-graal
+Creating Archive jdk8-with-graal.tar.gz
+Creating a sha5 hash from jdk8-with-graal.tar.gz
+jdk8-with-graal.tar.gz and jdk8-with-graal.tar.gz.sha256sum.txt have been successfully created in the /home/graal/output folder.

@@ -16,8 +16,9 @@ else
     DEBUG_MODE_ARGS="--entrypoint ${CONTAINER_HOME_DIR}/scripts/native-build.sh"
 fi
 
-HOST_OUTPUT_DIR="$(pwd)/graalvm-via-docker"
+HOST_OUTPUT_DIR="$(pwd)/jdk8-with-graal-via-docker"
 mkdir -p "${HOST_OUTPUT_DIR}"
+BUILD_LOGS="${HOST_OUTPUT_DIR}/docker-build.logs"
 
 CONTAINER_SCRIPTS_DIR="${CONTAINER_HOME_DIR}/scripts"
 CONTAINER_OUTPUT_DIR="${CONTAINER_HOME_DIR}/output"
@@ -29,5 +30,5 @@ docker run                               \
        --env OUTPUT_DIR=${CONTAINER_OUTPUT_DIR}             \
        --volume $(pwd):${CONTAINER_SCRIPTS_DIR}             \
        --volume ${HOST_OUTPUT_DIR}:${CONTAINER_OUTPUT_DIR}  \
-       ${DOCKER_IMAGE_TAG}
+       ${DOCKER_IMAGE_TAG} &> ${BUILD_LOGS}
 
