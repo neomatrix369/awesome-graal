@@ -16,11 +16,18 @@ else
     DEBUG_MODE_ARGS="--entrypoint ${CONTAINER_HOME_DIR}/scripts/native-build.sh"
 fi
 
+HOST_OUTPUT_DIR="$(pwd)/graalvm-via-docker"
+mkdir -p "${HOST_OUTPUT_DIR}"
+
+CONTAINER_SCRIPTS_DIR="${CONTAINER_HOME_DIR}/scripts"
+CONTAINER_OUTPUT_DIR="${CONTAINER_HOME_DIR}/output"
 docker build -t ${DOCKER_IMAGE_TAG} .
 docker run                               \
        ${DEBUG_MODE_ARGS}                \
        --rm                              \
        --env JAVA_VERSION=${JDK_VERSION} \
-       --volume $(pwd):${CONTAINER_HOME_DIR}/scripts  \
+       --env OUTPUT_DIR=${CONTAINER_OUTPUT_DIR}             \
+       --volume $(pwd):${CONTAINER_SCRIPTS_DIR}             \
+       --volume ${HOST_OUTPUT_DIR}:${CONTAINER_OUTPUT_DIR}  \
        ${DOCKER_IMAGE_TAG}
 
