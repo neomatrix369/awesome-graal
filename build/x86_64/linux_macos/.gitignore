@@ -1,4 +1,9 @@
 mx
+.mx
+.ssh
+.bash_history
 graal-jvmci-8
 graal
 jdk8-with-graal
+*.tar.gz
+make*.*
