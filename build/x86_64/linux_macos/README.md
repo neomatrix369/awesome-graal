@@ -9,14 +9,14 @@ The scripts in this folder support `x86_64` architecture and can be used both on
 ### Tooling and dependencies
 
 - build-essentials
-    - for Linux - version 4.9.1
-    - for MacOS - xcode 8.3.3 (build 12175.1)
+    - for Linux - (whatever version comes with the distro)
+    - for MacOS - xcode 4.9.1 or higher
 - make 
     - for Linux - version 3.82  
     - for MacOS - version 3.83 
     - `installMake382.sh` has been provided, run or amend where necessary  
 - Docker (to use the `docker-build.sh` script)
-- JDK 1.8 (build 144 or higher)
+- JDK 1.8 (build 141 or higher)
     - must be a JDK and not just a JRE (some openjdk builds can be)
 
 **Note:** 
