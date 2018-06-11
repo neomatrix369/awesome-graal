@@ -21,8 +21,7 @@
 
 set -e
 set -u
-set -o
-set pipefail
+set -o pipefail
 
 IFS=$'\n\t'
 
@@ -34,7 +33,7 @@ if [[ -e "mx/.git" ]]; then
     echo ">>> mx already exists: using the current version"
 else
     echo ">>> Getting mx: mx is a build tool created for managing the development of (primarily) Java code"
-    git clone --depth=1 git@github.com:graalvm/mx.git
+    git clone --depth=1 http://github.com/graalvm/mx.git
 fi
 
 MX=${BASEDIR}/mx/mx
@@ -43,20 +42,18 @@ if [[ -e "graal-jvmci-8/.git" ]]; then
     echo ">>> graal-jvmci-8 already exists: using the current version"
 else
     echo ">>> Getting Graal JVMCI for JDK8"
-    git clone --depth=1 git@github.com:graalvm/graal-jvmci-8.git
+    git clone --depth=1 http://github.com/graalvm/graal-jvmci-8.git
 fi
 
 echo ">>> Building a JDK8 with JVMCI..."
-cd graal-jvmci-8/
-echo ">>>> Letting 'mx' build execute and pass-thru, even if the build fails"
+cd ${BASEDIR}/graal-jvmci-8/
+echo ">>>> Letting 'mx' build execute and pass-thru, even if the build Ffails"
 ${MX} --java-home ${JAVA_HOME} build || true
 
 ### Uncomment when error is fixed
 ### ${MX} --java-home ${JAVA_HOME} unittest
 
-export JAVA_HOME=$(${MX} --java-home ${JAVA_HOME} jdkhome)
-
-JDK8_JVMCI_IMAGE=$(${MX} jdkhome)
+JDK8_JVMCI_IMAGE=$(${MX} --java-home ${JAVA_HOME} jdkhome)
 export JAVA_HOME=${JDK8_JVMCI_IMAGE}
 echo ">>> Using ${JDK8_JVMCI_IMAGE}"
 
@@ -65,10 +62,10 @@ cd ${BASEDIR}
 if [[ -e "graal/.git" ]]; then
     echo ">>> graal already exists: using the current version"
 else
-    git clone --depth=1 git@github.com:oracle/graal.git
+    git clone --depth=1 http://github.com/oracle/graal.git
 fi
-cd graal/compiler
 
+cd ${BASEDIR}/graal/compiler
 export JVMCI_VERSION_CHECK='ignore'
 echo "Setting environment variable JVMCI_VERSION_CHECK=${JVMCI_VERSION_CHECK}"
 ${MX} build

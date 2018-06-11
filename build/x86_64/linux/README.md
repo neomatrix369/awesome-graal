@@ -1,19 +1,21 @@
 # Building JVMCI for JDK8, Graal & Truffle
 
-The `build.sh` script provided here will clone the respective dependencies to build JVMCI for JDK8, Graal, and Truffle for JDK8. 
+## Native build
+
+The `native-build.sh` script provided here will clone the respective dependencies to build JVMCI for JDK8, Graal, and Truffle for JDK8. 
 
 Pre-requisite: `JAVA_HOME` should point to the latest version of JDK8 (say build 144 or higher).
 
 Run the below command to start with the building process:
 
 ```
-./build.sh
+./native-build.sh
 ```
 
 if you wish to save the `stdout` and `stderr` log messages during the build to a file:
 
 ```
-./build.sh &> lastBuildOutput.logs
+./native-build.sh &> lastBuildOutput.logs
 ```
 
 To check for consistency of the build script, run the above build command more than once.
@@ -39,4 +41,24 @@ Copying /path/to/your/awesome-graal/build/x86_64/linux/graal/truffle/mxbuild/dis
 >>> All good, now pick your JDK from /path/to/your/awesome-graal/build/x86_64/linux/jdk8-with-graal :-)
 ```
 
-See build logs alongside the `build.sh` script in this folder.
+See build logs alongside the `native-build.sh` script in this folder.
+
+Clean up folders created by native image building:
+
+```
+cleanup-native-build.sh
+```
+
+## Docker build
+
+Run the below command to start with the building process in a Docker container:
+
+```
+./docker-build.sh
+```
+
+Remove unused containers and images:
+
+```
+./removeUnusedContainersAndImages.sh
+```
