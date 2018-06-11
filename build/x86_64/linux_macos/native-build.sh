@@ -90,6 +90,13 @@ GZIP=-9 tar -czf ${outputArchiveFilename} "${JDK_GRAAL_FOLDER_NAME}"
 echo "Creating a sha5 hash from ${outputArchiveFilename}"
 shasum ${outputArchiveFilename} > ${shaSumFilename}
 
+if [[ ! -e "${OUTPUT_DIR}" ]]; then
+    echo "Output directory not set or found"
+    OUTPUT_DIR="${BASEDIR}/jdk8-with-graal-via-native"
+    mkdir -p ${OUTPUT_DIR}
+    echo "Output directory ${OUTPUT_DIR} created"
+fi
+
 mv ${outputArchiveFilename} ${OUTPUT_DIR}
 mv ${shaSumFilename} ${OUTPUT_DIR}
 
