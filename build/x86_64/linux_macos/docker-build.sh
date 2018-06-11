@@ -22,6 +22,16 @@ BUILD_LOGS="${HOST_OUTPUT_DIR}/docker-build.logs"
 
 CONTAINER_SCRIPTS_DIR="${CONTAINER_HOME_DIR}/scripts"
 CONTAINER_OUTPUT_DIR="${CONTAINER_HOME_DIR}/output"
+
+echo "*************************************************"
+echo "* "
+echo "* Building image and running container ${DOCKER_IMAGE_TAG}"
+echo "* "
+echo "* Build logs are sent to a separate log, run the below command to see logs"
+echo "* tail -f ${HOST_OUTPUT_DIR}/docker-build.logs"
+echo "* "
+echo "*************************************************"
+
 docker build -t ${DOCKER_IMAGE_TAG} .
 docker run                               \
        ${DEBUG_MODE_ARGS}                \
@@ -32,3 +42,8 @@ docker run                               \
        --volume ${HOST_OUTPUT_DIR}:${CONTAINER_OUTPUT_DIR}  \
        ${DOCKER_IMAGE_TAG} &> ${BUILD_LOGS}
 
+echo "*************************************************"
+echo "* "
+echo "* Finished running container ${DOCKER_IMAGE_TAG}"
+echo "* "
+echo "*************************************************"
