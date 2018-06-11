@@ -90,6 +90,7 @@ GZIP=-9 tar -czf ${outputArchiveFilename} "${JDK_GRAAL_FOLDER_NAME}"
 echo "Creating a sha5 hash from ${outputArchiveFilename}"
 shasum ${outputArchiveFilename} > ${shaSumFilename}
 
+OUTPUT_DIR=${OUTPUT_DIR:=""}
 if [[ ! -e "${OUTPUT_DIR}" ]]; then
     echo "Output directory not set or found"
     OUTPUT_DIR="${BASEDIR}/jdk8-with-graal-via-native"
