@@ -34,14 +34,13 @@ fi
 
 echo ">>> Building a JDK8 with JVMCI..."
 cd ${BASEDIR}/graal-jvmci-8/
-echo ">>>> Letting 'mx' build execute and pass-thru, even if the build Ffails"
 ${MX} --java-home ${JAVA_HOME} build
 
-if [[ "${RUN_TESTS}" = "true" ]]; then
-    echo "Running unit tests..."
-    ${MX} --java-home ${JAVA_HOME} unittest
+if [[ "${RUN_TESTS}" = "false" ]]; then
+   echo ">>>> Skipping unit tests, won't run them."
 else
-   echo "Skipping unit tests, won't run them."
+    echo ">>>> Running unit tests..."
+    ${MX} --java-home ${JAVA_HOME} unittest
 fi
 
 JDK8_JVMCI_IMAGE=$(${MX} --java-home ${JAVA_HOME} jdkhome)
@@ -58,7 +57,7 @@ fi
 
 cd ${BASEDIR}/graal/compiler
 export JVMCI_VERSION_CHECK='ignore'
-echo "Setting environment variable JVMCI_VERSION_CHECK=${JVMCI_VERSION_CHECK}"
+echo ">>>> Setting environment variable JVMCI_VERSION_CHECK=${JVMCI_VERSION_CHECK}"
 ${MX} build
 ${MX} makegraaljdk ${BUILD_ARTIFACTS_DIR}
 
@@ -66,24 +65,24 @@ echo ""
 echo ">>> All good, now pick your JDK from ${BUILD_ARTIFACTS_DIR} :-)"
 
 echo ""
-echo "Creating Archive and SHA of the newly JDK8 with Graal & Truffle at ${BUILD_ARTIFACTS_DIR}"
+echo ">>> Creating Archive and SHA of the newly JDK8 with Graal & Truffle at ${BUILD_ARTIFACTS_DIR}"
 cd ${BASEDIR}
 outputArchiveFilename=${JDK_GRAAL_FOLDER_NAME}.tar.gz
 shaSumFilename=${outputArchiveFilename}.sha256sum.txt
-echo "Creating Archive ${outputArchiveFilename}"
+echo ">>>> Creating Archive ${outputArchiveFilename}"
 GZIP=-9 tar -czf ${outputArchiveFilename} "${JDK_GRAAL_FOLDER_NAME}"
-echo "Creating a sha5 hash from ${outputArchiveFilename}"
+echo ">>>> Creating a sha5 hash from ${outputArchiveFilename}"
 shasum ${outputArchiveFilename} > ${shaSumFilename}
 
-OUTPUT_DIR=${OUTPUT_DIR:=""}
+OUTPUT_DIR=${OUTPUT_DIR:-""}
 if [[ ! -e "${OUTPUT_DIR}" ]]; then
-    echo "Output directory not set or found"
+    echo ">>>> Output directory not set or found"
     OUTPUT_DIR="${BASEDIR}/jdk8-with-graal-via-native"
     mkdir -p ${OUTPUT_DIR}
-    echo "Output directory ${OUTPUT_DIR} created"
+    echo ">>>> Output directory ${OUTPUT_DIR} created"
 fi
 
 mv ${outputArchiveFilename} ${OUTPUT_DIR}
 mv ${shaSumFilename} ${OUTPUT_DIR}
 
-echo "${outputArchiveFilename} and ${shaSumFilename} have been successfully created in the ${OUTPUT_DIR} folder."
+echo ">>> ${outputArchiveFilename} and ${shaSumFilename} have been successfully created in the ${OUTPUT_DIR} folder."
