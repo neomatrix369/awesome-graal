@@ -16,7 +16,7 @@ else
     DEBUG_MODE_ARGS="--entrypoint ${CONTAINER_HOME_DIR}/scripts/native-build.sh"
 fi
 
-HOST_OUTPUT_DIR="$(pwd)/jdk8-with-graal-via-docker"
+HOST_OUTPUT_DIR="$(pwd)/jdk8-with-graal-docker"
 mkdir -p "${HOST_OUTPUT_DIR}"
 BUILD_LOGS="${HOST_OUTPUT_DIR}/docker-build.logs"
 

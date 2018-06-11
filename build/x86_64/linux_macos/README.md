@@ -91,10 +91,10 @@ Run the below command to start with the building process in a Docker container:
 ./docker-build.sh
 ```
 
-The build logs are written to the `jdk8-with-graal-via-docker/docker-build.logs` log file:
+The build logs are written to the `jdk8-with-graal-docker/docker-build.logs` log file:
 
 ```
-tail -f jdk8-with-graal-via-docker/docker-build.logs
+tail -f jdk8-with-graal-docker/docker-build.logs
 ```
 
 ### Docker image & container

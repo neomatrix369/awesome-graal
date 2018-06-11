@@ -83,7 +83,7 @@ archivingArtifacts() {
     OUTPUT_DIR=${OUTPUT_DIR:-""}
     if [[ ! -e "${OUTPUT_DIR}" ]]; then
         echo ">>>> Output directory not set or found"
-        OUTPUT_DIR="${BASEDIR}/jdk8-with-graal-via-native"
+        OUTPUT_DIR="${BASEDIR}/jdk8-with-graal-local"
         mkdir -p ${OUTPUT_DIR}
         echo ">>>> Output directory ${OUTPUT_DIR} created"
     fi

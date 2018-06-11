@@ -1611,5 +1611,5 @@ Creating Archive and SHA of the newly JDK8 with Graal & Truffle at /path/to/awes
 Creating Archive jdk8-with-graal.tar.gz
 Creating a sha5 hash from jdk8-with-graal.tar.gz
 Output directory not set or found
-Output directory /path/to/awesome-graal/build/x86_64/linux_macos/jdk8-with-graal-via-native created
-jdk8-with-graal.tar.gz and jdk8-with-graal.tar.gz.sha256sum.txt have been successfully created in the /path/to/awesome-graal/build/x86_64/linux_macos/jdk8-with-graal-via-native folder.
+Output directory /path/to/awesome-graal/build/x86_64/linux_macos/jdk8-with-graal-local created
+jdk8-with-graal.tar.gz and jdk8-with-graal.tar.gz.sha256sum.txt have been successfully created in the /path/to/awesome-graal/build/x86_64/linux_macos/jdk8-with-graal-local folder.
