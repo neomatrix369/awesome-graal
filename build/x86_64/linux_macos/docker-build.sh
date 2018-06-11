@@ -13,7 +13,7 @@ CONTAINER_HOME_DIR="/home/graal"
 if [[ "${DEBUG}" = "true" ]]; then
     DEBUG_MODE_ARGS="--interactive --tty --entrypoint /bin/bash"
 else
-    DEBUG_MODE_ARGS="--entrypoint ${CONTAINER_HOME_DIR}/scripts/native-build.sh"
+    DEBUG_MODE_ARGS="--entrypoint ${CONTAINER_HOME_DIR}/scripts/local-build.sh"
 fi
 
 HOST_OUTPUT_DIR="$(pwd)/jdk8-with-graal-docker"

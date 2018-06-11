@@ -21,25 +21,25 @@ The scripts in this folder support `x86_64` architecture and can be used both on
 
 **Note:** 
 - building of `graal-jvmci-8` have known to fail if the above versions are not met
-- best to try out the `docker-build.sh` script in case `native-build.sh` fails for you in Linux
-- in case native-build.sh fails on the MacOS, please let us know via the [graal-dev mailing list](http://mail.openjdk.java.net/mailman/listinfo/graal-dev)
+- best to try out the `docker-build.sh` script in case `local-build.sh` fails for you in Linux
+- in case `local-build.sh` fails on the MacOS, please let us know via the [graal-dev mailing list](http://mail.openjdk.java.net/mailman/listinfo/graal-dev)
 
 ## Native build
 
-The `native-build.sh` script provided here will clone the respective dependencies to build JVMCI for JDK8, Graal, and Truffle for JDK8. 
+The `local-build.sh` script provided here will clone the respective dependencies to build JVMCI for JDK8, Graal, and Truffle for JDK8. 
 
 Ensure `JAVA_HOME` should point to the latest version of JDK8 (build 144 or higher).
 
 Run the below command to start with the building process:
 
 ```
-./native-build.sh
+./local-build.sh
 ```
 
 if you wish to save the `stdout` and `stderr` log messages during the build to a file:
 
 ```
-./native-build.sh &> lastBuildOutput.logs
+./local-build.sh &> lastBuildOutput.logs
 ```
 
 To check for consistency of the build script, run the above build command more than once.
@@ -75,12 +75,12 @@ Creating a sha5 hash from jdk8-with-graal.tar.gz
 jdk8-with-graal.tar.gz and jdk8-with-graal.tar.gz.sha256sum.txt have been successfully created in the /home/graal/output folder.
 ```
 
-See build logs alongside the `native-build.sh` script in this folder.
+See build logs alongside the `local-build.sh` script in this folder.
 
 Clean up folders created by native image building:
 
 ```
-cleanup-native-build.sh
+cleanup-local-build.sh
 ```
 
 ## Docker build
