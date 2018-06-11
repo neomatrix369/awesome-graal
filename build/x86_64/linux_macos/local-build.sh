@@ -17,16 +17,16 @@ BUILD_ARTIFACTS_DIR=${BASEDIR}/${JDK_GRAAL_FOLDER_NAME}
 echo ">>> Working in ${BASEDIR}"
 
 displayDependencyVersion() {
-    echo "Java version"
+    echo "java version"
     java -version
 
-    echo "Make version"
+    echo "make version"
     make -version
 
-    echo "Python version"
+    echo "python version"
     python --version
 
-    if [[ "${OSTYPE}" = "darwin" ]]; then
+    if [[ "$(uname)" = "Darwin" ]]; then
         echo "xcode version"
         xcodebuild -version
     fi
