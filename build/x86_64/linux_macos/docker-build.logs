@@ -4,7 +4,6 @@ Cloning into 'mx'...
 >>> Getting Graal JVMCI for JDK8
 Cloning into 'graal-jvmci-8'...
 >>> Building a JDK8 with JVMCI...
->>>> Letting 'mx' build execute and pass-thru, even if the build Ffails
 Creating /home/graal/graal-jvmci-8/openjdk1.8.0-adoptopenjdk/linux-amd64/product from /opt/java/openjdk/jdk8u172-b11
 Downloading hsdis from ['https://lafo.ssw.uni-linz.ac.at/pub/hsdis/intel/hsdis-amd64-linux-0d031013db9a80d6c88330c42c983fbfa7053193.so']
 Downloading https://lafo.ssw.uni-linz.ac.at/pub/hsdis/intel/hsdis-amd64-linux-0d031013db9a80d6c88330c42c983fbfa7053193.so to /home/graal/.mx/cache/hsdis_0d031013db9a80d6c88330c42c983fbfa7053193.so
@@ -966,7 +965,19 @@ Downloading sources JMH_1_21 from ['https://repo1.maven.org/maven2/org/openjdk/j
 Downloading https://repo1.maven.org/maven2/org/openjdk/jmh/jmh-core/1.21/jmh-core-1.21-sources.jar to /home/graal/.mx/cache/JMH_1_21.sources_a6fe84788bf8cf762b0e561bf48774c2ea74e370.jar
 Compiling com.oracle.mxtool.jmh_1_21 with javac-daemon(JDK 1.8)... [dependency JMH_1_21 updated]
 Archiving MX_MICRO_BENCHMARKS... [dependency com.oracle.mxtool.jmh_1_21 updated]
-Skipping unit tests, won't run them.
+
+>>>> Running unit tests...
+Warning: 1049 classes in /home/graal/mx/mxbuild/dists/mx-micro-benchmarks.jar skipped as their class file version is not supported by FindClassesByAnnotatedMethods
+Warning: 401 classes in /home/graal/mx/mxbuild/dists/mx-jacoco-report.jar skipped as their class file version is not supported by FindClassesByAnnotatedMethods
+WARNING: Unsupported class files listed in /home/graal/graal-jvmci-8/mxbuild/unittest/mx-micro-benchmarks.jar.jdk1.8.excludedclasses
+WARNING: Unsupported class files listed in /home/graal/graal-jvmci-8/mxbuild/unittest/mx-jacoco-report.jar.jdk1.8.excludedclasses
+MxJUnitCore
+JUnit version 4.12
+............................................................................................
+Time: 4.738
+
+OK (92 tests)
+
 >>> Using /home/graal/graal-jvmci-8/openjdk1.8.0-adoptopenjdk/linux-amd64/product
 >>> Building Graal
 Cloning into 'graal'...

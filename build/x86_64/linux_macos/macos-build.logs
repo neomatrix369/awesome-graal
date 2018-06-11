@@ -60,7 +60,6 @@ Checking out files:  99% (5003/5053)
 Checking out files: 100% (5053/5053)   
 Checking out files: 100% (5053/5053), done.
 >>> Building a JDK8 with JVMCI...
->>>> Letting 'mx' build execute and pass-thru, even if the build Ffails
 Creating /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/jdk1.8.0_172/darwin-amd64/product/Contents/Home from /Library/Java/JavaVirtualMachines/jdk1.8.0_172.jdk/Contents/Home
 JAVA_HOME: /Library/Java/JavaVirtualMachines/jdk1.8.0_172.jdk/Contents/Home
 EXTRA_JAVA_HOMES: 
@@ -1341,7 +1340,19 @@ warning: [options] bootstrap class path not set in conjunction with -source 1.6
 
 Generating bsd_amd64_docs/jvmti.html
 Archiving JVM_PRODUCT_SERVER... [dependency hotspot updated]
-Skipping unit tests, won't run them.
+
+>>>> Running unit tests...
+Warning: 1049 classes in /path/to/awesome-graal/build/x86_64/linux_macos/mx/mxbuild/dists/mx-micro-benchmarks.jar skipped as their class file version is not supported by FindClassesByAnnotatedMethods
+Warning: 401 classes in /path/to/awesome-graal/build/x86_64/linux_macos/mx/mxbuild/dists/mx-jacoco-report.jar skipped as their class file version is not supported by FindClassesByAnnotatedMethods
+WARNING: Unsupported class files listed in /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/mxbuild/unittest/mx-micro-benchmarks.jar.jdk1.8.excludedclasses
+WARNING: Unsupported class files listed in /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/mxbuild/unittest/mx-jacoco-report.jar.jdk1.8.excludedclasses
+MxJUnitCore
+JUnit version 4.12
+............................................................................................
+Time: 4.738
+
+OK (92 tests)
+
 >>> Using /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/jdk1.8.0_172/darwin-amd64/product/Contents/Home
 >>> Building Graal
 Cloning into 'graal'...
