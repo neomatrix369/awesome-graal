@@ -7,3 +7,4 @@ graal
 jdk8-with-graal
 *.tar.gz
 make*.*
+jdk8-with-graal-via-docker
