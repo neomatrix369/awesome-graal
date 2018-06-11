@@ -16,7 +16,7 @@ The scripts in this folder support `x86_64` architecture and can be used both on
     - for MacOS - version 3.83 
     - `installMake382.sh` has been provided, run or amend where necessary  
 - Docker (to use the `docker-build.sh` script)
-- JDK 1.8 (minimum build 144 or above)
+- JDK 1.8 (build 144 or higher)
     - must be a JDK and not just a JRE (some openjdk builds can be)
 
 **Note:** 
@@ -28,7 +28,7 @@ The scripts in this folder support `x86_64` architecture and can be used both on
 
 The `native-build.sh` script provided here will clone the respective dependencies to build JVMCI for JDK8, Graal, and Truffle for JDK8. 
 
-Pre-requisite: `JAVA_HOME` should point to the latest version of JDK8 (say build 144 or higher).
+Ensure `JAVA_HOME` should point to the latest version of JDK8 (build 144 or higher).
 
 Run the below command to start with the building process:
 
