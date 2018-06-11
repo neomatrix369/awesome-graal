@@ -16,6 +16,22 @@ JDK_GRAAL_FOLDER_NAME=jdk8-with-graal
 BUILD_ARTIFACTS_DIR=${BASEDIR}/${JDK_GRAAL_FOLDER_NAME}
 echo ">>> Working in ${BASEDIR}"
 
+displayDependencyVersion() {
+    echo "Java version"
+    java -version
+
+    echo "Make version"
+    make -version
+
+    echo "Python version"
+    python --version
+
+    if [[ "${OSTYPE}" = "darwin" ]]; then
+        echo "xcode version"
+        xcodebuild -version
+    fi
+}
+
 setupMX() {
     if [[ -e "mx/.git" ]]; then
         echo ">>> mx already exists: using the current version"
@@ -94,6 +110,7 @@ archivingArtifacts() {
 }
 
 run() {
+    displayDependencyVersion
     time setupMX
     time build_JDK_JVMCI
     time run_JDK_JVMCI_Tests
