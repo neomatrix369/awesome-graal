@@ -110,6 +110,7 @@ buildGraalVMSuite() {
         sed -i 's https://github.com/oracle/graalpython.git https://github.com/graalvm/graalpython.git ' mx.vm/suite.py
     fi
 
+    export FASTR_RELEASE=true
     FASTR_RELEASE=true ${MX} --dy /substratevm,/tools,sulong,/graal-nodejs,/fastr,truffleruby,graalpython build
 }
 
