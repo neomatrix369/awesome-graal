@@ -35,7 +35,7 @@ displayDependencyVersion() {
 setupMX() {
     cd ${BASEDIR}
     if [[ -e "mx/.git" ]]; then
-        echo ">>> mx already exists: using the updating and using this version"
+        echo ">>> mx already exists: updating and using this version"
         cd mx
         git pull
     else
@@ -48,7 +48,7 @@ setupMX() {
 build_JDK_JVMCI() {
     cd ${BASEDIR}
     if [[ -e "graal-jvmci-8/.git" ]]; then
-        echo ">>> graal-jvmci-8 already exists: using the updating and using this version"
+        echo ">>> graal-jvmci-8 already exists: updating and using this version"
         cd graal-jvmci-8
         git pull
     else
@@ -80,7 +80,7 @@ buildGraalCompiler() {
     echo ">>> Building Graal"
     cd ${BASEDIR}
     if [[ -e "graal/.git" ]]; then
-        echo ">>> graal already exists: using the updating and using this version"
+        echo ">>> graal already exists: updating and using this version"
         cd graal
         git pull
     else
