@@ -28,7 +28,7 @@ displayDependencyVersion() {
 
     if [[ "$(uname)" = "Darwin" ]]; then
         echo "xcode version"
-        xcodebuild -version
+        xcodebuild -version || true
     fi
 }
 
