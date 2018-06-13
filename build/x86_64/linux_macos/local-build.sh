@@ -18,13 +18,13 @@ echo ">>> Working in ${BASEDIR}"
 
 displayDependencyVersion() {
     echo "java version"
-    java -version
+    java -version || true
 
     echo "make version"
-    make -version
+    make -version || true
 
     echo "python version"
-    python --version
+    python --version || true
 
     if [[ "$(uname)" = "Darwin" ]]; then
         echo "xcode version"
