@@ -33,8 +33,11 @@ displayDependencyVersion() {
 }
 
 setupMX() {
+    cd ${BASEDIR}
     if [[ -e "mx/.git" ]]; then
-        echo ">>> mx already exists: using the current version"
+        echo ">>> mx already exists: using the updating and using this version"
+        cd mx
+        git pull
     else
         echo ">>> Getting mx: mx is a build tool created for managing the development of (primarily) Java code"
         git clone --depth=1 http://github.com/graalvm/mx.git
@@ -43,8 +46,11 @@ setupMX() {
 }
 
 build_JDK_JVMCI() {
+    cd ${BASEDIR}
     if [[ -e "graal-jvmci-8/.git" ]]; then
-        echo ">>> graal-jvmci-8 already exists: using the current version"
+        echo ">>> graal-jvmci-8 already exists: using the updating and using this version"
+        cd graal-jvmci-8
+        git pull
     else
         echo ">>> Getting Graal JVMCI for JDK8"
         git clone --depth=1 http://github.com/graalvm/graal-jvmci-8.git
@@ -55,6 +61,7 @@ build_JDK_JVMCI() {
 }
 
 run_JDK_JVMCI_Tests() {
+    cd ${BASEDIR}/graal-jvmci-8/
     if [[ "${RUN_TESTS}" = "false" ]]; then
        echo ">>>> Skipping unit tests, won't run them."
     else
@@ -73,7 +80,9 @@ buildGraal() {
     echo ">>> Building Graal"
     cd ${BASEDIR}
     if [[ -e "graal/.git" ]]; then
-        echo ">>> graal already exists: using the current version"
+        echo ">>> graal already exists: using the updating and using this version"
+        cd graal
+        git pull
     else
         git clone --depth=1 http://github.com/oracle/graal.git
     fi
