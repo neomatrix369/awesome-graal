@@ -76,7 +76,7 @@ setupEnvVariables() {
     echo ">>> Using ${JDK8_JVMCI_IMAGE}"
 }
 
-buildGraal() {
+buildGraalCompiler() {
     echo ">>> Building Graal"
     cd ${BASEDIR}
     if [[ -e "graal/.git" ]]; then
@@ -91,6 +91,14 @@ buildGraal() {
     echo ">>>> Setting environment variable JVMCI_VERSION_CHECK=${JVMCI_VERSION_CHECK}"
     ${MX} build
     ${MX} makegraaljdk ${BUILD_ARTIFACTS_DIR}
+}
+
+buildGraalVMSuite() {
+    echo ">>> Building GraalVM Suite"
+    cd ${BASEDIR}/graal/vm
+    echo "Applying temporary patch to 'mx.vm/suite.py'"
+    sed -i 's https://github.com/oracle/js.git https://github.com/graalvm/graaljs.git ' mx.vm/suite.py
+    ${MX} --dy /substratevm,/tools,sulong,/graal-nodejs,/fastr,truffleruby,graalpython build
 }
 
 archivingArtifacts() {
@@ -124,7 +132,8 @@ run() {
     time build_JDK_JVMCI
     time run_JDK_JVMCI_Tests
     setupEnvVariables
-    time buildGraal
+    time buildGraalCompiler
+    time buildGraalVMSuite
     time archivingArtifacts
 }
 
