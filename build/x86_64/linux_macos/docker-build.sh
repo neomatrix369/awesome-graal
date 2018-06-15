@@ -6,7 +6,7 @@ set -o pipefail
 
 DEBUG=${DEBUG:-""}
 
-JDK_VERSION="jdk8u172-b11"
+JDK_VERSION="jdk8u152-b16"
 DOCKER_IMAGE_TAG="graal-jdk8:latest"
 CONTAINER_HOME_DIR="/home/graal"
 
