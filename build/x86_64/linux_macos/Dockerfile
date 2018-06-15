@@ -1,4 +1,4 @@
-FROM adoptopenjdk/openjdk8:latest
+FROM adoptopenjdk/openjdk8:jdk8u152-b16
 
 RUN set -ex; \
     apt-get update \
