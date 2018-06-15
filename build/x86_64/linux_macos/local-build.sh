@@ -40,7 +40,7 @@ setupMX() {
         git pull
     else
         echo ">>> Getting mx: mx is a build tool created for managing the development of (primarily) Java code"
-        git clone --depth=1 http://github.com/graalvm/mx.git
+        git clone --depth=1 https://github.com/graalvm/mx.git
     fi
     export MX=${BASEDIR}/mx/mx
 }
@@ -53,7 +53,7 @@ build_JDK_JVMCI() {
         git pull
     else
         echo ">>> Getting Graal JVMCI for JDK8"
-        git clone --depth=1 http://github.com/graalvm/graal-jvmci-8.git
+        git clone --depth=1 https://github.com/graalvm/graal-jvmci-8.git
     fi
     echo ">>> Building a JDK8 with JVMCI..."
     cd ${BASEDIR}/graal-jvmci-8/
@@ -84,7 +84,7 @@ buildGraal() {
         cd graal
         git pull
     else
-        git clone --depth=1 http://github.com/oracle/graal.git
+        git clone --depth=1 https://github.com/oracle/graal.git
     fi
     cd ${BASEDIR}/graal/compiler
     export JVMCI_VERSION_CHECK='ignore'
