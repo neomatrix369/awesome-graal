@@ -47,7 +47,7 @@ if [[ "${DEBUG}" = "true" ]]; then
   echo "* Running container ${DOCKER_IMAGE_TAG} in DEBUG mode"
   docker run                                                       \
          --rm                                                      \
-         --entrypoint ${CONTAINER_HOME_DIR}/scripts/local-build.sh \
+         --interactive --tty --entrypoint /bin/bash                \
          --env JAVA_VERSION=${JDK_VERSION}                         \
          --env OUTPUT_DIR=${CONTAINER_OUTPUT_DIR}                  \
          --env RUN_TESTS=${RUN_TESTS:-""}                          \
@@ -55,14 +55,14 @@ if [[ "${DEBUG}" = "true" ]]; then
          --volume ${HOST_OUTPUT_DIR}:${CONTAINER_OUTPUT_DIR}       \
          ${DOCKER_IMAGE_TAG}
 else   
-  docker run                                                  \
-         --rm                                                 \
-         --interactive --tty --entrypoint /bin/bash           \
-         --env JAVA_VERSION=${JDK_VERSION}                    \
-         --env OUTPUT_DIR=${CONTAINER_OUTPUT_DIR}             \
-         --env RUN_TESTS=${RUN_TESTS:-""}                     \
-         --volume $(pwd):${CONTAINER_SCRIPTS_DIR}             \
-         --volume ${HOST_OUTPUT_DIR}:${CONTAINER_OUTPUT_DIR}  \
+  docker run                                                       \
+         --rm                                                      \
+         --entrypoint ${CONTAINER_HOME_DIR}/scripts/local-build.sh \
+         --env JAVA_VERSION=${JDK_VERSION}                         \
+         --env OUTPUT_DIR=${CONTAINER_OUTPUT_DIR}                  \
+         --env RUN_TESTS=${RUN_TESTS:-""}                          \
+         --volume $(pwd):${CONTAINER_SCRIPTS_DIR}                  \
+         --volume ${HOST_OUTPUT_DIR}:${CONTAINER_OUTPUT_DIR}       \
          ${DOCKER_IMAGE_TAG} &> ${BUILD_LOGS}
 fi
 
