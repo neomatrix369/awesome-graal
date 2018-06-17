@@ -97,6 +97,12 @@ The build logs are written to the `jdk8-with-graal-docker/docker-build.logs` log
 tail -f jdk8-with-graal-docker/docker-build.logs
 ```
 
+For container in DEBUG mode, run the below:
+
+```
+DEBUG=true ./docker-build.sh
+```
+
 ### Docker image & container
 
 If you examine the `Dockerfile` script, you will see the docker image is inherited from `adoptopenjdk/openjdk8:latest` available from the docker user [Adopt OpenJDK](https://hub.docker.com/u/adoptopenjdk/) on [Docker hub](http://hub.docker.com/).
