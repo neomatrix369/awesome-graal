@@ -103,6 +103,16 @@ For container in DEBUG mode, run the below:
 DEBUG=true ./docker-build.sh
 ```
 
+By default, the output is stored inside the container i.e. '/home/graal/jdk8-with-graal-docker'
+
+To map all the repos used during the build process, run the below:
+
+```
+HOST_REPOS_DIR="jdk8-with-graal-repos" ./docker-build.sh
+```
+
+By default, the output is stored inside the container i.e. '/home/graal/jdk8-with-graal-docker'
+
 ### Docker image & container
 
 If you examine the `Dockerfile` script, you will see the docker image is inherited from `adoptopenjdk/openjdk8:latest` available from the docker user [Adopt OpenJDK](https://hub.docker.com/u/adoptopenjdk/) on [Docker hub](http://hub.docker.com/).
