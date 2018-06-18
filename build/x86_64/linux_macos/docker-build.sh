@@ -20,7 +20,7 @@ mkdir -p "${HOST_OUTPUT_DIR}"
 BUILD_LOGS="${HOST_OUTPUT_DIR}/docker-build.logs"
 
 CONTAINER_SCRIPTS_DIR="${CONTAINER_HOME_DIR}/scripts"
-CONTAINER_OUTPUT_DIR="${CONTAINER_HOME_DIR}/output}"
+CONTAINER_OUTPUT_DIR="${CONTAINER_HOME_DIR}/output"
 
 echo "*************************************************"
 echo "* "
