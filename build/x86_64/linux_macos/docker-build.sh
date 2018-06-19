@@ -8,7 +8,9 @@ DEBUG=${DEBUG:-""}
 
 JDK_VERSION="jdk8u152-b16"
 DOCKER_IMAGE_TAG="graal-jdk8:latest"
-CONTAINER_HOME_DIR="/home/graal"
+USER_IN_CONTAINER=${USER_IN_CONTAINER:-"graal"}
+CONTAINER_HOME_DIR="/home/${USER_IN_CONTAINER}"
+LLVM_VERSION=${LLVM_VERSION:-6.0}
 
 HOST_REPOS_DIR=${HOST_REPOS_DIR:-""}
 if [[ ! -z "${HOST_REPOS_DIR}" ]]; then
@@ -34,10 +36,13 @@ echo "*************************************************"
 echo "******************* Parameters ******************"
 echo "DOCKER_IMAGE_TAG=${DOCKER_IMAGE_TAG}"
 echo "JDK_VERSION=${JDK_VERSION}"
+echo "LLVM_VERSION=${LLVM_VERSION}"
 echo "DEBUG=${DEBUG}"
 echo ""
 echo "HOST_OUTPUT_DIR=${HOST_OUTPUT_DIR}"
 echo "HOST_REPOS_DIR=${HOST_REPOS_DIR:-}"
+echo ""
+echo "USER_IN_CONTAINER=${USER_IN_CONTAINER}"
 echo "CONTAINER_HOME_DIR=${CONTAINER_HOME_DIR}"
 echo "CONTAINER_SCRIPTS_DIR=${CONTAINER_SCRIPTS_DIR}"
 echo "CONTAINER_OUTPUT_DIR=${CONTAINER_OUTPUT_DIR}"
@@ -46,7 +51,10 @@ echo "BUILD_LOGS=${BUILD_LOGS}"
 echo "RUN_TESTS=${RUN_TESTS:-}"
 echo "*************************************************"
 
-docker build -t ${DOCKER_IMAGE_TAG} .
+docker build \
+            -t ${DOCKER_IMAGE_TAG} \
+            --build-arg USER_IN_CONTAINER=${USER_IN_CONTAINER} \
+            --build-arg LLVM_VERSION=${LLVM_VERSION} .
 
 HOST_REPOS_DIR_DOCKER_PARAM=""
 if [[ ! -z "${HOST_REPOS_DIR}" ]]; then
@@ -59,6 +67,7 @@ if [[ "${DEBUG}" = "true" ]]; then
   docker run                                                       \
          --rm                                                      \
          --interactive --tty --entrypoint /bin/bash                \
+         --user ${USER_IN_CONTAINER}                               \
          --env JAVA_VERSION=${JDK_VERSION}                         \
          --env OUTPUT_DIR=${CONTAINER_OUTPUT_DIR}                  \
          --env RUN_TESTS=${RUN_TESTS:-""}                          \
@@ -69,6 +78,7 @@ if [[ "${DEBUG}" = "true" ]]; then
 else   
   docker run                                                       \
          --rm                                                      \
+         --user ${USER_IN_CONTAINER}                               \
          --entrypoint ${CONTAINER_HOME_DIR}/scripts/local-build.sh \
          --env JAVA_VERSION=${JDK_VERSION}                         \
          --env OUTPUT_DIR=${CONTAINER_OUTPUT_DIR}                  \

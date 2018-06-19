@@ -1,8 +1,5 @@
 FROM adoptopenjdk/openjdk8:jdk8u152-b16
 
-ARG LLVM_VERSION
-ENV LLVM_VERSION 4.0
-
 RUN set -ex; \
     apt-get update \
     && apt-get install -y \
@@ -22,13 +19,13 @@ RUN set -ex; \
 COPY installMake382.sh /installMake382.sh 
 RUN /bin/bash -l -c './installMake382.sh'
 
+ARG LLVM_VERSION
 COPY installLLVM.sh /installLLVM.sh
 RUN /bin/bash -l -c "./installLLVM.sh ${LLVM_VERSION}"
 
-ENV USER_IN_CONTAINER graal
+ARG USER_IN_CONTAINER
 ENV HOME_DIR /home/${USER_IN_CONTAINER}
-
-RUN useradd --create-home --shell /bin/bash $USER_IN_CONTAINER
+RUN useradd --create-home --shell /bin/bash ${USER_IN_CONTAINER} || true
 USER $USER_IN_CONTAINER
 WORKDIR ${HOME_DIR}
 
