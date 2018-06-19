@@ -23,7 +23,7 @@ COPY installMake382.sh /installMake382.sh
 RUN /bin/bash -l -c './installMake382.sh'
 
 COPY installLLVM.sh /installLLVM.sh
-RUN /bin/bash -l -c './installLLVM.sh ${LLVM_VERSION}'
+RUN /bin/bash -l -c "./installLLVM.sh ${LLVM_VERSION}"
 
 ENV USER_IN_CONTAINER graal
 ENV HOME_DIR /home/${USER_IN_CONTAINER}
