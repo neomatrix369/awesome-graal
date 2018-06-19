@@ -5,8 +5,10 @@ set -u
 set -o pipefail
 
 DEBUG=${DEBUG:-""}
+RUN_TESTS=${RUN_TESTS:-""}
 
-JDK_VERSION="jdk8u152-b16"
+JDK_BASE_IMAGE=${JDK_BASE_IMAGE:-"openjdk8"}
+JDK_VERSION=${JDK_VERSION:-"jdk8u152-b16"}
 DOCKER_IMAGE_TAG="graal-jdk8:latest"
 USER_IN_CONTAINER=${USER_IN_CONTAINER:-"graal"}
 CONTAINER_HOME_DIR="/home/${USER_IN_CONTAINER}"
@@ -35,12 +37,13 @@ echo "*************************************************"
 
 echo "******************* Parameters ******************"
 echo "DOCKER_IMAGE_TAG=${DOCKER_IMAGE_TAG}"
+echo "JDK_BASE_IMAGE=${JDK_BASE_IMAGE}"
 echo "JDK_VERSION=${JDK_VERSION}"
 echo "LLVM_VERSION=${LLVM_VERSION}"
 echo "DEBUG=${DEBUG}"
 echo ""
 echo "HOST_OUTPUT_DIR=${HOST_OUTPUT_DIR}"
-echo "HOST_REPOS_DIR=${HOST_REPOS_DIR:-}"
+echo "HOST_REPOS_DIR=${HOST_REPOS_DIR}"
 echo ""
 echo "USER_IN_CONTAINER=${USER_IN_CONTAINER}"
 echo "CONTAINER_HOME_DIR=${CONTAINER_HOME_DIR}"
@@ -48,12 +51,14 @@ echo "CONTAINER_SCRIPTS_DIR=${CONTAINER_SCRIPTS_DIR}"
 echo "CONTAINER_OUTPUT_DIR=${CONTAINER_OUTPUT_DIR}"
 echo ""
 echo "BUILD_LOGS=${BUILD_LOGS}"
-echo "RUN_TESTS=${RUN_TESTS:-}"
+echo "RUN_TESTS=${RUN_TESTS}"
 echo "*************************************************"
 
 docker build \
             -t ${DOCKER_IMAGE_TAG} \
             --build-arg USER_IN_CONTAINER=${USER_IN_CONTAINER} \
+            --build-arg JDK_BASE_IMAGE=${JDK_BASE_IMAGE}       \
+            --build-arg JDK_VERSION=${JDK_VERSION}             \
             --build-arg LLVM_VERSION=${LLVM_VERSION} .
 
 HOST_REPOS_DIR_DOCKER_PARAM=""
@@ -68,9 +73,8 @@ if [[ "${DEBUG}" = "true" ]]; then
          --rm                                                      \
          --interactive --tty --entrypoint /bin/bash                \
          --user ${USER_IN_CONTAINER}                               \
-         --env JAVA_VERSION=${JDK_VERSION}                         \
          --env OUTPUT_DIR=${CONTAINER_OUTPUT_DIR}                  \
-         --env RUN_TESTS=${RUN_TESTS:-""}                          \
+         --env RUN_TESTS=${RUN_TESTS}                              \
          --volume $(pwd):${CONTAINER_SCRIPTS_DIR}                  \
          --volume ${HOST_OUTPUT_DIR}:${CONTAINER_OUTPUT_DIR}       \
          ${HOST_REPOS_DIR_DOCKER_PARAM}                            \
@@ -80,9 +84,8 @@ else
          --rm                                                      \
          --user ${USER_IN_CONTAINER}                               \
          --entrypoint ${CONTAINER_HOME_DIR}/scripts/local-build.sh \
-         --env JAVA_VERSION=${JDK_VERSION}                         \
          --env OUTPUT_DIR=${CONTAINER_OUTPUT_DIR}                  \
-         --env RUN_TESTS=${RUN_TESTS:-""}                          \
+         --env RUN_TESTS=${RUN_TESTS}                              \
          --volume $(pwd):${CONTAINER_SCRIPTS_DIR}                  \
          --volume ${HOST_OUTPUT_DIR}:${CONTAINER_OUTPUT_DIR}       \
          ${HOST_REPOS_DIR_DOCKER_PARAM}                            \

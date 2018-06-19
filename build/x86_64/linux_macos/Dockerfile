@@ -1,4 +1,6 @@
-FROM adoptopenjdk/openjdk8:jdk8u152-b16
+ARG JDK_BASE_IMAGE
+ARG JDK_VERSION
+FROM adoptopenjdk/${JDK_BASE_IMAGE}:${JDK_VERSION}
 
 RUN set -ex; \
     apt-get update \
