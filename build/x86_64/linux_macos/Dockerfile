@@ -1,7 +1,7 @@
 FROM adoptopenjdk/openjdk8:jdk8u152-b16
 
 ARG LLVM_VERSION
-ENV LLVM_VERSION 6.0
+ENV LLVM_VERSION 4.0
 
 RUN set -ex; \
     apt-get update \
@@ -22,20 +22,8 @@ RUN set -ex; \
 COPY installMake382.sh /installMake382.sh 
 RUN /bin/bash -l -c './installMake382.sh'
 
-RUN echo "deb http://apt.llvm.org/xenial/ llvm-toolchain-xenial-${LLVM_VERSION} main" >> /etc/apt/sources.list.d/llvm.org.list
-RUN echo "deb-src http://apt.llvm.org/xenial/ llvm-toolchain-xenial-${LLVM_VERSION} main" >> /etc/apt/sources.list.d/llvm.org.list
-
-RUN wget -O - https://apt.llvm.org/llvm-snapshot.gpg.key | apt-key add -
-
-RUN apt-get update && \
-    apt-get install -y \
-    clang-${LLVM_VERSION} clang-tools-${LLVM_VERSION} clang-${LLVM_VERSION}-doc \
-    libclang-common-${LLVM_VERSION}-dev libclang-${LLVM_VERSION}-dev libclang1-${LLVM_VERSION} \ 
-    libllvm6.0 lldb-${LLVM_VERSION} llvm-${LLVM_VERSION} llvm-${LLVM_VERSION}-dev \
-    llvm-${LLVM_VERSION}-doc llvm-${LLVM_VERSION}-examples llvm-${LLVM_VERSION}-runtime \
-    clang-format-${LLVM_VERSION} python-clang-${LLVM_VERSION} lld-${LLVM_VERSION} libfuzzer-${LLVM_VERSION}-dev
-
-RUN echo ">>> Warning: Could not find these packages libllvm-${LLVM_VERSION}-ocaml-dev lldb-${LLVM_VERSION}-dev, even though mentioned on https://apt.llvm.org/ <<<"
+COPY installLLVM.sh /installLLVM.sh
+RUN /bin/bash -l -c './installLLVM.sh ${LLVM_VERSION}'
 
 ENV USER_IN_CONTAINER graal
 ENV HOME_DIR /home/${USER_IN_CONTAINER}
@@ -58,4 +46,3 @@ RUN /bin/bash -l -c 'python --version'
 RUN /bin/bash -l -c 'ls /usr/lib/llvm-${LLVM_VERSION}/bin/*'
 RUN /bin/bash -l -c 'opt -version'
 RUN /bin/bash -l -c 'clang --version'
-
