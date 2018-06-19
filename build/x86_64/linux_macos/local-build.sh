@@ -37,6 +37,7 @@ setupMX() {
     if [[ -e "mx/.git" ]]; then
         echo ">>> mx already exists: updating and using this version"
         cd mx
+        git checkout .
         git pull
     else
         echo ">>> Getting mx: mx is a build tool created for managing the development of (primarily) Java code"
@@ -50,6 +51,7 @@ build_JDK_JVMCI() {
     if [[ -e "graal-jvmci-8/.git" ]]; then
         echo ">>> graal-jvmci-8 already exists: updating and using this version"
         cd graal-jvmci-8
+        git checkout .
         git pull
     else
         echo ">>> Getting Graal JVMCI for JDK8"
@@ -82,6 +84,7 @@ buildGraalCompiler() {
     if [[ -e "graal/.git" ]]; then
         echo ">>> graal already exists: updating and using this version"
         cd graal
+        git checkout .
         git pull
     else
         git clone --depth=1 https://github.com/oracle/graal.git
