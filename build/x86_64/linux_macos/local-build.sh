@@ -36,37 +36,34 @@ printParameters() {
     echo "*************************************************"
 }
 
+versionCheck() {
+    program=${1}
+    versionArg=${2:-"-version"}
+    echo ""
+    echo "${program} version check"
+    ${program} ${versionArg}
+}
+
 displayDependencyVersion() {
-    echo ""
-    echo "java version check"
-    java -version
-
-    echo ""
-    echo "make version check"
-    make -version
-
-    echo ""
-    echo "python version check"
-    python --version
+    versionCheck java
+    versionCheck make
+    versionCheck python "--version"
 
     if [[ "$(uname)" = "Darwin" ]]; then
         echo ""
         echo "MacOS specific checks"
-        echo "xcode version check"
-        xcodebuild -version || true
-        
-        echo ""
-        echo "LLVM: clang version check"
-        clang --version
+        versionCheck xcodebuild "--version" || true
+
+        echo "LLVM:"
+        versionCheck clang "--version"
 
         echo ""
-        echo "openssl version check"
-        openssl version
+        versionCheck openssl version
     fi
-    
+
     echo ""
-    echo "LLVM: opt version check"
-    opt --version
+    echo "LLVM:"
+    versionCheck opt "--version"
 }
 
 setupMX() {
