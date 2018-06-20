@@ -51,6 +51,10 @@ displayDependencyVersion() {
         echo ""
         echo "LLVM: clang version check"
         clang --version
+
+        echo ""
+        echo "openssl version check"
+        openssl version
     fi
     
     echo ""
