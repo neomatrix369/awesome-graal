@@ -18,8 +18,9 @@ RUN set -ex; \
     && apt-get autoremove \
     && apt-get clean
 
-COPY installMake382.sh /installMake382.sh 
-RUN /bin/bash -l -c './installMake382.sh'
+ARG MAKE_VERSION
+COPY installMake.sh /installMake.sh
+RUN /bin/bash -l -c "./installMake.sh ${MAKE_VERSION}"
 
 ARG LLVM_VERSION
 COPY installLLVM.sh /installLLVM.sh

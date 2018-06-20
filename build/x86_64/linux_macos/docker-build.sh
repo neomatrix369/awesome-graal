@@ -12,6 +12,7 @@ JDK_TAG_NAME=${JDK_TAG_NAME:-"jdk8u152-b16"}
 DOCKER_IMAGE_TAG="graal-jdk8:latest"
 USER_IN_CONTAINER=${USER_IN_CONTAINER:-"graal"}
 CONTAINER_HOME_DIR="/home/${USER_IN_CONTAINER}"
+MAKE_VERSION=${MAKE_VERSION:-3.82}
 LLVM_VERSION=${LLVM_VERSION:-6.0}
 
 HOST_REPOS_DIR=${HOST_REPOS_DIR:-""}
@@ -40,6 +41,7 @@ echo "DOCKER_IMAGE_TAG=${DOCKER_IMAGE_TAG}"
 echo "JDK_BASE_IMAGE=${JDK_BASE_IMAGE}"
 echo "JDK_TAG_NAME=${JDK_TAG_NAME}"
 echo "LLVM_VERSION=${LLVM_VERSION}"
+echo "MAKE_VERSION=${MAKE_VERSION}"
 echo "DEBUG=${DEBUG}"
 echo ""
 echo "HOST_OUTPUT_DIR=${HOST_OUTPUT_DIR}"
@@ -59,6 +61,7 @@ docker build \
             --build-arg USER_IN_CONTAINER=${USER_IN_CONTAINER} \
             --build-arg JDK_BASE_IMAGE=${JDK_BASE_IMAGE}       \
             --build-arg JDK_TAG_NAME=${JDK_TAG_NAME}           \
+            --build-arg MAKE_VERSION=${MAKE_VERSION}           \
             --build-arg LLVM_VERSION=${LLVM_VERSION} .
 
 HOST_REPOS_DIR_DOCKER_PARAM=""

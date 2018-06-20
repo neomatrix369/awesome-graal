@@ -14,7 +14,7 @@ The scripts in this folder support `x86_64` architecture and can be used both on
 - make 
     - for Linux - version 3.82  
     - for MacOS - version 3.81 
-    - `installMake382.sh` has been provided, amend before running where necessary
+    - `installMake.sh` has been provided, amend before running where necessary
 - LLVM 
     - for Linux - version 4.0 to 6.0, also see [Installing LLVM on the Graal git repo](https://github.com/oracle/truffleruby/blob/master/doc/user/installing-llvm.md#ubuntu)
     - for MacOS - version 4.0.1 , also see [Installing LLVM on the Graal git repo](https://github.com/oracle/truffleruby/blob/master/doc/user/installing-llvm.md#macos) 
@@ -123,7 +123,7 @@ tail -f jdk8-with-graal-docker/docker-build.logs
 
 If you examine the `Dockerfile` script, you will see the docker image is inherited from `adoptopenjdk/openjdk8:latest` available from the docker user [Adopt OpenJDK](https://hub.docker.com/u/adoptopenjdk/) on [Docker hub](http://hub.docker.com/).
 
-The script also internally calls `installMake382.sh` and `installLLVM.sh`, these scripts can also be run in the native environment.
+The script also internally calls `installMake.sh` and `installLLVM.sh`, these scripts can also be run in the native environment. They both take the respective version numbers of the program as a command-line parameter.
 
 Remove unused containers and images:
 
