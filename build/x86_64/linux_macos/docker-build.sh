@@ -15,6 +15,7 @@ CONTAINER_HOME_DIR="/home/${USER_IN_CONTAINER}"
 MAKE_VERSION=${MAKE_VERSION:-3.82}
 LLVM_VERSION=${LLVM_VERSION:-6.0}
 GRAALVM_SUITE_RUNTIMES=${GRAALVM_SUITE_RUNTIMES:-"/substratevm,/tools,sulong,/graal-nodejs,/fastr,truffleruby,graalpython"}
+export JAVA_OPTS="$(echo ${JAVA_OPTS:-''} -Xms512m -Xmx512m)"
 
 HOST_REPOS_DIR=${HOST_REPOS_DIR:-""}
 if [[ ! -z "${HOST_REPOS_DIR}" ]]; then
@@ -57,6 +58,7 @@ echo "CONTAINER_OUTPUT_DIR=${CONTAINER_OUTPUT_DIR}"
 echo ""
 echo "BUILD_LOGS=${BUILD_LOGS}"
 echo "RUN_TESTS=${RUN_TESTS}"
+echo "JAVA_OPTS=${JAVA_OPTS}"
 echo "*************************************************"
 
 docker build \

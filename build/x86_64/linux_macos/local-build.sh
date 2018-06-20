@@ -15,6 +15,10 @@ RUN_TESTS=${RUN_TESTS:-""}
 JDK_GRAAL_FOLDER_NAME=jdk8-with-graal
 BUILD_ARTIFACTS_DIR=${BASEDIR}/${JDK_GRAAL_FOLDER_NAME}
 GRAALVM_SUITE_RUNTIMES=${GRAALVM_SUITE_RUNTIMES:-"/substratevm,/tools,sulong,/graal-nodejs,/fastr,truffleruby,graalpython"}
+export JAVA_OPTS="$(echo ${JAVA_OPTS:-''} -Xms512m -Xmx512m)"
+export FASTR_RELEASE=true
+export LC_ALL=C
+
 echo ">>> Working in ${BASEDIR}"
 
 printParameters() {
@@ -26,6 +30,9 @@ printParameters() {
     echo "GRAALVM_SUITE_RUNTIMES=${GRAALVM_SUITE_RUNTIMES}"
     echo ""
     echo "RUN_TESTS=${RUN_TESTS}"
+    echo "JAVA_OPTS=${JAVA_OPTS}"
+    echo "FASTR_RELEASE=${FASTR_RELEASE}"
+    echo "LC_ALL=${LC_ALL}"        
     echo "*************************************************"
 }
 
@@ -151,8 +158,7 @@ buildGraalVMSuite() {
     cd ${BASEDIR}/graal/vm
     applyPatches
 
-    export FASTR_RELEASE=true
-    FASTR_RELEASE=true ${MX} --dy ${GRAALVM_SUITE_RUNTIMES} build
+    ${MX} --dy ${GRAALVM_SUITE_RUNTIMES} build
 }
 
 archivingArtifacts() {
