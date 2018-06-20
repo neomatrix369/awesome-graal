@@ -1,6 +1,6 @@
 ARG JDK_BASE_IMAGE
-ARG JDK_VERSION
-FROM adoptopenjdk/${JDK_BASE_IMAGE}:${JDK_VERSION}
+ARG JDK_TAG_NAME
+FROM adoptopenjdk/${JDK_BASE_IMAGE}:${JDK_TAG_NAME}
 
 RUN set -ex; \
     apt-get update \
