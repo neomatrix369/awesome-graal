@@ -9,8 +9,7 @@ if [[ "$(uname)" = "Darwin" ]]; then
   echo "Ensure you have the latest version of XCode installed or else you will be prompted to do so"
   brew install llvm@4
 
-  echo "For compilers to find this software you may need to set:"
-
+  echo "For compilers to find this software you may need to set (check for the correct path):"
   echo "LDFLAGS: -L/usr/local/opt/llvm@4/lib -Wl,-rpath,/usr/local/opt/llvm@4/lib"
   echo "CPPFLAGS: -I/usr/local/opt/llvm@4/include"
 
