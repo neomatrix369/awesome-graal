@@ -122,9 +122,7 @@ buildGraalCompiler() {
     ${MX} makegraaljdk --force ${BUILD_ARTIFACTS_DIR}
 }
 
-buildGraalVMSuite() {
-    echo ">>> Building GraalVM Suite"
-    cd ${BASEDIR}/graal/vm
+applyPatches() {
     echo "Applying temporary patch to fix graaljs cloning issue in 'mx.vm/suite.py'"
     if [[ "$(uname)" = "Darwin" ]]; then
        sed -i '' 's/https:\/\/github.com\/oracle\/js.git/https:\/\/github.com\/graalvm\/graaljs.git/g' mx.vm/suite.py
@@ -140,7 +138,14 @@ buildGraalVMSuite() {
     fi
 
     echo "Applying temporary patch to fix isValidJavaVersion() in https://github.com/oracle/graal/blob/master/substratevm/src/com.oracle.svm.hosted/src/com/oracle/svm/hosted/NativeImageGeneratorRunner.java#L156"    
-    cp ${BASEDIR}/patch/NativeImageGeneratorRunner.java ${BASEDIR}/graal/substratevm/src/com.oracle.svm.hosted/src/com/oracle/svm/hosted/NativeImageGeneratorRunner.java
+    cp ${BASEDIR}/patch/NativeImageGeneratorRunner.java ${BASEDIR}/graal/substratevm/src/com.oracle.svm.hosted/src/com/oracle/svm/hosted/NativeImageGeneratorRunner.java    
+}
+
+buildGraalVMSuite() {
+    echo ">>> Building GraalVM Suite"
+
+    cd ${BASEDIR}/graal/vm
+    applyPatches
 
     export FASTR_RELEASE=true
     FASTR_RELEASE=true ${MX} --dy ${GRAALVM_SUITE_RUNTIMES} build

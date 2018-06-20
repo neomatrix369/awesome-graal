@@ -83,6 +83,7 @@ if [[ "${DEBUG}" = "true" ]]; then
          --env RUN_TESTS=${RUN_TESTS}                              \
          --env GRAALVM_SUITE_RUNTIMES=${GRAALVM_SUITE_RUNTIMES}    \
          --volume $(pwd):${CONTAINER_SCRIPTS_DIR}                  \
+         --volume $(pwd)/patch:${CONTAINER_HOME_DIR}/patch         \
          --volume ${HOST_OUTPUT_DIR}:${CONTAINER_OUTPUT_DIR}       \
          ${HOST_REPOS_DIR_DOCKER_PARAM}                            \
          ${DOCKER_IMAGE_TAG}
@@ -95,6 +96,7 @@ else
          --env RUN_TESTS=${RUN_TESTS}                              \
          --env GRAALVM_SUITE_RUNTIMES=${GRAALVM_SUITE_RUNTIMES}    \
          --volume $(pwd):${CONTAINER_SCRIPTS_DIR}                  \
+         --volume $(pwd)/patch:${CONTAINER_HOME_DIR}/patch         \
          --volume ${HOST_OUTPUT_DIR}:${CONTAINER_OUTPUT_DIR}       \
          ${HOST_REPOS_DIR_DOCKER_PARAM}                            \
          ${DOCKER_IMAGE_TAG} &> ${BUILD_LOGS}
