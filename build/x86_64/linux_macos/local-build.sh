@@ -84,9 +84,10 @@ gitClone() {
 
 setupMX() {
     cd ${BASEDIR}
+    repo=mx
     gitClone graalvm \
-             mx      \
-             "mx is a build tool created for managing the development of (primarily) Java code"
+             ${repo} \
+             "${repo} is a build tool created for managing the development of (primarily) Java code"
     export MX=${BASEDIR}/${repo}/mx
 }
 
