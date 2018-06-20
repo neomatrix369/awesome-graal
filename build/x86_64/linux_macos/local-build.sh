@@ -93,7 +93,7 @@ buildGraalCompiler() {
     export JVMCI_VERSION_CHECK='ignore'
     echo ">>>> Setting environment variable JVMCI_VERSION_CHECK=${JVMCI_VERSION_CHECK}"
     ${MX} build
-    ${MX} makegraaljdk ${BUILD_ARTIFACTS_DIR}
+    ${MX} makegraaljdk --force ${BUILD_ARTIFACTS_DIR}
 }
 
 buildGraalVMSuite() {
