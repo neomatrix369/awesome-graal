@@ -1,11 +1,10 @@
 version: 2
-parallelism: 8
 jobs:
   build:
     docker:
-      - image: graal-jdk8:latest
+      - image: openjdk8:jdk8u152-b16
     steps:
       - checkout
       - run:
-          name: Build via the docker build script
-          command: ./build/x86_64/linux_macos/docker-build.sh
+          name: Build via the local build script
+          command: ./build/x86_64/linux_macos/local-build.sh
