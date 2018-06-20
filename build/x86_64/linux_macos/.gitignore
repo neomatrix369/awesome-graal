@@ -8,3 +8,8 @@ jdk8-with-graal
 *.tar.gz
 make*.*
 jdk8*
+fastr/
+graaljs/
+graalpython/
+sulong/
+truffleruby/

@@ -17,7 +17,7 @@ The scripts in this folder support `x86_64` architecture and can be used both on
     - `installMake.sh` has been provided, amend before running where necessary
 - LLVM 
     - for Linux - version 4.0 to 6.0, also see [Installing LLVM on the Graal git repo](https://github.com/oracle/truffleruby/blob/master/doc/user/installing-llvm.md#ubuntu)
-    - for MacOS - version 4.0.1 , also see [Installing LLVM on the Graal git repo](https://github.com/oracle/truffleruby/blob/master/doc/user/installing-llvm.md#macos) 
+    - for MacOS - version 4.0.1 , also see [Installing LLVM on the Graal git repo](https://github.com/oracle/truffleruby/blob/master/doc/user/installing-llvm.md#macos). Check if the default Apple LLVM provided under `/Library/Developer/CommandLineTools/usr/bin/` is based on LLVM 4.0 or higher.
     - `installLLVM.sh` has been provided, amend before running where necessary   
 - Docker (to use the `docker-build.sh` script)
 - JDK 1.8 (build 141 or higher)

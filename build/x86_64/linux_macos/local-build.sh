@@ -17,19 +17,32 @@ BUILD_ARTIFACTS_DIR=${BASEDIR}/${JDK_GRAAL_FOLDER_NAME}
 echo ">>> Working in ${BASEDIR}"
 
 displayDependencyVersion() {
-    echo "java version"
+    echo ""
+    echo "java version check"
     java -version
 
-    echo "make version"
+    echo ""
+    echo "make version check"
     make -version
 
-    echo "python version"
+    echo ""
+    echo "python version check"
     python --version
 
     if [[ "$(uname)" = "Darwin" ]]; then
-        echo "xcode version"
+        echo ""
+        echo "MacOS specific checks"
+        echo "xcode version check"
         xcodebuild -version || true
+        
+        echo ""
+        echo "LLVM: clang version check"
+        clang --version
     fi
+    
+    echo ""
+    echo "LLVM: opt version check"
+    opt --version
 }
 
 setupMX() {
