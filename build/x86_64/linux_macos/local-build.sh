@@ -15,7 +15,7 @@ RUN_TESTS=${RUN_TESTS:-""}
 JDK_GRAAL_FOLDER_NAME=jdk8-with-graal
 BUILD_ARTIFACTS_DIR=${BASEDIR}/${JDK_GRAAL_FOLDER_NAME}
 GRAALVM_SUITE_RUNTIMES=${GRAALVM_SUITE_RUNTIMES:-"/substratevm,/tools,sulong,/graal-nodejs,/fastr,truffleruby,graalpython"}
-export JAVA_OPTS="$(echo ${JAVA_OPTS:-''} -Xms512m -Xmx512m)"
+export JAVA_OPTS="$(echo ${DOCKER_JAVA_OPTS:-""} ${JAVA_OPTS})"
 export FASTR_RELEASE=true
 export LC_ALL=C
 
