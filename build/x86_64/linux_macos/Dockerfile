@@ -1,4 +1,6 @@
-FROM adoptopenjdk/openjdk8:jdk8u152-b16
+ARG JDK_BASE_IMAGE
+ARG JDK_TAG_NAME
+FROM adoptopenjdk/${JDK_BASE_IMAGE}:${JDK_TAG_NAME}
 
 RUN set -ex; \
     apt-get update \
@@ -16,15 +18,13 @@ RUN set -ex; \
     && apt-get autoremove \
     && apt-get clean
 
-COPY installMake382.sh /installMake382.sh 
-RUN /bin/bash -l -c './installMake382.sh'
-RUN /bin/bash -l -c 'make -version'
-RUN /bin/bash -l -c 'python --version'
+ARG MAKE_VERSION
+COPY installMake.sh /installMake.sh
+RUN /bin/bash -l -c "./installMake.sh ${MAKE_VERSION}"
 
-ENV USER_IN_CONTAINER graal
+ARG USER_IN_CONTAINER
 ENV HOME_DIR /home/${USER_IN_CONTAINER}
-
-RUN useradd --create-home --shell /bin/bash $USER_IN_CONTAINER
+RUN useradd --create-home --shell /bin/bash ${USER_IN_CONTAINER} || true
 USER $USER_IN_CONTAINER
 WORKDIR ${HOME_DIR}
 

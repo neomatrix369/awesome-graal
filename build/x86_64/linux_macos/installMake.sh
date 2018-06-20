@@ -4,7 +4,8 @@ set -e
 set -u
 set -o pipefail
 
-MAKE_ARTIFACT_NAME=make-3.82
+MAKE_VERSION=${1:-3.82}
+MAKE_ARTIFACT_NAME=make-${MAKE_VERSION}
 MAKE_ARTIFACT="${MAKE_ARTIFACT_NAME}.tar.gz"
 
 if [[ ! -f "${MAKE_ARTIFACT}" ]]; then

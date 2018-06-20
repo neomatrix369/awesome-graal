@@ -13,11 +13,12 @@ The scripts in this folder support `x86_64` architecture and can be used both on
     - for MacOS - xcode 4.9.1 or higher
 - make 
     - for Linux - version 3.82  
-    - for MacOS - version 3.83 
-    - `installMake382.sh` has been provided, run or amend where necessary  
+    - for MacOS - version 3.81 
+    - `installMake.sh` has been provided, amend where necessary before running
 - Docker (to use the `docker-build.sh` script)
 - JDK 1.8 (build 141 or higher)
     - must be a JDK and not just a JRE (some openjdk builds can be)
+    - can also be obtained from the [Adopt OpenJDK build farm](https://adoptopenjdk.net/releases.html?variant=openjdk8)
 
 **Note:** 
 - building of `graal-jvmci-8` have known to fail if the above versions are not met
@@ -91,23 +92,37 @@ Run the below command to start with the building process in a Docker container:
 ./docker-build.sh
 ```
 
-The build logs are written to the `jdk8-with-graal-docker/docker-build.logs` log file:
+- The build logs are written to the `jdk8-with-graal-docker/docker-build.logs` log file:
 
 ```
 tail -f jdk8-with-graal-docker/docker-build.logs
 ```
 
-For container in DEBUG mode, run the below:
+```
+[<ENV VARIABLE>="<value>"]* ./docker-build.sh
+```
+*one of more environment variables
 
 ```
-DEBUG=true ./docker-build.sh
+DEBUG=true HOST_REPOS_DIR="/path/on/the/host" ./docker-build.sh
 ```
+
+- All the known environment variables that can be used when running the above `docker-build.sh` script:
+
+| Name           | Default       | Description |
+| :------------- |:-------------:|:------------|
+| DEBUG | <empty> | to run the container in DEBUG mode |
+| HOST_REPOS_DIR | /home/graal/ (inside the container)| a new location on the host to map all the source and dependent repos used to build Graal/GraalVM/Truffle |
+| JDK_BASE_IMAGE | openjdk8 | name of the JDK image (from Adopt OpenJDK build farm or another source) |
+| JDK_TAG_NAME | jdk8u152-b16 | the tag name  of the the image |
+| USER_IN_CONTAINER | graal | name of the user in the container (when in debug or non-debug mode)  |
+| HOST_REPOS_DIR | <empty>  | location on the host machine to map all the Graal/GraalVM/Truffle source and dependent repos, this is usually done inside the container |
 
 ### Docker image & container
 
 If you examine the `Dockerfile` script, you will see the docker image is inherited from `adoptopenjdk/openjdk8:latest` available from the docker user [Adopt OpenJDK](https://hub.docker.com/u/adoptopenjdk/) on [Docker hub](http://hub.docker.com/).
 
-The script also internally calls `installMake382.sh`, this script can also be run in the native environment.
+The script also internally calls `installMake.sh`, this script can also be run in the native environment. It takes the version numbers of the program as a command-line parameter.
 
 Remove unused containers and images:
 
