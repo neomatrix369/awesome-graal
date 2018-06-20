@@ -13,11 +13,16 @@ The scripts in this folder support `x86_64` architecture and can be used both on
     - for MacOS - xcode 4.9.1 or higher
 - make 
     - for Linux - version 3.82  
-    - for MacOS - version 3.83 
-    - `installMake382.sh` has been provided, run or amend where necessary  
+    - for MacOS - version 3.81 
+    - `installMake382.sh` has been provided, amend before running where necessary
+- LLVM 
+    - for Linux - version 4.0 to 6.0, also see [Installing LLVM on the Graal git repo](https://github.com/oracle/truffleruby/blob/master/doc/user/installing-llvm.md#ubuntu)
+    - for MacOS - version 4.0.1 , also see [Installing LLVM on the Graal git repo](https://github.com/oracle/truffleruby/blob/master/doc/user/installing-llvm.md#macos) 
+    - `installLLVM.sh` has been provided, amend before running where necessary   
 - Docker (to use the `docker-build.sh` script)
 - JDK 1.8 (build 141 or higher)
     - must be a JDK and not just a JRE (some openjdk builds can be)
+    - can also be obtained from the [Adopt OpenJDK build farm](https://adoptopenjdk.net/releases.html?variant=openjdk8)
 
 **Note:** 
 - building of `graal-jvmci-8` have known to fail if the above versions are not met
@@ -91,33 +96,34 @@ Run the below command to start with the building process in a Docker container:
 ./docker-build.sh
 ```
 
-The build logs are written to the `jdk8-with-graal-docker/docker-build.logs` log file:
+- The build logs are written to the `jdk8-with-graal-docker/docker-build.logs` log file:
 
 ```
 tail -f jdk8-with-graal-docker/docker-build.logs
 ```
 
-For container in DEBUG mode, run the below:
-
 ```
-DEBUG=true ./docker-build.sh
+[<ENV VARIABLE>="<value>"]* ./docker-build.sh
 ```
+*one of more environment variables
 
-By default, the output is stored inside the container i.e. '/home/graal/jdk8-with-graal-docker'
+- All the known environment variables that can be used when running the above `docker-build.sh` script:
 
-To map all the repos used during the build process, run the below:
-
-```
-HOST_REPOS_DIR="jdk8-with-graal-repos" ./docker-build.sh
-```
-
-By default, the output is stored inside the container i.e. '/home/graal/jdk8-with-graal-docker'
+| Name           | Default       | Description |
+| :------------- |:-------------:|:------------|
+| DEBUG | <empty> | to run the container in DEBUG mode |
+| HOST_REPOS_DIR | /home/graal/ (inside the container)| a new location on the host to map all the source and dependent repos used to build Graal/GraalVM/Truffle |
+| JDK_BASE_IMAGE | openjdk8 | name of the JDK image (from Adopt OpenJDK build farm or another source) |
+| JDK_TAG_NAME | jdk8u152-b16 | the tag name  of the the image |
+| USER_IN_CONTAINER | graal | name of the user in the container (when in debug or non-debug mode)  |
+| LLVM_VERSION | 6.0 | version of LLVM to install (FYI: only versions available are 5.0 and 6.0) |
+| HOST_REPOS_DIR | <empty>  | location on the host machine to map all the Graal/GraalVM/Truffle source and dependent repos, this is usually done inside the container |
 
 ### Docker image & container
 
 If you examine the `Dockerfile` script, you will see the docker image is inherited from `adoptopenjdk/openjdk8:latest` available from the docker user [Adopt OpenJDK](https://hub.docker.com/u/adoptopenjdk/) on [Docker hub](http://hub.docker.com/).
 
-The script also internally calls `installMake382.sh`, this script can also be run in the native environment.
+The script also internally calls `installMake382.sh` and `installLLVM.sh`, these scripts can also be run in the native environment.
 
 Remove unused containers and images:
 
