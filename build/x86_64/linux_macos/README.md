@@ -18,7 +18,7 @@ The scripts in this folder support `x86_64` architecture and can be used both on
 - LLVM 
     - for Linux - version 4.0 to 6.0, also see [Installing LLVM on the Graal git repo](https://github.com/oracle/truffleruby/blob/master/doc/user/installing-llvm.md#ubuntu)
     - for MacOS - version 4.0.1 , also see [Installing LLVM on the Graal git repo](https://github.com/oracle/truffleruby/blob/master/doc/user/installing-llvm.md#macos). Check if the default Apple LLVM provided under `/Library/Developer/CommandLineTools/usr/bin/` is based on LLVM 4.0 or higher.
-    - `installLLVM.sh` has been provided, amend before running where necessary   
+    - `installLLVM.sh` has been provided, amend before running where necessary
 - Docker (to use the `docker-build.sh` script)
 - JDK 1.8 (build 141 or higher)
     - must be a JDK and not just a JRE (some openjdk builds can be)
@@ -118,6 +118,7 @@ tail -f jdk8-with-graal-docker/docker-build.logs
 | USER_IN_CONTAINER | graal | name of the user in the container (when in debug or non-debug mode)  |
 | LLVM_VERSION | 6.0 | version of LLVM to install (FYI: only versions available are 5.0 and 6.0) |
 | HOST_REPOS_DIR | <empty>  | location on the host machine to map all the Graal/GraalVM/Truffle source and dependent repos, this is usually done inside the container |
+| GRAALVM_SUITE_RUNTIMES | /substratevm,/tools,sulong,/graal-nodejs,/fastr,truffleruby,graalpython | list of components that make up the GraalVM suite |
 
 ### Docker image & container
 

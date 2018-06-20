@@ -139,6 +139,9 @@ buildGraalVMSuite() {
         sed -i 's https://github.com/oracle/graalpython.git https://github.com/graalvm/graalpython.git ' mx.vm/suite.py
     fi
 
+    echo "Applying temporary patch to fix isValidJavaVersion() in https://github.com/oracle/graal/blob/master/substratevm/src/com.oracle.svm.hosted/src/com/oracle/svm/hosted/NativeImageGeneratorRunner.java#L156"    
+    cp ${BASEDIR}/patch/NativeImageGeneratorRunner.java ${BASEDIR}/graal/substratevm/src/com.oracle.svm.hosted/src/com/oracle/svm/hosted/NativeImageGeneratorRunner.java
+
     export FASTR_RELEASE=true
     FASTR_RELEASE=true ${MX} --dy ${GRAALVM_SUITE_RUNTIMES} build
 }
