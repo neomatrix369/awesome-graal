@@ -66,31 +66,36 @@ displayDependencyVersion() {
     versionCheck opt "--version"
 }
 
-setupMX() {
-    cd ${BASEDIR}
-    if [[ -e "mx/.git" ]]; then
-        echo ">>> mx already exists: updating and using this version"
-        cd mx
+gitClone() {
+    org=$1
+    repo=$2
+    programDesc=$3
+
+    if [[ -e "${repo}/.git" ]]; then
+        echo ">>> ${repo} already exists: updating and using this version"
+        cd ${repo}
         git checkout .
         git pull
     else
-        echo ">>> Getting mx: mx is a build tool created for managing the development of (primarily) Java code"
-        git clone --depth=1 https://github.com/graalvm/mx.git
+        echo ">>> Getting ${repo}: ${programDesc}"
+        git clone --depth=1 https://github.com/${org}/${repo}.git
     fi
-    export MX=${BASEDIR}/mx/mx
+}
+
+setupMX() {
+    cd ${BASEDIR}
+    gitClone graalvm \
+             mx      \
+             "mx is a build tool created for managing the development of (primarily) Java code"
+    export MX=${BASEDIR}/${repo}/mx
 }
 
 build_JDK_JVMCI() {
     cd ${BASEDIR}
-    if [[ -e "graal-jvmci-8/.git" ]]; then
-        echo ">>> graal-jvmci-8 already exists: updating and using this version"
-        cd graal-jvmci-8
-        git checkout .
-        git pull
-    else
-        echo ">>> Getting Graal JVMCI for JDK8"
-        git clone --depth=1 https://github.com/graalvm/graal-jvmci-8.git
-    fi
+    gitClone graalvm       \
+             graal-jvmci-8 \
+             "Getting Graal JVMCI for JDK8"
+             
     echo ">>> Building a JDK8 with JVMCI..."
     cd ${BASEDIR}/graal-jvmci-8/
     ${MX} --java-home ${JAVA_HOME} build
@@ -115,14 +120,10 @@ setupEnvVariables() {
 buildGraalCompiler() {
     echo ">>> Building Graal"
     cd ${BASEDIR}
-    if [[ -e "graal/.git" ]]; then
-        echo ">>> graal already exists: updating and using this version"
-        cd graal
-        git checkout .
-        git pull
-    else
-        git clone --depth=1 https://github.com/oracle/graal.git
-    fi
+    gitClone oracle \
+             graal  \
+             "Getting sources for the Graal compiler"
+
     cd ${BASEDIR}/graal/compiler
     export JVMCI_VERSION_CHECK='ignore'
     echo ">>>> Setting environment variable JVMCI_VERSION_CHECK=${JVMCI_VERSION_CHECK}"
