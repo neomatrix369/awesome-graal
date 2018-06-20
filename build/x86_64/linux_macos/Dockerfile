@@ -33,3 +33,7 @@ ENV PATH      ${JAVA_HOME}/bin:${PATH}
 
 RUN echo "export JAVA_HOME=${JAVA_HOME}" >> ${HOME_DIR}/.bashrc
 RUN echo "export PATH=${JAVA_HOME}/bin:${PATH}" >> ${HOME_DIR}/.bashrc
+
+RUN /bin/bash -l -c 'java -version'
+RUN /bin/bash -l -c 'make -version'
+RUN /bin/bash -l -c 'python --version'

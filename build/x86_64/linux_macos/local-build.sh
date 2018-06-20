@@ -16,47 +16,67 @@ JDK_GRAAL_FOLDER_NAME=jdk8-with-graal
 BUILD_ARTIFACTS_DIR=${BASEDIR}/${JDK_GRAAL_FOLDER_NAME}
 echo ">>> Working in ${BASEDIR}"
 
+printParameters() {
+    echo "******************* Parameters ******************"
+    echo "BASEDIR=${BASEDIR}"
+    echo ""
+    echo "JDK_GRAAL_FOLDER_NAME=${JDK_GRAAL_FOLDER_NAME}"
+    echo "BUILD_ARTIFACTS_DIR=${BUILD_ARTIFACTS_DIR}"
+    echo ""
+    echo "RUN_TESTS=${RUN_TESTS}"
+    echo "*************************************************"
+}
+
+versionCheck() {
+    program=${1}
+    versionArg=${2:-"-version"}
+    echo ""
+    echo "${program} version check"
+    ${program} ${versionArg}
+}
+
 displayDependencyVersion() {
-    echo "java version"
-    java -version
-
-    echo "make version"
-    make -version
-
-    echo "python version"
-    python --version
+    versionCheck java
+    versionCheck make
+    versionCheck python "--version"
 
     if [[ "$(uname)" = "Darwin" ]]; then
-        echo "xcode version"
-        xcodebuild -version || true
+        echo ""
+        echo "MacOS specific checks"
+        versionCheck xcodebuild "--version" || true
+    fi
+}
+
+gitClone() {
+    org=$1
+    repo=$2
+    programDesc=$3
+
+    if [[ -e "${repo}/.git" ]]; then
+        echo ">>> ${repo} already exists: updating and using this version"
+        cd ${repo}
+        git checkout .
+        git pull
+    else
+        echo ">>> Getting ${repo}: ${programDesc}"
+        git clone --depth=1 https://github.com/${org}/${repo}.git
     fi
 }
 
 setupMX() {
     cd ${BASEDIR}
-    if [[ -e "mx/.git" ]]; then
-        echo ">>> mx already exists: updating and using this version"
-        cd mx
-        git checkout .
-        git pull
-    else
-        echo ">>> Getting mx: mx is a build tool created for managing the development of (primarily) Java code"
-        git clone --depth=1 https://github.com/graalvm/mx.git
-    fi
+    gitClone graalvm \
+             mx      \
+             "mx is a build tool created for managing the development of (primarily) Java code"
     export MX=${BASEDIR}/mx/mx
 }
 
 build_JDK_JVMCI() {
     cd ${BASEDIR}
-    if [[ -e "graal-jvmci-8/.git" ]]; then
-        echo ">>> graal-jvmci-8 already exists: updating and using this version"
-        cd graal-jvmci-8
-        git checkout .
-        git pull
-    else
-        echo ">>> Getting Graal JVMCI for JDK8"
-        git clone --depth=1 https://github.com/graalvm/graal-jvmci-8.git
-    fi
+    gitClone graalvm       \
+             graal-jvmci-8 \
+             "Getting Graal JVMCI for JDK8"
+
     echo ">>> Building a JDK8 with JVMCI..."
     cd ${BASEDIR}/graal-jvmci-8/
     ${MX} --java-home ${JAVA_HOME} build
@@ -81,14 +101,10 @@ setupEnvVariables() {
 buildGraalCompiler() {
     echo ">>> Building Graal"
     cd ${BASEDIR}
-    if [[ -e "graal/.git" ]]; then
-        echo ">>> graal already exists: updating and using this version"
-        cd graal
-        git checkout .
-        git pull
-    else
-        git clone --depth=1 https://github.com/oracle/graal.git
-    fi
+    gitClone oracle \
+             graal  \
+             "Getting sources for the Graal compiler"
+
     cd ${BASEDIR}/graal/compiler
     export JVMCI_VERSION_CHECK='ignore'
     echo ">>>> Setting environment variable JVMCI_VERSION_CHECK=${JVMCI_VERSION_CHECK}"
@@ -122,6 +138,7 @@ archivingArtifacts() {
 }
 
 run() {
+    printParameters
     displayDependencyVersion
     time setupMX
     time build_JDK_JVMCI
