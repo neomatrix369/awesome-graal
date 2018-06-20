@@ -15,6 +15,7 @@ RUN set -ex; \
         python2.7 \
         python2.7-dev \
         ssh \
+        libssl-dev \
     && apt-get autoremove \
     && apt-get clean
 
