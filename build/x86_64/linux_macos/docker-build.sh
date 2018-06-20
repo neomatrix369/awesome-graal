@@ -14,6 +14,7 @@ USER_IN_CONTAINER=${USER_IN_CONTAINER:-"graal"}
 CONTAINER_HOME_DIR="/home/${USER_IN_CONTAINER}"
 MAKE_VERSION=${MAKE_VERSION:-3.82}
 LLVM_VERSION=${LLVM_VERSION:-6.0}
+GRAALVM_SUITE_RUNTIMES=${GRAALVM_SUITE_RUNTIMES:-"/substratevm,/tools,sulong,/graal-nodejs,/fastr,truffleruby,graalpython"}
 
 HOST_REPOS_DIR=${HOST_REPOS_DIR:-""}
 if [[ ! -z "${HOST_REPOS_DIR}" ]]; then
@@ -37,12 +38,14 @@ echo "* "
 echo "*************************************************"
 
 echo "******************* Parameters ******************"
+echo "DEBUG=${DEBUG}"
+echo ""
 echo "DOCKER_IMAGE_TAG=${DOCKER_IMAGE_TAG}"
 echo "JDK_BASE_IMAGE=${JDK_BASE_IMAGE}"
 echo "JDK_TAG_NAME=${JDK_TAG_NAME}"
 echo "LLVM_VERSION=${LLVM_VERSION}"
 echo "MAKE_VERSION=${MAKE_VERSION}"
-echo "DEBUG=${DEBUG}"
+echo "GRAALVM_SUITE_RUNTIMES=${GRAALVM_SUITE_RUNTIMES}"
 echo ""
 echo "HOST_OUTPUT_DIR=${HOST_OUTPUT_DIR}"
 echo "HOST_REPOS_DIR=${HOST_REPOS_DIR}"
@@ -78,6 +81,7 @@ if [[ "${DEBUG}" = "true" ]]; then
          --user ${USER_IN_CONTAINER}                               \
          --env OUTPUT_DIR=${CONTAINER_OUTPUT_DIR}                  \
          --env RUN_TESTS=${RUN_TESTS}                              \
+         --env GRAALVM_SUITE_RUNTIMES=${GRAALVM_SUITE_RUNTIMES}    \
          --volume $(pwd):${CONTAINER_SCRIPTS_DIR}                  \
          --volume ${HOST_OUTPUT_DIR}:${CONTAINER_OUTPUT_DIR}       \
          ${HOST_REPOS_DIR_DOCKER_PARAM}                            \
@@ -89,6 +93,7 @@ else
          --entrypoint ${CONTAINER_HOME_DIR}/scripts/local-build.sh \
          --env OUTPUT_DIR=${CONTAINER_OUTPUT_DIR}                  \
          --env RUN_TESTS=${RUN_TESTS}                              \
+         --env GRAALVM_SUITE_RUNTIMES=${GRAALVM_SUITE_RUNTIMES}    \
          --volume $(pwd):${CONTAINER_SCRIPTS_DIR}                  \
          --volume ${HOST_OUTPUT_DIR}:${CONTAINER_OUTPUT_DIR}       \
          ${HOST_REPOS_DIR_DOCKER_PARAM}                            \

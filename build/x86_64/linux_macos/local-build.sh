@@ -14,7 +14,20 @@ BASEDIR=$(pwd)
 RUN_TESTS=${RUN_TESTS:-""}
 JDK_GRAAL_FOLDER_NAME=jdk8-with-graal
 BUILD_ARTIFACTS_DIR=${BASEDIR}/${JDK_GRAAL_FOLDER_NAME}
+GRAALVM_SUITE_RUNTIMES=${GRAALVM_SUITE_RUNTIMES:-"/substratevm,/tools,sulong,/graal-nodejs,/fastr,truffleruby,graalpython"}
 echo ">>> Working in ${BASEDIR}"
+
+printParameters() {
+    echo "******************* Parameters ******************"
+    echo "BASEDIR=${BASEDIR}"
+    echo ""
+    echo "JDK_GRAAL_FOLDER_NAME=${JDK_GRAAL_FOLDER_NAME}"
+    echo "BUILD_ARTIFACTS_DIR=${BUILD_ARTIFACTS_DIR}"    
+    echo "GRAALVM_SUITE_RUNTIMES=${GRAALVM_SUITE_RUNTIMES}"
+    echo ""
+    echo "RUN_TESTS=${RUN_TESTS}"
+    echo "*************************************************"
+}
 
 displayDependencyVersion() {
     echo ""
@@ -127,7 +140,7 @@ buildGraalVMSuite() {
     fi
 
     export FASTR_RELEASE=true
-    FASTR_RELEASE=true ${MX} --dy /substratevm,/tools,sulong,/graal-nodejs,/fastr,truffleruby,graalpython build
+    FASTR_RELEASE=true ${MX} --dy ${GRAALVM_SUITE_RUNTIMES} build
 }
 
 archivingArtifacts() {
@@ -156,6 +169,7 @@ archivingArtifacts() {
 }
 
 run() {
+    printParameters
     displayDependencyVersion
     time setupMX
     time build_JDK_JVMCI
