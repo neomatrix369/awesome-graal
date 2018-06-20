@@ -2,10 +2,10 @@ version: 2
 parallelism: 8
 jobs:
   build:
+    docker:
+      - image: graal-jdk8:latest
     steps:
-      - run: ./build/x86_64/linux_macos/local-build.sh
-workflows:
-  version: 2
-  build:
-    jobs:
-      - build
+      - checkout
+      - run:
+          name: Build via the docker build script
+          command: ./build/x86_64/linux_macos/docker-build.sh
