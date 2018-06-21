@@ -1,6 +1,5 @@
-ARG JDK_BASE_IMAGE
-ARG JDK_TAG_NAME
-FROM adoptopenjdk/${JDK_BASE_IMAGE}:${JDK_TAG_NAME}
+ARG JDK_BASE_IMAGE_TAG
+FROM adoptopenjdk/${JDK_BASE_IMAGE_TAG}
 
 RUN set -ex; \
     apt-get update \
@@ -27,6 +26,10 @@ ARG LLVM_VERSION
 COPY installLLVM.sh /installLLVM.sh
 RUN /bin/bash -l -c "./installLLVM.sh ${LLVM_VERSION}"
 
+ARG RUBY_VERSION
+COPY installRuby.sh /installRuby.sh
+RUN /bin/bash -l -c "./installRuby.sh ${RUBY_VERSION}"
+
 ARG USER_IN_CONTAINER
 ENV HOME_DIR /home/${USER_IN_CONTAINER}
 RUN useradd --create-home --shell /bin/bash ${USER_IN_CONTAINER} || true
@@ -35,11 +38,11 @@ WORKDIR ${HOME_DIR}
 
 ENV JAVA_HOME /opt/java/openjdk/${JAVA_VERSION}
 ENV LLVM_HOME /usr/lib/llvm-${LLVM_VERSION}
-ENV PATH      ${JAVA_HOME}/bin:${LLVM_HOME}/bin:${PATH}
+ENV RUBY_HOME /usr/local/rvm/rubies/ruby-${RUBY_VERSION}
+ENV PATH      ${JAVA_HOME}/bin:${LLVM_HOME}/bin:${RUBY_HOME}/bin:${PATH}
 
 RUN echo "export JAVA_HOME=${JAVA_HOME}" >> ${HOME_DIR}/.bashrc
-RUN echo "export PATH=${JAVA_HOME}/bin:${PATH}" >> ${HOME_DIR}/.bashrc
-RUN echo "export PATH=${LLVM_HOME}/bin:${PATH}" >> ${HOME_DIR}/.bashrc
+RUN echo "export PATH=${JAVA_HOME}/bin:${LLVM_HOME}/bin:${RUBY_HOME}/bin:${PATH}" >> ${HOME_DIR}/.bashrc
 
 RUN /bin/bash -l -c 'java -version'
 RUN /bin/bash -l -c 'make -version'
@@ -47,3 +50,4 @@ RUN /bin/bash -l -c 'python --version'
 RUN /bin/bash -l -c 'ls /usr/lib/llvm-${LLVM_VERSION}/bin/*'
 RUN /bin/bash -l -c 'opt -version'
 RUN /bin/bash -l -c 'clang --version'
+RUN /bin/bash -l -c 'ruby --version'

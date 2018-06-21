@@ -7,13 +7,13 @@ set -o pipefail
 DEBUG=${DEBUG:-""}
 RUN_TESTS=${RUN_TESTS:-""}
 
-JDK_BASE_IMAGE=${JDK_BASE_IMAGE:-"openjdk8"}
-JDK_TAG_NAME=${JDK_TAG_NAME:-"jdk8u152-b16"}
+JDK_BASE_IMAGE_TAG=${JDK_BASE_IMAGE_TAG:-"openjdk8:jdk8u152-b16"}
 DOCKER_IMAGE_TAG="graal-jdk8:latest"
 USER_IN_CONTAINER=${USER_IN_CONTAINER:-"graal"}
 CONTAINER_HOME_DIR="/home/${USER_IN_CONTAINER}"
 MAKE_VERSION=${MAKE_VERSION:-3.82}
 LLVM_VERSION=${LLVM_VERSION:-6.0}
+RUBY_VERSION=${RUBY_VERSION:-2.2.2}
 GRAALVM_SUITE_RUNTIMES=${GRAALVM_SUITE_RUNTIMES:-"/substratevm,/tools,sulong,/graal-nodejs,/fastr,truffleruby,graalpython"}
 export DOCKER_JAVA_OPTS="-Xms300m -Xmx300m"
 
@@ -42,10 +42,10 @@ echo "******************* Parameters ******************"
 echo "DEBUG=${DEBUG}"
 echo ""
 echo "DOCKER_IMAGE_TAG=${DOCKER_IMAGE_TAG}"
-echo "JDK_BASE_IMAGE=${JDK_BASE_IMAGE}"
-echo "JDK_TAG_NAME=${JDK_TAG_NAME}"
+echo "JDK_BASE_IMAGE_TAG=${JDK_BASE_IMAGE_TAG}"
 echo "LLVM_VERSION=${LLVM_VERSION}"
 echo "MAKE_VERSION=${MAKE_VERSION}"
+echo "RUBY_VERSION=${RUBY_VERSION}"
 echo "GRAALVM_SUITE_RUNTIMES=${GRAALVM_SUITE_RUNTIMES}"
 echo ""
 echo "HOST_OUTPUT_DIR=${HOST_OUTPUT_DIR}"
@@ -63,11 +63,11 @@ echo "*************************************************"
 
 docker build \
             -t ${DOCKER_IMAGE_TAG} \
-            --build-arg USER_IN_CONTAINER=${USER_IN_CONTAINER} \
-            --build-arg JDK_BASE_IMAGE=${JDK_BASE_IMAGE}       \
-            --build-arg JDK_TAG_NAME=${JDK_TAG_NAME}           \
-            --build-arg MAKE_VERSION=${MAKE_VERSION}           \
-            --build-arg LLVM_VERSION=${LLVM_VERSION} .
+            --build-arg USER_IN_CONTAINER=${USER_IN_CONTAINER}   \
+            --build-arg JDK_BASE_IMAGE_TAG=${JDK_BASE_IMAGE_TAG} \
+            --build-arg MAKE_VERSION=${MAKE_VERSION}             \
+            --build-arg LLVM_VERSION=${LLVM_VERSION}             \
+            --build-arg RUBY_VERSION=${RUBY_VERSION} .
 
 HOST_REPOS_DIR_DOCKER_PARAM=""
 if [[ ! -z "${HOST_REPOS_DIR}" ]]; then

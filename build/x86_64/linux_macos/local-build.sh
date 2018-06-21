@@ -48,6 +48,7 @@ displayDependencyVersion() {
     versionCheck java
     versionCheck make
     versionCheck python "--version"
+    versionCheck ruby "--version"
 
     if [[ "$(uname)" = "Darwin" ]]; then
         echo ""
