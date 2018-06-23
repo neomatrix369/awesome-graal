@@ -44,7 +44,8 @@ jobs:
             echo 'export MX=${BASEDIR}/mx/mx'                                     >> ${BASH_ENV}
             echo 'export JDK_GRAAL_FOLDER_NAME=jdk8-with-graal'                   >> ${BASH_ENV}
             echo 'export BUILD_ARTIFACTS_DIR=${BASEDIR}/${JDK_GRAAL_FOLDER_NAME}' >> ${BASH_ENV}
-            ${BASH_ENV}
+            echo 'export RUN_TESTS="true"'                                        >> ${BASH_ENV}
+            source ${BASH_ENV}
       - run:
           name: Display versions of dependencies
           command: ./build/x86_64/linux_macos/lib/displayDependencyVersion.sh
