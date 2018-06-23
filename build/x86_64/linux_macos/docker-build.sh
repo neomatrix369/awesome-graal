@@ -7,7 +7,8 @@ set -o pipefail
 DEBUG=${DEBUG:-""}
 RUN_TESTS=${RUN_TESTS:-""}
 
-JDK_BASE_IMAGE_TAG=${JDK_BASE_IMAGE_TAG:-"openjdk8:jdk8u152-b16"}
+JAVA_VERSION=${JAVA_VERSION:-jdk8u152-b16}
+JDK_BASE_IMAGE_TAG=${JDK_BASE_IMAGE_TAG:-"openjdk8:${JAVA_VERSION}"}
 DOCKER_IMAGE_TAG="graal-jdk8:latest"
 USER_IN_CONTAINER=${USER_IN_CONTAINER:-"graal"}
 CONTAINER_HOME_DIR="/home/${USER_IN_CONTAINER}"
@@ -42,6 +43,7 @@ echo "******************* Parameters ******************"
 echo "DEBUG=${DEBUG}"
 echo ""
 echo "DOCKER_IMAGE_TAG=${DOCKER_IMAGE_TAG}"
+echo "JAVA_VERSION=${JAVA_VERSION}"
 echo "JDK_BASE_IMAGE_TAG=${JDK_BASE_IMAGE_TAG}"
 echo "LLVM_VERSION=${LLVM_VERSION}"
 echo "MAKE_VERSION=${MAKE_VERSION}"
@@ -65,6 +67,7 @@ docker build \
             -t ${DOCKER_IMAGE_TAG} \
             --build-arg USER_IN_CONTAINER=${USER_IN_CONTAINER}   \
             --build-arg JDK_BASE_IMAGE_TAG=${JDK_BASE_IMAGE_TAG} \
+            --build-arg JAVA_VERSION=${JAVA_VERSION}             \
             --build-arg MAKE_VERSION=${MAKE_VERSION}             \
             --build-arg LLVM_VERSION=${LLVM_VERSION}             \
             --build-arg RUBY_VERSION=${RUBY_VERSION} .
@@ -81,6 +84,7 @@ if [[ "${DEBUG}" = "true" ]]; then
          --rm                                                      \
          --interactive --tty --entrypoint /bin/bash                \
          --user ${USER_IN_CONTAINER}                               \
+         --env SCRIPTS_LIB_DIR=${CONTAINER_HOME_DIR}/scripts/lib   \
          --env OUTPUT_DIR="${CONTAINER_OUTPUT_DIR}"                \
          --env RUN_TESTS="${RUN_TESTS}"                            \
          --env GRAALVM_SUITE_RUNTIMES="${GRAALVM_SUITE_RUNTIMES}"  \
@@ -95,6 +99,7 @@ else
          --rm                                                        \
          --user ${USER_IN_CONTAINER}                                 \
          --entrypoint "${CONTAINER_HOME_DIR}/scripts/local-build.sh" \
+         --env SCRIPTS_LIB_DIR=${CONTAINER_HOME_DIR}/scripts/lib     \
          --env OUTPUT_DIR="${CONTAINER_OUTPUT_DIR}"                  \
          --env RUN_TESTS="${RUN_TESTS}"                              \
          --env GRAALVM_SUITE_RUNTIMES="${GRAALVM_SUITE_RUNTIMES}"    \

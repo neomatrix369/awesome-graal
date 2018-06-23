@@ -1,22 +1,8 @@
 ARG JDK_BASE_IMAGE_TAG
 FROM adoptopenjdk/${JDK_BASE_IMAGE_TAG}
 
-RUN set -ex; \
-    apt-get update \
-    && apt-get install -y \
-        build-essential \
-        ca-certificates \
-        gcc \
-        git \
-        libpq-dev \
-        make \
-        python-pip \
-        python2.7 \
-        python2.7-dev \
-        ssh \
-        libssl-dev \
-    && apt-get autoremove \
-    && apt-get clean
+COPY osDependencies.sh /osDependencies.sh
+RUN  /bin/bash -l -c "./osDependencies.sh"
 
 ARG MAKE_VERSION
 COPY installMake.sh /installMake.sh
