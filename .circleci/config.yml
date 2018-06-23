@@ -2,6 +2,7 @@ version: 2
 dependencies:
   cache_directories:
     - "vendor/apt"
+    - "vendor/apt/archives"
 jobs:
   build:
     docker:
@@ -21,6 +22,7 @@ jobs:
           key: os-deps-{{ arch }}-{{ .Branch }}-{{ .Environment.CIRCLE_SHA1 }}
           paths:
             - vendor/apt
+            - vendor/apt/archives
       - restore_cache:
           keys:
             - make-382-{{ arch }}-{{ .Branch }}-{{ .Environment.CIRCLE_SHA1 }}
@@ -34,6 +36,9 @@ jobs:
           key: make-382-{{ arch }}-{{ .Branch }}-{{ .Environment.CIRCLE_SHA1 }}
           paths:
             - /root/project/make-3.82/
+            - /usr/bin/make
+            - /usr/local/bin/make
+            - /usr/share/man/man1/make.1.gz
       - run:
           name: Define Environment Variables and update JAVA_HOME and PATH at Runtime
           command: |
