@@ -37,20 +37,38 @@ jobs:
       - run:
           name: Define Environment Variables and update JAVA_HOME and PATH at Runtime
           command: |
-            echo 'export JAVA_VERSION=jdk8u144-b01'                   >> ${BASH_ENV}
-            echo 'export JAVA_HOME=/opt/java/openjdk/${JAVA_VERSION}' >> ${BASH_ENV}
-            echo 'export PATH=${JAVA_HOME}/bin:${PATH}'               >> ${BASH_ENV}
+            echo 'export JAVA_VERSION=jdk8u144-b01'                               >> ${BASH_ENV}
+            echo 'export JAVA_HOME=/opt/java/openjdk/${JAVA_VERSION}'             >> ${BASH_ENV}
+            echo 'export PATH=${JAVA_HOME}/bin:${PATH}'                           >> ${BASH_ENV}
+            echo 'export BASEDIR=$(pwd)'                                          >> ${BASH_ENV}
+            echo 'export MX=${BASEDIR}/mx/mx'                                     >> ${BASH_ENV}
+            echo 'export JDK_GRAAL_FOLDER_NAME=jdk8-with-graal'                   >> ${BASH_ENV}
+            echo 'export BUILD_ARTIFACTS_DIR=${BASEDIR}/${JDK_GRAAL_FOLDER_NAME}' >> ${BASH_ENV}
+            echo 'export RUN_TESTS=""'                                            >> ${BASH_ENV}
             source ${BASH_ENV}
+      - run:
+          name: Display versions of dependencies
+          command: ./build/x86_64/linux_macos/lib/displayDependencyVersion.sh
       - restore_cache:
           keys:
             - graal-build-{{ arch }}-{{ .Branch }}-{{ .Environment.CIRCLE_SHA1 }}
             - graal-build-{{ arch }}-{{ .Branch }}
             - graal-build
       - run:
-          name: Build via the local build script
-          command: ./build/x86_64/linux_macos/local-build.sh
-          timeout: 30m
-          no_output_timeout: 20m
+          name: Setup MX
+          command: ./build/x86_64/linux_macos/lib/setupMX ${BASEDIR}
+      - run:
+          name: Build JDK JVMCI
+          command: ./build/x86_64/linux_macos/lib/build_JDK_JVMCI.sh ${BASEDIR} ${MX}
+      - run:
+          name: Run JDK JVMCI Tests
+          command: ./build/x86_64/linux_macos/lib/run_JDK_JVMCI_Tests.sh ${BASEDIR} ${MX}
+      - run:
+          name: Set env variables
+          command: ./build/x86_64/linux_macos/lib/setupEnvVariables.sh ${BASEDIR}
+      - run:
+          name: Build Graal Compiler
+          command: ./build/x86_64/linux_macos/lib/buildGraalCompiler.sh ${BASEDIR} ${MX} ${BUILD_ARTIFACTS_DIR}
       - save_cache:
           key: graal-build-{{ arch }}-{{ .Branch }}-{{ .Environment.CIRCLE_SHA1 }}
           paths:
@@ -58,3 +76,7 @@ jobs:
             - /root/project/graal-jvmci-8
             - /root/project/jdk8-with-graal
             - /root/project/mx
+      - run:
+          name: Archiving artifacts
+          command: ./build/x86_64/linux_macos/lib/archivingArtifacts.sh ${JDK_GRAAL_FOLDER_NAME} ${BUILD_ARTIFACTS_DIR}
+
