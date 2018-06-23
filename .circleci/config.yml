@@ -17,5 +17,6 @@ jobs:
       - run:
           environment:
             JAVA_VERSION: jdk8u152-b16
+            JAVA_HOME: /opt/java/openjdk/${JAVA_VERSION}
           name: Build via the local build script
           command: ./build/x86_64/linux_macos/local-build.sh
