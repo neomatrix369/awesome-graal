@@ -44,6 +44,7 @@ printHWInfo
 printOSInfo
 
 versionCheck gcc "--version"
+versionCheck g++ "--version"
 versionCheck java
 versionCheck make
 versionCheck python "--version"
