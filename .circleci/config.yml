@@ -15,8 +15,12 @@ jobs:
           name: Build and install make via script
           command: ./build/x86_64/linux_macos/installMake.sh
       - run:
-          environment:
-            JAVA_VERSION: jdk8u152-b16
-            JAVA_HOME: /opt/java/openjdk/${JAVA_VERSION}
+          name: Define Environment Variables and update JAVA_HOME and PATH at Runtime
+          command: |
+            echo 'export JAVA_VERSION=jdk8u144-b01'                   >> ${BASH_ENV}
+            echo 'export JAVA_HOME=/opt/java/openjdk/${JAVA_VERSION}' >> ${BASH_ENV}
+            echo 'export PATH=${JAVA_HOME}/bin:${PATH}'               >> ${BASH_ENV}
+            source ${BASH_ENV}
+      - run:
           name: Build via the local build script
           command: ./build/x86_64/linux_macos/local-build.sh
