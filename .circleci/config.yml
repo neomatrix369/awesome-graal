@@ -79,4 +79,7 @@ jobs:
       - run:
           name: Archiving artifacts
           command: ./build/x86_64/linux_macos/lib/archivingArtifacts.sh ${JDK_GRAAL_FOLDER_NAME} ${BUILD_ARTIFACTS_DIR}
+      - store_artifacts:
+          path: ${BUILD_ARTIFACTS_DIR}
+          destination: ${JDK_GRAAL_FOLDER_NAME}.tar.gz
 
