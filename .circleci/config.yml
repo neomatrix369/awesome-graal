@@ -48,7 +48,7 @@ jobs:
             source ${BASH_ENV}
       - run:
           name: Display versions of dependencies
-          command: ./build/x86_64/linux_macos/lib/displayDependencyVersion.sh
+          command: ./build/x86_64/linux_macos/lib/dependencies.sh
       - restore_cache:
           keys:
             - graal-build-{{ arch }}-{{ .Branch }}-{{ .Environment.CIRCLE_SHA1 }}
@@ -56,19 +56,19 @@ jobs:
             - graal-build
       - run:
           name: Setup MX
-          command: ./build/x86_64/linux_macos/lib/setupMX ${BASEDIR}
+          command: source ./build/x86_64/linux_macos/lib/mx.sh && setupMX() ${BASEDIR}
       - run:
           name: Build JDK JVMCI
-          command: ./build/x86_64/linux_macos/lib/build_JDK_JVMCI.sh ${BASEDIR} ${MX}
+          command: source ./build/x86_64/linux_macos/lib/buildJDKJVMCI.sh && build_JDK_JVMCI() ${BASEDIR} ${MX}
       - run:
           name: Run JDK JVMCI Tests
-          command: ./build/x86_64/linux_macos/lib/run_JDK_JVMCI_Tests.sh ${BASEDIR} ${MX}
+          command: source ./build/x86_64/linux_macos/lib/JDKJVMCITests.sh && run_JDK_JVMCI_Tests() ${BASEDIR} ${MX}
       - run:
           name: Set env variables
-          command: ./build/x86_64/linux_macos/lib/setupEnvVariables.sh ${BASEDIR}
+          command: source ./build/x86_64/linux_macos/lib/env.sh && setupEnvVariables() ${BASEDIR}
       - run:
           name: Build Graal Compiler
-          command: ./build/x86_64/linux_macos/lib/buildGraalCompiler.sh ${BASEDIR} ${MX} ${BUILD_ARTIFACTS_DIR}
+          command: source ./build/x86_64/linux_macos/lib/buildGraalCompiler.sh && buildGraalCompiler() ${BASEDIR} ${MX} ${BUILD_ARTIFACTS_DIR}
       - save_cache:
           key: graal-build-{{ arch }}-{{ .Branch }}-{{ .Environment.CIRCLE_SHA1 }}
           paths:
