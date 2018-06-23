@@ -1,4 +1,7 @@
 version: 2
+dependencies:
+  cache_directories:
+    - "vendor/apt"
 jobs:
   build:
     docker:
@@ -6,14 +9,8 @@ jobs:
     steps:
       - checkout
       - run:
-        - restore_cache:
-            key: os-dependencies-cache
           name: Install Os dependencies
           command: ./build/x86_64/linux_macos/osDependencies.sh
-        - save_cache:
-            key: os-dependencies-cache
-            paths:
-              - "deb/apt"
       - run:
           name: Build and install make via script
           command: ./build/x86_64/linux_macos/installMake.sh
