@@ -1,9 +1,6 @@
 version: 2
 dependencies:
-  override:
-    - /bin/true
   cache_directories:
-    - "~/.local"
     - "vendor/apt"
 jobs:
   build:
