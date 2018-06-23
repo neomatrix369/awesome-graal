@@ -2,30 +2,17 @@ ARG JDK_BASE_IMAGE
 ARG JDK_TAG_NAME
 FROM adoptopenjdk/${JDK_BASE_IMAGE}:${JDK_TAG_NAME}
 
-RUN set -ex; \
-    apt-get update \
-    && apt-get install -y \
-        build-essential \
-        ca-certificates \
-        gcc \
-        git \
-        libpq-dev \
-        make \
-        python-pip \
-        python2.7 \
-        python2.7-dev \
-        ssh \
-    && apt-get autoremove \
-    && apt-get clean
+COPY osDependencies.sh /osDependencies.sh
+RUN  /bin/bash -l -c "./osDependencies.sh"
 
-ARG MAKE_VERSION
+ARG  MAKE_VERSION
 COPY installMake.sh /installMake.sh
-RUN /bin/bash -l -c "./installMake.sh ${MAKE_VERSION}"
+RUN  /bin/bash -l -c "./installMake.sh ${MAKE_VERSION}"
 
-ARG USER_IN_CONTAINER
-ENV HOME_DIR /home/${USER_IN_CONTAINER}
-RUN useradd --create-home --shell /bin/bash ${USER_IN_CONTAINER} || true
-USER $USER_IN_CONTAINER
+ARG     USER_IN_CONTAINER
+ENV     HOME_DIR /home/${USER_IN_CONTAINER}
+RUN     useradd --create-home --shell /bin/bash ${USER_IN_CONTAINER} || true
+USER    ${USER_IN_CONTAINER}
 WORKDIR ${HOME_DIR}
 
 ENV JAVA_HOME /opt/java/openjdk/${JAVA_VERSION}
