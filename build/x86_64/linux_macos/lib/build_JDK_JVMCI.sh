@@ -16,3 +16,7 @@ gitClone graalvm       \
 echo ">>> Building a JDK8 with JVMCI..."
 cd ${BASEDIR}/graal-jvmci-8/
 ${MX} --java-home ${JAVA_HOME} build
+
+export JDK8_JVMCI_IMAGE=$(${MX} --java-home ${JAVA_HOME} jdkhome)
+export JAVA_HOME=${JDK8_JVMCI_IMAGE}
+echo ">>> Using ${JDK8_JVMCI_IMAGE}"

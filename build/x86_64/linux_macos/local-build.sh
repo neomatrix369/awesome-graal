@@ -35,6 +35,7 @@ printParameters() {
     echo "GRAALVM_SUITE_RUNTIMES=${GRAALVM_SUITE_RUNTIMES}"
     echo ""
     echo "RUN_TESTS=${RUN_TESTS}"
+    echo "JAVA_HOME=${JAVA_HOME}"
     echo "JAVA_OPTS=${JAVA_OPTS}"
     echo "FASTR_RELEASE=${FASTR_RELEASE}"
     echo "LC_ALL=${LC_ALL}"        
@@ -47,7 +48,6 @@ run() {
     time ${SCRIPTS_LIB_DIR}/setupMX.sh ${BASEDIR}
     time ${SCRIPTS_LIB_DIR}/build_JDK_JVMCI.sh ${BASEDIR} ${MX}
     time ${SCRIPTS_LIB_DIR}/run_JDK_JVMCI_Tests.sh ${BASEDIR} ${MX}
-    ${SCRIPTS_LIB_DIR}/setupEnvVariables.sh ${MX}
     time ${SCRIPTS_LIB_DIR}/buildGraalCompiler.sh ${BASEDIR} ${MX} ${BUILD_ARTIFACTS_DIR}
     time buildGraalVMSuite ${BASEDIR} ${MX} ${GRAALVM_SUITE_RUNTIMES}
     time ${SCRIPTS_LIB_DIR}/archivingArtifacts.sh ${BASEDIR} ${MX} ${JDK_GRAAL_FOLDER_NAME} ${BUILD_ARTIFACTS_DIR}
