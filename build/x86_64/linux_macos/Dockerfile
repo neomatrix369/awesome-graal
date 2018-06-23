@@ -1,6 +1,5 @@
-ARG JDK_BASE_IMAGE
-ARG JDK_TAG_NAME
-FROM adoptopenjdk/${JDK_BASE_IMAGE}:${JDK_TAG_NAME}
+ARG JDK_BASE_IMAGE_TAG
+FROM adoptopenjdk/${JDK_BASE_IMAGE_TAG}
 
 COPY osDependencies.sh /osDependencies.sh
 RUN  /bin/bash -l -c "./osDependencies.sh"
@@ -15,6 +14,7 @@ RUN     useradd --create-home --shell /bin/bash ${USER_IN_CONTAINER} || true
 USER    ${USER_IN_CONTAINER}
 WORKDIR ${HOME_DIR}
 
+ARG JAVA_VERSION
 ENV JAVA_HOME /opt/java/openjdk/${JAVA_VERSION}
 ENV PATH      ${JAVA_HOME}/bin:${PATH}
 
