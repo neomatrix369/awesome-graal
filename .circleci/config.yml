@@ -8,14 +8,23 @@ jobs:
       - image: adoptopenjdk/openjdk8:jdk8u152-b16
     steps:
       - checkout
+      - restore_cache:
+          keys:
+            - os-deps-{{ arch }}-{{ .Branch }}-{{ .Environment.CIRCLE_SHA1 }}
+            - os-deps-{{ arch }}-{{ .Branch }}
+            - os-deps
       - run:
           name: Install Os dependencies
           command: ./build/x86_64/linux_macos/osDependencies.sh
           timeout: 2m
+      - save_cache:
+          key: os-deps-{{ arch }}-{{ .Branch }}-{{ .Environment.CIRCLE_SHA1 }}
+          paths:
+            - vendor/apt
       - run:
           name: Build and install make via script
           command: ./build/x86_64/linux_macos/installMake.sh
-          timeout: 2m
+          timeout: 1m
       - run:
           name: Define Environment Variables and update JAVA_HOME and PATH at Runtime
           command: |
@@ -26,5 +35,5 @@ jobs:
       - run:
           name: Build via the local build script
           command: ./build/x86_64/linux_macos/local-build.sh
-          timeout: 10m
-          no_output_timeout: 5m
+          timeout: 15m
+          no_output_timeout: 10m
