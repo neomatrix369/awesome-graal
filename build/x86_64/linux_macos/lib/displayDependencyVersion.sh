@@ -29,7 +29,9 @@ printRuntimeEnvInfo() {
     fi
 
     echo ""
-    echo ">>> Processes are running ${dockerContainer}on a ${machine} environment <<<"
+    echo "*******************************************************************************"
+    echo "* Processes are running ${dockerContainer}on a ${machine} environment"
+    echo "*******************************************************************************"
 }
 
 printOSInfo() {
@@ -37,11 +39,13 @@ printOSInfo() {
     echo "Display OS information"
     uname -a
 
-    printRuntimeEnvInfo
+    echo ""
+    cat /etc/lsb-release
 }
 
 printHWInfo
 printOSInfo
+printRuntimeEnvInfo
 
 versionCheck gcc "--version"
 versionCheck g++ "--version"
