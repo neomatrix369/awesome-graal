@@ -1,0 +1,10 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: openjdk8:jdk8u152-b16
+    steps:
+      - checkout
+      - run:
+          name: Build via the local build script
+          command: ./build/x86_64/linux_macos/local-build.sh
