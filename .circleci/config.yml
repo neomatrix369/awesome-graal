@@ -11,9 +11,11 @@ jobs:
       - run:
           name: Install Os dependencies
           command: ./build/x86_64/linux_macos/osDependencies.sh
+          timeout: 2m
       - run:
           name: Build and install make via script
           command: ./build/x86_64/linux_macos/installMake.sh
+          timeout: 2m
       - run:
           name: Define Environment Variables and update JAVA_HOME and PATH at Runtime
           command: |
@@ -24,3 +26,5 @@ jobs:
       - run:
           name: Build via the local build script
           command: ./build/x86_64/linux_macos/local-build.sh
+          timeout: 10m
+          no_output_timeout: 5m
