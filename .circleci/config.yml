@@ -75,6 +75,8 @@ jobs:
       - run:
           name: Build JDK JVMCI
           command: ./build/x86_64/linux_macos/lib/build_JDK_JVMCI.sh ${BASEDIR} ${MX}
+          timeout: 20m
+          no_output_timeout: 15m
       - run:
           name: Run JDK JVMCI Tests
           command: ./build/x86_64/linux_macos/lib/run_JDK_JVMCI_Tests.sh ${BASEDIR} ${MX}
@@ -93,6 +95,8 @@ jobs:
       - run:
           name: Build Graal Compiler
           command: ./build/x86_64/linux_macos/lib/buildGraalCompiler.sh ${BASEDIR} ${MX} ${BUILD_ARTIFACTS_DIR}
+          timeout: 10m
+          no_output_timeout: 7m
       - save_cache:
           key: graal-compiler-{{ arch }}-{{ .Branch }}-{{ .Environment.CIRCLE_SHA1 }}
           paths:
@@ -101,3 +105,5 @@ jobs:
       - run:
           name: Archiving artifacts
           command: ./build/x86_64/linux_macos/lib/archivingArtifacts.sh ${JDK_GRAAL_FOLDER_NAME} ${BUILD_ARTIFACTS_DIR}
+          timeout: 3m
+          no_output_timeout: 2m
