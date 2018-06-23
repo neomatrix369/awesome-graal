@@ -13,7 +13,7 @@ echo ">>> Building Graal"
 cd ${BASEDIR}
 gitClone oracle \
          graal  \
-         "Getting sources for the Graal compiler"
+         "Getting sources for the Graal compiler" 
 
 cd ${BASEDIR}/graal/compiler
 export JVMCI_VERSION_CHECK='ignore'
