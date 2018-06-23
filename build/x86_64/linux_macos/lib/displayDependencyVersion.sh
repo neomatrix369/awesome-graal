@@ -43,6 +43,7 @@ printOSInfo() {
 printHWInfo
 printOSInfo
 
+versionCheck gcc "--version"
 versionCheck java
 versionCheck make
 versionCheck python "--version"
