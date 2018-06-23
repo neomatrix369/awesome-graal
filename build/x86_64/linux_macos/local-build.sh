@@ -19,13 +19,6 @@ echo ">>> Working in ${BASEDIR}"
 export MX=${BASEDIR}/mx/mx
 
 export SCRIPTS_LIB_DIR=${SCRIPTS_LIB_DIR:-$(pwd)/lib}
-source ${SCRIPTS_LIB_DIR}/dependencies.sh
-source ${SCRIPTS_LIB_DIR}/mx.sh
-source ${SCRIPTS_LIB_DIR}/buildJDKJVMCI.sh
-source ${SCRIPTS_LIB_DIR}/JDKJVMCITests.sh
-source ${SCRIPTS_LIB_DIR}/env.sh
-source ${SCRIPTS_LIB_DIR}/buildGraalCompiler.sh
-source ${SCRIPTS_LIB_DIR}/archivingArtifacts.sh
 
 printParameters() {
     echo "******************* Parameters ******************"
@@ -40,13 +33,13 @@ printParameters() {
 
 run() {
     printParameters
-    displayDependencyVersion
-    time setupMX ${BASEDIR}
-    time build_JDK_JVMCI ${BASEDIR} ${MX}
-    time run_JDK_JVMCI_Tests ${BASEDIR} ${MX}
-    setupEnvVariables ${MX}
-    time buildGraalCompiler ${BASEDIR} ${MX} ${BUILD_ARTIFACTS_DIR}
-    time archivingArtifacts ${BASEDIR} ${MX} ${JDK_GRAAL_FOLDER_NAME} ${BUILD_ARTIFACTS_DIR}
+    ${SCRIPTS_LIB_DIR}/displayDependencyVersion.sh
+    time ${SCRIPTS_LIB_DIR}/setupMX.sh ${BASEDIR}
+    time ${SCRIPTS_LIB_DIR}/build_JDK_JVMCI.sh ${BASEDIR} ${MX}
+    time ${SCRIPTS_LIB_DIR}/run_JDK_JVMCI_Tests.sh ${BASEDIR} ${MX}
+    time ${SCRIPTS_LIB_DIR}/setupEnvVariables.sh ${MX}
+    time ${SCRIPTS_LIB_DIR}/buildGraalCompiler.sh ${BASEDIR} ${MX} ${BUILD_ARTIFACTS_DIR}
+    time ${SCRIPTS_LIB_DIR}/archivingArtifacts.sh ${BASEDIR} ${MX} ${JDK_GRAAL_FOLDER_NAME} ${BUILD_ARTIFACTS_DIR}
 }
 
 time run
