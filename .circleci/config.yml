@@ -49,8 +49,8 @@ jobs:
       - run:
           name: Build via the local build script
           command: ./build/x86_64/linux_macos/local-build.sh
-          timeout: 15m
-          no_output_timeout: 10m
+          timeout: 30m
+          no_output_timeout: 20m
       - save_cache:
           key: graal-build-{{ arch }}-{{ .Branch }}-{{ .Environment.CIRCLE_SHA1 }}
           paths:
