@@ -41,8 +41,20 @@ jobs:
             echo 'export JAVA_HOME=/opt/java/openjdk/${JAVA_VERSION}' >> ${BASH_ENV}
             echo 'export PATH=${JAVA_HOME}/bin:${PATH}'               >> ${BASH_ENV}
             source ${BASH_ENV}
+      - restore_cache:
+          keys:
+            - graal-build-{{ arch }}-{{ .Branch }}-{{ .Environment.CIRCLE_SHA1 }}
+            - graal-build-{{ arch }}-{{ .Branch }}
+            - graal-build
       - run:
           name: Build via the local build script
           command: ./build/x86_64/linux_macos/local-build.sh
           timeout: 15m
           no_output_timeout: 10m
+      - save_cache:
+          key: graal-build-{{ arch }}-{{ .Branch }}-{{ .Environment.CIRCLE_SHA1 }}
+          paths:
+            - /root/project/graal
+            - /root/project/graal-jvmci-8
+            - /root/project/jdk8-with-graal
+            - /root/project/mx
