@@ -72,6 +72,7 @@ if [[ "${DEBUG}" = "true" ]]; then
          --rm                                                      \
          --interactive --tty --entrypoint /bin/bash                \
          --user ${USER_IN_CONTAINER}                               \
+         --env SCRIPTS_LIB_DIR=${CONTAINER_HOME_DIR}/scripts/lib   \
          --env OUTPUT_DIR=${CONTAINER_OUTPUT_DIR}                  \
          --env RUN_TESTS=${RUN_TESTS}                              \
          --volume $(pwd):${CONTAINER_SCRIPTS_DIR}                  \
@@ -83,6 +84,7 @@ else
          --rm                                                      \
          --user ${USER_IN_CONTAINER}                               \
          --entrypoint ${CONTAINER_HOME_DIR}/scripts/local-build.sh \
+         --env SCRIPTS_LIB_DIR=${CONTAINER_HOME_DIR}/scripts/lib   \
          --env OUTPUT_DIR=${CONTAINER_OUTPUT_DIR}                  \
          --env RUN_TESTS=${RUN_TESTS}                              \
          --volume $(pwd):${CONTAINER_SCRIPTS_DIR}                  \
