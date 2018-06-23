@@ -27,7 +27,3 @@ gitClone() {
         git clone --depth=1 https://github.com/${org}/${repo}.git
     fi
 }
-
-getJDK8_JVMCI_HOME() {
-    echo $(cd ${BASEDIR}/graal-jvmci-8/ && ${MX} --java-home ${JAVA_HOME} jdkhome)
-}
