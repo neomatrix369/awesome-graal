@@ -16,6 +16,8 @@ JDK_GRAAL_FOLDER_NAME=jdk8-with-graal
 BUILD_ARTIFACTS_DIR=${BASEDIR}/${JDK_GRAAL_FOLDER_NAME}
 echo ">>> Working in ${BASEDIR}"
 
+export MX=${BASEDIR}/mx/mx
+
 export SCRIPTS_LIB_DIR=${SCRIPTS_LIB_DIR:-$(pwd)/lib}
 source ${SCRIPTS_LIB_DIR}/dependencies.sh
 source ${SCRIPTS_LIB_DIR}/mx.sh
