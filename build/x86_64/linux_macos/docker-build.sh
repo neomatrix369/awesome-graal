@@ -5,7 +5,7 @@ set -u
 set -o pipefail
 
 DEBUG=${DEBUG:-""}
-RUN_TESTS=${RUN_TESTS:-""}
+RUN_TESTS=${RUN_TESTS:-"true"}
 
 JAVA_VERSION=${JAVA_VERSION:-jdk8u152-b16}
 JDK_BASE_IMAGE_TAG=${JDK_BASE_IMAGE_TAG:-"openjdk8:${JAVA_VERSION}"}
@@ -42,6 +42,7 @@ echo "*************************************************"
 echo "******************* Parameters ******************"
 echo "DEBUG=${DEBUG}"
 echo ""
+echo "JAVA_VERSION=${JAVA_VERSION}"
 echo "DOCKER_IMAGE_TAG=${DOCKER_IMAGE_TAG}"
 echo "JAVA_VERSION=${JAVA_VERSION}"
 echo "JDK_BASE_IMAGE_TAG=${JDK_BASE_IMAGE_TAG}"
@@ -61,13 +62,14 @@ echo ""
 echo "BUILD_LOGS=${BUILD_LOGS}"
 echo "RUN_TESTS=${RUN_TESTS}"
 echo "DOCKER_JAVA_OPTS=${DOCKER_JAVA_OPTS}"
+echo "JAVA_HOME=${JAVA_HOME}"
 echo "*************************************************"
 
 docker build \
             -t ${DOCKER_IMAGE_TAG} \
             --build-arg USER_IN_CONTAINER=${USER_IN_CONTAINER}   \
-            --build-arg JDK_BASE_IMAGE_TAG=${JDK_BASE_IMAGE_TAG} \
             --build-arg JAVA_VERSION=${JAVA_VERSION}             \
+            --build-arg JDK_BASE_IMAGE_TAG=${JDK_BASE_IMAGE_TAG} \
             --build-arg MAKE_VERSION=${MAKE_VERSION}             \
             --build-arg LLVM_VERSION=${LLVM_VERSION}             \
             --build-arg RUBY_VERSION=${RUBY_VERSION} .

@@ -22,6 +22,7 @@ RUN useradd --create-home --shell /bin/bash ${USER_IN_CONTAINER} || true
 USER $USER_IN_CONTAINER
 WORKDIR ${HOME_DIR}
 
+ARG JAVA_VERSION
 ENV JAVA_HOME /opt/java/openjdk/${JAVA_VERSION}
 ENV LLVM_HOME /usr/lib/llvm-${LLVM_VERSION}
 ENV RUBY_HOME /usr/local/rvm/rubies/ruby-${RUBY_VERSION}

@@ -13,6 +13,7 @@ apt-get install -qy \
     gawk \
     g++ \
     gcc \
+    gnupg2 \
     make \
     libc6-dev \
     libreadline6-dev \
@@ -33,8 +34,9 @@ apt-get install -qy \
     --no-install-recommends && rm -r /var/lib/apt/lists/*
 
 # Install RVM
-gpg --keyserver hkp://keys.gnupg.net --recv-keys D39DC0E3
-curl -L get.rvm.io | bash -s stable
+curl -#LO https://rvm.io/mpapis.asc && gpg --import mpapis.asc
+curl -sSL https://get.rvm.io | bash -s stable
+
 export RVM_PATH="/usr/local/rvm"
 export PATH="${RVM_PATH}/bin:${PATH}"
 
@@ -44,5 +46,6 @@ rvm --default use ${RUBY_VERSION}
 
 export RUBY_PATH="/usr/local/rvm/rubies/ruby-${RUBY_VERSION}"
 export GEM_HOME="/usr/local/rvm/gems/ruby-${RUBY_VERSION}"
+export GEM_PATH="/usr/local/rvm/gems/ruby-${RUBY_VERSION}"
 export PATH="${RUBY_PATH}/bin:${GEM_HOME}/bin:${PATH}"
 rvm info
