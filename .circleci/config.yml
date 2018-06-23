@@ -6,8 +6,19 @@ jobs:
     steps:
       - checkout
       - run:
+        - restore_cache:
+            key: os-dependencies-cache
           name: Install Os dependencies
           command: ./build/x86_64/linux_macos/osDependencies.sh
+        - save_cache:
+            key: os-dependencies-cache
+            paths:
+              - "deb/apt"
       - run:
+          name: Build and install make via script
+          command: ./build/x86_64/linux_macos/installMake.sh
+      - run:
+          environment:
+            JAVA_VERSION: jdk8u152-b16
           name: Build via the local build script
           command: ./build/x86_64/linux_macos/local-build.sh
