@@ -4,13 +4,13 @@ FROM adoptopenjdk/${JDK_BASE_IMAGE_TAG}
 COPY osDependencies.sh /osDependencies.sh
 RUN  /bin/bash -l -c "./osDependencies.sh"
 
-ARG MAKE_VERSION
+ARG  MAKE_VERSION
 COPY installMake.sh /installMake.sh
-RUN /bin/bash -l -c "./installMake.sh ${MAKE_VERSION}"
+RUN  /bin/bash -l -c "./installMake.sh ${MAKE_VERSION}"
 
-ARG USER_IN_CONTAINER
-ENV HOME_DIR /home/${USER_IN_CONTAINER}
-RUN useradd --create-home --shell /bin/bash ${USER_IN_CONTAINER} || true
+ARG     USER_IN_CONTAINER
+ENV     HOME_DIR /home/${USER_IN_CONTAINER}
+RUN     useradd --create-home --shell /bin/bash ${USER_IN_CONTAINER} || true
 USER    ${USER_IN_CONTAINER}
 WORKDIR ${HOME_DIR}
 
