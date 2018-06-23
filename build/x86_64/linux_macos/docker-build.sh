@@ -4,7 +4,7 @@ set -e
 set -u
 set -o pipefail
 
-DEBUG=${DEBUG:-""}
+DEBUG=${DEBUG:-"false"}
 RUN_TESTS=${RUN_TESTS:-"true"}
 
 JAVA_VERSION=${JAVA_VERSION:-jdk8u152-b16}
@@ -44,7 +44,6 @@ echo "DEBUG=${DEBUG}"
 echo ""
 echo "JAVA_VERSION=${JAVA_VERSION}"
 echo "DOCKER_IMAGE_TAG=${DOCKER_IMAGE_TAG}"
-echo "JAVA_VERSION=${JAVA_VERSION}"
 echo "JDK_BASE_IMAGE_TAG=${JDK_BASE_IMAGE_TAG}"
 echo "LLVM_VERSION=${LLVM_VERSION}"
 echo "MAKE_VERSION=${MAKE_VERSION}"

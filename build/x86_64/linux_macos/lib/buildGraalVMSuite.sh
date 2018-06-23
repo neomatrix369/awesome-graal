@@ -12,7 +12,7 @@ GRAALVM_SUITE_RUNTIMES=$3
 
 echo ">>> Building GraalVM Suite"
 
-./applyPatches.sh ${BASEDIR}
+${SCRIPTS_LIB_DIR}/applyPatches.sh ${BASEDIR}
 
 cd ${BASEDIR}/graal/vm
 ${MX} --dy ${GRAALVM_SUITE_RUNTIMES} build

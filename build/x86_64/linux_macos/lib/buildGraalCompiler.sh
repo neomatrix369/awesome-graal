@@ -15,6 +15,9 @@ gitClone oracle \
          graal  \
          "Getting sources for the Graal compiler" 
 
+export JAVA_HOME="$(getJDK8_JVMCI_HOME)"
+echo ">>>> Using JDK8_JVMCI_HOME as JAVA_HOME (${JAVA_HOME})"
+
 cd ${BASEDIR}/graal/compiler
 export JVMCI_VERSION_CHECK='ignore'
 echo ">>>> Setting environment variable JVMCI_VERSION_CHECK=${JVMCI_VERSION_CHECK}"
