@@ -53,7 +53,7 @@ jobs:
             echo 'export RUN_TESTS="true"'                                        >> ${BASH_ENV}
             source ${BASH_ENV}
       - run:
-          name: Display versions of dependencies
+          name: Display HW, SW, Runtime env. info and versions of dependencies
           command: ./build/x86_64/linux_macos/lib/displayDependencyVersion.sh
       - restore_cache:
           keys:
