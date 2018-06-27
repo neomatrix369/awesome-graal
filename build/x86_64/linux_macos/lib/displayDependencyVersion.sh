@@ -41,7 +41,7 @@ printOSInfo() {
     uname -a
 
     echo ""
-    cat /etc/lsb-release
+    echo $(getOSInfo)
 }
 
 printHWInfo

@@ -64,3 +64,12 @@ getMemoryInfo() {
         free -m -h
     fi
 }
+
+getOSInfo() {
+    if [[ "$(uname)" = "Darwin" ]]; then
+        result=$(system_profiler SPSoftwareDataType || true)
+    else
+        result=$(cat /etc/lsb-release || true)
+    fi
+    echo ${result}
+}
