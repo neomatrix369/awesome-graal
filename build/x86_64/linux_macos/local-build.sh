@@ -18,7 +18,9 @@ GRAALVM_SUITE_RUNTIMES=${GRAALVM_SUITE_RUNTIMES:-"/substratevm,/tools,sulong,/gr
 
 export JAVA_OPTS="$(echo ${DOCKER_JAVA_OPTS:-""} ${JAVA_OPTS})"
 export FASTR_RELEASE=true
-export LC_ALL=C
+export LANG="en_US.UTF-8"
+export LC_ALL="en_US.UTF-8"
+export LC_CTYPE="en_US.UTF-8"
 
 echo ">>> Working in ${BASEDIR}"
 
@@ -38,7 +40,9 @@ printParameters() {
     echo "JAVA_HOME=${JAVA_HOME}"
     echo "JAVA_OPTS=${JAVA_OPTS}"
     echo "FASTR_RELEASE=${FASTR_RELEASE}"
-    echo "LC_ALL=${LC_ALL}"        
+    echo "LANG=${LANG}"
+    echo "LC_ALL=${LC_ALL}"
+    echo "LC_CTYPE=${LC_CTYPE}"
     echo "*************************************************"
 }
 
