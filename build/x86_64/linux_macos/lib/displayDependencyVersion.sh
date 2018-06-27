@@ -9,20 +9,13 @@ source ${SCRIPTS_LIB_DIR}/utils.sh
 printHWInfo() {
     echo ""
     echo "Display hardware information"
-    if [[ "$(uname)" = "Darwin" ]]; then
-       system_profiler SPHardwareDataType
-    else
-       lscpu
-    fi
+    echo $(getHWInfo)
 
     echo ""
-    if [[ "$(uname)" = "Darwin" ]]; then
-        top -l 1 -s 0 | grep PhysMem
-        sysctl vm.swapusage
-    else
-       free -m
-       free -m -h
-    fi
+    echo $(getMemoryInfo)
+
+    echo ""
+    echo "Available threads (from all online CPUs/Cores): $(getAvailableThreads)"
 }
 
 printRuntimeEnvInfo() {
@@ -47,11 +40,13 @@ printOSInfo() {
     echo "Display OS information"
     uname -a
 
-    printRuntimeEnvInfo
+    echo ""
+    cat /etc/lsb-release
 }
 
 printHWInfo
 printOSInfo
+printRuntimeEnvInfo
 
 versionCheck gcc "--version"
 versionCheck g++ "--version"
@@ -62,7 +57,7 @@ versionCheck python "--version"
 if [[ "$(uname)" = "Darwin" ]]; then
     echo ""
     echo "MacOS specific checks"
-    #versionCheck xcodebuild "--version" || true
+    versionCheck xcodebuild "--version" || true
 
     echo "LLVM:"
     versionCheck clang "--version"

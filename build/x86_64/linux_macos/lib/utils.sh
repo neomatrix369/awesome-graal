@@ -28,11 +28,39 @@ gitClone() {
     fi
 }
 
+getAvailableThreads() {
+    if [[ "$(uname)" = "Darwin" ]]; then
+       result=$(sysctl -n hw.ncpu || true)
+    else
+       result=$(nproc --all || true)
+    fi
+    echo ${result:-4}
+}
+
 getAllowedThreads() {
-    availableThreads=$(nproc --all)
+    availableThreads=$(getAvailableThreads)
     thresholdLimit="$(awk "BEGIN {print (${availableThreads} * 1/2)}")"
     if [[ -z "${availableThreads}" ]] || [[  "${availableThreads}" -ge "${thresholdLimit}" ]]; then
         availableThreads="${thresholdLimit}"
     fi
     echo ${availableThreads}
+}
+
+getHWInfo() {
+    if [[ "$(uname)" = "Darwin" ]]; then
+       result=$(system_profiler SPHardwareDataType || true)
+    else
+       result=$(lscpu || true)
+    fi
+    echo ${result}
+}
+
+getMemoryInfo() {
+    if [[ "$(uname)" = "Darwin" ]]; then
+        top -l 1 -s 0 | grep PhysMem
+        sysctl vm.swapusage
+    else
+        free -m
+        free -m -h
+    fi
 }
