@@ -71,3 +71,13 @@ getOSInfo() {
         cat /etc/lsb-release || true
     fi
 }
+
+getVMInfo() {
+    if [[ "$(uname)" = "Darwin" ]]; then
+        result=$(ioreg -l | grep -e Manufacturer -e 'Vendor Name')
+    else
+        result=$(cat /proc/cpuinfo | grep hypervisor || true)
+    fi
+
+    echo ${result}
+}
