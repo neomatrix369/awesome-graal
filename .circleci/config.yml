@@ -26,23 +26,9 @@ jobs:
       - run:
           name: Display HW, SW, Runtime env. info and versions of dependencies
           command: ./build/x86_64/linux_macos/lib/displayDependencyVersion.sh
-      - restore_cache:
-          keys:
-            - mx-{{ arch }}-{{ .Branch }}-{{ .Environment.CIRCLE_SHA1 }}
-            - mx-{{ arch }}-{{ .Branch }}
-            - mx
       - run:
           name: Setup MX
           command: ./build/x86_64/linux_macos/lib/setupMX.sh ${BASEDIR}
-      - save_cache:
-          key: mx-{{ arch }}-{{ .Branch }}-{{ .Environment.CIRCLE_SHA1 }}
-          paths:
-            - /root/project/mx
-      - restore_cache:
-          keys:
-            - JDK-JVMCI-{{ arch }}-{{ .Branch }}-{{ .Environment.CIRCLE_SHA1 }}
-            - JDK-JVMCI-{{ arch }}-{{ .Branch }}
-            - JDK-JVMCI
       - run:
           name: Build JDK JVMCI
           command: ./build/x86_64/linux_macos/lib/build_JDK_JVMCI.sh ${BASEDIR} ${MX}
@@ -51,27 +37,16 @@ jobs:
       - run:
           name: Run JDK JVMCI Tests
           command: ./build/x86_64/linux_macos/lib/run_JDK_JVMCI_Tests.sh ${BASEDIR} ${MX}
-      - save_cache:
-          key: JDK-JVMCI-{{ arch }}-{{ .Branch }}-{{ .Environment.CIRCLE_SHA1 }}
-          paths:
-            - /root/project/graal-jvmci-8
-      - restore_cache:
-          keys:
-            - graal-compiler-{{ arch }}-{{ .Branch }}-{{ .Environment.CIRCLE_SHA1 }}
-            - graal-compiler-{{ arch }}-{{ .Branch }}
-            - graal-compiler
       - run:
           name: Setting up environment and Build Graal Compiler
           command: |
-            source ./build/x86_64/linux_macos/lib/setEnvVariables.sh ${BASEDIR} ${MX}
-            ./build/x86_64/linux_macos/lib/buildGraalCompiler.sh ${BASEDIR} ${MX} ${BUILD_ARTIFACTS_DIR}
+            echo ">>>> JAVA_HOME=${JAVA_HOME}"
+            JDK8_JVMCI_HOME="$(cd ${BASEDIR}/graal-jvmci-8/ && ${MX} --java-home ${JAVA_HOME} jdkhome)"
+            export JAVA_HOME=${JDK8_JVMCI_HOME}
+            echo ">>>> Using JDK8_JVMCI_HOME as JAVA_HOME (${JAVA_HOME})"
+            JAVA_HOME=${JDK8_JVMCI_HOME} ./build/x86_64/linux_macos/lib/buildGraalCompiler.sh ${BASEDIR} ${MX} ${BUILD_ARTIFACTS_DIR}
           timeout: 10m
           no_output_timeout: 7m
-      - save_cache:
-          key: graal-compiler-{{ arch }}-{{ .Branch }}-{{ .Environment.CIRCLE_SHA1 }}
-          paths:
-            - /root/project/graal
-            - /root/project/jdk8-with-graal
       - run:
           name: Archiving artifacts
           command: ./build/x86_64/linux_macos/lib/archivingArtifacts.sh ${JDK_GRAAL_FOLDER_NAME} ${BUILD_ARTIFACTS_DIR}
