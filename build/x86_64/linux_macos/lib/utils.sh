@@ -48,10 +48,19 @@ getAllowedThreads() {
 
 getHWInfo() {
     if [[ "$(uname)" = "Darwin" ]]; then
-       result=$(system_profiler SPHardwareDataType || true)
+       system_profiler SPHardwareDataType || true
     else
-       result=$(lscpu || true)
+       lscpu || true
     fi
+}
+
+getVMInfo() {
+    if [[ "$(uname)" = "Darwin" ]]; then
+        result=$(ioreg -l | grep -e Manufacturer -e 'Vendor Name')
+    else
+        result=$(cat /proc/cpuinfo | grep hypervisor || true)
+    fi
+
     echo ${result}
 }
 
@@ -62,5 +71,13 @@ getMemoryInfo() {
     else
         free -m
         free -m -h
+    fi
+}
+
+getOSInfo() {
+    if [[ "$(uname)" = "Darwin" ]]; then
+        system_profiler SPSoftwareDataType || true
+    else
+        cat /etc/lsb-release || true
     fi
 }

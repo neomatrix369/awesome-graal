@@ -24,8 +24,7 @@ printRuntimeEnvInfo() {
         dockerContainer="inside a docker container "
     fi
 
-    runningInsideA_VM="$(cat /proc/cpuinfo | grep hypervisor || true)"
-    if [[ -z "${runningInsideA_VM}" ]]; then
+    if [[ -z "$(getVMInfo)" ]]; then
         machine="bare-metal (native)"
     else
         machine="VM or VM-like"
@@ -43,7 +42,7 @@ printOSInfo() {
     uname -a
 
     echo ""
-    cat /etc/lsb-release
+    echo $(getOSInfo)
 }
 
 printHWInfo
