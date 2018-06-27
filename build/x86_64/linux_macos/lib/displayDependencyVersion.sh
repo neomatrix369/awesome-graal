@@ -67,14 +67,4 @@ if [[ "$(uname)" = "Darwin" ]]; then
     echo ""
     echo "MacOS specific checks"
     versionCheck xcodebuild "--version" || true
-
-    echo "LLVM:"
-    versionCheck clang "--version"
 fi
-
-echo ""
-echo "LLVM:"
-versionCheck opt "--version"
-
-echo ""
-versionCheck openssl version
