@@ -15,4 +15,6 @@ gitClone graalvm       \
 
 echo ">>> Building a JDK8 with JVMCI..."
 cd ${BASEDIR}/graal-jvmci-8/
-${MX} --java-home ${JAVA_HOME} build
+HOTSPOT_BUILD_JOBS=${HOTSPOT_BUILD_JOBS:-$(getAllowedThreads)}
+echo "Setting HOTSPOT_BUILD_JOBS=${HOTSPOT_BUILD_JOBS}"
+HOTSPOT_BUILD_JOBS=${HOTSPOT_BUILD_JOBS} ${MX} --java-home ${JAVA_HOME} build

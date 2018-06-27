@@ -27,3 +27,12 @@ gitClone() {
         git clone --depth=1 https://github.com/${org}/${repo}.git
     fi
 }
+
+getAllowedThreads() {
+    availableThreads=$(nproc --all)
+    thresholdLimit="$(awk "BEGIN {print (${availableThreads} * 1/2)}")"
+    if [[ -z "${availableThreads}" ]] || [[  "${availableThreads}" -ge "${thresholdLimit}" ]]; then
+        availableThreads="${thresholdLimit}"
+    fi
+    echo ${availableThreads}
+}

@@ -11,9 +11,11 @@ set -o pipefail
 IFS=$'\n\t'
 
 BASEDIR=$(pwd)
-RUN_TESTS=${RUN_TESTS:-""}
+RUN_TESTS=${RUN_TESTS:-"true"}
 JDK_GRAAL_FOLDER_NAME=jdk8-with-graal
 BUILD_ARTIFACTS_DIR=${BASEDIR}/${JDK_GRAAL_FOLDER_NAME}
+export JAVA_OPTS="$(echo ${DOCKER_JAVA_OPTS:-""} ${JAVA_OPTS})"
+
 echo ">>> Working in ${BASEDIR}"
 
 export MX=${BASEDIR}/mx/mx
@@ -28,6 +30,8 @@ printParameters() {
     echo "BUILD_ARTIFACTS_DIR=${BUILD_ARTIFACTS_DIR}"
     echo ""
     echo "RUN_TESTS=${RUN_TESTS}"
+    echo "JAVA_HOME=${JAVA_HOME}"
+    echo "JAVA_OPTS=${JAVA_OPTS}"
     echo "*************************************************"
 }
 

@@ -9,10 +9,20 @@ source ${SCRIPTS_LIB_DIR}/utils.sh
 printHWInfo() {
     echo ""
     echo "Display hardware information"
+    if [[ "$(uname)" = "Darwin" ]]; then
+       system_profiler SPHardwareDataType
+    else
     lscpu
+    fi
+
     echo ""
+    if [[ "$(uname)" = "Darwin" ]]; then
+        top -l 1 -s 0 | grep PhysMem
+        sysctl vm.swapusage
+    else
     free -m
     free -m -h
+    fi
 }
 
 printRuntimeEnvInfo() {
@@ -57,4 +67,14 @@ if [[ "$(uname)" = "Darwin" ]]; then
     echo ""
     echo "MacOS specific checks"
     versionCheck xcodebuild "--version" || true
+
+    echo "LLVM:"
+    versionCheck clang "--version"
 fi
+
+echo ""
+echo "LLVM:"
+versionCheck opt "--version"
+
+echo ""
+versionCheck openssl version

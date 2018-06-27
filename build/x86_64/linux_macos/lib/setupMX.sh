@@ -8,7 +8,8 @@ source ${SCRIPTS_LIB_DIR}/utils.sh
 
 BASEDIR=$1
 cd ${BASEDIR}
+repo=mx
 gitClone graalvm \
-         mx      \
-         "mx is a build tool created for managing the development of (primarily) Java code"
-export MX=${BASEDIR}/mx/mx
+         ${repo} \
+         "${repo} is a build tool created for managing the development of (primarily) Java code"
+export MX=${BASEDIR}/${repo}/mx
