@@ -25,7 +25,7 @@ printHWInfo() {
     fi
 
     echo ""
-    echo "Available threads (from all CPUs/Cores): $(nproc --all)"
+    echo "Available threads (from all CPUs/Cores): $(getAvailableThreads)"
 }
 
 printRuntimeEnvInfo() {

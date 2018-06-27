@@ -28,8 +28,17 @@ gitClone() {
     fi
 }
 
+getAvailableThreads() {
+    if [[ "$(uname)" = "Darwin" ]]; then
+       result=$(sysctl -n hw.ncpu || true)
+    else
+       result=$(nproc --all || true)
+    fi
+    echo ${result:-4}
+}
+
 getAllowedThreads() {
-    availableThreads=$(nproc --all)
+    availableThreads=$(getAvailableThreads)
     thresholdLimit="$(awk "BEGIN {print (${availableThreads} * 1/2)}")"
     if [[ -z "${availableThreads}" ]] || [[  "${availableThreads}" -ge "${thresholdLimit}" ]]; then
         availableThreads="${thresholdLimit}"
