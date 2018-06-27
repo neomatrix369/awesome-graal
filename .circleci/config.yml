@@ -6,7 +6,7 @@ dependencies:
 jobs:
   build:
     docker:
-      - image: adoptopenjdk/openjdk8:jdk8u152-b16
+      - image: neomatrix369/graal-jdk8:latest
     steps:
       - checkout
       - restore_cache:
