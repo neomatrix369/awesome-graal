@@ -87,7 +87,7 @@ jobs:
             - /root/project/graal-jvmci-8
       - run:
           name: Set environment variables
-          command: ./build/x86_64/linux_macos/lib/setEnvVariables.sh ${BASEDIR} ${MX}
+          command: source ./build/x86_64/linux_macos/lib/setEnvVariables.sh ${BASEDIR} ${MX}
       - restore_cache:
           keys:
             - graal-compiler-{{ arch }}-{{ .Branch }}-{{ .Environment.CIRCLE_SHA1 }}
