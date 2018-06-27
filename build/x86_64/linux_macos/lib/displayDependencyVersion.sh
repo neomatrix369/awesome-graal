@@ -12,7 +12,7 @@ printHWInfo() {
     if [[ "$(uname)" = "Darwin" ]]; then
        system_profiler SPHardwareDataType
     else
-    lscpu
+       lscpu
     fi
 
     echo ""
@@ -20,9 +20,12 @@ printHWInfo() {
         top -l 1 -s 0 | grep PhysMem
         sysctl vm.swapusage
     else
-    free -m
-    free -m -h
+        free -m
+        free -m -h
     fi
+
+    echo ""
+    echo "Available threads (from all CPUs/Cores): $(nproc --all)"
 }
 
 printRuntimeEnvInfo() {
