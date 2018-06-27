@@ -12,13 +12,7 @@ printHWInfo() {
     echo $(getHWInfo)
 
     echo ""
-    if [[ "$(uname)" = "Darwin" ]]; then
-        top -l 1 -s 0 | grep PhysMem
-        sysctl vm.swapusage
-    else
-        free -m
-        free -m -h
-    fi
+    echo $(getMemoryInfo)
 
     echo ""
     echo "Available threads (from all online CPUs/Cores): $(getAvailableThreads)"

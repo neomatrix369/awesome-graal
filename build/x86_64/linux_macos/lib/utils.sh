@@ -54,3 +54,13 @@ getHWInfo() {
     fi
     echo ${result}
 }
+
+getMemoryInfo() {
+    if [[ "$(uname)" = "Darwin" ]]; then
+        top -l 1 -s 0 | grep PhysMem
+        sysctl vm.swapusage
+    else
+        free -m
+        free -m -h
+    fi
+}
