@@ -45,3 +45,12 @@ getAllowedThreads() {
     fi
     echo ${availableThreads}
 }
+
+getHWInfo() {
+    if [[ "$(uname)" = "Darwin" ]]; then
+       result=$(system_profiler SPHardwareDataType || true)
+    else
+       result=$(lscpu || true)
+    fi
+    echo ${result}
+}

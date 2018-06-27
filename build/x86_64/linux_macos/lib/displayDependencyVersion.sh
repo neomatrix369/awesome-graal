@@ -9,11 +9,7 @@ source ${SCRIPTS_LIB_DIR}/utils.sh
 printHWInfo() {
     echo ""
     echo "Display hardware information"
-    if [[ "$(uname)" = "Darwin" ]]; then
-       system_profiler SPHardwareDataType
-    else
-       lscpu
-    fi
+    echo $(getHWInfo)
 
     echo ""
     if [[ "$(uname)" = "Darwin" ]]; then
@@ -25,7 +21,7 @@ printHWInfo() {
     fi
 
     echo ""
-    echo "Available threads (from all CPUs/Cores): $(getAvailableThreads)"
+    echo "Available threads (from all online CPUs/Cores): $(getAvailableThreads)"
 }
 
 printRuntimeEnvInfo() {
