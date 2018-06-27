@@ -31,7 +31,9 @@ printRuntimeEnvInfo() {
     fi
 
     echo ""
-    echo ">>> Processes are running ${dockerContainer}on a ${machine} environment <<<"
+    echo "*******************************************************************************"
+    echo "* Processes are running ${dockerContainer}on a ${machine} environment"
+    echo "*******************************************************************************"
 }
 
 printOSInfo() {

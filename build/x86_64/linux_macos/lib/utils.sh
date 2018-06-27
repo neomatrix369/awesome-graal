@@ -54,6 +54,16 @@ getHWInfo() {
     fi
 }
 
+getVMInfo() {
+    if [[ "$(uname)" = "Darwin" ]]; then
+        result=$(ioreg -l | grep -e Manufacturer -e 'Vendor Name')
+    else
+        result=$(cat /proc/cpuinfo | grep hypervisor || true)
+    fi
+
+    echo ${result}
+}
+
 getMemoryInfo() {
     if [[ "$(uname)" = "Darwin" ]]; then
         top -l 1 -s 0 | grep PhysMem
@@ -70,14 +80,4 @@ getOSInfo() {
     else
         cat /etc/lsb-release || true
     fi
-}
-
-getVMInfo() {
-    if [[ "$(uname)" = "Darwin" ]]; then
-        result=$(ioreg -l | grep -e Manufacturer -e 'Vendor Name')
-    else
-        result=$(cat /proc/cpuinfo | grep hypervisor || true)
-    fi
-
-    echo ${result}
 }
