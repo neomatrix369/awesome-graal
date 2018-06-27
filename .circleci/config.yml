@@ -55,17 +55,16 @@ jobs:
           key: JDK-JVMCI-{{ arch }}-{{ .Branch }}-{{ .Environment.CIRCLE_SHA1 }}
           paths:
             - /root/project/graal-jvmci-8
-      - run:
-          name: Set environment variables
-          command: source ./build/x86_64/linux_macos/lib/setEnvVariables.sh ${BASEDIR} ${MX}
       - restore_cache:
           keys:
             - graal-compiler-{{ arch }}-{{ .Branch }}-{{ .Environment.CIRCLE_SHA1 }}
             - graal-compiler-{{ arch }}-{{ .Branch }}
             - graal-compiler
       - run:
-          name: Build Graal Compiler
-          command: ./build/x86_64/linux_macos/lib/buildGraalCompiler.sh ${BASEDIR} ${MX} ${BUILD_ARTIFACTS_DIR}
+          name: Setting up environment and Build Graal Compiler
+          command: |
+            source ./build/x86_64/linux_macos/lib/setEnvVariables.sh ${BASEDIR} ${MX}
+            ./build/x86_64/linux_macos/lib/buildGraalCompiler.sh ${BASEDIR} ${MX} ${BUILD_ARTIFACTS_DIR}
           timeout: 10m
           no_output_timeout: 7m
       - save_cache:
