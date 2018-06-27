@@ -48,11 +48,10 @@ getAllowedThreads() {
 
 getHWInfo() {
     if [[ "$(uname)" = "Darwin" ]]; then
-       result=$(system_profiler SPHardwareDataType || true)
+       system_profiler SPHardwareDataType || true
     else
-       result=$(lscpu || true)
+       lscpu || true
     fi
-    echo ${result}
 }
 
 getMemoryInfo() {
@@ -67,9 +66,8 @@ getMemoryInfo() {
 
 getOSInfo() {
     if [[ "$(uname)" = "Darwin" ]]; then
-        result=$(system_profiler SPSoftwareDataType || true)
+        system_profiler SPSoftwareDataType || true
     else
-        result=$(cat /etc/lsb-release || true)
+        cat /etc/lsb-release || true
     fi
-    echo ${result}
 }
