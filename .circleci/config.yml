@@ -40,9 +40,13 @@ jobs:
       - run:
           name: Setting up environment and Build Graal Compiler
           command: |
-            echo ">>>> JAVA_HOME=${JAVA_HOME}"
+            echo ">>>> Currently JAVA_HOME=${JAVA_HOME}"
             JDK8_JVMCI_HOME="$(cd ${BASEDIR}/graal-jvmci-8/ && ${MX} --java-home ${JAVA_HOME} jdkhome)"
-            export JAVA_HOME=${JDK8_JVMCI_HOME}
+            echo "export JVMCI_VERSION_CHECK='ignore'" >> envrc
+            echo "export JAVA_HOME=${JDK8_JVMCI_HOME}" >> envrc
+      - run:
+          name: Build Graal Compiler
+          command: |
             echo ">>>> Using JDK8_JVMCI_HOME as JAVA_HOME (${JAVA_HOME})"
             ./build/x86_64/linux_macos/lib/buildGraalCompiler.sh ${BASEDIR} ${MX} ${BUILD_ARTIFACTS_DIR} ${JAVA_HOME}
           timeout: 10m
