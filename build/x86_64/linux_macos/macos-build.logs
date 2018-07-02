@@ -1,4 +1,4 @@
-./local-build.sh: line 18: JAVA_OPTS: unbound variable
+./local-build.sh: line 19: JAVA_OPTS: unbound variable
 >>> Working in /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos
 ******************* Parameters ******************
 BASEDIR=/Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos
@@ -8,10 +8,42 @@ BUILD_ARTIFACTS_DIR=/Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/bui
 GRAALVM_SUITE_RUNTIMES=/substratevm,/tools,sulong,/graal-nodejs,truffleruby,graalpython
 
 RUN_TESTS=
+JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_172.jdk/Contents/Home
 JAVA_OPTS=
 FASTR_RELEASE=true
-LC_ALL=C
+LANG=en_US.UTF-8
+LC_ALL=en_US.UTF-8
+LC_CTYPE=en_US.UTF-8
 *************************************************
+
+Display hardware information
+Hardware: Hardware Overview: Model Name: MacBook Pro Model Identifier: MacBookPro8,1 Processor Name: Intel Core i5 Processor Speed: 2.3 GHz Number of Processors: 1 Total Number of Cores: 2 L2 Cache (per Core): 256 KB L3 Cache: 3 MB Memory: 4 GB Boot ROM Version: MBP81.0050.B00 SMC Version (system): 1.68f99 Serial Number (system): C2VF5ZFJDH2G Hardware UUID: FAA92732-A607-5E68-9DAF-C7684759A990 Sudden Motion Sensor: State: Enabled
+
+PhysMem: 3951M used (1144M wired), 143M unused. vm.swapusage: total = 1024.00M used = 101.25M free = 922.75M (encrypted)
+
+Available threads (from all online CPUs/Cores): 4
+
+Display OS information
+Darwin manis-MacBook.local 17.6.0 Darwin Kernel Version 17.6.0: Tue May  8 15:22:16 PDT 2018; root:xnu-4570.61.1~1/RELEASE_X86_64 x86_64
+
+Software: System Software Overview: System Version: macOS 10.13.5 (17F77) Kernel Version: Darwin 17.6.0 Boot Volume: Swami's macbook SSD Boot Mode: Normal Computer Name: mani’s MacBook User Name: mani (swami) Secure Virtual Memory: Enabled System Integrity Protection: Enabled Time since boot: 4:17
+cat: /proc/cpuinfo: No such file or directory
+
+>>> Processes are running on a bare-metal (native) environment <<<
+
+gcc version check
+Configured with: --prefix=/Library/Developer/CommandLineTools/usr --with-gxx-include-dir=/usr/include/c++/4.2.1
+Apple LLVM version 9.1.0 (clang-902.0.39.2)
+Target: x86_64-apple-darwin17.6.0
+Thread model: posix
+InstalledDir: /Library/Developer/CommandLineTools/usr/bin
+
+g++ version check
+Configured with: --prefix=/Library/Developer/CommandLineTools/usr --with-gxx-include-dir=/usr/include/c++/4.2.1
+Apple LLVM version 9.1.0 (clang-902.0.39.2)
+Target: x86_64-apple-darwin17.6.0
+Thread model: posix
+InstalledDir: /Library/Developer/CommandLineTools/usr/bin
 
 java version check
 java version "1.8.0_172"
@@ -30,9 +62,6 @@ This program built for i386-apple-darwin11.3.0
 python version check
 Python 2.7.12
 
-ruby version check
-ruby 2.3.3p222 (2016-11-21 revision 56859) [universal.x86_64-darwin17]
-
 MacOS specific checks
 
 xcodebuild version check
@@ -45,10 +74,6 @@ Target: x86_64-apple-darwin17.6.0
 Thread model: posix
 InstalledDir: /usr/local/opt/llvm@4/bin
 
-
-openssl version check
-OpenSSL 1.0.2o  27 Mar 2018
-
 LLVM:
 
 opt version check
@@ -57,38 +82,97 @@ LLVM (http://llvm.org/):
   Optimized build.
   Default target: x86_64-apple-darwin17.6.0
   Host CPU: sandybridge
+
+
+openssl version check
+OpenSSL 1.0.2o  27 Mar 2018
 >>> mx already exists: updating and using this version
 Already up to date.
 
-real	0m0.614s
-user	0m0.070s
-sys	0m0.066s
+real	0m1.221s
+user	0m0.074s
+sys	0m0.054s
 >>> graal-jvmci-8 already exists: updating and using this version
 Already up to date.
 >>> Building a JDK8 with JVMCI...
+Setting HOTSPOT_BUILD_JOBS=2
 JAVA_HOME: /Library/Java/JavaVirtualMachines/jdk1.8.0_172.jdk/Contents/Home
 EXTRA_JAVA_HOMES: 
+Building HotSpot[product, server]... [/Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/build/bsd/bsd_amd64_compiler2/product/libjvm.dylib[does not exist] does not exist]
+--------------- make command line ----------------------
+make -C /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/make ARCH_DATA_MODEL=64 HOTSPOT_BUILD_JOBS=2 ALT_BOOTDIR=/Library/Java/JavaVirtualMachines/jdk1.8.0_172.jdk/Contents/Home MAKE_VERBOSE= USER_RELEASE_SUFFIX=jvmci-0.46-dev INCLUDE_JVMCI=true USE_CLANG=true COMPILER_WARNINGS_FATAL=false ZIP_DEBUGINFO_FILES=0 product docs
+--------------------------------------------------------
+cd /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/make; \
+	/Library/Developer/CommandLineTools/usr/bin/make BUILD_DIR=/Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/build/bsd/bsd_amd64_compiler2 BUILD_FLAVOR=product VM_TARGET=product generic_build2 
+INFO: ENABLE_FULL_DEBUG_SYMBOLS=1
 
-real	0m4.089s
-user	0m1.861s
-sys	0m1.580s
+mkdir -p /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/build/bsd
+cd /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/build/bsd; \
+	    /Library/Developer/CommandLineTools/usr/bin/make -f /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/make/bsd/Makefile \
+		       LP64=1 MACOSX_UNIVERSAL=true BOOTDIR=/Library/Java/JavaVirtualMachines/jdk1.8.0_172.jdk/Contents/Home OUTPUTDIR=/Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/build/bsd GAMMADIR=/Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8 MAKE_VERBOSE= HOTSPOT_RELEASE_VERSION=25.71-b01 JRE_RELEASE_VERSION="1.8.0" HOTSPOT_BUILD_VERSION=internal-jvmci-0.46-dev product
+INFO: ENABLE_FULL_DEBUG_SYMBOLS=1
+
+cd bsd_amd64_compiler2/product && /Library/Developer/CommandLineTools/usr/bin/make  " LP64=1 "
+Rescanned ../generated/adfiles/bsd_x86_64.ad  but encountered no changes.
+make[4]: Nothing to be done for `all'.
+make[4]: Nothing to be done for `all'.
+if [ -d /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/agent -a "x86" != "ia64" \
+             -a "x86" != "arm" \
+             -a "x86" != "ppc" \
+             -a "x86" != "zero" ] ; then \
+	   /Library/Developer/CommandLineTools/usr/bin/make -f sa.make /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/build/bsd/bsd_amd64_compiler2/product/../generated/sa-jdi.jar; \
+	fi
+make[5]: `/Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/build/bsd/bsd_amd64_compiler2/product/../generated/sa-jdi.jar' is up to date.
+echo "dtrace headers generated"
+dtrace headers generated
+make[4]: `precompiled.hpp.pch' is up to date.
+Linking vm...
+ld: warning: object file (bsd_x86_64.o) was built for newer OSX version (10.13) than being linked (10.7)
+
+dsymutil libjvm.dylib
+echo "Doing vm.make build:"
+Doing vm.make build:
+All done.
+cd /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/build/bsd; \
+	    /Library/Developer/CommandLineTools/usr/bin/make -f /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/make/bsd/Makefile \
+		       LP64=1 MACOSX_UNIVERSAL=true BOOTDIR=/Library/Java/JavaVirtualMachines/jdk1.8.0_172.jdk/Contents/Home OUTPUTDIR=/Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/build/bsd GAMMADIR=/Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8 MAKE_VERBOSE= HOTSPOT_RELEASE_VERSION=25.71-b01 JRE_RELEASE_VERSION="1.8.0" HOTSPOT_BUILD_VERSION=internal-jvmci-0.46-dev BUILD_FLAVOR=product docs
+INFO: ENABLE_FULL_DEBUG_SYMBOLS=1
+
+/Library/Developer/CommandLineTools/usr/bin/make -f /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/make/bsd/makefiles/jvmti.make  " LP64=1 " GAMMADIR=/Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8 OS_FAMILY=bsd SRCARCH=x86 BUILDARCH=amd64 LIBARCH=amd64 LIBRARY_SUFFIX=dylib HOTSPOT_RELEASE_VERSION=25.71-b01 HOTSPOT_BUILD_VERSION=internal-jvmci-0.46-dev JRE_RELEASE_VERSION=1.8.0 ENABLE_FULL_DEBUG_SYMBOLS=1 OBJCOPY= STRIP_POLICY= ZIP_DEBUGINFO_FILES=0 ZIPEXE=zip JvmtiOutDir=bsd_amd64_docs BUILD_FLAVOR=product jvmtidocs
+make[2]: Nothing to be done for `jvmtidocs'.
+Archiving JVM_PRODUCT_SERVER... [dependency hotspot updated]
+
+real	0m30.176s
+user	0m18.419s
+sys	0m8.238s
 >>>> Running unit tests...
 MxJUnitCore
 JUnit version 4.12
 ............................................................................................
-Time: 11.371
+Time: 10.826
 
 OK (92 tests)
 
 
-real	0m13.055s
-user	0m30.200s
-sys	0m0.988s
->>> Using /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/jdk1.8.0_172/darwin-amd64/product/Contents/Home
+real	0m12.737s
+user	0m27.957s
+sys	0m1.093s
+>>>> Using JDK8_JVMCI_HOME as JAVA_HOME (/Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/jdk1.8.0_172/darwin-amd64/product/Contents/Home)
 >>> Building Graal
 >>> graal already exists: updating and using this version
-Already up to date.
+From https://github.com/oracle/graal
+   32df5ad6b9..9b7872c867  master     -> origin/master
+Updating 32df5ad6b9..9b7872c867
+Fast-forward
+ .../runtime/hotspot/HotSpotTruffleRuntime.java     | 43 ++++++++++++++++++++++
+ .../truffle/runtime/GraalTruffleRuntime.java       | 13 ++++++-
+ substratevm/mx.substratevm/mx_substratevm.py       |  1 +
+ .../svm/core/posix/PosixVirtualMemoryProvider.java |  3 +-
+ .../svm/truffle/api/SubstrateTruffleRuntime.java   | 10 +++++
+ vm/mx.vm/mx_vm.py                                  | 35 +++++++++++-------
+ 6 files changed, 89 insertions(+), 16 deletions(-)
 >>>> Setting environment variable JVMCI_VERSION_CHECK=ignore
+Setting HOTSPOT_BUILD_JOBS=2
 JAVA_HOME: /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/jdk1.8.0_172/darwin-amd64/product/Contents/Home
 EXTRA_JAVA_HOMES: 
 Dependencies removed from build:
@@ -99,19 +183,33 @@ Dependencies removed from build:
  project com.oracle.truffle.dsl.processor.jdk9 was removed as JDK 9 is not available
  project org.graalvm.compiler.hotspot.management.jdk11 was removed as JDK 11 is not available
  project org.graalvm.compiler.hotspot.jdk9 was removed as JDK 9 is not available
+Compiling org.graalvm.compiler.truffle.runtime with javac-daemon(JDK 1.8)... [/Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graal/compiler/mxbuild/src/org.graalvm.compiler.truffle.runtime/bin/org/graalvm/compiler/truffle/runtime/GraalTruffleRuntime.class[2018-06-27 19:10:22] is older than /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graal/compiler/src/org.graalvm.compiler.truffle.runtime/src/org/graalvm/compiler/truffle/runtime/GraalTruffleRuntime.java[2018-06-27 22:48:48]]
+Compiling org.graalvm.compiler.truffle.runtime.hotspot with javac-daemon(JDK 1.8)... [dependency org.graalvm.compiler.truffle.runtime updated]
+Archiving GRAAL_TRUFFLE_RUNTIME... [dependency org.graalvm.compiler.truffle.runtime updated]
+Compiling org.graalvm.compiler.truffle.test with javac-daemon(JDK 1.8)... [dependency org.graalvm.compiler.truffle.runtime updated]
+Archiving GRAAL... [dependency org.graalvm.compiler.truffle.runtime.hotspot updated]
+Archiving GRAAL_TRUFFLE_RUNTIME_HOTSPOT... [dependency org.graalvm.compiler.truffle.runtime.hotspot updated]
+Archiving GRAAL_TEST... [dependency org.graalvm.compiler.truffle.test updated]
+Archiving GRAAL_MANAGEMENT... [dependency GRAAL updated]
+Archiving GRAAL_COMPILER_WHITEBOX_MICRO_BENCHMARKS... [dependency GRAAL_TEST updated]
 Creating /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/jdk8-with-graal from /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/jdk1.8.0_172/darwin-amd64/product/Contents/Home
 Copying /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graal/compiler/mxbuild/dists/graal.jar to /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/jdk8-with-graal/jre/lib/jvmci
 Copying /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graal/compiler/mxbuild/dists/graal-management.jar to /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/jdk8-with-graal/jre/lib/jvmci
 Copying /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graal/sdk/mxbuild/dists/graal-sdk.jar to /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/jdk8-with-graal/jre/lib/boot
 Copying /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graal/truffle/mxbuild/dists/truffle-api.jar to /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/jdk8-with-graal/jre/lib/truffle
 
-real	0m12.177s
-user	0m5.837s
-sys	0m6.471s
+real	0m31.833s
+user	0m12.707s
+sys	0m9.519s
 >>> Building GraalVM Suite
 Applying temporary patch to fix graaljs cloning issue in 'mx.vm/suite.py'
 Applying temporary patch to fix graalpython cloning issue in 'mx.vm/suite.py'
-Applying temporary patch to fix isValidJavaVersion() in https://github.com/oracle/graal/blob/master/substratevm/src/com.oracle.svm.hosted/src/com/oracle/svm/hosted/NativeImageGeneratorRunner.java#L156
+WARNING:   LLVM_INSTALLABLE_SVM:
+distribution LLVM_INSTALLABLE_SVM redefined
+WARNING:   RUBY_INSTALLABLE_SVM:
+distribution RUBY_INSTALLABLE_SVM redefined
+WARNING:   PYTHON_INSTALLABLE_SVM:
+distribution PYTHON_INSTALLABLE_SVM redefined
 build: Checking SubstrateVM requirements for building ...
 JAVA_HOME: /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/jdk1.8.0_172/darwin-amd64/product/Contents/Home
 EXTRA_JAVA_HOMES: 
@@ -123,6 +221,8 @@ Dependencies removed from build:
  project com.oracle.truffle.dsl.processor.jdk9 was removed as JDK 9 is not available
  project org.graalvm.compiler.replacements.jdk9.test was removed as JDK 9 is not available
  project org.graalvm.compiler.hotspot.management.jdk11 was removed as JDK 11 is not available
+Compiling com.oracle.svm.core.posix with javac-daemon(JDK 1.8)... [/Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graal/substratevm/mxbuild/src/com.oracle.svm.core.posix/bin/com/oracle/svm/core/posix/PosixVirtualMemoryProvider.class[2018-06-27 19:28:09] is older than /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graal/substratevm/src/com.oracle.svm.core.posix/src/com/oracle/svm/core/posix/PosixVirtualMemoryProvider.java[2018-06-27 22:48:48]]
+Compiling org.graalvm.truffle.tools.test with javac-daemon(JDK 1.8)... [/Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graal/vm/mxbuild/src/org.graalvm.truffle.tools.test/bin/org/graalvm/truffle/tools/test/CompilationOfProfilerNodesTest.class[2018-06-27 19:27:55] is older than /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graal/compiler/mxbuild/dists/graal-test.jar[2018-06-27 22:49:09]]
 Building com.oracle.svm.native with GNU Make... [rebuild needed by GNU Make]
 /Library/Developer/CommandLineTools/usr/bin/make -C /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graal/substratevm/src/com.oracle.svm.native/strictmath
 /Library/Developer/CommandLineTools/usr/bin/make -C /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graal/substratevm/src/com.oracle.svm.native/libchelper
@@ -131,182 +231,7 @@ make[1]: Nothing to be done for `all'.
 make[1]: Nothing to be done for `all'.
 make[1]: `/Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graal/substratevm/mxbuild/darwin-amd64/src/com.oracle.svm.native/darwin-amd64/libstrictmath.a' is up to date.
 WARNING: Could not find dragonegg, not building test variant "gcc_O0"
-Building com.oracle.truffle.llvm.tests.sulong with GNU Make... [rebuild needed by GNU Make]
-Building com.oracle.truffle.llvm.tests.libc with GNU Make... [rebuild needed by GNU Make]
-Building com.oracle.truffle.llvm.tests.sulongcpp with GNU Make... [rebuild needed by GNU Make]
-Building com.oracle.graal.python.parser.antlr with GNU Make... [rebuild needed by GNU Make]
-touch /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graalpython/graalpython/com.oracle.graal.python/src/com/oracle/graal/python/parser/antlr/Python3.g4.stamp
-/Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/jdk1.8.0_172/darwin-amd64/product/Contents/Home/bin/java -cp /Users/swami/.mx/cache/ANTLR4_COMPLETE_5b3a8824334069979a0862ce67ede796c3a4d1b1.jar org.antlr.v4.Tool -visitor -package com.oracle.graal.python.parser.antlr -o /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graalpython/graalpython/com.oracle.graal.python/src/com/oracle/graal/python/parser/antlr /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graalpython/graalpython/com.oracle.graal.python/src/com/oracle/graal/python/parser/antlr/Python3.g4
-python /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graalpython/graalpython/com.oracle.graal.python.parser.antlr/postprocess.py /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graalpython/graalpython/com.oracle.graal.python/src/com/oracle/graal/python/parser/antlr/Python3BaseVisitor.java; 	python /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graalpython/graalpython/com.oracle.graal.python.parser.antlr/postprocess.py /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graalpython/graalpython/com.oracle.graal.python/src/com/oracle/graal/python/parser/antlr/Python3Listener.java; 	python /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graalpython/graalpython/com.oracle.graal.python.parser.antlr/postprocess.py /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graalpython/graalpython/com.oracle.graal.python/src/com/oracle/graal/python/parser/antlr/Python3BaseListener.java; 	python /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graalpython/graalpython/com.oracle.graal.python.parser.antlr/postprocess.py /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graalpython/graalpython/com.oracle.graal.python/src/com/oracle/graal/python/parser/antlr/Python3Visitor.java; 	python /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graalpython/graalpython/com.oracle.graal.python.parser.antlr/postprocess.py /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graalpython/graalpython/com.oracle.graal.python/src/com/oracle/graal/python/parser/antlr/Python3Parser.java; 	python /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graalpython/graalpython/com.oracle.graal.python.parser.antlr/postprocess.py /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graalpython/graalpython/com.oracle.graal.python/src/com/oracle/graal/python/parser/antlr/Python3Lexer.java;
-postprocessing /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graalpython/graalpython/com.oracle.graal.python/src/com/oracle/graal/python/parser/antlr/Python3BaseVisitor.java
-postprocessing /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graalpython/graalpython/com.oracle.graal.python/src/com/oracle/graal/python/parser/antlr/Python3Listener.java
-postprocessing /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graalpython/graalpython/com.oracle.graal.python/src/com/oracle/graal/python/parser/antlr/Python3BaseListener.java
-postprocessing /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graalpython/graalpython/com.oracle.graal.python/src/com/oracle/graal/python/parser/antlr/Python3Visitor.java
-postprocessing /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graalpython/graalpython/com.oracle.graal.python/src/com/oracle/graal/python/parser/antlr/Python3Parser.java
-postprocessing /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graalpython/graalpython/com.oracle.graal.python/src/com/oracle/graal/python/parser/antlr/Python3Lexer.java
-Building com.oracle.truffle.llvm.pipe.native with GNU Make... [rebuild needed by GNU Make]
-CXX bin/capture.o
-LINK bin/libpipe.dylib
-Archiving GRAALPYTHON_GRAALVM_SUPPORT... [/Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graalpython/mxbuild/darwin-amd64/dists/graalpython-graalvm-support.tar does not exist]
-Archiving POLYGLOT_NATIVE_API_SUPPORT... [/Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graal/substratevm/mxbuild/darwin-amd64/dists/polyglot-native-api-support.tar does not exist]
-Archiving SULONG_LIB_SRC... [/Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/sulong/mxbuild/dists/sulong-lib-src.tar does not exist]
-Archiving SULONG_TEST_NATIVE... [dependency com.oracle.truffle.llvm.pipe.native updated]
-Compiling com.oracle.graal.python with javac-daemon(JDK 1.8)... [/Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graalpython/mxbuild/graalpython/com.oracle.graal.python/bin/com/oracle/graal/python/parser/antlr/Python3Parser.class[2018-06-23 18:30:23] is older than /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graalpython/graalpython/com.oracle.graal.python/src/com/oracle/graal/python/parser/antlr/Python3Parser.java[2018-06-23 18:43:39]]
-Checking native-image.properties... [dependency GRAALPYTHON_GRAALVM_SUPPORT updated]
-Compiling com.oracle.truffle.js.parser with javac-daemon(JDK 1.8)... [/Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graaljs/graal-js/mxbuild/src/com.oracle.truffle.js.parser/bin/META-INF/services/java.nio.file.spi.FileTypeDetector[2018-06-21 21:06:33] is older than /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graaljs/graal-js/mxbuild/src/com.oracle.truffle.js.builtins/bin/com/oracle/truffle/js/builtins/simd/SIMDTypePrototypeBuiltins.class[2018-06-23 18:31:21]]
-Compiling com.oracle.truffle.js.stats with javac-daemon(JDK 1.8)... [/Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graaljs/graal-js/mxbuild/src/com.oracle.truffle.js.stats/bin/com/oracle/truffle/js/stats/ShellWithStats.class[2018-06-21 21:06:35] is older than /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graaljs/graal-js/mxbuild/src/com.oracle.truffle.js.builtins/bin/com/oracle/truffle/js/builtins/simd/SIMDTypePrototypeBuiltins.class[2018-06-23 18:31:21]]
-Compiling com.oracle.svm.hosted with javac-daemon(JDK 1.8)... [/Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graal/substratevm/mxbuild/src/com.oracle.svm.hosted/bin/com/oracle/svm/hosted/NativeImageGeneratorRunner.class[2018-06-23 18:30:59] is older than /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graal/substratevm/src/com.oracle.svm.hosted/src/com/oracle/svm/hosted/NativeImageGeneratorRunner.java[2018-06-23 18:42:57]]
-Note: /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graaljs/graal-js/src/com.oracle.truffle.js.parser/src/com/oracle/truffle/js/parser/JSScope.java uses or overrides a deprecated API.
-Note: Recompile with -Xlint:deprecation for details.
-Archiving GRAALJS... [dependency com.oracle.truffle.js.parser updated]
-Compiling com.oracle.truffle.js.snapshot with javac-daemon(JDK 1.8)... [dependency com.oracle.truffle.js.parser updated]
-Note: /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graaljs/graal-js/src/com.oracle.truffle.js.snapshot/src/com/oracle/truffle/js/snapshot/Recording.java uses or overrides a deprecated API.
-Note: Recompile with -Xlint:deprecation for details.
-Compiling com.oracle.svm.graal with javac-daemon(JDK 1.8)... [dependency com.oracle.svm.hosted updated]
-Compiling com.oracle.svm.jni with javac-daemon(JDK 1.8)... [dependency com.oracle.svm.hosted updated]
-Compiling com.oracle.svm.reflect with javac-daemon(JDK 1.8)... [dependency com.oracle.svm.hosted updated]
-Compiling org.graalvm.polyglot.nativeapi with javac-daemon(JDK 1.8)... [dependency com.oracle.svm.hosted updated]
-Compiling com.oracle.svm.truffle with javac-daemon(JDK 1.8)... [dependency com.oracle.svm.graal updated]
-Compiling com.oracle.svm.polyglot with javac-daemon(JDK 1.8)... [dependency com.oracle.svm.graal updated]
-Archiving TRUFFLE_JS_SNAPSHOT_TOOL... [dependency com.oracle.truffle.js.snapshot updated]
-Compiling com.oracle.truffle.trufflenode with javac-daemon(JDK 1.8)... [dependency GRAALJS updated]
-Compiling com.oracle.truffle.js.scriptengine.test with javac-daemon(JDK 1.8)... [dependency GRAALJS updated]
-Compiling com.oracle.truffle.js.test.external with javac-daemon(JDK 1.8)... [dependency GRAALJS updated]
-Archiving TRUFFLE_STATS... [dependency com.oracle.truffle.js.stats updated]
-Compiling com.oracle.svm.driver with javac-daemon(JDK 1.8)... [dependency com.oracle.svm.graal updated]
-Compiling com.oracle.svm.junit with javac-daemon(JDK 1.8)... [dependency com.oracle.svm.reflect updated]
-Snapshotting coremodules... [dependency TRUFFLE_JS_SNAPSHOT_TOOL updated]
-#### python2.7 ####
-Archiving GRAALJS_SCRIPTENGINE_TESTS... [dependency com.oracle.truffle.js.scriptengine.test updated]
-Archiving TRUFFLE_JS_TESTS... [dependency com.oracle.truffle.js.test.external updated]
-Archiving TRUFFLENODE... [dependency com.oracle.truffle.trufflenode updated]
-Compiling com.oracle.truffle.trufflenode.jniboundaryprofiler with javac-daemon(JDK 1.8)... [dependency com.oracle.truffle.trufflenode updated]
-Archiving TRUFFLENODE_JNI_BOUNDARY_PROFILER... [dependency com.oracle.truffle.trufflenode.jniboundaryprofiler updated]
-/Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graalpython/graalpython/com.oracle.graal.python/src/com/oracle/graal/python/nodes/function/FunctionRootNode.java:121: warning: [deprecation] shallowCopy() in FrameDescriptor has been deprecated
-        return new FunctionRootNode(getLanguage(PythonLanguage.class), getSourceSection(), functionName, isGenerator, getFrameDescriptor().shallowCopy(), uninitializedBody, executionCellSlots);
-                                                                                                                                          ^
-/Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graalpython/graalpython/com.oracle.graal.python/src/com/oracle/graal/python/nodes/generator/FrameTransferNode.java:64: warning: [deprecation] getFrameDescriptor() in FrameSlot has been deprecated
-        assert frameSlot.getFrameDescriptor() == cargoFrame.getFrameDescriptor();
-                        ^
-/Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graalpython/graalpython/com.oracle.graal.python/src/com/oracle/graal/python/nodes/generator/FrameTransferNode.java:72: warning: [deprecation] getFrameDescriptor() in FrameSlot has been deprecated
-        assert frameSlot.getFrameDescriptor() == cargoFrame.getFrameDescriptor();
-                        ^
-/Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graalpython/graalpython/com.oracle.graal.python/src/com/oracle/graal/python/nodes/generator/FrameTransferNode.java:80: warning: [deprecation] getFrameDescriptor() in FrameSlot has been deprecated
-        assert frameSlot.getFrameDescriptor() == cargoFrame.getFrameDescriptor();
-                        ^
-/Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graalpython/graalpython/com.oracle.graal.python/src/com/oracle/graal/python/nodes/generator/FrameTransferNode.java:88: warning: [deprecation] getFrameDescriptor() in FrameSlot has been deprecated
-        assert frameSlot.getFrameDescriptor() == cargoFrame.getFrameDescriptor();
-                        ^
-/Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graalpython/graalpython/com.oracle.graal.python/src/com/oracle/graal/python/nodes/generator/FrameTransferNode.java:96: warning: [deprecation] getFrameDescriptor() in FrameSlot has been deprecated
-        assert frameSlot.getFrameDescriptor() == cargoFrame.getFrameDescriptor();
-                        ^
-/Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graalpython/graalpython/com.oracle.graal.python/src/com/oracle/graal/python/nodes/generator/FrameTransferNode.java:104: warning: [deprecation] getFrameDescriptor() in FrameSlot has been deprecated
-        assert frameSlot.getFrameDescriptor() == cargoFrame.getFrameDescriptor();
-                        ^
-internal/socket_list.js: 2884.78 ms
-internal/streams/lazy_transform.js: 172.48 ms
-internal/streams/legacy.js: 174.16 ms
-querystring.js: 643.96 ms
-process.js: 39.97 ms
-internal/loader/search.js: 49.10 ms
-internal/wrap_js_stream.js: 258.57 ms
-net.js: 2234.04 ms
-internal/process/next_tick.js: 393.61 ms
-vm.js: 124.30 ms
-internal/module.js: 99.49 ms
-internal/repl.js: 349.78 ms
-internal/util/types.js: 55.84 ms
-os.js: 133.31 ms
-internal/cluster/shared_handle.js: 46.80 ms
-internal/trace_events_async_hooks.js: 85.02 ms
-crypto.js: 934.41 ms
-_stream_passthrough.js: 28.26 ms
-readline.js: 643.49 ms
-_http_incoming.js: 155.29 ms
-internal/process/stdio.js: 82.46 ms
-tty.js: 72.86 ms
-cluster.js: 14.62 ms
-_stream_writable.js: 296.80 ms
-http2.js: 15.21 ms
-internal/inspector_async_hook.js: 158.67 ms
-buffer.js: 1647.77 ms
-internal/cluster/utils.js: 58.52 ms
-http.js: 30.88 ms
-internal/linkedlist.js: 45.95 ms
-internal/net.js: 15.96 ms
-internal/cluster/round_robin_handle.js: 65.31 ms
-assert.js: 424.13 ms
-_http_outgoing.js: 547.32 ms
-internal/streams/destroy.js: 20.91 ms
-url.js: 723.30 ms
-_stream_wrap.js: 15.17 ms
-path.js: 766.65 ms
-internal/process/write-coverage.js: 20.16 ms
-internal/encoding.js: 315.08 ms
-dns.js: 271.84 ms
-async_hooks.js: 182.52 ms
-internal/safe_globals.js: 17.42 ms
-v8.js: 77.96 ms
-child_process.js: 527.59 ms
-_tls_wrap.js: 987.79 ms
-repl.js: 1174.66 ms
-zlib.js: 301.33 ms
-perf_hooks.js: 409.80 ms
-dgram.js: 301.84 ms
-_tls_common.js: 48.15 ms
-internal/loader/ModuleWrap.js: 41.87 ms
-internal/cluster/child.js: 80.91 ms
-internal/fs.js: 41.56 ms
-internal/child_process.js: 508.14 ms
-internal/v8_prof_polyfill.js: 51.77 ms
-events.js: 249.89 ms
-internal/http2/compat.js: 546.68 ms
-_http_server.js: 298.79 ms
-_stream_readable.js: 528.27 ms
-internal/util.js: 122.74 ms
-internal/http.js: 10.56 ms
-_http_agent.js: 193.51 ms
-internal/process.js: 94.76 ms
-internal/bootstrap_node.js: 275.30 ms
-internal/process/promises.js: 35.14 ms
-internal/url.js: 1475.60 ms
-internal/querystring.js: 25.85 ms
-_stream_duplex.js: 24.74 ms
-_http_common.js: 109.91 ms
-domain.js: 80.19 ms
-internal/os.js: 15.21 ms
-internal/streams/BufferList.js: 22.20 ms
-inspector.js: 40.42 ms
-sys.js: 11.28 ms
-_stream_transform.js: 34.46 ms
-constants.js: 6.20 ms
-console.js: 72.58 ms
-internal/http2/util.js: 253.42 ms
-punycode.js: 92.05 ms
-internal/graal/thread_pipe_wrap.js: 72.10 ms
-util.js: 727.13 ms
-internal/test/unicode.js: 8.19 ms
-_http_client.js: 242.39 ms
-fs.js: 3040.25 ms
-internal/http2/core.js: 3035.78 ms
-tls.js: 71.55 ms
-internal/async_hooks.js: 91.55 ms
-internal/process/warning.js: 39.70 ms
-internal/graal/thread_process_wrap.js: 21.01 ms
-https.js: 56.03 ms
-stream.js: 26.10 ms
-_tls_legacy.js: 364.46 ms
-internal/freelist.js: 10.00 ms
-internal/graal/buffer.js: 11.24 ms
-internal/cluster/master.js: 113.16 ms
-internal/buffer.js: 12.41 ms
-internal/cluster/worker.js: 19.59 ms
-string_decoder.js: 76.28 ms
-timers.js: 317.62 ms
-Total: 32845.84 ms
-#### python2.7 ####
-7 warnings
-Building trufflenodeNative with GNU Make... [dependency GRAALJS updated]
+Building trufflenodeNative with GNU Make...
 Running './configure --partly-static --build-only-native --without-dtrace --without-snapshot --shared-zlib --shared-graalvm /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/jdk1.8.0_172/darwin-amd64/product/Contents/Home --shared-trufflejs /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graaljs/graal-js/mxbuild/dists/graaljs.jar'
 xcode-select: error: tool 'xcodebuild' requires Xcode, but active developer directory '/Library/Developer/CommandLineTools' is a command line tools instance
 
@@ -380,68 +305,25 @@ creating config.mk
 Running 'make -j4'
 /Library/Developer/CommandLineTools/usr/bin/make -C out BUILDTYPE=Release V=1 CC=cc CXX=c++
   LD_LIBRARY_PATH=/Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graaljs/graal-nodejs/out/Release/lib.host:/Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graaljs/graal-nodejs/out/Release/lib.target:$LD_LIBRARY_PATH; export LD_LIBRARY_PATH; cd ../.; mkdir -p /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graaljs/graal-nodejs/out/Release/obj/gen; python tools/js2c.py "/Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graaljs/graal-nodejs/out/Release/obj/gen/node_javascript.cc" lib/internal/bootstrap_node.js lib/async_hooks.js lib/assert.js lib/buffer.js lib/child_process.js lib/console.js lib/constants.js lib/crypto.js lib/cluster.js lib/dgram.js lib/dns.js lib/domain.js lib/events.js lib/fs.js lib/http.js lib/http2.js lib/_http_agent.js lib/_http_client.js lib/_http_common.js lib/_http_incoming.js lib/_http_outgoing.js lib/_http_server.js lib/https.js lib/inspector.js lib/module.js lib/net.js lib/os.js lib/path.js lib/perf_hooks.js lib/process.js lib/punycode.js lib/querystring.js lib/readline.js lib/repl.js lib/stream.js lib/_stream_readable.js lib/_stream_writable.js lib/_stream_duplex.js lib/_stream_transform.js lib/_stream_passthrough.js lib/_stream_wrap.js lib/string_decoder.js lib/sys.js lib/timers.js lib/tls.js lib/_tls_common.js lib/_tls_legacy.js lib/_tls_wrap.js lib/tty.js lib/url.js lib/util.js lib/v8.js lib/vm.js lib/zlib.js lib/internal/async_hooks.js lib/internal/buffer.js lib/internal/child_process.js lib/internal/cluster/child.js lib/internal/cluster/master.js lib/internal/cluster/round_robin_handle.js lib/internal/cluster/shared_handle.js lib/internal/cluster/utils.js lib/internal/cluster/worker.js lib/internal/encoding.js lib/internal/errors.js lib/internal/freelist.js lib/internal/fs.js lib/internal/graal/buffer.js lib/internal/http.js lib/internal/inspector_async_hook.js lib/internal/linkedlist.js lib/internal/loader/Loader.js lib/internal/loader/ModuleMap.js lib/internal/loader/ModuleJob.js lib/internal/loader/ModuleWrap.js lib/internal/loader/ModuleRequest.js lib/internal/loader/search.js lib/internal/safe_globals.js lib/internal/net.js lib/internal/module.js lib/internal/os.js lib/internal/process/next_tick.js lib/internal/process/promises.js lib/internal/process/stdio.js lib/internal/process/warning.js lib/internal/process.js lib/internal/querystring.js lib/internal/process/write-coverage.js lib/internal/readline.js lib/internal/repl.js lib/internal/socket_list.js lib/internal/test/unicode.js lib/internal/trace_events_async_hooks.js lib/internal/url.js lib/internal/util.js lib/internal/util/types.js lib/internal/http2/core.js lib/internal/http2/compat.js lib/internal/http2/util.js lib/internal/v8_prof_polyfill.js lib/internal/v8_prof_processor.js lib/internal/streams/lazy_transform.js lib/internal/streams/BufferList.js lib/internal/streams/legacy.js lib/internal/streams/destroy.js lib/internal/wrap_js_stream.js deps/v8/tools/splaytree.js deps/v8/tools/codemap.js deps/v8/tools/consarray.js deps/v8/tools/csvparser.js deps/v8/tools/profile.js deps/v8/tools/profile_view.js deps/v8/tools/logreader.js deps/v8/tools/tickprocessor.js deps/v8/tools/SourceMap.js deps/v8/tools/tickprocessor-driver.js deps/node-inspect/lib/_inspect.js deps/node-inspect/lib/internal/inspect_client.js deps/node-inspect/lib/internal/inspect_repl.js ./config.gypi src/notrace_macros.py src/nolttng_macros.py src/noperfctr_macros.py
-  c++ '-DV8_GYP_BUILD' '-D_DARWIN_USE_64_BIT_INODE=1' '-DV8_TARGET_ARCH_X64' '-DENABLE_DISASSEMBLER' '-DV8_PROMISE_INTERNAL_FIELD_COUNT' '-Dv8_promise_internal_field_count' -I../deps/v8 -I/Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/jdk1.8.0_172/darwin-amd64/product/Contents/Home/include -I../. -I/Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graaljs/graal-nodejs/out/Release/obj/gen -I/Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/jdk1.8.0_172/darwin-amd64/product/Contents/Home/include/darwin -I../deps/v8/include  -O3 -gdwarf-2 -fstrict-aliasing -mmacosx-version-min=10.7 -arch x86_64 -Wall -Wendif-labels -W -Wno-unused-parameter -std=gnu++0x -stdlib=libc++ -fno-rtti -fno-exceptions -fno-threadsafe-statics -fno-strict-aliasing -MMD -MF /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graaljs/graal-nodejs/out/Release/.deps//Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graaljs/graal-nodejs/out/Release/obj.target/v8_base/deps/v8/src/graal/callbacks.o.d.raw   -c -o /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graaljs/graal-nodejs/out/Release/obj.target/v8_base/deps/v8/src/graal/callbacks.o ../deps/v8/src/graal/callbacks.cc
-In file included from ../deps/v8/src/graal/callbacks.cc:50:
-../deps/v8/src/graal/graal_object.h:50:10: warning: 'IsObject' overrides a member function but is not marked 'override' [-Winconsistent-missing-override]
-    bool IsObject() const;
-         ^
-../deps/v8/src/graal/graal_value.h:55:18: note: overridden virtual function is here
-    virtual bool IsObject() const;
-                 ^
-In file included from ../deps/v8/src/graal/callbacks.cc:54:
-../deps/v8/src/graal/graal_external.h:51:10: warning: 'IsExternal' overrides a member function but is not marked 'override' [-Winconsistent-missing-override]
-    bool IsExternal() const;
-         ^
-../deps/v8/src/graal/graal_value.h:57:18: note: overridden virtual function is here
-    virtual bool IsExternal() const;
-                 ^
-In file included from ../deps/v8/src/graal/callbacks.cc:54:
-../deps/v8/src/graal/graal_external.h:52:10: warning: 'IsObject' overrides a member function but is not marked 'override' [-Winconsistent-missing-override]
-    bool IsObject() const;
-         ^
-../deps/v8/src/graal/graal_value.h:55:18: note: overridden virtual function is here
-    virtual bool IsObject() const;
-                 ^
-3 warnings generated.
-  rm -f /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graaljs/graal-nodejs/out/Release/libv8_base.a && ./gyp-mac-tool filter-libtool libtool  -static -o /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graaljs/graal-nodejs/out/Release/libv8_base.a /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graaljs/graal-nodejs/out/Release/obj.target/v8_base/deps/v8/src/graal/callbacks.o /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graaljs/graal-nodejs/out/Release/obj.target/v8_base/deps/v8/src/graal/graal_array.o /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graaljs/graal-nodejs/out/Release/obj.target/v8_base/deps/v8/src/graal/graal_array_buffer.o /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graaljs/graal-nodejs/out/Release/obj.target/v8_base/deps/v8/src/graal/graal_array_buffer_view.o /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graaljs/graal-nodejs/out/Release/obj.target/v8_base/deps/v8/src/graal/graal_boolean.o /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graaljs/graal-nodejs/out/Release/obj.target/v8_base/deps/v8/src/graal/graal_context.o /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graaljs/graal-nodejs/out/Release/obj.target/v8_base/deps/v8/src/graal/graal_data.o /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graaljs/graal-nodejs/out/Release/obj.target/v8_base/deps/v8/src/graal/graal_date.o /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graaljs/graal-nodejs/out/Release/obj.target/v8_base/deps/v8/src/graal/graal_external.o /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graaljs/graal-nodejs/out/Release/obj.target/v8_base/deps/v8/src/graal/graal_function.o /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graaljs/graal-nodejs/out/Release/obj.target/v8_base/deps/v8/src/graal/graal_function_callback_arguments.o /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graaljs/graal-nodejs/out/Release/obj.target/v8_base/deps/v8/src/graal/graal_function_callback_info.o /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graaljs/graal-nodejs/out/Release/obj.target/v8_base/deps/v8/src/graal/graal_function_template.o /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graaljs/graal-nodejs/out/Release/obj.target/v8_base/deps/v8/src/graal/graal_handle_content.o /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graaljs/graal-nodejs/out/Release/obj.target/v8_base/deps/v8/src/graal/graal_isolate.o /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graaljs/graal-nodejs/out/Release/obj.target/v8_base/deps/v8/src/graal/graal_map.o /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graaljs/graal-nodejs/out/Release/obj.target/v8_base/deps/v8/src/graal/graal_message.o /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graaljs/graal-nodejs/out/Release/obj.target/v8_base/deps/v8/src/graal/graal_missing_primitive.o /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graaljs/graal-nodejs/out/Release/obj.target/v8_base/deps/v8/src/graal/graal_module.o /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graaljs/graal-nodejs/out/Release/obj.target/v8_base/deps/v8/src/graal/graal_name.o /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graaljs/graal-nodejs/out/Release/obj.target/v8_base/deps/v8/src/graal/graal_number.o /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graaljs/graal-nodejs/out/Release/obj.target/v8_base/deps/v8/src/graal/graal_object.o /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graaljs/graal-nodejs/out/Release/obj.target/v8_base/deps/v8/src/graal/graal_object_template.o /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graaljs/graal-nodejs/out/Release/obj.target/v8_base/deps/v8/src/graal/graal_primitive.o /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graaljs/graal-nodejs/out/Release/obj.target/v8_base/deps/v8/src/graal/graal_promise.o /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graaljs/graal-nodejs/out/Release/obj.target/v8_base/deps/v8/src/graal/graal_property_callback_info.o /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graaljs/graal-nodejs/out/Release/obj.target/v8_base/deps/v8/src/graal/graal_proxy.o /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graaljs/graal-nodejs/out/Release/obj.target/v8_base/deps/v8/src/graal/graal_regexp.o /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graaljs/graal-nodejs/out/Release/obj.target/v8_base/deps/v8/src/graal/graal_script.o /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graaljs/graal-nodejs/out/Release/obj.target/v8_base/deps/v8/src/graal/graal_set.o /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graaljs/graal-nodejs/out/Release/obj.target/v8_base/deps/v8/src/graal/graal_stack_frame.o /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graaljs/graal-nodejs/out/Release/obj.target/v8_base/deps/v8/src/graal/graal_stack_trace.o /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graaljs/graal-nodejs/out/Release/obj.target/v8_base/deps/v8/src/graal/graal_string.o /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graaljs/graal-nodejs/out/Release/obj.target/v8_base/deps/v8/src/graal/graal_symbol.o /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graaljs/graal-nodejs/out/Release/obj.target/v8_base/deps/v8/src/graal/graal_template.o /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graaljs/graal-nodejs/out/Release/obj.target/v8_base/deps/v8/src/graal/graal_unbound_script.o /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graaljs/graal-nodejs/out/Release/obj.target/v8_base/deps/v8/src/graal/graal_value.o /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graaljs/graal-nodejs/out/Release/obj.target/v8_base/deps/v8/src/graal/v8.o
-  touch /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graaljs/graal-nodejs/out/Release/obj.target/deps/v8/src/v8_nosnapshot.stamp
-  touch /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graaljs/graal-nodejs/out/Release/obj.target/deps/v8/src/v8_maybe_snapshot.stamp
-  touch /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graaljs/graal-nodejs/out/Release/obj.target/deps/v8/src/v8.stamp
   c++ '-D_DARWIN_USE_64_BIT_INODE=1' '-DNODE_ARCH="x64"' '-DNODE_WANT_INTERNALS=1' '-DV8_DEPRECATION_WARNINGS=1' '-DNODE_OPENSSL_SYSTEM_CERT_PATH=""' '-DHAVE_INSPECTOR=0' '-D__POSIX__' '-DHAVE_OPENSSL=1' '-DNODE_USE_V8_PLATFORM=1' '-DNODE_PLATFORM="darwin"' '-DHTTP_PARSER_STRICT=0' '-D_LARGEFILE_SOURCE' '-D_FILE_OFFSET_BITS=64' '-DNGHTTP2_STATICLIB' -I../src -I../tools/msvs/genfiles -I/Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graaljs/graal-nodejs/out/Release/obj/gen -I../deps/v8/include -I../deps/v8 -I../deps/v8/src/graal -I../deps/openssl/openssl/include -I../deps/v8/include -I../deps/http_parser -I../deps/cares/include -I../deps/uv/include -I../deps/nghttp2/lib/includes  -Os -gdwarf-2 -mmacosx-version-min=10.7 -arch x86_64 -Wall -Wendif-labels -W -Wno-unused-parameter -std=gnu++0x -stdlib=libc++ -fno-rtti -fno-exceptions -fno-threadsafe-statics -fno-strict-aliasing -MMD -MF /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graaljs/graal-nodejs/out/Release/.deps//Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graaljs/graal-nodejs/out/Release/obj.target/node/gen/node_javascript.o.d.raw   -c -o /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graaljs/graal-nodejs/out/Release/obj.target/node/gen/node_javascript.o /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graaljs/graal-nodejs/out/Release/obj/gen/node_javascript.cc
   c++ -Wl,-force_load,/Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graaljs/graal-nodejs/out/Release/libopenssl.a -Wl,-force_load,/Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graaljs/graal-nodejs/out/Release/libv8_base.a -Wl,-no_pie -Wl,-search_paths_first -mmacosx-version-min=10.7 -arch x86_64 -L/Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graaljs/graal-nodejs/out/Release -stdlib=libc++  -o "/Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graaljs/graal-nodejs/out/Release/node" /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graaljs/graal-nodejs/out/Release/obj.target/node/src/async_wrap.o /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graaljs/graal-nodejs/out/Release/obj.target/node/src/cares_wrap.o /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graaljs/graal-nodejs/out/Release/obj.target/node/src/connection_wrap.o /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graaljs/graal-nodejs/out/Release/obj.target/node/src/connect_wrap.o /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graaljs/graal-nodejs/out/Release/obj.target/node/src/env.o /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graaljs/graal-nodejs/out/Release/obj.target/node/src/fs_event_wrap.o /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graaljs/graal-nodejs/out/Release/obj.target/node/src/handle_wrap.o /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graaljs/graal-nodejs/out/Release/obj.target/node/src/js_stream.o /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graaljs/graal-nodejs/out/Release/obj.target/node/src/module_wrap.o /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graaljs/graal-nodejs/out/Release/obj.target/node/src/node.o /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graaljs/graal-nodejs/out/Release/obj.target/node/src/node_api.o /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graaljs/graal-nodejs/out/Release/obj.target/node/src/node_buffer.o /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graaljs/graal-nodejs/out/Release/obj.target/node/src/node_config.o /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graaljs/graal-nodejs/out/Release/obj.target/node/src/node_constants.o /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graaljs/graal-nodejs/out/Release/obj.target/node/src/node_contextify.o /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graaljs/graal-nodejs/out/Release/obj.target/node/src/node_debug_options.o /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graaljs/graal-nodejs/out/Release/obj.target/node/src/node_file.o /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graaljs/graal-nodejs/out/Release/obj.target/node/src/node_http2.o /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graaljs/graal-nodejs/out/Release/obj.target/node/src/node_http_parser.o /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graaljs/graal-nodejs/out/Release/obj.target/node/src/node_main.o /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graaljs/graal-nodejs/out/Release/obj.target/node/src/node_os.o /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graaljs/graal-nodejs/out/Release/obj.target/node/src/node_platform.o /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graaljs/graal-nodejs/out/Release/obj.target/node/src/node_perf.o /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graaljs/graal-nodejs/out/Release/obj.target/node/src/node_serdes.o /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graaljs/graal-nodejs/out/Release/obj.target/node/src/node_trace_events.o /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graaljs/graal-nodejs/out/Release/obj.target/node/src/node_url.o /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graaljs/graal-nodejs/out/Release/obj.target/node/src/node_util.o /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graaljs/graal-nodejs/out/Release/obj.target/node/src/node_v8.o /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graaljs/graal-nodejs/out/Release/obj.target/node/src/node_stat_watcher.o /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graaljs/graal-nodejs/out/Release/obj.target/node/src/node_watchdog.o /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graaljs/graal-nodejs/out/Release/obj.target/node/src/node_zlib.o /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graaljs/graal-nodejs/out/Release/obj.target/node/src/node_i18n.o /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graaljs/graal-nodejs/out/Release/obj.target/node/src/pipe_wrap.o /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graaljs/graal-nodejs/out/Release/obj.target/node/src/process_wrap.o /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graaljs/graal-nodejs/out/Release/obj.target/node/src/signal_wrap.o /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graaljs/graal-nodejs/out/Release/obj.target/node/src/spawn_sync.o /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graaljs/graal-nodejs/out/Release/obj.target/node/src/string_bytes.o /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graaljs/graal-nodejs/out/Release/obj.target/node/src/string_search.o /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graaljs/graal-nodejs/out/Release/obj.target/node/src/stream_base.o /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graaljs/graal-nodejs/out/Release/obj.target/node/src/stream_wrap.o /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graaljs/graal-nodejs/out/Release/obj.target/node/src/tcp_wrap.o /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graaljs/graal-nodejs/out/Release/obj.target/node/src/timer_wrap.o /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graaljs/graal-nodejs/out/Release/obj.target/node/src/tracing/agent.o /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graaljs/graal-nodejs/out/Release/obj.target/node/src/tracing/node_trace_buffer.o /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graaljs/graal-nodejs/out/Release/obj.target/node/src/tracing/node_trace_writer.o /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graaljs/graal-nodejs/out/Release/obj.target/node/src/tracing/trace_event.o /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graaljs/graal-nodejs/out/Release/obj.target/node/src/tty_wrap.o /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graaljs/graal-nodejs/out/Release/obj.target/node/src/udp_wrap.o /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graaljs/graal-nodejs/out/Release/obj.target/node/src/util.o /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graaljs/graal-nodejs/out/Release/obj.target/node/src/uv.o /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graaljs/graal-nodejs/out/Release/obj.target/node/gen/node_javascript.o /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graaljs/graal-nodejs/out/Release/obj.target/node/src/backtrace_posix.o /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graaljs/graal-nodejs/out/Release/obj.target/node/src/node_crypto.o /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graaljs/graal-nodejs/out/Release/obj.target/node/src/node_crypto_bio.o /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graaljs/graal-nodejs/out/Release/obj.target/node/src/node_crypto_clienthello.o /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graaljs/graal-nodejs/out/Release/obj.target/node/src/tls_wrap.o /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graaljs/graal-nodejs/out/Release/libopenssl.a /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graaljs/graal-nodejs/out/Release/libhttp_parser.a /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graaljs/graal-nodejs/out/Release/libcares.a /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graaljs/graal-nodejs/out/Release/libuv.a /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graaljs/graal-nodejs/out/Release/libnghttp2.a /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graaljs/graal-nodejs/out/Release/libv8_base.a -lz -framework CoreFoundation -L/Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/jdk1.8.0_172/darwin-amd64/product/Contents/Home/jre/lib/server -L/Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/jdk1.8.0_172/darwin-amd64/product/Contents/Home/jre/lib -Wl,-rpath,'@loader_path/../../../../lib/' -Wl,-rpath,'@loader_path/../../../../jre/lib/' -Wl,-rpath,'@loader_path/../../../../jre/languages/R/lib/' -ljsig -ldl -lm
-  c++ -Wl,-force_load,/Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graaljs/graal-nodejs/out/Release/libopenssl.a -Wl,-force_load,/Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graaljs/graal-nodejs/out/Release/libv8_base.a -Wl,-no_pie -Wl,-search_paths_first -mmacosx-version-min=10.7 -arch x86_64 -L/Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graaljs/graal-nodejs/out/Release -stdlib=libc++  -o "/Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graaljs/graal-nodejs/out/Release/cctest" /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graaljs/graal-nodejs/out/Release/obj.target/cctest/test/cctest/node_module_reg.o /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graaljs/graal-nodejs/out/Release/obj.target/cctest/test/cctest/node_test_fixture.o /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graaljs/graal-nodejs/out/Release/obj.target/cctest/test/cctest/test_aliased_buffer.o /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graaljs/graal-nodejs/out/Release/obj.target/cctest/test/cctest/test_base64.o /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graaljs/graal-nodejs/out/Release/obj.target/cctest/test/cctest/test_environment.o /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graaljs/graal-nodejs/out/Release/obj.target/cctest/test/cctest/test_util.o /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graaljs/graal-nodejs/out/Release/obj.target/cctest/test/cctest/test_url.o /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graaljs/graal-nodejs/out/Release/libgtest.a /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graaljs/graal-nodejs/out/Release/libopenssl.a /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graaljs/graal-nodejs/out/Release/libhttp_parser.a /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graaljs/graal-nodejs/out/Release/libuv.a /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graaljs/graal-nodejs/out/Release/libnghttp2.a /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graaljs/graal-nodejs/out/Release/libcares.a /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graaljs/graal-nodejs/out/Release/libv8_base.a -lz /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graaljs/graal-nodejs/out/Release/obj.target/node/src/async_wrap.o /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graaljs/graal-nodejs/out/Release/obj.target/node/src/env.o /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graaljs/graal-nodejs/out/Release/obj.target/node/src/node.o /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graaljs/graal-nodejs/out/Release/obj.target/node/src/node_buffer.o /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graaljs/graal-nodejs/out/Release/obj.target/node/src/node_debug_options.o /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graaljs/graal-nodejs/out/Release/obj.target/node/src/node_i18n.o /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graaljs/graal-nodejs/out/Release/obj.target/node/src/node_perf.o /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graaljs/graal-nodejs/out/Release/obj.target/node/src/node_platform.o /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graaljs/graal-nodejs/out/Release/obj.target/node/src/node_url.o /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graaljs/graal-nodejs/out/Release/obj.target/node/src/util.o /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graaljs/graal-nodejs/out/Release/obj.target/node/src/string_bytes.o /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graaljs/graal-nodejs/out/Release/obj.target/node/src/string_search.o /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graaljs/graal-nodejs/out/Release/obj.target/node/src/stream_base.o /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graaljs/graal-nodejs/out/Release/obj.target/node/src/node_constants.o /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graaljs/graal-nodejs/out/Release/obj.target/node/src/tracing/agent.o /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graaljs/graal-nodejs/out/Release/obj.target/node/src/tracing/node_trace_buffer.o /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graaljs/graal-nodejs/out/Release/obj.target/node/src/tracing/node_trace_writer.o /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graaljs/graal-nodejs/out/Release/obj.target/node/src/tracing/trace_event.o /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graaljs/graal-nodejs/out/Release/obj.target/node/gen/node_javascript.o /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graaljs/graal-nodejs/out/Release/obj.target/node/src/node_crypto.o /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graaljs/graal-nodejs/out/Release/obj.target/node/src/node_crypto_bio.o /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graaljs/graal-nodejs/out/Release/obj.target/node/src/node_crypto_clienthello.o /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graaljs/graal-nodejs/out/Release/obj.target/node/src/tls_wrap.o /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graaljs/graal-nodejs/out/Release/obj.target/node/src/backtrace_posix.o -framework CoreFoundation -lm -L/Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/jdk1.8.0_172/darwin-amd64/product/Contents/Home/jre/lib/server -L/Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/jdk1.8.0_172/darwin-amd64/product/Contents/Home/jre/lib -Wl,-rpath,'@loader_path/../../../../lib/' -Wl,-rpath,'@loader_path/../../../../jre/lib/' -Wl,-rpath,'@loader_path/../../../../jre/languages/R/lib/' -ljsig -ldl
 if [ ! -r node -o ! -L node ]; then ln -fs out/Release/node node; fi
 Running 'install_name_tool -add_rpath /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/jdk1.8.0_172/darwin-amd64/product/Contents/Home/jre/lib /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graaljs/graal-nodejs/out/Release/node'
-Archiving GRAALPYTHON... [dependency com.oracle.graal.python updated]
-Compiling com.oracle.graal.python.test with javac-daemon(JDK 1.8)... [dependency com.oracle.graal.python updated]
-Compiling com.oracle.truffle.llvm.runtime with javac-daemon(JDK 1.8)... [/Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/sulong/mxbuild/projects/com.oracle.truffle.llvm.runtime/bin/com/oracle/truffle/llvm/runtime/LLVMIntrinsicProvider.class does not exist]
-Archiving TRUFFLERUBY... [/Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/truffleruby/mxbuild/dists/truffleruby.jar does not exist]
+Compiling com.oracle.svm.core.graal with javac-daemon(JDK 1.8)... [dependency com.oracle.svm.core.posix updated]
 Archiving TRUFFLENODE_GRAALVM_SUPPORT... [dependency trufflenodeNative updated]
+Compiling com.oracle.svm.core.genscavenge with javac-daemon(JDK 1.8)... [dependency com.oracle.svm.core.graal updated]
+Compiling com.oracle.svm.hosted with javac-daemon(JDK 1.8)... [dependency com.oracle.svm.core.graal updated]
+Archiving SVM_CORE... [dependency com.oracle.svm.core.posix updated]
+Compiling com.oracle.svm.graal with javac-daemon(JDK 1.8)... [dependency com.oracle.svm.hosted updated]
+Compiling com.oracle.svm.jni with javac-daemon(JDK 1.8)... [dependency com.oracle.svm.hosted updated]
+Compiling com.oracle.svm.reflect with javac-daemon(JDK 1.8)... [dependency com.oracle.svm.hosted updated]
+Compiling org.graalvm.polyglot.nativeapi with javac-daemon(JDK 1.8)... [dependency com.oracle.svm.hosted updated]
+Compiling com.oracle.svm.junit with javac-daemon(JDK 1.8)... [dependency com.oracle.svm.reflect updated]
+Compiling com.oracle.svm.polyglot with javac-daemon(JDK 1.8)... [dependency com.oracle.svm.graal updated]
+Compiling com.oracle.svm.truffle with javac-daemon(JDK 1.8)... [dependency com.oracle.svm.graal updated]
+Compiling com.oracle.svm.driver with javac-daemon(JDK 1.8)... [dependency com.oracle.svm.graal updated]
 Compiling com.oracle.svm.truffle.nfi with javac-daemon(JDK 1.8)... [dependency com.oracle.svm.truffle updated]
-Compiling com.oracle.truffle.llvm.nodes with javac-daemon(JDK 1.8)... [dependency com.oracle.truffle.llvm.runtime updated]
-Archiving GRAALPYTHON_UNIT_TESTS... [dependency com.oracle.graal.python.test updated]
-Compiling com.oracle.truffle.llvm.parser with javac-daemon(JDK 1.8)... [dependency com.oracle.truffle.llvm.runtime updated]
-Compiling com.oracle.truffle.llvm.types.test with javac-daemon(JDK 1.8)... [dependency com.oracle.truffle.llvm.runtime updated]
 Checking native-image.properties... [dependency TRUFFLENODE_GRAALVM_SUPPORT updated]
-Archiving TRUFFLERUBY-TEST... [dependency TRUFFLERUBY updated]
-Building com.oracle.truffle.llvm.libraries.native with GNU Make... [rebuild needed by GNU Make]
-clang -I/Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graal/truffle/mxbuild/darwin-amd64/truffle-nfi-native/include -g -fPIC -DPIC -O3 -c /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/sulong/projects/com.oracle.truffle.llvm.libraries.native/src/misc.c -o bin/misc.o
-clang -I/Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graal/truffle/mxbuild/darwin-amd64/truffle-nfi-native/include -g -fPIC -DPIC -O3 -c /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/sulong/projects/com.oracle.truffle.llvm.libraries.native/src/fp80.c -o bin/fp80.o
-clang -I/Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graal/truffle/mxbuild/darwin-amd64/truffle-nfi-native/include -g -fPIC -DPIC -O3 -c /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/sulong/projects/com.oracle.truffle.llvm.libraries.native/src/posix.c -o bin/posix.o
-/Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/sulong/projects/com.oracle.truffle.llvm.libraries.native/src/posix.c:145:2: warning: incompatible integer to pointer conversion returning 'int' from a function with result type 'void *' [-Wint-conversion]
-        CALL(void*, mmap, addr, length, prot, flags, fd, offset);
-        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/sulong/projects/com.oracle.truffle.llvm.libraries.native/src/posix.c:64:10: note: expanded from macro 'CALL'
-                return -ENOSYS; \
-                       ^~~~~~~
-/Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/sulong/projects/com.oracle.truffle.llvm.libraries.native/src/posix.c:318:52: warning: declaration of 'struct statfs' will not be visible outside of this function [-Wvisibility]
-int __sulong_posix_statfs(const char* path, struct statfs* buf)
-                                                   ^
-/Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/sulong/projects/com.oracle.truffle.llvm.libraries.native/src/posix.c:323:43: warning: declaration of 'struct statfs' will not be visible outside of this function [-Wvisibility]
-int __sulong_posix_fstatfs(int fd, struct statfs* buf)
-                                          ^
-3 warnings generated.
-clang -dynamiclib -g -lm -o bin/libsulong.dylib bin/misc.o bin/posix.o bin/fp80.o
 Building com.oracle.svm.libffi with GNU Make... [rebuild needed by GNU Make]
 CONFIGURE svm-libffi
 rm: conftest.dSYM: is a directory
@@ -464,27 +346,14 @@ CC svm_initialize.c
 AR libffi.a
 /Library/Developer/CommandLineTools/usr/bin/ranlib: file: darwin-amd64/libffi.a(ffi.o) has no symbols
 /Library/Developer/CommandLineTools/usr/bin/ranlib: file: darwin-amd64/libffi.a(darwin.o) has no symbols
-Compiling com.oracle.truffle.llvm.asm.amd64 with javac-daemon(JDK 1.8)... [dependency com.oracle.truffle.llvm.nodes updated]
 Archiving SVM_HOSTED_NATIVE... [dependency com.oracle.svm.native updated]
-Archiving SULONG_LIBS... [dependency com.oracle.truffle.llvm.libraries.native updated]
+Archiving SULONG... [/Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/sulong/mxbuild/dists/sulong.jar[2018-06-23 18:46:37] is older than /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/sulong/mxbuild/projects/com.oracle.truffle.llvm/bin/com/oracle/truffle/llvm/Sulong.class[2018-06-27 19:35:07]]
 Archiving SVM_GRAALVM_SUPPORT... [dependency SVM_HOSTED_NATIVE updated]
-Checking native-image.properties... [dependency SULONG_LIBS updated]
-Archive truffleruby-sulong-libs... [dependency SULONG_LIBS updated]
-Archiving SVM... [dependency com.oracle.svm.hosted updated]
 Compiling com.oracle.truffle.tools.chromeinspector.test with javac-daemon(JDK 1.8)... [/Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graal/tools/mxbuild/src/com.oracle.truffle.tools.chromeinspector.test/bin/com/oracle/truffle/tools/chromeinspector/test/ITLInspectDebugTest.class does not exist]
+Archiving SVM... [dependency com.oracle.svm.hosted updated]
 Archiving CHROMEINSPECTOR_TEST... [dependency com.oracle.truffle.tools.chromeinspector.test updated]
-Compiling com.oracle.truffle.llvm.parser.factories with javac-daemon(JDK 1.8)... [dependency com.oracle.truffle.llvm.asm.amd64 updated]
-Compiling com.oracle.truffle.llvm with javac-daemon(JDK 1.8)... [dependency com.oracle.truffle.llvm.parser.factories updated]
-Building com.oracle.truffle.llvm.tests.interop with GNU Make... [dependency SULONG_LIBS updated]
-rm interop/interop023/O0.bc interop/interop031/O0.bc interop/interop051/O0.bc interop/interop004/O0.bc interop/tck/O0.bc interop/interop025/O0.bc interop/virtualMallocGlobal/O0.bc interop/interop008/O0.bc interop/interop065/O0.bc interop/registerHandle/O0.bc interop/interop052/O0.bc interop/interop075/O0.bc interop/interop069/O0.bc interop/interop037/O0.bc interop/interop033/O0.bc interop/virtualMallocCompare1/O0.bc interop/virtualMallocGlobalAssign/O0.bc interop/interop040/O0.bc interop/interop056/O0.bc interop/interop058/O0.bc interop/interop064/O0.bc interop/isHandle/O0.bc interop/interop041/O0.bc interop/stringTest/O0.bc interop/interop074/O0.bc interop/interop077/O0.bc interop/interop067/O0.bc interop/interop053/O0.bc interop/interop045/O0.bc interop/interop042/O0.bc interop/interop024/O0.bc interop/interop039/O0.bc interop/interop046/O0.bc interop/interop066/O0.bc interop/nameBasedInterop/O0.bc interop/invoke/O0.bc interop/interop060/O0.bc interop/interop070/O0.bc interop/interop038/O0.bc interop/interop048/O0.bc interop/virtualMallocArray/O0.bc interop/pointerThroughNativeCallback/O0.bc interop/interop035/O0.bc interop/polyglotBuiltinTest/O0.bc interop/interop061/O0.bc interop/interop071/O0.bc interop/interop057/O0.bc interop/interop076/O0.bc interop/interop001/O0.bc interop/interop010/O0.bc interop/virtualMallocArray2/O0.bc interop/scaleVector/O0.bc interop/interop016/O0.bc interop/interop009/O0.bc interop/interop072/O0.bc interop/typedExport/O0.bc interop/virtualMallocArrayPointer/O0.bc interop/interop062/O0.bc interop/interop011/O0.bc interop/derefHandleTest/O0.bc interop/interop021/O0.bc interop/interop036/O0.bc interop/interop017/O0.bc interop/interop002/O0.bc interop/interop020/O0.bc interop/interop049/O0.bc interop/interop047/O0.bc interop/interop012/O0.bc interop/interop043/O0.bc interop/construct001/O0.bc interop/interop026/O0.bc interop/typedInterop/O0.bc interop/interop054/O0.bc interop/managedMallocMemset/O0.bc interop/interop018/O0.bc interop/interop014/O0.bc interop/interop003/O0.bc interop/interop006/O0.bc interop/interop022/O0.bc interop/handleFromNativeCallback/O0.bc interop/interop015/O0.bc interop/construct002/O0.bc interop/polyglotScopeTest/O0.bc interop/interop063/O0.bc interop/interop019/O0.bc interop/interop030/O0.bc interop/interop073/O0.bc interop/interop027/O0.bc interop/interop028/O0.bc interop/interop055/O0.bc interop/readExecute/O0.bc interop/typeCheck/O0.bc interop/interop013/O0.bc interop/interop059/O0.bc interop/interop068/O0.bc interop/virtualMallocObject/O0.bc interop/virtualMallocObjectCopy/O0.bc interop/strcmp/O0.bc interop/fitsIn/O0.bc interop/strlen/O0.bc interop/interop034/O0.bc interop/interop005/O0.bc interop/interop050/O0.bc interop/interop044/O0.bc interop/interop032/O0.bc
-Building com.oracle.truffle.llvm.tests.nfi with GNU Make... [dependency SULONG_LIBS updated]
-rm nfi/basicTest/O0.bc
-Building com.oracle.truffle.llvm.tests.debug with GNU Make... [dependency SULONG_LIBS updated]
 Archiving LIBRARY_SUPPORT... [dependency com.oracle.svm.jni updated]
-Archiving SULONG... [dependency com.oracle.truffle.llvm updated]
-Archiving SULONG_TEST_SUITES... [dependency com.oracle.truffle.llvm.tests.debug updated]
 Archiving POLYGLOT_NATIVE_API... [dependency org.graalvm.polyglot.nativeapi updated]
-Compiling com.oracle.truffle.llvm.test with javac-daemon(JDK 1.8)... [dependency com.oracle.truffle.llvm updated]
 Archiving SVM_DRIVER... [dependency com.oracle.svm.driver updated]
 Building native-image.image-bash... [dependency SVM_DRIVER updated]
 WARNING: Skipping known missing dependency HAMCREST when building classpath for ['substratevm:SVM_DRIVER']
@@ -492,146 +361,64 @@ WARNING: Skipping known missing dependency JUNIT when building classpath for ['s
 WARNING: Skipping known missing dependency JUNIT_TOOL when building classpath for ['substratevm:SVM_DRIVER']
 WARNING: Skipping known missing dependency JLINE when building classpath for ['substratevm:SVM_DRIVER']
 WARNING: Skipping known missing dependency TRUFFLE_DEBUG when building classpath for ['substratevm:SVM_DRIVER']
+WARNING: Skipping known missing dependency HAMCREST when building classpath for ['substratevm:SVM_DRIVER']
+WARNING: Skipping known missing dependency JUNIT when building classpath for ['substratevm:SVM_DRIVER']
+WARNING: Skipping known missing dependency JUNIT_TOOL when building classpath for ['substratevm:SVM_DRIVER']
+WARNING: Skipping known missing dependency JLINE when building classpath for ['substratevm:SVM_DRIVER']
+WARNING: Skipping known missing dependency TRUFFLE_DEBUG when building classpath for ['substratevm:SVM_DRIVER']
+WARNING: Skipping known missing dependency HAMCREST when building classpath for ['substratevm:SVM_DRIVER']
+WARNING: Skipping known missing dependency JUNIT when building classpath for ['substratevm:SVM_DRIVER']
+WARNING: Skipping known missing dependency JUNIT_TOOL when building classpath for ['substratevm:SVM_DRIVER']
+WARNING: Skipping known missing dependency JLINE when building classpath for ['substratevm:SVM_DRIVER']
+WARNING: Skipping known missing dependency TRUFFLE_DEBUG when building classpath for ['substratevm:SVM_DRIVER']
+Archive truffleruby-bin... [dependency SULONG updated]
+Archiving SULONG_TEST... [dependency SULONG updated]
 WARNING: Could not find dragonegg, not building test variant "gcc_O0"
-WARNING: Skipping known missing dependency HAMCREST when building classpath for ['substratevm:SVM_DRIVER']
-WARNING: Skipping known missing dependency JUNIT when building classpath for ['substratevm:SVM_DRIVER']
-WARNING: Skipping known missing dependency JUNIT_TOOL when building classpath for ['substratevm:SVM_DRIVER']
-WARNING: Skipping known missing dependency JLINE when building classpath for ['substratevm:SVM_DRIVER']
-WARNING: Skipping known missing dependency TRUFFLE_DEBUG when building classpath for ['substratevm:SVM_DRIVER']
-WARNING: Skipping known missing dependency HAMCREST when building classpath for ['substratevm:SVM_DRIVER']
-WARNING: Skipping known missing dependency JUNIT when building classpath for ['substratevm:SVM_DRIVER']
-WARNING: Skipping known missing dependency JUNIT_TOOL when building classpath for ['substratevm:SVM_DRIVER']
-WARNING: Skipping known missing dependency JLINE when building classpath for ['substratevm:SVM_DRIVER']
-WARNING: Skipping known missing dependency TRUFFLE_DEBUG when building classpath for ['substratevm:SVM_DRIVER']
-Archive truffleruby-bin... [dependency TRUFFLERUBY updated]
-Archiving SULONG_TEST... [dependency com.oracle.truffle.llvm.test updated]
-bootstrap.native-image... [dependency SVM_DRIVER updated]
-   classlist:   4,659.86 ms
-       (cap):   3,503.49 ms
-       setup:   7,217.60 ms
-  (typeflow):  21,253.05 ms
-   (objects):  16,914.72 ms
-  (features):     129.08 ms
-    analysis:  38,788.93 ms
-    universe:   1,025.85 ms
-     (parse):   7,786.08 ms
-    (inline):   8,636.91 ms
-   (compile):  38,901.47 ms
-     compile:  56,946.70 ms
-       image:   6,413.41 ms
-       write:   3,314.07 ms
-     [total]: 118,541.95 ms
-Building truffleruby-cext with GNU Make... [dependency TRUFFLERUBY updated]
-cd truffleposix && /Library/Developer/CommandLineTools/usr/bin/make
-clang -o /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/truffleruby/lib/cext/sulongmock.o -c -Wall -Werror -Wno-unused-function -fPIC -std=c99 -m64 -I/Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/truffleruby/lib/cext/include sulongmock/sulongmock.c
-clang -o /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/truffleruby/lib/cext/ruby.o -c -Wall -Werror -Wno-unused-function -fPIC -std=c99 -m64 -I/Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/truffleruby/lib/cext/include cext/ruby.c
-cc -o truffleposix.o -c -Wall -Werror -fPIC -std=c99 -m64 truffleposix.c
-cc -shared -m64 -o truffleposix.dylib truffleposix.o
-cp truffleposix/truffleposix.dylib /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/truffleruby/lib/cext/truffleposix.dylib
-cd cext && /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/truffleruby/bin/truffleruby extconf.rb || ( echo "`pwd`/extconf.rb failed:" 1>&2 && cat mkmf.log && false )
-cd cext && /Library/Developer/CommandLineTools/usr/bin/make
-compiling ruby.c
-compiling st.c
-linking shared-object ruby.su
-cp cext/ruby.su /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/truffleruby/lib/cext/ruby.su
-cd openssl && /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/truffleruby/bin/truffleruby extconf.rb || ( echo "`pwd`/extconf.rb failed:" 1>&2 && cat mkmf.log && false )
-cd zlib && /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/truffleruby/bin/truffleruby extconf.rb || ( echo "`pwd`/extconf.rb failed:" 1>&2 && cat mkmf.log && false )
-# TODO CS 6-Apr-18 --enable-bundled-libyaml should be automatic - the header and symbol check pass and I can't see why
-cd syslog && /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/truffleruby/bin/truffleruby extconf.rb || ( echo "`pwd`/extconf.rb failed:" 1>&2 && cat mkmf.log && false )
-cd psych && /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/truffleruby/bin/truffleruby extconf.rb --enable-bundled-libyaml || ( echo "`pwd`/extconf.rb failed:" 1>&2 && cat mkmf.log && false )
-cd syslog && /Library/Developer/CommandLineTools/usr/bin/make
-compiling syslog.c
-cd zlib && /Library/Developer/CommandLineTools/usr/bin/make
-compiling zlib.c
-linking shared-object syslog.su
-linking shared-object zlib.su
-cd psych && /Library/Developer/CommandLineTools/usr/bin/make
-compiling psych.c
-compiling psych_emitter.c
-compiling psych_parser.c
-compiling psych_to_ruby.c
-compiling psych_yaml_tree.c
-compiling ./yaml/api.c
-compiling ./yaml/dumper.c
-compiling ./yaml/emitter.c
-compiling ./yaml/loader.c
-compiling ./yaml/parser.c
-compiling ./yaml/reader.c
-cp syslog/syslog.su /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/truffleruby/lib/mri/syslog.su
-compiling ./yaml/scanner.c
-compiling ./yaml/writer.c
-linking shared-object psych.su
-cp zlib/zlib.su /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/truffleruby/lib/mri/zlib.su
-cp psych/psych.su /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/truffleruby/lib/mri/psych.su
-cd openssl && /Library/Developer/CommandLineTools/usr/bin/make
-compiling openssl_missing.c
-compiling ossl.c
-compiling ossl_asn1.c
-compiling ossl_bio.c
-compiling ossl_bn.c
-compiling ossl_cipher.c
-compiling ossl_config.c
-compiling ossl_digest.c
-compiling ossl_engine.c
-compiling ossl_hmac.c
-compiling ossl_ns_spki.c
-compiling ossl_ocsp.c
-compiling ossl_pkcs12.c
-compiling ossl_pkcs5.c
-compiling ossl_pkcs7.c
-compiling ossl_pkey.c
-compiling ossl_pkey_dh.c
-compiling ossl_pkey_dsa.c
-compiling ossl_pkey_ec.c
-compiling ossl_pkey_rsa.c
-compiling ossl_rand.c
-compiling ossl_ssl.c
-compiling ossl_ssl_session.c
-compiling ossl_x509.c
-compiling ossl_x509attr.c
-compiling ossl_x509cert.c
-compiling ossl_x509crl.c
-compiling ossl_x509ext.c
-compiling ossl_x509name.c
-compiling ossl_x509req.c
-compiling ossl_x509revoked.c
-compiling ossl_x509store.c
-linking shared-object openssl.su
-cp openssl/openssl.su /Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/truffleruby/lib/mri/openssl.su
-Archiving NATIVE_IMAGE... [dependency bootstrap.native-image updated]
+Building truffleruby-cext with GNU Make... [dependency truffleruby-bin updated]
+make: Nothing to be done for `goal'.
 Archive truffleruby-lib... [dependency truffleruby-cext updated]
-Archiving TRUFFLERUBY_GRAALVM_SUPPORT... [dependency truffleruby-cext updated]
 Archiving TRUFFLERUBY-ZIP... [dependency truffleruby-bin updated]
+Archiving TRUFFLERUBY_GRAALVM_SUPPORT... [dependency truffleruby-cext updated]
 Checking native-image.properties... [dependency TRUFFLERUBY_GRAALVM_SUPPORT updated]
-Archiving GRAALVM_CMP_GU_GVM_INS_JS_NJS_POLYNATIVE_PRO_PYN_RBY_RGX_SLG_STAGE1_SVM_TFL... [dependency GRAALJS updated]
+Archiving GRAALVM_CMP_GU_GVM_INS_JS_NJS_POLYNATIVE_PRO_PYN_RBY_RGX_SLG_STAGE1_SVM_TFL... [dependency TRUFFLENODE_GRAALVM_SUPPORT updated]
 WARNING:   GRAALVM_CMP_GU_GVM_INS_JS_NJS_POLYNATIVE_PRO_PYN_RBY_RGX_SLG_STAGE1_SVM_TFL:
 Adding file which is not in the repository: '/Users/swami/git-repos/OpenJDK/graal-stuff/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/jdk1.8.0_172/darwin-amd64/product' in 'graalvm-cmp-gu-gvm-ins-js-njs-polynative-pro-pyn-rby-rgx-slg-stage1-svm-tfl-1.0.0-rc3-dev'
 Building lli.image... [dependency GRAALVM_CMP_GU_GVM_INS_JS_NJS_POLYNATIVE_PRO_PYN_RBY_RGX_SLG_STAGE1_SVM_TFL updated]
-   classlist:  10,419.34 ms
-       (cap):   4,272.26 ms
-       setup:  15,946.85 ms
-  (typeflow): 115,735.81 ms
-   (objects):  78,859.80 ms
-  (features):  11,195.61 ms
-    analysis: 209,849.41 ms
+   classlist:   7,443.33 ms
+       (cap):   3,147.80 ms
+       setup:  10,188.07 ms
+  (typeflow):  78,581.31 ms
+   (objects):  62,356.80 ms
+  (features):  29,391.86 ms
+    analysis: 177,363.83 ms
 5225 method(s) included for runtime compilation
-    universe:   8,318.12 ms
-     (parse):  23,230.40 ms
-    (inline):  41,681.08 ms
-   (compile):  85,841.93 ms
-     compile: 157,116.71 ms
-       image:  13,978.89 ms
-       write:  71,555.67 ms
-     [total]: 487,663.94 ms
+    universe:   8,847.59 ms
+     (parse):  21,209.50 ms
+    (inline):  50,619.40 ms
+   (compile): 112,310.56 ms
+     compile: 195,434.15 ms
+       image:  29,824.60 ms
+       write: 103,704.01 ms
+     [total]: 533,548.34 ms
 Building graalpython.image... [dependency GRAALVM_CMP_GU_GVM_INS_JS_NJS_POLYNATIVE_PRO_PYN_RBY_RGX_SLG_STAGE1_SVM_TFL updated]
-   classlist:  11,290.05 ms
-       (cap):   3,366.81 ms
-       setup:  10,728.94 ms
-  (typeflow): 983,768.71 ms
-   (objects): 848,601.46 ms
-  (features): 2,424,515.44 ms
-    analysis: 4,452,878.63 ms
+   classlist:   9,976.92 ms
+       (cap):   3,135.73 ms
+       setup:  10,717.30 ms
+  (typeflow): 1,372,610.53 ms
+   (objects): 1,191,090.96 ms
+  (features): 528,815.33 ms
+    analysis: 3,414,102.08 ms
 12075 method(s) included for runtime compilation
-    universe: 401,904.38 ms
-     (parse): 295,675.81 ms
+    universe: 1,870,437.13 ms
+     (parse): 478,684.47 ms
+    (inline): 612,670.09 ms
+   (compile): 453,391.26 ms
+     compile: 1,594,222.10 ms
+       image: 246,996.31 ms
+       write: 293,474.21 ms
+     [total]: 7,449,422.12 ms
+Building polyglot.image... [dependency GRAALVM_CMP_GU_GVM_INS_JS_NJS_POLYNATIVE_PRO_PYN_RBY_RGX_SLG_STAGE1_SVM_TFL updated]
+   classlist:  20,605.45 ms
+       (cap):   2,975.99 ms
+       setup:  10,190.61 ms
 
