@@ -42,8 +42,9 @@ jobs:
           command: |
             echo ">>>> Currently JAVA_HOME=${JAVA_HOME}"
             JDK8_JVMCI_HOME="$(cd ${BASEDIR}/graal-jvmci-8/ && ${MX} --java-home ${JAVA_HOME} jdkhome)"
-            echo "export JVMCI_VERSION_CHECK='ignore'" >> envrc
-            echo "export JAVA_HOME=${JDK8_JVMCI_HOME}" >> envrc
+            echo "export JVMCI_VERSION_CHECK='ignore'" >> ${BASH_ENV}
+            echo "export JAVA_HOME=${JDK8_JVMCI_HOME}" >> ${BASH_ENV}
+            source ${BASH_ENV}
       - run:
           name: Build Graal Compiler
           command: |
