@@ -20,5 +20,5 @@ export JVMCI_VERSION_CHECK='ignore'
 echo ">>>> Setting environment variable JVMCI_VERSION_CHECK=${JVMCI_VERSION_CHECK}"
 HOTSPOT_BUILD_JOBS=${HOTSPOT_BUILD_JOBS:-$(getAllowedThreads)}
 echo "Setting HOTSPOT_BUILD_JOBS=${HOTSPOT_BUILD_JOBS}"
-HOTSPOT_BUILD_JOBS=${HOTSPOT_BUILD_JOBS} ${MX} build --java-home ${JAVA_HOME}
+HOTSPOT_BUILD_JOBS=${HOTSPOT_BUILD_JOBS} ${MX} build
 ${MX} makegraaljdk --force ${BUILD_ARTIFACTS_DIR} 
