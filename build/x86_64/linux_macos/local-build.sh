@@ -13,6 +13,7 @@ IFS=$'\n\t'
 BASEDIR=$(pwd)
 export RUN_TESTS=${RUN_TESTS:-"true"}
 JDK_GRAAL_FOLDER_NAME=jdk8-with-graal
+GRAAL_JVMCI_8_TAG=jvmci-0.46
 BUILD_ARTIFACTS_DIR=${BASEDIR}/${JDK_GRAAL_FOLDER_NAME}
 GRAALVM_SUITE_RUNTIMES=${GRAALVM_SUITE_RUNTIMES:-"/substratevm,/tools,sulong,/graal-nodejs,/fastr,truffleruby,graalpython"}
 
@@ -33,7 +34,8 @@ printParameters() {
     echo "BASEDIR=${BASEDIR}"
     echo ""
     echo "JDK_GRAAL_FOLDER_NAME=${JDK_GRAAL_FOLDER_NAME}"
-    echo "BUILD_ARTIFACTS_DIR=${BUILD_ARTIFACTS_DIR}"    
+    echo "GRAAL_JVMCI_8_TAG=${GRAAL_JVMCI_8_TAG}"
+    echo "BUILD_ARTIFACTS_DIR=${BUILD_ARTIFACTS_DIR}"
     echo "GRAALVM_SUITE_RUNTIMES=${GRAALVM_SUITE_RUNTIMES}"
     echo ""
     echo "RUN_TESTS=${RUN_TESTS}"
