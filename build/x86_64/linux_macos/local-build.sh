@@ -28,6 +28,7 @@ printParameters() {
     echo "BASEDIR=${BASEDIR}"
     echo ""
     echo "JDK_GRAAL_FOLDER_NAME=${JDK_GRAAL_FOLDER_NAME}"
+    echo "GRAAL_JVMCI_8_TAG=${GRAAL_JVMCI_8_TAG}"
     echo "BUILD_ARTIFACTS_DIR=${BUILD_ARTIFACTS_DIR}"
     echo ""
     echo "RUN_TESTS=${RUN_TESTS}"
