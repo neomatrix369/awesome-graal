@@ -13,6 +13,7 @@ cd ${BASEDIR}
 gitClone graalvm       \
          graal-jvmci-8 \
          "Getting Graal JVMCI for JDK8"
+         "doNotUpdate"
 
 echo ">>> Building a JDK8 with JVMCI..."
 cd ${BASEDIR}/graal-jvmci-8/

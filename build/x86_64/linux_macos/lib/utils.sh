@@ -16,12 +16,17 @@ gitClone() {
     org=$1
     repo=$2
     programDesc=$3
+    update=$4
 
     if [[ -e "${repo}/.git" ]]; then
-        echo ">>> ${repo} already exists: updating and using this version"
-        cd ${repo}
-        git checkout .
-        git pull
+        if [[ "${update}" = "doNotUpdate" ]]; then
+           echo ">>> skipping generic update "
+        else
+            echo ">>> ${repo} already exists: updating and using this version"
+            cd ${repo}
+            git checkout .
+            git pull
+        fi
     else
         echo ">>> Getting ${repo}: ${programDesc}"
         git clone --depth=1 https://github.com/${org}/${repo}.git
