@@ -16,7 +16,7 @@ gitClone() {
     org=$1
     repo=$2
     programDesc=$3
-    update=${4:-update}
+    update=${4:-"update"}
 
     if [[ -e "${repo}/.git" ]]; then
         if [[ "${update}" = "doNotUpdate" ]]; then
