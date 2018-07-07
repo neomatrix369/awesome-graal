@@ -61,3 +61,5 @@ jobs:
             cp ${BUILD_ARTIFACTS_DIR}/*.* $CIRCLE_ARTIFACTS}/${BUILD_ARTIFACTS_DIR}
           timeout: 3m
           no_output_timeout: 2m
+      - store_artifacts:
+          path: $CIRCLE_ARTIFACTS}/${BUILD_ARTIFACTS_DIR}
