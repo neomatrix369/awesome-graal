@@ -17,8 +17,7 @@ gitClone graalvm       \
 
 echo ">>> Building a JDK8 with JVMCI..."
 cd ${BASEDIR}/graal-jvmci-8/
-git fetch --all --tags --prune
-git checkout tags/${GRAAL_JVMCI_8_TAG} -b ${GRAAL_JVMCI_8_TAG}
+git checkout ${GRAAL_JVMCI_8_TAG}
 HOTSPOT_BUILD_JOBS=${HOTSPOT_BUILD_JOBS:-$(getAllowedThreads)}
 echo "Setting HOTSPOT_BUILD_JOBS=${HOTSPOT_BUILD_JOBS}"
 HOTSPOT_BUILD_JOBS=${HOTSPOT_BUILD_JOBS} ${MX} build
