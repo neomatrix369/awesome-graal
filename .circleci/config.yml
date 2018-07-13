@@ -24,6 +24,10 @@ jobs:
             echo 'export RUN_TESTS="true"'                                        >> ${BASH_ENV}
             echo 'export GRAALVM_SUITE_RUNTIMES="/substratevm,/tools,sulong,/graal-nodejs,/fastr,truffleruby,graalpython"' >> ${BASH_ENV}
             echo 'export HOTSPOT_BUILD_JOBS=2'                                    >> ${BASH_ENV}
+            echo 'export FASTR_RELEASE="true"'                                    >> ${BASH_ENV}
+            echo 'export LANG="en_US.UTF-8"'                                      >> ${BASH_ENV}
+            echo 'export LC_ALL="en_US.UTF-8"'                                    >> ${BASH_ENV}
+            echo 'export LC_CTYPE="en_US.UTF-8"'                                  >> ${BASH_ENV}
             source ${BASH_ENV}
       - run:
           name: Display HW, SW, Runtime env. info and versions of dependencies
