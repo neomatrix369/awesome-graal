@@ -39,6 +39,28 @@ jobs:
             - /usr/bin/make
             - /usr/local/bin/make
             - /usr/share/man/man1/make.1.gz
+      - restore_cache:
+          keys:
+            - llvm-4.0-{{ arch }}-{{ .Branch }}-{{ .Environment.CIRCLE_SHA1 }}
+            - llvm-4.0-{{ arch }}-{{ .Branch }}
+            - llvm-4.0
+      - run:
+          name: Install llvm 4.0
+          command: ./build/x86_64/linux_macos/installLLVM.sh
+          timeout: 1m
+      - save_cache:
+          key: llvm-4.0-{{ arch }}-{{ .Branch }}-{{ .Environment.CIRCLE_SHA1 }}
+          paths:
+            - /usr/bin/ll*
+            - /usr/bin/opt*
+            - /usr/lib/llvm-6.0/
+            - /usr/lib/clang*
+            - /usr/include/clang*
+            - /usr/share/clang*
+            - /usr/bin/gcc*
+            - /usr/share/man/man1/gcc*
+            - /usr/bin/g++*
+            - /usr/share/man/man1/g++*
       - run:
           name: Define Environment Variables and update JAVA_HOME and PATH at Runtime
           command: |
