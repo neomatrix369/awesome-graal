@@ -45,7 +45,7 @@ jobs:
             - llvm-4.0-{{ arch }}-{{ .Branch }}
             - llvm-4.0
       - run:
-          name: Install llvm 4.0
+          name: Install llvm 4.0 via a script
           command: ./build/x86_64/linux_macos/installLLVM.sh
           timeout: 1m
       - save_cache:
@@ -61,6 +61,19 @@ jobs:
             - /usr/share/man/man1/gcc*
             - /usr/bin/g++*
             - /usr/share/man/man1/g++*
+      - restore_cache:
+          keys:
+            - ruby-{{ arch }}-{{ .Branch }}-{{ .Environment.CIRCLE_SHA1 }}
+            - ruby-{{ arch }}-{{ .Branch }}
+            - ruby
+      - run:
+          name: Install ruby via a script
+          command: ./build/x86_64/linux_macos/installRuby.sh
+          timeout: 1m
+      - save_cache:
+          key: ruby-{{ arch }}-{{ .Branch }}-{{ .Environment.CIRCLE_SHA1 }}
+          paths:
+            - /usr/local/rvm/
       - run:
           name: Define Environment Variables and update JAVA_HOME and PATH at Runtime
           command: |
