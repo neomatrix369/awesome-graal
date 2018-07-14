@@ -17,5 +17,6 @@ set -ex;                  \
         python2.7         \
         python2.7-dev     \
         ssh               \
+        locales           \
     && apt-get autoremove \
     && apt-get clean
