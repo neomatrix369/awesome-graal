@@ -136,6 +136,16 @@ Remove unused containers and images:
 ./removeUnusedContainersAndImages.sh
 ```
 
+Push docker image to Docker hub
+
+`USER_NAME` environment variable needs setting otherwise the default value will be taken:
+
+```
+USER_NAME=someuser ./push-graal-docker-image-to-hub.sh
+```
+
+Password will be asked before it proceeds with uploading the layers.
+
 # Contributing
 
 Contributions are very welcome, please share back with the wider community (and get credited for it)!
