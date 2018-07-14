@@ -19,6 +19,11 @@ GRAALVM_SUITE_RUNTIMES=${GRAALVM_SUITE_RUNTIMES:-'/substratevm,/tools,sulong,/gr
 
 export JAVA_OPTS="$(echo ${DOCKER_JAVA_OPTS:-""} ${JAVA_OPTS})"
 export FASTR_RELEASE="true"
+if [ -f "/.dockerenv" ]; then
+    locale-gen en_US.UTF-8
+else
+    sudo locale-gen en_US.UTF-8
+fi
 export LANG="en_US.UTF-8"
 export LC_ALL="en_US.UTF-8"
 export LC_CTYPE="en_US.UTF-8"
