@@ -20,3 +20,5 @@ set -ex;                  \
         locales           \
     && apt-get autoremove \
     && apt-get clean
+
+locale-gen en_US.UTF-8
