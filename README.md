@@ -124,6 +124,8 @@ A curated list of awesome resources for Graal, Truffle and related topics.
     - [TruffleRuby on the Substrate VM - Kevin Menard's Weblog](http://nirvdrum.com/2017/02/15/truffleruby-on-the-substrate-vm.html)
     - [Projects That Are Making Blazing Fast Ruby a Reality](https://www.sitepoint.com/projects-that-are-making-blazing-fast-ruby-a-reality/)
 
+- Clojure
+    - [Command line apps with Clojure and GraalVM](https://www.astrecipes.net/blog/2018/07/20/cmd-line-apps-with-clojure-and-graalvm/)
 
 ### Papers, presentations/slides & videos
 
