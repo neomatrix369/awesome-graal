@@ -5,7 +5,7 @@ BASEDIR=/path/to/awesome-graal/build/x86_64/linux_macos
 JDK_GRAAL_FOLDER_NAME=jdk8-with-graal
 GRAAL_JVMCI_8_TAG=jvmci-0.46
 BUILD_ARTIFACTS_DIR=/path/to/awesome-graal/build/x86_64/linux_macos/jdk8-with-graal
-GRAALVM_SUITE_RUNTIMES=/substratevm,/tools,sulong,/graal-nodejs,/fastr,truffleruby,graalpython
+GRAALVM_SUITE_RUNTIMES=/substratevm,/tools,sulong,/graal-nodejs,truffleruby,graalpython
 
 RUN_TESTS=true
 JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_172.jdk/Contents/Home
@@ -19,14 +19,14 @@ LC_CTYPE=en_US.UTF-8
 Display hardware information
 Hardware: Hardware Overview: Model Name: MacBook Pro Model Identifier: MacBookPro8,1 Processor Name: Intel Core i5 Processor Speed: 2.3 GHz Number of Processors: 1 Total Number of Cores: 2 L2 Cache (per Core): 256 KB L3 Cache: 3 MB Memory: 4 GB Boot ROM Version: MBP81.0050.B00 SMC Version (system): 1.68f99 Serial Number (system): C2VF5ZFJDH2G Hardware UUID: FAA92732-A607-5E68-9DAF-C7684759A990 Sudden Motion Sensor: State: Enabled
 
-PhysMem: 3583M used (1153M wired), 512M unused. vm.swapusage: total = 1024.00M used = 165.00M free = 859.00M (encrypted)
+PhysMem: 4011M used (1159M wired), 84M unused. vm.swapusage: total = 1024.00M used = 119.50M free = 904.50M (encrypted)
 
 Available threads (from all online CPUs/Cores): 4
 
 Display OS information
 Darwin manis-MacBook.local 17.6.0 Darwin Kernel Version 17.6.0: Tue May  8 15:22:16 PDT 2018; root:xnu-4570.61.1~1/RELEASE_X86_64 x86_64
 
-Software: System Software Overview: System Version: macOS 10.13.5 (17F77) Kernel Version: Darwin 17.6.0 Boot Volume: Swami's macbook SSD Boot Mode: Normal Computer Name: mani’s MacBook User Name: mani (swami) Secure Virtual Memory: Enabled System Integrity Protection: Enabled Time since boot: 10 minutes
+Software: System Software Overview: System Version: macOS 10.13.5 (17F77) Kernel Version: Darwin 17.6.0 Boot Volume: Swami's macbook SSD Boot Mode: Normal Computer Name: mani’s MacBook User Name: mani (swami) Secure Virtual Memory: Enabled System Integrity Protection: Enabled Time since boot: 17 minutes
 
 *******************************************************************************
 * Processes are running on a VM or VM-like environment
@@ -90,9 +90,9 @@ OpenSSL 1.0.2o  27 Mar 2018
 >>> mx already exists: updating and using this version
 Already up to date.
 
-real	0m1.040s
-user	0m0.084s
-sys	0m0.116s
+real	0m0.575s
+user	0m0.072s
+sys	0m0.048s
 >>> skipping generic update 
 >>> Building a JDK8 with JVMCI...
 From https://github.com/graalvm/graal-jvmci-8
@@ -102,21 +102,21 @@ Setting HOTSPOT_BUILD_JOBS=2
 JAVA_HOME: /Library/Java/JavaVirtualMachines/jdk1.8.0_172.jdk/Contents/Home
 EXTRA_JAVA_HOMES: 
 
-real	0m5.385s
-user	0m2.000s
-sys	0m1.559s
+real	0m4.169s
+user	0m1.847s
+sys	0m1.144s
 >>>> Running unit tests...
 MxJUnitCore
 JUnit version 4.12
 .............................................................................................
-Time: 12.901
+Time: 10.68
 
 OK (93 tests)
 
 
-real	0m14.785s
-user	0m33.214s
-sys	0m1.251s
+real	0m12.378s
+user	0m28.660s
+sys	0m0.963s
 >>>> Using JDK8_JVMCI_HOME as JAVA_HOME (/path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/jdk1.8.0_172/darwin-amd64/product/Contents/Home)
 >>> Building Graal
 >>> graal already exists: updating and using this version
@@ -144,9 +144,9 @@ Copying /path/to/awesome-graal/build/x86_64/linux_macos/graal/compiler/mxbuild/d
 Copying /path/to/awesome-graal/build/x86_64/linux_macos/graal/sdk/mxbuild/dists/graal-sdk.jar to /path/to/awesome-graal/build/x86_64/linux_macos/jdk8-with-graal/jre/lib/boot
 Copying /path/to/awesome-graal/build/x86_64/linux_macos/graal/truffle/mxbuild/dists/truffle-api.jar to /path/to/awesome-graal/build/x86_64/linux_macos/jdk8-with-graal/jre/lib/truffle
 
-real	0m14.688s
-user	0m5.904s
-sys	0m6.469s
+real	0m17.392s
+user	0m5.661s
+sys	0m6.069s
 >>> Building GraalVM Suite
 Applying temporary patch to fix graaljs cloning issue in 'mx.vm/suite.py'
 Applying temporary patch to fix graalpython cloning issue in 'mx.vm/suite.py'
@@ -156,20 +156,28 @@ EXTRA_JAVA_HOMES:
 Dependencies removed from build:
  project jdk.tools.jaotc.binformat was removed as JDK 11 is not available
  project jdk.tools.jaotc was removed as JDK 11 is not available
- project org.graalvm.compiler.hotspot.management.jdk11 was removed as JDK 11 is not available
  project org.graalvm.compiler.serviceprovider.jdk9 was removed as JDK 9 is not available
  project org.graalvm.compiler.hotspot.jdk9 was removed as JDK 9 is not available
  project org.graalvm.compiler.hotspot.jdk11 was removed as JDK 11 is not available
  project org.graalvm.compiler.lir.aarch64.jdk11 was removed as JDK 11 is not available
+ project org.graalvm.compiler.hotspot.management.jdk11 was removed as JDK 11 is not available
  project com.oracle.truffle.dsl.processor.jdk9 was removed as JDK 9 is not available
  project org.graalvm.compiler.replacements.jdk9.test was removed as JDK 9 is not available
  project jdk.tools.jaotc.test was removed as JDK 11 is not available
  distribution JAOTC was removed as all its project and non-JDK library dependencies were removed
  distribution JAOTC_TEST was removed as all its project and non-JDK library dependencies were removed
-Compiling org.truffleruby.test with javac-daemon(JDK 1.8)... [/path/to/awesome-graal/build/x86_64/linux_macos/truffleruby/mxbuild/org.truffleruby.test/bin/org/truffleruby/RubyTest.class[2018-07-14 22:00:13] is older than /path/to/awesome-graal/build/x86_64/linux_macos/truffleruby/mxbuild/org.truffleruby/bin/org/truffleruby/stdlib/readline/ReadlineNodes.class[2018-07-25 23:20:43]]
+Building com.oracle.svm.native with GNU Make... [rebuild needed by GNU Make]
+/Library/Developer/CommandLineTools/usr/bin/make -C /path/to/awesome-graal/build/x86_64/linux_macos/graal/substratevm/src/com.oracle.svm.native/strictmath
+/Library/Developer/CommandLineTools/usr/bin/make -C /path/to/awesome-graal/build/x86_64/linux_macos/graal/substratevm/src/com.oracle.svm.native/libchelper
+/Library/Developer/CommandLineTools/usr/bin/make -C /path/to/awesome-graal/build/x86_64/linux_macos/graal/substratevm/src/com.oracle.svm.native/jni
+make[1]: Nothing to be done for `all'.
+make[1]: Nothing to be done for `all'.
+make[1]: `/path/to/awesome-graal/build/x86_64/linux_macos/graal/substratevm/mxbuild/darwin-amd64/src/com.oracle.svm.native/darwin-amd64/libstrictmath.a' is up to date.
+WARNING: Could not find dragonegg, not building test variant "gcc_O0"
 Compiling com.oracle.truffle.regex.nashorn with javac-daemon(JDK 1.8)... [/path/to/awesome-graal/build/x86_64/linux_macos/graaljs/graal-js/mxbuild/src/com.oracle.truffle.regex.nashorn/bin/com/oracle/truffle/regex/nashorn/regexp/RegExpScanner.class does not exist]
-Compiling com.oracle.graal.python.test with javac-daemon(JDK 1.8)... [/path/to/awesome-graal/build/x86_64/linux_macos/graalpython/mxbuild/graalpython/com.oracle.graal.python.test/bin/python_unittests.py[2018-07-14 21:59:57] is older than /path/to/awesome-graal/build/x86_64/linux_macos/graalpython/mxbuild/graalpython/com.oracle.graal.python/bin/com/oracle/graal/python/runtime/sequence/storage/EmptySequenceStorage.class[2018-07-25 23:20:17]]
-Archiving GRAALPYTHON... [/path/to/awesome-graal/build/x86_64/linux_macos/graalpython/mxbuild/dists/graalpython.jar[2018-07-14 22:00:12] is older than /path/to/awesome-graal/build/x86_64/linux_macos/graalpython/mxbuild/graalpython/com.oracle.graal.python/bin/com/oracle/graal/python/runtime/sequence/storage/EmptySequenceStorage.class[2018-07-25 23:20:17]]
+Archiving TRUFFLERUBY... [/path/to/awesome-graal/build/x86_64/linux_macos/truffleruby/mxbuild/dists/truffleruby.jar[2018-07-14 22:01:41] is older than /path/to/awesome-graal/build/x86_64/linux_macos/truffleruby/mxbuild/org.truffleruby/bin/org/truffleruby/stdlib/readline/ReadlineNodes.class[2018-07-25 23:20:43]]
+Compiling com.oracle.truffle.llvm.runtime with javac-daemon(JDK 1.8)... [/path/to/awesome-graal/build/x86_64/linux_macos/sulong/mxbuild/projects/com.oracle.truffle.llvm.runtime/bin/com/oracle/truffle/llvm/runtime/LLVMIntrinsicProvider.class[2018-07-14 22:01:15] is older than /path/to/awesome-graal/build/x86_64/linux_macos/sulong/mxbuild/projects/com.oracle.truffle.llvm.spi/bin/com/oracle/truffle/llvm/spi/GetDynamicType.class[2018-07-25 23:18:43]]
+Archiving SVM_HOSTED_NATIVE... [dependency com.oracle.svm.native updated]
 /path/to/awesome-graal/build/x86_64/linux_macos/graaljs/graal-js/src/com.oracle.truffle.regex.nashorn/src/com/oracle/truffle/regex/nashorn/regexp/RegExpScanner.java:73: error: cannot find symbol
 import com.oracle.truffle.regex.tregex.parser.CodePointSet;
                                              ^
@@ -205,12 +213,13 @@ import com.oracle.truffle.regex.util.Constants;
                                                     ^
   symbol:   variable UnicodeCharacterProperties
   location: class RegExpScanner
+Archiving CHROMEINSPECTOR... [/path/to/awesome-graal/build/x86_64/linux_macos/graal/tools/mxbuild/dists/chromeinspector.jar[2018-07-14 21:59:39] is older than /path/to/awesome-graal/build/x86_64/linux_macos/graal/tools/mxbuild/src/com.oracle.truffle.tools.chromeinspector/bin/com/oracle/truffle/tools/chromeinspector/types/StackTrace.class[2018-07-25 23:20:24]]
+Archiving GRAALPYTHON_UNIT_TESTS... [/path/to/awesome-graal/build/x86_64/linux_macos/graalpython/mxbuild/dists/graalpython-unit-tests.jar[2018-07-14 22:00:14] is older than /path/to/awesome-graal/build/x86_64/linux_macos/graalpython/mxbuild/dists/graalpython.jar[2018-07-25 23:23:18]]
+Compiling com.oracle.svm.core with javac-daemon(JDK 1.8)... [dependencies were added, removed or re-ordered]
 /path/to/awesome-graal/build/x86_64/linux_macos/graaljs/graal-js/src/com.oracle.truffle.regex.nashorn/src/com/oracle/truffle/regex/nashorn/regexp/joni/EncodingHelper.java:373: error: package Constants does not exist
                 return Constants.WHITE_SPACE.contains(code);
                                 ^
 8 errors
 
-Compiling com.oracle.truffle.r.ffi.impl with javac-daemon(JDK 1.8)... [/path/to/awesome-graal/build/x86_64/linux_macos/fastr/mxbuild/com.oracle.truffle.r.ffi.impl/bin/com/oracle/truffle/r/ffi/impl/managed/Managed_DownCallNodeFactory.class[2018-07-14 21:59:43] is older than /path/to/awesome-graal/build/x86_64/linux_macos/fastr/mxbuild/com.oracle.truffle.r.nodes/bin/com/oracle/truffle/r/nodes/unary/UnaryNotNode.class[2018-07-25 23:20:17]]
-Note: If you edited any UpCallsRFFI interfaces do: 'mx rfficodegen'.
 Compiling com.oracle.truffle.regex.nashorn with javac-daemon(JDK 1.8) failed
 1 build tasks failed
