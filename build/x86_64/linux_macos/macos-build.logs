@@ -19,14 +19,14 @@ LC_CTYPE=en_US.UTF-8
 Display hardware information
 Hardware: Hardware Overview: Model Name: MacBook Pro Model Identifier: MacBookPro8,1 Processor Name: Intel Core i5 Processor Speed: 2.3 GHz Number of Processors: 1 Total Number of Cores: 2 L2 Cache (per Core): 256 KB L3 Cache: 3 MB Memory: 4 GB Boot ROM Version: MBP81.0050.B00 SMC Version (system): 1.68f99 Serial Number (system): C2VF5ZFJDH2G Hardware UUID: FAA92732-A607-5E68-9DAF-C7684759A990 Sudden Motion Sensor: State: Enabled
 
-PhysMem: 4008M used (1258M wired), 87M unused. vm.swapusage: total = 1024.00M used = 281.00M free = 743.00M (encrypted)
+PhysMem: 3583M used (1153M wired), 512M unused. vm.swapusage: total = 1024.00M used = 165.00M free = 859.00M (encrypted)
 
 Available threads (from all online CPUs/Cores): 4
 
 Display OS information
 Darwin manis-MacBook.local 17.6.0 Darwin Kernel Version 17.6.0: Tue May  8 15:22:16 PDT 2018; root:xnu-4570.61.1~1/RELEASE_X86_64 x86_64
 
-Software: System Software Overview: System Version: macOS 10.13.5 (17F77) Kernel Version: Darwin 17.6.0 Boot Volume: Swami's macbook SSD Boot Mode: Normal Computer Name: mani’s MacBook User Name: mani (swami) Secure Virtual Memory: Enabled System Integrity Protection: Enabled Time since boot: 23 minutes
+Software: System Software Overview: System Version: macOS 10.13.5 (17F77) Kernel Version: Darwin 17.6.0 Boot Volume: Swami's macbook SSD Boot Mode: Normal Computer Name: mani’s MacBook User Name: mani (swami) Secure Virtual Memory: Enabled System Integrity Protection: Enabled Time since boot: 10 minutes
 
 *******************************************************************************
 * Processes are running on a VM or VM-like environment
@@ -90,9 +90,9 @@ OpenSSL 1.0.2o  27 Mar 2018
 >>> mx already exists: updating and using this version
 Already up to date.
 
-real	0m0.682s
-user	0m0.073s
-sys	0m0.106s
+real	0m1.040s
+user	0m0.084s
+sys	0m0.116s
 >>> skipping generic update 
 >>> Building a JDK8 with JVMCI...
 From https://github.com/graalvm/graal-jvmci-8
@@ -102,21 +102,21 @@ Setting HOTSPOT_BUILD_JOBS=2
 JAVA_HOME: /Library/Java/JavaVirtualMachines/jdk1.8.0_172.jdk/Contents/Home
 EXTRA_JAVA_HOMES: 
 
-real	0m5.124s
-user	0m1.943s
-sys	0m1.549s
+real	0m5.385s
+user	0m2.000s
+sys	0m1.559s
 >>>> Running unit tests...
 MxJUnitCore
 JUnit version 4.12
 .............................................................................................
-Time: 12.255
+Time: 12.901
 
 OK (93 tests)
 
 
-real	0m13.996s
-user	0m32.602s
-sys	0m1.092s
+real	0m14.785s
+user	0m33.214s
+sys	0m1.251s
 >>>> Using JDK8_JVMCI_HOME as JAVA_HOME (/path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/jdk1.8.0_172/darwin-amd64/product/Contents/Home)
 >>> Building Graal
 >>> graal already exists: updating and using this version
@@ -144,9 +144,9 @@ Copying /path/to/awesome-graal/build/x86_64/linux_macos/graal/compiler/mxbuild/d
 Copying /path/to/awesome-graal/build/x86_64/linux_macos/graal/sdk/mxbuild/dists/graal-sdk.jar to /path/to/awesome-graal/build/x86_64/linux_macos/jdk8-with-graal/jre/lib/boot
 Copying /path/to/awesome-graal/build/x86_64/linux_macos/graal/truffle/mxbuild/dists/truffle-api.jar to /path/to/awesome-graal/build/x86_64/linux_macos/jdk8-with-graal/jre/lib/truffle
 
-real	0m12.814s
-user	0m5.794s
-sys	0m6.776s
+real	0m14.688s
+user	0m5.904s
+sys	0m6.469s
 >>> Building GraalVM Suite
 Applying temporary patch to fix graaljs cloning issue in 'mx.vm/suite.py'
 Applying temporary patch to fix graalpython cloning issue in 'mx.vm/suite.py'
@@ -166,179 +166,51 @@ Dependencies removed from build:
  project jdk.tools.jaotc.test was removed as JDK 11 is not available
  distribution JAOTC was removed as all its project and non-JDK library dependencies were removed
  distribution JAOTC_TEST was removed as all its project and non-JDK library dependencies were removed
-Building com.oracle.svm.native with GNU Make... [rebuild needed by GNU Make]
-/Library/Developer/CommandLineTools/usr/bin/make -C /path/to/awesome-graal/build/x86_64/linux_macos/graal/substratevm/src/com.oracle.svm.native/strictmath
-/Library/Developer/CommandLineTools/usr/bin/make -C /path/to/awesome-graal/build/x86_64/linux_macos/graal/substratevm/src/com.oracle.svm.native/libchelper
-/Library/Developer/CommandLineTools/usr/bin/make -C /path/to/awesome-graal/build/x86_64/linux_macos/graal/substratevm/src/com.oracle.svm.native/jni
-make[1]: Nothing to be done for `all'.
-make[1]: Nothing to be done for `all'.
-make[1]: `/path/to/awesome-graal/build/x86_64/linux_macos/graal/substratevm/mxbuild/darwin-amd64/src/com.oracle.svm.native/darwin-amd64/libstrictmath.a' is up to date.
-WARNING: Could not find dragonegg, not building test variant "gcc_O0"
-Building com.oracle.truffle.r.native with GNU Make... [rebuild needed by GNU Make]
-R_VERSION: 3.4.0
-GNUR_HOME: /path/to/awesome-graal/build/x86_64/linux_macos/fastr/com.oracle.truffle.r.native/gnur/patch-build
-GNUR_HOME_BINARY not set. Assuming the default location at /path/to/awesome-graal/build/x86_64/linux_macos/fastr/libdownloads/R-3.4.0
-doclean: 1
-/Library/Developer/CommandLineTools/usr/bin/make clean
-R_VERSION: 3.4.0
-GNUR_HOME: /path/to/awesome-graal/build/x86_64/linux_macos/fastr/com.oracle.truffle.r.native/gnur/patch-build
-doclean: 1
-/Library/Developer/CommandLineTools/usr/bin/make -C include clean
-R_HEADERS_FILENAMES: 
-rm -rf include linked
-/Library/Developer/CommandLineTools/usr/bin/make -C fficall clean
-/Library/Developer/CommandLineTools/usr/bin/make -C src/common clean
-rm -rf ../../lib
-/Library/Developer/CommandLineTools/usr/bin/make -C src/truffle_nfi clean
-rm -rf ../../lib
-rm -rf /path/to/awesome-graal/build/x86_64/linux_macos/fastr/lib/libR
-rm -rf /path/to/awesome-graal/build/x86_64/linux_macos/fastr/lib/libR_dummy
-rm -rf "/path/to/awesome-graal/build/x86_64/linux_macos/fastr/lib/libRl"
-rm -rf fficall.done
-rm -rf common.done
-/Library/Developer/CommandLineTools/usr/bin/make -C run clean
-rm -rf /path/to/awesome-graal/build/x86_64/linux_macos/fastr/bin
-rm -rf /path/to/awesome-graal/build/x86_64/linux_macos/fastr/etc
-rm -rf /path/to/awesome-graal/build/x86_64/linux_macos/fastr/share
-rm -rf /path/to/awesome-graal/build/x86_64/linux_macos/fastr/include
-/Library/Developer/CommandLineTools/usr/bin/make -C gnur clean
-/Library/Developer/CommandLineTools/usr/bin/make -f Makefile.gnur clean
-IN_FILES_PREFIX : /path/to/awesome-graal/build/x86_64/linux_macos/fastr/com.oracle.truffle.r.native/gnur/patch
-IN_FILES_PREFIX_LEN :      127
-rm -rf patch-build
-rm -f Makeconf.done
-/Library/Developer/CommandLineTools/usr/bin/make -f Makefile.libs clean
-rm -f /path/to/awesome-graal/build/x86_64/linux_macos/fastr/lib/libRblas /path/to/awesome-graal/build/x86_64/linux_macos/fastr/lib/libRlapack
-rm -f     
-rm -f rcopylib.done
-/Library/Developer/CommandLineTools/usr/bin/make -f Makefile.platform clean
-rm -f /path/to/awesome-graal/build/x86_64/linux_macos/fastr/com.oracle.truffle.r.native/platform.mk
-rm -rf tests/log
-/Library/Developer/CommandLineTools/usr/bin/make -C gnur
-/Library/Developer/CommandLineTools/usr/bin/make -f Makefile.gnur
-IN_FILES_PREFIX : /path/to/awesome-graal/build/x86_64/linux_macos/fastr/com.oracle.truffle.r.native/gnur/patch
-IN_FILES_PREFIX_LEN :      127
-echo Installing R-3.4.0 into /path/to/awesome-graal/build/x86_64/linux_macos/fastr/libdownloads/R-3.4.0
-Installing R-3.4.0 into /path/to/awesome-graal/build/x86_64/linux_macos/fastr/libdownloads/R-3.4.0
-rm -rf /path/to/awesome-graal/build/x86_64/linux_macos/fastr/libdownloads/R-3.4.0
-mkdir -p /path/to/awesome-graal/build/x86_64/linux_macos/fastr/libdownloads/
-(cd /path/to/awesome-graal/build/x86_64/linux_macos/fastr/libdownloads/; tar xf R-3.4.0.tar.gz)
-Compiling com.oracle.truffle.llvm.asm.amd64 with javac-daemon(JDK 1.8)... [/path/to/awesome-graal/build/x86_64/linux_macos/sulong/mxbuild/projects/com.oracle.truffle.llvm.asm.amd64/bin/com/oracle/truffle/llvm/asm/amd64/AsmImmediateOperand.class[2018-07-11 22:59:11] is older than /path/to/awesome-graal/build/x86_64/linux_macos/sulong/mxbuild/projects/com.oracle.truffle.llvm.nodes/bin/com/oracle/truffle/llvm/nodes/vector/LLVMShuffleVectorNode.class[2018-07-14 22:02:05]]
-Archiving FASTR_UNIT_TESTS... [/path/to/awesome-graal/build/x86_64/linux_macos/fastr/mxbuild/dists/fastr-unit-tests.jar does not exist]
-(cd /path/to/awesome-graal/build/x86_64/linux_macos/fastr/libdownloads/R-3.4.0; ./configure --with-x=no --with-aqua=no  --enable-memory-profiling  FFLAGS=-O2  > gnur_configure.log 2>&1; /Library/Developer/CommandLineTools/usr/bin/make MAKE=/Library/Developer/CommandLineTools/usr/bin/make -j > gnur_make.log 2>&1)
-Archiving GRAALJS_SCRIPTENGINE_TESTS... [/path/to/awesome-graal/build/x86_64/linux_macos/graaljs/graal-js/mxbuild/dists/graaljs-scriptengine-tests.jar[2018-07-11 22:59:13] is older than /path/to/awesome-graal/build/x86_64/linux_macos/graaljs/graal-js/mxbuild/src/com.oracle.truffle.js.scriptengine.test/bin/com/oracle/truffle/js/scriptengine/test/TestScriptEngineInterop.class[2018-07-14 22:01:56]]
-Archiving TRUFFLE_JS_TESTS... [/path/to/awesome-graal/build/x86_64/linux_macos/graaljs/graal-js/mxbuild/dists/truffle-js-tests.jar[2018-07-11 22:59:13] is older than /path/to/awesome-graal/build/x86_64/linux_macos/graaljs/graal-js/mxbuild/src/com.oracle.truffle.js.test.external/bin/com/oracle/truffle/js/test/external/testv8/TestV8Runnable.class[2018-07-14 22:01:57]]
-Snapshotting coremodules... [/path/to/awesome-graal/build/x86_64/linux_macos/graaljs/graal-nodejs/mxbuild/trufflenode/coremodules/node_snapshots.h[2018-07-11 22:59:38] is older than /path/to/awesome-graal/build/x86_64/linux_macos/graaljs/graal-js/mxbuild/dists/truffle-js-snapshot-tool.jar[2018-07-14 22:01:56]]
-Archiving TRUFFLENODE_JNI_BOUNDARY_PROFILER... [/path/to/awesome-graal/build/x86_64/linux_macos/graaljs/graal-nodejs/mxbuild/dists/trufflenode-jni-boundary-profiler.jar[2018-07-11 22:59:15] is older than /path/to/awesome-graal/build/x86_64/linux_macos/graaljs/graal-nodejs/mxbuild/mx.graal-nodejs/com.oracle.truffle.trufflenode.jniboundaryprofiler/bin/com/oracle/truffle/trufflenode/jniboundaryprofiler/ProfilingTransformer.class[2018-07-14 22:02:00]]
-#### python2.7 ####
-Compiling com.oracle.truffle.llvm.parser.factories with javac-daemon(JDK 1.8)... [dependency com.oracle.truffle.llvm.asm.amd64 updated]
-Compiling com.oracle.truffle.llvm with javac-daemon(JDK 1.8)... [dependency com.oracle.truffle.llvm.parser.factories updated]
-Compiling com.oracle.truffle.llvm.test with javac-daemon(JDK 1.8)... [dependency com.oracle.truffle.llvm updated]
-internal/socket_list.js: 3360.57 ms
-internal/streams/lazy_transform.js: 208.48 ms
-internal/streams/legacy.js: 201.36 ms
-querystring.js: 836.84 ms
-process.js: 62.57 ms
-internal/loader/search.js: 100.43 ms
-internal/wrap_js_stream.js: 369.67 ms
-net.js: 2844.68 ms
-internal/process/next_tick.js: 426.73 ms
-vm.js: 174.21 ms
-internal/module.js: 149.07 ms
-internal/repl.js: 405.79 ms
-internal/util/types.js: 46.47 ms
-os.js: 212.57 ms
-internal/cluster/shared_handle.js: 58.58 ms
-internal/trace_events_async_hooks.js: 78.57 ms
-crypto.js: 996.57 ms
-_stream_passthrough.js: 39.76 ms
-readline.js: 953.40 ms
-_http_incoming.js: 228.85 ms
-internal/process/stdio.js: 153.67 ms
-tty.js: 93.30 ms
-cluster.js: 22.19 ms
-_stream_writable.js: 468.31 ms
-http2.js: 16.17 ms
-internal/inspector_async_hook.js: 47.50 ms
-buffer.js: 3199.41 ms
-internal/cluster/utils.js: 45.26 ms
-http.js: 82.42 ms
-internal/linkedlist.js: 42.28 ms
-internal/net.js: 42.03 ms
-internal/cluster/round_robin_handle.js: 99.47 ms
-assert.js: 725.47 ms
-_http_outgoing.js: 903.62 ms
-internal/streams/destroy.js: 58.17 ms
-url.js: 743.69 ms
-_stream_wrap.js: 7.93 ms
-path.js: 1345.51 ms
-internal/process/write-coverage.js: 29.44 ms
-internal/encoding.js: 275.11 ms
-dns.js: 245.95 ms
-async_hooks.js: 192.19 ms
-internal/safe_globals.js: 30.51 ms
-v8.js: 99.28 ms
-child_process.js: 204.48 ms
-_tls_wrap.js: 486.12 ms
-repl.js: 617.77 ms
-zlib.js: 211.02 ms
-perf_hooks.js: 242.30 ms
-dgram.js: 312.94 ms
-_tls_common.js: 51.93 ms
-internal/loader/ModuleWrap.js: 41.37 ms
-internal/cluster/child.js: 72.00 ms
-internal/fs.js: 43.30 ms
-internal/child_process.js: 327.64 ms
-internal/v8_prof_polyfill.js: 33.85 ms
-events.js: 178.16 ms
-internal/http2/compat.js: 349.52 ms
-_http_server.js: 149.12 ms
-_stream_readable.js: 340.59 ms
-internal/util.js: 91.25 ms
-internal/http.js: 11.81 ms
-_http_agent.js: 99.13 ms
-internal/process.js: 81.30 ms
-internal/bootstrap_node.js: 247.98 ms
-internal/process/promises.js: 39.22 ms
-internal/url.js: 838.41 ms
-internal/querystring.js: 10.39 ms
-_stream_duplex.js: 13.49 ms
-_http_common.js: 47.71 ms
-domain.js: 42.91 ms
-internal/os.js: 10.20 ms
-internal/streams/BufferList.js: 16.29 ms
-inspector.js: 26.32 ms
-sys.js: 7.01 ms
-_stream_transform.js: 23.83 ms
-constants.js: 5.50 ms
-console.js: 48.77 ms
-internal/http2/util.js: 136.45 ms
-punycode.js: 73.61 ms
-internal/graal/thread_pipe_wrap.js: 24.78 ms
-util.js: 538.38 ms
-internal/test/unicode.js: 5.47 ms
-_http_client.js: 176.58 ms
-fs.js: 2041.74 ms
-internal/http2/core.js: 1864.89 ms
-tls.js: 49.23 ms
-internal/async_hooks.js: 109.98 ms
-internal/process/warning.js: 48.33 ms
-internal/graal/thread_process_wrap.js: 12.32 ms
-https.js: 38.90 ms
-stream.js: 10.73 ms
-_tls_legacy.js: 216.46 ms
-internal/freelist.js: 7.05 ms
-internal/graal/buffer.js: 6.18 ms
-internal/cluster/master.js: 75.83 ms
-internal/buffer.js: 6.71 ms
-internal/cluster/worker.js: 16.54 ms
-string_decoder.js: 73.62 ms
-timers.js: 231.58 ms
-Total: 31813.08 ms
-#### python2.7 ####
-make[2]: *** [/path/to/awesome-graal/build/x86_64/linux_macos/fastr/libdownloads/R-3.4.0/gnur.done] Error 2
-make[1]: *** [makegnur] Error 2
-make: *** [all] Error 2
+Compiling org.truffleruby.test with javac-daemon(JDK 1.8)... [/path/to/awesome-graal/build/x86_64/linux_macos/truffleruby/mxbuild/org.truffleruby.test/bin/org/truffleruby/RubyTest.class[2018-07-14 22:00:13] is older than /path/to/awesome-graal/build/x86_64/linux_macos/truffleruby/mxbuild/org.truffleruby/bin/org/truffleruby/stdlib/readline/ReadlineNodes.class[2018-07-25 23:20:43]]
+Compiling com.oracle.truffle.regex.nashorn with javac-daemon(JDK 1.8)... [/path/to/awesome-graal/build/x86_64/linux_macos/graaljs/graal-js/mxbuild/src/com.oracle.truffle.regex.nashorn/bin/com/oracle/truffle/regex/nashorn/regexp/RegExpScanner.class does not exist]
+Compiling com.oracle.graal.python.test with javac-daemon(JDK 1.8)... [/path/to/awesome-graal/build/x86_64/linux_macos/graalpython/mxbuild/graalpython/com.oracle.graal.python.test/bin/python_unittests.py[2018-07-14 21:59:57] is older than /path/to/awesome-graal/build/x86_64/linux_macos/graalpython/mxbuild/graalpython/com.oracle.graal.python/bin/com/oracle/graal/python/runtime/sequence/storage/EmptySequenceStorage.class[2018-07-25 23:20:17]]
+Archiving GRAALPYTHON... [/path/to/awesome-graal/build/x86_64/linux_macos/graalpython/mxbuild/dists/graalpython.jar[2018-07-14 22:00:12] is older than /path/to/awesome-graal/build/x86_64/linux_macos/graalpython/mxbuild/graalpython/com.oracle.graal.python/bin/com/oracle/graal/python/runtime/sequence/storage/EmptySequenceStorage.class[2018-07-25 23:20:17]]
+/path/to/awesome-graal/build/x86_64/linux_macos/graaljs/graal-js/src/com.oracle.truffle.regex.nashorn/src/com/oracle/truffle/regex/nashorn/regexp/RegExpScanner.java:73: error: cannot find symbol
+import com.oracle.truffle.regex.tregex.parser.CodePointSet;
+                                             ^
+  symbol:   class CodePointSet
+  location: package com.oracle.truffle.regex.tregex.parser
+/path/to/awesome-graal/build/x86_64/linux_macos/graaljs/graal-js/src/com.oracle.truffle.regex.nashorn/src/com/oracle/truffle/regex/nashorn/regexp/RegExpScanner.java:74: error: cannot find symbol
+import com.oracle.truffle.regex.tregex.parser.UnicodeCharacterProperties;
+                                             ^
+  symbol:   class UnicodeCharacterProperties
+  location: package com.oracle.truffle.regex.tregex.parser
+/path/to/awesome-graal/build/x86_64/linux_macos/graaljs/graal-js/src/com.oracle.truffle.regex.nashorn/src/com/oracle/truffle/regex/nashorn/regexp/RegExpScanner.java:116: error: cannot find symbol
+    private static final CodePointSet ID_START = UnicodeCharacterProperties.getProperty("ID_Start");
+                         ^
+  symbol:   class CodePointSet
+  location: class RegExpScanner
+/path/to/awesome-graal/build/x86_64/linux_macos/graaljs/graal-js/src/com.oracle.truffle.regex.nashorn/src/com/oracle/truffle/regex/nashorn/regexp/RegExpScanner.java:117: error: cannot find symbol
+    private static final CodePointSet ID_CONTINUE = UnicodeCharacterProperties.getProperty("ID_Continue");
+                         ^
+  symbol:   class CodePointSet
+  location: class RegExpScanner
+/path/to/awesome-graal/build/x86_64/linux_macos/graaljs/graal-js/src/com.oracle.truffle.regex.nashorn/src/com/oracle/truffle/regex/nashorn/regexp/joni/EncodingHelper.java:67: error: cannot find symbol
+import com.oracle.truffle.regex.util.Constants;
+                                    ^
+  symbol:   class Constants
+  location: package com.oracle.truffle.regex.util
+/path/to/awesome-graal/build/x86_64/linux_macos/graaljs/graal-js/src/com.oracle.truffle.regex.nashorn/src/com/oracle/truffle/regex/nashorn/regexp/RegExpScanner.java:116: error: cannot find symbol
+    private static final CodePointSet ID_START = UnicodeCharacterProperties.getProperty("ID_Start");
+                                                 ^
+  symbol:   variable UnicodeCharacterProperties
+  location: class RegExpScanner
+/path/to/awesome-graal/build/x86_64/linux_macos/graaljs/graal-js/src/com.oracle.truffle.regex.nashorn/src/com/oracle/truffle/regex/nashorn/regexp/RegExpScanner.java:117: error: cannot find symbol
+    private static final CodePointSet ID_CONTINUE = UnicodeCharacterProperties.getProperty("ID_Continue");
+                                                    ^
+  symbol:   variable UnicodeCharacterProperties
+  location: class RegExpScanner
+/path/to/awesome-graal/build/x86_64/linux_macos/graaljs/graal-js/src/com.oracle.truffle.regex.nashorn/src/com/oracle/truffle/regex/nashorn/regexp/joni/EncodingHelper.java:373: error: package Constants does not exist
+                return Constants.WHITE_SPACE.contains(code);
+                                ^
+8 errors
 
-Building com.oracle.truffle.r.native with GNU Make failed
+Compiling com.oracle.truffle.r.ffi.impl with javac-daemon(JDK 1.8)... [/path/to/awesome-graal/build/x86_64/linux_macos/fastr/mxbuild/com.oracle.truffle.r.ffi.impl/bin/com/oracle/truffle/r/ffi/impl/managed/Managed_DownCallNodeFactory.class[2018-07-14 21:59:43] is older than /path/to/awesome-graal/build/x86_64/linux_macos/fastr/mxbuild/com.oracle.truffle.r.nodes/bin/com/oracle/truffle/r/nodes/unary/UnaryNotNode.class[2018-07-25 23:20:17]]
+Note: If you edited any UpCallsRFFI interfaces do: 'mx rfficodegen'.
+Compiling com.oracle.truffle.regex.nashorn with javac-daemon(JDK 1.8) failed
 1 build tasks failed
