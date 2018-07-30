@@ -7,14 +7,14 @@ set -o pipefail
 DEBUG=${DEBUG:-"false"}
 RUN_TESTS=${RUN_TESTS:-"true"}
 
-JAVA_VERSION=${JAVA_VERSION:-jdk8u152-b16}
-JDK_BASE_IMAGE_TAG=${JDK_BASE_IMAGE_TAG:-"openjdk8:${JAVA_VERSION}"}
-DOCKER_IMAGE_TAG="graal-jdk8:latest"
-USER_IN_CONTAINER=${USER_IN_CONTAINER:-"graal"}
+export JAVA_VERSION=${JAVA_VERSION:-jdk8u152-b16}
+export JDK_BASE_IMAGE_TAG=${JDK_BASE_IMAGE_TAG:-"openjdk8:${JAVA_VERSION}"}
+export DOCKER_IMAGE_TAG="graalvm-suite-jdk8:latest"
+export USER_IN_CONTAINER=${USER_IN_CONTAINER:-"graal"}
 CONTAINER_HOME_DIR="/home/${USER_IN_CONTAINER}"
-MAKE_VERSION=${MAKE_VERSION:-3.82}
-LLVM_VERSION=${LLVM_VERSION:-6.0}
-RUBY_VERSION=${RUBY_VERSION:-2.2.2}
+export MAKE_VERSION=${MAKE_VERSION:-3.82}
+export LLVM_VERSION=${LLVM_VERSION:-6.0}
+export RUBY_VERSION=${RUBY_VERSION:-2.2.2}
 GRAALVM_SUITE_RUNTIMES=${GRAALVM_SUITE_RUNTIMES:-"/substratevm,/tools,sulong,/graal-nodejs,/fastr,truffleruby,graalpython"}
 DOCKER_MEMORY=2048M
 export DOCKER_JAVA_OPTS="-Xms300m -Xmx300m -XX:+PrintFlagsFinal"
@@ -66,14 +66,7 @@ echo "DOCKER_MEMORY=${DOCKER_MEMORY}"
 echo "JAVA_HOME=${JAVA_HOME}"
 echo "*************************************************"
 
-docker build \
-            -t ${DOCKER_IMAGE_TAG} \
-            --build-arg USER_IN_CONTAINER=${USER_IN_CONTAINER}   \
-            --build-arg JAVA_VERSION=${JAVA_VERSION}             \
-            --build-arg JDK_BASE_IMAGE_TAG=${JDK_BASE_IMAGE_TAG} \
-            --build-arg MAKE_VERSION=${MAKE_VERSION}             \
-            --build-arg LLVM_VERSION=${LLVM_VERSION}             \
-            --build-arg RUBY_VERSION=${RUBY_VERSION} .
+./build-docker-image.sh
 
 HOST_REPOS_DIR_DOCKER_PARAM=""
 if [[ ! -z "${HOST_REPOS_DIR}" ]]; then
