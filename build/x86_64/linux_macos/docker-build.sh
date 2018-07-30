@@ -16,7 +16,8 @@ MAKE_VERSION=${MAKE_VERSION:-3.82}
 LLVM_VERSION=${LLVM_VERSION:-6.0}
 RUBY_VERSION=${RUBY_VERSION:-2.2.2}
 GRAALVM_SUITE_RUNTIMES=${GRAALVM_SUITE_RUNTIMES:-"/substratevm,/tools,sulong,/graal-nodejs,/fastr,truffleruby,graalpython"}
-export DOCKER_JAVA_OPTS="-Xms300m -Xmx300m"
+DOCKER_MEMORY=2048M
+export DOCKER_JAVA_OPTS="-Xms300m -Xmx300m -XX:+PrintFlagsFinal"
 
 HOST_REPOS_DIR=${HOST_REPOS_DIR:-""}
 if [[ ! -z "${HOST_REPOS_DIR}" ]]; then
@@ -61,6 +62,7 @@ echo ""
 echo "BUILD_LOGS=${BUILD_LOGS}"
 echo "RUN_TESTS=${RUN_TESTS}"
 echo "DOCKER_JAVA_OPTS=${DOCKER_JAVA_OPTS}"
+echo "DOCKER_MEMORY=${DOCKER_MEMORY}"
 echo "JAVA_HOME=${JAVA_HOME}"
 echo "*************************************************"
 
@@ -89,10 +91,11 @@ if [[ "${DEBUG}" = "true" ]]; then
          --env OUTPUT_DIR="${CONTAINER_OUTPUT_DIR}"                \
          --env RUN_TESTS="${RUN_TESTS}"                            \
          --env GRAALVM_SUITE_RUNTIMES="${GRAALVM_SUITE_RUNTIMES}"  \
-         --env DOCKER_JAVA_OPTS="${DOCKER_JAVA_OPTS}"              \
+         --env JAVA_OPTS="${DOCKER_JAVA_OPTS}"              \
          --volume $(pwd):${CONTAINER_SCRIPTS_DIR}                  \
          --volume $(pwd)/patch:${CONTAINER_HOME_DIR}/patch         \
          --volume ${HOST_OUTPUT_DIR}:${CONTAINER_OUTPUT_DIR}       \
+         --memory ${DOCKER_MEMORY}                                              \
          ${HOST_REPOS_DIR_DOCKER_PARAM}                            \
          ${DOCKER_IMAGE_TAG}
 else   
@@ -104,10 +107,11 @@ else
          --env OUTPUT_DIR="${CONTAINER_OUTPUT_DIR}"                  \
          --env RUN_TESTS="${RUN_TESTS}"                              \
          --env GRAALVM_SUITE_RUNTIMES="${GRAALVM_SUITE_RUNTIMES}"    \
-         --env DOCKER_JAVA_OPTS="${DOCKER_JAVA_OPTS}"                \
+         --env JAVA_OPTS="${DOCKER_JAVA_OPTS}"                \
          --volume $(pwd):${CONTAINER_SCRIPTS_DIR}                    \
          --volume $(pwd)/patch:${CONTAINER_HOME_DIR}/patch           \
          --volume ${HOST_OUTPUT_DIR}:${CONTAINER_OUTPUT_DIR}         \
+         --memory ${DOCKER_MEMORY}                                   \
          ${HOST_REPOS_DIR_DOCKER_PARAM}                              \
          ${DOCKER_IMAGE_TAG} &> ${BUILD_LOGS}
 fi
