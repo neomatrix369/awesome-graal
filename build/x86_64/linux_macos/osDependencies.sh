@@ -18,6 +18,7 @@ set -ex;                  \
         python2.7-dev     \
         ssh               \
         locales           \
+        libc++-dev        \
     && apt-get autoremove \
     && apt-get clean
 
