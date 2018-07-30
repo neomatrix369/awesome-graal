@@ -19,7 +19,8 @@ set -ex;                  \
         ssh               \
         locales           \
         libc++-dev        \
-    && apt-get autoremove \
-    && apt-get clean
+            && rm -r /var/lib/apt/lists/* \
+            && apt-get autoremove \
+            && apt-get clean
 
 locale-gen en_US.UTF-8

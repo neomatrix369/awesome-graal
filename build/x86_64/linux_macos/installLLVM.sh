@@ -44,7 +44,8 @@ else
       ${sudoCMD} apt-get install -y \
       llvm-${LLVM_VERSION}-doc llvm-${LLVM_VERSION}-examples llvm-${LLVM_VERSION}-runtime && \
       ${sudoCMD} apt-get install -y \
-      lld-${LLVM_VERSION} libfuzzer-${LLVM_VERSION}-dev libc++-dev
+      lld-${LLVM_VERSION} libfuzzer-${LLVM_VERSION}-dev libc++-dev \
+        && rm -r /var/lib/apt/lists/*
 
   echo ">>> Warning: Could not find these packages 'libllvm${LLVM_VERSION}', 'libllvm-${LLVM_VERSION}-ocaml-dev' and 'lldb-${LLVM_VERSION}-dev', even though mentioned on https://apt.llvm.org/ <<<"
 fi

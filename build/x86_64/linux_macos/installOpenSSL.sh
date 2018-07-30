@@ -38,5 +38,6 @@ if [[ "$(uname)" = "Darwin" ]]; then
   echo ""
   echo "    -Xcexts.remap=libssl.so:path/to/libssl.so"
 else 
-  sudo apt-get install libssl-dev
+  sudo apt-get install libssl-dev \
+        && rm -r /var/lib/apt/lists/*
 fi

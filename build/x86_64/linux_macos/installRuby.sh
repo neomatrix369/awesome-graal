@@ -31,7 +31,7 @@ apt-get install -qy \
     pkg-config \
     libffi-dev \
     libgmp-dev \
-    --no-install-recommends && rm -r /var/lib/apt/lists/*
+        && rm -r /var/lib/apt/lists/*
 
 # Install RVM
 curl -#LO https://rvm.io/mpapis.asc && gpg --import mpapis.asc
