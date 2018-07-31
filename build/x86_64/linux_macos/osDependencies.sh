@@ -30,10 +30,16 @@ set -ex;                     \
         python2.7            \
         python2.7-dev        \
         ssh                  \
-        zlib1g-dev           \
-            && rm -r /var/lib/apt/lists/* \
-            && apt-get autoremove         \
-            && apt-get clean              \
+        texlive-latex-base   \
+        zlib1g-dev
+
+set -ex;                     \
+    apt-get install -y texlive-fonts-recommended \
+                        libpcre3 libpcre3-dev
+set -ex;                          \
+    rm -r /var/lib/apt/lists/*    \
+            && apt-get autoremove \
+            && apt-get clean      \
             && ldconfig
 
 locale-gen en_US.UTF-8

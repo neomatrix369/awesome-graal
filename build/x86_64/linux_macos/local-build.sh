@@ -24,6 +24,9 @@ export LANG="en_US.UTF-8"
 export LC_ALL="en_US.UTF-8"
 export LC_CTYPE="en_US.UTF-8"
 
+export PKG_INCLUDE_FLAGS_OVERRIDE=-I/opt/local/include
+export PKG_LDFLAGS_OVERRIDE=-L/opt/local/lib
+
 echo ">>> Working in ${BASEDIR}"
 
 export MX_HOME=${BASEDIR}/mx
@@ -48,6 +51,8 @@ printParameters() {
     echo "LANG=${LANG}"
     echo "LC_ALL=${LC_ALL}"
     echo "LC_CTYPE=${LC_CTYPE}"
+    echo "PKG_INCLUDE_FLAGS_OVERRIDE=${PKG_INCLUDE_FLAGS_OVERRIDE}"
+    echo "PKG_LDFLAGS_OVERRIDE=${PKG_LDFLAGS_OVERRIDE}"
     echo ""
     echo "MX_HOME=${MX_HOME}"
     echo "MX=${MX}"
