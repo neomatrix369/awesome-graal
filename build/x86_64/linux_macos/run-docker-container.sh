@@ -11,7 +11,9 @@ if [[ ! -z "${HOST_REPOS_DIR}" ]]; then
 fi
 
 if [[ "${DEBUG}" = "true" ]]; then
+  echo ""
   echo "* Running container ${DOCKER_IMAGE_TAG} in DEBUG mode"
+  echo ""
   docker run                                                       \
          --rm                                                      \
          --interactive --tty --entrypoint /bin/bash                \
@@ -28,6 +30,9 @@ if [[ "${DEBUG}" = "true" ]]; then
          ${HOST_REPOS_DIR_DOCKER_PARAM}                            \
          ${DOCKER_IMAGE_TAG}
 else
+  echo ""
+  echo "* Running container ${DOCKER_IMAGE_TAG} in normal mode"
+  echo ""
   docker run                                                         \
          --rm                                                        \
          --user ${USER_IN_CONTAINER}                                 \

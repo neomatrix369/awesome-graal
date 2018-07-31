@@ -4,7 +4,9 @@ set -e
 set -u
 set -o pipefail
 
+echo ""
 echo "* Building docker image ${DOCKER_IMAGE_TAG}"
+echo ""
 
 docker build \
             -t ${DOCKER_IMAGE_TAG} \
