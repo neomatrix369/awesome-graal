@@ -1,3 +1,4 @@
+WARNING: Your kernel does not support swap limit capabilities or the cgroup is not mounted. Memory limited without swap.
 >>> Working in /home/graal
 ******************* Parameters ******************
 BASEDIR=/home/graal
@@ -9,22 +10,28 @@ GRAALVM_SUITE_RUNTIMES=/substratevm,/tools,sulong,/graal-nodejs,/fastr,truffleru
 
 RUN_TESTS=true
 JAVA_HOME=/opt/java/openjdk/jdk8u144-b01
-JAVA_OPTS=-Xms300m -Xmx300m  
+JAVA_OPTS= -Xms300m -Xmx300m -XX:+PrintFlagsFinal
 FASTR_RELEASE=true
 LANG=en_US.UTF-8
 LC_ALL=en_US.UTF-8
 LC_CTYPE=en_US.UTF-8
+PKG_INCLUDE_FLAGS_OVERRIDE=-I/opt/local/include
+PKG_LDFLAGS_OVERRIDE=-L/opt/local/lib
+
+MX_HOME=/home/graal/mx
+MX=/home/graal/mx/mx
+PATH=/home/graal/mx:/opt/java/openjdk/jdk8u144-b01/bin:/usr/lib/llvm-6.0/bin:/usr/local/rvm/rubies/ruby-2.2.2/bin:/opt/java/openjdk/jdk8u144-b01/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 *************************************************
 
 Display hardware information
-Architecture: x86_64 CPU op-mode(s): 32-bit, 64-bit Byte Order: Little Endian CPU(s): 8 On-line CPU(s) list: 0-7 Thread(s) per core: 2 Core(s) per socket: 4 Socket(s): 1 NUMA node(s): 1 Vendor ID: GenuineIntel CPU family: 6 Model: 158 Model name: Intel(R) Core(TM) i7-7700HQ CPU @ 2.80GHz Stepping: 9 CPU MHz: 2871.628 CPU max MHz: 3800.0000 CPU min MHz: 800.0000 BogoMIPS: 5616.00 Virtualization: VT-x Hypervisor vendor: vertical Virtualization type: full L1d cache: 32K L1i cache: 32K L2 cache: 256K L3 cache: 6144K NUMA node0 CPU(s): 0-7 Flags: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf tsc_known_freq pni pclmulqdq dtes64 monitor ds_cpl vmx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault epb invpcid_single pti tpr_shadow vnmi flexpriority ept vpid fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid mpx rdseed adx smap clflushopt intel_pt xsaveopt xsavec xgetbv1 xsaves ibpb ibrs stibp dtherm ida arat pln pts hwp hwp_notify hwp_act_window hwp_epp
+Architecture: x86_64 CPU op-mode(s): 32-bit, 64-bit Byte Order: Little Endian CPU(s): 8 On-line CPU(s) list: 0-7 Thread(s) per core: 2 Core(s) per socket: 4 Socket(s): 1 NUMA node(s): 1 Vendor ID: GenuineIntel CPU family: 6 Model: 158 Model name: Intel(R) Core(TM) i7-7700HQ CPU @ 2.80GHz Stepping: 9 CPU MHz: 1609.287 CPU max MHz: 3800.0000 CPU min MHz: 800.0000 BogoMIPS: 5616.00 Virtualization: VT-x Hypervisor vendor: vertical Virtualization type: full L1d cache: 32K L1i cache: 32K L2 cache: 256K L3 cache: 6144K NUMA node0 CPU(s): 0-7 Flags: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf tsc_known_freq pni pclmulqdq dtes64 monitor ds_cpl vmx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault epb invpcid_single pti tpr_shadow vnmi flexpriority ept vpid fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid mpx rdseed adx smap clflushopt intel_pt xsaveopt xsavec xgetbv1 xsaves ibpb ibrs stibp dtherm ida arat pln pts hwp hwp_notify hwp_act_window hwp_epp
 
-total used free shared buff/cache available Mem: 15500 3625 9693 649 2180 10813 Swap: 3905 1 3903 total used free shared buff/cache available Mem: 15G 3.5G 9.5G 649M 2.1G 10G Swap: 3.8G 1.8M 3.8G
+total used free shared buff/cache available Mem: 15500 5924 2690 97 6885 8805 Swap: 3905 74 3830 total used free shared buff/cache available Mem: 15G 5.8G 2.6G 97M 6.7G 8.6G Swap: 3.8G 74M 3.7G
 
 Available threads (from all online CPUs/Cores): 8
 
 Display OS information
-Linux bab188593314 4.15.0-22-generic #24-Ubuntu SMP Wed May 16 12:15:17 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux
+Linux 9e726ba37d6d 4.15.0-22-generic #24-Ubuntu SMP Wed May 16 12:15:17 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux
 
 DISTRIB_ID=Ubuntu DISTRIB_RELEASE=16.04 DISTRIB_CODENAME=xenial DISTRIB_DESCRIPTION="Ubuntu 16.04.3 LTS"
 
@@ -75,92 +82,69 @@ LLVM (http://llvm.org/):
 
 openssl version check
 OpenSSL 1.0.2g  1 Mar 2016
->>> Getting mx: mx is a build tool created for managing the development of (primarily) Java code
-Cloning into 'mx'...
+>>> mx already exists: updating and using this version
 
-real	0m1.684s
-user	0m0.158s
-sys	0m0.121s
->>> Getting graal-jvmci-8: Getting Graal JVMCI for JDK8
-Cloning into 'graal-jvmci-8'...
+real	0m0.014s
+user	0m0.005s
+sys	0m0.005s
+>>> graal-jvmci-8 already exists: updating and using this version
+Updating 62cf614..fb81b6c
+Fast-forward
+ jvmci/jdk.vm.ci.code/snapshot.sigtest              | 119 +++++++++++++++++++++
+ .../src/jdk/vm/ci/code/package-info.java           |   2 +-
+ .../src/jdk/vm/ci/code/site/package-info.java      |  29 +++++
+ .../src/jdk/vm/ci/code/stack/package-info.java     |  28 +++++
+ jvmci/jdk.vm.ci.common/snapshot.sigtest            |  31 ++++++
+ jvmci/jdk.vm.ci.hotspot.aarch64/snapshot.sigtest   |   9 +-
+ jvmci/jdk.vm.ci.hotspot.amd64/snapshot.sigtest     |  10 +-
+ jvmci/jdk.vm.ci.hotspot.sparc/snapshot.sigtest     |   6 +-
+ jvmci/jdk.vm.ci.hotspot/snapshot.sigtest           | 100 +++++++++--------
+ .../src/jdk/vm/ci/hotspot/HotSpotConstantPool.java |  12 ++-
+ jvmci/jdk.vm.ci.meta/snapshot.sigtest              |  77 ++++++++++++-
+ .../src/jdk/vm/ci/meta/package-info.java           |   2 +-
+ jvmci/jdk.vm.ci.services/snapshot.sigtest          |   2 +
+ mx.jvmci/mx_jvmci.py                               |  20 ++--
+ mx.jvmci/suite.py                                  |   8 +-
+ src/cpu/ppc/vm/templateTable_ppc_64.cpp            |  10 +-
+ src/cpu/sparc/vm/c1_CodeStubs_sparc.cpp            |   4 +-
+ src/cpu/sparc/vm/c1_LIRGenerator_sparc.cpp         |   3 +-
+ src/cpu/sparc/vm/templateTable_sparc.cpp           |   4 +-
+ src/cpu/x86/vm/c1_CodeStubs_x86.cpp                |   3 +-
+ src/cpu/x86/vm/c1_LIRAssembler_x86.cpp             |   8 ++
+ src/cpu/x86/vm/c1_LIRAssembler_x86.hpp             |   9 +-
+ src/cpu/x86/vm/c1_LIRGenerator_x86.cpp             |  12 ++-
+ src/os_cpu/linux_x86/vm/os_linux_x86.cpp           |   1 +
+ src/share/vm/c1/c1_Canonicalizer.cpp               |   2 +-
+ src/share/vm/c1/c1_LIRGenerator.cpp                |  53 ++++++---
+ src/share/vm/c1/c1_LIRGenerator.hpp                |  14 ++-
+ src/share/vm/code/nmethod.cpp                      |  14 +--
+ src/share/vm/jvmci/jvmciCompilerToVM.cpp           |   7 +-
+ src/share/vm/jvmci/jvmciEnv.cpp                    |   6 --
+ src/share/vm/oops/constantPool.hpp                 |   3 +-
+ src/share/vm/runtime/arguments.cpp                 |  17 ++-
+ src/share/vm/runtime/os.cpp                        |   8 +-
+ src/share/vm/runtime/os.hpp                        |   2 +
+ src/share/vm/runtime/reflection.cpp                |  25 +++--
+ test/compiler/interpreter/DisableOSRTest.java      |  62 +++++++++++
+ 36 files changed, 572 insertions(+), 150 deletions(-)
+ create mode 100644 jvmci/jdk.vm.ci.code/src/jdk/vm/ci/code/site/package-info.java
+ create mode 100644 jvmci/jdk.vm.ci.code/src/jdk/vm/ci/code/stack/package-info.java
+ create mode 100644 test/compiler/interpreter/DisableOSRTest.java
 >>> Building a JDK8 with JVMCI...
 From https://github.com/graalvm/graal-jvmci-8
  * tag               jvmci-0.46 -> FETCH_HEAD
-fatal: Cannot update paths and switch to branch 'jvmci-0.46' at the same time.
-Did you intend to checkout 'tags/jvmci-0.46' which can not be resolved as commit?
+Previous HEAD position was fb81b6c... [GR-10928] Backport JDK 11 JVMCI lazy class initialization changes.
+HEAD is now at 62cf614... [GR-10195] Libgraal compatible JVMCI update.
 Setting HOTSPOT_BUILD_JOBS=4
-Creating /home/graal/graal-jvmci-8/openjdk1.8.0-internal/linux-amd64/product from /opt/java/openjdk/jdk8u144-b01
-Downloading hsdis from ['https://lafo.ssw.uni-linz.ac.at/pub/graal-external-deps/hsdis/intel-hsdis-amd64-linux-0d031013db9a80d6c88330c42c983fbfa7053193.so']
-Downloading https://lafo.ssw.uni-linz.ac.at/pub/graal-external-deps/hsdis/intel-hsdis-amd64-linux-0d031013db9a80d6c88330c42c983fbfa7053193.so to /home/graal/.mx/cache/hsdis_0d031013db9a80d6c88330c42c983fbfa7053193/hsdis.so
-Error reading from https://lafo.ssw.uni-linz.ac.at/pub/graal-external-deps/hsdis/intel-hsdis-amd64-linux-0d031013db9a80d6c88330c42c983fbfa7053193.so: HTTP Error 404: Not Found
-WARNING: ** If behind a firewall without direct internet access, use the http_proxy environment variable (e.g. "env http_proxy=proxy.company.com:80 mx ...") or download manually with a web browser.
-Could not download to /home/graal/.mx/cache/hsdis_0d031013db9a80d6c88330c42c983fbfa7053193/hsdis.so from any of the following URLs: https://lafo.ssw.uni-linz.ac.at/pub/graal-external-deps/hsdis/intel-hsdis-amd64-linux-0d031013db9a80d6c88330c42c983fbfa7053193.so
 JAVA_HOME: /opt/java/openjdk/jdk8u144-b01
 EXTRA_JAVA_HOMES: 
 Dependencies removed from build:
  project jdk.vm.ci.hotspot.jfr was removed as dependency JFR is missing
-Compiling com.oracle.mxtool.compilerserver with javac(JDK 1.8)... [/home/graal/mx/mxbuild/java/com.oracle.mxtool.compilerserver/bin/com/oracle/mxtool/compilerserver/JavacDaemon.class does not exist]
-Compiling jdk.vm.ci.meta with javac-daemon(JDK 1.8)... [/home/graal/graal-jvmci-8/mxbuild/jvmci/jdk.vm.ci.meta/bin/jdk/vm/ci/meta/JavaTypeProfile.class does not exist]
-Compiling jdk.vm.ci.services with javac-daemon(JDK 1.8)... [/home/graal/graal-jvmci-8/mxbuild/jvmci/jdk.vm.ci.services/bin/jdk/vm/ci/services/JVMCIServiceLocator.class does not exist]
-Downloading ASM_DEBUG_ALL from ['https://repo1.maven.org/maven2/org/ow2/asm/asm-debug-all/5.0.4/asm-debug-all-5.0.4.jar', 'https://search.maven.org/remotecontent?filepath=org/ow2/asm/asm-debug-all/5.0.4/asm-debug-all-5.0.4.jar']
-Downloading https://repo1.maven.org/maven2/org/ow2/asm/asm-debug-all/5.0.4/asm-debug-all-5.0.4.jar to /home/graal/.mx/cache/ASM_DEBUG_ALL_702b8525fcf81454235e5e2fa2a35f15ffc0ec7e/asm-debug-all.jar
-Downloading HAMCREST from ['https://repo1.maven.org/maven2/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar', 'https://search.maven.org/remotecontent?filepath=org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar']
-Downloading https://repo1.maven.org/maven2/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar to /home/graal/.mx/cache/HAMCREST_42a25dc3219429f0e5d060061f71acb49bf010a0/hamcrest.jar
-Downloading COMMONS_MATH3_3_2 from ['https://repo1.maven.org/maven2/org/apache/commons/commons-math3/3.2/commons-math3-3.2.jar', 'https://search.maven.org/remotecontent?filepath=org/apache/commons/commons-math3/3.2/commons-math3-3.2.jar']
-Downloading https://repo1.maven.org/maven2/org/apache/commons/commons-math3/3.2/commons-math3-3.2.jar to /home/graal/.mx/cache/COMMONS_MATH3_3_2_ec2544ab27e110d2d431bdad7d538ed509b21e62/commons-math3-3-2.jar
-Compiling com.oracle.mxtool.checkcopy with javac-daemon(JDK 1.8)... [/home/graal/mx/mxbuild/java/com.oracle.mxtool.checkcopy/bin/com/oracle/mxtool/checkcopy/CheckCopyright.class does not exist]
-Compiling jdk.vm.ci.common with javac-daemon(JDK 1.8)... [/home/graal/graal-jvmci-8/mxbuild/jvmci/jdk.vm.ci.common/bin/jdk/vm/ci/common/JVMCIError.class does not exist]
-Downloading JOPTSIMPLE_4_6 from ['https://repo1.maven.org/maven2/net/sf/jopt-simple/jopt-simple/4.6/jopt-simple-4.6.jar', 'https://search.maven.org/remotecontent?filepath=net/sf/jopt-simple/jopt-simple/4.6/jopt-simple-4.6.jar']
-Downloading https://repo1.maven.org/maven2/net/sf/jopt-simple/jopt-simple/4.6/jopt-simple-4.6.jar to /home/graal/.mx/cache/JOPTSIMPLE_4_6_306816fb57cf94f108a43c95731b08934dcae15c/joptsimple-4-6.jar
-Downloading sources HAMCREST from ['https://repo1.maven.org/maven2/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3-sources.jar', 'https://search.maven.org/remotecontent?filepath=org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3-sources.jar']
-Downloading https://repo1.maven.org/maven2/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3-sources.jar to /home/graal/.mx/cache/HAMCREST_1dc37250fbc78e23a65a67fbbaf71d2e9cbc3c0b/hamcrest.sources.jar
-Downloading sources JOPTSIMPLE_4_6 from ['https://repo1.maven.org/maven2/net/sf/jopt-simple/jopt-simple/4.6/jopt-simple-4.6-sources.jar', 'https://search.maven.org/remotecontent?filepath=net/sf/jopt-simple/jopt-simple/4.6/jopt-simple-4.6-sources.jar']
-Downloading https://repo1.maven.org/maven2/net/sf/jopt-simple/jopt-simple/4.6/jopt-simple-4.6-sources.jar to /home/graal/.mx/cache/JOPTSIMPLE_4_6_9cd14a61d7aa7d554f251ef285a6f2c65caf7b65/joptsimple-4-6.sources.jar
-Downloading JACOCOCORE from ['https://repo1.maven.org/maven2/org/jacoco/org.jacoco.core/0.7.9/org.jacoco.core-0.7.9.jar', 'https://search.maven.org/remotecontent?filepath=org/jacoco/org.jacoco.core/0.7.9/org.jacoco.core-0.7.9.jar']
-Downloading https://repo1.maven.org/maven2/org/jacoco/org.jacoco.core/0.7.9/org.jacoco.core-0.7.9.jar to /home/graal/.mx/cache/JACOCOCORE_66215826a684eb6866d4c14a5a4f9c344f1d1eef/jacococore.jar
-Downloading JMH_GENERATOR_ANNPROCESS_1_21 from ['https://repo1.maven.org/maven2/org/openjdk/jmh/jmh-generator-annprocess/1.21/jmh-generator-annprocess-1.21.jar', 'https://search.maven.org/remotecontent?filepath=org/openjdk/jmh/jmh-generator-annprocess/1.21/jmh-generator-annprocess-1.21.jar']
-Downloading https://repo1.maven.org/maven2/org/openjdk/jmh/jmh-generator-annprocess/1.21/jmh-generator-annprocess-1.21.jar to /home/graal/.mx/cache/JMH_GENERATOR_ANNPROCESS_1_21_7aac374614a8a76cad16b91f1a4419d31a7dcda3/jmh-generator-annprocess-1-21.jar
-Archiving JVMCI_SERVICES... [dependency jdk.vm.ci.services updated]
-Compiling jdk.vm.ci.code with javac-daemon(JDK 1.8)... [dependency jdk.vm.ci.common updated]
-Compiling jdk.vm.ci.runtime with javac-daemon(JDK 1.8)... [dependency jdk.vm.ci.code updated]
-Compiling jdk.vm.ci.aarch64 with javac-daemon(JDK 1.8)... [dependency jdk.vm.ci.code updated]
-Compiling jdk.vm.ci.sparc with javac-daemon(JDK 1.8)... [dependency jdk.vm.ci.code updated]
-Compiling jdk.vm.ci.amd64 with javac-daemon(JDK 1.8)... [dependency jdk.vm.ci.code updated]
-Downloading sources JMH_GENERATOR_ANNPROCESS_1_21 from ['https://repo1.maven.org/maven2/org/openjdk/jmh/jmh-generator-annprocess/1.21/jmh-generator-annprocess-1.21-sources.jar', 'https://search.maven.org/remotecontent?filepath=org/openjdk/jmh/jmh-generator-annprocess/1.21/jmh-generator-annprocess-1.21-sources.jar']
-Downloading https://repo1.maven.org/maven2/org/openjdk/jmh/jmh-generator-annprocess/1.21/jmh-generator-annprocess-1.21-sources.jar to /home/graal/.mx/cache/JMH_GENERATOR_ANNPROCESS_1_21_fb48e2a97df95f8b9dced54a1a37749d2a64d2ae/jmh-generator-annprocess-1-21.sources.jar
-Compiling jdk.vm.ci.hotspot with javac-daemon(JDK 1.8)... [dependency jdk.vm.ci.services updated]
-Archiving JVMCI_API... [dependency jdk.vm.ci.runtime updated]
-Compiling jdk.vm.ci.hotspot.aarch64 with javac-daemon(JDK 1.8)... [dependency jdk.vm.ci.aarch64 updated]
-Compiling jdk.vm.ci.hotspot.amd64 with javac-daemon(JDK 1.8)... [dependency jdk.vm.ci.amd64 updated]
-Compiling jdk.vm.ci.hotspot.sparc with javac-daemon(JDK 1.8)... [dependency jdk.vm.ci.sparc updated]
-Archiving JVMCI_HOTSPOT... [dependency jdk.vm.ci.hotspot.aarch64 updated]
-Downloading sources COMMONS_MATH3_3_2 from ['https://repo1.maven.org/maven2/org/apache/commons/commons-math3/3.2/commons-math3-3.2-sources.jar', 'https://search.maven.org/remotecontent?filepath=org/apache/commons/commons-math3/3.2/commons-math3-3.2-sources.jar']
-Downloading https://repo1.maven.org/maven2/org/apache/commons/commons-math3/3.2/commons-math3-3.2-sources.jar to /home/graal/.mx/cache/COMMONS_MATH3_3_2_cd098e055bf192a60c81d81893893e6e31a6482f/commons-math3-3-2.sources.jar
-Downloading JMH_1_21 from ['https://repo1.maven.org/maven2/org/openjdk/jmh/jmh-core/1.21/jmh-core-1.21.jar', 'https://search.maven.org/remotecontent?filepath=org/openjdk/jmh/jmh-core/1.21/jmh-core-1.21.jar']
-Downloading https://repo1.maven.org/maven2/org/openjdk/jmh/jmh-core/1.21/jmh-core-1.21.jar to /home/graal/.mx/cache/JMH_1_21_442447101f63074c61063858033fbfde8a076873/jmh-1-21.jar
-Downloading JUNIT from ['https://repo1.maven.org/maven2/junit/junit/4.12/junit-4.12.jar', 'https://search.maven.org/remotecontent?filepath=junit/junit/4.12/junit-4.12.jar']
-Downloading https://repo1.maven.org/maven2/junit/junit/4.12/junit-4.12.jar to /home/graal/.mx/cache/JUNIT_2973d150c0dc1fefe998f834810d68f278ea58ec/junit.jar
-Downloading sources JACOCOCORE from ['https://repo1.maven.org/maven2/org/jacoco/org.jacoco.core/0.7.9/org.jacoco.core-0.7.9-sources.jar', 'https://search.maven.org/remotecontent?filepath=org/jacoco/org.jacoco.core/0.7.9/org.jacoco.core-0.7.9-sources.jar']
-Downloading https://repo1.maven.org/maven2/org/jacoco/org.jacoco.core/0.7.9/org.jacoco.core-0.7.9-sources.jar to /home/graal/.mx/cache/JACOCOCORE_a365ee459836b2aa18028929923923d15f0c3af9/jacococore.sources.jar
-Downloading sources JUNIT from ['https://repo1.maven.org/maven2/junit/junit/4.12/junit-4.12-sources.jar', 'https://search.maven.org/remotecontent?filepath=junit/junit/4.12/junit-4.12-sources.jar']
-Downloading https://repo1.maven.org/maven2/junit/junit/4.12/junit-4.12-sources.jar to /home/graal/.mx/cache/JUNIT_a6c32b40bf3d76eca54e3c601e5d1470c86fcdfa/junit.sources.jar
-Downloading JACOCOREPORT from ['https://repo1.maven.org/maven2/org/jacoco/org.jacoco.report/0.7.9/org.jacoco.report-0.7.9.jar', 'https://search.maven.org/remotecontent?filepath=org/jacoco/org.jacoco.report/0.7.9/org.jacoco.report-0.7.9.jar']
-Downloading https://repo1.maven.org/maven2/org/jacoco/org.jacoco.report/0.7.9/org.jacoco.report-0.7.9.jar to /home/graal/.mx/cache/JACOCOREPORT_8a7f78fdf2a4e58762890d8e896a9298c2980c10/jacocoreport.jar
-Downloading sources JMH_1_21 from ['https://repo1.maven.org/maven2/org/openjdk/jmh/jmh-core/1.21/jmh-core-1.21-sources.jar', 'https://search.maven.org/remotecontent?filepath=org/openjdk/jmh/jmh-core/1.21/jmh-core-1.21-sources.jar']
-Downloading https://repo1.maven.org/maven2/org/openjdk/jmh/jmh-core/1.21/jmh-core-1.21-sources.jar to /home/graal/.mx/cache/JMH_1_21_a6fe84788bf8cf762b0e561bf48774c2ea74e370/jmh-1-21.sources.jar
-Compiling com.oracle.mxtool.jmh_1_21 with javac-daemon(JDK 1.8)... [dependency JMH_1_21 updated]
-Compiling jdk.vm.ci.code.test with javac-daemon(JDK 1.8)... [dependency JUNIT updated]
-Compiling com.oracle.mxtool.junit with javac-daemon(JDK 1.8)... [dependency JUNIT updated]
-Compiling jdk.vm.ci.runtime.test with javac-daemon(JDK 1.8)... [dependency JUNIT updated]
-Archiving JUNIT_TOOL... [dependency com.oracle.mxtool.junit updated]
-Compiling jdk.vm.ci.hotspot.test with javac-daemon(JDK 1.8)... [dependency JUNIT updated]
-Archiving MX_MICRO_BENCHMARKS... [dependency com.oracle.mxtool.jmh_1_21 updated]
-Archiving JVMCI_TEST... [dependency jdk.vm.ci.runtime.test updated]
-Downloading sources JACOCOREPORT from ['https://repo1.maven.org/maven2/org/jacoco/org.jacoco.report/0.7.9/org.jacoco.report-0.7.9-sources.jar', 'https://search.maven.org/remotecontent?filepath=org/jacoco/org.jacoco.report/0.7.9/org.jacoco.report-0.7.9-sources.jar']
-Downloading https://repo1.maven.org/maven2/org/jacoco/org.jacoco.report/0.7.9/org.jacoco.report-0.7.9-sources.jar to /home/graal/.mx/cache/JACOCOREPORT_e6703ef288523a8e63fa756d8adeaa70858d41b0/jacocoreport.sources.jar
+Compiling jdk.vm.ci.hotspot with javac-daemon(JDK 1.8)... [/home/graal/graal-jvmci-8/mxbuild/jvmci/jdk.vm.ci.hotspot/bin/jdk/vm/ci/hotspot/HotSpotConstantPool.class[2018-07-31 13:32:41] is older than /home/graal/graal-jvmci-8/jvmci/jdk.vm.ci.hotspot/src/jdk/vm/ci/hotspot/HotSpotConstantPool.java[2018-07-31 13:43:36]]
 Building HotSpot[product, server]... [dependency jdk.vm.ci.hotspot updated]
+warning: refname 'jvmci-0.46' is ambiguous.
 --------------- make command line ----------------------
-make -C /home/graal/graal-jvmci-8/make ARCH_DATA_MODEL=64 HOTSPOT_BUILD_JOBS=4 ALT_BOOTDIR=/opt/java/openjdk/jdk8u144-b01 MAKE_VERBOSE= USER_RELEASE_SUFFIX=jvmci-unknown-bab188593314-2018-07-25_22-10-09_UTC INCLUDE_JVMCI=true ZIP_DEBUGINFO_FILES=0 product docs
+make -C /home/graal/graal-jvmci-8/make ARCH_DATA_MODEL=64 HOTSPOT_BUILD_JOBS=4 ALT_BOOTDIR=/opt/java/openjdk/jdk8u144-b01 MAKE_VERBOSE= USER_RELEASE_SUFFIX=jvmci-0.46 INCLUDE_JVMCI=true ZIP_DEBUGINFO_FILES=0 product docs
 --------------------------------------------------------
 make: Entering directory `/home/graal/graal-jvmci-8/make'
 cd /home/graal/graal-jvmci-8/make; \
@@ -174,13 +158,10 @@ INFO: STRIP_POLICY=min_strip
 INFO: ZIP_DEBUGINFO_FILES=0
 
 make[1]: Entering directory `/home/graal/graal-jvmci-8/make'
-mkdir -p /home/graal/graal-jvmci-8/build/linux/linux_amd64_compiler2/product
-cat /home/graal/graal-jvmci-8/make/hotspot.script | sed -e 's|@@LIBARCH@@|amd64|g' | sed -e 's|@@JDK_IMPORT_PATH@@|/java/re/j2se/1.8.0/promoted/latest/binaries/linux-amd64|g' > /home/graal/graal-jvmci-8/build/linux/linux_amd64_compiler2/product/hotspot
-chmod +x /home/graal/graal-jvmci-8/build/linux/linux_amd64_compiler2/product/hotspot
 mkdir -p /home/graal/graal-jvmci-8/build/linux
 cd /home/graal/graal-jvmci-8/build/linux; \
     make -f /home/graal/graal-jvmci-8/make/linux/Makefile \
-	       LP64=1 BOOTDIR=/opt/java/openjdk/jdk8u144-b01 OUTPUTDIR=/home/graal/graal-jvmci-8/build/linux GAMMADIR=/home/graal/graal-jvmci-8 MAKE_VERBOSE= HOTSPOT_RELEASE_VERSION=25.71-b01 JRE_RELEASE_VERSION="1.8.0" HOTSPOT_BUILD_VERSION=internal-jvmci-unknown-bab188593314-2018-07-25_22-10-09_UTC product
+	       LP64=1 BOOTDIR=/opt/java/openjdk/jdk8u144-b01 OUTPUTDIR=/home/graal/graal-jvmci-8/build/linux GAMMADIR=/home/graal/graal-jvmci-8 MAKE_VERBOSE= HOTSPOT_RELEASE_VERSION=25.71-b01 JRE_RELEASE_VERSION="1.8.0" HOTSPOT_BUILD_VERSION=internal-jvmci-0.46 product
 INFO: ENABLE_FULL_DEBUG_SYMBOLS=1
 
 INFO: /usr/bin/objcopy cmd found so will create .debuginfo files.
@@ -190,139 +171,16 @@ INFO: STRIP_POLICY=min_strip
 INFO: ZIP_DEBUGINFO_FILES=0
 
 make[2]: Entering directory `/home/graal/graal-jvmci-8/build/linux'
-INFO: ENABLE_FULL_DEBUG_SYMBOLS=1
-
-INFO: /usr/bin/objcopy cmd found so will create .debuginfo files.
-
-INFO: STRIP_POLICY=min_strip
-
-INFO: ZIP_DEBUGINFO_FILES=0
-
-make[3]: Entering directory `/home/graal/graal-jvmci-8/build/linux'
-make[3]: Leaving directory `/home/graal/graal-jvmci-8/build/linux'
-make -f /home/graal/graal-jvmci-8/make/linux/makefiles/buildtree.make GAMMADIR=/home/graal/graal-jvmci-8 OS_FAMILY=linux SRCARCH=x86 BUILDARCH=amd64 LIBARCH=amd64 HOTSPOT_RELEASE_VERSION=25.71-b01 HOTSPOT_BUILD_VERSION=internal-jvmci-unknown-bab188593314-2018-07-25_22-10-09_UTC JRE_RELEASE_VERSION=1.8.0 ENABLE_FULL_DEBUG_SYMBOLS=1 OBJCOPY=/usr/bin/objcopy STRIP_POLICY=min_strip ZIP_DEBUGINFO_FILES=0 ZIPEXE=zip VARIANT=tiered FORCE_TIERED=1
-INFO: ENABLE_FULL_DEBUG_SYMBOLS=1
-
-INFO: /usr/bin/objcopy cmd found so will create .debuginfo files.
-
-INFO: STRIP_POLICY=min_strip
-
-INFO: ZIP_DEBUGINFO_FILES=0
-
-make[3]: Entering directory `/home/graal/graal-jvmci-8/build/linux'
-INFO: ENABLE_FULL_DEBUG_SYMBOLS=1
-
-INFO: /usr/bin/objcopy cmd found so will create .debuginfo files.
-
-INFO: STRIP_POLICY=min_strip
-
-INFO: ZIP_DEBUGINFO_FILES=0
-
-make[4]: Entering directory `/home/graal/graal-jvmci-8/build/linux/linux_amd64_compiler2/debug'
-Creating Makefile ...
-Creating directory list ../shared_dirs.lst
-Creating flags.make ...
-Creating flags_vm.make ...
-Creating vm.make ...
-Creating adlc.make ...
-Creating jvmti.make ...
-Creating trace.make ...
-Creating sa.make ...
-make[4]: Leaving directory `/home/graal/graal-jvmci-8/build/linux/linux_amd64_compiler2/debug'
-INFO: ENABLE_FULL_DEBUG_SYMBOLS=1
-
-INFO: /usr/bin/objcopy cmd found so will create .debuginfo files.
-
-INFO: STRIP_POLICY=min_strip
-
-INFO: ZIP_DEBUGINFO_FILES=0
-
-make[4]: Entering directory `/home/graal/graal-jvmci-8/build/linux/linux_amd64_compiler2/fastdebug'
-Creating Makefile ...
-Creating flags.make ...
-Creating flags_vm.make ...
-Creating vm.make ...
-Creating adlc.make ...
-Creating jvmti.make ...
-Creating trace.make ...
-Creating sa.make ...
-make[4]: Leaving directory `/home/graal/graal-jvmci-8/build/linux/linux_amd64_compiler2/fastdebug'
-INFO: ENABLE_FULL_DEBUG_SYMBOLS=1
-
-INFO: /usr/bin/objcopy cmd found so will create .debuginfo files.
-
-INFO: STRIP_POLICY=min_strip
-
-INFO: ZIP_DEBUGINFO_FILES=0
-
-make[4]: Entering directory `/home/graal/graal-jvmci-8/build/linux/linux_amd64_compiler2/optimized'
-Creating Makefile ...
-Creating flags.make ...
-Creating flags_vm.make ...
-Creating vm.make ...
-Creating adlc.make ...
-Creating jvmti.make ...
-Creating trace.make ...
-Creating sa.make ...
-make[4]: Leaving directory `/home/graal/graal-jvmci-8/build/linux/linux_amd64_compiler2/optimized'
-INFO: ENABLE_FULL_DEBUG_SYMBOLS=1
-
-INFO: /usr/bin/objcopy cmd found so will create .debuginfo files.
-
-INFO: STRIP_POLICY=min_strip
-
-INFO: ZIP_DEBUGINFO_FILES=0
-
-make[4]: Entering directory `/home/graal/graal-jvmci-8/build/linux/linux_amd64_compiler2/product'
-Creating Makefile ...
-Creating flags.make ...
-Creating flags_vm.make ...
-Creating vm.make ...
-Creating adlc.make ...
-Creating jvmti.make ...
-Creating trace.make ...
-Creating sa.make ...
-make[4]: Leaving directory `/home/graal/graal-jvmci-8/build/linux/linux_amd64_compiler2/product'
-make[3]: Leaving directory `/home/graal/graal-jvmci-8/build/linux'
 cd linux_amd64_compiler2/product && make -w " LP64=1 "
 make[3]: Entering directory `/home/graal/graal-jvmci-8/build/linux/linux_amd64_compiler2/product'
-cd /home/graal/graal-jvmci-8/build/linux/linux_amd64_compiler2/product/../generated;  cp /home/graal/graal-jvmci-8/make/linux/platform_amd64 /home/graal/graal-jvmci-8/build/linux/linux_amd64_compiler2/product/../generated/platform.current
 make[4]: Entering directory `/home/graal/graal-jvmci-8/build/linux/linux_amd64_compiler2/product'
-Compiling /home/graal/graal-jvmci-8/src/share/vm/adlc/adlparse.cpp
-Compiling /home/graal/graal-jvmci-8/src/share/vm/adlc/archDesc.cpp
-Compiling /home/graal/graal-jvmci-8/src/share/vm/adlc/arena.cpp
-Compiling /home/graal/graal-jvmci-8/src/share/vm/adlc/dfa.cpp
-Compiling /home/graal/graal-jvmci-8/src/share/vm/adlc/dict2.cpp
-Compiling /home/graal/graal-jvmci-8/src/share/vm/adlc/filebuff.cpp
-Compiling /home/graal/graal-jvmci-8/src/share/vm/adlc/forms.cpp
-Compiling /home/graal/graal-jvmci-8/src/share/vm/adlc/formsopt.cpp
-Compiling /home/graal/graal-jvmci-8/src/share/vm/adlc/formssel.cpp
-Compiling /home/graal/graal-jvmci-8/src/share/vm/adlc/main.cpp
-Compiling /home/graal/graal-jvmci-8/src/share/vm/opto/opcodes.cpp
-Compiling /home/graal/graal-jvmci-8/src/share/vm/adlc/output_c.cpp
-Compiling /home/graal/graal-jvmci-8/src/share/vm/adlc/output_h.cpp
-Making adlc
+Rescanned ../generated/adfiles/linux_x86_64.ad  but encountered no changes.
 make[4]: Leaving directory `/home/graal/graal-jvmci-8/build/linux/linux_amd64_compiler2/product'
 make[4]: Entering directory `/home/graal/graal-jvmci-8/build/linux/linux_amd64_compiler2/product'
-warning: [options] bootstrap class path not set in conjunction with -source 1.6
-
-warning: [options] bootstrap class path not set in conjunction with -source 1.6
-
-1 warning
-
-Generating /home/graal/graal-jvmci-8/build/linux/linux_amd64_compiler2/product/../generated/jvmtifiles/jvmtiEnv.hpp
-Generating /home/graal/graal-jvmci-8/build/linux/linux_amd64_compiler2/product/../generated/jvmtifiles/jvmtiEnter.cpp
-Generating /home/graal/graal-jvmci-8/build/linux/linux_amd64_compiler2/product/../generated/jvmtifiles/jvmtiEnterTrace.cpp
-1 warning
-
-Generating /home/graal/graal-jvmci-8/build/linux/linux_amd64_compiler2/product/../generated/jvmtifiles/bytecodeInterpreterWithChecks.cpp
-Generating /home/graal/graal-jvmci-8/build/linux/linux_amd64_compiler2/product/../generated/jvmtifiles/jvmti.h
-Generating /home/graal/graal-jvmci-8/build/linux/linux_amd64_compiler2/product/../generated/jvmtifiles/jvmtiEnvRecommended.cpp
+make[4]: Nothing to be done for `all'.
 make[4]: Leaving directory `/home/graal/graal-jvmci-8/build/linux/linux_amd64_compiler2/product'
 make[4]: Entering directory `/home/graal/graal-jvmci-8/build/linux/linux_amd64_compiler2/product'
-Generating /home/graal/graal-jvmci-8/build/linux/linux_amd64_compiler2/product/../generated/tracefiles/traceEventClasses.hpp
-Generating /home/graal/graal-jvmci-8/build/linux/linux_amd64_compiler2/product/../generated/tracefiles/traceEventIds.hpp
-Generating /home/graal/graal-jvmci-8/build/linux/linux_amd64_compiler2/product/../generated/tracefiles/traceTypes.hpp
+make[4]: Nothing to be done for `all'.
 make[4]: Leaving directory `/home/graal/graal-jvmci-8/build/linux/linux_amd64_compiler2/product'
 INFO: ENABLE_FULL_DEBUG_SYMBOLS=1
 
@@ -346,20 +204,7 @@ INFO: STRIP_POLICY=min_strip
 INFO: ZIP_DEBUGINFO_FILES=0
 
 make[5]: Entering directory `/home/graal/graal-jvmci-8/build/linux/linux_amd64_compiler2/product'
-Making /home/graal/graal-jvmci-8/build/linux/linux_amd64_compiler2/product/../generated/sa-jdi.jar
-warning: [options] bootstrap class path not set in conjunction with -source 1.6
-
-Note: Some input files use unchecked or unsafe operations.
-
-Note: Recompile with -Xlint:unchecked for details.
-
-1 warning
-
-Warning: generation and use of skeletons and static stubs for JRMP
-is deprecated. Skeletons are unnecessary, and static stubs have
-been superseded by dynamically generated stubs. Users are
-encouraged to migrate away from using rmic to generate skeletons and static
-stubs. See the documentation for java.rmi.server.UnicastRemoteObject.
+make[5]: `/home/graal/graal-jvmci-8/build/linux/linux_amd64_compiler2/product/../generated/sa-jdi.jar' is up to date.
 make[5]: Leaving directory `/home/graal/graal-jvmci-8/build/linux/linux_amd64_compiler2/product'
 make[4]: Leaving directory `/home/graal/graal-jvmci-8/build/linux/linux_amd64_compiler2/product'
 INFO: ENABLE_FULL_DEBUG_SYMBOLS=1
@@ -751,7 +596,6 @@ Compiling /home/graal/graal-jvmci-8/src/share/vm/opto/lcm.cpp
 Compiling /home/graal/graal-jvmci-8/src/share/vm/opto/library_call.cpp
 Compiling /home/graal/graal-jvmci-8/src/share/vm/interpreter/linkResolver.cpp
 Compiling /home/graal/graal-jvmci-8/src/share/vm/utilities/linkedlist.cpp
-Assembling /home/graal/graal-jvmci-8/src/os_cpu/linux_x86/vm/linux_x86_64.s
 Compiling /home/graal/graal-jvmci-8/src/share/vm/opto/live.cpp
 Compiling /home/graal/graal-jvmci-8/src/share/vm/classfile/loaderConstraints.cpp
 Compiling /home/graal/graal-jvmci-8/src/share/vm/code/location.cpp
@@ -823,7 +667,6 @@ Compiling /home/graal/graal-jvmci-8/src/share/vm/compiler/oopMap.cpp
 Compiling /home/graal/graal-jvmci-8/src/share/vm/interpreter/oopMapCache.cpp
 Compiling /home/graal/graal-jvmci-8/src/share/vm/code/oopRecorder.cpp
 Compiling /home/graal/graal-jvmci-8/src/share/vm/oops/oopsHierarchy.cpp
-Compiling /home/graal/graal-jvmci-8/src/share/vm/opto/opcodes.cpp
 Compiling /home/graal/graal-jvmci-8/src/share/vm/runtime/orderAccess.cpp
 Compiling /home/graal/graal-jvmci-8/src/share/vm/runtime/os.cpp
 Compiling /home/graal/graal-jvmci-8/src/share/vm/runtime/osThread.cpp
@@ -998,13 +841,6 @@ Compiling /home/graal/graal-jvmci-8/src/share/vm/prims/whitebox_ext.cpp
 Compiling /home/graal/graal-jvmci-8/src/share/vm/utilities/workgroup.cpp
 Compiling /home/graal/graal-jvmci-8/src/share/vm/utilities/xmlstream.cpp
 Compiling /home/graal/graal-jvmci-8/src/share/vm/utilities/yieldingWorkgroup.cpp
-rm -f mapfile_ext
-touch mapfile_ext
-if [ -f /home/graal/graal-jvmci-8/make/closed/linux/makefiles/mapfile-ext ]; then \
-  cat /home/graal/graal-jvmci-8/make/closed/linux/makefiles/mapfile-ext > mapfile_ext; \
-fi
-Making signal interposition lib...
-Making SA debugger back-end...
 **NOTICE** Dtrace support disabled: /usr/include/sys/sdt.h not found
 Compiling /home/graal/graal-jvmci-8/src/share/vm/runtime/vm_version.cpp
 /bin/sh: 1: defined-only: not found
@@ -1025,7 +861,7 @@ make[2]: Leaving directory `/home/graal/graal-jvmci-8/build/linux'
 make[1]: Leaving directory `/home/graal/graal-jvmci-8/make'
 cd /home/graal/graal-jvmci-8/build/linux; \
     make -f /home/graal/graal-jvmci-8/make/linux/Makefile \
-	       LP64=1 BOOTDIR=/opt/java/openjdk/jdk8u144-b01 OUTPUTDIR=/home/graal/graal-jvmci-8/build/linux GAMMADIR=/home/graal/graal-jvmci-8 MAKE_VERBOSE= HOTSPOT_RELEASE_VERSION=25.71-b01 JRE_RELEASE_VERSION="1.8.0" HOTSPOT_BUILD_VERSION=internal-jvmci-unknown-bab188593314-2018-07-25_22-10-09_UTC BUILD_FLAVOR=product docs
+	       LP64=1 BOOTDIR=/opt/java/openjdk/jdk8u144-b01 OUTPUTDIR=/home/graal/graal-jvmci-8/build/linux GAMMADIR=/home/graal/graal-jvmci-8 MAKE_VERBOSE= HOTSPOT_RELEASE_VERSION=25.71-b01 JRE_RELEASE_VERSION="1.8.0" HOTSPOT_BUILD_VERSION=internal-jvmci-0.46 BUILD_FLAVOR=product docs
 INFO: ENABLE_FULL_DEBUG_SYMBOLS=1
 
 INFO: /usr/bin/objcopy cmd found so will create .debuginfo files.
@@ -1035,49 +871,37 @@ INFO: STRIP_POLICY=min_strip
 INFO: ZIP_DEBUGINFO_FILES=0
 
 make[1]: Entering directory `/home/graal/graal-jvmci-8/build/linux'
-make -f /home/graal/graal-jvmci-8/make/linux/makefiles/jvmti.make -w " LP64=1 " GAMMADIR=/home/graal/graal-jvmci-8 OS_FAMILY=linux SRCARCH=x86 BUILDARCH=amd64 LIBARCH=amd64 HOTSPOT_RELEASE_VERSION=25.71-b01 HOTSPOT_BUILD_VERSION=internal-jvmci-unknown-bab188593314-2018-07-25_22-10-09_UTC JRE_RELEASE_VERSION=1.8.0 ENABLE_FULL_DEBUG_SYMBOLS=1 OBJCOPY=/usr/bin/objcopy STRIP_POLICY=min_strip ZIP_DEBUGINFO_FILES=0 ZIPEXE=zip JvmtiOutDir=linux_amd64_docs BUILD_FLAVOR=product jvmtidocs
+make -f /home/graal/graal-jvmci-8/make/linux/makefiles/jvmti.make -w " LP64=1 " GAMMADIR=/home/graal/graal-jvmci-8 OS_FAMILY=linux SRCARCH=x86 BUILDARCH=amd64 LIBARCH=amd64 HOTSPOT_RELEASE_VERSION=25.71-b01 HOTSPOT_BUILD_VERSION=internal-jvmci-0.46 JRE_RELEASE_VERSION=1.8.0 ENABLE_FULL_DEBUG_SYMBOLS=1 OBJCOPY=/usr/bin/objcopy STRIP_POLICY=min_strip ZIP_DEBUGINFO_FILES=0 ZIPEXE=zip JvmtiOutDir=linux_amd64_docs BUILD_FLAVOR=product jvmtidocs
 make[2]: Entering directory `/home/graal/graal-jvmci-8/build/linux'
-warning: [options] bootstrap class path not set in conjunction with -source 1.6
-
-1 warning
-
-Generating linux_amd64_docs/jvmti.html
+make[2]: Nothing to be done for `jvmtidocs'.
 make[2]: Leaving directory `/home/graal/graal-jvmci-8/build/linux'
 make[1]: Leaving directory `/home/graal/graal-jvmci-8/build/linux'
 make: Leaving directory `/home/graal/graal-jvmci-8/make'
-Compiling com.oracle.mxtool.jacoco with javac-daemon(JDK 1.8)... [dependency JACOCOREPORT updated]
+Compiling jdk.vm.ci.hotspot.aarch64 with javac-daemon(JDK 1.8)... [dependency jdk.vm.ci.hotspot updated]
+Compiling jdk.vm.ci.hotspot.sparc with javac-daemon(JDK 1.8)... [dependency jdk.vm.ci.hotspot updated]
+Compiling jdk.vm.ci.hotspot.test with javac-daemon(JDK 1.8)... [dependency jdk.vm.ci.hotspot updated]
 Archiving JVM_PRODUCT_SERVER... [dependency hotspot updated]
-Archiving MX_JACOCO_REPORT... [dependency com.oracle.mxtool.jacoco updated]
-WARNING: /home/graal/mx/mxbuild/dists/mx-jacoco-report.jar: avoid overwrite of about.html
-  new: /home/graal/.mx/cache/JACOCOREPORT_8a7f78fdf2a4e58762890d8e896a9298c2980c10/jacocoreport.jar!about.html
-  old: /home/graal/.mx/cache/JACOCOCORE_66215826a684eb6866d4c14a5a4f9c344f1d1eef/jacococore.jar!about.html
-WARNING: /home/graal/mx/mxbuild/dists/mx-jacoco-report.jar: avoid overwrite of about.html
-  new: /home/graal/.mx/cache/JACOCOREPORT_8a7f78fdf2a4e58762890d8e896a9298c2980c10/jacocoreport.jar!about.html
-  old: /home/graal/.mx/cache/JACOCOCORE_66215826a684eb6866d4c14a5a4f9c344f1d1eef/jacococore.jar!about.html
+Compiling jdk.vm.ci.hotspot.amd64 with javac-daemon(JDK 1.8)... [dependency jdk.vm.ci.hotspot updated]
+Archiving JVMCI_HOTSPOT... [dependency jdk.vm.ci.hotspot.aarch64 updated]
 
-real	13m11.705s
-user	10m32.672s
-sys	1m25.042s
+real	2m56.971s
+user	8m51.720s
+sys	1m13.556s
 >>>> Running unit tests...
-Warning: 1049 classes in /home/graal/mx/mxbuild/dists/mx-micro-benchmarks.jar skipped as their class file version is not supported by FindClassesByAnnotatedMethods
-Warning: 401 classes in /home/graal/mx/mxbuild/dists/mx-jacoco-report.jar skipped as their class file version is not supported by FindClassesByAnnotatedMethods
-WARNING: Unsupported class files listed in /home/graal/graal-jvmci-8/mxbuild/unittest/mx-micro-benchmarks.jar.jdk1.8.excludedclasses
-WARNING: Unsupported class files listed in /home/graal/graal-jvmci-8/mxbuild/unittest/mx-jacoco-report.jar.jdk1.8.excludedclasses
 MxJUnitCore
 JUnit version 4.12
 .............................................................................................
-Time: 5.442
+Time: 6.273
 
 OK (93 tests)
 
 
-real	0m6.773s
-user	0m17.099s
-sys	0m0.379s
+real	0m8.216s
+user	0m17.313s
+sys	0m0.482s
 >>>> Using JDK8_JVMCI_HOME as JAVA_HOME (/home/graal/graal-jvmci-8/openjdk1.8.0-internal/linux-amd64/product)
 >>> Building Graal
->>> Getting graal: Getting sources for the Graal compiler
-Cloning into 'graal'...
+>>> graal already exists: updating and using this version
 >>>> Setting environment variable JVMCI_VERSION_CHECK=ignore
 Setting HOTSPOT_BUILD_JOBS=4
 JAVA_HOME: /home/graal/graal-jvmci-8/openjdk1.8.0-internal/linux-amd64/product
@@ -1095,255 +919,18 @@ Dependencies removed from build:
  project org.graalvm.compiler.hotspot.jdk9 was removed as JDK 9 is not available
  distribution JAOTC was removed as all its project and non-JDK library dependencies were removed
  distribution JAOTC_TEST was removed as all its project and non-JDK library dependencies were removed
-Compiling org.graalvm.options with javac-daemon(JDK 1.8)... [/home/graal/graal/sdk/mxbuild/src/org.graalvm.options/bin/org/graalvm/options/OptionCategory.class does not exist]
-Compiling org.graalvm.collections with javac-daemon(JDK 1.8)... [/home/graal/graal/sdk/mxbuild/src/org.graalvm.collections/bin/org/graalvm/collections/EconomicMap.class does not exist]
-Compiling org.graalvm.compiler.api.directives with javac-daemon(JDK 1.8)... [/home/graal/graal/compiler/mxbuild/src/org.graalvm.compiler.api.directives/bin/org/graalvm/compiler/api/directives/GraalDirectives.class does not exist]
-Compiling org.graalvm.compiler.nodeinfo with javac-daemon(JDK 1.8)... [/home/graal/graal/compiler/mxbuild/src/org.graalvm.compiler.nodeinfo/bin/org/graalvm/compiler/nodeinfo/Verbosity.class does not exist]
-Downloading JAVA_ALLOCATION_INSTRUMENTER from ['https://repo1.maven.org/maven2/com/google/code/java-allocation-instrumenter/java-allocation-instrumenter/3.1.0/java-allocation-instrumenter-3.1.0.jar', 'https://search.maven.org/remotecontent?filepath=com/google/code/java-allocation-instrumenter/java-allocation-instrumenter/3.1.0/java-allocation-instrumenter-3.1.0.jar']
-Downloading https://repo1.maven.org/maven2/com/google/code/java-allocation-instrumenter/java-allocation-instrumenter/3.1.0/java-allocation-instrumenter-3.1.0.jar to /home/graal/.mx/cache/JAVA_ALLOCATION_INSTRUMENTER_d0bdc21c5e6404726b102998e44c66a738897905/java-allocation-instrumenter.jar
-Compiling org.graalvm.word with javac-daemon(JDK 1.8)... [/home/graal/graal/sdk/mxbuild/src/org.graalvm.word/bin/org/graalvm/word/Pointer.class does not exist]
-Downloading ANTLR4 from ['https://repo1.maven.org/maven2/org/antlr/antlr4-runtime/4.7/antlr4-runtime-4.7.jar', 'https://search.maven.org/remotecontent?filepath=org/antlr/antlr4-runtime/4.7/antlr4-runtime-4.7.jar']
-Downloading https://repo1.maven.org/maven2/org/antlr/antlr4-runtime/4.7/antlr4-runtime-4.7.jar to /home/graal/.mx/cache/ANTLR4_30b13b7efc55b7feea667691509cf59902375001/antlr4.jar
-Compiling org.graalvm.compiler.processor with javac-daemon(JDK 1.8)... [/home/graal/graal/compiler/mxbuild/src/org.graalvm.compiler.processor/bin/org/graalvm/compiler/processor/SuppressFBWarnings.class does not exist]
-Compiling org.graalvm.graphio with javac-daemon(JDK 1.8)... [/home/graal/graal/compiler/mxbuild/src/org.graalvm.graphio/bin/org/graalvm/graphio/ProtocolImpl.class does not exist]
-Compiling com.oracle.truffle.nfi.types with javac-daemon(JDK 1.8)... [/home/graal/graal/truffle/mxbuild/src/com.oracle.truffle.nfi.types/bin/com/oracle/truffle/nfi/types/NativeSimpleTypeMirror.class does not exist]
-Downloading ASM5 from ['https://repo1.maven.org/maven2/org/ow2/asm/asm/5.0.4/asm-5.0.4.jar', 'https://search.maven.org/remotecontent?filepath=org/ow2/asm/asm/5.0.4/asm-5.0.4.jar']
-Downloading https://repo1.maven.org/maven2/org/ow2/asm/asm/5.0.4/asm-5.0.4.jar to /home/graal/.mx/cache/ASM5_0da08b8cce7bbf903602a25a3a163ae252435795/asm5.jar
-Downloading JLINE from ['https://repo1.maven.org/maven2/jline/jline/2.14.5/jline-2.14.5.jar', 'https://search.maven.org/remotecontent?filepath=jline/jline/2.14.5/jline-2.14.5.jar']
-Downloading https://repo1.maven.org/maven2/jline/jline/2.14.5/jline-2.14.5.jar to /home/graal/.mx/cache/JLINE_fdedd5f2522122102f0b3db85fe7aa563a009926/jline.jar
-Archiving GRAAL_PROCESSOR_COMMON... [dependency org.graalvm.compiler.processor updated]
-Compiling org.graalvm.compiler.nodeinfo.processor with javac-daemon(JDK 1.8)... [dependency org.graalvm.compiler.processor updated]
-Compiling org.graalvm.compiler.replacements.processor with javac-daemon(JDK 1.8)... [dependency org.graalvm.compiler.processor updated]
-Compiling org.graalvm.compiler.serviceprovider with javac-daemon(JDK 1.8)... [/home/graal/graal/compiler/mxbuild/src/org.graalvm.compiler.serviceprovider/bin/org/graalvm/compiler/serviceprovider/ServiceProvider.class does not exist]
-Compiling org.graalvm.compiler.options.processor with javac-daemon(JDK 1.8)... [dependency org.graalvm.compiler.processor updated]
-Compiling org.graalvm.nativeimage with javac-daemon(JDK 1.8)... [dependency org.graalvm.word updated]
-Archiving GRAAL_NODEINFO... [dependency org.graalvm.compiler.nodeinfo updated]
-Compiling org.graalvm.compiler.serviceprovider.processor with javac-daemon(JDK 1.8)... [dependency org.graalvm.compiler.processor updated]
-Archiving WORD_API... [dependency org.graalvm.word updated]
-Compiling org.graalvm.compiler.core.match.processor with javac-daemon(JDK 1.8)... [dependency org.graalvm.compiler.processor updated]
-Compiling org.graalvm.compiler.bytecode with javac-daemon(JDK 1.8)... [/home/graal/graal/compiler/mxbuild/src/org.graalvm.compiler.bytecode/bin/org/graalvm/compiler/bytecode/BytecodeStream.class does not exist]
-Archiving GRAAL_GRAPHIO... [dependency org.graalvm.graphio updated]
-Compiling org.graalvm.polyglot with javac-daemon(JDK 1.8)... [dependency org.graalvm.options updated]
-Compiling org.graalvm.compiler.api.replacements with javac-daemon(JDK 1.8)... [/home/graal/graal/compiler/mxbuild/src/org.graalvm.compiler.api.replacements/bin/org/graalvm/compiler/api/replacements/MethodSubstitutionRegistry.class does not exist]
-Compiling org.graalvm.compiler.api.runtime with javac-daemon(JDK 1.8)... [/home/graal/graal/compiler/mxbuild/src/org.graalvm.compiler.api.runtime/bin/org/graalvm/compiler/api/runtime/GraalJVMCICompiler.class does not exist]
-Downloading ASM_TREE5 from ['https://repo1.maven.org/maven2/org/ow2/asm/asm-tree/5.0.4/asm-tree-5.0.4.jar', 'https://search.maven.org/remotecontent?filepath=org/ow2/asm/asm-tree/5.0.4/asm-tree-5.0.4.jar']
-Archiving GRAAL_NODEINFO_PROCESSOR... [dependency org.graalvm.compiler.nodeinfo.processor updated]
-Downloading https://repo1.maven.org/maven2/org/ow2/asm/asm-tree/5.0.4/asm-tree-5.0.4.jar to /home/graal/.mx/cache/ASM_TREE5_396ce0c07ba2b481f25a70195c7c94922f0d1b0b/asm-tree5.jar
-Archiving GRAAL_SERVICEPROVIDER... [dependency org.graalvm.compiler.serviceprovider updated]
-Archiving GRAAL_OPTIONS_PROCESSOR... [dependency org.graalvm.compiler.options.processor updated]
-Compiling org.graalvm.collections.test with javac-daemon(JDK 1.8)... [dependency org.graalvm.collections updated]
-Archiving GRAAL_REPLACEMENTS_PROCESSOR... [dependency org.graalvm.compiler.replacements.processor updated]
-Compiling org.graalvm.micro.benchmarks with javac-daemon(JDK 1.8)... [/home/graal/graal/compiler/mxbuild/src/org.graalvm.micro.benchmarks/bin/micro/benchmarks/HashBenchmark.class does not exist]
-Archiving GRAAL_SDK... [dependency org.graalvm.polyglot updated]
-Archiving GRAAL_SERVICEPROVIDER_PROCESSOR... [dependency org.graalvm.compiler.serviceprovider.processor updated]
-Compiling org.graalvm.polyglot.tck with javac-daemon(JDK 1.8)... [dependency org.graalvm.polyglot updated]
-Archiving GRAAL_COMPILER_MATCH_PROCESSOR... [dependency org.graalvm.compiler.core.match.processor updated]
-Compiling org.graalvm.util with javac-daemon(JDK 1.8)... [dependency GRAAL_SDK updated]
-Archiving SDK_TEST... [dependency org.graalvm.collections.test updated]
-Archiving POLYGLOT_TCK... [dependency org.graalvm.polyglot.tck updated]
-Compiling org.graalvm.compiler.api.test with javac-daemon(JDK 1.8)... [dependency org.graalvm.compiler.api.runtime updated]
-Compiling com.oracle.truffle.sl.launcher with javac-daemon(JDK 1.8)... [dependency GRAAL_SDK updated]
-Compiling com.oracle.truffle.api with javac-daemon(JDK 1.8)... [dependency GRAAL_SDK updated]
-Compiling com.oracle.truffle.tck.common with javac-daemon(JDK 1.8)... [dependency POLYGLOT_TCK updated]
-Compiling org.graalvm.compiler.options with javac-daemon(JDK 1.8)... [dependency GRAAL_SDK updated]
-Archiving TRUFFLE_SL_LAUNCHER... [dependency com.oracle.truffle.sl.launcher updated]
-Compiling com.oracle.truffle.sl.tck with javac-daemon(JDK 1.8)... [dependency POLYGLOT_TCK updated]
-Compiling com.oracle.truffle.tck.tests with javac-daemon(JDK 1.8)... [dependency POLYGLOT_TCK updated]
-Archiving TRUFFLE_SL_TCK... [dependency com.oracle.truffle.sl.tck updated]
-Compiling org.graalvm.compiler.debug with javac-daemon(JDK 1.8)... [dependency GRAAL_OPTIONS_PROCESSOR updated]
-Archiving GRAAL_OPTIONS... [dependency org.graalvm.compiler.options updated]
-Archiving TRUFFLE_TCK_COMMON... [dependency com.oracle.truffle.tck.common updated]
-Compiling org.graalvm.compiler.options.test with javac-daemon(JDK 1.8)... [dependency org.graalvm.compiler.options updated]
-Archiving GRAAL_COMPILER_MICRO_BENCHMARKS... [dependency org.graalvm.micro.benchmarks updated]
-Compiling com.oracle.truffle.api.profiles with javac-daemon(JDK 1.8)... [dependency com.oracle.truffle.api updated]
-Archiving TRUFFLE_TCK_TESTS... [dependency com.oracle.truffle.tck.tests updated]
-Compiling com.oracle.truffle.api.dsl with javac-daemon(JDK 1.8)... [dependency com.oracle.truffle.api updated]
-Compiling com.oracle.truffle.api.utilities with javac-daemon(JDK 1.8)... [dependency com.oracle.truffle.api updated]
-Compiling com.oracle.truffle.api.instrumentation with javac-daemon(JDK 1.8)... [dependency com.oracle.truffle.api.profiles updated]
-Compiling org.graalvm.compiler.core.common with javac-daemon(JDK 1.8)... [dependency GRAAL_OPTIONS_PROCESSOR updated]
-Compiling org.graalvm.compiler.debug.test with javac-daemon(JDK 1.8)... [dependency org.graalvm.compiler.debug updated]
-Compiling org.graalvm.compiler.test with javac-daemon(JDK 1.8)... [dependency org.graalvm.compiler.debug updated]
-Compiling com.oracle.truffle.dsl.processor with javac-daemon(JDK 1.8)... [dependency com.oracle.truffle.api.dsl updated]
-Compiling org.graalvm.compiler.asm with javac-daemon(JDK 1.8)... [dependency org.graalvm.compiler.core.common updated]
-Compiling org.graalvm.compiler.graph with javac-daemon(JDK 1.8)... [dependency GRAAL_OPTIONS_PROCESSOR updated]
-Compiling org.graalvm.compiler.asm.amd64 with javac-daemon(JDK 1.8)... [dependency org.graalvm.compiler.asm updated]
-Compiling org.graalvm.compiler.asm.aarch64 with javac-daemon(JDK 1.8)... [dependency org.graalvm.compiler.asm updated]
-Compiling org.graalvm.compiler.asm.sparc with javac-daemon(JDK 1.8)... [dependency org.graalvm.compiler.asm updated]
-Compiling org.graalvm.compiler.code with javac-daemon(JDK 1.8)... [dependency GRAAL_SERVICEPROVIDER_PROCESSOR updated]
-Archiving GRAAL_API... [dependency org.graalvm.compiler.api.replacements updated]
-Compiling org.graalvm.compiler.graph.test with javac-daemon(JDK 1.8)... [dependency GRAAL_NODEINFO_PROCESSOR updated]
-Compiling org.graalvm.compiler.lir with javac-daemon(JDK 1.8)... [dependency GRAAL_OPTIONS_PROCESSOR updated]
-Archiving TRUFFLE_DSL_PROCESSOR_INTERNAL... [dependency com.oracle.truffle.dsl.processor updated]
-Compiling com.oracle.truffle.api.interop with javac-daemon(JDK 1.8)... [dependency TRUFFLE_DSL_PROCESSOR_INTERNAL updated]
-Compiling com.oracle.truffle.dsl.processor.interop with javac-daemon(JDK 1.8)... [dependency com.oracle.truffle.api.interop updated]
-Compiling com.oracle.truffle.api.object with javac-daemon(JDK 1.8)... [dependency com.oracle.truffle.api.interop updated]
-Compiling org.graalvm.compiler.nodes with javac-daemon(JDK 1.8)... [dependency GRAAL_NODEINFO_PROCESSOR updated]
-Compiling org.graalvm.compiler.lir.aarch64 with javac-daemon(JDK 1.8)... [dependency GRAAL_OPTIONS_PROCESSOR updated]
-Compiling org.graalvm.compiler.lir.test with javac-daemon(JDK 1.8)... [dependency org.graalvm.compiler.lir updated]
-Compiling org.graalvm.compiler.lir.amd64 with javac-daemon(JDK 1.8)... [dependency GRAAL_OPTIONS_PROCESSOR updated]
-Archiving TRUFFLE_DSL_PROCESSOR_INTEROP_INTERNAL... [dependency com.oracle.truffle.dsl.processor updated]
-Compiling com.oracle.truffle.api.object.dsl with javac-daemon(JDK 1.8)... [dependency com.oracle.truffle.api.object updated]
-Compiling org.graalvm.compiler.lir.sparc with javac-daemon(JDK 1.8)... [dependency org.graalvm.compiler.asm.sparc updated]
-Compiling com.oracle.truffle.object with javac-daemon(JDK 1.8)... [dependency com.oracle.truffle.api.object updated]
-Compiling com.oracle.truffle.object.dsl.processor with javac-daemon(JDK 1.8)... [dependency com.oracle.truffle.api.object.dsl updated]
-Compiling org.graalvm.launcher with javac-daemon(JDK 1.8)... [dependency org.graalvm.polyglot updated]
-Compiling com.oracle.truffle.api.interop.java with javac-daemon(JDK 1.8)... [dependency TRUFFLE_DSL_PROCESSOR_INTEROP_INTERNAL updated]
-Compiling com.oracle.truffle.object.basic with javac-daemon(JDK 1.8)... [dependency com.oracle.truffle.object updated]
-Compiling com.oracle.truffle.api.metadata with javac-daemon(JDK 1.8)... [dependency TRUFFLE_DSL_PROCESSOR_INTEROP_INTERNAL updated]
-Compiling com.oracle.truffle.nfi with javac-daemon(JDK 1.8)... [dependency TRUFFLE_DSL_PROCESSOR_INTEROP_INTERNAL updated]
-Archiving LAUNCHER_COMMON... [dependency org.graalvm.launcher updated]
-Compiling com.oracle.truffle.object.basic.test with javac-daemon(JDK 1.8)... [dependency com.oracle.truffle.object.basic updated]
-Compiling com.oracle.truffle.api.vm with javac-daemon(JDK 1.8)... [dependency TRUFFLE_DSL_PROCESSOR_INTEROP_INTERNAL updated]
-Compiling org.graalvm.compiler.phases with javac-daemon(JDK 1.8)... [dependency GRAAL_OPTIONS_PROCESSOR updated]
-Compiling org.graalvm.compiler.truffle.common with javac-daemon(JDK 1.8)... [dependency GRAAL_NODEINFO_PROCESSOR updated]
-Compiling org.graalvm.compiler.loop with javac-daemon(JDK 1.8)... [dependency GRAAL_OPTIONS_PROCESSOR updated]
-Compiling org.graalvm.compiler.word with javac-daemon(JDK 1.8)... [dependency GRAAL_NODEINFO_PROCESSOR updated]
-Compiling org.graalvm.compiler.truffle.common.hotspot with javac-daemon(JDK 1.8)... [dependency GRAAL_OPTIONS_PROCESSOR updated]
-Building com.oracle.truffle.nfi.native with GNU Make... [dependency com.oracle.truffle.nfi updated]
-Downloading LIBFFI from ['https://lafo.ssw.uni-linz.ac.at/pub/graal-external-deps/libffi-3.2.1.tar.gz', 'ftp://sourceware.org/pub/libffi/libffi-3.2.1.tar.gz']
-Downloading https://lafo.ssw.uni-linz.ac.at/pub/graal-external-deps/libffi-3.2.1.tar.gz to /home/graal/.mx/cache/LIBFFI_280c265b789e041c02e5c97815793dfc283fb1e6/libffi.tar.gz
-CONFIGURE libffi
-CC bin/api.o
-CC bin/closure.o
-CC bin/intrinsics.o
-CC bin/jni.o
-CC bin/lookup.o
-CC bin/signature.o
-MAKE libffi
-ar: `u' modifier ignored since `D' is the default (see `U')
-ar: `u' modifier ignored since `D' is the default (see `U')
-LINK bin/libtrufflenfi.so
-Compiling com.oracle.truffle.api.debug with javac-daemon(JDK 1.8)... [dependency TRUFFLE_DSL_PROCESSOR_INTERNAL updated]
-Archiving TRUFFLE_NFI_NATIVE... [dependency com.oracle.truffle.nfi.native updated]
-Compiling org.graalvm.compiler.java with javac-daemon(JDK 1.8)... [dependency GRAAL_OPTIONS_PROCESSOR updated]
-Compiling org.graalvm.compiler.phases.common with javac-daemon(JDK 1.8)... [dependency GRAAL_NODEINFO_PROCESSOR updated]
-Archiving TRUFFLE_API... [dependency com.oracle.truffle.api.interop.java updated]
-Compiling org.graalvm.compiler.virtual with javac-daemon(JDK 1.8)... [dependency GRAAL_OPTIONS_PROCESSOR updated]
-Compiling org.graalvm.compiler.loop.phases with javac-daemon(JDK 1.8)... [dependency GRAAL_OPTIONS_PROCESSOR updated]
-Archiving TRUFFLE_DSL_PROCESSOR... [dependency com.oracle.truffle.dsl.processor updated]
-Compiling org.graalvm.compiler.replacements with javac-daemon(JDK 1.8)... [dependency GRAAL_OPTIONS_PROCESSOR updated]
-Archiving TRUFFLE_NFI... [dependency com.oracle.truffle.nfi updated]
-Archiving TRUFFLE_GRAALVM_SUPPORT... [dependency TRUFFLE_NFI updated]
-Compiling org.graalvm.compiler.core with javac-daemon(JDK 1.8)... [dependency GRAAL_SERVICEPROVIDER_PROCESSOR updated]
-Compiling com.oracle.truffle.api.test with javac-daemon(JDK 1.8)... [dependency TRUFFLE_DSL_PROCESSOR updated]
-Compiling com.oracle.truffle.sl with javac-daemon(JDK 1.8)... [dependency TRUFFLE_DSL_PROCESSOR updated]
-Compiling com.oracle.truffle.api.object.dsl.test with javac-daemon(JDK 1.8)... [dependency TRUFFLE_DSL_PROCESSOR updated]
-Compiling com.oracle.truffle.tools with javac-daemon(JDK 1.8)... [dependency TRUFFLE_DSL_PROCESSOR updated]
-Compiling com.oracle.truffle.tck.instrumentation with javac-daemon(JDK 1.8)... [dependency TRUFFLE_DSL_PROCESSOR updated]
-Compiling com.oracle.truffle.tck with javac-daemon(JDK 1.8)... [dependency TRUFFLE_DSL_PROCESSOR updated]
-Archiving TRUFFLE_TCK_INSTRUMENTATION... [dependency com.oracle.truffle.tck.instrumentation updated]
-Archiving TRUFFLE_DEBUG... [dependency com.oracle.truffle.tools updated]
-Compiling org.graalvm.compiler.runtime with javac-daemon(JDK 1.8)... [dependency org.graalvm.compiler.core updated]
-Compiling org.graalvm.compiler.core.amd64 with javac-daemon(JDK 1.8)... [dependency GRAAL_NODEINFO_PROCESSOR updated]
-Compiling org.graalvm.compiler.core.sparc with javac-daemon(JDK 1.8)... [dependency GRAAL_NODEINFO_PROCESSOR updated]
-Archiving GRAAL_COMPILER... [dependency org.graalvm.compiler.core updated]
-Compiling org.graalvm.compiler.printer with javac-daemon(JDK 1.8)... [dependency GRAAL_OPTIONS_PROCESSOR updated]
-Compiling org.graalvm.compiler.core.aarch64 with javac-daemon(JDK 1.8)... [dependency GRAAL_NODEINFO_PROCESSOR updated]
-Compiling org.graalvm.compiler.truffle.runtime with javac-daemon(JDK 1.8)... [dependency TRUFFLE_DSL_PROCESSOR updated]
-Compiling org.graalvm.compiler.replacements.aarch64 with javac-daemon(JDK 1.8)... [dependency GRAAL_NODEINFO_PROCESSOR updated]
-Compiling org.graalvm.compiler.replacements.amd64 with javac-daemon(JDK 1.8)... [dependency GRAAL_NODEINFO_PROCESSOR updated]
-Compiling org.graalvm.compiler.replacements.sparc with javac-daemon(JDK 1.8)... [dependency org.graalvm.compiler.replacements updated]
-Compiling org.graalvm.compiler.asm.test with javac-daemon(JDK 1.8)... [dependency org.graalvm.compiler.api.test updated]
-Compiling org.graalvm.compiler.truffle.compiler with javac-daemon(JDK 1.8)... [dependency GRAAL_NODEINFO_PROCESSOR updated]
-Compiling org.graalvm.compiler.phases.common.test with javac-daemon(JDK 1.8)... [dependency org.graalvm.compiler.api.test updated]
-Compiling org.graalvm.compiler.microbenchmarks with javac-daemon(JDK 1.8)... [dependency org.graalvm.compiler.api.test updated]
-Archiving TRUFFLE_TCK... [dependency com.oracle.truffle.tck updated]
-Compiling org.graalvm.compiler.hotspot with javac-daemon(JDK 1.8)... [dependency GRAAL_NODEINFO_PROCESSOR updated]
-Compiling com.oracle.truffle.sl.test with javac-daemon(JDK 1.8)... [dependency TRUFFLE_DSL_PROCESSOR updated]
-Compiling org.graalvm.compiler.core.test with javac-daemon(JDK 1.8)... [dependency GRAAL_NODEINFO_PROCESSOR updated]
-Compiling org.graalvm.compiler.asm.sparc.test with javac-daemon(JDK 1.8)... [dependency org.graalvm.compiler.asm.test updated]
-Compiling org.graalvm.compiler.asm.amd64.test with javac-daemon(JDK 1.8)... [dependency org.graalvm.compiler.asm.test updated]
-Compiling org.graalvm.compiler.asm.aarch64.test with javac-daemon(JDK 1.8)... [dependency org.graalvm.compiler.asm.test updated]
-Archiving TRUFFLE_SL... [dependency com.oracle.truffle.sl updated]
-Compiling com.oracle.truffle.nfi.test with javac-daemon(JDK 1.8)... [dependency TRUFFLE_DSL_PROCESSOR updated]
-Compiling com.oracle.truffle.api.interop.java.test with javac-daemon(JDK 1.8)... [dependency TRUFFLE_DSL_PROCESSOR updated]
-Compiling com.oracle.truffle.api.dsl.test with javac-daemon(JDK 1.8)... [dependency TRUFFLE_DSL_PROCESSOR updated]
-Archiving GRAAL_RUNTIME... [dependency org.graalvm.compiler.replacements updated]
-Archiving TRUFFLE_SL_TEST... [dependency com.oracle.truffle.sl.test updated]
-Archiving GRAAL_TRUFFLE_COMMON... [dependency org.graalvm.compiler.truffle.common updated]
-Archiving GRAAL_TRUFFLE_RUNTIME... [dependency org.graalvm.compiler.truffle.runtime updated]
-Archiving GRAAL_TRUFFLE_COMMON_HOTSPOT... [dependency org.graalvm.compiler.truffle.common.hotspot updated]
-Archiving GRAAL_TRUFFLE_COMPILER... [dependency org.graalvm.compiler.truffle.compiler updated]
-Compiling org.graalvm.compiler.virtual.bench with javac-daemon(JDK 1.8)... [dependency org.graalvm.compiler.microbenchmarks updated]
-Compiling org.graalvm.compiler.jtt with javac-daemon(JDK 1.8)... [dependency org.graalvm.compiler.core.test updated]
-Compiling org.graalvm.compiler.loop.test with javac-daemon(JDK 1.8)... [dependency org.graalvm.compiler.loop updated]
-Compiling org.graalvm.compiler.nodes.test with javac-daemon(JDK 1.8)... [dependency org.graalvm.compiler.core.test updated]
-Compiling org.graalvm.compiler.replacements.test with javac-daemon(JDK 1.8)... [dependency GRAAL_NODEINFO_PROCESSOR updated]
-Compiling org.graalvm.compiler.api.directives.test with javac-daemon(JDK 1.8)... [dependency org.graalvm.compiler.core.test updated]
-Compiling org.graalvm.util.test with javac-daemon(JDK 1.8)... [dependency org.graalvm.util updated]
-Compiling org.graalvm.compiler.truffle.compiler.hotspot with javac-daemon(JDK 1.8)... [dependency GRAAL_OPTIONS_PROCESSOR updated]
-Compiling org.graalvm.compiler.hotspot.sparc with javac-daemon(JDK 1.8)... [dependency GRAAL_SERVICEPROVIDER_PROCESSOR updated]
-Compiling org.graalvm.compiler.hotspot.management with javac-daemon(JDK 1.8)... [dependency GRAAL_SERVICEPROVIDER_PROCESSOR updated]
-Compiling org.graalvm.compiler.hotspot.aarch64 with javac-daemon(JDK 1.8)... [dependency GRAAL_SERVICEPROVIDER_PROCESSOR updated]
-Compiling org.graalvm.compiler.truffle.runtime.hotspot with javac-daemon(JDK 1.8)... [dependency GRAAL_OPTIONS_PROCESSOR updated]
-Compiling org.graalvm.compiler.hotspot.amd64 with javac-daemon(JDK 1.8)... [dependency GRAAL_SERVICEPROVIDER_PROCESSOR updated]
-Compiling org.graalvm.compiler.hotspot.test with javac-daemon(JDK 1.8)... [dependency GRAAL_NODEINFO_PROCESSOR updated]
-Compiling org.graalvm.compiler.lir.jtt with javac-daemon(JDK 1.8)... [dependency GRAAL_NODEINFO_PROCESSOR updated]
-Compiling org.graalvm.compiler.truffle.compiler.hotspot.sparc with javac-daemon(JDK 1.8)... [dependency GRAAL_SERVICEPROVIDER_PROCESSOR updated]
-Compiling org.graalvm.compiler.truffle.compiler.hotspot.aarch64 with javac-daemon(JDK 1.8)... [dependency GRAAL_SERVICEPROVIDER_PROCESSOR updated]
-Compiling org.graalvm.compiler.truffle.compiler.hotspot.amd64 with javac-daemon(JDK 1.8)... [dependency GRAAL_SERVICEPROVIDER_PROCESSOR updated]
-Compiling org.graalvm.compiler.hotspot.sparc.test with javac-daemon(JDK 1.8)... [dependency org.graalvm.compiler.hotspot updated]
-Compiling org.graalvm.compiler.core.aarch64.test with javac-daemon(JDK 1.8)... [dependency org.graalvm.compiler.lir.jtt updated]
-Archiving GRAAL_HOTSPOT... [dependency org.graalvm.compiler.hotspot.aarch64 updated]
-Compiling org.graalvm.compiler.hotspot.lir.test with javac-daemon(JDK 1.8)... [dependency org.graalvm.compiler.hotspot updated]
-Compiling org.graalvm.compiler.core.amd64.test with javac-daemon(JDK 1.8)... [dependency org.graalvm.compiler.lir.jtt updated]
-Archiving GRAAL... [dependency org.graalvm.compiler.options updated]
-Archiving GRAAL_TRUFFLE_RUNTIME_HOTSPOT... [dependency org.graalvm.compiler.truffle.runtime.hotspot updated]
-Archiving GRAAL_TRUFFLE_COMPILER_HOTSPOT... [dependency org.graalvm.compiler.truffle.compiler.hotspot.amd64 updated]
-Compiling org.graalvm.compiler.hotspot.aarch64.test with javac-daemon(JDK 1.8)... [dependency GRAAL_NODEINFO_PROCESSOR updated]
-Compiling org.graalvm.compiler.hotspot.amd64.test with javac-daemon(JDK 1.8)... [dependency GRAAL_NODEINFO_PROCESSOR updated]
-Compiling com.oracle.truffle.api.instrumentation.test with javac-daemon(JDK 1.8)... [dependency TRUFFLE_DSL_PROCESSOR updated]
-Building com.oracle.truffle.nfi.test.native with GNU Make... [dependency TRUFFLE_NFI_NATIVE updated]
-CC bin/errno.o
-CC bin/array.o
-CXX bin/global.o
-CC bin/null.o
-CC bin/numeric.o
-CXX bin/object.o
-CC bin/package.o
-CC bin/string.o
-CC bin/varargs.o
-CC bin/vector.o
-LINK bin/libnativetest.so
-Archiving GRAAL_MANAGEMENT... [dependency org.graalvm.compiler.hotspot.management updated]
-Archiving TRUFFLE_INSTRUMENT_TEST... [dependency com.oracle.truffle.api.instrumentation.test updated]
-Compiling com.oracle.truffle.tools.test with javac-daemon(JDK 1.8)... [dependency TRUFFLE_DSL_PROCESSOR updated]
-Compiling com.oracle.truffle.api.debug.test with javac-daemon(JDK 1.8)... [dependency TRUFFLE_DSL_PROCESSOR_INTEROP_INTERNAL updated]
-Archiving TRUFFLE_TEST_NATIVE... [dependency com.oracle.truffle.nfi.test.native updated]
-Compiling com.oracle.truffle.api.metadata.test with javac-daemon(JDK 1.8)... [dependency TRUFFLE_DSL_PROCESSOR_INTEROP_INTERNAL updated]
-Compiling org.graalvm.compiler.truffle.test with javac-daemon(JDK 1.8)... [dependency GRAAL_NODEINFO_PROCESSOR updated]
-Compiling com.oracle.truffle.api.benchmark with javac-daemon(JDK 1.8)... [dependency TRUFFLE_DSL_PROCESSOR updated]
-Archiving TRUFFLE_TEST... [dependency com.oracle.truffle.api.test updated]
-Archiving GRAAL_TEST... [dependency org.graalvm.compiler.api.test updated]
-Archiving GRAAL_COMPILER_WHITEBOX_MICRO_BENCHMARKS... [dependency org.graalvm.compiler.virtual.bench updated]
 Creating /home/graal/jdk8-with-graal from /home/graal/graal-jvmci-8/openjdk1.8.0-internal/linux-amd64/product
 Copying /home/graal/graal/compiler/mxbuild/dists/graal.jar to /home/graal/jdk8-with-graal/jre/lib/jvmci
 Copying /home/graal/graal/compiler/mxbuild/dists/graal-management.jar to /home/graal/jdk8-with-graal/jre/lib/jvmci
 Copying /home/graal/graal/sdk/mxbuild/dists/graal-sdk.jar to /home/graal/jdk8-with-graal/jre/lib/boot
 Copying /home/graal/graal/truffle/mxbuild/dists/truffle-api.jar to /home/graal/jdk8-with-graal/jre/lib/truffle
 
-real	0m50.237s
-user	2m19.903s
-sys	0m23.471s
+real	0m7.251s
+user	0m1.881s
+sys	0m3.461s
 >>> Building GraalVM Suite
 Applying temporary patch to fix graaljs cloning issue in 'mx.vm/suite.py'
 Applying temporary patch to fix graalpython cloning issue in 'mx.vm/suite.py'
-Cloning https://github.com/graalvm/graaljs.git revision 02d960f14128ac92ab543b90e6ca6b5f8cb3c839 to /home/graal/graaljs with Git
-Cloning https://github.com/graalvm/graaljs.git to /home/graal/graaljs with Git
-Cloning into '/home/graal/graaljs'...
-Checking out files:  34% (8579/25116)   Checking out files:  35% (8791/25116)   Checking out files:  36% (9042/25116)   Checking out files:  37% (9293/25116)   Checking out files:  38% (9545/25116)   Checking out files:  39% (9796/25116)   Checking out files:  40% (10047/25116)   Checking out files:  41% (10298/25116)   Checking out files:  42% (10549/25116)   Checking out files:  43% (10800/25116)   Checking out files:  44% (11052/25116)   Checking out files:  45% (11303/25116)   Checking out files:  46% (11554/25116)   Checking out files:  47% (11805/25116)   Checking out files:  48% (12056/25116)   Checking out files:  49% (12307/25116)   Checking out files:  50% (12558/25116)   Checking out files:  51% (12810/25116)   Checking out files:  52% (13061/25116)   Checking out files:  53% (13312/25116)   Checking out files:  54% (13563/25116)   Checking out files:  55% (13814/25116)   Checking out files:  56% (14065/25116)   Checking out files:  57% (14317/25116)   Checking out files:  58% (14568/25116)   Checking out files:  59% (14819/25116)   Checking out files:  60% (15070/25116)   Checking out files:  60% (15236/25116)   Checking out files:  61% (15321/25116)   Checking out files:  62% (15572/25116)   Checking out files:  63% (15824/25116)   Checking out files:  64% (16075/25116)   Checking out files:  65% (16326/25116)   Checking out files:  66% (16577/25116)   Checking out files:  67% (16828/25116)   Checking out files:  68% (17079/25116)   Checking out files:  69% (17331/25116)   Checking out files:  70% (17582/25116)   Checking out files:  71% (17833/25116)   Checking out files:  72% (18084/25116)   Checking out files:  73% (18335/25116)   Checking out files:  74% (18586/25116)   Checking out files:  75% (18837/25116)   Checking out files:  76% (19089/25116)   Checking out files:  77% (19340/25116)   Checking out files:  78% (19591/25116)   Checking out files:  79% (19842/25116)   Checking out files:  80% (20093/25116)   Checking out files:  81% (20344/25116)   Checking out files:  82% (20596/25116)   Checking out files:  83% (20847/25116)   Checking out files:  84% (21098/25116)   Checking out files:  85% (21349/25116)   Checking out files:  86% (21600/25116)   Checking out files:  87% (21851/25116)   Checking out files:  88% (22103/25116)   Checking out files:  89% (22354/25116)   Checking out files:  90% (22605/25116)   Checking out files:  91% (22856/25116)   Checking out files:  92% (23107/25116)   Checking out files:  93% (23358/25116)   Checking out files:  94% (23610/25116)   Checking out files:  95% (23861/25116)   Checking out files:  96% (24112/25116)   Checking out files:  97% (24363/25116)   Checking out files:  98% (24614/25116)   Checking out files:  99% (24865/25116)   Checking out files: 100% (25116/25116)   Checking out files: 100% (25116/25116), done.
-Cloning https://github.com/oracle/truffleruby.git revision b6751221c242a3fd6b99a77dfdef567cb25c0810 to /home/graal/truffleruby with Git
-Cloning https://github.com/oracle/truffleruby.git to /home/graal/truffleruby with Git
-Cloning into '/home/graal/truffleruby'...
-Cloning https://github.com/oracle/fastr.git revision 3b572a0c5522a9fbb473e489d9c9d0bf37fa8843 to /home/graal/fastr with Git
-Cloning https://github.com/oracle/fastr.git to /home/graal/fastr with Git
-Cloning into '/home/graal/fastr'...
-Cloning https://github.com/graalvm/sulong.git revision d4a688b50a2d52d596216132f653b090431e5f5b to /home/graal/sulong with Git
-Cloning https://github.com/graalvm/sulong.git to /home/graal/sulong with Git
-Cloning into '/home/graal/sulong'...
-Cloning https://github.com/graalvm/graalpython.git revision 52664d809e511d73de0a8c2d433078408c4d7cea to /home/graal/graalpython with Git
-Cloning https://github.com/graalvm/graalpython.git to /home/graal/graalpython with Git
-Cloning into '/home/graal/graalpython'...
 build: Checking SubstrateVM requirements for building ...
 JAVA_HOME: /home/graal/graal-jvmci-8/openjdk1.8.0-internal/linux-amd64/product
 EXTRA_JAVA_HOMES: 
@@ -1360,525 +947,230 @@ Dependencies removed from build:
  project jdk.tools.jaotc.test was removed as JDK 11 is not available
  distribution JAOTC was removed as all its project and non-JDK library dependencies were removed
  distribution JAOTC_TEST was removed as all its project and non-JDK library dependencies were removed
-Compiling org.truffleruby.annotations with javac-daemon(JDK 1.8)... [/home/graal/truffleruby/mxbuild/org.truffleruby.annotations/bin/org/truffleruby/PopulateBuildInformation.class does not exist]
-Downloading JONI from ['https://repo1.maven.org/maven2/org/jruby/joni/joni/2.1.16/joni-2.1.16.jar', 'https://search.maven.org/remotecontent?filepath=org/jruby/joni/joni/2.1.16/joni-2.1.16.jar']
-Downloading https://repo1.maven.org/maven2/org/jruby/joni/joni/2.1.16/joni-2.1.16.jar to /home/graal/.mx/cache/JONI_b5c07f6aa52f93fe592dd9545b6b528e1a52c54d/joni.jar
-Archiving SULONG_GRAALVM_DOCS... [/home/graal/sulong/mxbuild/linux-amd64/dists/sulong-graalvm-docs.tar does not exist]
-Downloading XZ-1.6 from ['https://repo1.maven.org/maven2/org/tukaani/xz/1.6/xz-1.6.jar', 'https://search.maven.org/remotecontent?filepath=org/tukaani/xz/1.6/xz-1.6.jar']
-Downloading ANTLR-C-3.5 from ['http://central.maven.org/maven2/org/antlr/antlr-complete/3.5.1/antlr-complete-3.5.1.jar']
-Downloading http://central.maven.org/maven2/org/antlr/antlr-complete/3.5.1/antlr-complete-3.5.1.jar to /home/graal/.mx/cache/ANTLR-C-3.5_ebb4b995fd67a9b291ea5b19379509160f56e154/antlr-c-3.5.jar
-Downloading https://repo1.maven.org/maven2/org/tukaani/xz/1.6/xz-1.6.jar to /home/graal/.mx/cache/XZ-1.6_05b6f921f1810bdf90e25471968f741f87168b64/xz-1.6.jar
-Downloading JCODINGS from ['https://repo1.maven.org/maven2/org/jruby/jcodings/jcodings/1.0.30/jcodings-1.0.30.jar', 'https://search.maven.org/remotecontent?filepath=org/jruby/jcodings/jcodings/1.0.30/jcodings-1.0.30.jar']
-Downloading https://repo1.maven.org/maven2/org/jruby/jcodings/jcodings/1.0.30/jcodings-1.0.30.jar to /home/graal/.mx/cache/JCODINGS_1238908f91735a4201a2adabfc1026c84dc16598/jcodings.jar
-Downloading GNUR from ['http://cran.rstudio.com/src/base/R-3/R-3.4.0.tar.gz']
-Downloading http://cran.rstudio.com/src/base/R-3/R-3.4.0.tar.gz to /home/graal/.mx/cache/GNUR_054c1d099006354c89b195df6783b933846ced60/gnur.tar.gz
-Compiling com.oracle.truffle.r.ffi.processor with javac-daemon(JDK 1.8)... [/home/graal/fastr/mxbuild/com.oracle.truffle.r.ffi.processor/bin/META-INF/services/javax.annotation.processing.Processor does not exist]
-Downloading ANTLR-3.5_4_ANNOT_PROC from ['http://central.maven.org/maven2/org/antlr/antlr-runtime/3.5/antlr-runtime-3.5.jar']
-Downloading http://central.maven.org/maven2/org/antlr/antlr-runtime/3.5/antlr-runtime-3.5.jar to /home/graal/.mx/cache/ANTLR-3.5_4_ANNOT_PROC_0baa82bff19059401e90e1b90020beb9c96305d7/antlr-3.5-4-annot-proc.jar
-Compiling com.oracle.truffle.js.annotations with javac-daemon(JDK 1.8)... [/home/graal/graaljs/graal-js/mxbuild/src/com.oracle.truffle.js.annotations/bin/com/oracle/truffle/js/annotations/GenerateDecoder.class does not exist]
-Compiling com.oracle.truffle.js.codec with javac-daemon(JDK 1.8)... [/home/graal/graaljs/graal-js/mxbuild/src/com.oracle.truffle.js.codec/bin/com/oracle/truffle/js/codec/NodeDecoder.class does not exist]
-Compiling com.oracle.truffle.js.runtime.doubleconv with javac-daemon(JDK 1.8)... [/home/graal/graaljs/graal-js/mxbuild/src/com.oracle.truffle.js.runtime.doubleconv/bin/com/oracle/truffle/js/runtime/doubleconv/Bignum.class does not exist]
-Archiving GRAALJS_GRAALVM_SUPPORT... [/home/graal/graaljs/graal-js/mxbuild/dists/graaljs-graalvm-support.tar does not exist]
-Downloading ICU4J from ['https://repo1.maven.org/maven2/com/ibm/icu/icu4j/59.1/icu4j-59.1.jar', 'https://search.maven.org/remotecontent?filepath=com/ibm/icu/icu4j/59.1/icu4j-59.1.jar']
-Downloading https://repo1.maven.org/maven2/com/ibm/icu/icu4j/59.1/icu4j-59.1.jar to /home/graal/.mx/cache/ICU4J_6f06e820cf4c8968bbbaae66ae0b33f6a256b57f/icu4j.jar
-Archive icu4j-data... [/home/graal/graaljs/graal-js/lib/icu4j not found]
-Downloading ICU4J from ['https://repo1.maven.org/maven2/com/ibm/icu/icu4j/59.1/icu4j-59.1.jar', 'https://search.maven.org/remotecontent?filepath=com/ibm/icu/icu4j/59.1/icu4j-59.1.jar']
-Downloading https://repo1.maven.org/maven2/com/ibm/icu/icu4j/59.1/icu4j-59.1.jar to /home/graal/.mx/cache/ICU4J_6f06e820cf4c8968bbbaae66ae0b33f6a256b57f/icu4j.jar
-Archiving GRAALPYTHON_GRAALVM_DOCS... [/home/graal/graalpython/mxbuild/dists/graalpython-graalvm-docs.tar does not exist]
-Downloading sources JONI from ['https://repo1.maven.org/maven2/org/jruby/joni/joni/2.1.16/joni-2.1.16-sources.jar', 'https://search.maven.org/remotecontent?filepath=org/jruby/joni/joni/2.1.16/joni-2.1.16-sources.jar']
-Downloading https://repo1.maven.org/maven2/org/jruby/joni/joni/2.1.16/joni-2.1.16-sources.jar to /home/graal/.mx/cache/JONI_ab3c291fa9aa4caee512b6624b4d2302d91a7230/joni.sources.jar
-Archiving TREGEX_GRAALVM_SUPPORT... [/home/graal/graal/regex/mxbuild/dists/tregex-graalvm-support.tar does not exist]
-Downloading NanoHTTPD from ['https://search.maven.org/remotecontent?filepath=org/nanohttpd/nanohttpd/2.3.1/nanohttpd-2.3.1.jar']
-Downloading https://search.maven.org/remotecontent?filepath=org/nanohttpd/nanohttpd/2.3.1/nanohttpd-2.3.1.jar to /home/graal/.mx/cache/NanoHTTPD_a8d54d1ca554a77f377eff6bf9e16ca8383c8f6c/nanohttpd.jar
-Downloading NanoHTTPD-WebSocket from ['https://search.maven.org/remotecontent?filepath=org/nanohttpd/nanohttpd-websocket/2.3.1/nanohttpd-websocket-2.3.1.jar']
-Downloading https://search.maven.org/remotecontent?filepath=org/nanohttpd/nanohttpd-websocket/2.3.1/nanohttpd-websocket-2.3.1.jar to /home/graal/.mx/cache/NanoHTTPD-WebSocket_f2cfb09cee12469ff64f0d698b13de19903bb4f7/nanohttpd-websocket.jar
-Downloading TruffleJSON from ['https://lafo.ssw.uni-linz.ac.at/pub/graal-external-deps/trufflejson-20180130.jar']
-Downloading https://lafo.ssw.uni-linz.ac.at/pub/graal-external-deps/trufflejson-20180130.jar to /home/graal/.mx/cache/TruffleJSON_8819cea8bfe22c9c63f55465e296b3855ea41786/trufflejson.jar
-Archiving TRUFFLE_PROFILER_GRAALVM_SUPPORT... [/home/graal/graal/tools/mxbuild/dists/truffle-profiler-graalvm-support.tar does not exist]
-Archiving CHROMEINSPECTOR_GRAALVM_SUPPORT... [/home/graal/graal/tools/mxbuild/dists/chromeinspector-graalvm-support.tar does not exist]
-Compiling org.graalvm.component.installer with javac-daemon(JDK 1.8)... [/home/graal/graal/vm/mxbuild/src/org.graalvm.component.installer/bin/org/graalvm/component/installer/ComponentParam.class does not exist]
-Archiving VM_GRAALVM_SUPPORT... [/home/graal/graal/vm/mxbuild/dists/vm-graalvm-support.tar does not exist]
-Archiving POLYGLOT_NATIVE_API_HEADERS... [/home/graal/graal/substratevm/mxbuild/linux-amd64/dists/polyglot-native-api-headers.tar does not exist]
-Downloading ANTLR4_COMPLETE from ['http://www.antlr.org/download/antlr-4.7-complete.jar']
-Downloading http://www.antlr.org/download/antlr-4.7-complete.jar to /home/graal/.mx/cache/ANTLR4_COMPLETE_5b3a8824334069979a0862ce67ede796c3a4d1b1/antlr4-complete.jar
-Downloading NETBEANS_PROFILER from ['https://lafo.ssw.uni-linz.ac.at/pub/graal-external-deps/truffle/js/org-netbeans-lib-profiler-8.2-201609300101.jar']
-Downloading https://lafo.ssw.uni-linz.ac.at/pub/graal-external-deps/truffle/js/org-netbeans-lib-profiler-8.2-201609300101.jar to /home/graal/.mx/cache/NETBEANS_PROFILER_4b52bd03014f6d080ef0528865c1ee50621e35c6/netbeans-profiler.jar
-Downloading JACKSON_ANNOTATIONS from ['https://repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-annotations/2.8.6/jackson-annotations-2.8.6.jar', 'https://search.maven.org/remotecontent?filepath=com/fasterxml/jackson/core/jackson-annotations/2.8.6/jackson-annotations-2.8.6.jar']
-Downloading https://repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-annotations/2.8.6/jackson-annotations-2.8.6.jar to /home/graal/.mx/cache/JACKSON_ANNOTATIONS_9577018f9ce3636a2e1cb0a0c7fe915e5098ded5/jackson-annotations.jar
-Downloading JACKSON_CORE from ['https://repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-core/2.8.6/jackson-core-2.8.6.jar', 'https://search.maven.org/remotecontent?filepath=com/fasterxml/jackson/core/jackson-core/2.8.6/jackson-core-2.8.6.jar']
-Downloading https://repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-core/2.8.6/jackson-core-2.8.6.jar to /home/graal/.mx/cache/JACKSON_CORE_2ef7b1cc34de149600f5e75bc2d5bf40de894e60/jackson-core.jar
-Downloading JACKSON_DATABIND from ['https://repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-databind/2.8.6/jackson-databind-2.8.6.jar', 'https://search.maven.org/remotecontent?filepath=com/fasterxml/jackson/core/jackson-databind/2.8.6/jackson-databind-2.8.6.jar']
-Downloading https://repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-databind/2.8.6/jackson-databind-2.8.6.jar to /home/graal/.mx/cache/JACKSON_DATABIND_c43de61f74ecc61322ef8f402837ba65b0aa2bf4/jackson-databind.jar
-Downloading sources JCODINGS from ['https://repo1.maven.org/maven2/org/jruby/jcodings/jcodings/1.0.30/jcodings-1.0.30-sources.jar', 'https://search.maven.org/remotecontent?filepath=org/jruby/jcodings/jcodings/1.0.30/jcodings-1.0.30-sources.jar']
-Downloading https://repo1.maven.org/maven2/org/jruby/jcodings/jcodings/1.0.30/jcodings-1.0.30-sources.jar to /home/graal/.mx/cache/JCODINGS_21c4b05215a0ee50d8791d3d01269b880f09852d/jcodings.sources.jar
-Downloading NASHORN_INTERNAL_TESTS from ['https://lafo.ssw.uni-linz.ac.at/pub/graal-external-deps/truffle/js/nashorn-internal-tests-700f5e3f5ff2.jar']
-Downloading https://lafo.ssw.uni-linz.ac.at/pub/graal-external-deps/truffle/js/nashorn-internal-tests-700f5e3f5ff2.jar to /home/graal/.mx/cache/NASHORN_INTERNAL_TESTS_b5840706cc8ce639fcafeab1bc61da2d8aa37afd/nashorn-internal-tests.jar
-Compiling com.oracle.truffle.llvm.pipe with javac-daemon(JDK 1.8)... [/home/graal/sulong/mxbuild/projects/com.oracle.truffle.llvm.pipe/bin/com/oracle/truffle/llvm/pipe/CaptureOutput.class does not exist]
-Compiling com.oracle.truffle.r.test.packages with javac-daemon(JDK 1.8)... [/home/graal/fastr/mxbuild/com.oracle.truffle.r.test.packages/bin/install.packages.R does not exist]
-Archiving GRAALPYTHON-ZIP... [/home/graal/graalpython/mxbuild/dists/graalpython-zip.jar does not exist]
-Archiving NATIVE_IMAGE_JUNIT_SUPPORT... [/home/graal/graal/substratevm/mxbuild/dists/native-image-junit-support.tar does not exist]
-Archiving GRAALPYTHON-ENV... [/home/graal/graalpython/mxbuild/dists/graalpython-env.jar does not exist]
-Archiving R_FFI_PROCESSOR... [dependency com.oracle.truffle.r.ffi.processor updated]
-Archiving TRUFFLERUBY-ANNOTATIONS... [dependency org.truffleruby.annotations updated]
-Archiving GRAALPYTHON_PYTHON_LIB... [/home/graal/graalpython/mxbuild/dists/graalpython-python-lib.jar does not exist]
-Checking native-image.properties... [dependency TREGEX_GRAALVM_SUPPORT updated]
-Checking native-image.properties... [dependency CHROMEINSPECTOR_GRAALVM_SUPPORT updated]
-Checking native-image.properties... [dependency TRUFFLE_PROFILER_GRAALVM_SUPPORT updated]
-Archiving INSTALLER... [dependency org.graalvm.component.installer updated]
-Compiling com.oracle.truffle.r.parser.processor with javac-daemon(JDK 1.8)... [dependency ANTLR-3.5_4_ANNOT_PROC updated]
-Archiving SULONG_DOC... [/home/graal/sulong/mxbuild/dists/sulong-doc.tar does not exist]
-Archiving TRUFFLERUBY-SPECS... [/home/graal/truffleruby/mxbuild/dists/truffleruby-specs.tar does not exist]
-Compiling org.graalvm.component.installer.test with javac-daemon(JDK 1.8)... [dependency org.graalvm.component.installer updated]
-Compiling com.oracle.truffle.r.test.packages.analyzer with javac-daemon(JDK 1.8)... [/home/graal/fastr/mxbuild/com.oracle.truffle.r.test.packages.analyzer/bin/com/oracle/truffle/r/test/packages/analyzer/PTAMain.class does not exist]
-Compiling org.truffleruby.processor with javac-daemon(JDK 1.8)... [dependency TRUFFLERUBY-ANNOTATIONS updated]
-Archiving INSTALLER_GRAALVM_SUPPORT... [dependency INSTALLER updated]
-Archiving TRUFFLE_R_PARSER_PROCESSOR... [dependency com.oracle.truffle.r.parser.processor updated]
-Archiving INSTALLER_TESTS... [dependency org.graalvm.component.installer.test updated]
-Compiling com.oracle.truffle.r.legacylauncher with javac-daemon(JDK 1.8)... [/home/graal/fastr/mxbuild/com.oracle.truffle.r.legacylauncher/bin/com/oracle/truffle/r/legacylauncher/LegacyLauncher.class does not exist]
-Compiling com.oracle.truffle.js.scriptengine with javac-daemon(JDK 1.8)... [/home/graal/graaljs/graal-js/mxbuild/src/com.oracle.truffle.js.scriptengine/bin/META-INF/services/javax.script.ScriptEngineFactory does not exist]
-Archiving TRUFFLERUBY-PROCESSOR... [dependency org.truffleruby.processor updated]
-Compiling com.oracle.objectfile with javac-daemon(JDK 1.8)... [/home/graal/graal/substratevm/mxbuild/src/com.oracle.objectfile/bin/com/oracle/objectfile/BasicProgbitsSectionImpl.class does not exist]
-Compiling com.oracle.truffle.js.test.sdk with javac-daemon(JDK 1.8)... [/home/graal/graaljs/graal-js/mxbuild/src/com.oracle.truffle.js.test.sdk/bin/META-INF/services/org.graalvm.polyglot.tck.LanguageProvider does not exist]
-Compiling com.oracle.truffle.r.test.tck with javac-daemon(JDK 1.8)... [/home/graal/fastr/mxbuild/com.oracle.truffle.r.test.tck/bin/META-INF/services/org.graalvm.polyglot.tck.LanguageProvider does not exist]
-Compiling com.oracle.graal.python.tck with javac-daemon(JDK 1.8)... [/home/graal/graalpython/mxbuild/graalpython/com.oracle.graal.python.tck/bin/META-INF/services/org.graalvm.polyglot.tck.LanguageProvider does not exist]
-Archiving FASTR_LEGACY_LAUNCHER... [dependency com.oracle.truffle.r.legacylauncher updated]
-Archiving GRAALJS_SCRIPTENGINE... [dependency com.oracle.truffle.js.scriptengine updated]
-Compiling com.oracle.truffle.js.shell with javac-daemon(JDK 1.8)... [/home/graal/graaljs/graal-js/mxbuild/src/com.oracle.truffle.js.shell/bin/com/oracle/truffle/js/shell/JSLauncher.class does not exist]
-Compiling com.oracle.truffle.llvm.launcher with javac-daemon(JDK 1.8)... [/home/graal/sulong/mxbuild/projects/com.oracle.truffle.llvm.launcher/bin/com/oracle/truffle/llvm/launcher/LLVMLauncher.class does not exist]
-Compiling com.oracle.graal.python.shell with javac-daemon(JDK 1.8)... [/home/graal/graalpython/mxbuild/graalpython/com.oracle.graal.python.shell/bin/com/oracle/graal/python/shell/DefaultConsoleHandler.class does not exist]
-Compiling com.oracle.truffle.r.launcher with javac-daemon(JDK 1.8)... [/home/graal/fastr/mxbuild/com.oracle.truffle.r.launcher/bin/com/oracle/truffle/r/launcher/RMain.class does not exist]
-Archiving TRUFFLE_R_TCK... [dependency com.oracle.truffle.r.test.tck updated]
-Archiving GRAALPYTHON_TCK... [dependency com.oracle.graal.python.tck updated]
-Compiling org.truffleruby.shared with javac-daemon(JDK 1.8)... [dependency TRUFFLERUBY-PROCESSOR updated]
-Archiving SDK_JS_TESTS... [dependency com.oracle.truffle.js.test.sdk updated]
-Archiving OBJECTFILE... [dependency com.oracle.objectfile updated]
-Archiving SULONG_LAUNCHER... [dependency com.oracle.truffle.llvm.launcher updated]
-Archiving GRAALJS_LAUNCHER... [dependency com.oracle.truffle.js.shell updated]
-Archiving FASTR_LAUNCHER... [dependency com.oracle.truffle.r.launcher updated]
-Archiving GRAALPYTHON-LAUNCHER... [dependency com.oracle.graal.python.shell updated]
-Archiving TRUFFLERUBY-SHARED... [dependency org.truffleruby.shared updated]
-Building js.image-bash-stage1... [dependency GRAALJS_LAUNCHER updated]
-Building lli.image-bash-stage1... [dependency SULONG_LAUNCHER updated]
-Building graalpython.image-bash-stage1... [dependency GRAALPYTHON-LAUNCHER updated]
-Compiling org.truffleruby.launcher with javac-daemon(JDK 1.8)... [dependency TRUFFLERUBY-ANNOTATIONS updated]
-Archiving TRUFFLERUBY-LAUNCHER... [dependency org.truffleruby.launcher updated]
-Building truffleruby.image-bash-stage1... [dependency TRUFFLERUBY-LAUNCHER updated]
-Compiling com.oracle.graalvm.locator with javac-daemon(JDK 1.8)... [/home/graal/graal/vm/mxbuild/src/com.oracle.graalvm.locator/bin/META-INF/services/com.oracle.truffle.api.impl.TruffleLocator does not exist]
-Compiling com.oracle.js.parser with javac-daemon(JDK 1.8)... [/home/graal/graaljs/graal-js/mxbuild/src/com.oracle.js.parser/bin/com/oracle/js/parser/TokenKind.class does not exist]
-Compiling com.oracle.truffle.js.factory.processor with javac-daemon(JDK 1.8)... [dependency com.oracle.truffle.js.annotations updated]
-Compiling org.truffleruby with javac-daemon(JDK 1.8)... [dependency TRUFFLERUBY-PROCESSOR updated]
-Compiling com.oracle.truffle.llvm.spi with javac-daemon(JDK 1.8)... [/home/graal/sulong/mxbuild/projects/com.oracle.truffle.llvm.spi/bin/com/oracle/truffle/llvm/spi/GetDynamicType.class does not exist]
-Compiling com.oracle.truffle.r.runtime with javac-daemon(JDK 1.8)... [dependency com.oracle.truffle.r.launcher updated]
-Compiling com.oracle.truffle.regex with javac-daemon(JDK 1.8)... [/home/graal/graal/regex/mxbuild/src/com.oracle.truffle.regex/bin/com/oracle/truffle/regex/RegexExecRootNode.class does not exist]
-Compiling com.oracle.truffle.tools.profiler with javac-daemon(JDK 1.8)... [/home/graal/graal/tools/mxbuild/src/com.oracle.truffle.tools.profiler/bin/com/oracle/truffle/tools/profiler/ShadowStack.class does not exist]
-Compiling com.oracle.graal.python with javac-daemon(JDK 1.8)... [/home/graal/graalpython/mxbuild/graalpython/com.oracle.graal.python/bin/com/oracle/graal/python/PythonLanguage.class does not exist]
-Archiving LOCATOR... [dependency com.oracle.graalvm.locator updated]
-Archiving TRUFFLE_JS_FACTORY_PROCESSOR... [dependency com.oracle.truffle.js.factory.processor updated]
-Archiving TRUFFLE_PROFILER... [dependency com.oracle.truffle.tools.profiler updated]
-/home/graal/fastr/com.oracle.truffle.r.runtime/src/com/oracle/truffle/r/runtime/env/frame/REnvTruffleFrameAccess.java:106: warning: [deprecation] getKind() in FrameSlot has been deprecated
-        if (valueSlotKind != slot.getKind()) {
-                                 ^
-/home/graal/fastr/com.oracle.truffle.r.runtime/src/com/oracle/truffle/r/runtime/env/frame/REnvTruffleFrameAccess.java:109: warning: [deprecation] setKind(FrameSlotKind) in FrameSlot has been deprecated
-            slot.setKind(valueSlotKind);
-                ^
-/home/graal/fastr/com.oracle.truffle.r.runtime/src/com/oracle/truffle/r/runtime/env/frame/REnvTruffleFrameAccess.java:158: warning: [deprecation] getKind() in FrameSlot has been deprecated
-            if (slot.getKind() != FrameSlotKind.Object) {
-                    ^
-/home/graal/fastr/com.oracle.truffle.r.runtime/src/com/oracle/truffle/r/runtime/env/frame/REnvTruffleFrameAccess.java:159: warning: [deprecation] setKind(FrameSlotKind) in FrameSlot has been deprecated
-                slot.setKind(FrameSlotKind.Object);
-                    ^
-Archiving TREGEX... [dependency com.oracle.truffle.regex updated]
-4 warnings
-Compiling com.oracle.truffle.regex.test with javac-daemon(JDK 1.8)... [dependency com.oracle.truffle.regex updated]
-Compiling com.oracle.truffle.tools.chromeinspector with javac-daemon(JDK 1.8)... [dependency TRUFFLE_PROFILER updated]
-Compiling com.oracle.truffle.r.nodes with javac-daemon(JDK 1.8)... [dependency com.oracle.truffle.r.runtime updated]
-Downloading ANTLR-3.5 from ['https://repo1.maven.org/maven2/org/antlr/antlr-runtime/3.5/antlr-runtime-3.5.jar', 'https://search.maven.org/remotecontent?filepath=org/antlr/antlr-runtime/3.5/antlr-runtime-3.5.jar']
-Downloading https://repo1.maven.org/maven2/org/antlr/antlr-runtime/3.5/antlr-runtime-3.5.jar to /home/graal/.mx/cache/ANTLR-3.5_0baa82bff19059401e90e1b90020beb9c96305d7/antlr-3.5.jar
-Compiling com.oracle.truffle.r.parser with javac-daemon(JDK 1.8)... [dependency TRUFFLE_R_PARSER_PROCESSOR updated]
-Compiling com.oracle.truffle.regex.nashorn with javac-daemon(JDK 1.8)... [dependency TREGEX updated]
-Archiving TREGEX_UNIT_TESTS... [dependency com.oracle.truffle.regex.test updated]
-/home/graal/fastr/com.oracle.truffle.r.nodes/src/com/oracle/truffle/r/nodes/access/BaseWriteVariableNode.java:150: warning: [deprecation] getKind() in FrameSlot has been deprecated
-        if (frameSlot.getKind() == kind) {
-                     ^
-/home/graal/fastr/com.oracle.truffle.r.nodes/src/com/oracle/truffle/r/nodes/access/BaseWriteVariableNode.java:159: warning: [deprecation] getKind() in FrameSlot has been deprecated
-        if (frameSlot.getKind() == FrameSlotKind.Illegal) {
-                     ^
-/home/graal/fastr/com.oracle.truffle.r.nodes/src/com/oracle/truffle/r/nodes/access/BaseWriteVariableNode.java:160: warning: [deprecation] setKind(FrameSlotKind) in FrameSlot has been deprecated
-            frameSlot.setKind(kind);
-                     ^
-Archiving CHROMEINSPECTOR... [dependency com.oracle.truffle.tools.chromeinspector updated]
-3 warnings
-Compiling com.oracle.truffle.tools.profiler.test with javac-daemon(JDK 1.8)... [dependency com.oracle.truffle.tools.profiler updated]
-Compiling com.oracle.graal.pointsto with javac-daemon(JDK 1.8)... [/home/graal/graal/substratevm/mxbuild/src/com.oracle.graal.pointsto/bin/com/oracle/graal/pointsto/AnalysisPolicy.class does not exist]
-Compiling com.oracle.svm.core with javac-daemon(JDK 1.8)... [/home/graal/graal/substratevm/mxbuild/src/com.oracle.svm.core/bin/com/oracle/svm/core/MemoryUtil.class does not exist]
-/home/graal/graalpython/graalpython/com.oracle.graal.python/src/com/oracle/graal/python/nodes/frame/FrameSlotNode.java:89: warning: [deprecation] getKind() in FrameSlot has been deprecated
-        return frameSlot.getKind() != FrameSlotKind.Illegal;
-                        ^
-/home/graal/graalpython/graalpython/com.oracle.graal.python/src/com/oracle/graal/python/nodes/frame/FrameSlotNode.java:124: warning: [deprecation] getKind() in FrameSlot has been deprecated
-        if (frameSlot.getKind() != FrameSlotKind.Object) {
-                     ^
-/home/graal/graalpython/graalpython/com.oracle.graal.python/src/com/oracle/graal/python/nodes/frame/FrameSlotNode.java:126: warning: [deprecation] setKind(FrameSlotKind) in FrameSlot has been deprecated
-            frameSlot.setKind(FrameSlotKind.Object);
-                     ^
-/home/graal/graalpython/graalpython/com.oracle.graal.python/src/com/oracle/graal/python/nodes/frame/FrameSlotNode.java:132: warning: [deprecation] getKind() in FrameSlot has been deprecated
-        return frameSlot.getKind() == kind || initialSetKind(kind);
-                        ^
-/home/graal/graalpython/graalpython/com.oracle.graal.python/src/com/oracle/graal/python/nodes/frame/FrameSlotNode.java:136: warning: [deprecation] getKind() in FrameSlot has been deprecated
-        if (frameSlot.getKind() == FrameSlotKind.Illegal) {
-                     ^
-/home/graal/graalpython/graalpython/com.oracle.graal.python/src/com/oracle/graal/python/nodes/frame/FrameSlotNode.java:138: warning: [deprecation] setKind(FrameSlotKind) in FrameSlot has been deprecated
-            frameSlot.setKind(kind);
-                     ^
-/home/graal/graalpython/graalpython/com.oracle.graal.python/src/com/oracle/graal/python/nodes/frame/WriteLocalVariableNode.java:120: warning: [deprecation] setKind(FrameSlotKind) in FrameSlot has been deprecated
-        frameSlot.setKind(FrameSlotKind.Long);
-                 ^
-/home/graal/graalpython/graalpython/com.oracle.graal.python/src/com/oracle/graal/python/nodes/frame/WriteLocalVariableNode.java:126: warning: [deprecation] setKind(FrameSlotKind) in FrameSlot has been deprecated
-        frameSlot.setKind(FrameSlotKind.Object);
-                 ^
-/home/graal/graalpython/graalpython/com.oracle.graal.python/src/com/oracle/graal/python/nodes/generator/WriteGeneratorFrameVariableNode.java:124: warning: [deprecation] setKind(FrameSlotKind) in FrameSlot has been deprecated
-        frameSlot.setKind(FrameSlotKind.Long);
-                 ^
-/home/graal/graalpython/graalpython/com.oracle.graal.python/src/com/oracle/graal/python/nodes/generator/WriteGeneratorFrameVariableNode.java:132: warning: [deprecation] setKind(FrameSlotKind) in FrameSlot has been deprecated
-        frameSlot.setKind(FrameSlotKind.Object);
-                 ^
-Compiling com.oracle.truffle.r.ffi.impl with javac-daemon(JDK 1.8)... [dependency R_FFI_PROCESSOR updated]
-Archiving TRUFFLE_PROFILER_TEST... [dependency com.oracle.truffle.tools.profiler.test updated]
-Archiving POINTSTO... [dependency com.oracle.graal.pointsto updated]
-Note: If you edited any UpCallsRFFI interfaces do: 'mx rfficodegen'.
-Compiling com.oracle.svm.core.posix with javac-daemon(JDK 1.8)... [dependency com.oracle.svm.core updated]
-Compiling com.oracle.svm.jline with javac-daemon(JDK 1.8)... [dependency com.oracle.svm.core updated]
-Compiling com.oracle.svm.core.windows with javac-daemon(JDK 1.8)... [dependency com.oracle.svm.core updated]
-Compiling com.oracle.svm.thirdparty with javac-daemon(JDK 1.8)... [dependency com.oracle.svm.core updated]
-Compiling com.oracle.svm.tutorial with javac-daemon(JDK 1.8)... [dependency com.oracle.svm.core updated]
-Compiling com.oracle.svm.core.graal with javac-daemon(JDK 1.8)... [dependency com.oracle.svm.core.posix updated]
-10 warnings
-Compiling com.oracle.graal.python.test with javac-daemon(JDK 1.8)... [dependency com.oracle.graal.python.shell updated]
-Archiving GRAALPYTHON... [dependency com.oracle.graal.python updated]
-Compiling com.oracle.truffle.r.library with javac-daemon(JDK 1.8)... [dependency com.oracle.truffle.r.ffi.impl updated]
-Compiling com.oracle.svm.hosted with javac-daemon(JDK 1.8)... [dependency com.oracle.objectfile updated]
-ICU4J dependency found in /home/graal/.mx/cache/ICU4J_6f06e820cf4c8968bbbaae66ae0b33f6a256b57f/icu4j.jar
-Compiling com.oracle.truffle.r.ffi.codegen with javac-daemon(JDK 1.8)... [dependency com.oracle.truffle.r.ffi.impl updated]
-Compiling com.oracle.svm.core.genscavenge with javac-daemon(JDK 1.8)... [dependency com.oracle.svm.core.graal updated]
-3282 files extracted to /home/graal/graaljs/graal-js/lib/icu4j
-Use the following parameters when invoking svm version of js to make ICU4J localization data available for the runtime:
--Dpolyglot.js.intl-402=true -Dcom.ibm.icu.impl.ICUBinary.dataPath=/home/graal/graaljs/graal-js/lib/icu4j/icudt
-Archiving ICU4J-DIST... [dependency icu4j-data updated]
-Archiving GRAALPYTHON_UNIT_TESTS... [dependency com.oracle.graal.python.test updated]
-Archiving SVM_CORE... [dependency com.oracle.svm.core updated]
-Compiling com.oracle.svm.graal with javac-daemon(JDK 1.8)... [dependency com.oracle.svm.hosted updated]
-Compiling com.oracle.svm.jni with javac-daemon(JDK 1.8)... [dependency com.oracle.svm.hosted updated]
-Compiling com.oracle.svm.reflect with javac-daemon(JDK 1.8)... [dependency com.oracle.svm.hosted updated]
-Compiling com.oracle.truffle.r.nodes.builtin with javac-daemon(JDK 1.8)... [dependency com.oracle.truffle.r.library updated]
-Compiling com.oracle.svm.junit with javac-daemon(JDK 1.8)... [dependency com.oracle.svm.reflect updated]
-Compiling com.oracle.svm.polyglot with javac-daemon(JDK 1.8)... [dependency com.oracle.svm.graal updated]
-Compiling com.oracle.svm.truffle with javac-daemon(JDK 1.8)... [dependency com.oracle.svm.graal updated]
-Compiling com.oracle.truffle.js.runtime with javac-daemon(JDK 1.8)... [dependency com.oracle.truffle.js.runtime.doubleconv updated]
-Compiling com.oracle.svm.driver with javac-daemon(JDK 1.8)... [dependency com.oracle.svm.graal updated]
-Compiling com.oracle.truffle.js.nodes with javac-daemon(JDK 1.8)... [dependency TRUFFLE_JS_FACTORY_PROCESSOR updated]
-Compiling org.truffleruby.test with javac-daemon(JDK 1.8)... [dependency org.truffleruby updated]
-Note: /home/graal/graaljs/graal-js/src/com.oracle.truffle.js.nodes/src/com/oracle/truffle/js/nodes/access/FrameSlotNode.java uses or overrides a deprecated API.
-Note: Recompile with -Xlint:deprecation for details.
-Compiling com.oracle.truffle.js.builtins with javac-daemon(JDK 1.8)... [dependency com.oracle.truffle.js.nodes updated]
-Compiling com.oracle.truffle.js.parser with javac-daemon(JDK 1.8)... [dependency com.oracle.truffle.js.builtins updated]
-Compiling com.oracle.truffle.js.stats with javac-daemon(JDK 1.8)... [dependency com.oracle.truffle.js.shell updated]
-Archiving GRAALJS... [dependency com.oracle.truffle.js.parser updated]
-Compiling com.oracle.truffle.js.test.instrumentation with javac-daemon(JDK 1.8)... [dependency com.oracle.truffle.js.nodes updated]
-Compiling com.oracle.truffle.js.snapshot with javac-daemon(JDK 1.8)... [dependency com.oracle.truffle.js.parser updated]
-Compiling com.oracle.truffle.trufflenode with javac-daemon(JDK 1.8)... [dependency GRAALJS updated]
-Compiling com.oracle.truffle.js.scriptengine.test with javac-daemon(JDK 1.8)... [dependency com.oracle.truffle.js.scriptengine updated]
-Archiving TRUFFLE_STATS... [dependency com.oracle.truffle.js.stats updated]
-Archiving TRUFFLE_JS_SNAPSHOT_TOOL... [dependency com.oracle.truffle.js.snapshot updated]
-Compiling com.oracle.truffle.js.test.external with javac-daemon(JDK 1.8)... [dependency GRAALJS updated]
-Snapshotting coremodules... [dependency TRUFFLE_JS_SNAPSHOT_TOOL updated]
-#### python2.7 ####
-Archiving GRAALJS_SCRIPTENGINE_TESTS... [dependency com.oracle.truffle.js.scriptengine.test updated]
-Archiving TRUFFLE_JS_TESTS... [dependency com.oracle.truffle.js.test.external updated]
-Archiving TRUFFLENODE... [dependency com.oracle.truffle.trufflenode updated]
-Compiling com.oracle.truffle.trufflenode.jniboundaryprofiler with javac-daemon(JDK 1.8)... [dependency com.oracle.truffle.trufflenode updated]
-Archiving TRUFFLENODE_JNI_BOUNDARY_PROFILER... [dependency com.oracle.truffle.trufflenode.jniboundaryprofiler updated]
-internal/socket_list.js: 656.69 ms
-internal/streams/lazy_transform.js: 41.99 ms
-internal/streams/legacy.js: 42.91 ms
-querystring.js: 193.37 ms
-process.js: 9.84 ms
-internal/loader/search.js: 17.33 ms
-internal/wrap_js_stream.js: 75.35 ms
-net.js: 578.12 ms
-internal/process/next_tick.js: 51.57 ms
-vm.js: 23.55 ms
-internal/module.js: 15.60 ms
-internal/repl.js: 56.17 ms
-internal/util/types.js: 6.36 ms
-os.js: 24.14 ms
-internal/cluster/shared_handle.js: 6.80 ms
-internal/trace_events_async_hooks.js: 7.71 ms
-crypto.js: 201.27 ms
-_stream_passthrough.js: 4.33 ms
-readline.js: 239.15 ms
-_http_incoming.js: 33.68 ms
-internal/process/stdio.js: 21.95 ms
-tty.js: 14.59 ms
-cluster.js: 3.35 ms
-_stream_writable.js: 80.06 ms
-http2.js: 5.26 ms
-internal/inspector_async_hook.js: 8.60 ms
-buffer.js: 507.51 ms
-internal/cluster/utils.js: 6.31 ms
-http.js: 7.26 ms
-internal/linkedlist.js: 6.88 ms
-internal/net.js: 4.55 ms
-internal/cluster/round_robin_handle.js: 18.59 ms
-assert.js: 115.51 ms
-_http_outgoing.js: 163.90 ms
-internal/streams/destroy.js: 6.86 ms
-url.js: 127.80 ms
-_stream_wrap.js: 2.28 ms
-path.js: 214.32 ms
-internal/process/write-coverage.js: 4.97 ms
-internal/encoding.js: 50.97 ms
-dns.js: 88.56 ms
-async_hooks.js: 39.29 ms
-internal/safe_globals.js: 6.97 ms
-v8.js: 24.59 ms
-child_process.js: 80.43 ms
-_tls_wrap.js: 222.75 ms
-repl.js: 318.07 ms
-zlib.js: 95.56 ms
-perf_hooks.js: 104.49 ms
-dgram.js: 100.69 ms
-_tls_common.js: 13.35 ms
-internal/loader/ModuleWrap.js: 9.25 ms
-internal/cluster/child.js: 22.81 ms
-internal/fs.js: 10.18 ms
-internal/child_process.js: 144.22 ms
-internal/v8_prof_polyfill.js: 11.23 ms
-events.js: 72.54 ms
-internal/http2/compat.js: 168.62 ms
-_http_server.js: 64.28 ms
-_stream_readable.js: 170.21 ms
-internal/util.js: 37.92 ms
-internal/http.js: 4.23 ms
-_http_agent.js: 35.02 ms
-internal/process.js: 24.98 ms
-internal/bootstrap_node.js: 80.33 ms
-internal/process/promises.js: 9.42 ms
-internal/url.js: 471.69 ms
-internal/querystring.js: 3.97 ms
-_stream_duplex.js: 6.82 ms
-punycode.js: 29.71 ms
-domain.js: 22.58 ms
-internal/os.js: 6.04 ms
-internal/streams/BufferList.js: 7.40 ms
-inspector.js: 11.37 ms
-sys.js: 1.70 ms
-_stream_transform.js: 9.26 ms
-constants.js: 1.82 ms
-console.js: 21.96 ms
-internal/http2/util.js: 52.05 ms
-_http_common.js: 17.19 ms
-internal/graal/thread_pipe_wrap.js: 11.15 ms
-util.js: 287.53 ms
-internal/test/unicode.js: 1.74 ms
-_http_client.js: 84.63 ms
-fs.js: 1173.07 ms
-internal/http2/core.js: 1082.83 ms
-tls.js: 20.71 ms
-internal/async_hooks.js: 28.98 ms
-internal/process/warning.js: 13.66 ms
-internal/graal/thread_process_wrap.js: 4.76 ms
-https.js: 16.98 ms
-stream.js: 4.12 ms
-_tls_legacy.js: 143.65 ms
-internal/freelist.js: 3.00 ms
-internal/graal/buffer.js: 2.29 ms
-internal/cluster/master.js: 44.03 ms
-internal/buffer.js: 4.08 ms
-internal/cluster/worker.js: 5.60 ms
-string_decoder.js: 27.26 ms
-timers.js: 98.59 ms
-Total: 9339.66 ms
-#### python2.7 ####
-Building com.oracle.truffle.llvm.libraries.bitcode with GNU Make... [rebuild needed by GNU Make]
-clang -c -emit-llvm -o bin/stat.noopt.bc -I/home/graal/sulong/projects/com.oracle.truffle.llvm.libraries.bitcode/include -Xclang -disable-O0-optnone -MT bin/stat.noopt.bc -MMD -MP -MF deps/stat.Td /home/graal/sulong/projects/com.oracle.truffle.llvm.libraries.bitcode/src/stat.c
-clang -c -emit-llvm -o bin/crt0.noopt.bc -I/home/graal/sulong/projects/com.oracle.truffle.llvm.libraries.bitcode/include -Xclang -disable-O0-optnone -MT bin/crt0.noopt.bc -MMD -MP -MF deps/crt0.Td /home/graal/sulong/projects/com.oracle.truffle.llvm.libraries.bitcode/src/crt0.c
-clang -c -emit-llvm -o bin/setjmp.noopt.bc -I/home/graal/sulong/projects/com.oracle.truffle.llvm.libraries.bitcode/include -Xclang -disable-O0-optnone -MT bin/setjmp.noopt.bc -MMD -MP -MF deps/setjmp.Td /home/graal/sulong/projects/com.oracle.truffle.llvm.libraries.bitcode/src/setjmp.c
-clang -c -emit-llvm -o bin/exit.noopt.bc -I/home/graal/sulong/projects/com.oracle.truffle.llvm.libraries.bitcode/include -Xclang -disable-O0-optnone -MT bin/exit.noopt.bc -MMD -MP -MF deps/exit.Td /home/graal/sulong/projects/com.oracle.truffle.llvm.libraries.bitcode/src/exit.c
-clang -c -emit-llvm -o bin/builtin.noopt.bc -I/home/graal/sulong/projects/com.oracle.truffle.llvm.libraries.bitcode/include -Xclang -disable-O0-optnone -MT bin/builtin.noopt.bc -MMD -MP -MF deps/builtin.Td /home/graal/sulong/projects/com.oracle.truffle.llvm.libraries.bitcode/src/builtin.c
-clang -c -emit-llvm -o bin/clock.noopt.bc -I/home/graal/sulong/projects/com.oracle.truffle.llvm.libraries.bitcode/include -Xclang -disable-O0-optnone -MT bin/clock.noopt.bc -MMD -MP -MF deps/clock.Td /home/graal/sulong/projects/com.oracle.truffle.llvm.libraries.bitcode/src/clock.c
-clang -c -emit-llvm -o bin/complex.noopt.bc -I/home/graal/sulong/projects/com.oracle.truffle.llvm.libraries.bitcode/include -Xclang -disable-O0-optnone -MT bin/complex.noopt.bc -MMD -MP -MF deps/complex.Td /home/graal/sulong/projects/com.oracle.truffle.llvm.libraries.bitcode/src/complex.c
-clang -c -emit-llvm -o bin/memcpy.noopt.bc -I/home/graal/sulong/projects/com.oracle.truffle.llvm.libraries.bitcode/include -Xclang -disable-O0-optnone -MT bin/memcpy.noopt.bc -MMD -MP -MF deps/memcpy.Td /home/graal/sulong/projects/com.oracle.truffle.llvm.libraries.bitcode/src/memcpy.c
-clang -c -emit-llvm -o bin/qsort.noopt.bc -I/home/graal/sulong/projects/com.oracle.truffle.llvm.libraries.bitcode/include -Xclang -disable-O0-optnone -MT bin/qsort.noopt.bc -MMD -MP -MF deps/qsort.Td /home/graal/sulong/projects/com.oracle.truffle.llvm.libraries.bitcode/src/qsort.c
-clang -c -emit-llvm -o bin/abort.noopt.bc -I/home/graal/sulong/projects/com.oracle.truffle.llvm.libraries.bitcode/include -Xclang -disable-O0-optnone -MT bin/abort.noopt.bc -MMD -MP -MF deps/abort.Td /home/graal/sulong/projects/com.oracle.truffle.llvm.libraries.bitcode/src/abort.c
-clang -c -emit-llvm -o bin/pthreads.noopt.bc -I/home/graal/sulong/projects/com.oracle.truffle.llvm.libraries.bitcode/include -Xclang -disable-O0-optnone -MT bin/pthreads.noopt.bc -MMD -MP -MF deps/pthreads.Td /home/graal/sulong/projects/com.oracle.truffle.llvm.libraries.bitcode/src/pthreads.c
-clang -c -emit-llvm -o bin/exec.noopt.bc -I/home/graal/sulong/projects/com.oracle.truffle.llvm.libraries.bitcode/include -Xclang -disable-O0-optnone -MT bin/exec.noopt.bc -MMD -MP -MF deps/exec.Td /home/graal/sulong/projects/com.oracle.truffle.llvm.libraries.bitcode/src/exec.c
-clang -c -emit-llvm -o bin/sulong_dispose_context.noopt.bc -I/home/graal/sulong/projects/com.oracle.truffle.llvm.libraries.bitcode/include -Xclang -disable-O0-optnone -MT bin/sulong_dispose_context.noopt.bc -MMD -MP -MF deps/sulong_dispose_context.Td /home/graal/sulong/projects/com.oracle.truffle.llvm.libraries.bitcode/src/sulong_dispose_context.c
-clang -c -emit-llvm -o bin/clone.noopt.bc -I/home/graal/sulong/projects/com.oracle.truffle.llvm.libraries.bitcode/include -Xclang -disable-O0-optnone -MT bin/clone.noopt.bc -MMD -MP -MF deps/clone.Td /home/graal/sulong/projects/com.oracle.truffle.llvm.libraries.bitcode/src/clone.c
-clang -c -emit-llvm -o bin/fork.noopt.bc -I/home/graal/sulong/projects/com.oracle.truffle.llvm.libraries.bitcode/include -Xclang -disable-O0-optnone -MT bin/fork.noopt.bc -MMD -MP -MF deps/fork.Td /home/graal/sulong/projects/com.oracle.truffle.llvm.libraries.bitcode/src/fork.c
-clang -c -emit-llvm -o bin/string.noopt.bc -I/home/graal/sulong/projects/com.oracle.truffle.llvm.libraries.bitcode/include -Xclang -disable-O0-optnone -MT bin/string.noopt.bc -MMD -MP -MF deps/string.Td /home/graal/sulong/projects/com.oracle.truffle.llvm.libraries.bitcode/src/string.c
-clang -c -emit-llvm -o bin/assert.noopt.bc -I/home/graal/sulong/projects/com.oracle.truffle.llvm.libraries.bitcode/include -Xclang -disable-O0-optnone -MT bin/assert.noopt.bc -MMD -MP -MF deps/assert.Td /home/graal/sulong/projects/com.oracle.truffle.llvm.libraries.bitcode/src/assert.c
-clang++ -c -emit-llvm -I/home/graal/sulong/projects/com.oracle.truffle.llvm.libraries.bitcode/include -I/home/graal/sulong/projects/com.oracle.truffle.llvm.libraries.bitcode/libcxxabi -I/home/graal/sulong/projects/com.oracle.truffle.llvm.libraries.bitcode/libcxx -o bin/cxa_handlers.noopt.bc -Xclang -disable-O0-optnone -std=c++11 -stdlib=libc++ -DLIBCXXABI_SILENT_TERMINATE -MT bin/cxa_handlers.noopt.bc -MMD -MP -MF deps/cxa_handlers.Td /home/graal/sulong/projects/com.oracle.truffle.llvm.libraries.bitcode/libcxxabi/cxa_handlers.cpp
-clang++ -c -emit-llvm -I/home/graal/sulong/projects/com.oracle.truffle.llvm.libraries.bitcode/include -I/home/graal/sulong/projects/com.oracle.truffle.llvm.libraries.bitcode/libcxxabi -I/home/graal/sulong/projects/com.oracle.truffle.llvm.libraries.bitcode/libcxx -o bin/cxa_default_handlers.noopt.bc -Xclang -disable-O0-optnone -std=c++11 -stdlib=libc++ -DLIBCXXABI_SILENT_TERMINATE -MT bin/cxa_default_handlers.noopt.bc -MMD -MP -MF deps/cxa_default_handlers.Td /home/graal/sulong/projects/com.oracle.truffle.llvm.libraries.bitcode/libcxxabi/cxa_default_handlers.cpp
-clang++ -c -emit-llvm -I/home/graal/sulong/projects/com.oracle.truffle.llvm.libraries.bitcode/include -I/home/graal/sulong/projects/com.oracle.truffle.llvm.libraries.bitcode/libcxxabi -I/home/graal/sulong/projects/com.oracle.truffle.llvm.libraries.bitcode/libcxx -o bin/stdlib_new_delete.noopt.bc -Xclang -disable-O0-optnone -std=c++11 -stdlib=libc++ -DLIBCXXABI_SILENT_TERMINATE -MT bin/stdlib_new_delete.noopt.bc -MMD -MP -MF deps/stdlib_new_delete.Td /home/graal/sulong/projects/com.oracle.truffle.llvm.libraries.bitcode/libcxxabi/stdlib_new_delete.cpp
-clang++ -c -emit-llvm -I/home/graal/sulong/projects/com.oracle.truffle.llvm.libraries.bitcode/include -I/home/graal/sulong/projects/com.oracle.truffle.llvm.libraries.bitcode/libcxxabi -I/home/graal/sulong/projects/com.oracle.truffle.llvm.libraries.bitcode/libcxx -o bin/abort_message.noopt.bc -Xclang -disable-O0-optnone -std=c++11 -stdlib=libc++ -DLIBCXXABI_SILENT_TERMINATE -MT bin/abort_message.noopt.bc -MMD -MP -MF deps/abort_message.Td /home/graal/sulong/projects/com.oracle.truffle.llvm.libraries.bitcode/libcxxabi/abort_message.cpp
-clang++ -c -emit-llvm -I/home/graal/sulong/projects/com.oracle.truffle.llvm.libraries.bitcode/include -I/home/graal/sulong/projects/com.oracle.truffle.llvm.libraries.bitcode/libcxxabi -I/home/graal/sulong/projects/com.oracle.truffle.llvm.libraries.bitcode/libcxx -o bin/stdlib_stdexcept.noopt.bc -Xclang -disable-O0-optnone -std=c++11 -stdlib=libc++ -DLIBCXXABI_SILENT_TERMINATE -MT bin/stdlib_stdexcept.noopt.bc -MMD -MP -MF deps/stdlib_stdexcept.Td /home/graal/sulong/projects/com.oracle.truffle.llvm.libraries.bitcode/libcxxabi/stdlib_stdexcept.cpp
-clang++ -c -emit-llvm -I/home/graal/sulong/projects/com.oracle.truffle.llvm.libraries.bitcode/include -I/home/graal/sulong/projects/com.oracle.truffle.llvm.libraries.bitcode/libcxxabi -I/home/graal/sulong/projects/com.oracle.truffle.llvm.libraries.bitcode/libcxx -o bin/stdlib_typeinfo.noopt.bc -Xclang -disable-O0-optnone -std=c++11 -stdlib=libc++ -DLIBCXXABI_SILENT_TERMINATE -MT bin/stdlib_typeinfo.noopt.bc -MMD -MP -MF deps/stdlib_typeinfo.Td /home/graal/sulong/projects/com.oracle.truffle.llvm.libraries.bitcode/libcxxabi/stdlib_typeinfo.cpp
-clang++ -c -emit-llvm -I/home/graal/sulong/projects/com.oracle.truffle.llvm.libraries.bitcode/include -I/home/graal/sulong/projects/com.oracle.truffle.llvm.libraries.bitcode/libcxxabi -I/home/graal/sulong/projects/com.oracle.truffle.llvm.libraries.bitcode/libcxx -o bin/stdlib_exception.noopt.bc -Xclang -disable-O0-optnone -std=c++11 -stdlib=libc++ -DLIBCXXABI_SILENT_TERMINATE -MT bin/stdlib_exception.noopt.bc -MMD -MP -MF deps/stdlib_exception.Td /home/graal/sulong/projects/com.oracle.truffle.llvm.libraries.bitcode/libcxxabi/stdlib_exception.cpp
-clang++ -c -emit-llvm -I/home/graal/sulong/projects/com.oracle.truffle.llvm.libraries.bitcode/include -I/home/graal/sulong/projects/com.oracle.truffle.llvm.libraries.bitcode/libcxxabi -I/home/graal/sulong/projects/com.oracle.truffle.llvm.libraries.bitcode/libcxx -o bin/private_typeinfo.noopt.bc -Xclang -disable-O0-optnone -std=c++11 -stdlib=libc++ -DLIBCXXABI_SILENT_TERMINATE -MT bin/private_typeinfo.noopt.bc -MMD -MP -MF deps/private_typeinfo.Td /home/graal/sulong/projects/com.oracle.truffle.llvm.libraries.bitcode/libcxxabi/private_typeinfo.cpp
-clang++ -c -emit-llvm -I/home/graal/sulong/projects/com.oracle.truffle.llvm.libraries.bitcode/include -I/home/graal/sulong/projects/com.oracle.truffle.llvm.libraries.bitcode/libcxxabi -I/home/graal/sulong/projects/com.oracle.truffle.llvm.libraries.bitcode/libcxx -o bin/cxa_exception_storage.noopt.bc -Xclang -disable-O0-optnone -std=c++11 -stdlib=libc++ -DLIBCXXABI_SILENT_TERMINATE -MT bin/cxa_exception_storage.noopt.bc -MMD -MP -MF deps/cxa_exception_storage.Td /home/graal/sulong/projects/com.oracle.truffle.llvm.libraries.bitcode/libcxxabi/cxa_exception_storage.cpp
-clang++ -c -emit-llvm -I/home/graal/sulong/projects/com.oracle.truffle.llvm.libraries.bitcode/include -I/home/graal/sulong/projects/com.oracle.truffle.llvm.libraries.bitcode/libcxxabi -I/home/graal/sulong/projects/com.oracle.truffle.llvm.libraries.bitcode/libcxx -o bin/cxa_exception.noopt.bc -Xclang -disable-O0-optnone -std=c++11 -stdlib=libc++ -DLIBCXXABI_SILENT_TERMINATE -MT bin/cxa_exception.noopt.bc -MMD -MP -MF deps/cxa_exception.Td /home/graal/sulong/projects/com.oracle.truffle.llvm.libraries.bitcode/libcxxabi/cxa_exception.cpp
-clang++ -c -emit-llvm -I/home/graal/sulong/projects/com.oracle.truffle.llvm.libraries.bitcode/include -I/home/graal/sulong/projects/com.oracle.truffle.llvm.libraries.bitcode/libcxxabi -I/home/graal/sulong/projects/com.oracle.truffle.llvm.libraries.bitcode/libcxx -o bin/cxa_virtual.noopt.bc -Xclang -disable-O0-optnone -std=c++11 -stdlib=libc++ -DLIBCXXABI_SILENT_TERMINATE -MT bin/cxa_virtual.noopt.bc -MMD -MP -MF deps/cxa_virtual.Td /home/graal/sulong/projects/com.oracle.truffle.llvm.libraries.bitcode/libcxxabi/cxa_virtual.cpp
-tar -czf bin/libsulong-src.tar.gz -C /home/graal/sulong/projects/com.oracle.truffle.llvm.libraries.bitcode .
-opt -o bin/stat.bc bin/stat.noopt.bc -mem2reg -globalopt -simplifycfg -constprop -instcombine -dse -loop-simplify -reassociate -licm -gvn
-opt -o bin/crt0.bc bin/crt0.noopt.bc -mem2reg -globalopt -simplifycfg -constprop -instcombine -dse -loop-simplify -reassociate -licm -gvn
-opt -o bin/setjmp.bc bin/setjmp.noopt.bc -mem2reg -globalopt -simplifycfg -constprop -instcombine -dse -loop-simplify -reassociate -licm -gvn
-opt -o bin/exit.bc bin/exit.noopt.bc -mem2reg -globalopt -simplifycfg -constprop -instcombine -dse -loop-simplify -reassociate -licm -gvn
-opt -o bin/builtin.bc bin/builtin.noopt.bc -mem2reg -globalopt -simplifycfg -constprop -instcombine -dse -loop-simplify -reassociate -licm -gvn
-opt -o bin/clock.bc bin/clock.noopt.bc -mem2reg -globalopt -simplifycfg -constprop -instcombine -dse -loop-simplify -reassociate -licm -gvn
-opt -o bin/complex.bc bin/complex.noopt.bc -mem2reg -globalopt -simplifycfg -constprop -instcombine -dse -loop-simplify -reassociate -licm -gvn
-opt -o bin/memcpy.bc bin/memcpy.noopt.bc -mem2reg -globalopt -simplifycfg -constprop -instcombine -dse -loop-simplify -reassociate -licm -gvn
-opt -o bin/qsort.bc bin/qsort.noopt.bc -mem2reg -globalopt -simplifycfg -constprop -instcombine -dse -loop-simplify -reassociate -licm -gvn
-opt -o bin/abort.bc bin/abort.noopt.bc -mem2reg -globalopt -simplifycfg -constprop -instcombine -dse -loop-simplify -reassociate -licm -gvn
-opt -o bin/pthreads.bc bin/pthreads.noopt.bc -mem2reg -globalopt -simplifycfg -constprop -instcombine -dse -loop-simplify -reassociate -licm -gvn
-opt -o bin/exec.bc bin/exec.noopt.bc -mem2reg -globalopt -simplifycfg -constprop -instcombine -dse -loop-simplify -reassociate -licm -gvn
-opt -o bin/sulong_dispose_context.bc bin/sulong_dispose_context.noopt.bc -mem2reg -globalopt -simplifycfg -constprop -instcombine -dse -loop-simplify -reassociate -licm -gvn
-opt -o bin/clone.bc bin/clone.noopt.bc -mem2reg -globalopt -simplifycfg -constprop -instcombine -dse -loop-simplify -reassociate -licm -gvn
-opt -o bin/fork.bc bin/fork.noopt.bc -mem2reg -globalopt -simplifycfg -constprop -instcombine -dse -loop-simplify -reassociate -licm -gvn
-opt -o bin/string.bc bin/string.noopt.bc -mem2reg -globalopt -simplifycfg -constprop -instcombine -dse -loop-simplify -reassociate -licm -gvn
-opt -o bin/assert.bc bin/assert.noopt.bc -mem2reg -globalopt -simplifycfg -constprop -instcombine -dse -loop-simplify -reassociate -licm -gvn
-opt -o bin/cxa_handlers.bc bin/cxa_handlers.noopt.bc -mem2reg -globalopt -simplifycfg -constprop -instcombine -dse -loop-simplify -reassociate -licm -gvn
-opt -o bin/cxa_default_handlers.bc bin/cxa_default_handlers.noopt.bc -mem2reg -globalopt -simplifycfg -constprop -instcombine -dse -loop-simplify -reassociate -licm -gvn
-opt -o bin/stdlib_new_delete.bc bin/stdlib_new_delete.noopt.bc -mem2reg -globalopt -simplifycfg -constprop -instcombine -dse -loop-simplify -reassociate -licm -gvn
-opt -o bin/abort_message.bc bin/abort_message.noopt.bc -mem2reg -globalopt -simplifycfg -constprop -instcombine -dse -loop-simplify -reassociate -licm -gvn
-opt -o bin/stdlib_stdexcept.bc bin/stdlib_stdexcept.noopt.bc -mem2reg -globalopt -simplifycfg -constprop -instcombine -dse -loop-simplify -reassociate -licm -gvn
-opt -o bin/stdlib_typeinfo.bc bin/stdlib_typeinfo.noopt.bc -mem2reg -globalopt -simplifycfg -constprop -instcombine -dse -loop-simplify -reassociate -licm -gvn
-opt -o bin/stdlib_exception.bc bin/stdlib_exception.noopt.bc -mem2reg -globalopt -simplifycfg -constprop -instcombine -dse -loop-simplify -reassociate -licm -gvn
-opt -o bin/private_typeinfo.bc bin/private_typeinfo.noopt.bc -mem2reg -globalopt -simplifycfg -constprop -instcombine -dse -loop-simplify -reassociate -licm -gvn
-opt -o bin/cxa_exception_storage.bc bin/cxa_exception_storage.noopt.bc -mem2reg -globalopt -simplifycfg -constprop -instcombine -dse -loop-simplify -reassociate -licm -gvn
-opt -o bin/cxa_exception.bc bin/cxa_exception.noopt.bc -mem2reg -globalopt -simplifycfg -constprop -instcombine -dse -loop-simplify -reassociate -licm -gvn
-opt -o bin/cxa_virtual.bc bin/cxa_virtual.noopt.bc -mem2reg -globalopt -simplifycfg -constprop -instcombine -dse -loop-simplify -reassociate -licm -gvn
-llvm-link -o bin/libsulong.bc bin/stat.bc bin/crt0.bc bin/setjmp.bc bin/exit.bc bin/builtin.bc bin/clock.bc bin/complex.bc bin/memcpy.bc bin/qsort.bc bin/abort.bc bin/pthreads.bc bin/exec.bc bin/sulong_dispose_context.bc bin/clone.bc bin/fork.bc bin/string.bc bin/assert.bc bin/cxa_handlers.bc bin/cxa_default_handlers.bc bin/stdlib_new_delete.bc bin/abort_message.bc bin/stdlib_stdexcept.bc bin/stdlib_typeinfo.bc bin/stdlib_exception.bc bin/private_typeinfo.bc bin/cxa_exception_storage.bc bin/cxa_exception.bc bin/cxa_virtual.bc
-rm bin/qsort.noopt.bc bin/clock.noopt.bc bin/pthreads.noopt.bc bin/cxa_virtual.noopt.bc bin/abort_message.noopt.bc bin/memcpy.noopt.bc bin/exit.noopt.bc bin/string.noopt.bc bin/fork.noopt.bc bin/assert.noopt.bc bin/cxa_exception.noopt.bc bin/stdlib_exception.noopt.bc bin/cxa_default_handlers.noopt.bc bin/stdlib_new_delete.noopt.bc bin/setjmp.noopt.bc bin/crt0.noopt.bc bin/cxa_handlers.noopt.bc bin/abort.noopt.bc bin/exec.noopt.bc bin/sulong_dispose_context.noopt.bc bin/clone.noopt.bc bin/stdlib_typeinfo.noopt.bc bin/private_typeinfo.noopt.bc bin/stat.noopt.bc bin/cxa_exception_storage.noopt.bc bin/stdlib_stdexcept.noopt.bc bin/builtin.noopt.bc bin/complex.noopt.bc
-Building com.oracle.svm.native with GNU Make... [rebuild needed by GNU Make]
-make -C /home/graal/graal/substratevm/src/com.oracle.svm.native/strictmath
-make -C /home/graal/graal/substratevm/src/com.oracle.svm.native/libchelper
-make -C /home/graal/graal/substratevm/src/com.oracle.svm.native/jni
-make[1]: Entering directory `/home/graal/graal/substratevm/src/com.oracle.svm.native/jni'
-mkdir -p /home/graal/graal/substratevm/mxbuild/linux-amd64/src/com.oracle.svm.native/linux-amd64/include
-make[1]: Entering directory `/home/graal/graal/substratevm/src/com.oracle.svm.native/libchelper'
-mkdir -p /home/graal/graal/substratevm/mxbuild/linux-amd64/src/com.oracle.svm.native/linux-amd64/libchelper
-mkdir -p /home/graal/graal/substratevm/mxbuild/linux-amd64/src/com.oracle.svm.native/linux-amd64
-make[1]: Entering directory `/home/graal/graal/substratevm/src/com.oracle.svm.native/strictmath'
-mkdir -p /home/graal/graal/substratevm/mxbuild/linux-amd64/src/com.oracle.svm.native/linux-amd64/strictmath
-cp include/jni.h /home/graal/graal/substratevm/mxbuild/linux-amd64/src/com.oracle.svm.native/linux-amd64/include/jni.h
-cp include/jni_md.h /home/graal/graal/substratevm/mxbuild/linux-amd64/src/com.oracle.svm.native/linux-amd64/include/jni_md.h
-cp include/cpufeatures.h /home/graal/graal/substratevm/mxbuild/linux-amd64/src/com.oracle.svm.native/linux-amd64/include/cpufeatures.h
-cc -c -Ifdlibm/include -fPIC -O1 -D _LITTLE_ENDIAN StrictMath.c -o /home/graal/graal/substratevm/mxbuild/linux-amd64/src/com.oracle.svm.native/linux-amd64/strictmath/StrictMath.o
-cc -c -Ifdlibm/include -fPIC -O1 -D _LITTLE_ENDIAN fdlibm/src/w_acos.c -o /home/graal/graal/substratevm/mxbuild/linux-amd64/src/com.oracle.svm.native/linux-amd64/strictmath/w_acos.o
-cc -c -Iinclude -g -fPIC -O2 -D _LITTLE_ENDIAN  cSunMiscSignal.c -o /home/graal/graal/substratevm/mxbuild/linux-amd64/src/com.oracle.svm.native/linux-amd64/libchelper/cSunMiscSignal.o
-cc -c -Ifdlibm/include -fPIC -O1 -D _LITTLE_ENDIAN fdlibm/src/s_isnan.c -o /home/graal/graal/substratevm/mxbuild/linux-amd64/src/com.oracle.svm.native/linux-amd64/strictmath/s_isnan.o
-cc -c -Iinclude -g -fPIC -O2 -D _LITTLE_ENDIAN  cpuid.c -o /home/graal/graal/substratevm/mxbuild/linux-amd64/src/com.oracle.svm.native/linux-amd64/libchelper/cpuid.o
-cc -c -Iinclude -g -fPIC -O2 -D _LITTLE_ENDIAN  getEnviron.c -o /home/graal/graal/substratevm/mxbuild/linux-amd64/src/com.oracle.svm.native/linux-amd64/libchelper/getEnviron.o
-make[1]: Leaving directory `/home/graal/graal/substratevm/src/com.oracle.svm.native/jni'
-cc -c -Ifdlibm/include -fPIC -O1 -D _LITTLE_ENDIAN fdlibm/src/e_remainder.c -o /home/graal/graal/substratevm/mxbuild/linux-amd64/src/com.oracle.svm.native/linux-amd64/strictmath/e_remainder.o
-cc -c -Ifdlibm/include -fPIC -O1 -D _LITTLE_ENDIAN fdlibm/src/w_remainder.c -o /home/graal/graal/substratevm/mxbuild/linux-amd64/src/com.oracle.svm.native/linux-amd64/strictmath/w_remainder.o
-cc -c -Ifdlibm/include -fPIC -O1 -D _LITTLE_ENDIAN fdlibm/src/e_scalb.c -o /home/graal/graal/substratevm/mxbuild/linux-amd64/src/com.oracle.svm.native/linux-amd64/strictmath/e_scalb.o
-cc -c -Ifdlibm/include -fPIC -O1 -D _LITTLE_ENDIAN fdlibm/src/s_log1p.c -o /home/graal/graal/substratevm/mxbuild/linux-amd64/src/com.oracle.svm.native/linux-amd64/strictmath/s_log1p.o
-cc -c -Ifdlibm/include -fPIC -O1 -D _LITTLE_ENDIAN fdlibm/src/e_log.c -o /home/graal/graal/substratevm/mxbuild/linux-amd64/src/com.oracle.svm.native/linux-amd64/strictmath/e_log.o
-cc -c -Ifdlibm/include -fPIC -O1 -D _LITTLE_ENDIAN fdlibm/src/s_rint.c -o /home/graal/graal/substratevm/mxbuild/linux-amd64/src/com.oracle.svm.native/linux-amd64/strictmath/s_rint.o
-cc -c -Ifdlibm/include -fPIC -O1 -D _LITTLE_ENDIAN fdlibm/src/e_sqrt.c -o /home/graal/graal/substratevm/mxbuild/linux-amd64/src/com.oracle.svm.native/linux-amd64/strictmath/e_sqrt.o
-cc -c -Ifdlibm/include -fPIC -O1 -D _LITTLE_ENDIAN fdlibm/src/w_log.c -o /home/graal/graal/substratevm/mxbuild/linux-amd64/src/com.oracle.svm.native/linux-amd64/strictmath/w_log.o
-cc -c -Ifdlibm/include -fPIC -O1 -D _LITTLE_ENDIAN fdlibm/src/w_log10.c -o /home/graal/graal/substratevm/mxbuild/linux-amd64/src/com.oracle.svm.native/linux-amd64/strictmath/w_log10.o
-cc -c -Ifdlibm/include -fPIC -O1 -D _LITTLE_ENDIAN fdlibm/src/e_lgamma.c -o /home/graal/graal/substratevm/mxbuild/linux-amd64/src/com.oracle.svm.native/linux-amd64/strictmath/e_lgamma.o
-cc -c -Ifdlibm/include -fPIC -O1 -D _LITTLE_ENDIAN fdlibm/src/s_floor.c -o /home/graal/graal/substratevm/mxbuild/linux-amd64/src/com.oracle.svm.native/linux-amd64/strictmath/s_floor.o
-cc -c -Ifdlibm/include -fPIC -O1 -D _LITTLE_ENDIAN fdlibm/src/w_exp.c -o /home/graal/graal/substratevm/mxbuild/linux-amd64/src/com.oracle.svm.native/linux-amd64/strictmath/w_exp.o
-cc -c -Ifdlibm/include -fPIC -O1 -D _LITTLE_ENDIAN fdlibm/src/w_fmod.c -o /home/graal/graal/substratevm/mxbuild/linux-amd64/src/com.oracle.svm.native/linux-amd64/strictmath/w_fmod.o
-cc -c -Ifdlibm/include -fPIC -O1 -D _LITTLE_ENDIAN fdlibm/src/e_sinh.c -o /home/graal/graal/substratevm/mxbuild/linux-amd64/src/com.oracle.svm.native/linux-amd64/strictmath/e_sinh.o
-cc -c -Ifdlibm/include -fPIC -O1 -D _LITTLE_ENDIAN fdlibm/src/s_cos.c -o /home/graal/graal/substratevm/mxbuild/linux-amd64/src/com.oracle.svm.native/linux-amd64/strictmath/s_cos.o
-cc -c -Ifdlibm/include -fPIC -O1 -D _LITTLE_ENDIAN fdlibm/src/s_erf.c -o /home/graal/graal/substratevm/mxbuild/linux-amd64/src/com.oracle.svm.native/linux-amd64/strictmath/s_erf.o
-ar -cr /home/graal/graal/substratevm/mxbuild/linux-amd64/src/com.oracle.svm.native/linux-amd64/liblibchelper.a /home/graal/graal/substratevm/mxbuild/linux-amd64/src/com.oracle.svm.native/linux-amd64/libchelper/cSunMiscSignal.o /home/graal/graal/substratevm/mxbuild/linux-amd64/src/com.oracle.svm.native/linux-amd64/libchelper/cpuid.o /home/graal/graal/substratevm/mxbuild/linux-amd64/src/com.oracle.svm.native/linux-amd64/libchelper/getEnviron.o
-cc -c -Ifdlibm/include -fPIC -O1 -D _LITTLE_ENDIAN fdlibm/src/s_asinh.c -o /home/graal/graal/substratevm/mxbuild/linux-amd64/src/com.oracle.svm.native/linux-amd64/strictmath/s_asinh.o
-make[1]: Leaving directory `/home/graal/graal/substratevm/src/com.oracle.svm.native/libchelper'
-cc -c -Ifdlibm/include -fPIC -O1 -D _LITTLE_ENDIAN fdlibm/src/e_atan2.c -o /home/graal/graal/substratevm/mxbuild/linux-amd64/src/com.oracle.svm.native/linux-amd64/strictmath/e_atan2.o
-cc -c -Ifdlibm/include -fPIC -O1 -D _LITTLE_ENDIAN fdlibm/src/s_sin.c -o /home/graal/graal/substratevm/mxbuild/linux-amd64/src/com.oracle.svm.native/linux-amd64/strictmath/s_sin.o
-cc -c -Ifdlibm/include -fPIC -O1 -D _LITTLE_ENDIAN fdlibm/src/k_cos.c -o /home/graal/graal/substratevm/mxbuild/linux-amd64/src/com.oracle.svm.native/linux-amd64/strictmath/k_cos.o
-cc -c -Ifdlibm/include -fPIC -O1 -D _LITTLE_ENDIAN fdlibm/src/w_scalb.c -o /home/graal/graal/substratevm/mxbuild/linux-amd64/src/com.oracle.svm.native/linux-amd64/strictmath/w_scalb.o
-cc -c -Ifdlibm/include -fPIC -O1 -D _LITTLE_ENDIAN fdlibm/src/w_atan2.c -o /home/graal/graal/substratevm/mxbuild/linux-amd64/src/com.oracle.svm.native/linux-amd64/strictmath/w_atan2.o
-cc -c -Ifdlibm/include -fPIC -O1 -D _LITTLE_ENDIAN fdlibm/src/e_atanh.c -o /home/graal/graal/substratevm/mxbuild/linux-amd64/src/com.oracle.svm.native/linux-amd64/strictmath/e_atanh.o
-cc -c -Ifdlibm/include -fPIC -O1 -D _LITTLE_ENDIAN fdlibm/src/w_sqrt.c -o /home/graal/graal/substratevm/mxbuild/linux-amd64/src/com.oracle.svm.native/linux-amd64/strictmath/w_sqrt.o
-cc -c -Ifdlibm/include -fPIC -O1 -D _LITTLE_ENDIAN fdlibm/src/w_hypot.c -o /home/graal/graal/substratevm/mxbuild/linux-amd64/src/com.oracle.svm.native/linux-amd64/strictmath/w_hypot.o
-cc -c -Ifdlibm/include -fPIC -O1 -D _LITTLE_ENDIAN fdlibm/src/w_j0.c -o /home/graal/graal/substratevm/mxbuild/linux-amd64/src/com.oracle.svm.native/linux-amd64/strictmath/w_j0.o
-cc -c -Ifdlibm/include -fPIC -O1 -D _LITTLE_ENDIAN fdlibm/src/e_exp.c -o /home/graal/graal/substratevm/mxbuild/linux-amd64/src/com.oracle.svm.native/linux-amd64/strictmath/e_exp.o
-cc -c -Ifdlibm/include -fPIC -O1 -D _LITTLE_ENDIAN fdlibm/src/s_signgam.c -o /home/graal/graal/substratevm/mxbuild/linux-amd64/src/com.oracle.svm.native/linux-amd64/strictmath/s_signgam.o
-cc -c -Ifdlibm/include -fPIC -O1 -D _LITTLE_ENDIAN fdlibm/src/s_tanh.c -o /home/graal/graal/substratevm/mxbuild/linux-amd64/src/com.oracle.svm.native/linux-amd64/strictmath/s_tanh.o
-cc -c -Ifdlibm/include -fPIC -O1 -D _LITTLE_ENDIAN fdlibm/src/w_pow.c -o /home/graal/graal/substratevm/mxbuild/linux-amd64/src/com.oracle.svm.native/linux-amd64/strictmath/w_pow.o
-cc -c -Ifdlibm/include -fPIC -O1 -D _LITTLE_ENDIAN fdlibm/src/e_cosh.c -o /home/graal/graal/substratevm/mxbuild/linux-amd64/src/com.oracle.svm.native/linux-amd64/strictmath/e_cosh.o
-cc -c -Ifdlibm/include -fPIC -O1 -D _LITTLE_ENDIAN fdlibm/src/k_standard.c -o /home/graal/graal/substratevm/mxbuild/linux-amd64/src/com.oracle.svm.native/linux-amd64/strictmath/k_standard.o
-cc -c -Ifdlibm/include -fPIC -O1 -D _LITTLE_ENDIAN fdlibm/src/k_sin.c -o /home/graal/graal/substratevm/mxbuild/linux-amd64/src/com.oracle.svm.native/linux-amd64/strictmath/k_sin.o
-cc -c -Ifdlibm/include -fPIC -O1 -D _LITTLE_ENDIAN fdlibm/src/s_ilogb.c -o /home/graal/graal/substratevm/mxbuild/linux-amd64/src/com.oracle.svm.native/linux-amd64/strictmath/s_ilogb.o
-cc -c -Ifdlibm/include -fPIC -O1 -D _LITTLE_ENDIAN fdlibm/src/s_ceil.c -o /home/graal/graal/substratevm/mxbuild/linux-amd64/src/com.oracle.svm.native/linux-amd64/strictmath/s_ceil.o
-cc -c -Ifdlibm/include -fPIC -O1 -D _LITTLE_ENDIAN fdlibm/src/e_rem_pio2.c -o /home/graal/graal/substratevm/mxbuild/linux-amd64/src/com.oracle.svm.native/linux-amd64/strictmath/e_rem_pio2.o
-cc -c -Ifdlibm/include -fPIC -O1 -D _LITTLE_ENDIAN fdlibm/src/w_j1.c -o /home/graal/graal/substratevm/mxbuild/linux-amd64/src/com.oracle.svm.native/linux-amd64/strictmath/w_j1.o
-cc -c -Ifdlibm/include -fPIC -O1 -D _LITTLE_ENDIAN fdlibm/src/e_pow.c -o /home/graal/graal/substratevm/mxbuild/linux-amd64/src/com.oracle.svm.native/linux-amd64/strictmath/e_pow.o
-cc -c -Ifdlibm/include -fPIC -O1 -D _LITTLE_ENDIAN fdlibm/src/s_finite.c -o /home/graal/graal/substratevm/mxbuild/linux-amd64/src/com.oracle.svm.native/linux-amd64/strictmath/s_finite.o
-cc -c -Ifdlibm/include -fPIC -O1 -D _LITTLE_ENDIAN fdlibm/src/e_jn.c -o /home/graal/graal/substratevm/mxbuild/linux-amd64/src/com.oracle.svm.native/linux-amd64/strictmath/e_jn.o
-cc -c -Ifdlibm/include -fPIC -O1 -D _LITTLE_ENDIAN fdlibm/src/e_acosh.c -o /home/graal/graal/substratevm/mxbuild/linux-amd64/src/com.oracle.svm.native/linux-amd64/strictmath/e_acosh.o
-cc -c -Ifdlibm/include -fPIC -O1 -D _LITTLE_ENDIAN fdlibm/src/e_lgamma_r.c -o /home/graal/graal/substratevm/mxbuild/linux-amd64/src/com.oracle.svm.native/linux-amd64/strictmath/e_lgamma_r.o
-cc -c -Ifdlibm/include -fPIC -O1 -D _LITTLE_ENDIAN fdlibm/src/w_gamma_r.c -o /home/graal/graal/substratevm/mxbuild/linux-amd64/src/com.oracle.svm.native/linux-amd64/strictmath/w_gamma_r.o
-cc -c -Ifdlibm/include -fPIC -O1 -D _LITTLE_ENDIAN fdlibm/src/s_lib_version.c -o /home/graal/graal/substratevm/mxbuild/linux-amd64/src/com.oracle.svm.native/linux-amd64/strictmath/s_lib_version.o
-cc -c -Ifdlibm/include -fPIC -O1 -D _LITTLE_ENDIAN fdlibm/src/e_asin.c -o /home/graal/graal/substratevm/mxbuild/linux-amd64/src/com.oracle.svm.native/linux-amd64/strictmath/e_asin.o
-cc -c -Ifdlibm/include -fPIC -O1 -D _LITTLE_ENDIAN fdlibm/src/w_asin.c -o /home/graal/graal/substratevm/mxbuild/linux-amd64/src/com.oracle.svm.native/linux-amd64/strictmath/w_asin.o
-cc -c -Ifdlibm/include -fPIC -O1 -D _LITTLE_ENDIAN fdlibm/src/w_acosh.c -o /home/graal/graal/substratevm/mxbuild/linux-amd64/src/com.oracle.svm.native/linux-amd64/strictmath/w_acosh.o
-cc -c -Ifdlibm/include -fPIC -O1 -D _LITTLE_ENDIAN fdlibm/src/e_log10.c -o /home/graal/graal/substratevm/mxbuild/linux-amd64/src/com.oracle.svm.native/linux-amd64/strictmath/e_log10.o
-cc -c -Ifdlibm/include -fPIC -O1 -D _LITTLE_ENDIAN fdlibm/src/s_scalbn.c -o /home/graal/graal/substratevm/mxbuild/linux-amd64/src/com.oracle.svm.native/linux-amd64/strictmath/s_scalbn.o
-cc -c -Ifdlibm/include -fPIC -O1 -D _LITTLE_ENDIAN fdlibm/src/w_lgamma.c -o /home/graal/graal/substratevm/mxbuild/linux-amd64/src/com.oracle.svm.native/linux-amd64/strictmath/w_lgamma.o
-cc -c -Ifdlibm/include -fPIC -O1 -D _LITTLE_ENDIAN fdlibm/src/e_acos.c -o /home/graal/graal/substratevm/mxbuild/linux-amd64/src/com.oracle.svm.native/linux-amd64/strictmath/e_acos.o
-cc -c -Ifdlibm/include -fPIC -O1 -D _LITTLE_ENDIAN fdlibm/src/w_jn.c -o /home/graal/graal/substratevm/mxbuild/linux-amd64/src/com.oracle.svm.native/linux-amd64/strictmath/w_jn.o
-cc -c -Ifdlibm/include -fPIC -O1 -D _LITTLE_ENDIAN fdlibm/src/s_ldexp.c -o /home/graal/graal/substratevm/mxbuild/linux-amd64/src/com.oracle.svm.native/linux-amd64/strictmath/s_ldexp.o
-cc -c -Ifdlibm/include -fPIC -O1 -D _LITTLE_ENDIAN fdlibm/src/e_j1.c -o /home/graal/graal/substratevm/mxbuild/linux-amd64/src/com.oracle.svm.native/linux-amd64/strictmath/e_j1.o
-cc -c -Ifdlibm/include -fPIC -O1 -D _LITTLE_ENDIAN fdlibm/src/s_atan.c -o /home/graal/graal/substratevm/mxbuild/linux-amd64/src/com.oracle.svm.native/linux-amd64/strictmath/s_atan.o
-cc -c -Ifdlibm/include -fPIC -O1 -D _LITTLE_ENDIAN fdlibm/src/s_matherr.c -o /home/graal/graal/substratevm/mxbuild/linux-amd64/src/com.oracle.svm.native/linux-amd64/strictmath/s_matherr.o
-cc -c -Ifdlibm/include -fPIC -O1 -D _LITTLE_ENDIAN fdlibm/src/s_expm1.c -o /home/graal/graal/substratevm/mxbuild/linux-amd64/src/com.oracle.svm.native/linux-amd64/strictmath/s_expm1.o
-cc -c -Ifdlibm/include -fPIC -O1 -D _LITTLE_ENDIAN fdlibm/src/s_nextafter.c -o /home/graal/graal/substratevm/mxbuild/linux-amd64/src/com.oracle.svm.native/linux-amd64/strictmath/s_nextafter.o
-cc -c -Ifdlibm/include -fPIC -O1 -D _LITTLE_ENDIAN fdlibm/src/e_fmod.c -o /home/graal/graal/substratevm/mxbuild/linux-amd64/src/com.oracle.svm.native/linux-amd64/strictmath/e_fmod.o
-cc -c -Ifdlibm/include -fPIC -O1 -D _LITTLE_ENDIAN fdlibm/src/s_copysign.c -o /home/graal/graal/substratevm/mxbuild/linux-amd64/src/com.oracle.svm.native/linux-amd64/strictmath/s_copysign.o
-cc -c -Ifdlibm/include -fPIC -O1 -D _LITTLE_ENDIAN fdlibm/src/s_tan.c -o /home/graal/graal/substratevm/mxbuild/linux-amd64/src/com.oracle.svm.native/linux-amd64/strictmath/s_tan.o
-cc -c -Ifdlibm/include -fPIC -O1 -D _LITTLE_ENDIAN fdlibm/src/k_rem_pio2.c -o /home/graal/graal/substratevm/mxbuild/linux-amd64/src/com.oracle.svm.native/linux-amd64/strictmath/k_rem_pio2.o
-cc -c -Ifdlibm/include -fPIC -O1 -D _LITTLE_ENDIAN fdlibm/src/s_cbrt.c -o /home/graal/graal/substratevm/mxbuild/linux-amd64/src/com.oracle.svm.native/linux-amd64/strictmath/s_cbrt.o
-cc -c -Ifdlibm/include -fPIC -O1 -D _LITTLE_ENDIAN fdlibm/src/e_hypot.c -o /home/graal/graal/substratevm/mxbuild/linux-amd64/src/com.oracle.svm.native/linux-amd64/strictmath/e_hypot.o
-cc -c -Ifdlibm/include -fPIC -O1 -D _LITTLE_ENDIAN fdlibm/src/e_gamma.c -o /home/graal/graal/substratevm/mxbuild/linux-amd64/src/com.oracle.svm.native/linux-amd64/strictmath/e_gamma.o
-cc -c -Ifdlibm/include -fPIC -O1 -D _LITTLE_ENDIAN fdlibm/src/w_cosh.c -o /home/graal/graal/substratevm/mxbuild/linux-amd64/src/com.oracle.svm.native/linux-amd64/strictmath/w_cosh.o
-cc -c -Ifdlibm/include -fPIC -O1 -D _LITTLE_ENDIAN fdlibm/src/s_significand.c -o /home/graal/graal/substratevm/mxbuild/linux-amd64/src/com.oracle.svm.native/linux-amd64/strictmath/s_significand.o
-cc -c -Ifdlibm/include -fPIC -O1 -D _LITTLE_ENDIAN fdlibm/src/w_atanh.c -o /home/graal/graal/substratevm/mxbuild/linux-amd64/src/com.oracle.svm.native/linux-amd64/strictmath/w_atanh.o
-cc -c -Ifdlibm/include -fPIC -O1 -D _LITTLE_ENDIAN fdlibm/src/w_lgamma_r.c -o /home/graal/graal/substratevm/mxbuild/linux-amd64/src/com.oracle.svm.native/linux-amd64/strictmath/w_lgamma_r.o
-cc -c -Ifdlibm/include -fPIC -O1 -D _LITTLE_ENDIAN fdlibm/src/e_j0.c -o /home/graal/graal/substratevm/mxbuild/linux-amd64/src/com.oracle.svm.native/linux-amd64/strictmath/e_j0.o
-cc -c -Ifdlibm/include -fPIC -O1 -D _LITTLE_ENDIAN fdlibm/src/s_fabs.c -o /home/graal/graal/substratevm/mxbuild/linux-amd64/src/com.oracle.svm.native/linux-amd64/strictmath/s_fabs.o
-cc -c -Ifdlibm/include -fPIC -O1 -D _LITTLE_ENDIAN fdlibm/src/w_gamma.c -o /home/graal/graal/substratevm/mxbuild/linux-amd64/src/com.oracle.svm.native/linux-amd64/strictmath/w_gamma.o
-cc -c -Ifdlibm/include -fPIC -O1 -D _LITTLE_ENDIAN fdlibm/src/s_logb.c -o /home/graal/graal/substratevm/mxbuild/linux-amd64/src/com.oracle.svm.native/linux-amd64/strictmath/s_logb.o
-cc -c -Ifdlibm/include -fPIC -O1 -D _LITTLE_ENDIAN fdlibm/src/k_tan.c -o /home/graal/graal/substratevm/mxbuild/linux-amd64/src/com.oracle.svm.native/linux-amd64/strictmath/k_tan.o
-cc -c -Ifdlibm/include -fPIC -O1 -D _LITTLE_ENDIAN fdlibm/src/w_sinh.c -o /home/graal/graal/substratevm/mxbuild/linux-amd64/src/com.oracle.svm.native/linux-amd64/strictmath/w_sinh.o
-cc -c -Ifdlibm/include -fPIC -O1 -D _LITTLE_ENDIAN fdlibm/src/s_modf.c -o /home/graal/graal/substratevm/mxbuild/linux-amd64/src/com.oracle.svm.native/linux-amd64/strictmath/s_modf.o
-cc -c -Ifdlibm/include -fPIC -O1 -D _LITTLE_ENDIAN fdlibm/src/e_gamma_r.c -o /home/graal/graal/substratevm/mxbuild/linux-amd64/src/com.oracle.svm.native/linux-amd64/strictmath/e_gamma_r.o
-cc -c -Ifdlibm/include -fPIC -O1 -D _LITTLE_ENDIAN fdlibm/src/s_frexp.c -o /home/graal/graal/substratevm/mxbuild/linux-amd64/src/com.oracle.svm.native/linux-amd64/strictmath/s_frexp.o
-ar -cr /home/graal/graal/substratevm/mxbuild/linux-amd64/src/com.oracle.svm.native/linux-amd64/libstrictmath.a /home/graal/graal/substratevm/mxbuild/linux-amd64/src/com.oracle.svm.native/linux-amd64/strictmath/StrictMath.o /home/graal/graal/substratevm/mxbuild/linux-amd64/src/com.oracle.svm.native/linux-amd64/strictmath/w_acos.o /home/graal/graal/substratevm/mxbuild/linux-amd64/src/com.oracle.svm.native/linux-amd64/strictmath/s_isnan.o /home/graal/graal/substratevm/mxbuild/linux-amd64/src/com.oracle.svm.native/linux-amd64/strictmath/e_remainder.o /home/graal/graal/substratevm/mxbuild/linux-amd64/src/com.oracle.svm.native/linux-amd64/strictmath/w_remainder.o /home/graal/graal/substratevm/mxbuild/linux-amd64/src/com.oracle.svm.native/linux-amd64/strictmath/e_scalb.o /home/graal/graal/substratevm/mxbuild/linux-amd64/src/com.oracle.svm.native/linux-amd64/strictmath/s_log1p.o /home/graal/graal/substratevm/mxbuild/linux-amd64/src/com.oracle.svm.native/linux-amd64/strictmath/e_log.o /home/graal/graal/substratevm/mxbuild/linux-amd64/src/com.oracle.svm.native/linux-amd64/strictmath/s_rint.o /home/graal/graal/substratevm/mxbuild/linux-amd64/src/com.oracle.svm.native/linux-amd64/strictmath/e_sqrt.o /home/graal/graal/substratevm/mxbuild/linux-amd64/src/com.oracle.svm.native/linux-amd64/strictmath/w_log.o /home/graal/graal/substratevm/mxbuild/linux-amd64/src/com.oracle.svm.native/linux-amd64/strictmath/w_log10.o /home/graal/graal/substratevm/mxbuild/linux-amd64/src/com.oracle.svm.native/linux-amd64/strictmath/e_lgamma.o /home/graal/graal/substratevm/mxbuild/linux-amd64/src/com.oracle.svm.native/linux-amd64/strictmath/s_floor.o /home/graal/graal/substratevm/mxbuild/linux-amd64/src/com.oracle.svm.native/linux-amd64/strictmath/w_exp.o /home/graal/graal/substratevm/mxbuild/linux-amd64/src/com.oracle.svm.native/linux-amd64/strictmath/w_fmod.o /home/graal/graal/substratevm/mxbuild/linux-amd64/src/com.oracle.svm.native/linux-amd64/strictmath/e_sinh.o /home/graal/graal/substratevm/mxbuild/linux-amd64/src/com.oracle.svm.native/linux-amd64/strictmath/s_cos.o /home/graal/graal/substratevm/mxbuild/linux-amd64/src/com.oracle.svm.native/linux-amd64/strictmath/s_erf.o /home/graal/graal/substratevm/mxbuild/linux-amd64/src/com.oracle.svm.native/linux-amd64/strictmath/s_asinh.o /home/graal/graal/substratevm/mxbuild/linux-amd64/src/com.oracle.svm.native/linux-amd64/strictmath/e_atan2.o /home/graal/graal/substratevm/mxbuild/linux-amd64/src/com.oracle.svm.native/linux-amd64/strictmath/s_sin.o /home/graal/graal/substratevm/mxbuild/linux-amd64/src/com.oracle.svm.native/linux-amd64/strictmath/k_cos.o /home/graal/graal/substratevm/mxbuild/linux-amd64/src/com.oracle.svm.native/linux-amd64/strictmath/w_scalb.o /home/graal/graal/substratevm/mxbuild/linux-amd64/src/com.oracle.svm.native/linux-amd64/strictmath/w_atan2.o /home/graal/graal/substratevm/mxbuild/linux-amd64/src/com.oracle.svm.native/linux-amd64/strictmath/e_atanh.o /home/graal/graal/substratevm/mxbuild/linux-amd64/src/com.oracle.svm.native/linux-amd64/strictmath/w_sqrt.o /home/graal/graal/substratevm/mxbuild/linux-amd64/src/com.oracle.svm.native/linux-amd64/strictmath/w_hypot.o /home/graal/graal/substratevm/mxbuild/linux-amd64/src/com.oracle.svm.native/linux-amd64/strictmath/w_j0.o /home/graal/graal/substratevm/mxbuild/linux-amd64/src/com.oracle.svm.native/linux-amd64/strictmath/e_exp.o /home/graal/graal/substratevm/mxbuild/linux-amd64/src/com.oracle.svm.native/linux-amd64/strictmath/s_signgam.o /home/graal/graal/substratevm/mxbuild/linux-amd64/src/com.oracle.svm.native/linux-amd64/strictmath/s_tanh.o /home/graal/graal/substratevm/mxbuild/linux-amd64/src/com.oracle.svm.native/linux-amd64/strictmath/w_pow.o /home/graal/graal/substratevm/mxbuild/linux-amd64/src/com.oracle.svm.native/linux-amd64/strictmath/e_cosh.o /home/graal/graal/substratevm/mxbuild/linux-amd64/src/com.oracle.svm.native/linux-amd64/strictmath/k_standard.o /home/graal/graal/substratevm/mxbuild/linux-amd64/src/com.oracle.svm.native/linux-amd64/strictmath/k_sin.o /home/graal/graal/substratevm/mxbuild/linux-amd64/src/com.oracle.svm.native/linux-amd64/strictmath/s_ilogb.o /home/graal/graal/substratevm/mxbuild/linux-amd64/src/com.oracle.svm.native/linux-amd64/strictmath/s_ceil.o /home/graal/graal/substratevm/mxbuild/linux-amd64/src/com.oracle.svm.native/linux-amd64/strictmath/e_rem_pio2.o /home/graal/graal/substratevm/mxbuild/linux-amd64/src/com.oracle.svm.native/linux-amd64/strictmath/w_j1.o /home/graal/graal/substratevm/mxbuild/linux-amd64/src/com.oracle.svm.native/linux-amd64/strictmath/e_pow.o /home/graal/graal/substratevm/mxbuild/linux-amd64/src/com.oracle.svm.native/linux-amd64/strictmath/s_finite.o /home/graal/graal/substratevm/mxbuild/linux-amd64/src/com.oracle.svm.native/linux-amd64/strictmath/e_jn.o /home/graal/graal/substratevm/mxbuild/linux-amd64/src/com.oracle.svm.native/linux-amd64/strictmath/e_acosh.o /home/graal/graal/substratevm/mxbuild/linux-amd64/src/com.oracle.svm.native/linux-amd64/strictmath/e_lgamma_r.o /home/graal/graal/substratevm/mxbuild/linux-amd64/src/com.oracle.svm.native/linux-amd64/strictmath/w_gamma_r.o /home/graal/graal/substratevm/mxbuild/linux-amd64/src/com.oracle.svm.native/linux-amd64/strictmath/s_lib_version.o /home/graal/graal/substratevm/mxbuild/linux-amd64/src/com.oracle.svm.native/linux-amd64/strictmath/e_asin.o /home/graal/graal/substratevm/mxbuild/linux-amd64/src/com.oracle.svm.native/linux-amd64/strictmath/w_asin.o /home/graal/graal/substratevm/mxbuild/linux-amd64/src/com.oracle.svm.native/linux-amd64/strictmath/w_acosh.o /home/graal/graal/substratevm/mxbuild/linux-amd64/src/com.oracle.svm.native/linux-amd64/strictmath/e_log10.o /home/graal/graal/substratevm/mxbuild/linux-amd64/src/com.oracle.svm.native/linux-amd64/strictmath/s_scalbn.o /home/graal/graal/substratevm/mxbuild/linux-amd64/src/com.oracle.svm.native/linux-amd64/strictmath/w_lgamma.o /home/graal/graal/substratevm/mxbuild/linux-amd64/src/com.oracle.svm.native/linux-amd64/strictmath/e_acos.o /home/graal/graal/substratevm/mxbuild/linux-amd64/src/com.oracle.svm.native/linux-amd64/strictmath/w_jn.o /home/graal/graal/substratevm/mxbuild/linux-amd64/src/com.oracle.svm.native/linux-amd64/strictmath/s_ldexp.o /home/graal/graal/substratevm/mxbuild/linux-amd64/src/com.oracle.svm.native/linux-amd64/strictmath/e_j1.o /home/graal/graal/substratevm/mxbuild/linux-amd64/src/com.oracle.svm.native/linux-amd64/strictmath/s_atan.o /home/graal/graal/substratevm/mxbuild/linux-amd64/src/com.oracle.svm.native/linux-amd64/strictmath/s_matherr.o /home/graal/graal/substratevm/mxbuild/linux-amd64/src/com.oracle.svm.native/linux-amd64/strictmath/s_expm1.o /home/graal/graal/substratevm/mxbuild/linux-amd64/src/com.oracle.svm.native/linux-amd64/strictmath/s_nextafter.o /home/graal/graal/substratevm/mxbuild/linux-amd64/src/com.oracle.svm.native/linux-amd64/strictmath/e_fmod.o /home/graal/graal/substratevm/mxbuild/linux-amd64/src/com.oracle.svm.native/linux-amd64/strictmath/s_copysign.o /home/graal/graal/substratevm/mxbuild/linux-amd64/src/com.oracle.svm.native/linux-amd64/strictmath/s_tan.o /home/graal/graal/substratevm/mxbuild/linux-amd64/src/com.oracle.svm.native/linux-amd64/strictmath/k_rem_pio2.o /home/graal/graal/substratevm/mxbuild/linux-amd64/src/com.oracle.svm.native/linux-amd64/strictmath/s_cbrt.o /home/graal/graal/substratevm/mxbuild/linux-amd64/src/com.oracle.svm.native/linux-amd64/strictmath/e_hypot.o /home/graal/graal/substratevm/mxbuild/linux-amd64/src/com.oracle.svm.native/linux-amd64/strictmath/e_gamma.o /home/graal/graal/substratevm/mxbuild/linux-amd64/src/com.oracle.svm.native/linux-amd64/strictmath/w_cosh.o /home/graal/graal/substratevm/mxbuild/linux-amd64/src/com.oracle.svm.native/linux-amd64/strictmath/s_significand.o /home/graal/graal/substratevm/mxbuild/linux-amd64/src/com.oracle.svm.native/linux-amd64/strictmath/w_atanh.o /home/graal/graal/substratevm/mxbuild/linux-amd64/src/com.oracle.svm.native/linux-amd64/strictmath/w_lgamma_r.o /home/graal/graal/substratevm/mxbuild/linux-amd64/src/com.oracle.svm.native/linux-amd64/strictmath/e_j0.o /home/graal/graal/substratevm/mxbuild/linux-amd64/src/com.oracle.svm.native/linux-amd64/strictmath/s_fabs.o /home/graal/graal/substratevm/mxbuild/linux-amd64/src/com.oracle.svm.native/linux-amd64/strictmath/w_gamma.o /home/graal/graal/substratevm/mxbuild/linux-amd64/src/com.oracle.svm.native/linux-amd64/strictmath/s_logb.o /home/graal/graal/substratevm/mxbuild/linux-amd64/src/com.oracle.svm.native/linux-amd64/strictmath/k_tan.o /home/graal/graal/substratevm/mxbuild/linux-amd64/src/com.oracle.svm.native/linux-amd64/strictmath/w_sinh.o /home/graal/graal/substratevm/mxbuild/linux-amd64/src/com.oracle.svm.native/linux-amd64/strictmath/s_modf.o /home/graal/graal/substratevm/mxbuild/linux-amd64/src/com.oracle.svm.native/linux-amd64/strictmath/e_gamma_r.o /home/graal/graal/substratevm/mxbuild/linux-amd64/src/com.oracle.svm.native/linux-amd64/strictmath/s_frexp.o
-make[1]: Leaving directory `/home/graal/graal/substratevm/src/com.oracle.svm.native/strictmath'
-Building org.graalvm.polyglot.nativeapi.native with GNU Make... [rebuild needed by GNU Make]
-mkdir -p linux-amd64
-cc -c -fPIC -g -I /home/graal/graal/substratevm/src/org.graalvm.polyglot.nativeapi.native/../org.graalvm.polyglot.nativeapi/resources /home/graal/graal/substratevm/src/org.graalvm.polyglot.nativeapi.native/src/polyglot-nativeapi/polyglot-nativeapi.c -o linux-amd64/polyglot-nativeapi.o
-Building com.oracle.truffle.llvm.tests.sulongavx with GNU Make... [rebuild needed by GNU Make]
-rm avx/intrinsics/byteswap/O0.bc avx/intrinsics/byteswap/O0.bc.o avx/builtin_gcc/__builtin_shufflevector/O0.bc avx/builtin_gcc/__builtin_shufflevector/O0.bc.o
-Building com.oracle.truffle.llvm.test.native with GNU Make... [rebuild needed by GNU Make]
-Building com.oracle.truffle.llvm.tests.sulongcpp with GNU Make... [rebuild needed by GNU Make]
-/home/graal/sulong/tests/com.oracle.truffle.llvm.tests.sulongcpp/cpp/testRuntimeError.cpp:30:10: fatal error: 'stdexcept' file not found
-#include <stdexcept>
-         ^~~~~~~~~~~
-1 error generated.
-make: *** [cpp/testRuntimeError/O0.bc] Error 1
-make: *** Waiting for unfinished jobs....
-/home/graal/sulong/tests/com.oracle.truffle.llvm.tests.sulongcpp/cpp/test007.cpp:30:10: fatal error: 'typeinfo' file not found
-#include <typeinfo>
-         ^~~~~~~~~~
-1 error generated.
-make: *** [cpp/test007/O0.bc] Error 1
+WARNING: Could not find dragonegg, not building test variant "gcc_O0"
+Building com.oracle.truffle.r.native with GNU Make... [rebuild needed by GNU Make]
+R_VERSION: 3.4.0
+GNUR_HOME: /home/graal/fastr/com.oracle.truffle.r.native/gnur/patch-build
+GNUR_HOME_BINARY not set. Assuming the default location at /home/graal/fastr/libdownloads/R-3.4.0
+doclean: 0
+make -C gnur
+make[1]: Entering directory `/home/graal/fastr/com.oracle.truffle.r.native/gnur'
+make -f Makefile.gnur
+IN_FILES_PREFIX : /home/graal/fastr/com.oracle.truffle.r.native/gnur/patch
+IN_FILES_PREFIX_LEN : 57
+make[2]: Entering directory `/home/graal/fastr/com.oracle.truffle.r.native/gnur'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/graal/fastr/com.oracle.truffle.r.native/gnur'
+make -f Makefile.platform
+make[2]: Entering directory `/home/graal/fastr/com.oracle.truffle.r.native/gnur'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/graal/fastr/com.oracle.truffle.r.native/gnur'
+make -f Makefile.libs
+make[2]: Entering directory `/home/graal/fastr/com.oracle.truffle.r.native/gnur'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/graal/fastr/com.oracle.truffle.r.native/gnur'
+make[1]: Leaving directory `/home/graal/fastr/com.oracle.truffle.r.native/gnur'
+make -C include
+R_HEADERS_FILENAMES: R.h Rembedded.h Rconfig.h S.h Rmath.h Rversion.h Rdefines.h Rinternals.h Rinterface.h
+make[1]: Entering directory `/home/graal/fastr/com.oracle.truffle.r.native/include'
+make[1]: Nothing to be done for `all'.
+make[1]: Leaving directory `/home/graal/fastr/com.oracle.truffle.r.native/include'
+make -C fficall
+make[1]: Entering directory `/home/graal/fastr/com.oracle.truffle.r.native/fficall'
+make[1]: Nothing to be done for `all'.
+make[1]: Leaving directory `/home/graal/fastr/com.oracle.truffle.r.native/fficall'
+make -C /home/graal/fastr/com.oracle.truffle.r.native/gnur/patch-build/src/library
+make[1]: Entering directory `/home/graal/fastr/com.oracle.truffle.r.native/gnur/patch-build/src/library'
+mkdir -p /home/graal/fastr/library
+for dir in base compiler datasets utils grDevices graphics grid parallel splines stats stats4 methods tools; do \
+	make PACKAGE=$dir -C $dir || exit 1; \
+done
+make[2]: Entering directory `/home/graal/fastr/com.oracle.truffle.r.native/gnur/patch-build/src/library/base'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/graal/fastr/com.oracle.truffle.r.native/gnur/patch-build/src/library/base'
+make[2]: Entering directory `/home/graal/fastr/com.oracle.truffle.r.native/gnur/patch-build/src/library/compiler'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/graal/fastr/com.oracle.truffle.r.native/gnur/patch-build/src/library/compiler'
+make[2]: Entering directory `/home/graal/fastr/com.oracle.truffle.r.native/gnur/patch-build/src/library/datasets'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/graal/fastr/com.oracle.truffle.r.native/gnur/patch-build/src/library/datasets'
+make[2]: Entering directory `/home/graal/fastr/com.oracle.truffle.r.native/gnur/patch-build/src/library/utils'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/graal/fastr/com.oracle.truffle.r.native/gnur/patch-build/src/library/utils'
+make[2]: Entering directory `/home/graal/fastr/com.oracle.truffle.r.native/gnur/patch-build/src/library/grDevices'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/graal/fastr/com.oracle.truffle.r.native/gnur/patch-build/src/library/grDevices'
+make[2]: Entering directory `/home/graal/fastr/com.oracle.truffle.r.native/gnur/patch-build/src/library/graphics'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/graal/fastr/com.oracle.truffle.r.native/gnur/patch-build/src/library/graphics'
+make[2]: Entering directory `/home/graal/fastr/com.oracle.truffle.r.native/gnur/patch-build/src/library/grid'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/graal/fastr/com.oracle.truffle.r.native/gnur/patch-build/src/library/grid'
+make[2]: Entering directory `/home/graal/fastr/com.oracle.truffle.r.native/gnur/patch-build/src/library/parallel'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/graal/fastr/com.oracle.truffle.r.native/gnur/patch-build/src/library/parallel'
+make[2]: Entering directory `/home/graal/fastr/com.oracle.truffle.r.native/gnur/patch-build/src/library/splines'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/graal/fastr/com.oracle.truffle.r.native/gnur/patch-build/src/library/splines'
+make[2]: Entering directory `/home/graal/fastr/com.oracle.truffle.r.native/gnur/patch-build/src/library/stats'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/graal/fastr/com.oracle.truffle.r.native/gnur/patch-build/src/library/stats'
+make[2]: Entering directory `/home/graal/fastr/com.oracle.truffle.r.native/gnur/patch-build/src/library/stats4'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/graal/fastr/com.oracle.truffle.r.native/gnur/patch-build/src/library/stats4'
+make[2]: Entering directory `/home/graal/fastr/com.oracle.truffle.r.native/gnur/patch-build/src/library/methods'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/graal/fastr/com.oracle.truffle.r.native/gnur/patch-build/src/library/methods'
+make[2]: Entering directory `/home/graal/fastr/com.oracle.truffle.r.native/gnur/patch-build/src/library/tools'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/graal/fastr/com.oracle.truffle.r.native/gnur/patch-build/src/library/tools'
+make[1]: Leaving directory `/home/graal/fastr/com.oracle.truffle.r.native/gnur/patch-build/src/library'
+make -C run
+make[1]: Entering directory `/home/graal/fastr/com.oracle.truffle.r.native/run'
+mkdir -p /home/graal/fastr/bin
+mkdir -p /home/graal/fastr/doc
+mkdir -p /home/graal/fastr/bin/exec
+mkdir -p /home/graal/fastr/bin/execRextras
+mkdir -p /home/graal/fastr/etc
+mkdir -p /home/graal/fastr/share
+make[1]: Leaving directory `/home/graal/fastr/com.oracle.truffle.r.native/run'
+cp version.source version.built
+Building com.oracle.truffle.r.test.native with GNU Make... [dependency com.oracle.truffle.r.native updated]
+mkdir -p /home/graal/fastr/com.oracle.truffle.r.test.native/packages/repo/src/contrib
+cp packages/PACKAGES /home/graal/fastr/com.oracle.truffle.r.test.native/packages/repo/src/contrib
+make -C urand
+make[1]: Entering directory `/home/graal/fastr/com.oracle.truffle.r.test.native/urand'
+make[1]: Nothing to be done for `all'.
+make[1]: Leaving directory `/home/graal/fastr/com.oracle.truffle.r.test.native/urand'
+make -C packages
+GNUR_HOME_BINARY not set. Assuming the default location at /home/graal/fastr/libdownloads/R-3.4.0
+make[1]: Entering directory `/home/graal/fastr/com.oracle.truffle.r.test.native/packages'
+for dir in testrffi vanilla tests4; do \
+	make PACKAGE=$dir -C $dir || exit 1; \
+done
+make[2]: Entering directory `/home/graal/fastr/com.oracle.truffle.r.test.native/packages/testrffi'
+(cd /home/graal/fastr/com.oracle.truffle.r.test.native/packages/repo/src/contrib; TZDIR=/usr/share/zoneinfo/ /home/graal/fastr/libdownloads/R-3.4.0/bin/R CMD build /home/graal/fastr/com.oracle.truffle.r.test.native/packages/testrffi/testrffi)
+* checking for file ‘/home/graal/fastr/com.oracle.truffle.r.test.native/packages/testrffi/testrffi/DESCRIPTION’ ... OK
+* preparing ‘testrffi’:
+* checking DESCRIPTION meta-information ... OK
+* cleaning src
+* checking for LF line-endings in source and make files
+* checking for empty or unneeded directories
+* building ‘testrffi_1.0.tar.gz’
 
-Building com.oracle.truffle.llvm.tests.sulongcpp with GNU Make failed
-1 build tasks failed
+make[2]: Leaving directory `/home/graal/fastr/com.oracle.truffle.r.test.native/packages/testrffi'
+make[2]: Entering directory `/home/graal/fastr/com.oracle.truffle.r.test.native/packages/vanilla'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/graal/fastr/com.oracle.truffle.r.test.native/packages/vanilla'
+make[2]: Entering directory `/home/graal/fastr/com.oracle.truffle.r.test.native/packages/tests4'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/graal/fastr/com.oracle.truffle.r.test.native/packages/tests4'
+make[1]: Leaving directory `/home/graal/fastr/com.oracle.truffle.r.test.native/packages'
+make -C embedded
+make[1]: Entering directory `/home/graal/fastr/com.oracle.truffle.r.test.native/embedded'
+make[1]: Nothing to be done for `all'.
+make[1]: Leaving directory `/home/graal/fastr/com.oracle.truffle.r.test.native/embedded'
+Archiving FASTR_UNIT_TESTS_NATIVE... [dependency com.oracle.truffle.r.test.native updated]
+Building trufflenodeNative with GNU Make...
+Running './configure --partly-static --build-only-native --without-dtrace --without-snapshot --shared-zlib --shared-graalvm /home/graal/graal-jvmci-8/openjdk1.8.0-internal/linux-amd64/product --shared-trufflejs /home/graal/graaljs/graal-js/mxbuild/dists/graaljs.jar'
+creating icu_config.gypi
+{ 'target_defaults': { 'cflags': [],
+                       'default_configuration': 'Release',
+                       'defines': [],
+                       'include_dirs': [],
+                       'libraries': [ '-lz',
+                                      '-static-libgcc',
+                                      '-static-libstdc++']},
+  'variables': { 'asan': 0,
+                 'coverage': 'false',
+                 'debug_devtools': 'node',
+                 'debug_http2': 'false',
+                 'debug_nghttp2': 'false',
+                 'force_dynamic_crt': 0,
+                 'gas_version': '2.26',
+                 'graalvm': '/home/graal/graal-jvmci-8/openjdk1.8.0-internal/linux-amd64/product',
+                 'host_arch': 'x64',
+                 'icu_small': 'false',
+                 'llvm_version': 0,
+                 'node_build_only_native': 'true',
+                 'node_byteorder': 'little',
+                 'node_enable_d8': 'false',
+                 'node_enable_v8_vtunejit': 'false',
+                 'node_install_npm': 'true',
+                 'node_module_version': 57,
+                 'node_no_browser_globals': 'false',
+                 'node_prefix': '/usr/local',
+                 'node_release_urlbase': '',
+                 'node_shared': 'false',
+                 'node_shared_cares': 'false',
+                 'node_shared_http_parser': 'false',
+                 'node_shared_libuv': 'false',
+                 'node_shared_nghttp2': 'false',
+                 'node_shared_openssl': 'false',
+                 'node_shared_zlib': 'true',
+                 'node_tag': '',
+                 'node_use_bundled_v8': 'true',
+                 'node_use_dtrace': 'false',
+                 'node_use_etw': 'false',
+                 'node_use_lttng': 'false',
+                 'node_use_openssl': 'true',
+                 'node_use_perfctr': 'false',
+                 'node_use_v8_platform': 'true',
+                 'node_without_node_options': 'false',
+                 'openssl_fips': '',
+                 'openssl_no_asm': 0,
+                 'shlib_suffix': 'so.57',
+                 'svm': 'false',
+                 'target_arch': 'x64',
+                 'trufflejs': '/home/graal/graaljs/graal-js/mxbuild/dists/graaljs.jar',
+                 'uv_parent_path': '/deps/uv/',
+                 'uv_use_dtrace': 'false',
+                 'v8_enable_gdbjit': 0,
+                 'v8_enable_i18n_support': 0,
+                 'v8_enable_inspector': 0,
+                 'v8_inspector': 'false',
+                 'v8_no_strict_aliasing': 1,
+                 'v8_optimized_debug': 0,
+                 'v8_promise_internal_field_count': 1,
+                 'v8_random_seed': 0,
+                 'v8_trace_maps': 0,
+                 'v8_use_snapshot': 'false',
+                 'want_separate_host_toolset': 0}}
+creating config.gypi
+creating config.mk
+Running 'make -j8'
+make -C out BUILDTYPE=Release V=1 CC=cc CXX=g++
+make[1]: Entering directory `/home/graal/graaljs/graal-nodejs/out'
+  LD_LIBRARY_PATH=/home/graal/graaljs/graal-nodejs/out/Release/lib.host:/home/graal/graaljs/graal-nodejs/out/Release/lib.target:$LD_LIBRARY_PATH; export LD_LIBRARY_PATH; cd ../.; mkdir -p /home/graal/graaljs/graal-nodejs/out/Release/obj/gen; python tools/js2c.py "/home/graal/graaljs/graal-nodejs/out/Release/obj/gen/node_javascript.cc" lib/internal/bootstrap_node.js lib/async_hooks.js lib/assert.js lib/buffer.js lib/child_process.js lib/console.js lib/constants.js lib/crypto.js lib/cluster.js lib/dgram.js lib/dns.js lib/domain.js lib/events.js lib/fs.js lib/http.js lib/http2.js lib/_http_agent.js lib/_http_client.js lib/_http_common.js lib/_http_incoming.js lib/_http_outgoing.js lib/_http_server.js lib/https.js lib/inspector.js lib/module.js lib/net.js lib/os.js lib/path.js lib/perf_hooks.js lib/process.js lib/punycode.js lib/querystring.js lib/readline.js lib/repl.js lib/stream.js lib/_stream_readable.js lib/_stream_writable.js lib/_stream_duplex.js lib/_stream_transform.js lib/_stream_passthrough.js lib/_stream_wrap.js lib/string_decoder.js lib/sys.js lib/timers.js lib/tls.js lib/_tls_common.js lib/_tls_legacy.js lib/_tls_wrap.js lib/tty.js lib/url.js lib/util.js lib/v8.js lib/vm.js lib/zlib.js lib/internal/async_hooks.js lib/internal/buffer.js lib/internal/child_process.js lib/internal/cluster/child.js lib/internal/cluster/master.js lib/internal/cluster/round_robin_handle.js lib/internal/cluster/shared_handle.js lib/internal/cluster/utils.js lib/internal/cluster/worker.js lib/internal/encoding.js lib/internal/errors.js lib/internal/freelist.js lib/internal/fs.js lib/internal/graal/buffer.js lib/internal/http.js lib/internal/inspector_async_hook.js lib/internal/linkedlist.js lib/internal/loader/Loader.js lib/internal/loader/ModuleMap.js lib/internal/loader/ModuleJob.js lib/internal/loader/ModuleWrap.js lib/internal/loader/ModuleRequest.js lib/internal/loader/search.js lib/internal/safe_globals.js lib/internal/net.js lib/internal/module.js lib/internal/os.js lib/internal/process/next_tick.js lib/internal/process/promises.js lib/internal/process/stdio.js lib/internal/process/warning.js lib/internal/process.js lib/internal/querystring.js lib/internal/process/write-coverage.js lib/internal/readline.js lib/internal/repl.js lib/internal/socket_list.js lib/internal/test/unicode.js lib/internal/trace_events_async_hooks.js lib/internal/url.js lib/internal/util.js lib/internal/util/types.js lib/internal/http2/core.js lib/internal/http2/compat.js lib/internal/http2/util.js lib/internal/v8_prof_polyfill.js lib/internal/v8_prof_processor.js lib/internal/streams/lazy_transform.js lib/internal/streams/BufferList.js lib/internal/streams/legacy.js lib/internal/streams/destroy.js lib/internal/wrap_js_stream.js deps/v8/tools/splaytree.js deps/v8/tools/codemap.js deps/v8/tools/consarray.js deps/v8/tools/csvparser.js deps/v8/tools/profile.js deps/v8/tools/profile_view.js deps/v8/tools/logreader.js deps/v8/tools/tickprocessor.js deps/v8/tools/SourceMap.js deps/v8/tools/tickprocessor-driver.js deps/node-inspect/lib/_inspect.js deps/node-inspect/lib/internal/inspect_client.js deps/node-inspect/lib/internal/inspect_repl.js ./config.gypi src/notrace_macros.py src/nolttng_macros.py src/noperfctr_macros.py
+  g++ '-DNODE_ARCH="x64"' '-DNODE_PLATFORM="linux"' '-DNODE_WANT_INTERNALS=1' '-DV8_DEPRECATION_WARNINGS=1' '-DNODE_OPENSSL_SYSTEM_CERT_PATH=""' '-DHAVE_INSPECTOR=0' '-D__POSIX__' '-DHAVE_OPENSSL=1' '-DNODE_USE_V8_PLATFORM=1' '-DHTTP_PARSER_STRICT=0' '-D_LARGEFILE_SOURCE' '-D_FILE_OFFSET_BITS=64' '-D_POSIX_C_SOURCE=200112' '-DNGHTTP2_STATICLIB' -I../src -I../tools/msvs/genfiles -I/home/graal/graaljs/graal-nodejs/out/Release/obj/gen -I../deps/v8/include -I../deps/v8 -I../deps/v8/src/graal -I../deps/openssl/openssl/include -I../deps/v8/include -I../deps/http_parser -I../deps/cares/include -I../deps/uv/include -I../deps/nghttp2/lib/includes  -pthread -Wall -Wextra -Wno-unused-parameter -m64 -O3 -fno-omit-frame-pointer -fno-rtti -fno-exceptions -std=gnu++0x -MMD -MF /home/graal/graaljs/graal-nodejs/out/Release/.deps//home/graal/graaljs/graal-nodejs/out/Release/obj.target/node/gen/node_javascript.o.d.raw   -c -o /home/graal/graaljs/graal-nodejs/out/Release/obj.target/node/gen/node_javascript.o /home/graal/graaljs/graal-nodejs/out/Release/obj/gen/node_javascript.cc
+  g++ -pthread -rdynamic -m64 -Wl,--whole-archive,/home/graal/graaljs/graal-nodejs/out/Release/obj.target/deps/openssl/libopenssl.a -Wl,--no-whole-archive -Wl,-z,noexecstack,--allow-multiple-definition -Wl,--whole-archive /home/graal/graaljs/graal-nodejs/out/Release/obj.target/deps/v8/src/libv8_base.a -Wl,--no-whole-archive -pthread  -o /home/graal/graaljs/graal-nodejs/out/Release/node -Wl,--start-group /home/graal/graaljs/graal-nodejs/out/Release/obj.target/node/src/async_wrap.o /home/graal/graaljs/graal-nodejs/out/Release/obj.target/node/src/cares_wrap.o /home/graal/graaljs/graal-nodejs/out/Release/obj.target/node/src/connection_wrap.o /home/graal/graaljs/graal-nodejs/out/Release/obj.target/node/src/connect_wrap.o /home/graal/graaljs/graal-nodejs/out/Release/obj.target/node/src/env.o /home/graal/graaljs/graal-nodejs/out/Release/obj.target/node/src/fs_event_wrap.o /home/graal/graaljs/graal-nodejs/out/Release/obj.target/node/src/handle_wrap.o /home/graal/graaljs/graal-nodejs/out/Release/obj.target/node/src/js_stream.o /home/graal/graaljs/graal-nodejs/out/Release/obj.target/node/src/module_wrap.o /home/graal/graaljs/graal-nodejs/out/Release/obj.target/node/src/node.o /home/graal/graaljs/graal-nodejs/out/Release/obj.target/node/src/node_api.o /home/graal/graaljs/graal-nodejs/out/Release/obj.target/node/src/node_buffer.o /home/graal/graaljs/graal-nodejs/out/Release/obj.target/node/src/node_config.o /home/graal/graaljs/graal-nodejs/out/Release/obj.target/node/src/node_constants.o /home/graal/graaljs/graal-nodejs/out/Release/obj.target/node/src/node_contextify.o /home/graal/graaljs/graal-nodejs/out/Release/obj.target/node/src/node_debug_options.o /home/graal/graaljs/graal-nodejs/out/Release/obj.target/node/src/node_file.o /home/graal/graaljs/graal-nodejs/out/Release/obj.target/node/src/node_http2.o /home/graal/graaljs/graal-nodejs/out/Release/obj.target/node/src/node_http_parser.o /home/graal/graaljs/graal-nodejs/out/Release/obj.target/node/src/node_main.o /home/graal/graaljs/graal-nodejs/out/Release/obj.target/node/src/node_os.o /home/graal/graaljs/graal-nodejs/out/Release/obj.target/node/src/node_platform.o /home/graal/graaljs/graal-nodejs/out/Release/obj.target/node/src/node_perf.o /home/graal/graaljs/graal-nodejs/out/Release/obj.target/node/src/node_serdes.o /home/graal/graaljs/graal-nodejs/out/Release/obj.target/node/src/node_trace_events.o /home/graal/graaljs/graal-nodejs/out/Release/obj.target/node/src/node_url.o /home/graal/graaljs/graal-nodejs/out/Release/obj.target/node/src/node_util.o /home/graal/graaljs/graal-nodejs/out/Release/obj.target/node/src/node_v8.o /home/graal/graaljs/graal-nodejs/out/Release/obj.target/node/src/node_stat_watcher.o /home/graal/graaljs/graal-nodejs/out/Release/obj.target/node/src/node_watchdog.o /home/graal/graaljs/graal-nodejs/out/Release/obj.target/node/src/node_zlib.o /home/graal/graaljs/graal-nodejs/out/Release/obj.target/node/src/node_i18n.o /home/graal/graaljs/graal-nodejs/out/Release/obj.target/node/src/pipe_wrap.o /home/graal/graaljs/graal-nodejs/out/Release/obj.target/node/src/process_wrap.o /home/graal/graaljs/graal-nodejs/out/Release/obj.target/node/src/signal_wrap.o /home/graal/graaljs/graal-nodejs/out/Release/obj.target/node/src/spawn_sync.o /home/graal/graaljs/graal-nodejs/out/Release/obj.target/node/src/string_bytes.o /home/graal/graaljs/graal-nodejs/out/Release/obj.target/node/src/string_search.o /home/graal/graaljs/graal-nodejs/out/Release/obj.target/node/src/stream_base.o /home/graal/graaljs/graal-nodejs/out/Release/obj.target/node/src/stream_wrap.o /home/graal/graaljs/graal-nodejs/out/Release/obj.target/node/src/tcp_wrap.o /home/graal/graaljs/graal-nodejs/out/Release/obj.target/node/src/timer_wrap.o /home/graal/graaljs/graal-nodejs/out/Release/obj.target/node/src/tracing/agent.o /home/graal/graaljs/graal-nodejs/out/Release/obj.target/node/src/tracing/node_trace_buffer.o /home/graal/graaljs/graal-nodejs/out/Release/obj.target/node/src/tracing/node_trace_writer.o /home/graal/graaljs/graal-nodejs/out/Release/obj.target/node/src/tracing/trace_event.o /home/graal/graaljs/graal-nodejs/out/Release/obj.target/node/src/tty_wrap.o /home/graal/graaljs/graal-nodejs/out/Release/obj.target/node/src/udp_wrap.o /home/graal/graaljs/graal-nodejs/out/Release/obj.target/node/src/util.o /home/graal/graaljs/graal-nodejs/out/Release/obj.target/node/src/uv.o /home/graal/graaljs/graal-nodejs/out/Release/obj.target/node/gen/node_javascript.o /home/graal/graaljs/graal-nodejs/out/Release/obj.target/node/src/backtrace_posix.o /home/graal/graaljs/graal-nodejs/out/Release/obj.target/node/src/node_crypto.o /home/graal/graaljs/graal-nodejs/out/Release/obj.target/node/src/node_crypto_bio.o /home/graal/graaljs/graal-nodejs/out/Release/obj.target/node/src/node_crypto_clienthello.o /home/graal/graaljs/graal-nodejs/out/Release/obj.target/node/src/tls_wrap.o /home/graal/graaljs/graal-nodejs/out/Release/obj.target/deps/openssl/libopenssl.a /home/graal/graaljs/graal-nodejs/out/Release/obj.target/deps/http_parser/libhttp_parser.a /home/graal/graaljs/graal-nodejs/out/Release/obj.target/deps/cares/libcares.a /home/graal/graaljs/graal-nodejs/out/Release/obj.target/deps/uv/libuv.a /home/graal/graaljs/graal-nodejs/out/Release/obj.target/deps/nghttp2/libnghttp2.a /home/graal/graaljs/graal-nodejs/out/Release/obj.target/deps/v8/src/libv8_base.a -lz -static-libgcc -static-libstdc++ -Wl,-rpath='$ORIGIN/../../../../lib/' -Wl,-rpath='$ORIGIN/../../../../jre/lib/' -Wl,-rpath='$ORIGIN/../../../../jre/languages/R/lib/' -L/home/graal/graal-jvmci-8/openjdk1.8.0-internal/linux-amd64/product/jre/lib/amd64/server -L/home/graal/graal-jvmci-8/openjdk1.8.0-internal/linux-amd64/product/jre/lib/amd64 -Wl,-rpath='$ORIGIN/../../../../lib/amd64/' -Wl,-rpath='$ORIGIN/../../../../jre/lib/amd64/' -ljsig -ldl -lm -lrt -Wl,--end-group
+make[1]: Leaving directory `/home/graal/graaljs/graal-nodejs/out'
+if [ ! -r node -o ! -L node ]; then ln -fs out/Release/node node; fi
+Building com.oracle.truffle.r.native.recommended with GNU Make... [dependency com.oracle.truffle.r.native updated]
+GNUR_HOME_BINARY not set. Assuming the default location at /home/graal/fastr/libdownloads/R-3.4.0
+GNUR_RECOMMENDED_TARS=/home/graal/fastr/libdownloads/R-3.4.0/src/library/Recommended/codetools.tgz /home/graal/fastr/libdownloads/R-3.4.0/src/library/Recommended/MASS.tgz /home/graal/fastr/libdownloads/R-3.4.0/src/library/Recommended/boot.tgz /home/graal/fastr/libdownloads/R-3.4.0/src/library/Recommended/class.tgz /home/graal/fastr/libdownloads/R-3.4.0/src/library/Recommended/cluster.tgz /home/graal/fastr/libdownloads/R-3.4.0/src/library/Recommended/lattice.tgz /home/graal/fastr/libdownloads/R-3.4.0/src/library/Recommended/nnet.tgz /home/graal/fastr/libdownloads/R-3.4.0/src/library/Recommended/spatial.tgz /home/graal/fastr/libdownloads/R-3.4.0/src/library/Recommended/Matrix.tgz /home/graal/fastr/libdownloads/R-3.4.0/src/library/Recommended/survival.tgz /home/graal/fastr/libdownloads/R-3.4.0/src/library/Recommended/KernSmooth.tgz /home/graal/fastr/libdownloads/R-3.4.0/src/library/Recommended/foreign.tgz /home/graal/fastr/libdownloads/R-3.4.0/src/library/Recommended/nlme.tgz /home/graal/fastr/libdownloads/R-3.4.0/src/library/Recommended/rpart.tgz
+make: Nothing to be done for `all'.
+WARNING: Could not find dragonegg, not building test variant "gcc_O0"
+Archiving TRUFFLENODE_GRAALVM_SUPPORT... [dependency trufflenodeNative updated]
+Building com.oracle.truffle.r.release with GNU Make... [dependency com.oracle.truffle.r.native.recommended updated]
+Checking native-image.properties... [dependency TRUFFLENODE_GRAALVM_SUPPORT updated]
+Archiving FASTR_RELEASE... [dependency com.oracle.truffle.r.release updated]
+Archiving FASTR_GRAALVM_RELEASE... [dependency com.oracle.truffle.r.release updated]
+Archiving FASTR_GRAALVM_SUPPORT... [dependency FASTR_GRAALVM_RELEASE updated]
+Checking native-image.properties... [dependency FASTR_GRAALVM_SUPPORT updated]
+Archiving R_INSTALLABLE... [dependency FASTR_GRAALVM_SUPPORT updated]
+Archiving R_STANDALONE... [dependency FASTR_GRAALVM_SUPPORT updated]
+Archiving GRAALVM_R_CMP_GU_GVM_INS_JS_NJS_POLYNATIVE_PRO_PYN_RBY_RGX_SLG_STAGE1_SVM_TFL... [dependency FASTR_GRAALVM_SUPPORT updated]
+WARNING:   GRAALVM_R_CMP_GU_GVM_INS_JS_NJS_POLYNATIVE_PRO_PYN_RBY_RGX_SLG_STAGE1_SVM_TFL:
+Adding file which is not in the repository: '/home/graal/graal-jvmci-8/openjdk1.8.0-internal/linux-amd64/product' in 'graalvm-r-cmp-gu-gvm-ins-js-njs-polynative-pro-pyn-rby-rgx-slg-stage1-svm-tfl-1.0.0-rc6-dev'
+Building lli.image... [dependency GRAALVM_R_CMP_GU_GVM_INS_JS_NJS_POLYNATIVE_PRO_PYN_RBY_RGX_SLG_STAGE1_SVM_TFL updated]
+   classlist:   7,734.43 ms
+       (cap):   1,360.42 ms
+       setup:   3,751.23 ms
+  (typeflow):  74,697.15 ms
+   (objects): 117,523.74 ms
+  (features):  15,105.70 ms
+    analysis: 216,341.62 ms
+4953 method(s) included for runtime compilation
+    universe:  18,250.17 ms
+     (parse):  14,202.23 ms
