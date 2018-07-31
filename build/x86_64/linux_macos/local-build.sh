@@ -26,7 +26,9 @@ export LC_CTYPE="en_US.UTF-8"
 
 echo ">>> Working in ${BASEDIR}"
 
-export MX=${BASEDIR}/mx/mx
+export MX_HOME=${BASEDIR}/mx
+export MX=${MX_HOME}/mx
+export PATH=${MX_HOME}:$PATH
 
 export SCRIPTS_LIB_DIR=${SCRIPTS_LIB_DIR:-$(pwd)/lib}
 
@@ -46,6 +48,10 @@ printParameters() {
     echo "LANG=${LANG}"
     echo "LC_ALL=${LC_ALL}"
     echo "LC_CTYPE=${LC_CTYPE}"
+    echo ""
+    echo "MX_HOME=${MX_HOME}"
+    echo "MX=${MX}"
+    echo "PATH=${PATH}"
     echo "*************************************************"
 }
 
