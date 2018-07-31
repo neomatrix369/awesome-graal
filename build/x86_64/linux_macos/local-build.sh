@@ -18,6 +18,7 @@ BUILD_ARTIFACTS_DIR=${BASEDIR}/${JDK_GRAAL_FOLDER_NAME}
 GRAALVM_SUITE_RUNTIMES=${GRAALVM_SUITE_RUNTIMES:-'/substratevm,/tools,sulong,/graal-nodejs,/fastr,truffleruby,graalpython'}
 
 export JAVA_OPTS="$(echo ${DOCKER_JAVA_OPTS:-""} ${JAVA_OPTS:-})"
+export LD_LIBRARY_PATH=${LD_LIBRARY_PATH:-}:/usr/lib/x86_64-linux-gnu/
 export FASTR_RELEASE="true"
 export LANG="en_US.UTF-8"
 export LC_ALL="en_US.UTF-8"
