@@ -9,10 +9,10 @@ source ${SCRIPTS_LIB_DIR}/utils.sh
 printHWInfo() {
     echo ""
     echo "Display hardware information"
-    echo $(getHWInfo)
+    getHWInfo
 
     echo ""
-    echo $(getMemoryInfo)
+    getMemoryInfo
 
     echo ""
     echo "Available threads (from all online CPUs/Cores): $(getAvailableThreads)"
@@ -42,7 +42,7 @@ printOSInfo() {
     uname -a
 
     echo ""
-    echo $(getOSInfo)
+    getOSInfo
 }
 
 printHWInfo

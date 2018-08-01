@@ -24,7 +24,7 @@ gitClone() {
         git checkout .
         if [[ "${cloneType}" = "deep" ]]; then
            git fetch
-           git pull
+           git pull || true
         fi
     else
         echo ">>> Getting ${repo}: ${programDesc}"
