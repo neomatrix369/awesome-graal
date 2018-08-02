@@ -5,7 +5,7 @@ set -u
 set -o pipefail
 
 USER_NAME=${USER_NAME:-neomatrix369}
-IMAGE_NAME=${IMAGE_NAME:-graalvm-suite-jdk8}
+IMAGE_NAME=${IMAGE_NAME:-graal-jdk8}
 IMAGE_VERSION=${IMAGE_VERSION:-latest}
 GRAAL_DOCKER_FULL_TAG_NAME="${USER_NAME}/${IMAGE_NAME}"
 
