@@ -16,6 +16,9 @@ set -ex;                  \
         python-pip        \
         python2.7         \
         python2.7-dev     \
-        ssh               \
-    && apt-get autoremove \
-    && apt-get clean
+        ssh
+
+set -ex;                                 \
+    rm -r /var/lib/apt/lists/* || true   \
+            && apt-get autoremove        \
+            && apt-get clean

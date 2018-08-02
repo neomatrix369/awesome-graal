@@ -16,20 +16,25 @@ gitClone() {
     org=$1
     repo=$2
     programDesc=$3
-    update=${4:-"update"}
+    cloneType=${4:-"shallow"}
 
     if [[ -e "${repo}/.git" ]]; then
-        if [[ "${update}" = "doNotUpdate" ]]; then
-           echo ">>> skipping generic update "
-        else
-            echo ">>> ${repo} already exists: updating and using this version"
-            cd ${repo}
-            git checkout .
-            git pull
+        echo ">>> ${repo} already exists: updating and using this version"
+        cd ${repo}
+        git checkout .
+        if [[ "${cloneType}" = "deep" ]]; then
+           git fetch
+           git pull
         fi
     else
         echo ">>> Getting ${repo}: ${programDesc}"
-        git clone --depth=1 https://github.com/${org}/${repo}.git
+        if [[ "${cloneType}" = "deep" ]]; then
+           echo ">>> Cloning deep: includes commits & tags data"
+           git clone https://github.com/${org}/${repo}.git
+        else
+           echo ">>> Cloning shallow: excludes commits & tags data"
+           git clone --depth=1 https://github.com/${org}/${repo}.git
+        fi
     fi
 }
 
