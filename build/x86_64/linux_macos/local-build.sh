@@ -8,6 +8,11 @@ set -e
 set -u
 set -o pipefail
 
+if [[ -f "/.dockerenv" ]]; then
+   echo "Docker environment detected setting ulimit to unlimited"
+   ulimit -l unlimited
+fi
+
 IFS=$'\n\t'
 
 BASEDIR=$(pwd)
@@ -69,7 +74,7 @@ run() {
     source ${SCRIPTS_LIB_DIR}/setEnvVariables.sh ${BASEDIR} ${MX}
     time ${SCRIPTS_LIB_DIR}/buildGraalCompiler.sh ${BASEDIR} ${MX} ${BUILD_ARTIFACTS_DIR}
     time ${SCRIPTS_LIB_DIR}/buildGraalVMSuite.sh ${BASEDIR} ${MX} ${GRAALVM_SUITE_RUNTIMES}
-    time ${SCRIPTS_LIB_DIR}/archivingArtifacts.sh ${BASEDIR} ${MX} ${JDK_GRAAL_FOLDER_NAME} ${BUILD_ARTIFACTS_DIR}
+    time ${SCRIPTS_LIB_DIR}/archivingArtifacts.sh ${BASEDIR} ${MX} ${GRAALVM_SUITE_RUNTIMES} ${JDK_GRAAL_FOLDER_NAME} ${BUILD_ARTIFACTS_DIR}
 }
 
 time run
