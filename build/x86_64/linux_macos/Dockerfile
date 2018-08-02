@@ -37,6 +37,7 @@ RUN echo "export PATH=${JAVA_HOME}/bin:${LLVM_HOME}/bin:${RUBY_HOME}/bin:${PATH}
 RUN /bin/bash -l -c 'java -version'
 RUN /bin/bash -l -c 'make -version'
 RUN /bin/bash -l -c 'python --version'
+RUN /bin/bash -l -c 'ls /usr/bin/llvm-*'
 RUN /bin/bash -l -c 'ls /usr/lib/llvm-${LLVM_VERSION}/bin/*'
 RUN /bin/bash -l -c 'opt -version'
 RUN /bin/bash -l -c 'clang --version'
