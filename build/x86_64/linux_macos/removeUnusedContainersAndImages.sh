@@ -4,7 +4,7 @@ set -e
 set -u
 set -o pipefail
 
-containersToRemove=$(docker ps --quiet --filter "status=exited")
+containersToRemove=$(docker ps --quiet --filter "status=exited" --filter "status=created")
 [ ! -z "${containersToRemove}" ] && \
     echo "Remove any stopped container from the local registry" && \
     docker rm ${containersToRemove} || true
