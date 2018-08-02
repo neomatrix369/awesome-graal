@@ -6,7 +6,7 @@ dependencies:
 jobs:
   build:
     docker:
-      - image: neomatrix369/graal-jdk8:latest
+      - image: adoptopenjdk/openjdk8:jdk8u172-b11
     steps:
       - checkout
       - restore_cache:
@@ -42,7 +42,7 @@ jobs:
       - run:
           name: Define Environment Variables and update JAVA_HOME and PATH at Runtime
           command: |
-            echo 'export JAVA_VERSION=jdk8u152-b16'                               >> ${BASH_ENV}
+            echo 'export JAVA_VERSION=jdk8u172-b11'                               >> ${BASH_ENV}
             echo 'export JAVA_HOME=/opt/java/openjdk/${JAVA_VERSION}'             >> ${BASH_ENV}
             echo 'export PATH=${JAVA_HOME}/bin:${PATH}'                           >> ${BASH_ENV}
             echo 'export BASEDIR=${PWD}'                                          >> ${BASH_ENV}
