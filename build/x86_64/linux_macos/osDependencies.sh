@@ -5,7 +5,7 @@ set -u
 set -o pipefail
 
 SUDO_CMD=""
-if [[ "${CI}" == "true" ]]; then
+if [[ -f "/etc/sudoers" ]]; then
    SUDO_CMD=sudo
 fi
 
