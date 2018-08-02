@@ -8,7 +8,7 @@ export DEBUG=${DEBUG:-"false"}
 export RUN_TESTS=${RUN_TESTS:-"true"}
 
 export JAVA_VERSION=${JAVA_VERSION:-jdk8u152-b16}
-export JDK_BASE_IMAGE_TAG=${JDK_BASE_IMAGE_TAG:-"openjdk8:${JAVA_VERSION}"}
+export JDK_BASE_IMAGE_TAG=${JDK_BASE_IMAGE_TAG:-"adoptopenjdk/openjdk8:${JAVA_VERSION}"}
 export DOCKER_IMAGE_TAG="graalvm-suite-jdk8:latest"
 export USER_IN_CONTAINER=${USER_IN_CONTAINER:-"graal"}
 export CONTAINER_HOME_DIR="/home/${USER_IN_CONTAINER}"

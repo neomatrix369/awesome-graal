@@ -77,7 +77,9 @@ jobs:
       - run:
           name: Define Environment Variables and update JAVA_HOME and PATH at Runtime
           command: |
-            echo 'export JAVA_VERSION=jdk8u152-b16'                               >> ${BASH_ENV}
+            echo 'Even though we are using tag jdk8u152-b16, the location where JAVA_HOME is, is named jdk8u144-b01'
+            echo 'This is being fixed in subsequent versions of the JDK'
+            echo 'export JAVA_VERSION=jdk8u144-b01'                               >> ${BASH_ENV}
             echo 'export JAVA_HOME=/opt/java/openjdk/${JAVA_VERSION}'             >> ${BASH_ENV}
             echo 'export PATH=${JAVA_HOME}/bin:${PATH}'                           >> ${BASH_ENV}
             echo 'export BASEDIR=${PWD}'                                          >> ${BASH_ENV}
@@ -136,4 +138,4 @@ jobs:
           timeout: 3m
           no_output_timeout: 2m
       - store_artifacts:
-          path: /home/graal/project/jdk8-with-graal-local/
+          path: jdk8-with-graal-local/

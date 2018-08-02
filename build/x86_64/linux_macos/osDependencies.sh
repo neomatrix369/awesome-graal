@@ -4,11 +4,16 @@ set -e
 set -u
 set -o pipefail
 
+SUDO_CMD=""
+if [[ -f "/etc/sudoers" ]]; then
+   SUDO_CMD=sudo
+fi
+
 set -ex;                     \
     sed -i "s/deb.debian.org/cdn-fastly.deb.debian.org/" /etc/apt/sources.list \
     && sed -i "s/security.debian.org/cdn-fastly.debian.org\/debian-security/" /etc/apt/sources.list \
-    && apt-get update        \
-    && apt-get install -y    \
+    && ${SUDO_CMD} apt-get update        \
+    && ${SUDO_CMD} apt-get install -y    \
         build-essential      \
         ca-certificates      \
         ed                   \
@@ -34,12 +39,12 @@ set -ex;                     \
         zlib1g-dev
 
 set -ex;                     \
-    apt-get install -y texlive-fonts-recommended \
+    ${SUDO_CMD} apt-get install -y texlive-fonts-recommended \
                         libpcre3 libpcre3-dev
 set -ex;                          \
-    rm -r /var/lib/apt/lists/*    \
-            && apt-get autoremove \
-            && apt-get clean      \
+    ${SUDO_CMD} rm -r /var/lib/apt/lists/*    \
+            && ${SUDO_CMD} apt-get autoremove \
+            && ${SUDO_CMD} apt-get clean      \
             && ldconfig
 
 locale-gen en_US.UTF-8
