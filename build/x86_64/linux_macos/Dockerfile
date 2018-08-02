@@ -16,6 +16,8 @@ ARG RUBY_VERSION
 COPY installRuby.sh /installRuby.sh
 RUN /bin/bash -l -c "./installRuby.sh ${RUBY_VERSION}"
 
+COPY sysctl.conf /etc/sysctl.conf
+
 ARG USER_IN_CONTAINER
 ENV HOME_DIR /home/${USER_IN_CONTAINER}
 RUN useradd --create-home --shell /bin/bash ${USER_IN_CONTAINER} || true
