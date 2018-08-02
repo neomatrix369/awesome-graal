@@ -92,4 +92,4 @@ jobs:
           timeout: 3m
           no_output_timeout: 2m
       - store_artifacts:
-          path: project/jdk8-with-graal-local/
+          path: jdk8-with-graal-local/
