@@ -2,6 +2,7 @@ version: 2
 dependencies:
   cache_directories:
     - "vendor/apt"
+    - "vendor/apt/archives"
 jobs:
   build:
     docker:
@@ -21,6 +22,7 @@ jobs:
           key: os-deps-{{ arch }}-{{ .Branch }}-{{ .Environment.CIRCLE_SHA1 }}
           paths:
             - vendor/apt
+            - vendor/apt/archives
       - restore_cache:
           keys:
             - make-382-{{ arch }}-{{ .Branch }}-{{ .Environment.CIRCLE_SHA1 }}
@@ -34,52 +36,60 @@ jobs:
           key: make-382-{{ arch }}-{{ .Branch }}-{{ .Environment.CIRCLE_SHA1 }}
           paths:
             - /root/project/make-3.82/
+            - /usr/bin/make
+            - /usr/local/bin/make
+            - /usr/share/man/man1/make.1.gz
       - run:
           name: Define Environment Variables and update JAVA_HOME and PATH at Runtime
           command: |
+            echo 'Even though we are using tag jdk8u152-b16, the location where JAVA_HOME is, is named jdk8u144-b01'
+            echo 'This is being fixed in subsequent versions of the JDK'
             echo 'export JAVA_VERSION=jdk8u144-b01'                               >> ${BASH_ENV}
             echo 'export JAVA_HOME=/opt/java/openjdk/${JAVA_VERSION}'             >> ${BASH_ENV}
             echo 'export PATH=${JAVA_HOME}/bin:${PATH}'                           >> ${BASH_ENV}
-            echo 'export BASEDIR=$(pwd)'                                          >> ${BASH_ENV}
+            echo 'export BASEDIR=${PWD}'                                          >> ${BASH_ENV}
+            echo 'export SCRIPTS_LIB_DIR=${BASEDIR}/build/x86_64/linux_macos/lib' >> ${BASH_ENV}
             echo 'export MX=${BASEDIR}/mx/mx'                                     >> ${BASH_ENV}
             echo 'export JDK_GRAAL_FOLDER_NAME=jdk8-with-graal'                   >> ${BASH_ENV}
+            echo 'export GRAAL_JVMCI_8_TAG=jvmci-0.46'                            >> ${BASH_ENV}
             echo 'export BUILD_ARTIFACTS_DIR=${BASEDIR}/${JDK_GRAAL_FOLDER_NAME}' >> ${BASH_ENV}
-            echo 'export RUN_TESTS=""'                                            >> ${BASH_ENV}
+            echo 'export RUN_TESTS="true"'                                        >> ${BASH_ENV}
+            echo 'export HOTSPOT_BUILD_JOBS=2'                                    >> ${BASH_ENV}
             source ${BASH_ENV}
       - run:
-          name: Display versions of dependencies
+          name: Display HW, SW, Runtime env. info and versions of dependencies
           command: ./build/x86_64/linux_macos/lib/displayDependencyVersion.sh
-      - restore_cache:
-          keys:
-            - graal-build-{{ arch }}-{{ .Branch }}-{{ .Environment.CIRCLE_SHA1 }}
-            - graal-build-{{ arch }}-{{ .Branch }}
-            - graal-build
       - run:
           name: Setup MX
-          command: ./build/x86_64/linux_macos/lib/setupMX ${BASEDIR}
+          command: ./build/x86_64/linux_macos/lib/setupMX.sh ${BASEDIR}
       - run:
           name: Build JDK JVMCI
           command: ./build/x86_64/linux_macos/lib/build_JDK_JVMCI.sh ${BASEDIR} ${MX}
+          timeout: 20m
+          no_output_timeout: 15m
       - run:
           name: Run JDK JVMCI Tests
           command: ./build/x86_64/linux_macos/lib/run_JDK_JVMCI_Tests.sh ${BASEDIR} ${MX}
       - run:
-          name: Set env variables
-          command: ./build/x86_64/linux_macos/lib/setupEnvVariables.sh ${BASEDIR}
+          name: Setting up environment and Build Graal Compiler
+          command: |
+            echo ">>>> Currently JAVA_HOME=${JAVA_HOME}"
+            JDK8_JVMCI_HOME="$(cd ${BASEDIR}/graal-jvmci-8/ && ${MX} --java-home ${JAVA_HOME} jdkhome)"
+            echo "export JVMCI_VERSION_CHECK='ignore'" >> ${BASH_ENV}
+            echo "export JAVA_HOME=${JDK8_JVMCI_HOME}" >> ${BASH_ENV}
+            source ${BASH_ENV}
       - run:
           name: Build Graal Compiler
-          command: ./build/x86_64/linux_macos/lib/buildGraalCompiler.sh ${BASEDIR} ${MX} ${BUILD_ARTIFACTS_DIR}
-      - save_cache:
-          key: graal-build-{{ arch }}-{{ .Branch }}-{{ .Environment.CIRCLE_SHA1 }}
-          paths:
-            - /root/project/graal
-            - /root/project/graal-jvmci-8
-            - /root/project/jdk8-with-graal
-            - /root/project/mx
+          command: |
+            echo ">>>> Using JDK8_JVMCI_HOME as JAVA_HOME (${JAVA_HOME})"
+            ./build/x86_64/linux_macos/lib/buildGraalCompiler.sh ${BASEDIR} ${MX} ${BUILD_ARTIFACTS_DIR}
+          timeout: 10m
+          no_output_timeout: 7m
       - run:
           name: Archiving artifacts
-          command: ./build/x86_64/linux_macos/lib/archivingArtifacts.sh ${JDK_GRAAL_FOLDER_NAME} ${BUILD_ARTIFACTS_DIR}
+          command: |
+            ./build/x86_64/linux_macos/lib/archivingArtifacts.sh ${BASEDIR} ${MX} ${JDK_GRAAL_FOLDER_NAME} ${BUILD_ARTIFACTS_DIR}
+          timeout: 3m
+          no_output_timeout: 2m
       - store_artifacts:
-          path: ${BUILD_ARTIFACTS_DIR}
-          destination: ${JDK_GRAAL_FOLDER_NAME}.tar.gz
-
+          path: jdk8-with-graal-local/
