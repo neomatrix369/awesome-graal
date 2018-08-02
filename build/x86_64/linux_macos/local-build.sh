@@ -8,11 +8,6 @@ set -e
 set -u
 set -o pipefail
 
-if [[ -f "/.dockerenv" ]]; then
-   echo "Docker environment detected setting ulimit to unlimited"
-   ulimit -l unlimited
-fi
-
 IFS=$'\n\t'
 
 BASEDIR=$(pwd)
