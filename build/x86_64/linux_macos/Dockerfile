@@ -1,5 +1,5 @@
 ARG JDK_BASE_IMAGE_TAG
-FROM adoptopenjdk/${JDK_BASE_IMAGE_TAG}
+FROM ${JDK_BASE_IMAGE_TAG}
 
 COPY osDependencies.sh /osDependencies.sh
 RUN  /bin/bash -l -c "./osDependencies.sh"
