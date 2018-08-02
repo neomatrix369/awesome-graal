@@ -10,7 +10,7 @@ GRAALVM_SUITE_RUNTIMES=/substratevm,/tools,sulong,/graal-nodejs,/fastr,truffleru
 
 RUN_TESTS=true
 JAVA_HOME=/opt/java/openjdk/jdk8u144-b01
-JAVA_OPTS= -Xms300m -Xmx300m -XX:+PrintFlagsFinal
+JAVA_OPTS= -Xms2g -Xmx2g -XX:MaxPermSize=1g -XX:+PrintFlagsFinal
 FASTR_RELEASE=true
 LANG=en_US.UTF-8
 LC_ALL=en_US.UTF-8
@@ -24,16 +24,50 @@ PATH=/home/graal/mx:/opt/java/openjdk/jdk8u144-b01/bin:/usr/lib/llvm-6.0/bin:/us
 *************************************************
 
 Display hardware information
-Architecture: x86_64 CPU op-mode(s): 32-bit, 64-bit Byte Order: Little Endian CPU(s): 8 On-line CPU(s) list: 0-7 Thread(s) per core: 2 Core(s) per socket: 4 Socket(s): 1 NUMA node(s): 1 Vendor ID: GenuineIntel CPU family: 6 Model: 158 Model name: Intel(R) Core(TM) i7-7700HQ CPU @ 2.80GHz Stepping: 9 CPU MHz: 1609.287 CPU max MHz: 3800.0000 CPU min MHz: 800.0000 BogoMIPS: 5616.00 Virtualization: VT-x Hypervisor vendor: vertical Virtualization type: full L1d cache: 32K L1i cache: 32K L2 cache: 256K L3 cache: 6144K NUMA node0 CPU(s): 0-7 Flags: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf tsc_known_freq pni pclmulqdq dtes64 monitor ds_cpl vmx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault epb invpcid_single pti tpr_shadow vnmi flexpriority ept vpid fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid mpx rdseed adx smap clflushopt intel_pt xsaveopt xsavec xgetbv1 xsaves ibpb ibrs stibp dtherm ida arat pln pts hwp hwp_notify hwp_act_window hwp_epp
+Architecture:          x86_64
+CPU op-mode(s):        32-bit, 64-bit
+Byte Order:            Little Endian
+CPU(s):                8
+On-line CPU(s) list:   0-7
+Thread(s) per core:    2
+Core(s) per socket:    4
+Socket(s):             1
+NUMA node(s):          1
+Vendor ID:             GenuineIntel
+CPU family:            6
+Model:                 158
+Model name:            Intel(R) Core(TM) i7-7700HQ CPU @ 2.80GHz
+Stepping:              9
+CPU MHz:               3362.596
+CPU max MHz:           3800.0000
+CPU min MHz:           800.0000
+BogoMIPS:              5616.00
+Virtualization:        VT-x
+Hypervisor vendor:     vertical
+Virtualization type:   full
+L1d cache:             32K
+L1i cache:             32K
+L2 cache:              256K
+L3 cache:              6144K
+NUMA node0 CPU(s):     0-7
+Flags:                 fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf tsc_known_freq pni pclmulqdq dtes64 monitor ds_cpl vmx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault epb invpcid_single pti tpr_shadow vnmi flexpriority ept vpid fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid mpx rdseed adx smap clflushopt intel_pt xsaveopt xsavec xgetbv1 xsaves ibpb ibrs stibp dtherm ida arat pln pts hwp hwp_notify hwp_act_window hwp_epp
 
-total used free shared buff/cache available Mem: 15500 5924 2690 97 6885 8805 Swap: 3905 74 3830 total used free shared buff/cache available Mem: 15G 5.8G 2.6G 97M 6.7G 8.6G Swap: 3.8G 74M 3.7G
+              total        used        free      shared  buff/cache   available
+Mem:          15500       13198         212        1094        2088         786
+Swap:          3905        1821        2084
+              total        used        free      shared  buff/cache   available
+Mem:            15G         12G        212M        1.1G        2.0G        786M
+Swap:          3.8G        1.8G        2.0G
 
 Available threads (from all online CPUs/Cores): 8
 
 Display OS information
-Linux 9e726ba37d6d 4.15.0-22-generic #24-Ubuntu SMP Wed May 16 12:15:17 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux
+Linux 2b01d77ef383 4.15.0-22-generic #24-Ubuntu SMP Wed May 16 12:15:17 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux
 
-DISTRIB_ID=Ubuntu DISTRIB_RELEASE=16.04 DISTRIB_CODENAME=xenial DISTRIB_DESCRIPTION="Ubuntu 16.04.3 LTS"
+DISTRIB_ID=Ubuntu
+DISTRIB_RELEASE=16.04
+DISTRIB_CODENAME=xenial
+DISTRIB_DESCRIPTION="Ubuntu 16.04.3 LTS"
 
 *******************************************************************************
 * Processes are running inside a docker container on a bare-metal (native) environment
@@ -84,9 +118,9 @@ openssl version check
 OpenSSL 1.0.2g  1 Mar 2016
 >>> mx already exists: updating and using this version
 
-real	0m0.014s
-user	0m0.005s
-sys	0m0.005s
+real	0m0.025s
+user	0m0.004s
+sys	0m0.006s
 >>> graal-jvmci-8 already exists: updating and using this version
 Updating 62cf614..fb81b6c
 Fast-forward
@@ -140,7 +174,7 @@ JAVA_HOME: /opt/java/openjdk/jdk8u144-b01
 EXTRA_JAVA_HOMES: 
 Dependencies removed from build:
  project jdk.vm.ci.hotspot.jfr was removed as dependency JFR is missing
-Compiling jdk.vm.ci.hotspot with javac-daemon(JDK 1.8)... [/home/graal/graal-jvmci-8/mxbuild/jvmci/jdk.vm.ci.hotspot/bin/jdk/vm/ci/hotspot/HotSpotConstantPool.class[2018-07-31 13:32:41] is older than /home/graal/graal-jvmci-8/jvmci/jdk.vm.ci.hotspot/src/jdk/vm/ci/hotspot/HotSpotConstantPool.java[2018-07-31 13:43:36]]
+Compiling jdk.vm.ci.hotspot with javac-daemon(JDK 1.8)... [/home/graal/graal-jvmci-8/mxbuild/jvmci/jdk.vm.ci.hotspot/bin/jdk/vm/ci/hotspot/HotSpotConstantPool.class[2018-08-02 16:02:28] is older than /home/graal/graal-jvmci-8/jvmci/jdk.vm.ci.hotspot/src/jdk/vm/ci/hotspot/HotSpotConstantPool.java[2018-08-02 17:25:48]]
 Building HotSpot[product, server]... [dependency jdk.vm.ci.hotspot updated]
 warning: refname 'jvmci-0.46' is ambiguous.
 --------------- make command line ----------------------
@@ -879,26 +913,26 @@ make[1]: Leaving directory `/home/graal/graal-jvmci-8/build/linux'
 make: Leaving directory `/home/graal/graal-jvmci-8/make'
 Compiling jdk.vm.ci.hotspot.aarch64 with javac-daemon(JDK 1.8)... [dependency jdk.vm.ci.hotspot updated]
 Compiling jdk.vm.ci.hotspot.sparc with javac-daemon(JDK 1.8)... [dependency jdk.vm.ci.hotspot updated]
-Compiling jdk.vm.ci.hotspot.test with javac-daemon(JDK 1.8)... [dependency jdk.vm.ci.hotspot updated]
 Archiving JVM_PRODUCT_SERVER... [dependency hotspot updated]
+Compiling jdk.vm.ci.hotspot.test with javac-daemon(JDK 1.8)... [dependency jdk.vm.ci.hotspot updated]
 Compiling jdk.vm.ci.hotspot.amd64 with javac-daemon(JDK 1.8)... [dependency jdk.vm.ci.hotspot updated]
 Archiving JVMCI_HOTSPOT... [dependency jdk.vm.ci.hotspot.aarch64 updated]
 
-real	2m56.971s
-user	8m51.720s
-sys	1m13.556s
+real	3m28.862s
+user	9m56.345s
+sys	1m20.805s
 >>>> Running unit tests...
 MxJUnitCore
 JUnit version 4.12
 .............................................................................................
-Time: 6.273
+Time: 6.372
 
 OK (93 tests)
 
 
-real	0m8.216s
-user	0m17.313s
-sys	0m0.482s
+real	0m7.831s
+user	0m17.796s
+sys	0m0.438s
 >>>> Using JDK8_JVMCI_HOME as JAVA_HOME (/home/graal/graal-jvmci-8/openjdk1.8.0-internal/linux-amd64/product)
 >>> Building Graal
 >>> graal already exists: updating and using this version
@@ -925,9 +959,9 @@ Copying /home/graal/graal/compiler/mxbuild/dists/graal-management.jar to /home/g
 Copying /home/graal/graal/sdk/mxbuild/dists/graal-sdk.jar to /home/graal/jdk8-with-graal/jre/lib/boot
 Copying /home/graal/graal/truffle/mxbuild/dists/truffle-api.jar to /home/graal/jdk8-with-graal/jre/lib/truffle
 
-real	0m7.251s
-user	0m1.881s
-sys	0m3.461s
+real	0m6.057s
+user	0m2.038s
+sys	0m3.403s
 >>> Building GraalVM Suite
 Applying temporary patch to fix graaljs cloning issue in 'mx.vm/suite.py'
 Applying temporary patch to fix graalpython cloning issue in 'mx.vm/suite.py'
@@ -947,130 +981,32 @@ Dependencies removed from build:
  project jdk.tools.jaotc.test was removed as JDK 11 is not available
  distribution JAOTC was removed as all its project and non-JDK library dependencies were removed
  distribution JAOTC_TEST was removed as all its project and non-JDK library dependencies were removed
+Downloading VISUALVM_PLATFORM_SPECIFIC from ['https://lafo.ssw.uni-linz.ac.at/pub/graal-external-deps/visualvm-592-linux-amd64.tar.gz']
+Downloading https://lafo.ssw.uni-linz.ac.at/pub/graal-external-deps/visualvm-592-linux-amd64.tar.gz to /home/graal/.mx/cache/VISUALVM_PLATFORM_SPECIFIC_725aeb7cdf1ed8c5272b2b4efd57101102676676/visualvm-platform-specific.tar.gz
+Downloading VISUALVM_COMMON from ['https://lafo.ssw.uni-linz.ac.at/pub/graal-external-deps/visualvm-592.tar.gz']
+Downloading https://lafo.ssw.uni-linz.ac.at/pub/graal-external-deps/visualvm-592.tar.gz to /home/graal/.mx/cache/VISUALVM_COMMON_2b5fee653a160f6a3a863527cd68e49b8566d978/visualvm-common.tar.gz
+Compiling com.oracle.svm.test with javac-daemon(JDK 1.8)... [/home/graal/graal/substratevm/mxbuild/src/com.oracle.svm.test/bin/com/oracle/svm/test/ImageInfoTest.class does not exist]
+Archiving SVM_TESTS... [dependency com.oracle.svm.test updated]
+Compiling com.oracle.graal.pointsto with javac-daemon(JDK 1.8)... [/home/graal/graal/substratevm/mxbuild/src/com.oracle.graal.pointsto/bin/com/oracle/graal/pointsto/AnalysisPolicy.class[2018-07-30 22:14:19] is older than /home/graal/graal/compiler/mxbuild/dists/graal.jar[2018-08-02 13:12:08]]
+Compiling com.oracle.svm.core with javac-daemon(JDK 1.8)... [/home/graal/graal/substratevm/mxbuild/src/com.oracle.svm.core/bin/com/oracle/svm/core/MemoryUtil.class[2018-07-30 22:14:21] is older than /home/graal/graal/compiler/mxbuild/dists/graal.jar[2018-08-02 13:12:08]]
+Archiving POINTSTO... [dependency com.oracle.graal.pointsto updated]
+Compiling com.oracle.svm.jline with javac-daemon(JDK 1.8)... [dependency com.oracle.svm.core updated]
+Compiling com.oracle.svm.tutorial with javac-daemon(JDK 1.8)... [dependency com.oracle.svm.core updated]
+Compiling com.oracle.svm.core.windows with javac-daemon(JDK 1.8)... [dependency com.oracle.svm.core updated]
+Compiling com.oracle.svm.thirdparty with javac-daemon(JDK 1.8)... [dependency com.oracle.svm.core updated]
+Compiling com.oracle.svm.core.posix with javac-daemon(JDK 1.8)... [dependency com.oracle.svm.core updated]
+Compiling com.oracle.svm.core.graal with javac-daemon(JDK 1.8)... [dependency com.oracle.svm.core.posix updated]
+Compiling com.oracle.svm.core.genscavenge with javac-daemon(JDK 1.8)... [dependency com.oracle.svm.core.graal updated]
+Compiling com.oracle.svm.hosted with javac-daemon(JDK 1.8)... [dependency com.oracle.svm.core.graal updated]
+Archiving SVM_CORE... [dependency com.oracle.svm.core updated]
+Compiling com.oracle.svm.graal with javac-daemon(JDK 1.8)... [dependency com.oracle.svm.hosted updated]
+Compiling com.oracle.svm.jni with javac-daemon(JDK 1.8)... [dependency com.oracle.svm.hosted updated]
+Compiling com.oracle.svm.reflect with javac-daemon(JDK 1.8)... [dependency com.oracle.svm.hosted updated]
+Compiling com.oracle.svm.junit with javac-daemon(JDK 1.8)... [dependency com.oracle.svm.reflect updated]
+Compiling com.oracle.svm.driver with javac-daemon(JDK 1.8)... [dependency com.oracle.svm.graal updated]
+Compiling com.oracle.svm.truffle with javac-daemon(JDK 1.8)... [dependency com.oracle.svm.graal updated]
+Compiling com.oracle.svm.polyglot with javac-daemon(JDK 1.8)... [dependency com.oracle.svm.graal updated]
 WARNING: Could not find dragonegg, not building test variant "gcc_O0"
-Building com.oracle.truffle.r.native with GNU Make... [rebuild needed by GNU Make]
-R_VERSION: 3.4.0
-GNUR_HOME: /home/graal/fastr/com.oracle.truffle.r.native/gnur/patch-build
-GNUR_HOME_BINARY not set. Assuming the default location at /home/graal/fastr/libdownloads/R-3.4.0
-doclean: 0
-make -C gnur
-make[1]: Entering directory `/home/graal/fastr/com.oracle.truffle.r.native/gnur'
-make -f Makefile.gnur
-IN_FILES_PREFIX : /home/graal/fastr/com.oracle.truffle.r.native/gnur/patch
-IN_FILES_PREFIX_LEN : 57
-make[2]: Entering directory `/home/graal/fastr/com.oracle.truffle.r.native/gnur'
-make[2]: Nothing to be done for `all'.
-make[2]: Leaving directory `/home/graal/fastr/com.oracle.truffle.r.native/gnur'
-make -f Makefile.platform
-make[2]: Entering directory `/home/graal/fastr/com.oracle.truffle.r.native/gnur'
-make[2]: Nothing to be done for `all'.
-make[2]: Leaving directory `/home/graal/fastr/com.oracle.truffle.r.native/gnur'
-make -f Makefile.libs
-make[2]: Entering directory `/home/graal/fastr/com.oracle.truffle.r.native/gnur'
-make[2]: Nothing to be done for `all'.
-make[2]: Leaving directory `/home/graal/fastr/com.oracle.truffle.r.native/gnur'
-make[1]: Leaving directory `/home/graal/fastr/com.oracle.truffle.r.native/gnur'
-make -C include
-R_HEADERS_FILENAMES: R.h Rembedded.h Rconfig.h S.h Rmath.h Rversion.h Rdefines.h Rinternals.h Rinterface.h
-make[1]: Entering directory `/home/graal/fastr/com.oracle.truffle.r.native/include'
-make[1]: Nothing to be done for `all'.
-make[1]: Leaving directory `/home/graal/fastr/com.oracle.truffle.r.native/include'
-make -C fficall
-make[1]: Entering directory `/home/graal/fastr/com.oracle.truffle.r.native/fficall'
-make[1]: Nothing to be done for `all'.
-make[1]: Leaving directory `/home/graal/fastr/com.oracle.truffle.r.native/fficall'
-make -C /home/graal/fastr/com.oracle.truffle.r.native/gnur/patch-build/src/library
-make[1]: Entering directory `/home/graal/fastr/com.oracle.truffle.r.native/gnur/patch-build/src/library'
-mkdir -p /home/graal/fastr/library
-for dir in base compiler datasets utils grDevices graphics grid parallel splines stats stats4 methods tools; do \
-	make PACKAGE=$dir -C $dir || exit 1; \
-done
-make[2]: Entering directory `/home/graal/fastr/com.oracle.truffle.r.native/gnur/patch-build/src/library/base'
-make[2]: Nothing to be done for `all'.
-make[2]: Leaving directory `/home/graal/fastr/com.oracle.truffle.r.native/gnur/patch-build/src/library/base'
-make[2]: Entering directory `/home/graal/fastr/com.oracle.truffle.r.native/gnur/patch-build/src/library/compiler'
-make[2]: Nothing to be done for `all'.
-make[2]: Leaving directory `/home/graal/fastr/com.oracle.truffle.r.native/gnur/patch-build/src/library/compiler'
-make[2]: Entering directory `/home/graal/fastr/com.oracle.truffle.r.native/gnur/patch-build/src/library/datasets'
-make[2]: Nothing to be done for `all'.
-make[2]: Leaving directory `/home/graal/fastr/com.oracle.truffle.r.native/gnur/patch-build/src/library/datasets'
-make[2]: Entering directory `/home/graal/fastr/com.oracle.truffle.r.native/gnur/patch-build/src/library/utils'
-make[2]: Nothing to be done for `all'.
-make[2]: Leaving directory `/home/graal/fastr/com.oracle.truffle.r.native/gnur/patch-build/src/library/utils'
-make[2]: Entering directory `/home/graal/fastr/com.oracle.truffle.r.native/gnur/patch-build/src/library/grDevices'
-make[2]: Nothing to be done for `all'.
-make[2]: Leaving directory `/home/graal/fastr/com.oracle.truffle.r.native/gnur/patch-build/src/library/grDevices'
-make[2]: Entering directory `/home/graal/fastr/com.oracle.truffle.r.native/gnur/patch-build/src/library/graphics'
-make[2]: Nothing to be done for `all'.
-make[2]: Leaving directory `/home/graal/fastr/com.oracle.truffle.r.native/gnur/patch-build/src/library/graphics'
-make[2]: Entering directory `/home/graal/fastr/com.oracle.truffle.r.native/gnur/patch-build/src/library/grid'
-make[2]: Nothing to be done for `all'.
-make[2]: Leaving directory `/home/graal/fastr/com.oracle.truffle.r.native/gnur/patch-build/src/library/grid'
-make[2]: Entering directory `/home/graal/fastr/com.oracle.truffle.r.native/gnur/patch-build/src/library/parallel'
-make[2]: Nothing to be done for `all'.
-make[2]: Leaving directory `/home/graal/fastr/com.oracle.truffle.r.native/gnur/patch-build/src/library/parallel'
-make[2]: Entering directory `/home/graal/fastr/com.oracle.truffle.r.native/gnur/patch-build/src/library/splines'
-make[2]: Nothing to be done for `all'.
-make[2]: Leaving directory `/home/graal/fastr/com.oracle.truffle.r.native/gnur/patch-build/src/library/splines'
-make[2]: Entering directory `/home/graal/fastr/com.oracle.truffle.r.native/gnur/patch-build/src/library/stats'
-make[2]: Nothing to be done for `all'.
-make[2]: Leaving directory `/home/graal/fastr/com.oracle.truffle.r.native/gnur/patch-build/src/library/stats'
-make[2]: Entering directory `/home/graal/fastr/com.oracle.truffle.r.native/gnur/patch-build/src/library/stats4'
-make[2]: Nothing to be done for `all'.
-make[2]: Leaving directory `/home/graal/fastr/com.oracle.truffle.r.native/gnur/patch-build/src/library/stats4'
-make[2]: Entering directory `/home/graal/fastr/com.oracle.truffle.r.native/gnur/patch-build/src/library/methods'
-make[2]: Nothing to be done for `all'.
-make[2]: Leaving directory `/home/graal/fastr/com.oracle.truffle.r.native/gnur/patch-build/src/library/methods'
-make[2]: Entering directory `/home/graal/fastr/com.oracle.truffle.r.native/gnur/patch-build/src/library/tools'
-make[2]: Nothing to be done for `all'.
-make[2]: Leaving directory `/home/graal/fastr/com.oracle.truffle.r.native/gnur/patch-build/src/library/tools'
-make[1]: Leaving directory `/home/graal/fastr/com.oracle.truffle.r.native/gnur/patch-build/src/library'
-make -C run
-make[1]: Entering directory `/home/graal/fastr/com.oracle.truffle.r.native/run'
-mkdir -p /home/graal/fastr/bin
-mkdir -p /home/graal/fastr/doc
-mkdir -p /home/graal/fastr/bin/exec
-mkdir -p /home/graal/fastr/bin/execRextras
-mkdir -p /home/graal/fastr/etc
-mkdir -p /home/graal/fastr/share
-make[1]: Leaving directory `/home/graal/fastr/com.oracle.truffle.r.native/run'
-cp version.source version.built
-Building com.oracle.truffle.r.test.native with GNU Make... [dependency com.oracle.truffle.r.native updated]
-mkdir -p /home/graal/fastr/com.oracle.truffle.r.test.native/packages/repo/src/contrib
-cp packages/PACKAGES /home/graal/fastr/com.oracle.truffle.r.test.native/packages/repo/src/contrib
-make -C urand
-make[1]: Entering directory `/home/graal/fastr/com.oracle.truffle.r.test.native/urand'
-make[1]: Nothing to be done for `all'.
-make[1]: Leaving directory `/home/graal/fastr/com.oracle.truffle.r.test.native/urand'
-make -C packages
-GNUR_HOME_BINARY not set. Assuming the default location at /home/graal/fastr/libdownloads/R-3.4.0
-make[1]: Entering directory `/home/graal/fastr/com.oracle.truffle.r.test.native/packages'
-for dir in testrffi vanilla tests4; do \
-	make PACKAGE=$dir -C $dir || exit 1; \
-done
-make[2]: Entering directory `/home/graal/fastr/com.oracle.truffle.r.test.native/packages/testrffi'
-(cd /home/graal/fastr/com.oracle.truffle.r.test.native/packages/repo/src/contrib; TZDIR=/usr/share/zoneinfo/ /home/graal/fastr/libdownloads/R-3.4.0/bin/R CMD build /home/graal/fastr/com.oracle.truffle.r.test.native/packages/testrffi/testrffi)
-* checking for file ‘/home/graal/fastr/com.oracle.truffle.r.test.native/packages/testrffi/testrffi/DESCRIPTION’ ... OK
-* preparing ‘testrffi’:
-* checking DESCRIPTION meta-information ... OK
-* cleaning src
-* checking for LF line-endings in source and make files
-* checking for empty or unneeded directories
-* building ‘testrffi_1.0.tar.gz’
-
-make[2]: Leaving directory `/home/graal/fastr/com.oracle.truffle.r.test.native/packages/testrffi'
-make[2]: Entering directory `/home/graal/fastr/com.oracle.truffle.r.test.native/packages/vanilla'
-make[2]: Nothing to be done for `all'.
-make[2]: Leaving directory `/home/graal/fastr/com.oracle.truffle.r.test.native/packages/vanilla'
-make[2]: Entering directory `/home/graal/fastr/com.oracle.truffle.r.test.native/packages/tests4'
-make[2]: Nothing to be done for `all'.
-make[2]: Leaving directory `/home/graal/fastr/com.oracle.truffle.r.test.native/packages/tests4'
-make[1]: Leaving directory `/home/graal/fastr/com.oracle.truffle.r.test.native/packages'
-make -C embedded
-make[1]: Entering directory `/home/graal/fastr/com.oracle.truffle.r.test.native/embedded'
-make[1]: Nothing to be done for `all'.
-make[1]: Leaving directory `/home/graal/fastr/com.oracle.truffle.r.test.native/embedded'
-Archiving FASTR_UNIT_TESTS_NATIVE... [dependency com.oracle.truffle.r.test.native updated]
 Building trufflenodeNative with GNU Make...
 Running './configure --partly-static --build-only-native --without-dtrace --without-snapshot --shared-zlib --shared-graalvm /home/graal/graal-jvmci-8/openjdk1.8.0-internal/linux-amd64/product --shared-trufflejs /home/graal/graaljs/graal-js/mxbuild/dists/graaljs.jar'
 creating icu_config.gypi
@@ -1146,31 +1082,171 @@ make[1]: Entering directory `/home/graal/graaljs/graal-nodejs/out'
   g++ -pthread -rdynamic -m64 -Wl,--whole-archive,/home/graal/graaljs/graal-nodejs/out/Release/obj.target/deps/openssl/libopenssl.a -Wl,--no-whole-archive -Wl,-z,noexecstack,--allow-multiple-definition -Wl,--whole-archive /home/graal/graaljs/graal-nodejs/out/Release/obj.target/deps/v8/src/libv8_base.a -Wl,--no-whole-archive -pthread  -o /home/graal/graaljs/graal-nodejs/out/Release/node -Wl,--start-group /home/graal/graaljs/graal-nodejs/out/Release/obj.target/node/src/async_wrap.o /home/graal/graaljs/graal-nodejs/out/Release/obj.target/node/src/cares_wrap.o /home/graal/graaljs/graal-nodejs/out/Release/obj.target/node/src/connection_wrap.o /home/graal/graaljs/graal-nodejs/out/Release/obj.target/node/src/connect_wrap.o /home/graal/graaljs/graal-nodejs/out/Release/obj.target/node/src/env.o /home/graal/graaljs/graal-nodejs/out/Release/obj.target/node/src/fs_event_wrap.o /home/graal/graaljs/graal-nodejs/out/Release/obj.target/node/src/handle_wrap.o /home/graal/graaljs/graal-nodejs/out/Release/obj.target/node/src/js_stream.o /home/graal/graaljs/graal-nodejs/out/Release/obj.target/node/src/module_wrap.o /home/graal/graaljs/graal-nodejs/out/Release/obj.target/node/src/node.o /home/graal/graaljs/graal-nodejs/out/Release/obj.target/node/src/node_api.o /home/graal/graaljs/graal-nodejs/out/Release/obj.target/node/src/node_buffer.o /home/graal/graaljs/graal-nodejs/out/Release/obj.target/node/src/node_config.o /home/graal/graaljs/graal-nodejs/out/Release/obj.target/node/src/node_constants.o /home/graal/graaljs/graal-nodejs/out/Release/obj.target/node/src/node_contextify.o /home/graal/graaljs/graal-nodejs/out/Release/obj.target/node/src/node_debug_options.o /home/graal/graaljs/graal-nodejs/out/Release/obj.target/node/src/node_file.o /home/graal/graaljs/graal-nodejs/out/Release/obj.target/node/src/node_http2.o /home/graal/graaljs/graal-nodejs/out/Release/obj.target/node/src/node_http_parser.o /home/graal/graaljs/graal-nodejs/out/Release/obj.target/node/src/node_main.o /home/graal/graaljs/graal-nodejs/out/Release/obj.target/node/src/node_os.o /home/graal/graaljs/graal-nodejs/out/Release/obj.target/node/src/node_platform.o /home/graal/graaljs/graal-nodejs/out/Release/obj.target/node/src/node_perf.o /home/graal/graaljs/graal-nodejs/out/Release/obj.target/node/src/node_serdes.o /home/graal/graaljs/graal-nodejs/out/Release/obj.target/node/src/node_trace_events.o /home/graal/graaljs/graal-nodejs/out/Release/obj.target/node/src/node_url.o /home/graal/graaljs/graal-nodejs/out/Release/obj.target/node/src/node_util.o /home/graal/graaljs/graal-nodejs/out/Release/obj.target/node/src/node_v8.o /home/graal/graaljs/graal-nodejs/out/Release/obj.target/node/src/node_stat_watcher.o /home/graal/graaljs/graal-nodejs/out/Release/obj.target/node/src/node_watchdog.o /home/graal/graaljs/graal-nodejs/out/Release/obj.target/node/src/node_zlib.o /home/graal/graaljs/graal-nodejs/out/Release/obj.target/node/src/node_i18n.o /home/graal/graaljs/graal-nodejs/out/Release/obj.target/node/src/pipe_wrap.o /home/graal/graaljs/graal-nodejs/out/Release/obj.target/node/src/process_wrap.o /home/graal/graaljs/graal-nodejs/out/Release/obj.target/node/src/signal_wrap.o /home/graal/graaljs/graal-nodejs/out/Release/obj.target/node/src/spawn_sync.o /home/graal/graaljs/graal-nodejs/out/Release/obj.target/node/src/string_bytes.o /home/graal/graaljs/graal-nodejs/out/Release/obj.target/node/src/string_search.o /home/graal/graaljs/graal-nodejs/out/Release/obj.target/node/src/stream_base.o /home/graal/graaljs/graal-nodejs/out/Release/obj.target/node/src/stream_wrap.o /home/graal/graaljs/graal-nodejs/out/Release/obj.target/node/src/tcp_wrap.o /home/graal/graaljs/graal-nodejs/out/Release/obj.target/node/src/timer_wrap.o /home/graal/graaljs/graal-nodejs/out/Release/obj.target/node/src/tracing/agent.o /home/graal/graaljs/graal-nodejs/out/Release/obj.target/node/src/tracing/node_trace_buffer.o /home/graal/graaljs/graal-nodejs/out/Release/obj.target/node/src/tracing/node_trace_writer.o /home/graal/graaljs/graal-nodejs/out/Release/obj.target/node/src/tracing/trace_event.o /home/graal/graaljs/graal-nodejs/out/Release/obj.target/node/src/tty_wrap.o /home/graal/graaljs/graal-nodejs/out/Release/obj.target/node/src/udp_wrap.o /home/graal/graaljs/graal-nodejs/out/Release/obj.target/node/src/util.o /home/graal/graaljs/graal-nodejs/out/Release/obj.target/node/src/uv.o /home/graal/graaljs/graal-nodejs/out/Release/obj.target/node/gen/node_javascript.o /home/graal/graaljs/graal-nodejs/out/Release/obj.target/node/src/backtrace_posix.o /home/graal/graaljs/graal-nodejs/out/Release/obj.target/node/src/node_crypto.o /home/graal/graaljs/graal-nodejs/out/Release/obj.target/node/src/node_crypto_bio.o /home/graal/graaljs/graal-nodejs/out/Release/obj.target/node/src/node_crypto_clienthello.o /home/graal/graaljs/graal-nodejs/out/Release/obj.target/node/src/tls_wrap.o /home/graal/graaljs/graal-nodejs/out/Release/obj.target/deps/openssl/libopenssl.a /home/graal/graaljs/graal-nodejs/out/Release/obj.target/deps/http_parser/libhttp_parser.a /home/graal/graaljs/graal-nodejs/out/Release/obj.target/deps/cares/libcares.a /home/graal/graaljs/graal-nodejs/out/Release/obj.target/deps/uv/libuv.a /home/graal/graaljs/graal-nodejs/out/Release/obj.target/deps/nghttp2/libnghttp2.a /home/graal/graaljs/graal-nodejs/out/Release/obj.target/deps/v8/src/libv8_base.a -lz -static-libgcc -static-libstdc++ -Wl,-rpath='$ORIGIN/../../../../lib/' -Wl,-rpath='$ORIGIN/../../../../jre/lib/' -Wl,-rpath='$ORIGIN/../../../../jre/languages/R/lib/' -L/home/graal/graal-jvmci-8/openjdk1.8.0-internal/linux-amd64/product/jre/lib/amd64/server -L/home/graal/graal-jvmci-8/openjdk1.8.0-internal/linux-amd64/product/jre/lib/amd64 -Wl,-rpath='$ORIGIN/../../../../lib/amd64/' -Wl,-rpath='$ORIGIN/../../../../jre/lib/amd64/' -ljsig -ldl -lm -lrt -Wl,--end-group
 make[1]: Leaving directory `/home/graal/graaljs/graal-nodejs/out'
 if [ ! -r node -o ! -L node ]; then ln -fs out/Release/node node; fi
+Archiving VISUALVM_GRAALVM_SUPPORT... [dependency VISUALVM_COMMON updated]
+Compiling org.graalvm.polyglot.nativeapi with javac-daemon(JDK 1.8)... [dependency com.oracle.svm.hosted updated]
+Building com.oracle.truffle.r.native with GNU Make... [rebuild needed by GNU Make]
+R_VERSION: 3.4.0
+GNUR_HOME: /home/graal/fastr/com.oracle.truffle.r.native/gnur/patch-build
+GNUR_HOME_BINARY not set. Assuming the default location at /home/graal/fastr/libdownloads/R-3.4.0
+doclean: 0
+make -C gnur
+make[1]: Entering directory `/home/graal/fastr/com.oracle.truffle.r.native/gnur'
+make -f Makefile.gnur
+IN_FILES_PREFIX : /home/graal/fastr/com.oracle.truffle.r.native/gnur/patch
+IN_FILES_PREFIX_LEN : 57
+make[2]: Entering directory `/home/graal/fastr/com.oracle.truffle.r.native/gnur'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/graal/fastr/com.oracle.truffle.r.native/gnur'
+make -f Makefile.platform
+make[2]: Entering directory `/home/graal/fastr/com.oracle.truffle.r.native/gnur'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/graal/fastr/com.oracle.truffle.r.native/gnur'
+make -f Makefile.libs
+make[2]: Entering directory `/home/graal/fastr/com.oracle.truffle.r.native/gnur'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/graal/fastr/com.oracle.truffle.r.native/gnur'
+make[1]: Leaving directory `/home/graal/fastr/com.oracle.truffle.r.native/gnur'
+make -C include
+R_HEADERS_FILENAMES: R.h Rembedded.h Rconfig.h S.h Rmath.h Rversion.h Rdefines.h Rinternals.h Rinterface.h
+make[1]: Entering directory `/home/graal/fastr/com.oracle.truffle.r.native/include'
+make[1]: Nothing to be done for `all'.
+make[1]: Leaving directory `/home/graal/fastr/com.oracle.truffle.r.native/include'
+make -C fficall
+make[1]: Entering directory `/home/graal/fastr/com.oracle.truffle.r.native/fficall'
+make[1]: Nothing to be done for `all'.
+make[1]: Leaving directory `/home/graal/fastr/com.oracle.truffle.r.native/fficall'
+make -C /home/graal/fastr/com.oracle.truffle.r.native/gnur/patch-build/src/library
+make[1]: Entering directory `/home/graal/fastr/com.oracle.truffle.r.native/gnur/patch-build/src/library'
+mkdir -p /home/graal/fastr/library
+for dir in base compiler datasets utils grDevices graphics grid parallel splines stats stats4 methods tools; do \
+	make PACKAGE=$dir -C $dir || exit 1; \
+done
+make[2]: Entering directory `/home/graal/fastr/com.oracle.truffle.r.native/gnur/patch-build/src/library/base'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/graal/fastr/com.oracle.truffle.r.native/gnur/patch-build/src/library/base'
+make[2]: Entering directory `/home/graal/fastr/com.oracle.truffle.r.native/gnur/patch-build/src/library/compiler'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/graal/fastr/com.oracle.truffle.r.native/gnur/patch-build/src/library/compiler'
+make[2]: Entering directory `/home/graal/fastr/com.oracle.truffle.r.native/gnur/patch-build/src/library/datasets'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/graal/fastr/com.oracle.truffle.r.native/gnur/patch-build/src/library/datasets'
+make[2]: Entering directory `/home/graal/fastr/com.oracle.truffle.r.native/gnur/patch-build/src/library/utils'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/graal/fastr/com.oracle.truffle.r.native/gnur/patch-build/src/library/utils'
+Compiling com.oracle.svm.truffle.nfi with javac-daemon(JDK 1.8)... [dependency com.oracle.svm.truffle updated]
+make[2]: Entering directory `/home/graal/fastr/com.oracle.truffle.r.native/gnur/patch-build/src/library/grDevices'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/graal/fastr/com.oracle.truffle.r.native/gnur/patch-build/src/library/grDevices'
+make[2]: Entering directory `/home/graal/fastr/com.oracle.truffle.r.native/gnur/patch-build/src/library/graphics'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/graal/fastr/com.oracle.truffle.r.native/gnur/patch-build/src/library/graphics'
+make[2]: Entering directory `/home/graal/fastr/com.oracle.truffle.r.native/gnur/patch-build/src/library/grid'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/graal/fastr/com.oracle.truffle.r.native/gnur/patch-build/src/library/grid'
+make[2]: Entering directory `/home/graal/fastr/com.oracle.truffle.r.native/gnur/patch-build/src/library/parallel'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/graal/fastr/com.oracle.truffle.r.native/gnur/patch-build/src/library/parallel'
+make[2]: Entering directory `/home/graal/fastr/com.oracle.truffle.r.native/gnur/patch-build/src/library/splines'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/graal/fastr/com.oracle.truffle.r.native/gnur/patch-build/src/library/splines'
+make[2]: Entering directory `/home/graal/fastr/com.oracle.truffle.r.native/gnur/patch-build/src/library/stats'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/graal/fastr/com.oracle.truffle.r.native/gnur/patch-build/src/library/stats'
+make[2]: Entering directory `/home/graal/fastr/com.oracle.truffle.r.native/gnur/patch-build/src/library/stats4'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/graal/fastr/com.oracle.truffle.r.native/gnur/patch-build/src/library/stats4'
+make[2]: Entering directory `/home/graal/fastr/com.oracle.truffle.r.native/gnur/patch-build/src/library/methods'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/graal/fastr/com.oracle.truffle.r.native/gnur/patch-build/src/library/methods'
+make[2]: Entering directory `/home/graal/fastr/com.oracle.truffle.r.native/gnur/patch-build/src/library/tools'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/graal/fastr/com.oracle.truffle.r.native/gnur/patch-build/src/library/tools'
+make[1]: Leaving directory `/home/graal/fastr/com.oracle.truffle.r.native/gnur/patch-build/src/library'
+make -C run
+make[1]: Entering directory `/home/graal/fastr/com.oracle.truffle.r.native/run'
+mkdir -p /home/graal/fastr/bin
+mkdir -p /home/graal/fastr/doc
+mkdir -p /home/graal/fastr/bin/exec
+mkdir -p /home/graal/fastr/bin/execRextras
+mkdir -p /home/graal/fastr/etc
+mkdir -p /home/graal/fastr/share
+make[1]: Leaving directory `/home/graal/fastr/com.oracle.truffle.r.native/run'
+cp version.source version.built
+Archiving TRUFFLENODE_GRAALVM_SUPPORT... [dependency trufflenodeNative updated]
+Building com.oracle.truffle.r.test.native with GNU Make... [dependency com.oracle.truffle.r.native updated]
+mkdir -p /home/graal/fastr/com.oracle.truffle.r.test.native/packages/repo/src/contrib
+cp packages/PACKAGES /home/graal/fastr/com.oracle.truffle.r.test.native/packages/repo/src/contrib
+make -C urand
+make[1]: Entering directory `/home/graal/fastr/com.oracle.truffle.r.test.native/urand'
+make[1]: Nothing to be done for `all'.
+make[1]: Leaving directory `/home/graal/fastr/com.oracle.truffle.r.test.native/urand'
+make -C packages
+GNUR_HOME_BINARY not set. Assuming the default location at /home/graal/fastr/libdownloads/R-3.4.0
+make[1]: Entering directory `/home/graal/fastr/com.oracle.truffle.r.test.native/packages'
+for dir in testrffi vanilla tests4; do \
+	make PACKAGE=$dir -C $dir || exit 1; \
+done
+make[2]: Entering directory `/home/graal/fastr/com.oracle.truffle.r.test.native/packages/testrffi'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/graal/fastr/com.oracle.truffle.r.test.native/packages/testrffi'
+make[2]: Entering directory `/home/graal/fastr/com.oracle.truffle.r.test.native/packages/vanilla'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/graal/fastr/com.oracle.truffle.r.test.native/packages/vanilla'
+make[2]: Entering directory `/home/graal/fastr/com.oracle.truffle.r.test.native/packages/tests4'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/graal/fastr/com.oracle.truffle.r.test.native/packages/tests4'
+make[1]: Leaving directory `/home/graal/fastr/com.oracle.truffle.r.test.native/packages'
+make -C embedded
+make[1]: Entering directory `/home/graal/fastr/com.oracle.truffle.r.test.native/embedded'
+make[1]: Nothing to be done for `all'.
+make[1]: Leaving directory `/home/graal/fastr/com.oracle.truffle.r.test.native/embedded'
+Checking native-image.properties... [dependency TRUFFLENODE_GRAALVM_SUPPORT updated]
+Archiving FASTR_UNIT_TESTS_NATIVE... [dependency com.oracle.truffle.r.test.native updated]
+Archiving SVM... [dependency com.oracle.svm.hosted updated]
 Building com.oracle.truffle.r.native.recommended with GNU Make... [dependency com.oracle.truffle.r.native updated]
 GNUR_HOME_BINARY not set. Assuming the default location at /home/graal/fastr/libdownloads/R-3.4.0
 GNUR_RECOMMENDED_TARS=/home/graal/fastr/libdownloads/R-3.4.0/src/library/Recommended/codetools.tgz /home/graal/fastr/libdownloads/R-3.4.0/src/library/Recommended/MASS.tgz /home/graal/fastr/libdownloads/R-3.4.0/src/library/Recommended/boot.tgz /home/graal/fastr/libdownloads/R-3.4.0/src/library/Recommended/class.tgz /home/graal/fastr/libdownloads/R-3.4.0/src/library/Recommended/cluster.tgz /home/graal/fastr/libdownloads/R-3.4.0/src/library/Recommended/lattice.tgz /home/graal/fastr/libdownloads/R-3.4.0/src/library/Recommended/nnet.tgz /home/graal/fastr/libdownloads/R-3.4.0/src/library/Recommended/spatial.tgz /home/graal/fastr/libdownloads/R-3.4.0/src/library/Recommended/Matrix.tgz /home/graal/fastr/libdownloads/R-3.4.0/src/library/Recommended/survival.tgz /home/graal/fastr/libdownloads/R-3.4.0/src/library/Recommended/KernSmooth.tgz /home/graal/fastr/libdownloads/R-3.4.0/src/library/Recommended/foreign.tgz /home/graal/fastr/libdownloads/R-3.4.0/src/library/Recommended/nlme.tgz /home/graal/fastr/libdownloads/R-3.4.0/src/library/Recommended/rpart.tgz
 make: Nothing to be done for `all'.
+Archiving LIBRARY_SUPPORT... [dependency com.oracle.svm.jni updated]
+Archiving POLYGLOT_NATIVE_API... [dependency org.graalvm.polyglot.nativeapi updated]
 WARNING: Could not find dragonegg, not building test variant "gcc_O0"
-Archiving TRUFFLENODE_GRAALVM_SUPPORT... [dependency trufflenodeNative updated]
+Archiving SVM_DRIVER... [dependency com.oracle.svm.driver updated]
 Building com.oracle.truffle.r.release with GNU Make... [dependency com.oracle.truffle.r.native.recommended updated]
-Checking native-image.properties... [dependency TRUFFLENODE_GRAALVM_SUPPORT updated]
+Building native-image.image-bash-stage1... [dependency SVM_DRIVER updated]
 Archiving FASTR_RELEASE... [dependency com.oracle.truffle.r.release updated]
 Archiving FASTR_GRAALVM_RELEASE... [dependency com.oracle.truffle.r.release updated]
+WARNING: Skipping known missing dependency HAMCREST when building classpath for ['substratevm:SVM_DRIVER']
+WARNING: Skipping known missing dependency JUNIT when building classpath for ['substratevm:SVM_DRIVER']
+WARNING: Skipping known missing dependency JUNIT_TOOL when building classpath for ['substratevm:SVM_DRIVER']
+WARNING: Skipping known missing dependency JLINE when building classpath for ['substratevm:SVM_DRIVER']
+WARNING: Skipping known missing dependency TRUFFLE_DEBUG when building classpath for ['substratevm:SVM_DRIVER']
+WARNING: Skipping known missing dependency HAMCREST when building classpath for ['substratevm:SVM_DRIVER']
+WARNING: Skipping known missing dependency JUNIT when building classpath for ['substratevm:SVM_DRIVER']
+WARNING: Skipping known missing dependency JUNIT_TOOL when building classpath for ['substratevm:SVM_DRIVER']
+WARNING: Skipping known missing dependency JLINE when building classpath for ['substratevm:SVM_DRIVER']
+WARNING: Skipping known missing dependency TRUFFLE_DEBUG when building classpath for ['substratevm:SVM_DRIVER']
+WARNING: Skipping known missing dependency HAMCREST when building classpath for ['substratevm:SVM_DRIVER']
+WARNING: Skipping known missing dependency JUNIT when building classpath for ['substratevm:SVM_DRIVER']
+WARNING: Skipping known missing dependency JUNIT_TOOL when building classpath for ['substratevm:SVM_DRIVER']
+WARNING: Skipping known missing dependency JLINE when building classpath for ['substratevm:SVM_DRIVER']
+WARNING: Skipping known missing dependency TRUFFLE_DEBUG when building classpath for ['substratevm:SVM_DRIVER']
 Archiving FASTR_GRAALVM_SUPPORT... [dependency FASTR_GRAALVM_RELEASE updated]
 Checking native-image.properties... [dependency FASTR_GRAALVM_SUPPORT updated]
+Archiving GRAALVM_R_CMP_GU_GVM_INS_JS_NJS_POLYNATIVE_PRO_PYN_RBY_RGX_SLG_STAGE1_SVM_TFL_VVM... [dependency FASTR_GRAALVM_SUPPORT updated]
 Archiving R_INSTALLABLE... [dependency FASTR_GRAALVM_SUPPORT updated]
-Archiving R_STANDALONE... [dependency FASTR_GRAALVM_SUPPORT updated]
-Archiving GRAALVM_R_CMP_GU_GVM_INS_JS_NJS_POLYNATIVE_PRO_PYN_RBY_RGX_SLG_STAGE1_SVM_TFL... [dependency FASTR_GRAALVM_SUPPORT updated]
-WARNING:   GRAALVM_R_CMP_GU_GVM_INS_JS_NJS_POLYNATIVE_PRO_PYN_RBY_RGX_SLG_STAGE1_SVM_TFL:
-Adding file which is not in the repository: '/home/graal/graal-jvmci-8/openjdk1.8.0-internal/linux-amd64/product' in 'graalvm-r-cmp-gu-gvm-ins-js-njs-polynative-pro-pyn-rby-rgx-slg-stage1-svm-tfl-1.0.0-rc6-dev'
-Building lli.image... [dependency GRAALVM_R_CMP_GU_GVM_INS_JS_NJS_POLYNATIVE_PRO_PYN_RBY_RGX_SLG_STAGE1_SVM_TFL updated]
-   classlist:   7,734.43 ms
-       (cap):   1,360.42 ms
-       setup:   3,751.23 ms
-  (typeflow):  74,697.15 ms
-   (objects): 117,523.74 ms
-  (features):  15,105.70 ms
-    analysis: 216,341.62 ms
-4953 method(s) included for runtime compilation
-    universe:  18,250.17 ms
-     (parse):  14,202.23 ms
+WARNING:   GRAALVM_R_CMP_GU_GVM_INS_JS_NJS_POLYNATIVE_PRO_PYN_RBY_RGX_SLG_STAGE1_SVM_TFL_VVM:
+Adding file which is not in the repository: '/home/graal/graal-jvmci-8/openjdk1.8.0-internal/linux-amd64/product' in 'graalvm-r-cmp-gu-gvm-ins-js-njs-polynative-pro-pyn-rby-rgx-slg-stage1-svm-tfl-vvm-1.0.0-rc6-dev'
+Building lli.image... [dependency GRAALVM_R_CMP_GU_GVM_INS_JS_NJS_POLYNATIVE_PRO_PYN_RBY_RGX_SLG_STAGE1_SVM_TFL_VVM updated]
+   classlist:   8,838.20 ms
+       (cap):   2,237.50 ms
+       setup:   8,411.80 ms
+GraalVM 1.0.0-rc6-dev warning: INFO: os::commit_memory(0x0000000755500000, 535822336, 0) failed; error='Cannot allocate memory' (errno=12)
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (mmap) failed to map 535822336 bytes for committing reserved memory.
+# An error report file with more information is saved as:
+# /home/graal/graal/vm/hs_err_pid6371.log
+Error: Image building with exit status 1
+
+Building lli.image failed
+1 build tasks failed
