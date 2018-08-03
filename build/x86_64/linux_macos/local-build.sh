@@ -27,8 +27,8 @@ export LANG="en_US.UTF-8"
 export LC_ALL="en_US.UTF-8"
 export LC_CTYPE="en_US.UTF-8"
 
-export PKG_INCLUDE_FLAGS_OVERRIDE=-I/opt/local/include
-export PKG_LDFLAGS_OVERRIDE=-L/opt/local/lib
+export PKG_INCLUDE_FLAGS_OVERRIDE="-I/usr/local/opt/include -I/usr/local/include -I/opt/local/include"
+export PKG_LDFLAGS_OVERRIDE="-L/usr/local/opt/lib -L/usr/local/lib -L$(dirname $(gfortran --print-file-name libgfortran.dylib)) -L/opt/local/lib"
 
 echo ">>> Working in ${BASEDIR}"
 

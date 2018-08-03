@@ -12,15 +12,19 @@ BUILD_ARTIFACTS_DIR=$5
 
 echo ""
 echo ">>> Creating Archive and SHA of the newly JDK8 with Graal & Truffle at ${BUILD_ARTIFACTS_DIR}"
+
 cd ${BASEDIR}
 
-GRAALVM_SUITE_HOME=$(${MX} --dy ${GRAALVM_SUITE_RUNTIMES} graalvm-home)
+GRAALVM_SUITE_HOME=$( cd ${BASEDIR}/graal/vm && ${MX} --dy "${GRAALVM_SUITE_RUNTIMES}" graalvm-home )
 
-outputArchiveFilename=$(ls ${GRAALVM_SUITE_HOME}/*.tar)
-shaSumFilename=${outputArchiveFilename}.sha256sum.txt
-echo ">>>> Creating Archive ${outputArchiveFilename}"
-GZIP=-9 tar -czf ${outputArchiveFilename} "${JDK_GRAAL_FOLDER_NAME}"
+OS_PLATFORM="$(uname | tr '[:upper:]' '[:lower:]')"
+PLATFORM_ARCH="$( cd ${BASEDIR}/graal/vm/mxbuild && ls -1 -d ${OS_PLATFORM}* )"
+outputArchiveFilename="graalvm-${PLATFORM_ARCH}.tgz"
 
+echo ">>>> Creating archive ${outputArchiveFilename} from contents of '${GRAALVM_SUITE_HOME}'"
+( cd ${GRAALVM_SUITE_HOME} && GZIP=-9 tar -czf ${BASEDIR}/${outputArchiveFilename} . )
+
+shaSumFilename="${outputArchiveFilename}.sha256sum.txt"
 echo ">>>> Creating a sha5 hash from ${outputArchiveFilename}"
 shasum ${outputArchiveFilename} > ${shaSumFilename}
 
