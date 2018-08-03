@@ -4,8 +4,10 @@ set -e
 set -u
 set -o pipefail
 
-sysctl -w fs.file-max=2097152
-sysctl -w vm.max_map_count=67108864
+if [[ "$(uname)" == "Linux" ]]; then
+    sysctl -w fs.file-max=2097152
+    sysctl -w vm.max_map_count=67108864
+fi 
 
 export DEBUG=${DEBUG:-"false"}
 export RUN_TESTS=${RUN_TESTS:-"true"}
