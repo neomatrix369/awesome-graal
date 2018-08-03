@@ -8,6 +8,9 @@ set -e
 set -u
 set -o pipefail
 
+sysctl -w fs.file-max=2097152
+sysctl -w vm.max_map_count=67108864
+
 IFS=$'\n\t'
 
 BASEDIR=$(pwd)
@@ -15,9 +18,9 @@ export RUN_TESTS=${RUN_TESTS:-"true"}
 JDK_GRAAL_FOLDER_NAME=jdk8-with-graal
 export GRAAL_JVMCI_8_TAG=jvmci-0.46
 BUILD_ARTIFACTS_DIR=${BASEDIR}/${JDK_GRAAL_FOLDER_NAME}
-GRAALVM_SUITE_RUNTIMES=${GRAALVM_SUITE_RUNTIMES:-'/substratevm,/tools,sulong,/graal-nodejs,/fastr,truffleruby,graalpython'}
+GRAALVM_SUITE_RUNTIMES=${GRAALVM_SUITE_RUNTIMES:-'/substratevm,/tools,sulong,/graal-nodejs,truffleruby,graalpython,/fastr'}
 
-export JAVA_OPTS="$(echo ${DOCKER_JAVA_OPTS:-""} ${JAVA_OPTS:-})"
+export JAVA_OPTS="$(echo ${DOCKER_JAVA_OPTS:-} ${JAVA_OPTS:-})"
 export LD_LIBRARY_PATH=${LD_LIBRARY_PATH:-}:/usr/lib/x86_64-linux-gnu/
 export FASTR_RELEASE="true"
 export LANG="en_US.UTF-8"

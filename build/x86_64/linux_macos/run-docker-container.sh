@@ -22,7 +22,7 @@ if [[ "${DEBUG}" = "true" ]]; then
          --env OUTPUT_DIR="${CONTAINER_OUTPUT_DIR}"                \
          --env RUN_TESTS="${RUN_TESTS}"                            \
          --env GRAALVM_SUITE_RUNTIMES="${GRAALVM_SUITE_RUNTIMES}"  \
-         --env JAVA_OPTS="${DOCKER_JAVA_OPTS}"              \
+         --env JAVA_OPTS="${DOCKER_JAVA_OPTS}"                   \
          --volume $(pwd):${CONTAINER_SCRIPTS_DIR}                  \
          --volume $(pwd)/patch:${CONTAINER_HOME_DIR}/patch         \
          --volume ${HOST_OUTPUT_DIR}:${CONTAINER_OUTPUT_DIR}       \
@@ -41,7 +41,7 @@ else
          --env OUTPUT_DIR="${CONTAINER_OUTPUT_DIR}"                  \
          --env RUN_TESTS="${RUN_TESTS}"                              \
          --env GRAALVM_SUITE_RUNTIMES="${GRAALVM_SUITE_RUNTIMES}"    \
-         --env JAVA_OPTS="${DOCKER_JAVA_OPTS}"                \
+         --env JAVA_OPTS="${DOCKER_JAVA_OPTS}"                       \
          --volume $(pwd):${CONTAINER_SCRIPTS_DIR}                    \
          --volume $(pwd)/patch:${CONTAINER_HOME_DIR}/patch           \
          --volume ${HOST_OUTPUT_DIR}:${CONTAINER_OUTPUT_DIR}         \

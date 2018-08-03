@@ -4,6 +4,9 @@ set -e
 set -u
 set -o pipefail
 
+sysctl -w fs.file-max=2097152
+sysctl -w vm.max_map_count=67108864
+
 export DEBUG=${DEBUG:-"false"}
 export RUN_TESTS=${RUN_TESTS:-"true"}
 
@@ -15,9 +18,9 @@ export CONTAINER_HOME_DIR="/home/${USER_IN_CONTAINER}"
 export MAKE_VERSION=${MAKE_VERSION:-3.82}
 export LLVM_VERSION=${LLVM_VERSION:-6.0}
 export RUBY_VERSION=${RUBY_VERSION:-2.2.2}
-export GRAALVM_SUITE_RUNTIMES=${GRAALVM_SUITE_RUNTIMES:-"/substratevm,/tools,sulong,/graal-nodejs,/fastr,truffleruby,graalpython"}
-export DOCKER_MEMORY=4096M
-export DOCKER_JAVA_OPTS="-Xms2g -Xmx2g -XX:MaxPermSize=1g -XX:+PrintFlagsFinal"
+export GRAALVM_SUITE_RUNTIMES=${GRAALVM_SUITE_RUNTIMES:-"/substratevm,/tools,sulong,/graal-nodejs,truffleruby,graalpython,/fastr"}
+export DOCKER_MEMORY=8096M
+export DOCKER_JAVA_OPTS="-Xms3g -Xmx3g -XX:+PrintFlagsFinal"
 
 export HOST_REPOS_DIR=${HOST_REPOS_DIR:-""}
 if [[ ! -z "${HOST_REPOS_DIR}" ]]; then
