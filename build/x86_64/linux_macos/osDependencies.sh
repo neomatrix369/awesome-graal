@@ -26,6 +26,7 @@ if [[ "$(uname)" == "Linux" ]]; then
             libcurl4-openssl-dev \
             liblzma-dev          \
             libmpc-dev           \
+            libpcre3             \
             libpcre3-dev         \
             libpq-dev            \
             libreadline-dev      \
@@ -37,26 +38,21 @@ if [[ "$(uname)" == "Linux" ]]; then
             python2.7-dev        \
             ssh                  \
             texlive-latex-base   \
-            zlib1g-dev
-
-    set -ex;                     \
-        ${SUDO_CMD} apt-get install -y texlive-fonts-recommended \
-                            libpcre3 libpcre3-dev
-    set -ex;                          \
-        ${SUDO_CMD} rm -r /var/lib/apt/lists/*    \
-                && ${SUDO_CMD} apt-get autoremove \
-                && ${SUDO_CMD} apt-get clean      \
-                && ldconfig
-
+            texlive-fonts-recommended \
+            zlib1g-dev           \
+            && ${SUDO_CMD} rm -r /var/lib/apt/lists/*  \
+                && ${SUDO_CMD} apt-get autoremove      \
+                && ${SUDO_CMD} apt-get clean           \
+    ldconfig
     locale-gen en_US.UTF-8
 elif [[ "$(uname)" == "Darwin" ]]; then
     brew install python
-    brew install texlive-latex-base libpcre3 libpcre3-dev\n
+    brew install texlive-latex-base libpcre3 libpcre3-dev
+    brew install pdflatex
+    brew cask install mactex
     brew install gcc
     brew install lzma liblzma xz z
     brew install pcre ed
-    brew install pdflatex
-    brew cask install mactex
 
     update_dyld_shared_cache
 else 
