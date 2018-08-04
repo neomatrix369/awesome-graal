@@ -43,8 +43,8 @@ if [[ "$(uname)" == "Linux" ]]; then
             && ${SUDO_CMD} rm -r /var/lib/apt/lists/*  \
                 && ${SUDO_CMD} apt-get autoremove      \
                 && ${SUDO_CMD} apt-get clean           \
-    ldconfig
-    locale-gen en_US.UTF-8
+                && ldconfig                            \
+                && locale-gen en_US.UTF-8
 elif [[ "$(uname)" == "Darwin" ]]; then
     brew install python
     brew install texlive-latex-base libpcre3 libpcre3-dev
