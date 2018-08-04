@@ -3,7 +3,6 @@
 #
 # Extended off the original script (see https://github.com/jponge/build-graal-jvm/blob/master/build.sh) from @jponge
 #
-
 set -e
 set -u
 set -o pipefail
@@ -27,10 +26,7 @@ if [[ "$(uname)" == "Linux" ]]; then
     sysctl -w fs.file-max=2097152
     sysctl -w vm.max_map_count=67108864
 
-    export LD_LIBRARY_PATH="/usr/lib/x86_64-linux-gnu/:${LD_LIBRARY_PATH:-}"
-
-    export PKG_INCLUDE_FLAGS_OVERRIDE="-I/usr/local/include -I/usr/include -I/usr/share"
-    export PKG_LDFLAGS_OVERRIDE="-L/usr/local/lib -L/usr/lib -L/usr/share"
+    echo "Environment variables LD_LIBRARY_PATH, PKG_INCLUDE_FLAGS_OVERRIDE and PKG_LDFLAGS_OVERRIDE might not need setting on the Linux platform"
 elif [[ "$(uname)" == "Darwin" ]]; then
     export PKG_INCLUDE_FLAGS_OVERRIDE="-I/usr/local/opt/ -I/usr/local/include -I/opt/local/include -I/usr/include"
     export PKG_LDFLAGS_OVERRIDE="-L/usr/local/opt/ -L/usr/local/lib -L$(dirname $(gfortran --print-file-name libgfortran.dylib)) -L/opt/local/lib -L/usr/lib"
@@ -61,8 +57,8 @@ printParameters() {
     echo "LANG=${LANG}"
     echo "LC_ALL=${LC_ALL}"
     echo "LC_CTYPE=${LC_CTYPE}"
-    echo "PKG_INCLUDE_FLAGS_OVERRIDE=${PKG_INCLUDE_FLAGS_OVERRIDE}"
-    echo "PKG_LDFLAGS_OVERRIDE=${PKG_LDFLAGS_OVERRIDE}"
+    echo "PKG_INCLUDE_FLAGS_OVERRIDE=${PKG_INCLUDE_FLAGS_OVERRIDE:-}"
+    echo "PKG_LDFLAGS_OVERRIDE=${PKG_LDFLAGS_OVERRIDE:-}"
     echo ""
     echo "MX_HOME=${MX_HOME}"
     echo "MX=${MX}"
