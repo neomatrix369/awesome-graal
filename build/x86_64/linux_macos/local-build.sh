@@ -8,11 +8,6 @@ set -e
 set -u
 set -o pipefail
 
-if [[ "$(uname)" == "Linux" ]]; then
-    sysctl -w fs.file-max=2097152
-    sysctl -w vm.max_map_count=67108864
-fi 
-
 IFS=$'\n\t'
 
 BASEDIR=$(pwd)
@@ -23,16 +18,23 @@ BUILD_ARTIFACTS_DIR=${BASEDIR}/${JDK_GRAAL_FOLDER_NAME}
 GRAALVM_SUITE_RUNTIMES=${GRAALVM_SUITE_RUNTIMES:-'/substratevm,/tools,sulong,/graal-nodejs,truffleruby,graalpython,/fastr'}
 
 export JAVA_OPTS="$(echo ${DOCKER_JAVA_OPTS:-} ${JAVA_OPTS:-})"
-if [[ "$(uname)" == "Linux" ]]; then
-    export LD_LIBRARY_PATH="/usr/lib/x86_64-linux-gnu/:${LD_LIBRARY_PATH:-}"
-fi
 export FASTR_RELEASE="true"
 export LANG="en_US.UTF-8"
 export LC_ALL="en_US.UTF-8"
 export LC_CTYPE="en_US.UTF-8"
 
-export PKG_INCLUDE_FLAGS_OVERRIDE="-I/usr/local/opt/ -I/usr/local/include -I/opt/local/include -I/usr/include"
-export PKG_LDFLAGS_OVERRIDE="-L/usr/local/opt/ -L/usr/local/lib -L$(dirname $(gfortran --print-file-name libgfortran.dylib)) -L/opt/local/lib -L/usr/lib"
+if [[ "$(uname)" == "Linux" ]]; then
+    sysctl -w fs.file-max=2097152
+    sysctl -w vm.max_map_count=67108864
+
+    export LD_LIBRARY_PATH="/usr/lib/x86_64-linux-gnu/:${LD_LIBRARY_PATH:-}"
+
+    export PKG_INCLUDE_FLAGS_OVERRIDE="-I/usr/local/include -I/usr/include -I/usr/share"
+    export PKG_LDFLAGS_OVERRIDE="-L/usr/local/lib -L/usr/lib -L/usr/share"
+elif [[ "$(uname)" == "Darwin" ]]; then
+    export PKG_INCLUDE_FLAGS_OVERRIDE="-I/usr/local/opt/ -I/usr/local/include -I/opt/local/include -I/usr/include"
+    export PKG_LDFLAGS_OVERRIDE="-L/usr/local/opt/ -L/usr/local/lib -L$(dirname $(gfortran --print-file-name libgfortran.dylib)) -L/opt/local/lib -L/usr/lib"
+fi
 
 echo ">>> Working in ${BASEDIR}"
 
