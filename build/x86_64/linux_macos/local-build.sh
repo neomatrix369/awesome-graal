@@ -26,7 +26,8 @@ if [[ "$(uname)" == "Linux" ]]; then
     sysctl -w fs.file-max=2097152
     sysctl -w vm.max_map_count=67108864
 
-    echo "Environment variables LD_LIBRARY_PATH, PKG_INCLUDE_FLAGS_OVERRIDE and PKG_LDFLAGS_OVERRIDE might not need setting on the Linux platform"
+    export PKG_INCLUDE_FLAGS_OVERRIDE="${PKG_INCLUDE_FLAGS_OVERRIDE:-} -I/usr/local/include -I/usr/include -I/usr/share"
+    export PKG_LDFLAGS_OVERRIDE="${PKG_LDFLAGS_OVERRIDE:-} -L/usr/local/lib -L/usr/lib -L/usr/share -L/lib -L/lib/x86_64-linux-gnu -L/usr/lib/x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/5"
 elif [[ "$(uname)" == "Darwin" ]]; then
     export PKG_INCLUDE_FLAGS_OVERRIDE="-I/usr/local/opt/ -I/usr/local/include -I/opt/local/include -I/usr/include"
     export PKG_LDFLAGS_OVERRIDE="-L/usr/local/opt/ -L/usr/local/lib -L$(dirname $(gfortran --print-file-name libgfortran.dylib)) -L/opt/local/lib -L/usr/lib"
