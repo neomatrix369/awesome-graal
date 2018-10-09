@@ -46,6 +46,7 @@ A curated list of awesome resources for Graal, Truffle and related topics.
     - [GraalVM.org Examples](http://www.graalvm.org/docs/examples/)
 - [mx - Command-line tool used for the development of Graal projects](https://github.com/graalvm/mx)
 - [Fork of jdk8u/hotspot with support for JVMCI](https://github.com/graalvm/graal-jvmci-8)
+- [Scripts for building Graal & GraalVM suite (Linux, MacOS, Docker)](build/x86_64/linux_macos)
 
 ### Mercurial links
 
