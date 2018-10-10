@@ -161,8 +161,7 @@ A curated list of awesome resources for Graal, Truffle and related topics.
     - GraalVM – high performance multi language JVM by Lukas Stadler: [Video](https://www.youtube.com/watch?v=9ACoOig_vSk)
     - Graal tutorial at PLDI 2017 conference by Christian Wimmer: [Video](https://www.youtube.com/watch?v=5_Y3kc--eTI)     
     - Graal: How to use the new JVM JIT compiler in real life: [Video](https://www.youtube.com/watch?v=yhtrRhNUHvQ)
-    - Graal, GraalVM, Truffle: What do they mean for polyglot developers? by Mani Sarkar: [Slides](http://bit.ly/graal-polyglot-devs) | Video: ([480p](http://crest.cs.ucl.ac.uk/cow/59/videos/sarkar_cow59_480p.mp4) | [720p](http://crest.cs.ucl.ac.uk/cow/59/videos/binkley_cow59_720p.mp4))       
-    - ([ICOOOLPS 2018](https://2018.ecoop.org/track/ICOOOLPS-2018-papers)): GraalSqueak: A Fast Smalltalk Bytecode Interpreter Written in an AST Interpreter Framework: [Paper](https://dl.acm.org/citation.cfm?id=3242948)
+    - Graal, GraalVM, Truffle: What do they mean for polyglot developers? by Mani Sarkar: [Slides](http://bit.ly/graal-polyglot-devs) | Video: ([480p](http://crest.cs.ucl.ac.uk/cow/59/videos/sarkar_cow59_480p.mp4) | [720p](http://crest.cs.ucl.ac.uk/cow/59/videos/binkley_cow59_720p.mp4))
     
 - Java, Scala, Kotlin, & JVM languages
     - (JVMLS 2017): Polyglot Native: Java, Scala, Kotlin, & JVM languages by Christian Wimmer: [Video](https://www.youtube.com/watch?v=5BMHIeMXTqA&list=PLX8CzqL3ArzXJ2EGftrmz4SzS6NRr6p2n&index=5)     
@@ -171,12 +170,15 @@ A curated list of awesome resources for Graal, Truffle and related topics.
     - (Devoxx BE): Graal.JS - high-performance JavaScript on the JVM by Christian Wirth: [Video](https://www.youtube.com/watch?v=OUo3BFMwQFo)
     - Node.js for Java: [Video](https://www.youtube.com/watch?v=Q_AkHdxBbYw)
 
+- SmallTalk
+    - ([ICOOOLPS 2018](https://2018.ecoop.org/track/ICOOOLPS-2018-papers)): GraalSqueak: A Fast Smalltalk Bytecode Interpreter Written in an AST Interpreter Framework: [Paper](https://dl.acm.org/citation.cfm?id=3242948)
+
 - Sulong
     - Sulong: Fast LLVM IR Execution on the JVM with Truffle by Manuel Rigger: [Slides](http://llvm.org/devmtg/2016-01/slides/Sulong.pdf)
     - (JVMLS 2017): Project Sulong, a LLVM bitcode interpreter on the Graal VM by Matthias Grimmer: [Video](https://www.youtube.com/watch?v=n5DCg6M2MDM&list=PLX8CzqL3ArzXJ2EGftrmz4SzS6NRr6p2n&index=14)
     - Native Sulong: [Paper](http://ssw.jku.at/General/Staff/ManuelRigger/VMIL16.pdf) 
     - Safe Sulong: [Paper](http://ssw.jku.at/General/Staff/ManuelRigger/ASPLOS18.pdf)
-  
+
 - FastR
     - FastR: Status and Outlook by Michael Haupt: [Slides](http://www.huber.embl.de/dsc/slides/FastR_DSC.pdf)
     - FastR: R on the JVM with the FastR Runtime by Christian Humer: [Slides](http://webcache.googleusercontent.com/search?q=cache:7cz7MRozu-sJ:docs.huihoo.com/javaone/2015/CON5361-R-on-the-JVM-with-the-FastR-Runtime.pdf+&cd=1&hl=en&ct=clnk&gl=uk&client=ubuntu)
