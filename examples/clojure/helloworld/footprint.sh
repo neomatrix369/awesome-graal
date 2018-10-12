@@ -7,5 +7,6 @@ du -sh $JAVA_HOME/jre
 echo ""
 echo ""
 
-echo "Footprint of clojure hello world graalvm native image"
-ls -lsah ./helloworld-0.1.0-SNAPSHOT-standalone
+echo "Footprint of clojure hello world GraalVM native image"
+NATIVE_IMAGE_FILE=$(ls helloworld-*-standalone)
+ls -lsah ./${NATIVE_IMAGE_FILE}
