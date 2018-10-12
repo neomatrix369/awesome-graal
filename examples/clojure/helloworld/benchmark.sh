@@ -5,4 +5,5 @@ echo ""
 echo ""
 
 echo "Running clojure hello world via graalvm"
-time ./helloworld-0.1.0-SNAPSHOT-standalone
+NATIVE_IMAGE_FILE=$(ls helloworld-*-standalone)
+time ./${NATIVE_IMAGE_FILE}
