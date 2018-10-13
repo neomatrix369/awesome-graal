@@ -6,6 +6,7 @@ A helloworld application written in clojure built and run on GraalVM
 
 - Clojure 1.8 or higher
 - Leiningen 1.0.0 or higher
+- GraalVM 0.9 or higher
 
 ## Build
 
