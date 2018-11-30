@@ -127,6 +127,9 @@ A curated list of awesome resources for Graal, Truffle and related topics.
 
 - Clojure
     - [Command line apps with Clojure and GraalVM](https://www.astrecipes.net/blog/2018/07/20/cmd-line-apps-with-clojure-and-graalvm/)
+    - [GraalVM Polyglot with Clojure and JavaScript](https://blog.taylorwood.io/2018/11/26/graal-polyglot.html)
+    - [GraalVM Native Image HTTPS Support](https://blog.taylorwood.io/2018/10/04/graalvm-https.html)
+    - [Building native Clojure images with GraalVM](https://blog.taylorwood.io/2018/05/02/graalvm-clojure.html)
 
 ### Papers, presentations/slides & videos
 
