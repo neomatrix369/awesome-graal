@@ -12,11 +12,13 @@ A helloworld application written in clojure built and run on GraalVM
 
 	$ lein uberjar    --- builds the uberjar in the target folder
 
+In case, you get an error like this "javax.net.ssl.SSLHandshakeException: sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target" or something similar to the security certificate missing, please follow the steps mentioned at https://github.com/oracle/graal/issues/493#issuecomment-447582907. Its due to missing or an incorrect `cacert` present in the $JAVA_HOME/lib/security or $JAVA_HOME/jre/lib/security folders.
+
 	$ native-image -jar target/uberjar/helloworld-0.1.0-SNAPSHOT-standalone.jar    --- builds the native image of the above jar
 
 ## Usage
 
-    $ java -jar target/helloworld-0.1.0-standalone.jar
+    $ java -jar target/uberjar/helloworld-0.1.0-standalone.jar
 
     $ ./helloworld-0.1.0-SNAPSHOT-standalone
 
