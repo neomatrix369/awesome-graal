@@ -165,6 +165,7 @@ A curated list of awesome resources for Graal, Truffle and related topics.
     - Graal tutorial at PLDI 2017 conference by Christian Wimmer: [Video](https://www.youtube.com/watch?v=5_Y3kc--eTI)     
     - Graal: How to use the new JVM JIT compiler in real life: [Video](https://www.youtube.com/watch?v=yhtrRhNUHvQ)
     - Graal, GraalVM, Truffle: What do they mean for polyglot developers? by Mani Sarkar: [Slides](http://bit.ly/graal-polyglot-devs) | Video: ([480p](http://crest.cs.ucl.ac.uk/cow/59/videos/sarkar_cow59_480p.mp4) | [720p](http://crest.cs.ucl.ac.uk/cow/59/videos/binkley_cow59_720p.mp4))
+    - Adopting GraalVM by Petr Zapletal: [Slides](https://www.slideshare.net/PetrZapletal1/adopting-graalvm-scale-by-the-bay-2018) | [Video](https://www.youtube.com/watch?v=CM4zA3bdlzA)
     
 - Java, Scala, Kotlin, & JVM languages
     - (JVMLS 2017): Polyglot Native: Java, Scala, Kotlin, & JVM languages by Christian Wimmer: [Video](https://www.youtube.com/watch?v=5BMHIeMXTqA&list=PLX8CzqL3ArzXJ2EGftrmz4SzS6NRr6p2n&index=5)     
