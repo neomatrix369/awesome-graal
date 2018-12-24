@@ -1,4 +1,4 @@
-# Awesome Graal
+# Awesome Graal [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
 
 A curated list of awesome resources for Graal, Truffle and related topics.
 
