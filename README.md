@@ -12,6 +12,7 @@ A curated list of awesome resources for Graal, Truffle and related topics.
   - [Papers, presentations/slides & videos](#papers-presentationsslides--videos)
   - [Hands-on pages](#hands-on-pages)
   - [Special topics](#special-topics-java-graal-gpus-accelerators-etc)
+- [Contributing](#contributing)
 
 ### Related JEPs
 
