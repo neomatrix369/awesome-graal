@@ -12,6 +12,7 @@ A curated list of awesome resources for Graal, Truffle and related topics.
   - [Papers, presentations/slides & videos](#papers-presentationsslides--videos)
   - [Hands-on pages](#hands-on-pages)
   - [Special topics](#special-topics-java-graal-gpus-accelerators-etc)
+- [Contributing](#contributing)
 
 ### Related JEPs
 
@@ -239,4 +240,4 @@ A curated list of awesome resources for Graal, Truffle and related topics.
 
 Contributions are very welcome, please share back with the wider community (and get credited for it)!
 
-Please have a look at the [CONTRIBUTING](https://github.com/neomatrix369/awesome-graal/blob/master/CONTRIBUTING.md) guidelines, also have a read about our [licensing](https://github.com/neomatrix369/awesome-graal/blob/master/LICENSE.md) policy.
+Please have a look at the [CONTRIBUTING](CONTRIBUTING.md) guidelines, also have a read about our [licensing](LICENSE.md) policy.
