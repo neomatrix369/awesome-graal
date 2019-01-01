@@ -1,44 +1,10 @@
 version: 2
-dependencies:
-  cache_directories:
-    - "vendor/apt"
-    - "vendor/apt/archives"
 jobs:
   build:
     docker:
       - image: neomatrix369/graalvm-suite-jdk8
     steps:
       - checkout
-      - restore_cache:
-          keys:
-            - os-deps-{{ arch }}-{{ .Branch }}-{{ .Environment.CIRCLE_SHA1 }}
-            - os-deps-{{ arch }}-{{ .Branch }}
-            - os-deps
-      - run:
-          name: Install Os dependencies
-          command: ./build/x86_64/linux_macos/osDependencies.sh
-          timeout: 2m
-      - save_cache:
-          key: os-deps-{{ arch }}-{{ .Branch }}-{{ .Environment.CIRCLE_SHA1 }}
-          paths:
-            - vendor/apt
-            - vendor/apt/archives
-      - restore_cache:
-          keys:
-            - make-382-{{ arch }}-{{ .Branch }}-{{ .Environment.CIRCLE_SHA1 }}
-            - make-382-{{ arch }}-{{ .Branch }}
-            - make-382
-      - run:
-          name: Build and install make via script
-          command: ./build/x86_64/linux_macos/installMake.sh
-          timeout: 1m
-      - save_cache:
-          key: make-382-{{ arch }}-{{ .Branch }}-{{ .Environment.CIRCLE_SHA1 }}
-          paths:
-            - /make-3.82/
-            - /usr/bin/make
-            - /usr/local/bin/make
-            - /usr/share/man/man1/make.1.gz
       - run:
           name: Define Environment Variables and update JAVA_HOME and PATH at Runtime
           command: |
@@ -79,7 +45,7 @@ jobs:
             echo "export JAVA_HOME=${JDK8_JVMCI_HOME}" >> ${BASH_ENV}
             source ${BASH_ENV}
       - run:
-          name: Build Graal Compiler
+          name: Build the Graal Compiler and embedding it into JDK (JDK8 with JVMCI enabled)
           command: |
             echo ">>>> Using JDK8_JVMCI_HOME as JAVA_HOME (${JAVA_HOME})"
             ./build/x86_64/linux_macos/lib/buildGraalCompiler.sh ${BASEDIR} ${MX} ${BUILD_ARTIFACTS_DIR}
