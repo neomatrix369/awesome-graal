@@ -26,4 +26,4 @@ set -ex;                              \
 set -ex;                                       \
     ${SUDO_CMD} rm -r /var/lib/apt/lists/*     \
             && ${SUDO_CMD} apt-get autoremove  \
-            && ${SUDO_CMD} apt-get clean
+            && ${SUDO_CMD} apt-get clean || true
