@@ -35,7 +35,7 @@ jobs:
       - save_cache:
           key: make-382-{{ arch }}-{{ .Branch }}-{{ .Environment.CIRCLE_SHA1 }}
           paths:
-            - /root/project/make-3.82/
+            - /make-3.82/
             - /usr/bin/make
             - /usr/local/bin/make
             - /usr/share/man/man1/make.1.gz
