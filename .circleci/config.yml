@@ -45,7 +45,7 @@ jobs:
             echo "export JAVA_HOME=${JDK8_JVMCI_HOME}" >> ${BASH_ENV}
             source ${BASH_ENV}
       - run:
-          name: Build the Graal Compiler and embedding it into JDK (JDK8 with JVMCI enabled)
+          name: Build the Graal Compiler and embed it into the JDK (JDK8 with JVMCI enabled)
           command: |
             echo ">>>> Using JDK8_JVMCI_HOME as JAVA_HOME (${JAVA_HOME})"
             ./build/x86_64/linux_macos/lib/buildGraalCompiler.sh ${BASEDIR} ${MX} ${BUILD_ARTIFACTS_DIR}
