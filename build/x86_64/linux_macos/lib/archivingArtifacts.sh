@@ -9,51 +9,59 @@ MX=$2
 JDK_GRAAL_FOLDER_NAME=$3
 BUILD_ARTIFACTS_DIR=$4
 
-echo ""
-echo ">>> Creating Archive and SHA of the newly JDK8 with Graal & Truffle at ${BUILD_ARTIFACTS_DIR}"
-
-cd ${BASEDIR}
-outputArchiveFilename=${JDK_GRAAL_FOLDER_NAME}.tar.gz
-
 createTarGzArchive() {
-	JDK_GRAAL_FOLDER_NAME=$1
-	outputArchiveFilename=$2
+	TARGET_FOLDER_NAME=$1
+	archiveFilename=$2
 
-	echo ">>>> Creating Archive ${outputArchiveFilename}"
-	GZIP=-9 tar -czf ${outputArchiveFilename} "${JDK_GRAAL_FOLDER_NAME}"
+	echo ">>>> Creating Archive ${archiveFilename}"
+	GZIP=-9 tar -czf ${archiveFilename} "${TARGET_FOLDER_NAME}"
 }
 
 createSHAFromArchive() {
-	outputArchiveFilename=$1
+	archiveFilename=$1
 	shaSumFilename=$2
 
-	echo ">>>> Creating a sha5 hash from ${outputArchiveFilename}"
-	shasum ${outputArchiveFilename} > ${shaSumFilename}
+	echo ">>>> Creating a sha5 hash from ${archiveFilename}"
+	shasum ${archiveFilename} > ${shaSumFilename}
 }
 
 moveFilesToOutputFolder() {
-	outputArchiveFilename=$1
+	archiveFilename=$1
 	shaSumFilename=$2
 	OUTPUT_DIR=$3
-	mv ${outputArchiveFilename} ${OUTPUT_DIR}
+	mv ${archiveFilename} ${OUTPUT_DIR}
 	mv ${shaSumFilename} ${OUTPUT_DIR}
-	echo ">>> ${outputArchiveFilename} and ${shaSumFilename} have been successfully created in the ${OUTPUT_DIR} folder."	
+	echo ">>> ${archiveFilename} and ${shaSumFilename} have been successfully created in the ${OUTPUT_DIR} folder."	
 }
-
-createTarGzArchive ${JDK_GRAAL_FOLDER_NAME} ${outputArchiveFilename}
-
-shaSumFilename=${outputArchiveFilename}.sha256sum.txt
-
-createSHAFromArchive ${outputArchiveFilename} ${shaSumFilename}
 
 OUTPUT_DIR=${OUTPUT_DIR:-""}
 if [[ ! -e "${OUTPUT_DIR}" ]]; then
     echo ">>>> Output directory not set or found"
     OUTPUT_DIR="${BASEDIR}/jdk8-with-graal-local"
+    cd ${BASEDIR}
     mkdir -p ${OUTPUT_DIR}
     echo ">>>> Output directory ${OUTPUT_DIR} created"
 fi
 
+echo ""
+echo ">>> Creating JDK Archive and SHA of the newly built JDK8 with Graal & Truffle at ${BUILD_ARTIFACTS_DIR}"
+
+cd ${BASEDIR}
+outputArchiveFilename=${JDK_GRAAL_FOLDER_NAME}-jdk.tar.gz
+createTarGzArchive ${JDK_GRAAL_FOLDER_NAME} ${outputArchiveFilename}
+shaSumFilename=${outputArchiveFilename}.sha256sum.txt
+createSHAFromArchive ${outputArchiveFilename} ${shaSumFilename}
+moveFilesToOutputFolder ${outputArchiveFilename} ${shaSumFilename} ${OUTPUT_DIR}
+
+echo ""
+echo ">>> Creating JRE Archive and SHA of the newly built JDK8 with Graal & Truffle at ${BUILD_ARTIFACTS_DIR}"
+
+cd ${BASEDIR}
+cd ${JDK_GRAAL_FOLDER_NAME}
+outputArchiveFilename=${JDK_GRAAL_FOLDER_NAME}-jre.tar.gz
+createTarGzArchive jre ${outputArchiveFilename}
+shaSumFilename=${outputArchiveFilename}.sha256sum.txt
+createSHAFromArchive ${outputArchiveFilename} ${shaSumFilename}
 moveFilesToOutputFolder ${outputArchiveFilename} ${shaSumFilename} ${OUTPUT_DIR}
 
 echo ""
@@ -71,8 +79,6 @@ cp ${JDK_GRAAL_FOLDER_NAME}/jre/lib/boot/graal-sdk.jar ${GRAAL_ARTIFACTS_FOLDER_
 cp ${JDK_GRAAL_FOLDER_NAME}/jre/lib/truffle/truffle-api.jar ${GRAAL_ARTIFACTS_FOLDER_NAME}/
 
 createTarGzArchive ${GRAAL_ARTIFACTS_FOLDER_NAME} ${outputArchiveFilename}
-
 shaSumFilename=${outputArchiveFilename}.sha256sum.txt
 createSHAFromArchive ${outputArchiveFilename} ${shaSumFilename}
-
 moveFilesToOutputFolder ${outputArchiveFilename} ${shaSumFilename} ${OUTPUT_DIR}
