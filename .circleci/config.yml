@@ -52,6 +52,12 @@ jobs:
           timeout: 10m
           no_output_timeout: 7m
       - run:
+          name: Sanity check artifacts
+          command: |
+            ./build/x86_64/linux_macos/lib/sanityCheckArtifacts.sh ${BASEDIR} ${JDK_GRAAL_FOLDER_NAME}
+          timeout: 3m
+          no_output_timeout: 2m
+      - run:
           name: Archiving artifacts
           command: |
             ./build/x86_64/linux_macos/lib/archivingArtifacts.sh ${BASEDIR} ${MX} ${JDK_GRAAL_FOLDER_NAME} ${BUILD_ARTIFACTS_DIR}
