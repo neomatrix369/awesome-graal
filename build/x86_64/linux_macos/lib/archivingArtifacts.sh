@@ -43,42 +43,52 @@ if [[ ! -e "${OUTPUT_DIR}" ]]; then
     echo ">>>> Output directory ${OUTPUT_DIR} created"
 fi
 
-echo ""
-echo ">>> Creating JDK Archive and SHA of the newly built JDK8 with Graal & Truffle at ${BUILD_ARTIFACTS_DIR}"
+createJDKArchiveAndSha() {
+    echo ""
+    echo ">>> Creating JDK Archive and SHA of the newly built JDK8 with Graal & Truffle at ${BUILD_ARTIFACTS_DIR}"
 
-cd ${BASEDIR}
-outputArchiveFilename=${JDK_GRAAL_FOLDER_NAME}-jdk.tar.gz
-createTarGzArchive ${JDK_GRAAL_FOLDER_NAME} ${outputArchiveFilename}
-shaSumFilename=${outputArchiveFilename}.sha256sum.txt
-createSHAFromArchive ${outputArchiveFilename} ${shaSumFilename}
-moveFilesToOutputFolder ${outputArchiveFilename} ${shaSumFilename} ${OUTPUT_DIR}
+    cd ${BASEDIR}
+    outputArchiveFilename=${JDK_GRAAL_FOLDER_NAME}-jdk.tar.gz
+    createTarGzArchive ${JDK_GRAAL_FOLDER_NAME} ${outputArchiveFilename}
+    shaSumFilename=${outputArchiveFilename}.sha256sum.txt
+    createSHAFromArchive ${outputArchiveFilename} ${shaSumFilename}
+    moveFilesToOutputFolder ${outputArchiveFilename} ${shaSumFilename} ${OUTPUT_DIR}
+}
 
-echo ""
-echo ">>> Creating JRE Archive and SHA of the newly built JDK8 with Graal & Truffle at ${BUILD_ARTIFACTS_DIR}"
+createJREArchiveAndSha() {
+    echo ""
+    echo ">>> Creating JRE Archive and SHA of the newly built JDK8 with Graal & Truffle at ${BUILD_ARTIFACTS_DIR}"
 
-cd ${BASEDIR}
-cd ${JDK_GRAAL_FOLDER_NAME}
-outputArchiveFilename=${JDK_GRAAL_FOLDER_NAME}-jre.tar.gz
-createTarGzArchive jre ${outputArchiveFilename}
-shaSumFilename=${outputArchiveFilename}.sha256sum.txt
-createSHAFromArchive ${outputArchiveFilename} ${shaSumFilename}
-moveFilesToOutputFolder ${outputArchiveFilename} ${shaSumFilename} ${OUTPUT_DIR}
+    cd ${BASEDIR}
+    cd ${JDK_GRAAL_FOLDER_NAME}
+    outputArchiveFilename=${JDK_GRAAL_FOLDER_NAME}-jre.tar.gz
+    createTarGzArchive jre ${outputArchiveFilename}
+    shaSumFilename=${outputArchiveFilename}.sha256sum.txt
+    createSHAFromArchive ${outputArchiveFilename} ${shaSumFilename}
+    moveFilesToOutputFolder ${outputArchiveFilename} ${shaSumFilename} ${OUTPUT_DIR}
+}
 
-echo ""
-echo ">>> Creating Archive and SHA of Graal & Truffle components at ${BUILD_ARTIFACTS_DIR}"
+createGraalComponentsArchiveAndSha() {
+    echo ""
+    echo ">>> Creating Archive and SHA of Graal & Truffle components at ${BUILD_ARTIFACTS_DIR}"
 
-cd ${BASEDIR}
-GRAAL_ARTIFACTS_FOLDER_NAME=graal-artifacts
-outputArchiveFilename=${GRAAL_ARTIFACTS_FOLDER_NAME}.tar.gz
+    cd ${BASEDIR}
+    GRAAL_ARTIFACTS_FOLDER_NAME=graal-artifacts
+    outputArchiveFilename=${GRAAL_ARTIFACTS_FOLDER_NAME}.tar.gz
 
-mkdir -p ${GRAAL_ARTIFACTS_FOLDER_NAME}
+    mkdir -p ${GRAAL_ARTIFACTS_FOLDER_NAME}
 
-cp ${JDK_GRAAL_FOLDER_NAME}/jre/lib/jvmci/graal.jar ${GRAAL_ARTIFACTS_FOLDER_NAME}/
-cp ${JDK_GRAAL_FOLDER_NAME}/jre/lib/jvmci/graal-management.jar ${GRAAL_ARTIFACTS_FOLDER_NAME}/
-cp ${JDK_GRAAL_FOLDER_NAME}/jre/lib/boot/graal-sdk.jar ${GRAAL_ARTIFACTS_FOLDER_NAME}/
-cp ${JDK_GRAAL_FOLDER_NAME}/jre/lib/truffle/truffle-api.jar ${GRAAL_ARTIFACTS_FOLDER_NAME}/
+    cp ${JDK_GRAAL_FOLDER_NAME}/jre/lib/jvmci/graal.jar ${GRAAL_ARTIFACTS_FOLDER_NAME}/
+    cp ${JDK_GRAAL_FOLDER_NAME}/jre/lib/jvmci/graal-management.jar ${GRAAL_ARTIFACTS_FOLDER_NAME}/
+    cp ${JDK_GRAAL_FOLDER_NAME}/jre/lib/boot/graal-sdk.jar ${GRAAL_ARTIFACTS_FOLDER_NAME}/
+    cp ${JDK_GRAAL_FOLDER_NAME}/jre/lib/truffle/truffle-api.jar ${GRAAL_ARTIFACTS_FOLDER_NAME}/
 
-createTarGzArchive ${GRAAL_ARTIFACTS_FOLDER_NAME} ${outputArchiveFilename}
-shaSumFilename=${outputArchiveFilename}.sha256sum.txt
-createSHAFromArchive ${outputArchiveFilename} ${shaSumFilename}
-moveFilesToOutputFolder ${outputArchiveFilename} ${shaSumFilename} ${OUTPUT_DIR}
+    createTarGzArchive ${GRAAL_ARTIFACTS_FOLDER_NAME} ${outputArchiveFilename}
+    shaSumFilename=${outputArchiveFilename}.sha256sum.txt
+    createSHAFromArchive ${outputArchiveFilename} ${shaSumFilename}
+    moveFilesToOutputFolder ${outputArchiveFilename} ${shaSumFilename} ${OUTPUT_DIR}
+}
+
+createJDKArchiveAndSha
+createJREArchiveAndSha
+createGraalComponentsArchiveAndSha
