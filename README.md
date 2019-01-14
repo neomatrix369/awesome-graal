@@ -1,4 +1,4 @@
-# Awesome Graal [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
+# Awesome Graal [![Awesome](https://awesome.re/badge.svg)](https://awesome.re) [![CircleCI](https://circleci.com/gh/neomatrix369/awesome-graal/tree/master.svg?style=svg)](https://circleci.com/gh/neomatrix369/awesome-graal/tree/master)
 
 A curated list of awesome resources for Graal, Truffle and related topics.
 
