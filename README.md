@@ -1,5 +1,12 @@
 # Awesome Graal [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
 
+---
+
+**CircleCI:**  _Linux_  [![CircleCI](https://circleci.com/gh/neomatrix369/awesome-graal/tree/build-graalvm-suite.svg?style=svg)](https://circleci.com/gh/neomatrix369/awesome-graal/tree/build-graalvm-suite) <br/>
+**AdoptOpenJDK build farm:** _Linux (pending)_   ⚫   _MacOS_ [![Build Status](https://ci.adoptopenjdk.net/buildStatus/icon?job=GraalVM-suite-jdk8_x86-64_macos)](https://ci.adoptopenjdk.net/job/GraalVM-suite-jdk8_x86-64_macos/)   ⚫   _Windows (pending)_
+
+---
+
 A curated list of awesome resources for Graal, Truffle and related topics.
 
 - [Awesome Graal](#awesome-graal)
