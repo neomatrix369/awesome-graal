@@ -6,7 +6,7 @@ dependencies:
 jobs:
   build:
     docker:
-      - image: adoptopenjdk/openjdk8:jdk8u152-b16
+      - image: adoptopenjdk/openjdk8:jdk8u212-b03
     steps:
       - checkout
       - restore_cache:
@@ -51,7 +51,7 @@ jobs:
             echo 'export SCRIPTS_LIB_DIR=${BASEDIR}/build/x86_64/linux_macos/lib' >> ${BASH_ENV}
             echo 'export MX=${BASEDIR}/mx/mx'                                     >> ${BASH_ENV}
             echo 'export JDK_GRAAL_FOLDER_NAME=jdk8-with-graal'                   >> ${BASH_ENV}
-            echo 'export GRAAL_JVMCI_8_TAG=jvmci-0.46'                            >> ${BASH_ENV}
+            echo 'export GRAAL_JVMCI_8_TAG=jvmci-0.59'                            >> ${BASH_ENV}
             echo 'export BUILD_ARTIFACTS_DIR=${BASEDIR}/${JDK_GRAAL_FOLDER_NAME}' >> ${BASH_ENV}
             echo 'export RUN_TESTS="true"'                                        >> ${BASH_ENV}
             echo 'export HOTSPOT_BUILD_JOBS=2'                                    >> ${BASH_ENV}
