@@ -10,7 +10,7 @@
 A curated list of awesome resources for Graal, Truffle and related topics.
 
 - [Awesome Graal](#awesome-graal)
-  - [Languages](#languages)
+  - [Languages & Platforms](#languages--platforms)
   - [Related JEPs](#related-jeps)
   - [Community](#community)
   - [Github links](#github-links)
@@ -22,7 +22,29 @@ A curated list of awesome resources for Graal, Truffle and related topics.
   - [Special topics](#special-topics-java-graal-gpus-accelerators-etc)
 - [Contributing](#contributing)
 
-### Languages
+### Languages & Platforms
+
+#### Java & other JVM languages
+- [Why?](https://www.graalvm.org/docs/why-graal/#for-java-programs)
+- [Getting Started: Running Java](https://www.graalvm.org/docs/getting-started/#running-java)
+- Examples
+    - [Java Performance Examples](https://www.graalvm.org/docs/examples/java-performance-examples/)
+    - [Java stream API benchmark](https://www.graalvm.org/docs/examples/java-simple-stream-benchmark/)
+    - [Java/Kotlin Native Example](https://www.graalvm.org/docs/examples/java-kotlin-aot/)
+    - [Native Image Example](https://www.graalvm.org/docs/examples/native-list-dir/)
+    - [Command line apps with Clojure and GraalVM](https://www.astrecipes.net/blog/2018/07/20/cmd-line-apps-with-clojure-and-graalvm/)
+    - [GraalVM Polyglot with Clojure and JavaScript](https://blog.taylorwood.io/2018/11/26/graal-polyglot.html)
+    - [Clojure: GraalVM Native Image HTTPS Support](https://blog.taylorwood.io/2018/10/04/graalvm-https.html)
+    - [Building native Clojure images with GraalVM](https://blog.taylorwood.io/2018/05/02/graalvm-clojure.html)
+    - [Clojure Hello World example](./examples/clojure/helloworld/README.md) | [folder](./examples/clojure/helloworld)
+    - [GraalVM with Groovy](https://e.printstacktrace.blog/graalvm-and-groovy-how-to-start/) | [native image](https://e.printstacktrace.blog/graalvm-groovy-grape-creating-native-image-of-standalone-script/)
+    - [GraalVM and Scala](https://medium.com/graalvm/compiling-scala-faster-with-graalvm-86c5c0857fa3) | [Scala compiler faster & slimmer](https://www.codacy.com/blog/scala-faster-and-slimmer-with-graalvm/) | [Redit discussions] (https://www.reddit.com/r/scala/comments/8d5xlw/consequences_for_scala_with_the_graalvm/)
+- [Compatibility](https://www.graalvm.org/docs/reference-manual/compatibility/)
+- [GraalVM Updater](https://www.graalvm.org/docs/reference-manual/graal-updater/)
+- [Reference Manual: JVM languages](https://www.graalvm.org/docs/reference-manual/languages/jvm/)
+- [Polyglot Reference](https://www.graalvm.org/docs/reference-manual/polyglot/)
+- [Tools Reference](https://www.graalvm.org/docs/reference-manual/tools/)
+- [Native Images](https://www.graalvm.org/docs/reference-manual/aot-compilation/)
 
 #### Python, R, Ruby
 - [Why?](https://www.graalvm.org/docs/why-graal/#for-ruby-r-or-python)
@@ -32,6 +54,7 @@ A curated list of awesome resources for Graal, Truffle and related topics.
 - Examples
     - [JavaScript, Java, R Polyglot Application](https://www.graalvm.org/docs/examples/polyglot-javascript-java-r/)
 - [Compatibility](https://www.graalvm.org/docs/reference-manual/compatibility/)
+- [GraalVM Updater](https://www.graalvm.org/docs/reference-manual/graal-updater/)
 - [Reference Manual: Python](https://www.graalvm.org/docs/reference-manual/languages/python/)
 - [Reference Manual: R](https://www.graalvm.org/docs/reference-manual/languages/r/)
 - [Reference Manual: Ruby](https://www.graalvm.org/docs/reference-manual/languages/ruby/)
@@ -153,10 +176,7 @@ A curated list of awesome resources for Graal, Truffle and related topics.
     - [Projects That Are Making Blazing Fast Ruby a Reality](https://www.sitepoint.com/projects-that-are-making-blazing-fast-ruby-a-reality/)
 
 - Clojure
-    - [Command line apps with Clojure and GraalVM](https://www.astrecipes.net/blog/2018/07/20/cmd-line-apps-with-clojure-and-graalvm/)
-    - [GraalVM Polyglot with Clojure and JavaScript](https://blog.taylorwood.io/2018/11/26/graal-polyglot.html)
-    - [GraalVM Native Image HTTPS Support](https://blog.taylorwood.io/2018/10/04/graalvm-https.html)
-    - [Building native Clojure images with GraalVM](https://blog.taylorwood.io/2018/05/02/graalvm-clojure.html)
+    - [See examples under Languages & Platforms > Java & other JVM languages](java--other-jvm-languages)
 
 ### Papers, presentations/slides & videos
 
@@ -203,6 +223,7 @@ A curated list of awesome resources for Graal, Truffle and related topics.
 
 - SmallTalk
     - ([ICOOOLPS 2018](https://2018.ecoop.org/track/ICOOOLPS-2018-papers)): GraalSqueak: A Fast Smalltalk Bytecode Interpreter Written in an AST Interpreter Framework: [Paper](https://dl.acm.org/citation.cfm?id=3242948)
+    - [Graal, GraalVM and SmallTalk (Squeak)](https://github.com/hpi-swa/graalsqueak) | [GraalSqueak - Truffle stuff](https://fniephaus.com/2018/icooolps18-graalsqueak.pdf) | [PolyJuS: A Squeak/Smalltalk-based Polyglot Notebook System for the GraalVM](https://2019.programming-conference.org/event/px-2019-papers-polyjus-a-squeak-smalltalk-based-polyglot-notebook-system-for-the-graalvm)
 
 - Sulong
     - Sulong: Fast LLVM IR Execution on the JVM with Truffle by Manuel Rigger: [Slides](http://llvm.org/devmtg/2016-01/slides/Sulong.pdf)
