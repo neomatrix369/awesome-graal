@@ -120,6 +120,7 @@ See [Github links](./github-links.md)
 - [OpenJDK Graal - Publications and Presentations](https://wiki.openjdk.java.net/display/Graal/Publications+and+Presentations)
 - [GraalVM: Official list of publications](http://www.graalvm.org/community/publications/)
 - [GraalVM in the press](https://www.graalvm.org/community/press/)
+- [Official FAQ on Graal/GraalVM/Truffle](https://www.graalvm.org/docs/faq/)
 - [List of useful resources from Stefan Marr](https://gist.github.com/smarr/d1f8f2101b5cc8e14e12)
 
 #### Discussion forum(s)
