@@ -25,7 +25,7 @@ fi
 cd ${MAKE_ARTIFACT_NAME}
 
 echo "Replacing the line to fix the __alloc issue reported previously"
-sed -i -- 's/_GNU_GLOB_INTERFACE_VERSION \=\= GLOB_INTERFACE_VERSION/_GNU_GLOB_INTERFACE_VERSION \>\= GLOB_INTERFA
+sed -i -- 's/_GNU_GLOB_INTERFACE_VERSION \=\= GLOB_INTERFACE_VERSION/_GNU_GLOB_INTERFACE_VERSION \>\= GLOB_INTERFACE_VERSION/g' glob/glob.c
 
 echo "Running configure for make"
 ./configure
