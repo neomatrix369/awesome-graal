@@ -12,7 +12,7 @@ export JDK_BASE_IMAGE_TAG=${JDK_BASE_IMAGE_TAG:-"adoptopenjdk/openjdk8:${JAVA_VE
 export DOCKER_IMAGE_TAG="graal-jdk8:latest"
 export USER_IN_CONTAINER=${USER_IN_CONTAINER:-"graal"}
 export CONTAINER_HOME_DIR="/home/${USER_IN_CONTAINER}"
-export MAKE_VERSION=${MAKE_VERSION:-3.82}
+export MAKE_VERSION=${MAKE_VERSION:-4.2}
 export DOCKER_MEMORY=4096M
 export DOCKER_JAVA_OPTS="-Xms2g -Xmx2g -XX:MaxPermSize=1g -XX:+PrintFlagsFinal"
 
