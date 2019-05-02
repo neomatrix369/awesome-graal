@@ -30,6 +30,7 @@ A curated list of awesome resources for Graal, Truffle and related topics.
 - Examples
     - [Java Performance Examples](https://www.graalvm.org/docs/examples/java-performance-examples/)
     - [Java stream API benchmark](https://www.graalvm.org/docs/examples/java-simple-stream-benchmark/)
+    - [Grakn/Graql graph database](https://github.com/neomatrix369/awesome-ai-ml-dl/tree/master/examples/data/databases/graph/grakn/README.md) | [folder](https://github.com/neomatrix369/awesome-ai-ml-dl/tree/master/examples/data/databases/graph/grakn)
     - [Java/Kotlin Native Example](https://www.graalvm.org/docs/examples/java-kotlin-aot/)
     - [Native Image Example](https://www.graalvm.org/docs/examples/native-list-dir/)
     - [Command line apps with Clojure and GraalVM](https://www.astrecipes.net/blog/2018/07/20/cmd-line-apps-with-clojure-and-graalvm/)
