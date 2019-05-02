@@ -6,7 +6,7 @@ dependencies:
 jobs:
   build:
     docker:
-      - image: adoptopenjdk/openjdk8:jdk8u212-b03
+      - image: adoptopenjdk/openjdk8:jdk8u152-b16
     steps:
       - checkout
       - restore_cache:
@@ -42,9 +42,10 @@ jobs:
       - run:
           name: Define Environment Variables and update JAVA_HOME and PATH at Runtime
           command: |
+            echo 'Even though we are using tag jdk8u152-b16, the location where JAVA_HOME is, is named jdk8u144-b01'
             echo 'This is being fixed in subsequent versions of the JDK'
-            echo 'export JAVA_VERSION=jdk8u212-b03'                               >> ${BASH_ENV}
-            echo 'export JAVA_HOME=/opt/java/openjdk/'                            >> ${BASH_ENV}
+            echo 'export JAVA_VERSION=jdk8u144-b01'                               >> ${BASH_ENV}
+            echo 'export JAVA_HOME=/opt/java/openjdk/${JAVA_VERSION}'             >> ${BASH_ENV}
             echo 'export PATH=${JAVA_HOME}/bin:${PATH}'                           >> ${BASH_ENV}
             echo 'export BASEDIR=${PWD}'                                          >> ${BASH_ENV}
             echo 'export SCRIPTS_LIB_DIR=${BASEDIR}/build/x86_64/linux_macos/lib' >> ${BASH_ENV}
