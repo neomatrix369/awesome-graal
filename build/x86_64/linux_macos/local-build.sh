@@ -13,7 +13,7 @@ IFS=$'\n\t'
 BASEDIR=$(pwd)
 export RUN_TESTS=${RUN_TESTS:-"true"}
 JDK_GRAAL_FOLDER_NAME=jdk8-with-graal
-export GRAAL_JVMCI_8_TAG=jvmci-0.46
+export GRAAL_JVMCI_8_TAG=jvmci-0.59
 BUILD_ARTIFACTS_DIR=${BASEDIR}/${JDK_GRAAL_FOLDER_NAME}
 export JAVA_OPTS="$(echo ${DOCKER_JAVA_OPTS:-""} ${JAVA_OPTS:-})"
 
