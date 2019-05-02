@@ -92,6 +92,7 @@ A curated list of awesome resources for Graal, Truffle and related topics.
 - [Graal/GraalVM/Truffle official Reference Manual](http://www.graalvm.org/docs/reference-manual/)
 - [OpenJDK Graal - Publications and Presentations](https://wiki.openjdk.java.net/display/Graal/Publications+and+Presentations)
 - [GraalVM: Official list of publications](http://www.graalvm.org/community/publications/)
+- [GraalVM in the press](https://www.graalvm.org/community/press/)
 - [List of useful resources from Stefan Marr](https://gist.github.com/smarr/d1f8f2101b5cc8e14e12)
 
 #### Discussion forum(s)
