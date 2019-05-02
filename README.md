@@ -43,7 +43,7 @@ A curated list of awesome resources for Graal, Truffle and related topics.
 - [Compatibility](https://www.graalvm.org/docs/reference-manual/compatibility/)
 - [GraalVM Updater](https://www.graalvm.org/docs/reference-manual/graal-updater/)
 - [Reference Manual: JVM languages](https://www.graalvm.org/docs/reference-manual/languages/jvm/)
-- [Polyglot Reference](https://www.graalvm.org/docs/reference-manual/polyglot/)
+- [Polyglot Reference](https://www.graalvm.org/docs/reference-manual/polyglot/) | [Top 10 Things To Do With GraalVM](https://medium.com/graalvm/graalvm-ten-things-12d9111f307d)
 - [Tools Reference](https://www.graalvm.org/docs/reference-manual/tools/)
 - [Native Images](https://www.graalvm.org/docs/reference-manual/aot-compilation/)
 
@@ -59,7 +59,7 @@ A curated list of awesome resources for Graal, Truffle and related topics.
 - [Reference Manual: Python](https://www.graalvm.org/docs/reference-manual/languages/python/)
 - [Reference Manual: R](https://www.graalvm.org/docs/reference-manual/languages/r/)
 - [Reference Manual: Ruby](https://www.graalvm.org/docs/reference-manual/languages/ruby/)
-- [Polyglot Reference](https://www.graalvm.org/docs/reference-manual/polyglot/)
+- [Polyglot Reference](https://www.graalvm.org/docs/reference-manual/polyglot/) | [Top 10 Things To Do With GraalVM](https://medium.com/graalvm/graalvm-ten-things-12d9111f307d)
 - [Tools Reference](https://www.graalvm.org/docs/reference-manual/tools/)
 - [Native Images](https://www.graalvm.org/docs/reference-manual/aot-compilation/)
 
