@@ -10,6 +10,7 @@
 A curated list of awesome resources for Graal, Truffle and related topics.
 
 - [Awesome Graal](#awesome-graal)
+  - [Languages](#languages)
   - [Related JEPs](#related-jeps)
   - [Community](#community)
   - [Github links](#github-links)
@@ -20,6 +21,23 @@ A curated list of awesome resources for Graal, Truffle and related topics.
   - [Hands-on pages](#hands-on-pages)
   - [Special topics](#special-topics-java-graal-gpus-accelerators-etc)
 - [Contributing](#contributing)
+
+### Languages
+
+#### Python, R, Ruby
+- [Why?](https://www.graalvm.org/docs/why-graal/#for-ruby-r-or-python)
+- [Get Started: Running Python](https://www.graalvm.org/docs/getting-started/#running-python)
+- [Get Started: Running R](https://www.graalvm.org/docs/getting-started/#running-r)
+- [Get Started: Running Ruby](https://www.graalvm.org/docs/getting-started/#running-ruby)
+- Examples
+    - [JavaScript, Java, R Polyglot Application](https://www.graalvm.org/docs/examples/polyglot-javascript-java-r/)
+- [Compatibility](https://www.graalvm.org/docs/reference-manual/compatibility/)
+- [Reference Manual: Python](https://www.graalvm.org/docs/reference-manual/languages/python/)
+- [Reference Manual: R](https://www.graalvm.org/docs/reference-manual/languages/r/)
+- [Reference Manual: Ruby](https://www.graalvm.org/docs/reference-manual/languages/ruby/)
+- [Polyglot Reference](https://www.graalvm.org/docs/reference-manual/polyglot/)
+- [Tools Reference](https://www.graalvm.org/docs/reference-manual/tools/)
+- [Native Images](https://www.graalvm.org/docs/reference-manual/aot-compilation/)
 
 ### Related JEPs
 
