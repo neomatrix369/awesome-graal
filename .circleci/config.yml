@@ -1,10 +1,44 @@
 version: 2
+dependencies:
+  cache_directories:
+    - "vendor/apt"
+    - "vendor/apt/archives"
 jobs:
   build:
     docker:
-      - image: neomatrix369/graalvm-suite-jdk8
+      - image: adoptopenjdk/openjdk8:jdk8u212-b03
     steps:
       - checkout
+      - restore_cache:
+          keys:
+            - os-deps-{{ arch }}-{{ .Branch }}-{{ .Environment.CIRCLE_SHA1 }}
+            - os-deps-{{ arch }}-{{ .Branch }}
+            - os-deps
+      - run:
+          name: Install Os dependencies
+          command: ./build/x86_64/linux_macos/osDependencies.sh
+          timeout: 2m
+      - save_cache:
+          key: os-deps-{{ arch }}-{{ .Branch }}-{{ .Environment.CIRCLE_SHA1 }}
+          paths:
+            - vendor/apt
+            - vendor/apt/archives
+      - restore_cache:
+          keys:
+            - make-382-{{ arch }}-{{ .Branch }}-{{ .Environment.CIRCLE_SHA1 }}
+            - make-382-{{ arch }}-{{ .Branch }}
+            - make-382
+      - run:
+          name: Build and install make via script
+          command: ./build/x86_64/linux_macos/installMake.sh
+          timeout: 1m
+      - save_cache:
+          key: make-382-{{ arch }}-{{ .Branch }}-{{ .Environment.CIRCLE_SHA1 }}
+          paths:
+            - /make-3.82/
+            - /usr/bin/make
+            - /usr/local/bin/make
+            - /usr/share/man/man1/make.1.gz
       - run:
           name: Define Environment Variables and update JAVA_HOME and PATH at Runtime
           command: |
@@ -17,7 +51,7 @@ jobs:
             echo 'export SCRIPTS_LIB_DIR=${BASEDIR}/build/x86_64/linux_macos/lib' >> ${BASH_ENV}
             echo 'export MX=${BASEDIR}/mx/mx'                                     >> ${BASH_ENV}
             echo 'export JDK_GRAAL_FOLDER_NAME=jdk8-with-graal'                   >> ${BASH_ENV}
-            echo 'export GRAAL_JVMCI_8_TAG=jvmci-0.46'                            >> ${BASH_ENV}
+            echo 'export GRAAL_JVMCI_8_TAG=jvmci-0.59'                            >> ${BASH_ENV}
             echo 'export BUILD_ARTIFACTS_DIR=${BASEDIR}/${JDK_GRAAL_FOLDER_NAME}' >> ${BASH_ENV}
             echo 'export RUN_TESTS="true"'                                        >> ${BASH_ENV}
             echo 'export HOTSPOT_BUILD_JOBS=2'                                    >> ${BASH_ENV}

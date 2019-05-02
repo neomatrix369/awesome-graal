@@ -114,7 +114,7 @@ DEBUG=true HOST_REPOS_DIR="/path/on/the/host" ./docker-build.sh
 | DEBUG | <empty> | to run the container in DEBUG mode |
 | HOST_REPOS_DIR | /home/graal/ (inside the container)| a new location on the host to map all the source and dependent repos used to build Graal/GraalVM/Truffle |
 | JDK_BASE_IMAGE | openjdk8 | name of the JDK image (from Adopt OpenJDK build farm or another source) |
-| JDK_TAG_NAME | jdk8u152-b16 | the tag name  of the the image |
+| JDK_TAG_NAME | jdk8u212-b03 | the tag name  of the the image |
 | USER_IN_CONTAINER | graal | name of the user in the container (when in debug or non-debug mode)  |
 | HOST_REPOS_DIR | <empty>  | location on the host machine to map all the Graal/GraalVM/Truffle source and dependent repos, this is usually done inside the container |
 
