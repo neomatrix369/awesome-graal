@@ -4,7 +4,7 @@ set -e
 set -u
 set -o pipefail
 
-MAKE_VERSION=${1:-4.2}
+MAKE_VERSION=${1:-4.2.1}
 MAKE_ARTIFACT_NAME=make-${MAKE_VERSION}
 MAKE_ARTIFACT="${MAKE_ARTIFACT_NAME}.tar.gz"
 
