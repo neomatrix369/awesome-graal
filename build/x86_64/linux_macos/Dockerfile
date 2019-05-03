@@ -14,8 +14,7 @@ RUN     useradd --create-home --shell /bin/bash ${USER_IN_CONTAINER} || true
 USER    ${USER_IN_CONTAINER}
 WORKDIR ${HOME_DIR}
 
-ARG JAVA_VERSION
-ENV JAVA_HOME /opt/java/openjdk/${JAVA_VERSION}
+ENV JAVA_HOME /opt/java/openjdk/
 ENV PATH      ${JAVA_HOME}/bin:${PATH}
 
 RUN echo "export JAVA_HOME=${JAVA_HOME}" >> ${HOME_DIR}/.bashrc

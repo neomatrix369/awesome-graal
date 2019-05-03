@@ -19,6 +19,8 @@ echo ">>> Building a JDK8 with JVMCI..."
 cd ${BASEDIR}/graal-jvmci-8/
 git fetch origin refs/tags/${GRAAL_JVMCI_8_TAG} || true
 git checkout tags/${GRAAL_JVMCI_8_TAG}          || true
+git apply ../patch/mx-HotSpot-string-fix.patch
+grep "re.search" -B 2  mx.jvmci/mx_jvmci.py
 HOTSPOT_BUILD_JOBS=${HOTSPOT_BUILD_JOBS:-$(getAllowedThreads)}
 echo "Setting HOTSPOT_BUILD_JOBS=${HOTSPOT_BUILD_JOBS}"
 HOTSPOT_BUILD_JOBS=${HOTSPOT_BUILD_JOBS} ${MX} build
