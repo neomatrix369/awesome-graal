@@ -7,7 +7,7 @@ set -o pipefail
 export DEBUG=${DEBUG:-"false"}
 export RUN_TESTS=${RUN_TESTS:-"true"}
 
-export JAVA_VERSION=${JAVA_VERSION:-jdk8u152-b16}
+export JAVA_VERSION=${JAVA_VERSION:-jdk8u212-b03}
 export JDK_BASE_IMAGE_TAG=${JDK_BASE_IMAGE_TAG:-"adoptopenjdk/openjdk8:${JAVA_VERSION}"}
 export DOCKER_IMAGE_TAG="graal-jdk8:latest"
 export USER_IN_CONTAINER=${USER_IN_CONTAINER:-"graal"}
@@ -60,7 +60,11 @@ echo "DOCKER_MEMORY=${DOCKER_MEMORY}"
 echo "JAVA_HOME=${JAVA_HOME}"
 echo "*************************************************"
 
-./build-docker-image.sh
+if [[ "${SKIP_BUILD_IMAGE:-}" = "true" ]]; then
+       echo "Not building the docker image, skipping to directly running the docker container..."
+else
+       ./build-docker-image.sh
+fi
 
 ./run-docker-container.sh
 

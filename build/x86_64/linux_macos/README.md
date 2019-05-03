@@ -107,6 +107,12 @@ tail -f jdk8-with-graal-docker/docker-build.logs
 DEBUG=true HOST_REPOS_DIR="/path/on/the/host" ./docker-build.sh
 ```
 
+or
+
+```
+DEBUG=true HOST_REPOS_DIR="/path/on/the/host" [other env variables] ./run-docker-container.sh
+```
+
 - All the known environment variables that can be used when running the above `docker-build.sh` script:
 
 | Name           | Default       | Description |

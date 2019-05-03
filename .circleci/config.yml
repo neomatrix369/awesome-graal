@@ -6,7 +6,7 @@ dependencies:
 jobs:
   build:
     docker:
-      - image: adoptopenjdk/openjdk8:jdk8u152-b16
+      - image: adoptopenjdk/openjdk8:jdk8u212-b03
     steps:
       - checkout
       - restore_cache:
