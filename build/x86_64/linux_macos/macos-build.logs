@@ -1,122 +1,147 @@
 >>> Working in /path/to/awesome-graal/build/x86_64/linux_macos
->>> Getting mx: mx is a build tool created for managing the development of (primarily) Java code
-Cloning into 'mx'...
->>> Getting Graal JVMCI for JDK8
-Cloning into 'graal-jvmci-8'...
-Checking out files:  47% (2386/5053)   
-Checking out files:  48% (2426/5053)   
-Checking out files:  49% (2476/5053)   
-Checking out files:  50% (2527/5053)   
-Checking out files:  51% (2578/5053)
-Checking out files:  52% (2628/5053)   
-Checking out files:  53% (2679/5053)   
-Checking out files:  54% (2729/5053)   
-Checking out files:  55% (2780/5053)   
-Checking out files:  56% (2830/5053)   
-Checking out files:  57% (2881/5053)   
-Checking out files:  58% (2931/5053)   
-Checking out files:  59% (2982/5053)   
-Checking out files:  60% (3032/5053)   
-Checking out files:  61% (3083/5053)   
-Checking out files:  62% (3133/5053)   
-Checking out files:  63% (3184/5053)   
-Checking out files:  64% (3234/5053)   
-Checking out files:  65% (3285/5053)   
-Checking out files:  66% (3335/5053)   
-Checking out files:  67% (3386/5053)   
-Checking out files:  68% (3437/5053)   
-Checking out files:  69% (3487/5053)   
-Checking out files:  70% (3538/5053)   
-Checking out files:  71% (3588/5053)   
-Checking out files:  72% (3639/5053)   
-Checking out files:  73% (3689/5053)   
-Checking out files:  74% (3740/5053)   
-Checking out files:  75% (3790/5053)   
-Checking out files:  76% (3841/5053)   
-Checking out files:  77% (3891/5053)   
-Checking out files:  78% (3942/5053)   
-Checking out files:  79% (3992/5053)   
-Checking out files:  80% (4043/5053)   
-Checking out files:  81% (4093/5053)   
-Checking out files:  82% (4144/5053)   
-Checking out files:  83% (4194/5053)   
-Checking out files:  84% (4245/5053)   
-Checking out files:  85% (4296/5053)   
-Checking out files:  86% (4346/5053)   
-Checking out files:  87% (4397/5053)   
-Checking out files:  88% (4447/5053)   
-Checking out files:  89% (4498/5053)   
-Checking out files:  89% (4535/5053)   
-Checking out files:  90% (4548/5053)   
-Checking out files:  91% (4599/5053)   
-Checking out files:  92% (4649/5053)   
-Checking out files:  93% (4700/5053)   
-Checking out files:  94% (4750/5053)   
-Checking out files:  95% (4801/5053)   
-Checking out files:  96% (4851/5053)   
-Checking out files:  97% (4902/5053)   
-Checking out files:  98% (4952/5053)   
-Checking out files:  99% (5003/5053)   
-Checking out files: 100% (5053/5053)   
-Checking out files: 100% (5053/5053), done.
+******************* Parameters ******************
+BASEDIR=/path/to/awesome-graal/build/x86_64/linux_macos
+
+JDK_GRAAL_FOLDER_NAME=jdk8-with-graal
+GRAAL_JVMCI_8_TAG=master
+BUILD_ARTIFACTS_DIR=/path/to/awesome-graal/build/x86_64/linux_macos/jdk8-with-graal
+
+RUN_TESTS=true
+JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_211.jdk/Contents/Home
+JAVA_OPTS=
+
+MX_HOME=/path/to/awesome-graal/build/x86_64/linux_macos/mx
+MX=/path/to/awesome-graal/build/x86_64/linux_macos/mx/mx
+PATH=/path/to/awesome-graal/build/x86_64/linux_macos/mx:/Library/Java/JavaVirtualMachines/jdk1.8.0_211.jdk/Contents/Home/bin:/opt/graalvm-0.32/Contents/Home/bin:/opt/apache-maven-3.6.0//bin:/path/to/leiningen:/usr/local/opt/openssl/bin:/usr/local/opt/llvm@4/bin:/opt/sbt/bin:/opt/graalvm-0.32/Contents/Home/bin/:/path/to/anaconda2/bin:/anaconda3/bin:/path/to/.nvm/versions/node/v9.8.0/bin:/Library/Frameworks/Python.framework/Versions/2.7/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/Applications/VMware Fusion.app/Contents/Public:/Library/TeX/texbin:/opt/X11/bin:/Library/Frameworks/Mono.framework/Versions/Current/Commands:/usr/local/git/bin:/path/to/packer/::/Applications/Visual Studio Code.app/Contents/Resources/app/bin:/path/to/.local/bin
+*************************************************
+
+Display hardware information
+Hardware:
+
+    Hardware Overview:
+
+      Model Name: MacBook Pro
+      Model Identifier: MacBookPro8,1
+      Processor Name: Intel Core i5
+      Processor Speed: 2.3 GHz
+      Number of Processors: 1
+      Total Number of Cores: 2
+      L2 Cache (per Core): 256 KB
+      L3 Cache: 3 MB
+      Memory: 16 GB
+      Boot ROM Version: 83.0.0.0.0
+      SMC Version (system): 1.68f99
+      Serial Number (system): C2VF5ZFJDH2G
+      Hardware UUID: FAA92732-A607-5E68-9DAF-C7684759A990
+      Sudden Motion Sensor:
+          State: Enabled
+
+
+PhysMem: 13G used (2141M wired), 3214M unused.
+vm.swapusage: total = 1024.00M  used = 1.00M  free = 1023.00M  (encrypted)
+
+Available threads (from all online CPUs/Cores): 4
+
+Display OS information
+Darwin manis-MacBook.local 17.7.0 Darwin Kernel Version 17.7.0: Wed Feb 27 00:43:23 PST 2019; root:xnu-4570.71.35~1/RELEASE_X86_64 x86_64
+
+Software:
+
+    System Software Overview:
+
+      System Version: macOS 10.13.6 (17G6030)
+      Kernel Version: Darwin 17.7.0
+      Boot Volume: User's macbook SSD
+      Boot Mode: Normal
+      Computer Name: mani’s MacBook
+      User Name: mani (user)
+      Secure Virtual Memory: Enabled
+      System Integrity Protection: Enabled
+      Time since boot: 2:06
+
+
+*******************************************************************************
+* Processes are running on a VM or VM-like environment
+*******************************************************************************
+
+gcc version check
+Configured with: --prefix=/Library/Developer/CommandLineTools/usr --with-gxx-include-dir=/usr/include/c++/4.2.1
+Apple LLVM version 10.0.0 (clang-1000.10.44.4)
+Target: x86_64-apple-darwin17.7.0
+Thread model: posix
+InstalledDir: /Library/Developer/CommandLineTools/usr/bin
+
+g++ version check
+Configured with: --prefix=/Library/Developer/CommandLineTools/usr --with-gxx-include-dir=/usr/include/c++/4.2.1
+Apple LLVM version 10.0.0 (clang-1000.10.44.4)
+Target: x86_64-apple-darwin17.7.0
+Thread model: posix
+InstalledDir: /Library/Developer/CommandLineTools/usr/bin
+
+java version check
+java version "1.8.0_211"
+Java(TM) SE Runtime Environment (build 1.8.0_211-b12)
+Java HotSpot(TM) 64-Bit Server VM (build 25.211-b12, mixed mode)
+
+make version check
+GNU Make 3.81
+Copyright (C) 2006  Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.
+There is NO warranty; not even for MERCHANTABILITY or FITNESS FOR A
+PARTICULAR PURPOSE.
+
+This program built for i386-apple-darwin11.3.0
+
+python version check
+Python 2.7.15 :: Anaconda, Inc.
+
+MacOS specific checks
+
+xcodebuild version check
+xcode-select: error: tool 'xcodebuild' requires Xcode, but active developer directory '/Library/Developer/CommandLineTools' is a command line tools instance
+>>> mx already exists: updating and using this version
+
+real	0m0.036s
+user	0m0.009s
+sys	0m0.014s
+>>> graal-jvmci-8 already exists: updating and using this version
+Already up to date.
 >>> Building a JDK8 with JVMCI...
-Creating /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/jdk1.8.0_172/darwin-amd64/product/Contents/Home from /Library/Java/JavaVirtualMachines/jdk1.8.0_172.jdk/Contents/Home
-JAVA_HOME: /Library/Java/JavaVirtualMachines/jdk1.8.0_172.jdk/Contents/Home
+>>>> Fetching commit point/branch master
+Fetching origin
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+From https://github.com/graalvm/graal-jvmci-8
+ * branch                  master     -> FETCH_HEAD
+Already up to date.
+Applying and checking patch to mx_jvmci.py...
+error: patch failed: mx.jvmci/mx_jvmci.py:807
+error: mx.jvmci/mx_jvmci.py: patch does not apply
+    #   Java HotSpot(TM) 64-Bit Server VM (build 25.192-b12, mixed mode)
+    last = output[-1]
+    m = re.search(r'.*\(build (\d+.\d+-b\d+)', last)
+Setting HOTSPOT_BUILD_JOBS=2
+JAVA_HOME: /Library/Java/JavaVirtualMachines/jdk1.8.0_211.jdk/Contents/Home
 EXTRA_JAVA_HOMES: 
-Compiling com.oracle.mxtool.compilerserver with javac(JDK 1.8)... [/path/to/awesome-graal/build/x86_64/linux_macos/mx/mxbuild/java/com.oracle.mxtool.compilerserver/bin/com/oracle/mxtool/compilerserver/ECJDaemon.class does not exist]
-Compiling jdk.vm.ci.meta with javac-daemon(JDK 1.8)... [/path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/mxbuild/jvmci/jdk.vm.ci.meta/bin/jdk/vm/ci/meta/Local.class does not exist]
-Compiling jdk.vm.ci.services with javac-daemon(JDK 1.8)... [/path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/mxbuild/jvmci/jdk.vm.ci.services/bin/jdk/vm/ci/services/JVMCIServiceLocator.class does not exist]
-Compiling jdk.vm.ci.common with javac-daemon(JDK 1.8)... [/path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/mxbuild/jvmci/jdk.vm.ci.common/bin/jdk/vm/ci/common/JVMCIError.class does not exist]
-Compiling com.oracle.mxtool.checkcopy with javac-daemon(JDK 1.8)... [/path/to/awesome-graal/build/x86_64/linux_macos/mx/mxbuild/java/com.oracle.mxtool.checkcopy/bin/com/oracle/mxtool/checkcopy/CheckCopyright.class does not exist]
-Compiling com.oracle.mxtool.jacoco with javac-daemon(JDK 1.8)... [/path/to/awesome-graal/build/x86_64/linux_macos/mx/mxbuild/java/com.oracle.mxtool.jacoco/bin/com/oracle/mxtool/jacoco/JacocoReport.class does not exist]
-Archiving JVMCI_SERVICES... [dependency jdk.vm.ci.services updated]
-Compiling com.oracle.mxtool.junit with javac-daemon(JDK 1.8)... [/path/to/awesome-graal/build/x86_64/linux_macos/mx/mxbuild/java/com.oracle.mxtool.junit/bin/com/oracle/mxtool/junit/TestResultLoggerDecorator.class does not exist]
-Compiling com.oracle.mxtool.jmh_1_21 with javac-daemon(JDK 1.8)... [/path/to/awesome-graal/build/x86_64/linux_macos/mx/mxbuild/java/com.oracle.mxtool.jmh_1_21/bin/com/oracle/mxtool/jmh_1_21/TestJMH_1_21.class does not exist]
-Archiving MX_JACOCO_REPORT... [dependency com.oracle.mxtool.jacoco updated]
-Compiling jdk.vm.ci.code with javac-daemon(JDK 1.8)... [dependency jdk.vm.ci.common updated]
-Archiving JUNIT_TOOL... [dependency com.oracle.mxtool.junit updated]
-WARNING: /path/to/awesome-graal/build/x86_64/linux_macos/mx/mxbuild/dists/mx-jacoco-report.jar: avoid overwrite of about.html
-  new: /Users/swami/.mx/cache/JACOCOREPORT_8a7f78fdf2a4e58762890d8e896a9298c2980c10.jar!about.html
-  old: /Users/swami/.mx/cache/JACOCOCORE_66215826a684eb6866d4c14a5a4f9c344f1d1eef.jar!about.html
-WARNING: /path/to/awesome-graal/build/x86_64/linux_macos/mx/mxbuild/dists/mx-jacoco-report.jar: avoid overwrite of about.html
-  new: /Users/swami/.mx/cache/JACOCOREPORT_8a7f78fdf2a4e58762890d8e896a9298c2980c10.jar!about.html
-  old: /Users/swami/.mx/cache/JACOCOCORE_66215826a684eb6866d4c14a5a4f9c344f1d1eef.jar!about.html
-Archiving MX_MICRO_BENCHMARKS... [dependency com.oracle.mxtool.jmh_1_21 updated]
-Compiling jdk.vm.ci.runtime with javac-daemon(JDK 1.8)... [dependency jdk.vm.ci.code updated]
-Compiling jdk.vm.ci.aarch64 with javac-daemon(JDK 1.8)... [dependency jdk.vm.ci.code updated]
-Compiling jdk.vm.ci.sparc with javac-daemon(JDK 1.8)... [dependency jdk.vm.ci.code updated]
-Compiling jdk.vm.ci.amd64 with javac-daemon(JDK 1.8)... [dependency jdk.vm.ci.code updated]
-Compiling jdk.vm.ci.code.test with javac-daemon(JDK 1.8)... [dependency jdk.vm.ci.common updated]
-Compiling jdk.vm.ci.hotspot with javac-daemon(JDK 1.8)... [dependency jdk.vm.ci.services updated]
-Archiving JVMCI_API... [dependency jdk.vm.ci.runtime updated]
-Compiling jdk.vm.ci.runtime.test with javac-daemon(JDK 1.8)... [dependency jdk.vm.ci.common updated]
-Archiving JVMCI_TEST... [dependency jdk.vm.ci.runtime.test updated]
-Compiling jdk.vm.ci.hotspot.jfr with javac-daemon(JDK 1.8)... [dependency jdk.vm.ci.hotspot updated]
-Compiling jdk.vm.ci.hotspot.aarch64 with javac-daemon(JDK 1.8)... [dependency jdk.vm.ci.aarch64 updated]
-Compiling jdk.vm.ci.hotspot.amd64 with javac-daemon(JDK 1.8)... [dependency jdk.vm.ci.amd64 updated]
-Compiling jdk.vm.ci.hotspot.sparc with javac-daemon(JDK 1.8)... [dependency jdk.vm.ci.sparc updated]
-Compiling jdk.vm.ci.hotspot.test with javac-daemon(JDK 1.8)... [dependency jdk.vm.ci.services updated]
-Archiving JVMCI_HOTSPOT... [dependency jdk.vm.ci.hotspot.aarch64 updated]
-Building HotSpot[product, server]... [dependency jdk.vm.ci.hotspot updated]
+Non-default dependencies removed from build (use mx build --all to build them):
+ JACOCOREPORT_0.8.2
+Building HotSpot[product, server]... [/path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/runtime/vm_version.cpp[2019-05-06 23:21:36] is newer than /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/build/bsd/bsd_amd64_compiler2/product/libjvm.dylib[2019-05-06 23:19:55]]
 --------------- make command line ----------------------
-make -C /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/make ARCH_DATA_MODEL=64 HOTSPOT_BUILD_JOBS=4 ALT_BOOTDIR=/Library/Java/JavaVirtualMachines/jdk1.8.0_172.jdk/Contents/Home MAKE_VERBOSE= USER_RELEASE_SUFFIX=jvmci-unknown-manis-MacBook.local-2018-06-11_16-14-53_BST INCLUDE_JVMCI=true USE_CLANG=true COMPILER_WARNINGS_FATAL=false ZIP_DEBUGINFO_FILES=0 product docs
+make -C /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/make ARCH_DATA_MODEL=64 HOTSPOT_BUILD_JOBS=2 ALT_BOOTDIR=/Library/Java/JavaVirtualMachines/jdk1.8.0_211.jdk/Contents/Home MAKE_VERBOSE= HOTSPOT_RELEASE_VERSION=25.211-b12 USER_RELEASE_SUFFIX=jvmci-0.60-dev INCLUDE_JVMCI=true USE_CLANG=true ZIP_DEBUGINFO_FILES=0 product docs
 --------------------------------------------------------
 cd /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/make; \
-	/Applications/Xcode.app/Contents/Developer/usr/bin/make BUILD_DIR=/path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/build/bsd/bsd_amd64_compiler2 BUILD_FLAVOR=product VM_TARGET=product generic_build2 
+	/Library/Developer/CommandLineTools/usr/bin/make BUILD_DIR=/path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/build/bsd/bsd_amd64_compiler2 BUILD_FLAVOR=product VM_TARGET=product generic_build2 
 INFO: ENABLE_FULL_DEBUG_SYMBOLS=1
 
-mkdir -p /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/build/bsd/bsd_amd64_compiler2/product
-cat /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/make/hotspot.script | sed -e 's|@@LIBARCH@@|amd64|g' | sed -e 's|@@JDK_IMPORT_PATH@@|/java/re/j2se/1.8.0/promoted/latest/binaries/bsd-amd64|g' > /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/build/bsd/bsd_amd64_compiler2/product/hotspot
-chmod +x /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/build/bsd/bsd_amd64_compiler2/product/hotspot
 mkdir -p /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/build/bsd
 cd /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/build/bsd; \
-	    /Applications/Xcode.app/Contents/Developer/usr/bin/make -f /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/make/bsd/Makefile \
-		       LP64=1 MACOSX_UNIVERSAL=true BOOTDIR=/Library/Java/JavaVirtualMachines/jdk1.8.0_172.jdk/Contents/Home OUTPUTDIR=/path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/build/bsd GAMMADIR=/path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8 MAKE_VERBOSE= HOTSPOT_RELEASE_VERSION=25.71-b01 JRE_RELEASE_VERSION="1.8.0" HOTSPOT_BUILD_VERSION=internal-jvmci-unknown-manis-MacBook.local-2018-06-11_16-14-53_BST product
+	    /Library/Developer/CommandLineTools/usr/bin/make -f /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/make/bsd/Makefile \
+		       LP64=1 MACOSX_UNIVERSAL=true BOOTDIR=/Library/Java/JavaVirtualMachines/jdk1.8.0_211.jdk/Contents/Home OUTPUTDIR=/path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/build/bsd GAMMADIR=/path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8 MAKE_VERBOSE= HOTSPOT_RELEASE_VERSION=25.211-b12 JRE_RELEASE_VERSION="1.8.0" HOTSPOT_BUILD_VERSION=jvmci-0.60-dev product
 INFO: ENABLE_FULL_DEBUG_SYMBOLS=1
 
 INFO: ENABLE_FULL_DEBUG_SYMBOLS=1
 
-/Applications/Xcode.app/Contents/Developer/usr/bin/make -f /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/make/bsd/makefiles/buildtree.make GAMMADIR=/path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8 OS_FAMILY=bsd SRCARCH=x86 BUILDARCH=amd64 LIBARCH=amd64 LIBRARY_SUFFIX=dylib HOTSPOT_RELEASE_VERSION=25.71-b01 HOTSPOT_BUILD_VERSION=internal-jvmci-unknown-manis-MacBook.local-2018-06-11_16-14-53_BST JRE_RELEASE_VERSION=1.8.0 ENABLE_FULL_DEBUG_SYMBOLS=1 OBJCOPY= STRIP_POLICY= ZIP_DEBUGINFO_FILES=0 ZIPEXE=zip VARIANT=tiered FORCE_TIERED=1
+/Library/Developer/CommandLineTools/usr/bin/make -f /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/make/bsd/makefiles/buildtree.make GAMMADIR=/path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8 OS_FAMILY=bsd SRCARCH=x86 BUILDARCH=amd64 LIBARCH=amd64 LIBRARY_SUFFIX=dylib HOTSPOT_RELEASE_VERSION=25.211-b12 HOTSPOT_BUILD_VERSION=jvmci-0.60-dev JRE_RELEASE_VERSION=1.8.0 ENABLE_FULL_DEBUG_SYMBOLS=1 OBJCOPY= STRIP_POLICY= ZIP_DEBUGINFO_FILES=0 ZIPEXE=zip VARIANT=tiered FORCE_TIERED=1
 INFO: ENABLE_FULL_DEBUG_SYMBOLS=1
 
 INFO: ENABLE_FULL_DEBUG_SYMBOLS=1
@@ -164,1151 +189,20 @@ Creating jvmti.make ...
 Creating trace.make ...
 Creating sa.make ...
 Creating dtrace.make ...
-cd bsd_amd64_compiler2/product && /Applications/Xcode.app/Contents/Developer/usr/bin/make  " LP64=1 "
-cd /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/build/bsd/bsd_amd64_compiler2/product/../generated;  cp /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/make/bsd/platform_amd64 /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/build/bsd/bsd_amd64_compiler2/product/../generated/platform.current
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/adlc/adlparse.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/adlc/archDesc.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/adlc/arena.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/adlc/dfa.cpp
-/path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/adlc/archDesc.cpp:336:35: warning: '&&' within '||' [-Wlogical-op-parentheses]
-
-    if ( instr->is_ideal_branch() && instr->label_position() == -1 ||
-
-         ~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ~~
-
-/path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/adlc/archDesc.cpp:336:35: note: place parentheses around the '&&' expression to silence this warning
-
-    if ( instr->is_ideal_branch() && instr->label_position() == -1 ||
-
-                                  ^
-
-         (                                                        )
-
-/path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/adlc/archDesc.cpp:337:35: warning: '&&' within '||' [-Wlogical-op-parentheses]
-
-        !instr->is_ideal_branch() && instr->label_position() != -1) {
-
-        ~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-/path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/adlc/archDesc.cpp:337:35: note: place parentheses around the '&&' expression to silence this warning
-
-        !instr->is_ideal_branch() && instr->label_position() != -1) {
-
-                                  ^
-
-        (                                                         )
-
-/path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/adlc/adlparse.cpp:3486:71: warning: equality comparison with extraneous parentheses [-Wparentheses-equality]
-
-    if ( ((primary = get_ident_or_literal_constant("primary opcode")) == NULL) ) {
-
-          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~
-
-/path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/adlc/adlparse.cpp:3486:71: note: remove extraneous parentheses around the comparison to silence this warning
-
-    if ( ((primary = get_ident_or_literal_constant("primary opcode")) == NULL) ) {
-
-         ~                                                            ^      ~
-
-/path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/adlc/adlparse.cpp:3486:71: note: use '=' to turn this equality comparison into an assignment
-
-    if ( ((primary = get_ident_or_literal_constant("primary opcode")) == NULL) ) {
-
-                                                                      ^~
-
-                                                                      =
-
-/path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/adlc/adlparse.cpp:3495:77: warning: equality comparison with extraneous parentheses [-Wparentheses-equality]
-
-      if ( ((secondary = get_ident_or_literal_constant("secondary opcode")) == NULL) ) {
-
-            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~
-
-/path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/adlc/adlparse.cpp:3495:77: note: remove extraneous parentheses around the comparison to silence this warning
-
-      if ( ((secondary = get_ident_or_literal_constant("secondary opcode")) == NULL) ) {
-
-           ~                                                                ^      ~
-
-/path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/adlc/adlparse.cpp:3495:77: note: use '=' to turn this equality comparison into an assignment
-
-      if ( ((secondary = get_ident_or_literal_constant("secondary opcode")) == NULL) ) {
-
-                                                                            ^~
-
-                                                                            =
-
-/path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/adlc/adlparse.cpp:3504:77: warning: equality comparison with extraneous parentheses [-Wparentheses-equality]
-
-        if ( ((tertiary = get_ident_or_literal_constant("tertiary opcode")) == NULL) ) {
-
-              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~
-
-/path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/adlc/adlparse.cpp:3504:77: note: remove extraneous parentheses around the comparison to silence this warning
-
-        if ( ((tertiary = get_ident_or_literal_constant("tertiary opcode")) == NULL) ) {
-
-             ~                                                              ^      ~
-
-/path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/adlc/adlparse.cpp:3504:77: note: use '=' to turn this equality comparison into an assignment
-
-        if ( ((tertiary = get_ident_or_literal_constant("tertiary opcode")) == NULL) ) {
-
-                                                                            ^~
-
-                                                                            =
-
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/adlc/dict2.cpp
-/path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/adlc/adlparse.cpp:4774:21: warning: '&&' within '||' [-Wlogical-op-parentheses]
-
-  while ((c >= '0') && (c <= '9')
-
-         ~~~~~~~~~~~^~~~~~~~~~~~~
-
-/path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/adlc/adlparse.cpp:4774:21: note: place parentheses around the '&&' expression to silence this warning
-
-  while ((c >= '0') && (c <= '9')
-
-                    ^
-
-         (                       )
-
-/path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/adlc/adlparse.cpp:4813:17: warning: equality comparison with extraneous parentheses [-Wparentheses-equality]
-
-    if( (second == '=') ) {
-
-         ~~~~~~~^~~~~~
-
-/path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/adlc/adlparse.cpp:4813:17: note: remove extraneous parentheses around the comparison to silence this warning
-
-    if( (second == '=') ) {
-
-        ~       ^     ~
-
-/path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/adlc/adlparse.cpp:4813:17: note: use '=' to turn this equality comparison into an assignment
-
-    if( (second == '=') ) {
-
-                ^~
-
-                =
-
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/adlc/filebuff.cpp
-2 warnings generated.
-
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/adlc/forms.cpp
-5 warnings generated.
-
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/adlc/formsopt.cpp
-/path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/adlc/filebuff.cpp:109:8: warning: 'this' pointer cannot be null in well-defined C++ code; pointer may be assumed to always convert to true [-Wundefined-bool-conversion]
-
-  if( !this ) return NULL;      // The empty buffer region
-
-      ~^~~~
-
-/path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/adlc/filebuff.cpp:122:8: warning: 'this' pointer cannot be null in well-defined C++ code; pointer may be assumed to always convert to true [-Wundefined-bool-conversion]
-
-  if( !this ) return br;        // Merging into nothing
-
-      ~^~~~
-
-/path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/adlc/filebuff.cpp:228:8: warning: reference cannot be bound to dereferenced null pointer in well-defined C++ code; comparison may be assumed to always evaluate to false [-Wtautological-undefined-compare]
-
-  if( &br == NULL ) return os;  // The empty buffer region
-
-       ^~    ~~~~
-
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/adlc/formssel.cpp
-/path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/adlc/filebuff.cpp:244:8: warning: 'this' pointer cannot be null in well-defined C++ code; pointer may be assumed to always convert to true [-Wundefined-bool-conversion]
-
-  if( !this ) return;           // Nothing to print
-
-      ~^~~~
-
-4 warnings generated.
-
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/adlc/main.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/opto/opcodes.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/adlc/output_c.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/adlc/output_h.cpp
-/path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/adlc/formssel.cpp:1713:7: warning: 'this' pointer cannot be null in well-defined C++ code; comparison may be assumed to always evaluate to true [-Wtautological-undefined-compare]
-
-  if( this != NULL ) {
-
-      ^~~~    ~~~~
-
-/path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/adlc/formssel.cpp:3394:8: warning: 'this' pointer cannot be null in well-defined C++ code; pointer may be assumed to always convert to true [-Wundefined-bool-conversion]
-
-  if( !this ) return;
-
-      ~^~~~
-
-/path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/adlc/output_c.cpp:3154:33: warning: '&&' within '||' [-Wlogical-op-parentheses]
-
-        instr->_matrule != NULL &&
-
-        ~~~~~~~~~~~~~~~~~~~~~~~~^~
-
-/path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/adlc/output_c.cpp:3154:33: note: place parentheses around the '&&' expression to silence this warning
-
-        instr->_matrule != NULL &&
-
-                                ^
-
-/path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/adlc/output_c.cpp:3886:18: warning: using the result of an assignment as a condition without parentheses [-Wparentheses]
-
-    while ( comp = comp_list.post_match_iter() ) {
-
-            ~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-/path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/adlc/output_c.cpp:3886:18: note: place parentheses around the assignment to silence this warning
-
-    while ( comp = comp_list.post_match_iter() ) {
-
-                 ^
-
-            (                                 )
-
-/path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/adlc/output_c.cpp:3886:18: note: use '==' to turn this assignment into an equality comparison
-
-    while ( comp = comp_list.post_match_iter() ) {
-
-                 ^
-
-                 ==
-
-/path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/adlc/output_h.cpp:1847:33: warning: '&&' within '||' [-Wlogical-op-parentheses]
-
-        instr->_matrule != NULL &&
-
-        ~~~~~~~~~~~~~~~~~~~~~~~~^~
-
-/path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/adlc/output_h.cpp:1847:33: note: place parentheses around the '&&' expression to silence this warning
-
-        instr->_matrule != NULL &&
-
-                                ^
-
-2 warnings generated.
-
-2 warnings generated.
-
-1 warning generated.
-
-Making adlc
-clang: warning: libstdc++ is deprecated; move to libc++ with a minimum deployment target of OS X 10.9 [-Wdeprecated]
-
-warning: [options] bootstrap class path not set in conjunction with -source 1.6
-
-warning: [options] bootstrap class path not set in conjunction with -source 1.6
-
-1 warning
-
-Generating /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/build/bsd/bsd_amd64_compiler2/product/../generated/jvmtifiles/jvmtiEnv.hpp
-Generating /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/build/bsd/bsd_amd64_compiler2/product/../generated/jvmtifiles/jvmtiEnter.cpp
-Generating /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/build/bsd/bsd_amd64_compiler2/product/../generated/jvmtifiles/jvmtiEnterTrace.cpp
-1 warning
-
-Generating /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/build/bsd/bsd_amd64_compiler2/product/../generated/jvmtifiles/bytecodeInterpreterWithChecks.cpp
-Generating /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/build/bsd/bsd_amd64_compiler2/product/../generated/jvmtifiles/jvmti.h
-Generating /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/build/bsd/bsd_amd64_compiler2/product/../generated/jvmtifiles/jvmtiEnvRecommended.cpp
-Generating /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/build/bsd/bsd_amd64_compiler2/product/../generated/tracefiles/traceEventClasses.hpp
-Generating /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/build/bsd/bsd_amd64_compiler2/product/../generated/tracefiles/traceEventIds.hpp
-Generating /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/build/bsd/bsd_amd64_compiler2/product/../generated/tracefiles/traceTypes.hpp
+cd bsd_amd64_compiler2/product && /Library/Developer/CommandLineTools/usr/bin/make  " LP64=1 "
+Rescanned ../generated/adfiles/bsd_x86_64.ad  but encountered no changes.
+make[4]: Nothing to be done for `all'.
+make[4]: Nothing to be done for `all'.
 if [ -d /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/agent -a "x86" != "ia64" \
              -a "x86" != "arm" \
              -a "x86" != "ppc" \
              -a "x86" != "zero" ] ; then \
-	   /Applications/Xcode.app/Contents/Developer/usr/bin/make -f sa.make /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/build/bsd/bsd_amd64_compiler2/product/../generated/sa-jdi.jar; \
+	   /Library/Developer/CommandLineTools/usr/bin/make -f sa.make /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/build/bsd/bsd_amd64_compiler2/product/../generated/sa-jdi.jar; \
 	fi
-Making /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/build/bsd/bsd_amd64_compiler2/product/../generated/sa-jdi.jar
-warning: [options] bootstrap class path not set in conjunction with -source 1.6
-
-Note: Some input files use unchecked or unsafe operations.
-
-Note: Recompile with -Xlint:unchecked for details.
-
-1 warning
-
-Warning: generation and use of skeletons and static stubs for JRMP
-is deprecated. Skeletons are unnecessary, and static stubs have
-been superseded by dynamically generated stubs. Users are
-encouraged to migrate away from using rmic to generate skeletons and static
-stubs. See the documentation for java.rmi.server.UnicastRemoteObject.
-/usr/sbin/dtrace -D_LP64 -C -I. -h -o /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/build/bsd/bsd_amd64_compiler2/product/../generated/dtracefiles/hotspot.h -s /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/os/bsd/dtrace/hotspot.d
-/usr/sbin/dtrace -D_LP64 -C -I. -h -o /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/build/bsd/bsd_amd64_compiler2/product/../generated/dtracefiles/hotspot_jni.h -s /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/os/bsd/dtrace/hotspot_jni.d
-/usr/sbin/dtrace -D_LP64 -C -I. -h -o /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/build/bsd/bsd_amd64_compiler2/product/../generated/dtracefiles/hs_private.h -s /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/os/bsd/dtrace/hs_private.d
+make[5]: `/path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/build/bsd/bsd_amd64_compiler2/product/../generated/sa-jdi.jar' is up to date.
 echo "dtrace headers generated"
 dtrace headers generated
-Generating precompiled header precompiled.hpp.pch
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/compiler/abstractCompiler.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/utilities/accessFlags.cpp
-Compiling ../generated/adfiles/ad_x86_64.cpp
-Compiling ../generated/adfiles/ad_x86_64_clone.cpp
-Compiling ../generated/adfiles/ad_x86_64_expand.cpp
-Compiling ../generated/adfiles/ad_x86_64_format.cpp
-Compiling ../generated/adfiles/ad_x86_64_gen.cpp
-Compiling ../generated/adfiles/ad_x86_64_misc.cpp
-Compiling ../generated/adfiles/ad_x86_64_peephole.cpp
-Compiling ../generated/adfiles/ad_x86_64_pipeline.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/gc_implementation/concurrentMarkSweep/adaptiveFreeList.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/gc_implementation/shared/adaptiveSizePolicy.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/opto/addnode.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/gc_implementation/parallelScavenge/adjoiningGenerations.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/gc_implementation/parallelScavenge/adjoiningVirtualSpaces.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/runtime/advancedThresholdPolicy.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/gc_implementation/shared/ageTable.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/gc_interface/allocTracer.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/memory/allocation.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/gc_implementation/shared/allocationStats.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/classfile/altHashing.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/oops/annotations.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/runtime/arguments.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/utilities/array.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/oops/arrayKlass.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/oops/arrayOop.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/gc_implementation/parallelScavenge/asPSOldGen.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/gc_implementation/parallelScavenge/asPSYoungGen.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/gc_implementation/parNew/asParNewGeneration.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/asm/assembler.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/os_cpu/bsd_x86/vm/assembler_bsd_x86.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/cpu/x86/vm/assembler_x86.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/runtime/atomic.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/services/attachListener.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/os/bsd/vm/attachListener_bsd.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/memory/barrierSet.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/runtime/basicLock.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/ci/bcEscapeAnalyzer.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/runtime/biasedLocking.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/memory/binaryTreeDictionary.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/utilities/bitMap.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/opto/block.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/memory/blockOffsetTable.cpp
-Assembling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/os_cpu/bsd_x86/vm/bsd_x86_64.s
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/gc_implementation/g1/bufferingOopClosure.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/opto/buildOopMap.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/interpreter/bytecode.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/classfile/bytecodeAssembler.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/interpreter/bytecodeHistogram.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/opto/bytecodeInfo.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/interpreter/bytecodeInterpreter.cpp
-Compiling ../generated/jvmtifiles/bytecodeInterpreterWithChecks.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/cpu/x86/vm/bytecodeInterpreter_x86.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/interpreter/bytecodeStream.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/interpreter/bytecodeTracer.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/interpreter/bytecodes.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/cpu/x86/vm/bytecodes_x86.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/c1/c1_CFGPrinter.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/c1/c1_Canonicalizer.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/cpu/x86/vm/c1_CodeStubs_x86.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/c1/c1_Compilation.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/c1/c1_Compiler.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/c1/c1_Defs.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/cpu/x86/vm/c1_FpuStackSim_x86.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/c1/c1_FrameMap.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/cpu/x86/vm/c1_FrameMap_x86.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/c1/c1_GraphBuilder.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/c1/c1_IR.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/c1/c1_Instruction.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/c1/c1_InstructionPrinter.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/c1/c1_LIR.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/c1/c1_LIRAssembler.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/cpu/x86/vm/c1_LIRAssembler_x86.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/c1/c1_LIRGenerator.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/cpu/x86/vm/c1_LIRGenerator_x86.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/c1/c1_LinearScan.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/cpu/x86/vm/c1_LinearScan_x86.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/cpu/x86/vm/c1_MacroAssembler_x86.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/c1/c1_Optimizer.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/c1/c1_RangeCheckElimination.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/c1/c1_Runtime1.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/cpu/x86/vm/c1_Runtime1_x86.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/c1/c1_ValueMap.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/c1/c1_ValueSet.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/c1/c1_ValueStack.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/c1/c1_ValueType.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/c1/c1_globals.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/opto/c2_globals.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/cpu/x86/vm/c2_init_x86.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/opto/c2compiler.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/gc_implementation/shared/cSpaceCounters.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/opto/callGenerator.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/opto/callnode.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/gc_implementation/parallelScavenge/cardTableExtension.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/memory/cardTableModRefBS.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/memory/cardTableRS.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/opto/cfgnode.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/opto/chaitin.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/utilities/chunkedList.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/ci/ciArray.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/ci/ciArrayKlass.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/ci/ciBaseObject.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/ci/ciCallSite.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/ci/ciConstant.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/ci/ciConstantPoolCache.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/ci/ciEnv.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/ci/ciExceptionHandler.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/ci/ciField.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/ci/ciFlags.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/ci/ciInstance.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/ci/ciInstanceKlass.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/ci/ciKlass.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/ci/ciMemberName.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/ci/ciMetadata.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/ci/ciMethod.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/ci/ciMethodBlocks.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/ci/ciMethodData.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/ci/ciMethodHandle.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/ci/ciNullObject.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/ci/ciObjArray.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/ci/ciObjArrayKlass.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/ci/ciObject.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/ci/ciObjectFactory.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/ci/ciReplay.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/ci/ciSignature.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/ci/ciStreams.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/ci/ciSymbol.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/ci/ciType.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/ci/ciTypeArray.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/ci/ciTypeArrayKlass.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/ci/ciTypeFlow.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/ci/ciUtilities.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/classfile/classFileError.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/classfile/classFileParser.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/classfile/classFileStream.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/classfile/classLoader.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/classfile/classLoaderData.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/services/classLoadingService.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/opto/classes.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/gc_implementation/concurrentMarkSweep/cmsAdaptiveSizePolicy.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/gc_implementation/concurrentMarkSweep/cmsCollectorPolicy.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/gc_implementation/concurrentMarkSweep/cmsGCAdaptivePolicyCounters.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/gc_implementation/concurrentMarkSweep/cmsLockVerifier.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/opto/coalesce.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/code/codeBlob.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/asm/codeBuffer.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/code/codeCache.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/gc_interface/collectedHeap.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/gc_implementation/g1/collectionSetChooser.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/gc_implementation/shared/collectorCounters.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/memory/collectorPolicy.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/gc_implementation/concurrentMarkSweep/compactibleFreeListSpace.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/runtime/compilationPolicy.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/opto/compile.cpp
-In file included from <built-in>:361:
-
-In file included from /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/precompiled/precompiled.hpp:33:
-
-In file included from /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/ci/ciArray.hpp:29:
-
-In file included from /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/ci/ciConstant.hpp:29:
-
-In file included from /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/ci/ciNullObject.hpp:30:
-
-In file included from /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/ci/ciUtilities.hpp:28:
-
-In file included from /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/ci/ciEnv.hpp:30:
-
-In file included from /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/classfile/systemDictionary.hpp:29:
-
-In file included from /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/classfile/classLoader.hpp:28:
-
-In file included from /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/classfile/classFileParser.hpp:30:
-
-In file included from /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/oops/oop.inline.hpp:30:
-
-In file included from /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/gc_interface/collectedHeap.inline.hpp:36:
-
-In file included from /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/services/lowMemoryDetector.hpp:29:
-
-In file included from /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/services/memoryPool.hpp:35:
-
-In file included from /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/gc_implementation/concurrentMarkSweep/compactibleFreeListSpace.hpp:30:
-
-/path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/memory/binaryTreeDictionary.hpp:167:12: warning: instantiation of variable 'TreeChunk<FreeChunk, AdaptiveFreeList<FreeChunk> >::_min_tree_chunk_size' required here, but no definition is available [-Wundefined-var-template]
-
-    return _min_tree_chunk_size;
-
-           ^
-
-/path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/memory/binaryTreeDictionary.hpp:293:44: note: in instantiation of member function 'TreeChunk<FreeChunk, AdaptiveFreeList<FreeChunk> >::min_size' requested here
-
-    return TreeChunk<Chunk_t, FreeList_t>::min_size();
-
-                                           ^
-
-/path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/gc_implementation/concurrentMarkSweep/compactibleFreeListSpace.cpp:2838:67: note: in instantiation of member function 'BinaryTreeDictionary<FreeChunk, AdaptiveFreeList<FreeChunk> >::min_size' requested here
-
-      fc = dictionary()->get_chunk(MAX2(n * word_sz, _dictionary->min_size()),
-
-                                                                  ^
-
-/path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/memory/binaryTreeDictionary.hpp:148:17: note: forward declaration of template entity is here
-
-  static size_t _min_tree_chunk_size;
-
-                ^
-
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/compiler/compileBroker.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/compiler/compileLog.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/code/compiledIC.cpp
-1 warning generated.
-
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/oops/compiledICHolder.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/cpu/x86/vm/compiledIC_x86.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/compiler/compilerOracle.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/code/compressedStream.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/gc_implementation/g1/concurrentG1Refine.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/gc_implementation/g1/concurrentG1RefineThread.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/gc_implementation/shared/concurrentGCThread.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/gc_implementation/g1/concurrentMark.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/gc_implementation/concurrentMarkSweep/concurrentMarkSweepGeneration.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/gc_implementation/concurrentMarkSweep/concurrentMarkSweepThread.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/gc_implementation/g1/concurrentMarkThread.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/opto/connode.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/oops/constMethod.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/oops/constantPool.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/utilities/constantTag.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/utilities/copy.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/oops/cpCache.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/interpreter/cppInterpreter.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/cpu/x86/vm/cppInterpreter_x86.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/utilities/debug.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/code/debugInfo.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/code/debugInfoRec.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/cpu/x86/vm/debug_x86.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/utilities/decoder.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/utilities/decoder_elf.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/os/bsd/vm/decoder_machO.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/memory/defNewGeneration.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/classfile/defaultMethods.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/runtime/deoptimization.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/cpu/x86/vm/depChecker_x86.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/code/dependencies.cpp
-Compiling ../generated/adfiles/dfa_x86_64.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/services/diagnosticArgument.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/services/diagnosticCommand.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/services/diagnosticFramework.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/libadt/dict.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/classfile/dictionary.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/gc_implementation/g1/dirtyCardQueue.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/compiler/disassembler.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/opto/divnode.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/opto/doCall.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/opto/domgraph.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/services/dtraceAttacher.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/runtime/dtraceJSDT.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/os/bsd/vm/dtraceJSDT_bsd.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/utilities/elfFile.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/utilities/elfFuncDescTable.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/utilities/elfStringTable.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/utilities/elfSymbolTable.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/utilities/errorReporter.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/opto/escape.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/utilities/events.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/prims/evmCompat.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/code/exceptionHandlerTable.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/utilities/exceptions.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/runtime/fieldDescriptor.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/runtime/fieldType.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/memory/filemap.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/prims/forte.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/runtime/fprofiler.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/runtime/frame.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/cpu/x86/vm/frame_x86.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/memory/freeBlockDictionary.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/gc_implementation/concurrentMarkSweep/freeChunk.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/memory/freeList.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/gc_implementation/g1/g1AllocRegion.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/gc_implementation/g1/g1Allocator.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/gc_implementation/g1/g1Allocator_ext.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/gc_implementation/g1/g1BiasedArray.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/gc_implementation/g1/g1BlockOffsetTable.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/gc_implementation/g1/g1CardCounts.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/gc_implementation/g1/g1CodeCacheRemSet.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/gc_implementation/g1/g1CollectedHeap.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/gc_implementation/g1/g1CollectedHeap_ext.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/gc_implementation/g1/g1CollectorPolicy.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/gc_implementation/g1/g1ErgoVerbose.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/gc_implementation/g1/g1GCPhaseTimes.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/gc_implementation/g1/g1HRPrinter.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/gc_implementation/g1/g1HotCardCache.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/gc_implementation/g1/g1Log.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/gc_implementation/g1/g1MMUTracker.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/gc_implementation/g1/g1MarkSweep.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/gc_implementation/g1/g1MarkSweep_ext.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/services/g1MemoryPool.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/gc_implementation/g1/g1MonitoringSupport.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/gc_implementation/g1/g1OopClosures.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/gc_implementation/g1/g1PageBasedVirtualSpace.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/gc_implementation/g1/g1ParScanThreadState.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/gc_implementation/g1/g1RegionToSpaceMapper.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/gc_implementation/g1/g1RemSet.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/gc_implementation/g1/g1RemSetSummary.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/gc_implementation/g1/g1RootProcessor.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/gc_implementation/g1/g1SATBCardTableModRefBS.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/gc_implementation/g1/g1StringDedup.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/gc_implementation/g1/g1StringDedupQueue.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/gc_implementation/g1/g1StringDedupStat.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/gc_implementation/g1/g1StringDedupTable.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/gc_implementation/g1/g1StringDedupThread.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/gc_implementation/g1/g1_globals.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/gc_implementation/shared/gSpaceCounters.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/gc_implementation/shared/gcAdaptivePolicyCounters.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/gc_interface/gcCause.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/gc_implementation/shared/gcId.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/memory/gcLocker.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/services/gcNotifier.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/gc_implementation/shared/gcPolicyCounters.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/gc_implementation/shared/gcStats.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/gc_implementation/parallelScavenge/gcTaskManager.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/gc_implementation/parallelScavenge/gcTaskThread.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/gc_implementation/shared/gcTimer.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/gc_implementation/shared/gcTrace.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/gc_implementation/shared/gcTraceSend.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/gc_implementation/shared/gcTraceTime.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/gc_implementation/shared/gcUtil.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/opto/gcm.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/memory/genCollectedHeap.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/memory/genMarkSweep.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/memory/genRemSet.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/oops/generateOopMap.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/opto/generateOptoStub.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/memory/generation.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/gc_implementation/shared/generationCounters.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/gc_implementation/parallelScavenge/generationSizer.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/memory/generationSpec.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/utilities/globalDefinitions.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/runtime/globals.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/opto/graphKit.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/utilities/growableArray.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/memory/guardedMemory.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/gc_implementation/shared/hSpaceCounters.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/runtime/handles.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/utilities/hashtable.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/memory/heap.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/services/heapDumper.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/memory/heapInspection.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/gc_implementation/g1/heapRegion.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/gc_implementation/g1/heapRegionManager.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/gc_implementation/g1/heapRegionRemSet.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/gc_implementation/g1/heapRegionSet.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/gc_implementation/g1/heapRegionType.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/utilities/histogram.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/code/icBuffer.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/cpu/x86/vm/icBuffer_x86.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/runtime/icache.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/cpu/x86/vm/icache_x86.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/opto/idealGraphPrinter.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/opto/idealKit.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/opto/ifg.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/opto/ifnode.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/gc_implementation/shared/immutableSpace.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/opto/indexSet.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/runtime/init.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/oops/instanceClassLoaderKlass.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/oops/instanceKlass.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/oops/instanceMirrorKlass.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/oops/instanceOop.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/oops/instanceRefKlass.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/utilities/intHisto.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/runtime/interfaceSupport.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/cpu/x86/vm/interp_masm_x86.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/cpu/x86/vm/interp_masm_x86_64.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/interpreter/interpreter.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/cpu/x86/vm/interpreterRT_x86_64.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/interpreter/interpreterRuntime.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/cpu/x86/vm/interpreter_x86_64.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/interpreter/invocationCounter.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/memory/iterator.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/runtime/java.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/classfile/javaAssertions.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/runtime/javaCalls.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/classfile/javaClasses.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/prims/jni.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/prims/jniCheck.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/prims/jniFastGetField.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/cpu/x86/vm/jniFastGetField_x86_64.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/runtime/jniHandles.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/runtime/jniPeriodicChecker.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/prims/jvm.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/os/bsd/vm/jvm_bsd.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/jvmci/jvmciCodeInstaller.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/cpu/x86/vm/jvmciCodeInstaller_x86.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/jvmci/jvmciCompiler.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/jvmci/jvmciCompilerToVM.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/jvmci/jvmciEnv.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/jvmci/jvmciJavaClasses.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/jvmci/jvmciRuntime.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/jvmci/jvmci_globals.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/prims/jvmtiClassFileReconstituter.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/prims/jvmtiCodeBlobEvents.cpp
-Compiling ../generated/jvmtifiles/jvmtiEnter.cpp
-Compiling ../generated/jvmtifiles/jvmtiEnterTrace.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/prims/jvmtiEnv.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/prims/jvmtiEnvBase.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/prims/jvmtiEnvThreadState.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/prims/jvmtiEventController.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/prims/jvmtiExport.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/prims/jvmtiExtensions.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/prims/jvmtiGetLoadedClasses.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/prims/jvmtiImpl.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/prims/jvmtiManageCapabilities.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/prims/jvmtiRawMonitor.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/prims/jvmtiRedefineClasses.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/prims/jvmtiTagMap.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/prims/jvmtiThreadState.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/prims/jvmtiTrace.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/prims/jvmtiUtil.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/oops/klass.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/oops/klassVtable.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/opto/lcm.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/opto/library_call.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/interpreter/linkResolver.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/utilities/linkedlist.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/opto/live.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/classfile/loaderConstraints.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/code/location.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/opto/locknode.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/opto/loopPredicate.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/opto/loopTransform.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/opto/loopUnswitch.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/opto/loopnode.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/opto/loopopts.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/services/lowMemoryDetector.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/opto/machnode.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/opto/macro.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/cpu/x86/vm/macroAssembler_x86.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/services/mallocSiteTable.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/services/mallocTracker.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/services/management.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/oops/markOop.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/gc_implementation/shared/markSweep.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/opto/matcher.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/opto/mathexactnode.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/services/memBaseline.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/memory/memRegion.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/services/memReporter.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/services/memTracker.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/opto/memnode.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/services/memoryManager.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/services/memoryPool.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/services/memoryService.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/runtime/memprofiler.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/memory/metachunk.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/oops/metadata.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/classfile/metadataOnStackMark.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/memory/metaspace.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/memory/metaspaceCounters.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/memory/metaspaceShared.cpp
-In file included from <built-in>:361:
-
-In file included from /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/precompiled/precompiled.hpp:33:
-
-In file included from /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/ci/ciArray.hpp:29:
-
-In file included from /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/ci/ciConstant.hpp:29:
-
-In file included from /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/ci/ciNullObject.hpp:30:
-
-In file included from /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/ci/ciUtilities.hpp:28:
-
-In file included from /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/ci/ciEnv.hpp:30:
-
-In file included from /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/classfile/systemDictionary.hpp:29:
-
-In file included from /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/classfile/classLoader.hpp:28:
-
-In file included from /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/classfile/classFileParser.hpp:30:
-
-In file included from /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/oops/oop.inline.hpp:30:
-
-In file included from /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/gc_interface/collectedHeap.inline.hpp:36:
-
-In file included from /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/services/lowMemoryDetector.hpp:29:
-
-In file included from /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/services/memoryPool.hpp:35:
-
-In file included from /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/gc_implementation/concurrentMarkSweep/compactibleFreeListSpace.hpp:30:
-
-/path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/memory/binaryTreeDictionary.hpp:167:12: warning: instantiation of variable 'TreeChunk<Metachunk, FreeList<Metachunk> >::_min_tree_chunk_size' required here, but no definition is available [-Wundefined-var-template]
-
-    return _min_tree_chunk_size;
-
-           ^
-
-/path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/memory/binaryTreeDictionary.hpp:293:44: note: in instantiation of member function 'TreeChunk<Metachunk, FreeList<Metachunk> >::min_size' requested here
-
-    return TreeChunk<Chunk_t, FreeList_t>::min_size();
-
-                                           ^
-
-/path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/memory/binaryTreeDictionary.hpp:242:3: note: in instantiation of member function 'BinaryTreeDictionary<Metachunk, FreeList<Metachunk> >::min_size' requested here
-
-  BinaryTreeDictionary() :
-
-  ^
-
-/path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/memory/metaspace.cpp:145:3: note: in instantiation of member function 'BinaryTreeDictionary<Metachunk, FreeList<Metachunk> >::BinaryTreeDictionary' requested here
-
-  ChunkManager(size_t specialized_size, size_t small_size, size_t medium_size)
-
-  ^
-
-/path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/memory/binaryTreeDictionary.hpp:148:17: note: forward declaration of template entity is here
-
-  static size_t _min_tree_chunk_size;
-
-                ^
-
-/path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/memory/binaryTreeDictionary.hpp:167:12: warning: instantiation of variable 'TreeChunk<Metablock, FreeList<Metablock> >::_min_tree_chunk_size' required here, but no definition is available [-Wundefined-var-template]
-
-    return _min_tree_chunk_size;
-
-           ^
-
-/path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/memory/metaspace.cpp:843:63: note: in instantiation of member function 'TreeChunk<Metablock, FreeList<Metablock> >::min_size' requested here
-
-  if (word_size < TreeChunk<Metablock, FreeList<Metablock> >::min_size()) {
-
-                                                              ^
-
-/path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/memory/binaryTreeDictionary.hpp:148:17: note: forward declaration of template entity is here
-
-  static size_t _min_tree_chunk_size;
-
-                ^
-
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/cpu/x86/vm/metaspaceShared_x86_64.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/memory/metaspaceTracer.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/oops/method.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/prims/methodComparator.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/oops/methodCounters.cpp
-2 warnings generated.
-
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/oops/methodData.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/prims/methodHandles.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/cpu/x86/vm/methodHandles_x86.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/compiler/methodLiveness.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/runtime/monitorChunk.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/opto/mulnode.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/opto/multnode.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/gc_implementation/shared/mutableNUMASpace.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/gc_implementation/shared/mutableSpace.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/runtime/mutex.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/runtime/mutexLocker.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/os/bsd/vm/mutex_bsd.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/utilities/nativeCallStack.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/cpu/x86/vm/nativeInst_x86.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/prims/nativeLookup.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/code/nmethod.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/services/nmtCommon.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/services/nmtDCmd.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/opto/node.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/utilities/numberSeq.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/oops/objArrayKlass.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/oops/objArrayOop.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/gc_implementation/shared/objectCountEventSender.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/runtime/objectMonitor.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/gc_implementation/parallelScavenge/objectStartArray.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/oops/oop.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/memory/oopFactory.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/compiler/oopMap.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/interpreter/oopMapCache.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/code/oopRecorder.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/oops/oopsHierarchy.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/opto/opcodes.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/runtime/orderAccess.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/runtime/os.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/runtime/osThread.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/os/bsd/vm/osThread_bsd.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/os/bsd/vm/os_bsd.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/os_cpu/bsd_x86/vm/os_bsd_x86.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/os/posix/vm/os_posix.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/utilities/ostream.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/opto/output.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/gc_implementation/parNew/parCardTableModRefBS.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/gc_implementation/shared/parGCAllocBuffer.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/gc_implementation/parallelScavenge/parMarkBitMap.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/gc_implementation/parNew/parNewGeneration.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/gc_implementation/parallelScavenge/parallelScavengeHeap.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/runtime/park.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/opto/parse1.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/opto/parse2.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/opto/parse3.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/opto/parseHelper.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/prims/wbtestmethods/parserTests.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/code/pcDesc.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/gc_implementation/parallelScavenge/pcTasks.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/prims/perf.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/runtime/perfData.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/runtime/perfMemory.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/os/bsd/vm/perfMemory_bsd.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/opto/phase.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/opto/phaseX.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/classfile/placeholders.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/libadt/port.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/opto/postaloc.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/utilities/preserveException.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/prims/privilegedStack.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/gc_implementation/concurrentMarkSweep/promotionInfo.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/gc_implementation/parallelScavenge/psAdaptiveSizePolicy.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/gc_implementation/parallelScavenge/psCompactionManager.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/gc_implementation/parallelScavenge/psGCAdaptivePolicyCounters.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/gc_implementation/parallelScavenge/psGenerationCounters.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/gc_implementation/parallelScavenge/psMarkSweep.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/gc_implementation/parallelScavenge/psMarkSweepDecorator.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/services/psMemoryPool.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/gc_implementation/parallelScavenge/psOldGen.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/gc_implementation/parallelScavenge/psParallelCompact.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/gc_implementation/parallelScavenge/psPromotionLAB.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/gc_implementation/parallelScavenge/psPromotionManager.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/gc_implementation/parallelScavenge/psScavenge.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/gc_implementation/parallelScavenge/psTasks.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/gc_implementation/parallelScavenge/psVirtualspace.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/gc_implementation/parallelScavenge/psYoungGen.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/gc_implementation/g1/ptrQueue.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/utilities/quickSort.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/memory/referencePolicy.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/memory/referenceProcessor.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/runtime/reflection.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/runtime/reflectionUtils.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/opto/reg_split.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/opto/regalloc.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/asm/register.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/cpu/x86/vm/registerMap_x86.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/cpu/x86/vm/register_definitions_x86.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/cpu/x86/vm/register_x86.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/opto/regmask.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/code/relocInfo.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/cpu/x86/vm/relocInfo_x86.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/runtime/relocator.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/opto/replacednodes.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/classfile/resolutionErrors.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/memory/resourceArea.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/interpreter/rewriter.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/runtime/rframe.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/opto/rootnode.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/cpu/x86/vm/rtmLocking.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/opto/runtime.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/services/runtimeService.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/cpu/x86/vm/runtime_x86_64.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/runtime/safepoint.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/gc_implementation/g1/satbQueue.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/code/scopeDesc.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/runtime/serviceThread.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/libadt/set.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/memory/sharedHeap.cpp
-/path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/libadt/set.cpp:69:8: warning: 'this' pointer cannot be null in well-defined C++ code; pointer may be assumed to always convert to true [-Wundefined-bool-conversion]
-
-  if( !this ) return os::strdup("{no set}");
-
-      ~^~~~
-
-1 warning generated.
-
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/classfile/sharedPathsMiscInfo.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/runtime/sharedRuntime.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/runtime/sharedRuntimeTrans.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/runtime/sharedRuntimeTrig.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/cpu/x86/vm/sharedRuntime_x86.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/cpu/x86/vm/sharedRuntime_x86_64.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/runtime/signature.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/runtime/simpleThresholdPolicy.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/utilities/sizes.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/memory/space.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/gc_implementation/shared/spaceCounters.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/gc_implementation/shared/spaceDecorator.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/gc_implementation/g1/sparsePRT.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/memory/specialized_oop_closures.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/opto/split_if.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/classfile/stackMapFrame.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/classfile/stackMapTable.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/runtime/stackValue.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/runtime/stackValueCollection.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/runtime/statSampler.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/utilities/stringUtils.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/opto/stringopts.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/runtime/stubCodeGenerator.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/cpu/x86/vm/stubGenerator_x86_64.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/runtime/stubRoutines.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/os/bsd/vm/stubRoutines_bsd.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/cpu/x86/vm/stubRoutines_x86.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/cpu/x86/vm/stubRoutines_x86_64.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/code/stubs.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/opto/subnode.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/opto/superword.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/gc_implementation/g1/survRateGroup.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/gc_implementation/shared/suspendibleThreadSet.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/runtime/sweeper.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/oops/symbol.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/classfile/symbolTable.cpp
-In file included from <built-in>:361:
-
-In file included from /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/precompiled/precompiled.hpp:33:
-
-In file included from /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/ci/ciArray.hpp:29:
-
-In file included from /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/ci/ciConstant.hpp:29:
-
-In file included from /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/ci/ciNullObject.hpp:30:
-
-In file included from /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/ci/ciUtilities.hpp:28:
-
-In file included from /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/ci/ciEnv.hpp:30:
-
-In file included from /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/classfile/systemDictionary.hpp:29:
-
-In file included from /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/classfile/classLoader.hpp:28:
-
-In file included from /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/classfile/classFileParser.hpp:30:
-
-In file included from /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/oops/oop.inline.hpp:30:
-
-In file included from /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/gc_interface/collectedHeap.inline.hpp:34:
-
-In file included from /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/runtime/sharedRuntime.hpp:34:
-
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/runtime/synchronizer.cpp
-/path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/utilities/hashtable.hpp:317:50: warning: instantiation of variable 'RehashableHashtable<Symbol *, MemoryType::mtSymbol>::_seed' required here, but no definition is available [-Wundefined-var-template]
-
-  static bool use_alternate_hashcode()  { return _seed != 0; }
-
-                                                 ^
-
-/path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/classfile/symbolTable.cpp:108:34: note: in instantiation of member function 'RehashableHashtable<Symbol *, MemoryType::mtSymbol>::use_alternate_hashcode' requested here
-
-      if (entry->is_shared() && !use_alternate_hashcode()) {
-
-                                 ^
-
-/path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/utilities/hashtable.hpp:333:16: note: forward declaration of template entity is here
-
-  static juint _seed;
-
-               ^
-
-/path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/utilities/hashtable.hpp:317:50: warning: instantiation of variable 'RehashableHashtable<oopDesc *, MemoryType::mtSymbol>::_seed' required here, but no definition is available [-Wundefined-var-template]
-
-  static bool use_alternate_hashcode()  { return _seed != 0; }
-
-                                                 ^
-
-/path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/classfile/symbolTable.cpp:653:10: note: in instantiation of member function 'RehashableHashtable<oopDesc *, MemoryType::mtSymbol>::use_alternate_hashcode' requested here
-
-  return use_alternate_hashcode() ? AltHashing::murmur3_32(seed(), s, len) :
-
-         ^
-
-/path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/utilities/hashtable.hpp:333:16: note: forward declaration of template entity is here
-
-  static juint _seed;
-
-               ^
-
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/classfile/systemDictionary.cpp
-2 warnings generated.
-
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/runtime/task.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/utilities/taskqueue.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/interpreter/templateInterpreter.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/cpu/x86/vm/templateInterpreter_x86.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/cpu/x86/vm/templateInterpreter_x86_64.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/interpreter/templateTable.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/cpu/x86/vm/templateTable_x86_64.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/memory/tenuredGeneration.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/runtime/thread.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/os/bsd/vm/threadCritical_bsd.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/os_cpu/bsd_x86/vm/threadLS_bsd_x86.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/memory/threadLocalAllocBuffer.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/runtime/threadLocalStorage.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/services/threadService.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/os_cpu/bsd_x86/vm/thread_bsd_x86.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/runtime/thread_ext.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/utilities/ticks.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/runtime/timer.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/opto/type.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/oops/typeArrayKlass.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/oops/typeArrayOop.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/runtime/unhandledOops.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/memory/universe.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/prims/unsafe.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/utilities/utf8.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/opto/vectornode.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/libadt/vectset.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/classfile/verificationType.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/classfile/verifier.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/runtime/vframe.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/runtime/vframeArray.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/runtime/vframe_hp.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/services/virtualMemoryTracker.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/runtime/virtualspace.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/gc_implementation/concurrentMarkSweep/vmCMSOperations.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/utilities/vmError.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/os/bsd/vm/vmError_bsd.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/gc_implementation/shared/vmGCOperations.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/gc_implementation/parallelScavenge/vmPSOperations.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/runtime/vmStructs.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/classfile/vmSymbols.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/runtime/vmThread.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/runtime/vm_operations.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/gc_implementation/g1/vm_operations_g1.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/os_cpu/bsd_x86/vm/vm_version_bsd_x86.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/cpu/x86/vm/vm_version_x86.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/code/vmreg.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/cpu/x86/vm/vmreg_x86.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/code/vtableStubs.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/cpu/x86/vm/vtableStubs_x86_64.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/prims/whitebox.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/prims/whitebox_ext.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/utilities/workgroup.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/utilities/xmlstream.cpp
-Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/utilities/yieldingWorkgroup.cpp
-rm -f mapfile_ext
-touch mapfile_ext
-if [ -f /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/make/closed/bsd/makefiles/mapfile-ext ]; then \
-	  cat /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/make/closed/bsd/makefiles/mapfile-ext > mapfile_ext; \
-	fi
-Making signal interposition lib...
-Making SA debugger back-end...
-dsymutil libjsig.dylib
-warning: (x86_64) /var/folders/lv/qn495mln6h79dkh4b6j3rclm0000gn/T/jsig-f42ab1.o unable to open object file: No such file or directory
-
-warning: no debug symbols in executable (-arch x86_64)
-
-/path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/agent/src/os/bsd/MacosxDebuggerLocal.m:691:21: warning: 'ePtAttachDeprecated' is deprecated: PT_ATTACH is deprecated. See PT_ATTACHEXC [-Wdeprecated-declarations]
-
-  if ((res = ptrace(PT_ATTACH, pid, 0, 0)) < 0) {
-
-                    ^
-
-/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/usr/include/sys/ptrace.h:85:19: note: expanded from macro 'PT_ATTACH'
-
-#define PT_ATTACH       ePtAttachDeprecated     /* trace some running process */
-
-                        ^
-
-/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/usr/include/sys/ptrace.h:71:2: note: 'ePtAttachDeprecated' has been explicitly marked deprecated here
-
-        ePtAttachDeprecated __deprecated_enum_msg("PT_ATTACH is deprecated. See PT_ATTACHEXC") = 10
-
-        ^
-
-1 warning generated.
-
-dsymutil libsaproc.dylib
-warning: (x86_64) /var/folders/lv/qn495mln6h79dkh4b6j3rclm0000gn/T/symtab-b61dea.o unable to open object file: No such file or directory
-
-warning: (x86_64) /var/folders/lv/qn495mln6h79dkh4b6j3rclm0000gn/T/libproc_impl-e15a01.o unable to open object file: No such file or directory
-
-warning: (x86_64) /var/folders/lv/qn495mln6h79dkh4b6j3rclm0000gn/T/ps_core-6afeff.o unable to open object file: No such file or directory
-
-warning: (x86_64) /var/folders/lv/qn495mln6h79dkh4b6j3rclm0000gn/T/MacosxDebuggerLocal-bbf54f.o unable to open object file: No such file or directory
-
-warning: (x86_64) /var/folders/lv/qn495mln6h79dkh4b6j3rclm0000gn/T/sadis-e89ac7.o unable to open object file: No such file or directory
-
-warning: no debug symbols in executable (-arch x86_64)
-
+make[4]: `precompiled.hpp.pch' is up to date.
 Compiling /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/src/share/vm/runtime/vm_version.cpp
 sh /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/make/bsd/makefiles/build_vm_def.sh *.o > vm.def
 rm -f mapfile
@@ -1320,296 +214,208 @@ awk '{ if ($0 ~ "INSERT VTABLE SYMBOLS HERE")	\
 rm -f mapfile_reorder
 cat mapfile > mapfile_reorder
 Linking vm...
-clang: warning: libstdc++ is deprecated; move to libc++ with a minimum deployment target of OS X 10.9 [-Wdeprecated]
-
-ld: warning: object file (bsd_x86_64.o) was built for newer OSX version (10.12) than being linked (10.7)
+ld: warning: object file (bsd_x86_64.o) was built for newer OSX version (10.13) than being linked (10.7)
 
 dsymutil libjvm.dylib
 echo "Doing vm.make build:"
 Doing vm.make build:
 All done.
 cd /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/build/bsd; \
-	    /Applications/Xcode.app/Contents/Developer/usr/bin/make -f /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/make/bsd/Makefile \
-		       LP64=1 MACOSX_UNIVERSAL=true BOOTDIR=/Library/Java/JavaVirtualMachines/jdk1.8.0_172.jdk/Contents/Home OUTPUTDIR=/path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/build/bsd GAMMADIR=/path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8 MAKE_VERBOSE= HOTSPOT_RELEASE_VERSION=25.71-b01 JRE_RELEASE_VERSION="1.8.0" HOTSPOT_BUILD_VERSION=internal-jvmci-unknown-manis-MacBook.local-2018-06-11_16-14-53_BST BUILD_FLAVOR=product docs
+	    /Library/Developer/CommandLineTools/usr/bin/make -f /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/make/bsd/Makefile \
+		       LP64=1 MACOSX_UNIVERSAL=true BOOTDIR=/Library/Java/JavaVirtualMachines/jdk1.8.0_211.jdk/Contents/Home OUTPUTDIR=/path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/build/bsd GAMMADIR=/path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8 MAKE_VERBOSE= HOTSPOT_RELEASE_VERSION=25.211-b12 JRE_RELEASE_VERSION="1.8.0" HOTSPOT_BUILD_VERSION=jvmci-0.60-dev BUILD_FLAVOR=product docs
 INFO: ENABLE_FULL_DEBUG_SYMBOLS=1
 
-/Applications/Xcode.app/Contents/Developer/usr/bin/make -f /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/make/bsd/makefiles/jvmti.make  " LP64=1 " GAMMADIR=/path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8 OS_FAMILY=bsd SRCARCH=x86 BUILDARCH=amd64 LIBARCH=amd64 LIBRARY_SUFFIX=dylib HOTSPOT_RELEASE_VERSION=25.71-b01 HOTSPOT_BUILD_VERSION=internal-jvmci-unknown-manis-MacBook.local-2018-06-11_16-14-53_BST JRE_RELEASE_VERSION=1.8.0 ENABLE_FULL_DEBUG_SYMBOLS=1 OBJCOPY= STRIP_POLICY= ZIP_DEBUGINFO_FILES=0 ZIPEXE=zip JvmtiOutDir=bsd_amd64_docs BUILD_FLAVOR=product jvmtidocs
-warning: [options] bootstrap class path not set in conjunction with -source 1.6
-
-1 warning
-
-Generating bsd_amd64_docs/jvmti.html
+/Library/Developer/CommandLineTools/usr/bin/make -f /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/make/bsd/makefiles/jvmti.make  " LP64=1 " GAMMADIR=/path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8 OS_FAMILY=bsd SRCARCH=x86 BUILDARCH=amd64 LIBARCH=amd64 LIBRARY_SUFFIX=dylib HOTSPOT_RELEASE_VERSION=25.211-b12 HOTSPOT_BUILD_VERSION=jvmci-0.60-dev JRE_RELEASE_VERSION=1.8.0 ENABLE_FULL_DEBUG_SYMBOLS=1 OBJCOPY= STRIP_POLICY= ZIP_DEBUGINFO_FILES=0 ZIPEXE=zip JvmtiOutDir=bsd_amd64_docs BUILD_FLAVOR=product jvmtidocs
+make[2]: Nothing to be done for `jvmtidocs'.
 Archiving JVM_PRODUCT_SERVER... [dependency hotspot updated]
 
+real	0m35.408s
+user	0m28.285s
+sys	0m5.644s
 >>>> Running unit tests...
-Warning: 1049 classes in /path/to/awesome-graal/build/x86_64/linux_macos/mx/mxbuild/dists/mx-micro-benchmarks.jar skipped as their class file version is not supported by FindClassesByAnnotatedMethods
-Warning: 401 classes in /path/to/awesome-graal/build/x86_64/linux_macos/mx/mxbuild/dists/mx-jacoco-report.jar skipped as their class file version is not supported by FindClassesByAnnotatedMethods
-WARNING: Unsupported class files listed in /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/mxbuild/unittest/mx-micro-benchmarks.jar.jdk1.8.excludedclasses
-WARNING: Unsupported class files listed in /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/mxbuild/unittest/mx-jacoco-report.jar.jdk1.8.excludedclasses
 MxJUnitCore
 JUnit version 4.12
-............................................................................................
-Time: 4.738
+....................non-empty output
+on-empty output
+n-empty output
+-empty output
+empty output
+mpty output
+pty output
+ty output
+y output
+ output
+output
+utput
+tput
+put
+ut
+t
 
-OK (92 tests)
+non-empty output
+on-empty output
+n-empty output
+-empty output
+empty output
+mpty output
+pty output
+ty output
+y output
+ output
+output
+utput
+tput
+put
+ut
+t
 
->>> Using /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/jdk1.8.0_172/darwin-amd64/product/Contents/Home
+..................................................................................
+Time: 20.038
+
+OK (102 tests)
+
+
+real	0m21.949s
+user	0m37.726s
+sys	0m1.152s
+>>>> Using JDK8_JVMCI_HOME as JAVA_HOME (/path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/jdk1.8.0_211/darwin-amd64/product/Contents/Home)
 >>> Building Graal
-Cloning into 'graal'...
-Setting environment variable JVMCI_VERSION_CHECK=ignore
-JAVA_HOME: /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/jdk1.8.0_172/darwin-amd64/product/Contents/Home
+>>> graal already exists: updating and using this version
+>>>> Setting environment variable JVMCI_VERSION_CHECK=ignore
+Setting HOTSPOT_BUILD_JOBS=2
+JAVA_HOME: /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/jdk1.8.0_211/darwin-amd64/product/Contents/Home
 EXTRA_JAVA_HOMES: 
-project org.graalvm.compiler.hotspot.jdk11 was removed as JDK 11 is not available
-project org.graalvm.compiler.serviceprovider.jdk9 was removed as JDK 9 is not available
-project org.graalvm.compiler.lir.aarch64.jdk11 was removed as JDK 11 is not available
-project com.oracle.truffle.dsl.processor.jdk9 was removed as JDK 9 is not available
-project org.graalvm.compiler.replacements.jdk9.test was removed as JDK 9 is not available
-project org.graalvm.compiler.hotspot.management.jdk11 was removed as JDK 11 is not available
-project org.graalvm.compiler.hotspot.jdk9 was removed as JDK 9 is not available
-Compiling org.graalvm.options with javac-daemon(JDK 1.8)... [/path/to/awesome-graal/build/x86_64/linux_macos/graal/sdk/mxbuild/src/org.graalvm.options/bin/org/graalvm/options/OptionValues.class does not exist]
-Compiling org.graalvm.collections with javac-daemon(JDK 1.8)... [/path/to/awesome-graal/build/x86_64/linux_macos/graal/sdk/mxbuild/src/org.graalvm.collections/bin/org/graalvm/collections/UnmodifiableEconomicMap.class does not exist]
-Compiling org.graalvm.compiler.api.directives with javac-daemon(JDK 1.8)... [/path/to/awesome-graal/build/x86_64/linux_macos/graal/compiler/mxbuild/src/org.graalvm.compiler.api.directives/bin/org/graalvm/compiler/api/directives/GraalDirectives.class does not exist]
-Compiling org.graalvm.word with javac-daemon(JDK 1.8)... [/path/to/awesome-graal/build/x86_64/linux_macos/graal/sdk/mxbuild/src/org.graalvm.word/bin/org/graalvm/word/Pointer.class does not exist]
-Compiling org.graalvm.compiler.processor with javac-daemon(JDK 1.8)... [/path/to/awesome-graal/build/x86_64/linux_macos/graal/compiler/mxbuild/src/org.graalvm.compiler.processor/bin/org/graalvm/compiler/processor/AbstractProcessor.class does not exist]
-Compiling org.graalvm.graphio with javac-daemon(JDK 1.8)... [/path/to/awesome-graal/build/x86_64/linux_macos/graal/compiler/mxbuild/src/org.graalvm.graphio/bin/org/graalvm/graphio/GraphProtocol.class does not exist]
-Compiling org.graalvm.compiler.nodeinfo with javac-daemon(JDK 1.8)... [/path/to/awesome-graal/build/x86_64/linux_macos/graal/compiler/mxbuild/src/org.graalvm.compiler.nodeinfo/bin/org/graalvm/compiler/nodeinfo/NodeCycles.class does not exist]
-Compiling com.oracle.truffle.nfi.types with javac-daemon(JDK 1.8)... [/path/to/awesome-graal/build/x86_64/linux_macos/graal/truffle/mxbuild/src/com.oracle.truffle.nfi.types/bin/com/oracle/truffle/nfi/types/Parser.class does not exist]
-Archiving CHROMEINSPECTOR_GRAALVM_SUPPORT... [/path/to/awesome-graal/build/x86_64/linux_macos/graal/tools/mxbuild/dists/chromeinspector-graalvm-support.tar does not exist]
-Archiving TRUFFLE_PROFILER_GRAALVM_SUPPORT... [/path/to/awesome-graal/build/x86_64/linux_macos/graal/tools/mxbuild/dists/truffle-profiler-graalvm-support.tar does not exist]
-Compiling org.graalvm.compiler.serviceprovider with javac-daemon(JDK 1.8)... [/path/to/awesome-graal/build/x86_64/linux_macos/graal/compiler/mxbuild/src/org.graalvm.compiler.serviceprovider/bin/org/graalvm/compiler/serviceprovider/GraalServices.class does not exist]
-Compiling org.graalvm.polyglot with javac-daemon(JDK 1.8)... [dependency org.graalvm.options updated]
-Archiving WORD_API... [dependency org.graalvm.word updated]
-Compiling org.graalvm.nativeimage with javac-daemon(JDK 1.8)... [dependency org.graalvm.word updated]
-Archiving GRAAL_PROCESSOR_COMMON... [dependency org.graalvm.compiler.processor updated]
-Compiling org.graalvm.compiler.nodeinfo.processor with javac-daemon(JDK 1.8)... [dependency org.graalvm.compiler.processor updated]
-Compiling org.graalvm.compiler.serviceprovider.processor with javac-daemon(JDK 1.8)... [dependency org.graalvm.compiler.processor updated]
-Compiling org.graalvm.compiler.options.processor with javac-daemon(JDK 1.8)... [dependency org.graalvm.compiler.processor updated]
-Compiling org.graalvm.compiler.core.match.processor with javac-daemon(JDK 1.8)... [dependency org.graalvm.compiler.processor updated]
-Compiling org.graalvm.compiler.replacements.processor with javac-daemon(JDK 1.8)... [dependency org.graalvm.compiler.processor updated]
-Archiving GRAAL_NODEINFO... [dependency org.graalvm.compiler.nodeinfo updated]
-Compiling org.graalvm.compiler.bytecode with javac-daemon(JDK 1.8)... [/path/to/awesome-graal/build/x86_64/linux_macos/graal/compiler/mxbuild/src/org.graalvm.compiler.bytecode/bin/org/graalvm/compiler/bytecode/Bytecodes.class does not exist]
-Compiling org.graalvm.compiler.api.runtime with javac-daemon(JDK 1.8)... [/path/to/awesome-graal/build/x86_64/linux_macos/graal/compiler/mxbuild/src/org.graalvm.compiler.api.runtime/bin/org/graalvm/compiler/api/runtime/GraalJVMCICompiler.class does not exist]
-Compiling org.graalvm.compiler.api.replacements with javac-daemon(JDK 1.8)... [/path/to/awesome-graal/build/x86_64/linux_macos/graal/compiler/mxbuild/src/org.graalvm.compiler.api.replacements/bin/org/graalvm/compiler/api/replacements/ClassSubstitution.class does not exist]
-Compiling org.graalvm.collections.test with javac-daemon(JDK 1.8)... [dependency org.graalvm.collections updated]
-Archiving GRAAL_SERVICEPROVIDER... [dependency org.graalvm.compiler.serviceprovider updated]
-Archiving GRAAL_NODEINFO_PROCESSOR... [dependency org.graalvm.compiler.nodeinfo.processor updated]
-Archiving GRAAL_GRAPHIO... [dependency org.graalvm.graphio updated]
-Archiving GRAAL_SDK... [dependency org.graalvm.polyglot updated]
-Compiling org.graalvm.launcher with javac-daemon(JDK 1.8)... [dependency org.graalvm.polyglot updated]
-Archiving GRAAL_SERVICEPROVIDER_PROCESSOR... [dependency org.graalvm.compiler.serviceprovider.processor updated]
-Compiling org.graalvm.polyglot.tck with javac-daemon(JDK 1.8)... [dependency org.graalvm.polyglot updated]
-Archiving GRAAL_COMPILER_MATCH_PROCESSOR... [dependency org.graalvm.compiler.core.match.processor updated]
-Compiling org.graalvm.micro.benchmarks with javac-daemon(JDK 1.8)... [/path/to/awesome-graal/build/x86_64/linux_macos/graal/compiler/mxbuild/src/org.graalvm.micro.benchmarks/bin/micro/benchmarks/ArrayListBenchmark.class does not exist]
-Archiving GRAAL_OPTIONS_PROCESSOR... [dependency org.graalvm.compiler.options.processor updated]
-Archiving GRAAL_REPLACEMENTS_PROCESSOR... [dependency org.graalvm.compiler.replacements.processor updated]
-Compiling org.graalvm.compiler.api.test with javac-daemon(JDK 1.8)... [dependency org.graalvm.compiler.api.runtime updated]
-Compiling com.oracle.truffle.api with javac-daemon(JDK 1.8)... [dependency GRAAL_SDK updated]
-Compiling com.oracle.truffle.sl.launcher with javac-daemon(JDK 1.8)... [dependency GRAAL_SDK updated]
-Compiling org.graalvm.util with javac-daemon(JDK 1.8)... [dependency GRAAL_SDK updated]
-Archiving POLYGLOT_TCK... [dependency org.graalvm.polyglot.tck updated]
-Archiving SDK_TEST... [dependency org.graalvm.collections.test updated]
-Archiving LAUNCHER_COMMON... [dependency org.graalvm.launcher updated]
-Archiving TRUFFLE_SL_LAUNCHER... [dependency com.oracle.truffle.sl.launcher updated]
-Compiling com.oracle.truffle.tck.common with javac-daemon(JDK 1.8)... [dependency POLYGLOT_TCK updated]
-Compiling org.graalvm.compiler.options with javac-daemon(JDK 1.8)... [dependency GRAAL_SDK updated]
-Compiling com.oracle.truffle.sl.tck with javac-daemon(JDK 1.8)... [dependency POLYGLOT_TCK updated]
-Compiling com.oracle.truffle.tck.tests with javac-daemon(JDK 1.8)... [dependency POLYGLOT_TCK updated]
-Archiving TRUFFLE_TCK_COMMON... [dependency com.oracle.truffle.tck.common updated]
-Compiling org.graalvm.compiler.debug with javac-daemon(JDK 1.8)... [dependency GRAAL_OPTIONS_PROCESSOR updated]
-Compiling org.graalvm.compiler.options.test with javac-daemon(JDK 1.8)... [dependency org.graalvm.compiler.options updated]
-Archiving GRAAL_OPTIONS... [dependency org.graalvm.compiler.options updated]
-Compiling com.oracle.truffle.api.dsl with javac-daemon(JDK 1.8)... [dependency com.oracle.truffle.api updated]
-Archiving TRUFFLE_SL_TCK... [dependency com.oracle.truffle.sl.tck updated]
-Compiling com.oracle.truffle.api.profiles with javac-daemon(JDK 1.8)... [dependency com.oracle.truffle.api updated]
-Archiving TRUFFLE_TCK_TESTS... [dependency com.oracle.truffle.tck.tests updated]
-Compiling com.oracle.truffle.api.utilities with javac-daemon(JDK 1.8)... [dependency com.oracle.truffle.api updated]
-Compiling com.oracle.truffle.api.instrumentation with javac-daemon(JDK 1.8)... [dependency com.oracle.truffle.api.profiles updated]
-Archiving GRAAL_COMPILER_MICRO_BENCHMARKS... [dependency org.graalvm.micro.benchmarks updated]
-Compiling org.graalvm.compiler.core.common with javac-daemon(JDK 1.8)... [dependency GRAAL_OPTIONS_PROCESSOR updated]
-Compiling org.graalvm.compiler.debug.test with javac-daemon(JDK 1.8)... [dependency org.graalvm.compiler.debug updated]
-Compiling org.graalvm.compiler.test with javac-daemon(JDK 1.8)... [dependency org.graalvm.compiler.debug updated]
-Compiling com.oracle.truffle.dsl.processor with javac-daemon(JDK 1.8)... [dependency com.oracle.truffle.api.dsl updated]
-Compiling org.graalvm.compiler.graph with javac-daemon(JDK 1.8)... [dependency GRAAL_OPTIONS_PROCESSOR updated]
-Compiling org.graalvm.compiler.asm with javac-daemon(JDK 1.8)... [dependency org.graalvm.compiler.core.common updated]
-Compiling org.graalvm.compiler.asm.amd64 with javac-daemon(JDK 1.8)... [dependency org.graalvm.compiler.asm updated]
-Compiling org.graalvm.compiler.asm.sparc with javac-daemon(JDK 1.8)... [dependency org.graalvm.compiler.asm updated]
-Compiling org.graalvm.compiler.asm.aarch64 with javac-daemon(JDK 1.8)... [dependency org.graalvm.compiler.asm updated]
-Compiling org.graalvm.compiler.code with javac-daemon(JDK 1.8)... [dependency GRAAL_SERVICEPROVIDER_PROCESSOR updated]
-Archiving GRAAL_API... [dependency org.graalvm.compiler.api.replacements updated]
-Archiving TRUFFLE_DSL_PROCESSOR_INTERNAL... [dependency com.oracle.truffle.dsl.processor updated]
-Compiling org.graalvm.compiler.graph.test with javac-daemon(JDK 1.8)... [dependency GRAAL_NODEINFO_PROCESSOR updated]
-Compiling org.graalvm.compiler.lir with javac-daemon(JDK 1.8)... [dependency GRAAL_OPTIONS_PROCESSOR updated]
-Compiling com.oracle.truffle.api.interop with javac-daemon(JDK 1.8)... [dependency TRUFFLE_DSL_PROCESSOR_INTERNAL updated]
-Compiling com.oracle.truffle.dsl.processor.interop with javac-daemon(JDK 1.8)... [dependency com.oracle.truffle.api.interop updated]
-Compiling com.oracle.truffle.api.object with javac-daemon(JDK 1.8)... [dependency com.oracle.truffle.api.interop updated]
-Compiling com.oracle.truffle.api.object.dsl with javac-daemon(JDK 1.8)... [dependency com.oracle.truffle.api.object updated]
-Compiling com.oracle.truffle.object with javac-daemon(JDK 1.8)... [dependency com.oracle.truffle.api.object updated]
-Archiving TRUFFLE_DSL_PROCESSOR_INTEROP_INTERNAL... [dependency com.oracle.truffle.dsl.processor updated]
-Compiling com.oracle.truffle.object.dsl.processor with javac-daemon(JDK 1.8)... [dependency com.oracle.truffle.api.object.dsl updated]
-Compiling com.oracle.truffle.object.basic with javac-daemon(JDK 1.8)... [dependency com.oracle.truffle.object updated]
-Compiling com.oracle.truffle.object.basic.test with javac-daemon(JDK 1.8)... [dependency com.oracle.truffle.object.basic updated]
-Compiling org.graalvm.compiler.nodes with javac-daemon(JDK 1.8)... [dependency GRAAL_NODEINFO_PROCESSOR updated]
-Compiling org.graalvm.compiler.lir.aarch64 with javac-daemon(JDK 1.8)... [dependency GRAAL_OPTIONS_PROCESSOR updated]
-Compiling org.graalvm.compiler.lir.test with javac-daemon(JDK 1.8)... [dependency org.graalvm.compiler.lir updated]
-Compiling org.graalvm.compiler.lir.amd64 with javac-daemon(JDK 1.8)... [dependency GRAAL_OPTIONS_PROCESSOR updated]
-Compiling org.graalvm.compiler.lir.sparc with javac-daemon(JDK 1.8)... [dependency org.graalvm.compiler.asm.sparc updated]
-Compiling com.oracle.truffle.api.interop.java with javac-daemon(JDK 1.8)... [dependency TRUFFLE_DSL_PROCESSOR_INTEROP_INTERNAL updated]
-Compiling com.oracle.truffle.api.metadata with javac-daemon(JDK 1.8)... [dependency TRUFFLE_DSL_PROCESSOR_INTEROP_INTERNAL updated]
-Compiling com.oracle.truffle.nfi with javac-daemon(JDK 1.8)... [dependency TRUFFLE_DSL_PROCESSOR_INTEROP_INTERNAL updated]
-Compiling com.oracle.truffle.api.vm with javac-daemon(JDK 1.8)... [dependency TRUFFLE_DSL_PROCESSOR_INTEROP_INTERNAL updated]
-Compiling org.graalvm.compiler.phases with javac-daemon(JDK 1.8)... [dependency GRAAL_OPTIONS_PROCESSOR updated]
-Compiling org.graalvm.compiler.truffle.common with javac-daemon(JDK 1.8)... [dependency GRAAL_NODEINFO_PROCESSOR updated]
-Compiling org.graalvm.compiler.loop with javac-daemon(JDK 1.8)... [dependency GRAAL_OPTIONS_PROCESSOR updated]
-Compiling org.graalvm.compiler.word with javac-daemon(JDK 1.8)... [dependency GRAAL_NODEINFO_PROCESSOR updated]
-Compiling org.graalvm.compiler.truffle.common.hotspot with javac-daemon(JDK 1.8)... [dependency GRAAL_OPTIONS_PROCESSOR updated]
-Compiling com.oracle.truffle.api.debug with javac-daemon(JDK 1.8)... [dependency TRUFFLE_DSL_PROCESSOR_INTERNAL updated]
-Compiling org.graalvm.compiler.phases.common with javac-daemon(JDK 1.8)... [dependency GRAAL_NODEINFO_PROCESSOR updated]
-Compiling org.graalvm.compiler.java with javac-daemon(JDK 1.8)... [dependency GRAAL_OPTIONS_PROCESSOR updated]
-Archiving TRUFFLE_API... [dependency com.oracle.truffle.api.interop.java updated]
-Compiling org.graalvm.compiler.virtual with javac-daemon(JDK 1.8)... [dependency GRAAL_OPTIONS_PROCESSOR updated]
-Compiling org.graalvm.compiler.loop.phases with javac-daemon(JDK 1.8)... [dependency GRAAL_OPTIONS_PROCESSOR updated]
-Compiling org.graalvm.compiler.replacements with javac-daemon(JDK 1.8)... [dependency GRAAL_OPTIONS_PROCESSOR updated]
-Archiving TRUFFLE_DSL_PROCESSOR... [dependency com.oracle.truffle.dsl.processor updated]
-Compiling org.graalvm.compiler.core with javac-daemon(JDK 1.8)... [dependency GRAAL_SERVICEPROVIDER_PROCESSOR updated]
-Compiling com.oracle.truffle.tools with javac-daemon(JDK 1.8)... [dependency TRUFFLE_DSL_PROCESSOR updated]
-Compiling com.oracle.truffle.tck with javac-daemon(JDK 1.8)... [dependency TRUFFLE_DSL_PROCESSOR updated]
-Compiling com.oracle.truffle.api.test with javac-daemon(JDK 1.8)... [dependency TRUFFLE_DSL_PROCESSOR updated]
-Compiling com.oracle.truffle.sl with javac-daemon(JDK 1.8)... [dependency TRUFFLE_DSL_PROCESSOR updated]
-Compiling com.oracle.truffle.tools.profiler with javac-daemon(JDK 1.8)... [dependency TRUFFLE_DSL_PROCESSOR updated]
-Compiling com.oracle.truffle.api.object.dsl.test with javac-daemon(JDK 1.8)... [dependency TRUFFLE_DSL_PROCESSOR updated]
-Compiling com.oracle.truffle.tck.instrumentation with javac-daemon(JDK 1.8)... [dependency TRUFFLE_DSL_PROCESSOR updated]
-Archiving TRUFFLE_DEBUG... [dependency com.oracle.truffle.tools updated]
-Compiling org.graalvm.compiler.runtime with javac-daemon(JDK 1.8)... [dependency org.graalvm.compiler.core updated]
-Compiling org.graalvm.compiler.printer with javac-daemon(JDK 1.8)... [dependency GRAAL_OPTIONS_PROCESSOR updated]
-Compiling org.graalvm.compiler.core.aarch64 with javac-daemon(JDK 1.8)... [dependency GRAAL_NODEINFO_PROCESSOR updated]
-Compiling org.graalvm.compiler.core.amd64 with javac-daemon(JDK 1.8)... [dependency GRAAL_NODEINFO_PROCESSOR updated]
-Compiling org.graalvm.compiler.core.sparc with javac-daemon(JDK 1.8)... [dependency GRAAL_NODEINFO_PROCESSOR updated]
-Archiving GRAAL_COMPILER... [dependency org.graalvm.compiler.core updated]
-Compiling org.graalvm.compiler.truffle.runtime with javac-daemon(JDK 1.8)... [dependency TRUFFLE_DSL_PROCESSOR updated]
-Compiling org.graalvm.compiler.replacements.aarch64 with javac-daemon(JDK 1.8)... [dependency GRAAL_NODEINFO_PROCESSOR updated]
-Compiling org.graalvm.compiler.replacements.sparc with javac-daemon(JDK 1.8)... [dependency org.graalvm.compiler.replacements updated]
-Compiling org.graalvm.compiler.replacements.amd64 with javac-daemon(JDK 1.8)... [dependency GRAAL_NODEINFO_PROCESSOR updated]
-Compiling org.graalvm.compiler.truffle.compiler with javac-daemon(JDK 1.8)... [dependency GRAAL_NODEINFO_PROCESSOR updated]
-Archiving TRUFFLE_TCK... [dependency com.oracle.truffle.tck updated]
-Archiving TRUFFLE_PROFILER... [dependency com.oracle.truffle.tools.profiler updated]
-Compiling com.oracle.truffle.sl.test with javac-daemon(JDK 1.8)... [dependency TRUFFLE_DSL_PROCESSOR updated]
-Archiving TRUFFLE_TCK_INSTRUMENTATION... [dependency com.oracle.truffle.tck.instrumentation updated]
-Compiling org.graalvm.compiler.asm.test with javac-daemon(JDK 1.8)... [dependency org.graalvm.compiler.api.test updated]
-Compiling org.graalvm.compiler.phases.common.test with javac-daemon(JDK 1.8)... [dependency org.graalvm.compiler.api.test updated]
-Compiling org.graalvm.compiler.microbenchmarks with javac-daemon(JDK 1.8)... [dependency org.graalvm.compiler.api.test updated]
-Compiling org.graalvm.compiler.hotspot with javac-daemon(JDK 1.8)... [dependency GRAAL_NODEINFO_PROCESSOR updated]
-Compiling org.graalvm.compiler.core.test with javac-daemon(JDK 1.8)... [dependency GRAAL_NODEINFO_PROCESSOR updated]
-Compiling com.oracle.truffle.api.dsl.test with javac-daemon(JDK 1.8)... [dependency TRUFFLE_DSL_PROCESSOR updated]
-Compiling com.oracle.truffle.api.interop.java.test with javac-daemon(JDK 1.8)... [dependency TRUFFLE_DSL_PROCESSOR updated]
-Archiving TRUFFLE_SL... [dependency com.oracle.truffle.sl updated]
-Compiling com.oracle.truffle.tools.chromeinspector with javac-daemon(JDK 1.8)... [dependency TRUFFLE_DSL_PROCESSOR updated]
-Archiving GRAAL_RUNTIME... [dependency org.graalvm.compiler.replacements updated]
-Compiling org.graalvm.compiler.asm.amd64.test with javac-daemon(JDK 1.8)... [dependency org.graalvm.compiler.asm.test updated]
-Compiling org.graalvm.compiler.asm.aarch64.test with javac-daemon(JDK 1.8)... [dependency org.graalvm.compiler.asm.test updated]
-Compiling org.graalvm.compiler.asm.sparc.test with javac-daemon(JDK 1.8)... [dependency org.graalvm.compiler.asm.test updated]
-Compiling org.graalvm.compiler.virtual.bench with javac-daemon(JDK 1.8)... [dependency org.graalvm.compiler.microbenchmarks updated]
-Compiling org.graalvm.compiler.jtt with javac-daemon(JDK 1.8)... [dependency org.graalvm.compiler.core.test updated]
-Compiling org.graalvm.compiler.loop.test with javac-daemon(JDK 1.8)... [dependency org.graalvm.compiler.loop updated]
-Compiling org.graalvm.compiler.replacements.test with javac-daemon(JDK 1.8)... [dependency GRAAL_NODEINFO_PROCESSOR updated]
-Compiling org.graalvm.util.test with javac-daemon(JDK 1.8)... [dependency org.graalvm.util updated]
-Compiling org.graalvm.compiler.nodes.test with javac-daemon(JDK 1.8)... [dependency org.graalvm.compiler.core.test updated]
-Compiling org.graalvm.compiler.api.directives.test with javac-daemon(JDK 1.8)... [dependency org.graalvm.compiler.core.test updated]
-Archiving TRUFFLE_SL_TEST... [dependency com.oracle.truffle.sl.test updated]
-Compiling org.graalvm.compiler.truffle.compiler.hotspot with javac-daemon(JDK 1.8)... [dependency GRAAL_OPTIONS_PROCESSOR updated]
-Compiling org.graalvm.compiler.hotspot.sparc with javac-daemon(JDK 1.8)... [dependency GRAAL_SERVICEPROVIDER_PROCESSOR updated]
-Compiling org.graalvm.compiler.hotspot.aarch64 with javac-daemon(JDK 1.8)... [dependency GRAAL_SERVICEPROVIDER_PROCESSOR updated]
-Compiling org.graalvm.compiler.hotspot.amd64 with javac-daemon(JDK 1.8)... [dependency GRAAL_SERVICEPROVIDER_PROCESSOR updated]
-Compiling org.graalvm.compiler.hotspot.management with javac-daemon(JDK 1.8)... [dependency GRAAL_SERVICEPROVIDER_PROCESSOR updated]
-Compiling org.graalvm.compiler.truffle.runtime.hotspot with javac-daemon(JDK 1.8)... [dependency GRAAL_OPTIONS_PROCESSOR updated]
-Archiving CHROMEINSPECTOR... [dependency com.oracle.truffle.tools.chromeinspector updated]
-Archiving GRAAL_TRUFFLE_COMMON... [dependency org.graalvm.compiler.truffle.common updated]
-Compiling org.graalvm.compiler.hotspot.test with javac-daemon(JDK 1.8)... [dependency GRAAL_NODEINFO_PROCESSOR updated]
-Compiling org.graalvm.compiler.lir.jtt with javac-daemon(JDK 1.8)... [dependency GRAAL_NODEINFO_PROCESSOR updated]
-Compiling org.graalvm.compiler.truffle.compiler.hotspot.sparc with javac-daemon(JDK 1.8)... [dependency GRAAL_SERVICEPROVIDER_PROCESSOR updated]
-Compiling org.graalvm.compiler.truffle.compiler.hotspot.aarch64 with javac-daemon(JDK 1.8)... [dependency GRAAL_SERVICEPROVIDER_PROCESSOR updated]
-Archiving GRAAL_TRUFFLE_COMMON_HOTSPOT... [dependency org.graalvm.compiler.truffle.common.hotspot updated]
-Archiving GRAAL_TRUFFLE_COMPILER... [dependency org.graalvm.compiler.truffle.compiler updated]
-Compiling org.graalvm.compiler.truffle.compiler.hotspot.amd64 with javac-daemon(JDK 1.8)... [dependency GRAAL_SERVICEPROVIDER_PROCESSOR updated]
-Archiving GRAAL_TRUFFLE_RUNTIME... [dependency org.graalvm.compiler.truffle.runtime updated]
-Compiling com.oracle.truffle.api.instrumentation.test with javac-daemon(JDK 1.8)... [dependency TRUFFLE_DSL_PROCESSOR updated]
-Archiving GRAAL_HOTSPOT... [dependency org.graalvm.compiler.hotspot.aarch64 updated]
-Compiling org.graalvm.compiler.core.amd64.test with javac-daemon(JDK 1.8)... [dependency org.graalvm.compiler.lir.jtt updated]
-Compiling org.graalvm.compiler.hotspot.sparc.test with javac-daemon(JDK 1.8)... [dependency org.graalvm.compiler.hotspot updated]
-Compiling org.graalvm.compiler.core.aarch64.test with javac-daemon(JDK 1.8)... [dependency org.graalvm.compiler.lir.jtt updated]
-Compiling org.graalvm.compiler.hotspot.lir.test with javac-daemon(JDK 1.8)... [dependency org.graalvm.compiler.hotspot updated]
-Compiling org.graalvm.compiler.hotspot.aarch64.test with javac-daemon(JDK 1.8)... [dependency GRAAL_NODEINFO_PROCESSOR updated]
-Archiving GRAAL... [dependency org.graalvm.compiler.options updated]
-Compiling org.graalvm.compiler.hotspot.amd64.test with javac-daemon(JDK 1.8)... [dependency GRAAL_NODEINFO_PROCESSOR updated]
-Archiving GRAAL_TRUFFLE_COMPILER_HOTSPOT... [dependency org.graalvm.compiler.truffle.compiler.hotspot.amd64 updated]
-Archiving GRAAL_TRUFFLE_RUNTIME_HOTSPOT... [dependency org.graalvm.compiler.truffle.runtime.hotspot updated]
-Compiling com.oracle.truffle.api.debug.test with javac-daemon(JDK 1.8)... [dependency TRUFFLE_DSL_PROCESSOR_INTEROP_INTERNAL updated]
-Compiling com.oracle.truffle.api.metadata.test with javac-daemon(JDK 1.8)... [dependency TRUFFLE_DSL_PROCESSOR_INTEROP_INTERNAL updated]
-Archiving TRUFFLE_INSTRUMENT_TEST... [dependency com.oracle.truffle.api.instrumentation.test updated]
-Compiling com.oracle.truffle.tools.test with javac-daemon(JDK 1.8)... [dependency TRUFFLE_DSL_PROCESSOR updated]
-Compiling com.oracle.truffle.api.benchmark with javac-daemon(JDK 1.8)... [dependency TRUFFLE_DSL_PROCESSOR updated]
-Compiling org.graalvm.compiler.truffle.test with javac-daemon(JDK 1.8)... [dependency GRAAL_NODEINFO_PROCESSOR updated]
-Compiling com.oracle.truffle.tools.profiler.test with javac-daemon(JDK 1.8)... [dependency TRUFFLE_DSL_PROCESSOR updated]
-Archiving GRAAL_MANAGEMENT... [dependency org.graalvm.compiler.hotspot.management updated]
-Archiving TRUFFLE_PROFILER_TEST... [dependency com.oracle.truffle.tools.profiler.test updated]
-Building com.oracle.truffle.nfi.native with GNU Make... [dependency com.oracle.truffle.nfi updated]
-CONFIGURE libffi
-rm: conftest.dSYM: is a directory
-rm: conftest.dSYM: is a directory
-rm: conftest.dSYM: is a directory
-rm: conftest.dSYM: is a directory
-clang: error: unsupported option '-print-multi-os-directory'
-clang: error: no input files
-CC bin/api.o
-CC bin/closure.o
-CC bin/intrinsics.o
-CC bin/jni.o
-CC bin/lookup.o
-CC bin/signature.o
-MAKE libffi
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ranlib: file: .libs/libffi_convenience.a(ffi.o) has no symbols
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ranlib: file: .libs/libffi_convenience.a(darwin.o) has no symbols
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ranlib: file: .libs/libffi_convenience.a(ffi.o) has no symbols
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ranlib: file: .libs/libffi_convenience.a(darwin.o) has no symbols
-ld: warning: could not create compact unwind for _ffi_call_unix64: does not use RBP or RSP based frame
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ranlib: file: .libs/libffi.a(ffi.o) has no symbols
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ranlib: file: .libs/libffi.a(darwin.o) has no symbols
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ranlib: file: .libs/libffi.a(ffi.o) has no symbols
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ranlib: file: .libs/libffi.a(darwin.o) has no symbols
-LINK bin/libtrufflenfi.dylib
-ld: warning: could not create compact unwind for _ffi_call_unix64: does not use RBP or RSP based frame
-Archiving GRAAL_TEST... [dependency org.graalvm.compiler.api.test updated]
-Archiving TRUFFLE_NFI_NATIVE... [dependency com.oracle.truffle.nfi.native updated]
-Archiving TRUFFLE_NFI... [dependency com.oracle.truffle.nfi updated]
-Archiving TRUFFLE_GRAALVM_SUPPORT... [dependency TRUFFLE_NFI updated]
-Compiling com.oracle.truffle.nfi.test with javac-daemon(JDK 1.8)... [dependency TRUFFLE_DSL_PROCESSOR updated]
-Building com.oracle.truffle.nfi.test.native with GNU Make... [dependency TRUFFLE_NFI_NATIVE updated]
-CC bin/array.o
-CC bin/errno.o
-CXX bin/global.o
-CC bin/null.o
-CC bin/numeric.o
-CXX bin/object.o
-CC bin/package.o
-CC bin/string.o
-CC bin/varargs.o
-CC bin/vector.o
-LINK bin/libnativetest.dylib
-Archiving GRAAL_COMPILER_WHITEBOX_MICRO_BENCHMARKS... [dependency org.graalvm.compiler.virtual.bench updated]
-Archiving TRUFFLE_TEST_NATIVE... [dependency com.oracle.truffle.nfi.test.native updated]
-Archiving TRUFFLE_TEST... [dependency com.oracle.truffle.api.test updated]
-Compiling com.oracle.truffle.tools.chromeinspector.test with javac-daemon(JDK 1.8)... [dependency TRUFFLE_DSL_PROCESSOR updated]
-Archiving CHROMEINSPECTOR_TEST... [dependency com.oracle.truffle.tools.chromeinspector.test updated]
-Creating /path/to/awesome-graal/build/x86_64/linux_macos/jdk8-with-graal from /path/to/awesome-graal/build/x86_64/linux_macos/graal-jvmci-8/jdk1.8.0_172/darwin-amd64/product/Contents/Home
-Copying /path/to/awesome-graal/build/x86_64/linux_macos/graal/compiler/mxbuild/dists/graal.jar to /path/to/awesome-graal/build/x86_64/linux_macos/jdk8-with-graal/jre/lib/jvmci
-Copying /path/to/awesome-graal/build/x86_64/linux_macos/graal/compiler/mxbuild/dists/graal-management.jar to /path/to/awesome-graal/build/x86_64/linux_macos/jdk8-with-graal/jre/lib/jvmci
-Copying /path/to/awesome-graal/build/x86_64/linux_macos/graal/sdk/mxbuild/dists/graal-sdk.jar to /path/to/awesome-graal/build/x86_64/linux_macos/jdk8-with-graal/jre/lib/boot
-Copying /path/to/awesome-graal/build/x86_64/linux_macos/graal/truffle/mxbuild/dists/truffle-api.jar to /path/to/awesome-graal/build/x86_64/linux_macos/jdk8-with-graal/jre/lib/truffle
+Dependencies removed from build:
+ project com.oracle.truffle.dsl.processor.jdk9 was removed as JDK 9 is not available
+ project jdk.tools.jaotc.binformat was removed as JDK 11 is not available
+ project jdk.tools.jaotc was removed as JDK 11 is not available
+ project org.graalvm.compiler.hotspot.jdk11 was removed as JDK 11 is not available
+ project org.graalvm.compiler.hotspot.jdk12 was removed as JDK 12 is not available
+ project org.graalvm.compiler.hotspot.jdk13 was removed as JDK 13 is not available
+ project org.graalvm.compiler.replacements.jdk12.test was removed as JDK 12 is not available
+ project org.graalvm.compiler.serviceprovider.jdk13 was removed as JDK 13 is not available
+ project org.graalvm.compiler.hotspot.management.jdk13 was removed as JDK 13 is not available
+ project org.graalvm.compiler.hotspot.jdk9.test was removed as JDK 9 is not available
+ project org.graalvm.compiler.lir.aarch64.jdk11 was removed as JDK 11 is not available
+ project org.graalvm.compiler.replacements.jdk9.test was removed as JDK 9 is not available
+ project org.graalvm.libgraal.jdk13 was removed as JDK 13 is not available
+ project jdk.tools.jaotc.test was removed as JDK 11 is not available
+ project org.graalvm.compiler.serviceprovider.jdk11 was removed as JDK 11 is not available
+ project org.graalvm.compiler.hotspot.management.jdk11 was removed as JDK 11 is not available
+ project org.graalvm.compiler.truffle.runtime.serviceprovider.jdk9 was removed as JDK 9 is not available
+ project org.graalvm.compiler.core.jdk9.test was removed as JDK 9 is not available
+ project org.graalvm.compiler.replacements.jdk9_11.test was removed as JDK 9 is not available
+ project org.graalvm.compiler.truffle.runtime.hotspot.jdk9 was removed as JDK 9 is not available
+ project org.graalvm.libgraal.jdk11 was removed as JDK 11 is not available
+ distribution JAOTC was removed as all its dependencies were removed
+ distribution JAOTC_TEST was removed as all its dependencies were removed
+Non-default dependencies removed from build (use mx build --all to build them):
+ JACOCOREPORT_0.8.2
+Copying /path/to/awesome-graal/build/x86_64/linux_macos/graal/compiler/mxbuild/dists/jdk1.8/graal.jar to /path/to/awesome-graal/build/x86_64/linux_macos/jdk8-with-graal/jre/lib/jvmci
+Copying /path/to/awesome-graal/build/x86_64/linux_macos/graal/compiler/mxbuild/dists/jdk1.8/graal-management.jar to /path/to/awesome-graal/build/x86_64/linux_macos/jdk8-with-graal/jre/lib/jvmci
+Copying /path/to/awesome-graal/build/x86_64/linux_macos/graal/sdk/mxbuild/dists/jdk1.8/graal-sdk.jar to /path/to/awesome-graal/build/x86_64/linux_macos/jdk8-with-graal/jre/lib/boot
+Copying /path/to/awesome-graal/build/x86_64/linux_macos/graal/truffle/mxbuild/dists/jdk1.8/truffle-api.jar to /path/to/awesome-graal/build/x86_64/linux_macos/jdk8-with-graal/jre/lib/truffle
 
->>> All good, now pick your JDK from /path/to/awesome-graal/build/x86_64/linux_macos/jdk8-with-graal :-)
+real	0m15.356s
+user	0m7.687s
+sys	0m6.671s
+Simple sanity checking of the JDK artifact
+total 8384
+  0 drwxr-xr-x  46 user  staff   1.4K  2 Apr 05:16 .
+  0 drwxr-xr-x  15 user  staff   480B  2 Apr 05:13 ..
+208 -rwxr-xr-x   1 user  staff   101K  2 Apr 05:15 appletviewer
+208 -rwxr-xr-x   1 user  staff   101K  2 Apr 05:15 extcheck
+208 -rwxr-xr-x   1 user  staff   101K  2 Apr 05:15 idlj
+208 -rwxr-xr-x   1 user  staff   101K  2 Apr 05:15 jar
+208 -rwxr-xr-x   1 user  staff   101K  2 Apr 05:15 jarsigner
+208 -rwxr-xr-x   1 user  staff   101K  2 Apr 05:15 java
+208 -rwxr-xr-x   1 user  staff   101K  2 Apr 05:15 javac
+208 -rwxr-xr-x   1 user  staff   101K  2 Apr 05:15 javadoc
+  8 -rwxr-xr-x   1 user  staff   2.2K 14 Mar 08:15 javafxpackager
+208 -rwxr-xr-x   1 user  staff   101K  2 Apr 05:15 javah
+208 -rwxr-xr-x   1 user  staff   101K  2 Apr 05:15 javap
+  8 -rwxr-xr-x   1 user  staff   2.2K  2 Apr 05:15 javapackager
+208 -rwxr-xr-x   1 user  staff   101K  2 Apr 05:15 jcmd
+208 -rwxr-xr-x   1 user  staff   101K  2 Apr 05:15 jconsole
+208 -rwxr-xr-x   1 user  staff   101K  2 Apr 05:15 jdb
+208 -rwxr-xr-x   1 user  staff   101K  2 Apr 05:15 jdeps
+208 -rwxr-xr-x   1 user  staff   101K  2 Apr 05:15 jhat
+208 -rwxr-xr-x   1 user  staff   101K  2 Apr 05:15 jinfo
+208 -rwxr-xr-x   1 user  staff   101K  2 Apr 05:15 jjs
+208 -rwxr-xr-x   1 user  staff   101K  2 Apr 05:15 jmap
+  8 -rwxr-xr-x   1 user  staff   405B  2 Apr 05:15 jmc
+208 -rwxr-xr-x   1 user  staff   101K  2 Apr 05:15 jps
+208 -rwxr-xr-x   1 user  staff   101K  2 Apr 05:15 jrunscript
+208 -rwxr-xr-x   1 user  staff   101K  2 Apr 05:16 jsadebugd
+208 -rwxr-xr-x   1 user  staff   101K  2 Apr 05:16 jstack
+208 -rwxr-xr-x   1 user  staff   101K  2 Apr 05:16 jstat
+208 -rwxr-xr-x   1 user  staff   101K  2 Apr 05:16 jstatd
+ 16 -rwxr-xr-x   1 user  staff   5.0K 14 Jan  2017 jvisualvm
+208 -rwxr-xr-x   1 user  staff   101K  2 Apr 05:16 keytool
+208 -rwxr-xr-x   1 user  staff   101K  2 Apr 05:16 native2ascii
+208 -rwxr-xr-x   1 user  staff   101K  2 Apr 05:16 orbd
+208 -rwxr-xr-x   1 user  staff   101K  2 Apr 05:16 pack200
+208 -rwxr-xr-x   1 user  staff   101K  2 Apr 05:16 policytool
+208 -rwxr-xr-x   1 user  staff   101K  2 Apr 05:16 rmic
+208 -rwxr-xr-x   1 user  staff   101K  2 Apr 05:16 rmid
+208 -rwxr-xr-x   1 user  staff   101K  2 Apr 05:16 rmiregistry
+208 -rwxr-xr-x   1 user  staff   101K  2 Apr 05:16 schemagen
+208 -rwxr-xr-x   1 user  staff   101K  2 Apr 05:16 serialver
+208 -rwxr-xr-x   1 user  staff   101K  2 Apr 05:16 servertool
+208 -rwxr-xr-x   1 user  staff   101K  2 Apr 05:16 tnameserv
+232 -rwxr-xr-x   1 user  staff   114K  2 Apr 05:16 unpack200
+208 -rwxr-xr-x   1 user  staff   101K  2 Apr 05:16 wsgen
+208 -rwxr-xr-x   1 user  staff   101K  2 Apr 05:16 wsimport
+208 -rwxr-xr-x   1 user  staff   101K  2 Apr 05:16 xjc
++ ./bin/java -version
+java version "1.8.0_211"
+Java(TM) SE Runtime Environment (build 1.8.0_211-b12)
+OpenJDK 64-Bit Graal:compiler_8eba1958fb11d84d95537d10dacbc2b769613a29:compiler_8eba1958fb11d84d95537d10dacbc2b769613a29 (build 25.211-b12-jvmci-0.60-dev, mixed mode)
++ ./bin/javac -version
+javac 1.8.0_211
++ set +x
+Simple sanity checking of the JRE artifact
+total 2312
+  0 drwxr-xr-x  13 user  staff   416B  2 Apr 05:16 .
+  0 drwxr-xr-x  10 user  staff   320B  2 Apr 05:13 ..
+208 -rwxr-xr-x   1 user  staff   101K  2 Apr 05:16 java
+208 -rwxr-xr-x   1 user  staff   101K  2 Apr 05:16 jjs
+208 -rwxr-xr-x   1 user  staff   101K  2 Apr 05:16 keytool
+208 -rwxr-xr-x   1 user  staff   101K  2 Apr 05:16 orbd
+208 -rwxr-xr-x   1 user  staff   101K  2 Apr 05:16 pack200
+208 -rwxr-xr-x   1 user  staff   101K  2 Apr 05:16 policytool
+208 -rwxr-xr-x   1 user  staff   101K  2 Apr 05:16 rmid
+208 -rwxr-xr-x   1 user  staff   101K  2 Apr 05:16 rmiregistry
+208 -rwxr-xr-x   1 user  staff   101K  2 Apr 05:16 servertool
+208 -rwxr-xr-x   1 user  staff   101K  2 Apr 05:16 tnameserv
+232 -rwxr-xr-x   1 user  staff   114K  2 Apr 05:16 unpack200
++ ./bin/java -version
+java version "1.8.0_211"
+Java(TM) SE Runtime Environment (build 1.8.0_211-b12)
+OpenJDK 64-Bit Graal:compiler_8eba1958fb11d84d95537d10dacbc2b769613a29:compiler_8eba1958fb11d84d95537d10dacbc2b769613a29 (build 25.211-b12-jvmci-0.60-dev, mixed mode)
++ set +x
+>>>> Output directory not set or found
+>>>> Output directory /path/to/awesome-graal/build/x86_64/linux_macos/jdk8-with-graal-local created
 
-Creating Archive and SHA of the newly JDK8 with Graal & Truffle at /path/to/awesome-graal/build/x86_64/linux_macos/jdk8-with-graal
-Creating Archive jdk8-with-graal.tar.gz
-Creating a sha5 hash from jdk8-with-graal.tar.gz
-Output directory not set or found
-Output directory /path/to/awesome-graal/build/x86_64/linux_macos/jdk8-with-graal-local created
-jdk8-with-graal.tar.gz and jdk8-with-graal.tar.gz.sha256sum.txt have been successfully created in the /path/to/awesome-graal/build/x86_64/linux_macos/jdk8-with-graal-local folder.
+>>> Creating JDK Archive and SHA of the newly built JDK8 with Graal & Truffle at /path/to/awesome-graal/build/x86_64/linux_macos/jdk8-with-graal
+>>>> Creating Archive jdk8-with-graal-jdk.tar.gz
+>>>> Creating a sha5 hash from jdk8-with-graal-jdk.tar.gz
+>>> jdk8-with-graal-jdk.tar.gz and jdk8-with-graal-jdk.tar.gz.sha256sum.txt have been successfully created in the /path/to/awesome-graal/build/x86_64/linux_macos/jdk8-with-graal-local folder.
+
+>>> Creating JRE Archive and SHA of the newly built JDK8 with Graal & Truffle at /path/to/awesome-graal/build/x86_64/linux_macos/jdk8-with-graal
+>>>> Creating Archive jdk8-with-graal-jre.tar.gz
+>>>> Creating a sha5 hash from jdk8-with-graal-jre.tar.gz
+>>> jdk8-with-graal-jre.tar.gz and jdk8-with-graal-jre.tar.gz.sha256sum.txt have been successfully created in the /path/to/awesome-graal/build/x86_64/linux_macos/jdk8-with-graal-local folder.
+
+>>> Creating Archive and SHA of Graal & Truffle components at /path/to/awesome-graal/build/x86_64/linux_macos/jdk8-with-graal
+>>>> Creating Archive graal-artifacts.tar.gz
+>>>> Creating a sha5 hash from graal-artifacts.tar.gz
+>>> graal-artifacts.tar.gz and graal-artifacts.tar.gz.sha256sum.txt have been successfully created in the /path/to/awesome-graal/build/x86_64/linux_macos/jdk8-with-graal-local folder.
+
+real	0m38.248s
+user	0m35.157s
+sys	0m1.655s
+
+real	1m55.431s
+user	1m51.627s
+sys	0m16.505s

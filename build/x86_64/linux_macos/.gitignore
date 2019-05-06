@@ -4,7 +4,8 @@ mx
 .bash_history
 graal-jvmci-8
 graal
-jdk8-with-graal
+jdk8-*/
+graal-artifacts/
 *.tar.gz
 make*.*
 jdk8*

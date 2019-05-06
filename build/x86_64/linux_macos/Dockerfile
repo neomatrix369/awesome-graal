@@ -1,5 +1,19 @@
+FROM buildpack-deps:stretch-scm
+
+# Install Java 8
 ARG JDK_BASE_IMAGE_TAG
-FROM ${JDK_BASE_IMAGE_TAG}
+COPY --from=${JDK_BASE_IMAGE_TAG} /opt/java/openjdk/ /opt/java/openjdk/
+
+ENV JAVA_HOME=/opt/java/openjdk/
+ENV PATH=${JAVA_HOME}/bin:${PATH}
+
+RUN echo "JAVA_HOME=${JAVA_HOME}"
+RUN echo "PATH=${PATH}"
+
+RUN java -version
+RUN echo "JAVA_HOME=${JAVA_HOME}"
+ENV JAVA_8_HOME="${JAVA_HOME}"
+RUN echo "JAVA_8_HOME=${JAVA_8_HOME}"
 
 COPY osDependencies.sh /osDependencies.sh
 RUN  /bin/bash -l -c "./osDependencies.sh"
@@ -13,9 +27,6 @@ ENV     HOME_DIR /home/${USER_IN_CONTAINER}
 RUN     useradd --create-home --shell /bin/bash ${USER_IN_CONTAINER} || true
 USER    ${USER_IN_CONTAINER}
 WORKDIR ${HOME_DIR}
-
-ENV JAVA_HOME /opt/java/openjdk/
-ENV PATH      ${JAVA_HOME}/bin:${PATH}
 
 RUN echo "export JAVA_HOME=${JAVA_HOME}" >> ${HOME_DIR}/.bashrc
 RUN echo "export PATH=${JAVA_HOME}/bin:${PATH}" >> ${HOME_DIR}/.bashrc
