@@ -1,0 +1,13 @@
+diff --git a/compiler/mx.compiler/mx_compiler.py b/compiler/mx.compiler/mx_compiler.py
+index df75c8a..951f432 100644
+--- a/compiler/mx.compiler/mx_compiler.py
++++ b/compiler/mx.compiler/mx_compiler.py
+@@ -1132,7 +1132,7 @@ def makegraaljdk(args):
+         out = mx.LinesOutputCapture()
+         mx.run([jdk.java, '-version'], err=out)
+         line = None
+-        pattern = re.compile(r'(.* )(?:Server|Graal) VM \(build.*')
++        pattern = re.compile(r'(.* )(?:Server|Graal) VM.*\(build.*')
+         for line in out.lines:
+             m = pattern.match(line)
+             if m:
