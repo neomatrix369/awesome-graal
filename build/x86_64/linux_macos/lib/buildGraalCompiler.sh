@@ -21,4 +21,9 @@ echo ">>>> Setting environment variable JVMCI_VERSION_CHECK=${JVMCI_VERSION_CHEC
 HOTSPOT_BUILD_JOBS=${HOTSPOT_BUILD_JOBS:-$(getAllowedThreads)}
 echo "Setting HOTSPOT_BUILD_JOBS=${HOTSPOT_BUILD_JOBS}"
 HOTSPOT_BUILD_JOBS=${HOTSPOT_BUILD_JOBS} ${MX} build
+
+echo "Applying and checking patch to mx_jvmci.py..."
+git apply ${SCRIPTS_LIB_DIR}/patch/mx_compiler.py-VM-string-fix.patch || true
+grep "pattern \= re.compile" -B 2 compiler/mx.compiler/mx_compiler.py             || true
+
 ${MX} makegraaljdk --force ${BUILD_ARTIFACTS_DIR} 
