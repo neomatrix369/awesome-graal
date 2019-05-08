@@ -102,6 +102,10 @@ A curated list of awesome resources for Graal, Truffle and related topics.
 
 #### LLVM
 
+- [Getting Started](https://www.graalvm.org/docs/getting-started/#running-llvm-interpreter)
+- [Compatibility](https://www.graalvm.org/docs/reference-manual/compatibility/)
+- [Reference](https://www.graalvm.org/docs/reference-manual/languages/llvm/) 
+
 #### Your Platforms, languages and Tools
 
 ##### Your Platforms
