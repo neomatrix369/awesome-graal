@@ -74,6 +74,20 @@ A curated list of awesome resources for Graal, Truffle and related topics.
 - [Tools Reference](https://www.graalvm.org/docs/reference-manual/tools/)
 - [Native Images](https://www.graalvm.org/docs/reference-manual/aot-compilation/)
 
+#### Your Platforms, languages and Tools
+
+##### Your Platforms
+- [Why?](https://www.graalvm.org/docs/why-graal/#for-your-platform)
+- [Reference](https://www.graalvm.org/docs/reference-manual/tools/)
+- [GraalVM as a Platform](https://www.graalvm.org/docs/graalvm-as-a-platform/)
+  - [Embed Languages](https://www.graalvm.org/docs/graalvm-as-a-platform/embed/)
+
+##### Your Languages and Tools
+- [Why?](https://www.graalvm.org/docs/why-graal/#for-your-languages-and-tools)
+- [Reference](https://www.graalvm.org/docs/reference-manual/tools/)
+- [Implement your language](https://www.graalvm.org/docs/graalvm-as-a-platform/implement-language/)
+- [Implement your tools](https://www.graalvm.org/docs/graalvm-as-a-platform/implement-instrument/)
+
 ### Related JEPs
 
 - [JEP 317: Experimental Java-Based JIT Compiler - OpenJDK](http://openjdk.java.net/jeps/317)
