@@ -74,7 +74,7 @@ A curated list of awesome resources for Graal, Truffle and related topics.
 - [Tools Reference](https://www.graalvm.org/docs/reference-manual/tools/)
 - [Native Images](https://www.graalvm.org/docs/reference-manual/aot-compilation/)
 
-### Javascript / NodeJS
+#### Javascript / NodeJS
 
 - [Why?](https://www.graalvm.org/docs/why-graal/#for-nodejs-programs)
 - [Getting Started](https://www.graalvm.org/docs/getting-started/#running-javascript)
@@ -89,7 +89,7 @@ A curated list of awesome resources for Graal, Truffle and related topics.
 - [Compatibility](https://www.graalvm.org/docs/reference-manual/compatibility/)
 - [Reference](https://www.graalvm.org/docs/reference-manual/languages/js/)
 
-### Polyglot
+#### Polyglot
 
 - [Getting started: combined languages](https://www.graalvm.org/docs/getting-started/#combine-languages)
 - Examples
@@ -99,6 +99,8 @@ A curated list of awesome resources for Graal, Truffle and related topics.
 - [GraalVM Updater](https://www.graalvm.org/docs/reference-manual/graal-updater/)
 - [Reference Manual](https://www.graalvm.org/docs/reference-manual/polyglot/) | [Top 10 Things To Do With GraalVM](https://medium.com/graalvm/graalvm-ten-things-12d9111f307d)
 - [GraalVM as a platform: Embed languages](https://www.graalvm.org/docs/graalvm-as-a-platform/embed/)
+
+#### LLVM
 
 #### Your Platforms, languages and Tools
 
