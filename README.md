@@ -74,11 +74,27 @@ A curated list of awesome resources for Graal, Truffle and related topics.
 - [Tools Reference](https://www.graalvm.org/docs/reference-manual/tools/)
 - [Native Images](https://www.graalvm.org/docs/reference-manual/aot-compilation/)
 
+### Javascript / NodeJS
+
+- [Why?](https://www.graalvm.org/docs/why-graal/#for-nodejs-programs)
+- [Getting Started](https://www.graalvm.org/docs/getting-started/#running-javascript)
+- Examples
+  - [JavaScript, Java, R Polyglot Application](https://www.graalvm.org/docs/examples/polyglot-javascript-java-r/)
+  - [Running JavaScript Functions as Stored Procedures in Database](https://www.graalvm.org/docs/examples/mle-oracle/)
+  - [Oracle Database Example](https://www.graalvm.org/docs/examples/mle-oracle/)
+  - [GraalVM demos: Another Polyglot JavaScript, Java, R application](https://github.com/graalvm/graalvm-demos/tree/master/functionGraphDemo)
+  - [Galaaz Demo: GraalVM, TruffleRuby, FastR, ggplot2, gridExtra](https://github.com/graalvm/graalvm-demos/tree/master/galaaz-ggplot)
+  - [GraalVM demos: Polyglot JavaScript, Java, R application](https://github.com/graalvm/graalvm-demos/tree/master/polyglot-javascript-java-r)
+- [GraalVM Updater](https://www.graalvm.org/docs/reference-manual/graal-updater/)
+- [Compatibility](https://www.graalvm.org/docs/reference-manual/compatibility/)
+- [Reference](https://www.graalvm.org/docs/reference-manual/languages/js/)
+
 ### Polyglot
 
 - [Getting started: combined languages](https://www.graalvm.org/docs/getting-started/#combine-languages)
 - Examples
   - [Polyglot JavaScript, Java, R application](https://www.graalvm.org/docs/examples/polyglot-javascript-java-r/) 
+  - [GraalVM Polyglot with Clojure and JavaScript](https://blog.taylorwood.io/2018/11/26/graal-polyglot.html)
 - [Language Compatibility Tool](https://www.graalvm.org/docs/reference-manual/compatibility/)
 - [GraalVM Updater](https://www.graalvm.org/docs/reference-manual/graal-updater/)
 - [Reference Manual](https://www.graalvm.org/docs/reference-manual/polyglot/) | [Top 10 Things To Do With GraalVM](https://medium.com/graalvm/graalvm-ten-things-12d9111f307d)
