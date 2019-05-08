@@ -87,7 +87,7 @@ A curated list of awesome resources for Graal, Truffle and related topics.
   - [GraalVM demos: Polyglot JavaScript, Java, R application](https://github.com/graalvm/graalvm-demos/tree/master/polyglot-javascript-java-r)
 - [GraalVM Updater](https://www.graalvm.org/docs/reference-manual/graal-updater/)
 - [Compatibility](https://www.graalvm.org/docs/reference-manual/compatibility/)
-- [Reference](https://www.graalvm.org/docs/reference-manual/languages/js/)
+- [Reference Manual](https://www.graalvm.org/docs/reference-manual/languages/js/)
 
 #### Polyglot
 
@@ -104,22 +104,24 @@ A curated list of awesome resources for Graal, Truffle and related topics.
 
 - [Getting Started](https://www.graalvm.org/docs/getting-started/#running-llvm-interpreter)
 - [Compatibility](https://www.graalvm.org/docs/reference-manual/compatibility/)
-- [Reference](https://www.graalvm.org/docs/reference-manual/languages/llvm/) 
+- [Reference Manual](https://www.graalvm.org/docs/reference-manual/languages/llvm/) | [Top 10 Things To Do With GraalVM](https://medium.com/graalvm/graalvm-ten-things-12d9111f307d)
 
 #### Your Platforms, languages and Tools
 
 ##### Your Platforms
 
 - [Why?](https://www.graalvm.org/docs/why-graal/#for-your-platform)
-- [Reference](https://www.graalvm.org/docs/reference-manual/tools/)
+- [Reference Manual](https://www.graalvm.org/docs/reference-manual/tools/)
 - [GraalVM as a Platform](https://www.graalvm.org/docs/graalvm-as-a-platform/)
   - [Embed Languages](https://www.graalvm.org/docs/graalvm-as-a-platform/embed/)
 
 ##### Your Languages and Tools
 
 - [Why?](https://www.graalvm.org/docs/why-graal/#for-your-languages-and-tools)
-- [Reference](https://www.graalvm.org/docs/reference-manual/tools/)
+- [Reference Manual](https://www.graalvm.org/docs/reference-manual/tools/)
 - [Implement your language](https://www.graalvm.org/docs/graalvm-as-a-platform/implement-language/)
+  - [Truffle Language Implementation Framework](https://github.com/oracle/graal/tree/master/truffle) 
+  - [Simple Language framework built using Truffle API](https://github.com/graalvm/simplelanguage)
 - [Implement your tools](https://www.graalvm.org/docs/graalvm-as-a-platform/implement-instrument/)
 
 ### Related JEPs
