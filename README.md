@@ -74,15 +74,27 @@ A curated list of awesome resources for Graal, Truffle and related topics.
 - [Tools Reference](https://www.graalvm.org/docs/reference-manual/tools/)
 - [Native Images](https://www.graalvm.org/docs/reference-manual/aot-compilation/)
 
+### Polyglot
+
+- [Getting started: combined languages](https://www.graalvm.org/docs/getting-started/#combine-languages)
+- Examples
+  - [Polyglot JavaScript, Java, R application](https://www.graalvm.org/docs/examples/polyglot-javascript-java-r/) 
+- [Language Compatibility Tool](https://www.graalvm.org/docs/reference-manual/compatibility/)
+- [GraalVM Updater](https://www.graalvm.org/docs/reference-manual/graal-updater/)
+- [Reference Manual](https://www.graalvm.org/docs/reference-manual/polyglot/) | [Top 10 Things To Do With GraalVM](https://medium.com/graalvm/graalvm-ten-things-12d9111f307d)
+- [GraalVM as a platform: Embed languages](https://www.graalvm.org/docs/graalvm-as-a-platform/embed/)
+
 #### Your Platforms, languages and Tools
 
 ##### Your Platforms
+
 - [Why?](https://www.graalvm.org/docs/why-graal/#for-your-platform)
 - [Reference](https://www.graalvm.org/docs/reference-manual/tools/)
 - [GraalVM as a Platform](https://www.graalvm.org/docs/graalvm-as-a-platform/)
   - [Embed Languages](https://www.graalvm.org/docs/graalvm-as-a-platform/embed/)
 
 ##### Your Languages and Tools
+
 - [Why?](https://www.graalvm.org/docs/why-graal/#for-your-languages-and-tools)
 - [Reference](https://www.graalvm.org/docs/reference-manual/tools/)
 - [Implement your language](https://www.graalvm.org/docs/graalvm-as-a-platform/implement-language/)
