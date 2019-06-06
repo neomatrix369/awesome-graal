@@ -11,7 +11,9 @@ Graal compiler (JDK8): [![Graal compiler (JDK8)](https://img.shields.io/docker/p
 
 ---
 
-A curated list of awesome resources for Graal, Truffle and related topics.
+A curated list of awesome resources for Graal, GraalVM, Truffle and related topics.
+
+**This repo is dedicated to computer engineers/scientists, compiler/VM engineers, developers, open-source enthusiatics, Graal/GraalVM/Truffle fans and all other professions that take interest in these topics. To make learning interesting and to create a place to easily find all the necessary material. Please contribute, watch, star, fork and share the repo with others in your community.**
 
 - [Awesome Graal](#awesome-graal)
   - [Related JEPs](#related-jeps)
