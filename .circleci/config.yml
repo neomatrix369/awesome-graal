@@ -13,7 +13,6 @@ jobs:
           keys:
             - os-deps-{{ arch }}-{{ .Branch }}-{{ .Environment.CIRCLE_SHA1 }}
             - os-deps-{{ arch }}-{{ .Branch }}
-            - os-deps
       - run:
           name: Define Environment Variables and update JAVA_HOME and PATH at Runtime
           command: |
