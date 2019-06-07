@@ -13,7 +13,6 @@ jobs:
           keys:
             - os-deps-{{ arch }}-{{ .Branch }}-{{ .Environment.CIRCLE_SHA1 }}
             - os-deps-{{ arch }}-{{ .Branch }}
-            - os-deps
       - run:
           name: Install Os dependencies
           command: ./build/x86_64/linux_macos/osDependencies.sh
@@ -27,7 +26,6 @@ jobs:
           keys:
             - make-382-{{ arch }}-{{ .Branch }}-{{ .Environment.CIRCLE_SHA1 }}
             - make-382-{{ arch }}-{{ .Branch }}
-            - make-382
       - run:
           name: Build and install make via script
           command: ./build/x86_64/linux_macos/installMake.sh
