@@ -78,7 +78,7 @@ jobs:
           timeout: 3m
           no_output_timeout: 2m
           when: always
-      - store_test_results:
-          path: logs
+      - store_artifacts:
+          path: logs/
       - store_artifacts:
           path: jdk8-with-graal-local/
