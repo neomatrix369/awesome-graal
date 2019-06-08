@@ -11,9 +11,6 @@ BASEDIR=$1
 echo "Creating the '${BASEDIR}/logs' folder"
 mkdir -p ${BASEDIR}/logs
 
-echo "Copying the files in the tmp folder in ${BASEDIR}/logs"
-cp -r /tmp ${BASEDIR}/logs || true
-
 echo "Copying the JVM crash log files (+ heapdump) into ${BASEDIR}/logs"
 cp ${BASEDIR}/hs_err_pid*.log ${BASEDIR}/logs/ || true
 cp ${BASEDIR}/java-heap* ${BASEDIR}/logs/ || true

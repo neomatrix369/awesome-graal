@@ -37,4 +37,9 @@ grep "re.search" -B 2 mx.jvmci/mx_jvmci.py                     || true
 
 HOTSPOT_BUILD_JOBS=${HOTSPOT_BUILD_JOBS:-$(getAllowedThreads)}
 echo "Setting HOTSPOT_BUILD_JOBS=${HOTSPOT_BUILD_JOBS}"
-HOTSPOT_BUILD_JOBS=${HOTSPOT_BUILD_JOBS} ${MX} build
+export JAVA_OPTS="-XX:+HeapDumpOnOutOfMemoryError -XX:+ShowMessageBoxOnError -XX:ErrorFile=${BASEDIR}/hs_err_pid%p.log -XX:HeapDumpPath=${BASEDIR}/java-heap-dump-%p ${JAVA_OPTS:-}"
+echo ">>>> Setting JAVA_OPTS=${JAVA_OPTS}"
+
+set -x 
+HOTSPOT_BUILD_JOBS="${HOTSPOT_BUILD_JOBS}" ${MX} "-J${JAVA_OPTS}" build
+set +x
