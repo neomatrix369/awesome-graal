@@ -71,5 +71,13 @@ jobs:
             ./build/x86_64/linux_macos/lib/archivingArtifacts.sh ${BASEDIR} ${MX} ${JDK_GRAAL_FOLDER_NAME} ${BUILD_ARTIFACTS_DIR}
           timeout: 3m
           no_output_timeout: 2m
+      - run:
+          name: Collecting and archiving logs (debug and error logs)
+          command: |
+            ./build/x86_64/linux_macos/lib/archivingLogs.sh
+          timeout: 3m
+          no_output_timeout: 2m
+      - store_test_results:
+          path: logs
       - store_artifacts:
           path: jdk8-with-graal-local/
