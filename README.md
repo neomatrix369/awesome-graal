@@ -128,6 +128,16 @@ A curated list of awesome resources for Graal, GraalVM, Truffle and related topi
 - [Implement your language](https://www.graalvm.org/docs/graalvm-as-a-platform/implement-language/)
   - [Truffle Language Implementation Framework](https://github.com/oracle/graal/tree/master/truffle) 
   - [Simple Language framework built using Truffle API](https://github.com/graalvm/simplelanguage)
+  - [cesquivias's GitHub page on Truffle](https://cesquivias.github.io/)
+    - [Writing a Language in Truffle. Part 1: A Simple, Slow Interpreter](https://cesquivias.github.io/blog/2014/10/13/writing-a-language-in-truffle-part-1-a-simple-slow-interpreter/)
+    - [Writing a Language in Truffle. Part 2: Using Truffle and Graal](https://cesquivias.github.io/blog/2014/12/02/writing-a-language-in-truffle-part-2-using-truffle-and-graal/)
+    - [Writing a Language in Truffle. Part 3: Making my Language (Much) Faster](https://cesquivias.github.io/blog/2015/01/08/writing-a-language-in-truffle-part-3-making-my-language-much-faster/)
+    - [Writing a Language in Truffle. Part 4: Adding Features the Truffle Way](https://cesquivias.github.io/blog/2015/01/15/writing-a-language-in-truffle-part-4-adding-features-the-truffle-way/)
+- Examples
+  - [implementation of the if statement](https://github.com/graalvm/simplelanguage/blob/master/language/src/main/java/com/oracle/truffle/sl/nodes/controlflow/SLIfNode.java)
+  - [A SOM Smalltalk implemented on top of Oracle's Truffle Framework ](https://github.com/SOM-st/TruffleSOM), also see http://som-st.github.io/
+  - [SOMns - A Simple Newspeak Implementation](https://github.com/smarr/SOMns)
+  - [Mumbler is a lisp programming language](https://github.com/cesquivias/mumbler)
 - [Implement your tools](https://www.graalvm.org/docs/graalvm-as-a-platform/implement-instrument/)
 
 ### Related JEPs
