@@ -53,6 +53,7 @@ run() {
     time ${SCRIPTS_LIB_DIR}/buildGraalCompiler.sh ${BASEDIR} ${MX} ${BUILD_ARTIFACTS_DIR}
     ${SCRIPTS_LIB_DIR}/sanityCheckArtifacts.sh ${BASEDIR} ${JDK_GRAAL_FOLDER_NAME}
     time ${SCRIPTS_LIB_DIR}/archivingArtifacts.sh ${BASEDIR} ${MX} ${JDK_GRAAL_FOLDER_NAME} ${BUILD_ARTIFACTS_DIR}
+    time ${SCRIPTS_LIB_DIR}/archivingLogs.sh ${BASEDIR}
 }
 
 time run

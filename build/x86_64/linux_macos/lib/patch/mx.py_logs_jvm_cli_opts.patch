@@ -1,0 +1,38 @@
+diff --git a/mx.py b/mx.py
+index d421ce8..78e2aa9 100755
+--- a/mx.py
++++ b/mx.py
+@@ -10739,7 +10739,8 @@ environment variables:
+             mx_gate._jacoco = opts.jacoco
+             mx_gate._jacoco_whitelisted_packages.extend(opts.jacoco_whitelist_package)
+             mx_gate.add_jacoco_excluded_annotations(opts.jacoco_exclude_annotation)
+-            mx_gate.Task.verbose = opts.verbose
++            mx_gate.Task.verbose = opts.verbose            
++            logv("opts: %s" % opts)
+         else:
+             parser = ArgParser(parents=[self])
+             parser.add_argument('commandAndArgs', nargs=REMAINDER, metavar='command args...')
+@@ -10749,6 +10750,8 @@ environment variables:
+             if self.initialCommandAndArgs != commandAndArgs:
+                 abort('Suite specific global options must use name=value format: {0}={1}'.format(self.unknown[-1], self.initialCommandAndArgs[0]))
+             self.parsed = True
++            logv("commandAndArgs: %s" % commandAndArgs)
++            logv("opts: %s" % opts)
+             return commandAndArgs
+ 
+ 
+@@ -11797,12 +11800,12 @@ class JDKConfig(Comparable):
+             output = _check_output_str([self.java, '-d64', '-version'], stderr=subprocess.STDOUT)
+             self.java_args = ['-d64'] + self.java_args
+         except OSError as e:
+-            raise JDKConfigException('{}: {}'.format(e.errno, e.strerror))
++            raise JDKConfigException('{}: {}, java_args={}'.format(e.errno, e.strerror, self.java_args))
+         except subprocess.CalledProcessError as e:
+             try:
+                 output = _check_output_str([self.java, '-version'], stderr=subprocess.STDOUT)
+             except subprocess.CalledProcessError as e:
+-                raise JDKConfigException('{}: {}'.format(e.returncode, e.output))
++                raise JDKConfigException('{}: {}, java_args={}'.format(e.returncode, e.output, self.java_args))
+ 
+         def _checkOutput(out):
+             return 'java version' in out
