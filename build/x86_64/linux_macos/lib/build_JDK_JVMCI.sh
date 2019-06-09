@@ -10,10 +10,10 @@ GRAAL_JVMCI_8_TAG=${GRAAL_JVMCI_8_TAG:-master}
 BASEDIR=$1
 MX=$2
 cd ${BASEDIR}
-gitClone graalvm       \
-         graal-jvmci-8 \
-         "Getting Graal JVMCI for JDK8" \
-         "deep"
+gitClone graalvm                      \
+       graal-jvmci-8                  \
+       "Getting Graal JVMCI for JDK8" \
+       "deep"
 
 echo ">>> Building a JDK8 with JVMCI..."
 cd ${BASEDIR}/graal-jvmci-8/
