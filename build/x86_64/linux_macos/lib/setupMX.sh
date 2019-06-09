@@ -13,3 +13,10 @@ gitClone graalvm \
          ${repo} \
          "${repo} is a build tool created for managing the development of (primarily) Java code"
 export MX=${BASEDIR}/${repo}/mx
+
+cd ${BASEDIR}/mx
+echo "Applying and checking patch to mx.py..."
+git apply ${SCRIPTS_LIB_DIR}/patch/mx.py_logs_jvm_cli_opts.patch || true
+grep "logv(\"opts" -B 2 ${BASEDIR}/mx/mx.py                      || true
+grep "self.java_args))" -B 2 ${BASEDIR}/mx/mx.py                 || true
+cd ${BASEDIR}

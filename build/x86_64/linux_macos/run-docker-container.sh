@@ -31,6 +31,8 @@ if [[ "${DEBUG}" = "true" ]]; then
 else
   echo ""
   echo "* Running container ${DOCKER_IMAGE_TAG} in normal mode"
+  echo "* Run the below to tail the build logs inside the Docker container:"
+  echo "          tail -f jdk8-with-graal-docker/docker-build.logs"
   echo ""
   docker run                                                         \
          --rm                                                        \

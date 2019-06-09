@@ -62,9 +62,9 @@ echo "JAVA_HOME=${JAVA_HOME}"
 echo "*************************************************"
 
 if [[ "${SKIP_BUILD_IMAGE:-}" = "true" ]]; then
-       echo "Not building the docker image, skipping to directly running the docker container..."
+	echo "Not building the docker image, skipping to directly running the docker container..."
 else
-       ./build-docker-image.sh
+	./build-docker-image.sh
 fi
 
 ./run-docker-container.sh
