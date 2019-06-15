@@ -9,7 +9,7 @@ echo "* Building base docker image ${JDK_PYTHON_BASE_IMAGE_TAG}"
 echo ""
 
 docker build \
-            -t ${JDK_PYTHON_BASE_IMAGE_TAG} \
+            -t ${JDK_PYTHON_BASE_IMAGE_TAG}                      \
             --build-arg JDK_BASE_IMAGE_TAG=${JDK_BASE_IMAGE_TAG} \
             -f Dockerfile-python-${PYTHON_VERSION:-2.7} .
 

@@ -27,3 +27,6 @@ git apply ${SCRIPTS_LIB_DIR}/patch/mx.py_logs_jvm_cli_opts.patch || true
 grep "logv(\"opts" -B 2 ${BASEDIR}/mx/mx.py                      || true
 grep "self.java_args))" -B 2 ${BASEDIR}/mx/mx.py                 || true
 cd ${BASEDIR}
+
+echo "Current branch name: $(git rev-parse --abbrev-ref HEAD)"
+echo "Current commit point sha: $(git rev-parse HEAD)"
