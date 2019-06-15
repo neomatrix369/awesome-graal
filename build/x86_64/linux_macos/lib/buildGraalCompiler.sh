@@ -13,6 +13,7 @@ echo ">>> Building Graal"
 cd ${BASEDIR}
 gitClone oracle \
          graal  \
+         master \
          "Getting sources for the Graal compiler"
 
 cd ${BASEDIR}/graal/compiler

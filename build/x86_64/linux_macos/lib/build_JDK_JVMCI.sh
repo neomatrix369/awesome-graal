@@ -12,6 +12,7 @@ MX=$2
 cd ${BASEDIR}
 gitClone graalvm                      \
        graal-jvmci-8                  \
+       master                         \
        "Getting Graal JVMCI for JDK8" \
        "deep"
 

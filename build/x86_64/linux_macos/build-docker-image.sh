@@ -15,5 +15,3 @@ docker build \
             --build-arg GRAAL_JVMCI_8_TAG=${GRAAL_JVMCI_8_TAG}   \
             --build-arg JDK_BASE_IMAGE_TAG=${JDK_BASE_IMAGE_TAG} \
             --build-arg MAKE_VERSION=${MAKE_VERSION} .
-
-

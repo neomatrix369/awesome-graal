@@ -19,6 +19,7 @@ The scripts in this folder support `x86_64` architecture and can be used both on
 - JDK 1.8 (build 141 or higher)
     - must be a JDK and not just a JRE (some openjdk builds can be)
     - can also be obtained from the [Adopt OpenJDK build farm](https://adoptopenjdk.net/releases.html?variant=openjdk8)
+- Python 3.7 or higher
 
 **Note:** 
 - building of `graal-jvmci-8` have known to fail if the above versions are not met
