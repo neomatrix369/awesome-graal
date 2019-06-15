@@ -67,10 +67,14 @@ else
 	./build-docker-image.sh
 fi
 
-./run-docker-container.sh
+if [[ "${SKIP_RUN_CONTAINER:-}" = "true" ]]; then
+	echo "Not running the docker container, exiting now."
+else
+	./run-docker-container.sh
+	echo "*************************************************"
+	echo "* "
+	echo "* Finished running container ${DOCKER_IMAGE_TAG}"
+	echo "* "
+	echo "*************************************************"
+fi
 
-echo "*************************************************"
-echo "* "
-echo "* Finished running container ${DOCKER_IMAGE_TAG}"
-echo "* "
-echo "*************************************************"
