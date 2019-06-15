@@ -41,6 +41,8 @@ echo "Setting HOTSPOT_BUILD_JOBS=${HOTSPOT_BUILD_JOBS}"
 export JAVA_OPTS="-XX:+HeapDumpOnOutOfMemoryError -XX:+ShowMessageBoxOnError -XX:ErrorFile=${BASEDIR}/hs_err_pid%p.log -XX:HeapDumpPath=${BASEDIR}/java-heap-dump-%p ${JAVA_OPTS:-}"
 echo ">>>> Setting JAVA_OPTS=${JAVA_OPTS}"
 
+MAX_CPUS=${MAX_CPUS:-$(nproc --all)}
+echo ">>>> Setting MAX_CPUS=${MAX_CPUS}"
 set -x 
-HOTSPOT_BUILD_JOBS="${HOTSPOT_BUILD_JOBS}" ${MX} "-J${JAVA_OPTS}" build
+HOTSPOT_BUILD_JOBS="${HOTSPOT_BUILD_JOBS}" ${MX} --max-cpus ${MAX_CPUS} "-J${JAVA_OPTS}" build
 set +x
