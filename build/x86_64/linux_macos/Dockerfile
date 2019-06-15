@@ -1,13 +1,7 @@
-ARG JDK_BASE_IMAGE_TAG
-FROM ${JDK_BASE_IMAGE_TAG}
+ARG JDK_PYTHON_BASE_IMAGE_TAG
+FROM ${JDK_PYTHON_BASE_IMAGE_TAG}
 
 FROM buildpack-deps:stretch-scm
-
-# Install Python
-COPY --from=python:3.7 / /
-
-RUN python3 --version
-RUN pip --version
 
 # Install Java 8
 COPY --from=0 /opt/java/openjdk/ /opt/java/openjdk/
