@@ -33,5 +33,6 @@ git apply ${SCRIPTS_LIB_DIR}/patch/mx_compiler.py-VM-string-fix.patch || true
 grep "pattern \= re.compile" -B 2 compiler/mx.compiler/mx_compiler.py             || true
 
 set -x 
-${MX} "-J${JAVA_OPTS}" makegraaljdk --force ${BUILD_ARTIFACTS_DIR}
+MAX_CPUS=${MAX_CPUS:-$(nproc --all)}
+${MX} --max-cpus ${MAX_CPUS} "-J${JAVA_OPTS}" makegraaljdk --force ${BUILD_ARTIFACTS_DIR}
 set +x 
