@@ -41,5 +41,6 @@ export JAVA_OPTS="-XX:+HeapDumpOnOutOfMemoryError -XX:+ShowMessageBoxOnError -XX
 echo ">>>> Setting JAVA_OPTS=${JAVA_OPTS}"
 
 set -x 
-HOTSPOT_BUILD_JOBS="${HOTSPOT_BUILD_JOBS}" ${MX} "-J${JAVA_OPTS}" build
+MAX_CPUS=${MAX_CPUS:-$(nproc --all)}
+HOTSPOT_BUILD_JOBS="${HOTSPOT_BUILD_JOBS}" ${MX} --max-cpus ${MAX_CPUS} "-J${JAVA_OPTS}" build
 set +x
