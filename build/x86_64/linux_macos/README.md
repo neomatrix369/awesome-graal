@@ -19,6 +19,7 @@ The scripts in this folder support `x86_64` architecture and can be used both on
 - JDK 1.8 (build 141 or higher)
     - must be a JDK and not just a JRE (some openjdk builds can be)
     - can also be obtained from the [Adopt OpenJDK build farm](https://adoptopenjdk.net/releases.html?variant=openjdk8)
+- Python 2.7 or higher
 
 **Note:** 
 - building of `graal-jvmci-8` have known to fail if the above versions are not met
@@ -107,11 +108,12 @@ tail -f jdk8-with-graal-docker/docker-build.logs
 DEBUG=true HOST_REPOS_DIR="/path/on/the/host" ./docker-build.sh
 ```
 
-or
+or 
 
 ```
 DEBUG=true HOST_REPOS_DIR="/path/on/the/host" [other env variables] ./run-docker-container.sh
 ```
+
 
 - All the known environment variables that can be used when running the above `docker-build.sh` script:
 
@@ -123,6 +125,10 @@ DEBUG=true HOST_REPOS_DIR="/path/on/the/host" [other env variables] ./run-docker
 | JDK_TAG_NAME | jdk8u212-b03 | the tag name  of the the image |
 | USER_IN_CONTAINER | graal | name of the user in the container (when in debug or non-debug mode)  |
 | HOST_REPOS_DIR | <empty>  | location on the host machine to map all the Graal/GraalVM/Truffle source and dependent repos, this is usually done inside the container |
+| SKIP_BUILD_IMAGE | <empty>  | run the script but only build the docker image |
+| SKIP_RUN_CONTAINER | <empty>  | run the script but only run the docker container, skip the build part, use existing image |
+| PYTHON_VERSION | 2.7  | build docker image based on specified python version, options: 2.7 or 3.7 |
+| MAKE_VERSION | 4.2.1 | build docker image based on specified make version, options: open, subject to available source |
 
 ### Docker image & container
 
@@ -138,10 +144,10 @@ Remove unused containers and images:
 
 Push docker image to Docker hub
 
-`USER_NAME` environment variable needs setting otherwise the default value will be taken:
+`DOCKER_USER_NAME` and `IMAGE_VERSION` environment variables needs setting otherwise the default value will be taken:
 
 ```
-USER_NAME=someuser ./push-graal-docker-image-to-hub.sh
+DOCKER_USER_NAME=someuser IMAGE_VERSION=python-2.7 ./push-graal-docker-image-to-hub.sh
 ```
 
 Password will be asked before it proceeds with uploading the layers.
