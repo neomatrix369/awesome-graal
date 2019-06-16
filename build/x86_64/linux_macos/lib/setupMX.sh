@@ -10,12 +10,9 @@ BASEDIR=$1
 cd ${BASEDIR}
 repo=mx
 
-echo ">>> MX_GITHUB_ORG = ${MX_GITHUB_ORG:-[not set]}"
-echo ">>> MX_REPO_BRANCH = ${MX_REPO_BRANCH:-[not set]}"
-
-gitClone ${MX_GITHUB_ORG:-graalvm} \
-         ${repo}                   \
-         ${MX_REPO_BRANCH:-master} \
+gitClone graalvm  \
+         ${repo}  \
+         master   \
          "${repo} is a build tool created for managing the development of (primarily) Java code"
 
 export MX=${BASEDIR}/${repo}/mx
