@@ -6,7 +6,7 @@ dependencies:
 jobs:
   build:
     docker:
-      - image: neomatrix369/graal-jdk8:2.7
+      - image: neomatrix369/graal-jdk8:${IMAGE_VERSION:-python-2.7}
     steps:
       - checkout
       - restore_cache:
