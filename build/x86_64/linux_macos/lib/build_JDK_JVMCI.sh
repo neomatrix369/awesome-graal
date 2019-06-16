@@ -12,6 +12,7 @@ MX=$2
 cd ${BASEDIR}
 gitClone graalvm                      \
        graal-jvmci-8                  \
+       master                         \
        "Getting Graal JVMCI for JDK8" \
        "deep"
 
@@ -40,7 +41,8 @@ echo "Setting HOTSPOT_BUILD_JOBS=${HOTSPOT_BUILD_JOBS}"
 export JAVA_OPTS="-XX:+HeapDumpOnOutOfMemoryError -XX:+ShowMessageBoxOnError -XX:ErrorFile=${BASEDIR}/hs_err_pid%p.log -XX:HeapDumpPath=${BASEDIR}/java-heap-dump-%p ${JAVA_OPTS:-}"
 echo ">>>> Setting JAVA_OPTS=${JAVA_OPTS}"
 
-set -x 
 MAX_CPUS=${MAX_CPUS:-$(nproc --all)}
+echo ">>>> Setting MAX_CPUS=${MAX_CPUS}"
+set -x
 HOTSPOT_BUILD_JOBS="${HOTSPOT_BUILD_JOBS}" ${MX} --max-cpus ${MAX_CPUS} "-J${JAVA_OPTS}" build
 set +x

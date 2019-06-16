@@ -9,7 +9,9 @@ export RUN_TESTS=${RUN_TESTS:-"true"}
 
 export JAVA_VERSION=${JAVA_VERSION:-jdk8u212-b03}
 export JDK_BASE_IMAGE_TAG=${JDK_BASE_IMAGE_TAG:-"adoptopenjdk/openjdk8:${JAVA_VERSION}"}
-export DOCKER_IMAGE_TAG="graal-jdk8:latest"
+export PYTHON_VERSION=${PYTHON_VERSION:-2.7}
+export JDK_PYTHON_BASE_IMAGE_TAG="jdk-python-base:${PYTHON_VERSION}"
+export DOCKER_IMAGE_TAG="graal-jdk8:python-${PYTHON_VERSION}"
 export USER_IN_CONTAINER=${USER_IN_CONTAINER:-"graal"}
 export GRAAL_JVMCI_8_TAG=${GRAAL_JVMCI_8_TAG:-master}
 export CONTAINER_HOME_DIR="/home/${USER_IN_CONTAINER}"
@@ -44,7 +46,9 @@ echo ""
 echo "JAVA_VERSION=${JAVA_VERSION}"
 echo "DOCKER_IMAGE_TAG=${DOCKER_IMAGE_TAG}"
 echo "JDK_BASE_IMAGE_TAG=${JDK_BASE_IMAGE_TAG}"
+echo "JDK_PYTHON_BASE_IMAGE_TAG=${JDK_PYTHON_BASE_IMAGE_TAG}"
 echo "MAKE_VERSION=${MAKE_VERSION}"
+echo "PYTHON_VERSION=${PYTHON_VERSION}"
 echo ""
 echo "HOST_OUTPUT_DIR=${HOST_OUTPUT_DIR}"
 echo "HOST_REPOS_DIR=${HOST_REPOS_DIR}"
@@ -67,10 +71,14 @@ else
 	./build-docker-image.sh
 fi
 
-./run-docker-container.sh
+if [[ "${SKIP_RUN_CONTAINER:-}" = "true" ]]; then
+	echo "Not running the docker container, exiting now."
+else
+	./run-docker-container.sh
+	echo "*************************************************"
+	echo "* "
+	echo "* Finished running container ${DOCKER_IMAGE_TAG}"
+	echo "* "
+	echo "*************************************************"
+fi
 
-echo "*************************************************"
-echo "* "
-echo "* Finished running container ${DOCKER_IMAGE_TAG}"
-echo "* "
-echo "*************************************************"

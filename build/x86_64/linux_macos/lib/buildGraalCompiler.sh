@@ -13,6 +13,7 @@ echo ">>> Building Graal"
 cd ${BASEDIR}
 gitClone oracle \
          graal  \
+         master \
          "Getting sources for the Graal compiler"
 
 cd ${BASEDIR}/graal/compiler
@@ -32,7 +33,8 @@ echo "Applying and checking patch to mx_jvmci.py..."
 git apply ${SCRIPTS_LIB_DIR}/patch/mx_compiler.py-VM-string-fix.patch || true
 grep "pattern \= re.compile" -B 2 compiler/mx.compiler/mx_compiler.py             || true
 
-set -x 
 MAX_CPUS=${MAX_CPUS:-$(nproc --all)}
+echo ">>>> Setting MAX_CPUS=${MAX_CPUS}"
+set -x
 ${MX} --max-cpus ${MAX_CPUS} "-J${JAVA_OPTS}" makegraaljdk --force ${BUILD_ARTIFACTS_DIR}
 set +x 

@@ -15,8 +15,9 @@ versionCheck() {
 gitClone() {
     org=$1
     repo=$2
-    programDesc=$3
-    cloneType=${4:-"shallow"}
+    branch=${3:-master}
+    programDesc=$4
+    cloneType=${5:-"shallow"}
 
     if [[ -e "${repo}/.git" ]]; then
         echo ">>> ${repo} already exists: updating and using this version"
@@ -30,10 +31,14 @@ gitClone() {
         echo ">>> Getting ${repo}: ${programDesc}"
         if [[ "${cloneType}" = "deep" ]]; then
            echo ">>> Cloning deep: includes commits & tags data"
-           git clone https://github.com/${org}/${repo}.git
+           set -x
+           git clone -b ${branch} https://github.com/${org}/${repo}.git
+           set +x
         else
            echo ">>> Cloning shallow: excludes commits & tags data"
-           git clone --depth=1 https://github.com/${org}/${repo}.git
+           set -x
+           git clone --depth=1 -b ${branch} https://github.com/${org}/${repo}.git
+           set +x
         fi
     fi
 }
