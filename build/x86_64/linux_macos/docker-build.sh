@@ -9,8 +9,8 @@ export RUN_TESTS=${RUN_TESTS:-"true"}
 
 export JAVA_VERSION=${JAVA_VERSION:-jdk8u212-b03}
 export JDK_BASE_IMAGE_TAG=${JDK_BASE_IMAGE_TAG:-"adoptopenjdk/openjdk8:${JAVA_VERSION}"}
-export JDK_PYTHON_BASE_IMAGE_TAG="jdk-python-base:${PYTHON_VERSION}"
 export PYTHON_VERSION=${PYTHON_VERSION:-2.7}
+export JDK_PYTHON_BASE_IMAGE_TAG="jdk-python-base:${PYTHON_VERSION}"
 export DOCKER_IMAGE_TAG="graal-jdk8:python-${PYTHON_VERSION}"
 export USER_IN_CONTAINER=${USER_IN_CONTAINER:-"graal"}
 export GRAAL_JVMCI_8_TAG=${GRAAL_JVMCI_8_TAG:-master}

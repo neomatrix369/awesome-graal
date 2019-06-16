@@ -9,7 +9,7 @@ if [[ -f "/etc/sudoers" ]]; then
    SUDO_CMD=sudo
 fi
 
-if [[ "${PYTHON_VERSION:-2.7}" = "3.7" ]]; then
+if [[ "${PYTHON_VERSION:-2.7}" = "2.7" ]]; then
     PYTHON_DEPS="python-pip python2.7 python2.7-dev"
 else
     PYTHON_DEPS="libpq-dev libreadline-gplv2-dev libncursesw5-dev libssl-dev libsqlite3-dev tk-dev libgdbm-dev libc6-dev libbz2-dev libffi-dev zlib1g-dev"
