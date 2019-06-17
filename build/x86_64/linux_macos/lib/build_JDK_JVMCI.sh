@@ -38,11 +38,11 @@ grep "re.search" -B 2 mx.jvmci/mx_jvmci.py                     || true
 
 HOTSPOT_BUILD_JOBS=${HOTSPOT_BUILD_JOBS:-$(getAllowedThreads)}
 echo "Setting HOTSPOT_BUILD_JOBS=${HOTSPOT_BUILD_JOBS}"
-export JAVA_OPTS="-XX:+HeapDumpOnOutOfMemoryError -XX:+ShowMessageBoxOnError -XX:ErrorFile=${BASEDIR}/hs_err_pid%p.log -XX:HeapDumpPath=${BASEDIR}/java-heap-dump-%p ${JAVA_OPTS:-}"
+export JAVA_OPTS="${MAX_HEAP_SIZE_FLAG:-} -XX:+HeapDumpOnOutOfMemoryError -XX:+ShowMessageBoxOnError -XX:ErrorFile=${BASEDIR}/hs_err_pid%p.log -XX:HeapDumpPath=${BASEDIR}/java-heap-dump-%p ${JAVA_OPTS:-}"
 echo ">>>> Setting JAVA_OPTS=${JAVA_OPTS}"
 
-MAX_CPUS=${MAX_CPUS:-$(nproc --all)}
+MAX_CPUS=${MAX_CPUS:-$(getAvailableThreads)}
 echo ">>>> Setting MAX_CPUS=${MAX_CPUS}"
-set -x 
-HOTSPOT_BUILD_JOBS="${HOTSPOT_BUILD_JOBS}" ${MX} --max-cpus ${MAX_CPUS} "-J${JAVA_OPTS}" build
+set -x
+HOTSPOT_BUILD_JOBS="${HOTSPOT_BUILD_JOBS}" ${MX} --max-cpus ${MAX_CPUS} "-A-J${JAVA_OPTS}" build
 set +x
