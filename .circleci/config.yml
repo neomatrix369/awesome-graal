@@ -5,90 +5,29 @@ dependencies:
     - "vendor/apt/archives"
 jobs:
   build:
-    docker:
-      - image: adoptopenjdk/openjdk8:jdk8u152-b16
+    machine:
+      image: ubuntu-1604:201903-01
     steps:
       - checkout
-      - restore_cache:
-          keys:
-            - os-deps-{{ arch }}-{{ .Branch }}-{{ .Environment.CIRCLE_SHA1 }}
-            - os-deps-{{ arch }}-{{ .Branch }}
-            - os-deps
       - run:
-          name: Install Os dependencies
-          command: ./build/x86_64/linux_macos/osDependencies.sh
+          name: Download and install Java 8 SDK
+          command: ./build/x86_64/linux_macos/installJDK.sh
           timeout: 2m
-      - save_cache:
-          key: os-deps-{{ arch }}-{{ .Branch }}-{{ .Environment.CIRCLE_SHA1 }}
-          paths:
-            - vendor/apt
-            - vendor/apt/archives
-      - restore_cache:
-          keys:
-            - make-382-{{ arch }}-{{ .Branch }}-{{ .Environment.CIRCLE_SHA1 }}
-            - make-382-{{ arch }}-{{ .Branch }}
-            - make-382
-      - run:
-          name: Build and install make via script
-          command: ./build/x86_64/linux_macos/installMake.sh
-          timeout: 1m
-      - save_cache:
-          key: make-382-{{ arch }}-{{ .Branch }}-{{ .Environment.CIRCLE_SHA1 }}
-          paths:
-            - /root/project/make-3.82/
-            - /usr/bin/make
-            - /usr/local/bin/make
-            - /usr/share/man/man1/make.1.gz
-      - restore_cache:
-          keys:
-            - llvm-4.0-{{ arch }}-{{ .Branch }}-{{ .Environment.CIRCLE_SHA1 }}
-            - llvm-4.0-{{ arch }}-{{ .Branch }}
-            - llvm-4.0
-      - run:
-          name: Install llvm 4.0 via a script
-          command: ./build/x86_64/linux_macos/installLLVM.sh
-          timeout: 1m
-      - save_cache:
-          key: llvm-4.0-{{ arch }}-{{ .Branch }}-{{ .Environment.CIRCLE_SHA1 }}
-          paths:
-            - /usr/bin/ll*
-            - /usr/bin/opt*
-            - /usr/lib/llvm-6.0/
-            - /usr/lib/clang*
-            - /usr/include/clang*
-            - /usr/share/clang*
-            - /usr/bin/gcc*
-            - /usr/share/man/man1/gcc*
-            - /usr/bin/g++*
-            - /usr/share/man/man1/g++*
-      - restore_cache:
-          keys:
-            - ruby-{{ arch }}-{{ .Branch }}-{{ .Environment.CIRCLE_SHA1 }}
-            - ruby-{{ arch }}-{{ .Branch }}
-            - ruby
-      - run:
-          name: Install ruby via a script
-          command: ./build/x86_64/linux_macos/installRuby.sh
-          timeout: 1m
-      - save_cache:
-          key: ruby-{{ arch }}-{{ .Branch }}-{{ .Environment.CIRCLE_SHA1 }}
-          paths:
-            - /usr/local/rvm/
       - run:
           name: Define Environment Variables and update JAVA_HOME and PATH at Runtime
           command: |
-            echo 'Even though we are using tag jdk8u152-b16, the location where JAVA_HOME is, is named jdk8u144-b01'
-            echo 'This is being fixed in subsequent versions of the JDK'
-            echo 'export JAVA_VERSION=jdk8u144-b01'                               >> ${BASH_ENV}
-            echo 'export JAVA_HOME=/opt/java/openjdk/${JAVA_VERSION}'             >> ${BASH_ENV}
+            echo "Current directory: ${PWD}"
+            echo 'export JAVA_VERSION=jdk1.8.0'                                   >> ${BASH_ENV}
+            echo 'export JAVA_HOME=/usr/lib/jvm/jdk1.8.0/'                        >> ${BASH_ENV}
             echo 'export PATH=${JAVA_HOME}/bin:${PATH}'                           >> ${BASH_ENV}
             echo 'export BASEDIR=${PWD}'                                          >> ${BASH_ENV}
             echo 'export SCRIPTS_LIB_DIR=${BASEDIR}/build/x86_64/linux_macos/lib' >> ${BASH_ENV}
             echo 'export MX=${BASEDIR}/mx/mx'                                     >> ${BASH_ENV}
             echo 'export JDK_GRAAL_FOLDER_NAME=jdk8-with-graal'                   >> ${BASH_ENV}
-            echo 'export GRAAL_JVMCI_8_TAG=jvmci-0.46'                            >> ${BASH_ENV}
+            echo 'export GRAAL_JVMCI_8_TAG=master'                                >> ${BASH_ENV}
             echo 'export BUILD_ARTIFACTS_DIR=${BASEDIR}/${JDK_GRAAL_FOLDER_NAME}' >> ${BASH_ENV}
             echo 'export RUN_TESTS="true"'                                        >> ${BASH_ENV}
+            echo 'export HOTSPOT_BUILD_JOBS=2'
             echo 'export GRAALVM_SUITE_RUNTIMES="/substratevm,/tools,sulong,/graal-nodejs,truffleruby,graalpython"' >> ${BASH_ENV}
             echo 'export HOTSPOT_BUILD_JOBS=2'                                    >> ${BASH_ENV}
             echo 'export FASTR_RELEASE="true"'                                    >> ${BASH_ENV}
@@ -97,45 +36,26 @@ jobs:
             echo 'export LC_CTYPE="en_US.UTF-8"'                                  >> ${BASH_ENV}
             source ${BASH_ENV}
       - run:
-          name: Display HW, SW, Runtime env. info and versions of dependencies
-          command: ./build/x86_64/linux_macos/lib/displayDependencyVersion.sh
-      - run:
-          name: Setup MX
-          command: ./build/x86_64/linux_macos/lib/setupMX.sh ${BASEDIR}
-      - run:
-          name: Build JDK JVMCI
-          command: ./build/x86_64/linux_macos/lib/build_JDK_JVMCI.sh ${BASEDIR} ${MX}
+          name: Run local build
+          command: ./build/x86_64/linux_macos/local-build.sh
           timeout: 20m
           no_output_timeout: 15m
-      - run:
-          name: Run JDK JVMCI Tests
-          command: ./build/x86_64/linux_macos/lib/run_JDK_JVMCI_Tests.sh ${BASEDIR} ${MX}
-      - run:
-          name: Setting up environment and Build Graal Compiler
-          command: |
-            echo ">>>> Currently JAVA_HOME=${JAVA_HOME}"
-            JDK8_JVMCI_HOME="$(cd ${BASEDIR}/graal-jvmci-8/ && ${MX} --java-home ${JAVA_HOME} jdkhome)"
-            echo "export JVMCI_VERSION_CHECK='ignore'" >> ${BASH_ENV}
-            echo "export JAVA_HOME=${JDK8_JVMCI_HOME}" >> ${BASH_ENV}
-            source ${BASH_ENV}
-      - run:
-          name: Build Graal Compiler
-          command: |
-            echo ">>>> Using JDK8_JVMCI_HOME as JAVA_HOME (${JAVA_HOME})"
-            ./build/x86_64/linux_macos/lib/buildGraalCompiler.sh ${BASEDIR} ${MX} ${BUILD_ARTIFACTS_DIR}
-          timeout: 10m
-          no_output_timeout: 7m
-      - run:
-          name: Build GraalVM Suite
-          command: |
-            ./build/x86_64/linux_macos/lib/buildGraalVMSuite.sh ${BASEDIR} ${MX} ${GRAALVM_SUITE_RUNTIMES}
-          timeout: 10m
-          no_output_timeout: 7m
       - run:
           name: Archiving artifacts
           command: |
             ./build/x86_64/linux_macos/lib/archivingArtifacts.sh ${BASEDIR} ${MX} ${JDK_GRAAL_FOLDER_NAME} ${BUILD_ARTIFACTS_DIR}
           timeout: 3m
           no_output_timeout: 2m
+      - run:
+          name: Collecting and archiving logs (debug and error logs)
+          command: |
+            ./build/x86_64/linux_macos/lib/archivingLogs.sh ${BASEDIR}
+          timeout: 3m
+          no_output_timeout: 2m
+          when: always
       - store_artifacts:
+          name: Uploading logs
+          path: logs/
+      - store_artifacts:
+          name: Uploading artifacts in jdk8-with-graal-local
           path: jdk8-with-graal-local/

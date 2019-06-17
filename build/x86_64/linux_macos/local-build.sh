@@ -3,6 +3,7 @@
 #
 # Extended off the original script (see https://github.com/jponge/build-graal-jvm/blob/master/build.sh) from @jponge
 #
+
 set -e
 set -u
 set -o pipefail
@@ -12,7 +13,7 @@ IFS=$'\n\t'
 BASEDIR=$(pwd)
 export RUN_TESTS=${RUN_TESTS:-"true"}
 JDK_GRAAL_FOLDER_NAME=jdk8-with-graal
-export GRAAL_JVMCI_8_TAG=jvmci-0.46
+export GRAAL_JVMCI_8_TAG=${GRAAL_JVMCI_8_TAG:-master}
 BUILD_ARTIFACTS_DIR=${BASEDIR}/${JDK_GRAAL_FOLDER_NAME}
 GRAALVM_SUITE_RUNTIMES=${GRAALVM_SUITE_RUNTIMES:-'/substratevm,/tools,sulong,/graal-nodejs,truffleruby,graalpython,/fastr'}
 
@@ -76,7 +77,9 @@ run() {
     source ${SCRIPTS_LIB_DIR}/setEnvVariables.sh ${BASEDIR} ${MX}
     time ${SCRIPTS_LIB_DIR}/buildGraalCompiler.sh ${BASEDIR} ${MX} ${BUILD_ARTIFACTS_DIR}
     time ${SCRIPTS_LIB_DIR}/buildGraalVMSuite.sh ${BASEDIR} ${MX} ${GRAALVM_SUITE_RUNTIMES}
+    ${SCRIPTS_LIB_DIR}/sanityCheckArtifacts.sh ${BASEDIR} ${JDK_GRAAL_FOLDER_NAME}
     time ${SCRIPTS_LIB_DIR}/archivingArtifacts.sh ${BASEDIR} ${MX} ${GRAALVM_SUITE_RUNTIMES} ${JDK_GRAAL_FOLDER_NAME} ${BUILD_ARTIFACTS_DIR}
+    time ${SCRIPTS_LIB_DIR}/archivingLogs.sh ${BASEDIR}
 }
 
 time run

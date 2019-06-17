@@ -1,5 +1,21 @@
-ARG JDK_BASE_IMAGE_TAG
-FROM ${JDK_BASE_IMAGE_TAG}
+ARG JDK_PYTHON_BASE_IMAGE_TAG
+FROM ${JDK_PYTHON_BASE_IMAGE_TAG}
+
+FROM buildpack-deps:stretch-scm
+
+# Install Java 8
+COPY --from=0 /opt/java/openjdk/ /opt/java/openjdk/
+
+ENV JAVA_HOME=/opt/java/openjdk/
+ENV PATH=${JAVA_HOME}/bin:${PATH}
+
+RUN echo "JAVA_HOME=${JAVA_HOME}"
+RUN echo "PATH=${PATH}"
+
+RUN java -version
+RUN echo "JAVA_HOME=${JAVA_HOME}"
+ENV JAVA_8_HOME="${JAVA_HOME}"
+RUN echo "JAVA_8_HOME=${JAVA_8_HOME}"
 
 COPY osDependencies.sh /osDependencies.sh
 RUN  /bin/bash -l -c "./osDependencies.sh"

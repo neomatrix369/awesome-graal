@@ -22,16 +22,18 @@ if [[ "${DEBUG}" = "true" ]]; then
          --env OUTPUT_DIR="${CONTAINER_OUTPUT_DIR}"                \
          --env RUN_TESTS="${RUN_TESTS}"                            \
          --env GRAALVM_SUITE_RUNTIMES="${GRAALVM_SUITE_RUNTIMES}"  \
-         --env JAVA_OPTS="${DOCKER_JAVA_OPTS}"                   \
+         --env JAVA_OPTS="${DOCKER_JAVA_OPTS}"                     \
          --volume $(pwd):${CONTAINER_SCRIPTS_DIR}                  \
          --volume $(pwd)/patch:${CONTAINER_HOME_DIR}/patch         \
          --volume ${HOST_OUTPUT_DIR}:${CONTAINER_OUTPUT_DIR}       \
-         --memory ${DOCKER_MEMORY}                                              \
+         --memory ${DOCKER_MEMORY}                                 \
          ${HOST_REPOS_DIR_DOCKER_PARAM}                            \
          ${DOCKER_IMAGE_TAG}
 else
   echo ""
   echo "* Running container ${DOCKER_IMAGE_TAG} in normal mode"
+  echo "* Run the below to tail the build logs inside the Docker container:"
+  echo "          tail -f jdk8-with-graal-docker/docker-build.logs"
   echo ""
   docker run                                                         \
          --rm                                                        \

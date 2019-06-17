@@ -9,6 +9,12 @@ if [[ -f "/etc/sudoers" ]]; then
    SUDO_CMD=sudo
 fi
 
+if [[ "${PYTHON_VERSION:-2.7}" = "2.7" ]]; then
+    PYTHON_DEPS="python-pip python2.7 python2.7-dev"
+else
+    PYTHON_DEPS="libpq-dev libreadline-gplv2-dev libncursesw5-dev libssl-dev libsqlite3-dev tk-dev libgdbm-dev libc6-dev libbz2-dev libffi-dev zlib1g-dev"
+fi
+
 if [[ "$(uname)" == "Linux" ]]; then
     set -ex;                     \
         sed -i "s/deb.debian.org/cdn-fastly.deb.debian.org/" /etc/apt/sources.list \
@@ -33,9 +39,7 @@ if [[ "$(uname)" == "Linux" ]]; then
             libssl-dev           \
             locales              \
             make                 \
-            python-pip           \
-            python2.7            \
-            python2.7-dev        \
+            ${PYTHON_DEPS}       \
             ssh                  \
             texlive-latex-base   \
             texlive-fonts-recommended \
@@ -57,4 +61,18 @@ elif [[ "$(uname)" == "Darwin" ]]; then
     update_dyld_shared_cache
 else 
     echo "*** Does not have equivalent dependencies/packages for your platform ($(uname)). Check if one of platforms supported in '$0' works for your platform. ***"
+fi
+
+if [[ "${PYTHON_VERSION:-2.7}" = "3.7" ]]; then
+    wget https://www.python.org/ftp/python/3.7.3/Python-3.7.3.tgz
+    tar xzf Python-3.7.3.tgz
+    cd Python-3.7.3
+    ./configure --enable-optimizations
+    ${SUDO_CMD} make altinstall
+
+    ln -sf /usr/local/bin/python3.7 /usr/bin/python
+    ln -sf /usr/local/bin/python3.7 /usr/bin/python3.7
+    ln -sf /usr/local/bin/python3.7 /usr/bin/python3
+
+    pip install future
 fi

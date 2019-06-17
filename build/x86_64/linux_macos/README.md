@@ -14,19 +14,12 @@ The scripts in this folder support `x86_64` architecture and can be used both on
 - make 
     - for Linux - version 3.82  
     - for MacOS - version 3.81 
-    - `installMake.sh` has been provided, amend where necessary, before running
-- LLVM 
-    - for Linux - version 4.0 to 6.0, also see [Installing LLVM on the Graal git repo](https://github.com/oracle/truffleruby/blob/master/doc/user/installing-llvm.md#ubuntu)
-    - for MacOS - version 4.0.1 , also see [Installing LLVM on the Graal git repo](https://github.com/oracle/truffleruby/blob/master/doc/user/installing-llvm.md#macos). Check if the default Apple LLVM provided under `/Library/Developer/CommandLineTools/usr/bin/` is based on LLVM 4.0 or higher.
-    - `installLLVM.sh` has been provided, amend where necessary, before running
-- openssl
-    - for Linux - OpenSSL 1.0.2g
-    - for MacOS - OpenSSL 1.0.2o
-    - `installOpenSSL.sh` has been provided, amend where necessary, before running
+    - `installMake.sh` has been provided, amend where necessary before running
 - Docker (to use the `docker-build.sh` script)
 - JDK 1.8 (build 141 or higher)
     - must be a JDK and not just a JRE (some openjdk builds can be)
     - can also be obtained from the [Adopt OpenJDK build farm](https://adoptopenjdk.net/releases.html?variant=openjdk8)
+- Python 2.7 or 3.6 or higher
 
 **Note:** 
 - building of `graal-jvmci-8` have known to fail if the above versions are not met
@@ -111,6 +104,17 @@ tail -f jdk8-with-graal-docker/docker-build.logs
 ```
 *one of more environment variables
 
+```
+DEBUG=true HOST_REPOS_DIR="/path/on/the/host" ./docker-build.sh
+```
+
+or 
+
+```
+DEBUG=true HOST_REPOS_DIR="/path/on/the/host" [other env variables] ./run-docker-container.sh
+```
+
+
 - All the known environment variables that can be used when running the above `docker-build.sh` script:
 
 | Name           | Default       | Description |
@@ -118,17 +122,19 @@ tail -f jdk8-with-graal-docker/docker-build.logs
 | DEBUG | <empty> | to run the container in DEBUG mode |
 | HOST_REPOS_DIR | /home/graal/ (inside the container)| a new location on the host to map all the source and dependent repos used to build Graal/GraalVM/Truffle |
 | JDK_BASE_IMAGE | openjdk8 | name of the JDK image (from Adopt OpenJDK build farm or another source) |
-| JDK_TAG_NAME | jdk8u152-b16 | the tag name  of the the image |
+| JDK_TAG_NAME | jdk8u212-b03 | the tag name  of the the image |
 | USER_IN_CONTAINER | graal | name of the user in the container (when in debug or non-debug mode)  |
-| LLVM_VERSION | 6.0 | version of LLVM to install (FYI: only versions available are 5.0 and 6.0) |
 | HOST_REPOS_DIR | <empty>  | location on the host machine to map all the Graal/GraalVM/Truffle source and dependent repos, this is usually done inside the container |
-| GRAALVM_SUITE_RUNTIMES | /substratevm,/tools,sulong,/graal-nodejs,/fastr,truffleruby,graalpython | list of components that make up the GraalVM suite |
+| SKIP_BUILD_IMAGE | <empty>  | run the script but only build the docker image |
+| SKIP_RUN_CONTAINER | <empty>  | run the script but only run the docker container, skip the build part, use existing image |
+| PYTHON_VERSION | 2.7  | build docker image based on specified python version, options: 2.7, 3.6 or 3.7 |
+| MAKE_VERSION | 4.2.1 | build docker image based on specified make version, options: open, subject to available source |
 
 ### Docker image & container
 
 If you examine the `Dockerfile` script, you will see the docker image is inherited from `adoptopenjdk/openjdk8:latest` available from the docker user [Adopt OpenJDK](https://hub.docker.com/u/adoptopenjdk/) on [Docker hub](http://hub.docker.com/).
 
-The script also internally calls `installMake.sh` and `installLLVM.sh`, these scripts can also be run in the native environment. They both take the respective version numbers of the program as a command-line parameter.
+The script also internally calls `installMake.sh`, this script can also be run in the native environment. It takes the version numbers of the program as a command-line parameter.
 
 Remove unused containers and images:
 
@@ -138,10 +144,10 @@ Remove unused containers and images:
 
 Push docker image to Docker hub
 
-`USER_NAME` environment variable needs setting otherwise the default value will be taken:
+`DOCKER_USER_NAME` and `IMAGE_VERSION` environment variables needs setting otherwise the default value will be taken:
 
 ```
-USER_NAME=someuser ./push-graal-docker-image-to-hub.sh
+DOCKER_USER_NAME=someuser IMAGE_VERSION=python-2.7 ./push-graal-docker-image-to-hub.sh
 ```
 
 Password will be asked before it proceeds with uploading the layers.
