@@ -19,7 +19,7 @@ The scripts in this folder support `x86_64` architecture and can be used both on
 - JDK 1.8 (build 141 or higher)
     - must be a JDK and not just a JRE (some openjdk builds can be)
     - can also be obtained from the [Adopt OpenJDK build farm](https://adoptopenjdk.net/releases.html?variant=openjdk8)
-- Python 2.7 or higher
+- Python 2.7 or 3.6 or higher
 
 **Note:** 
 - building of `graal-jvmci-8` have known to fail if the above versions are not met
@@ -127,7 +127,7 @@ DEBUG=true HOST_REPOS_DIR="/path/on/the/host" [other env variables] ./run-docker
 | HOST_REPOS_DIR | <empty>  | location on the host machine to map all the Graal/GraalVM/Truffle source and dependent repos, this is usually done inside the container |
 | SKIP_BUILD_IMAGE | <empty>  | run the script but only build the docker image |
 | SKIP_RUN_CONTAINER | <empty>  | run the script but only run the docker container, skip the build part, use existing image |
-| PYTHON_VERSION | 2.7  | build docker image based on specified python version, options: 2.7 or 3.7 |
+| PYTHON_VERSION | 2.7  | build docker image based on specified python version, options: 2.7, 3.6 or 3.7 |
 | MAKE_VERSION | 4.2.1 | build docker image based on specified make version, options: open, subject to available source |
 
 ### Docker image & container
