@@ -26,7 +26,7 @@ export JAVA_OPTS="${MAX_HEAP_SIZE_FLAG:-} -XX:+HeapDumpOnOutOfMemoryError -XX:+S
 echo ">>>> Setting JAVA_OPTS=${JAVA_OPTS}"
 
 set -x 
-HOTSPOT_BUILD_JOBS=${HOTSPOT_BUILD_JOBS} ${MX} ${BUILD_GRAAL_COMPILER_VERBOSE_MODE_FLAG:-} "-A-J${JAVA_OPTS}" build
+${MX} --max-cpus ${MAX_CPUS} ${BUILD_GRAAL_COMPILER_VERBOSE_MODE_FLAG:-} "-A-J${JAVA_OPTS}" build
 set +x
 
 MAX_CPUS=${MAX_CPUS:-$(getAvailableThreads)}
