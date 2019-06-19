@@ -44,10 +44,15 @@ gitClone() {
 }
 
 getAvailableThreads() {
-    if [[ "$(uname)" = "Darwin" ]]; then
-       result=$(sysctl -n hw.ncpu || true)
+    if [[ -f "/.dockerenv" ]]; then
+       result=$(cat /sys/fs/cgroup/cpuset/cpuset.cpus | awk -F'-' '{print $2}')
+       result=$((result + 1))
     else
-       result=$(nproc --all || true)
+        if [[ "$(uname)" = "Darwin" ]]; then
+            result=$(sysctl -n hw.ncpu || true)
+        else
+            result=$(nproc --all || true)
+        fi
     fi
     echo ${result:-4}
 }

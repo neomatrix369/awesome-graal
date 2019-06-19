@@ -19,3 +19,6 @@ LIBFFI_FOLDER=graal/truffle/mxbuild/linux-amd64/src/libffi
 echo "Copying the log files in ${BASEDIR}/${LIBFFI_FOLDER} into ${BASEDIR}/logs/${LIBFFI_FOLDER}"
 mkdir -p ${BASEDIR}/logs/${LIBFFI_FOLDER}
 cp ${BASEDIR}/${LIBFFI_FOLDER}/libffi*.log ${BASEDIR}/logs/${LIBFFI_FOLDER} || true
+
+echo "Copying the strace log files in /tmp/ into ${BASEDIR}/logs/"
+cp /tmp/strace-graal-compiler*.logs ${BASEDIR}/logs/ || true
