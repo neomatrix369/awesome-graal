@@ -2,7 +2,7 @@
 
 ---
 
-**CircleCI:**  _Linux_ [![CircleCI](https://circleci.com/gh/neomatrix369/awesome-graal/tree/master.svg?style=svg)](https://circleci.com/gh/neomatrix369/awesome-graal/tree/master) <br/>
+**CircleCI:**  _Graal JDK8 (Linux)_ [![CircleCI](https://circleci.com/gh/neomatrix369/awesome-graal/tree/master.svg?style=svg)](https://circleci.com/gh/neomatrix369/awesome-graal/tree/master) | _GraalVM Suite JDK8 (Linux)_ [![CircleCI](https://circleci.com/gh/neomatrix369/awesome-graal/tree/build-graalvm-suite.svg?style=svg)](https://circleci.com/gh/neomatrix369/awesome-graal/tree/build-graalvm-suite)<br/>
 **AdoptOpenJDK build farm:** _Linux_ [![Build Status](https://ci.adoptopenjdk.net/buildStatus/icon?job=jdk8-with-graal_build_x86-64_linux)](https://ci.adoptopenjdk.net/job/jdk8-with-graal_build_x86-64_linux/)   ⚫   _MacOS_ [![Build Status](https://ci.adoptopenjdk.net/buildStatus/icon?job=jdk8-with-graal_build_x86-64_macos)](https://ci.adoptopenjdk.net/job/jdk8-with-graal_build_x86-64_macos/)   ⚫   _Windows_ [![Build Status](https://ci.adoptopenjdk.net/buildStatus/icon?job=jdk8-with-graal_build_x86-64_windows)](https://ci.adoptopenjdk.net/job/jdk8-with-graal_build_x86-64_windows/)
 
 ---
