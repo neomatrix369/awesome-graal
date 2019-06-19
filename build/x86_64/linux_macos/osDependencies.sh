@@ -25,7 +25,8 @@ set -ex;                              \
        libpq-dev                     \
        ${PYTHON_DEPS}                \
        make                          \
-       ssh
+       ssh                           \
+       strace
 
 set -ex;                                       \
     ${SUDO_CMD} rm -r /var/lib/apt/lists/*     \
