@@ -27,7 +27,6 @@ jobs:
             echo 'export GRAAL_JVMCI_8_TAG=master'                                >> ${BASH_ENV}
             echo 'export BUILD_ARTIFACTS_DIR=${BASEDIR}/${JDK_GRAAL_FOLDER_NAME}' >> ${BASH_ENV}
             echo 'export RUN_TESTS="true"'                                        >> ${BASH_ENV}
-            echo 'export HOTSPOT_BUILD_JOBS=2'
             echo 'export GRAALVM_SUITE_RUNTIMES="/substratevm,/tools,sulong,/graal-nodejs,truffleruby,graalpython"' >> ${BASH_ENV}
             echo 'export HOTSPOT_BUILD_JOBS=2'                                    >> ${BASH_ENV}
             echo 'export FASTR_RELEASE="true"'                                    >> ${BASH_ENV}

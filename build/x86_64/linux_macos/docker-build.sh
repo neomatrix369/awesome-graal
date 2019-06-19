@@ -27,7 +27,7 @@ export LLVM_VERSION=${LLVM_VERSION:-6.0}
 export RUBY_VERSION=${RUBY_VERSION:-2.2.2}
 export GRAALVM_SUITE_RUNTIMES=${GRAALVM_SUITE_RUNTIMES:-"/substratevm,/tools,sulong,/graal-nodejs,truffleruby,graalpython,/fastr"}
 export DOCKER_MEMORY=4096M
-export DOCKER_JAVA_OPTS="-Xms3g -Xmx3g -XX:+PrintFlagsFinal"
+export DOCKER_JAVA_OPTS="-Xms2g -Xmx2g -XX:MaxPermSize=1g -XX:+PrintFlagsFinal"
 
 export HOST_REPOS_DIR=${HOST_REPOS_DIR:-""}
 if [[ ! -z "${HOST_REPOS_DIR}" ]]; then
