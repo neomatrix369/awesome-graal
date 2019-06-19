@@ -23,27 +23,21 @@ if [[ "$(uname)" == "Linux" ]]; then
         && ${SUDO_CMD} apt-get install -y    \
             build-essential      \
             ca-certificates      \
-            ed                   \
-            gcc                  \
             gfortran             \
             git                  \
-            libbz2-dev           \
             libc++-dev           \
             libcurl4-openssl-dev \
             liblzma-dev          \
             libmpc-dev           \
             libpcre3             \
             libpcre3-dev         \
-            libpq-dev            \
-            libreadline-dev      \
-            libssl-dev           \
             locales              \
             make                 \
             ${PYTHON_DEPS}       \
             ssh                  \
             texlive-latex-base   \
             texlive-fonts-recommended \
-            zlib1g-dev           \
+            strace               \
             && ${SUDO_CMD} rm -r /var/lib/apt/lists/*  \
                 && ${SUDO_CMD} apt-get autoremove      \
                 && ${SUDO_CMD} apt-get clean           \
@@ -59,7 +53,7 @@ elif [[ "$(uname)" == "Darwin" ]]; then
     brew install pcre ed
 
     update_dyld_shared_cache
-else 
+else
     echo "*** Does not have equivalent dependencies/packages for your platform ($(uname)). Check if one of platforms supported in '$0' works for your platform. ***"
 fi
 
