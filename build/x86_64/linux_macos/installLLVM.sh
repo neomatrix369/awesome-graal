@@ -50,5 +50,5 @@ else
   echo ">>> Warning: Could not find these packages 'libllvm${LLVM_VERSION}', 'libllvm-${LLVM_VERSION}-ocaml-dev' and 'lldb-${LLVM_VERSION}-dev', even though mentioned on https://apt.llvm.org/ <<<"
 
   echo "Creating softlink for opt at /usr/bin/opt"
-  ln -s "/usr/lib/llvm-${LLVM_VERSION}/bin/opt" /usr/bin/opt
+  ${sudoCMD} ln -fs "/usr/lib/llvm-${LLVM_VERSION}/bin/opt" /usr/bin/opt || true
 fi

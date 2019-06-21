@@ -17,8 +17,8 @@ fi
 
 if [[ "$(uname)" == "Linux" ]]; then
     set -ex;                     \
-        sed -i "s/deb.debian.org/cdn-fastly.deb.debian.org/" /etc/apt/sources.list \
-        && sed -i "s/security.debian.org/cdn-fastly.debian.org\/debian-security/" /etc/apt/sources.list \
+        sed -i "s/deb.debian.org/cdn-fastly.deb.debian.org/" /etc/apt/sources.list || true \
+        && sed -i "s/security.debian.org/cdn-fastly.debian.org\/debian-security/" /etc/apt/sources.list || true \
         && ${SUDO_CMD} apt-get update        \
         && ${SUDO_CMD} apt-get install -y    \
             build-essential      \
@@ -41,8 +41,8 @@ if [[ "$(uname)" == "Linux" ]]; then
             && ${SUDO_CMD} rm -r /var/lib/apt/lists/*  \
                 && ${SUDO_CMD} apt-get autoremove      \
                 && ${SUDO_CMD} apt-get clean           \
-                && ldconfig                            \
-                && locale-gen en_US.UTF-8
+                && ${SUDO_CMD} ldconfig                            \
+                && ${SUDO_CMD} locale-gen en_US.UTF-8
 elif [[ "$(uname)" == "Darwin" ]]; then
     brew install python
     brew install texlive-latex-base libpcre3 libpcre3-dev

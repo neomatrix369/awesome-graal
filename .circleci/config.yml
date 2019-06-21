@@ -10,6 +10,22 @@ jobs:
     steps:
       - checkout
       - run:
+          name: Install Os dependencies
+          command: ./build/x86_64/linux_macos/osDependencies.sh
+          timeout: 2m
+      - run:
+          name: Build and install make via script
+          command: ./build/x86_64/linux_macos/installMake.sh
+          timeout: 1m
+      - run:
+          name: Install llvm via a script
+          command: ./build/x86_64/linux_macos/installLLVM.sh
+          timeout: 1m
+      - run:
+          name: Install ruby via a script
+          command: ./build/x86_64/linux_macos/installRuby.sh
+          timeout: 1m
+      - run:
           name: Download and install Java 8 SDK
           command: ./build/x86_64/linux_macos/installJDK.sh
           timeout: 2m
@@ -34,6 +50,7 @@ jobs:
             echo 'export LC_ALL="en_US.UTF-8"'                                    >> ${BASH_ENV}
             echo 'export LC_CTYPE="en_US.UTF-8"'                                  >> ${BASH_ENV}
             source ${BASH_ENV}
+          when: always
       - run:
           name: Run local build
           command: ./build/x86_64/linux_macos/local-build.sh
