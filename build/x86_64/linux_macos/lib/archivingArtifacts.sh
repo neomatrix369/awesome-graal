@@ -22,7 +22,7 @@ createSHAFromArchive() {
 	shaSumFilename=$2
 
 	echo ">>>> Creating a sha5 hash from ${archiveFilename}"
-	shasum ${archiveFilename} > ${shaSumFilename}
+	shasum -a 256 ${archiveFilename} > ${shaSumFilename}
 }
 
 moveFilesToOutputFolder() {
