@@ -23,9 +23,9 @@ ${SCRIPTS_LIB_DIR}/applyPatches.sh ${BASEDIR}
 
 cd ${BASEDIR}/graal/vm
 
-echo "Applying and checking patch to mx/mx_vm.py..."
-git apply ${SCRIPTS_LIB_DIR}/patch/mx_vm.py-VM-version-string-fix.patch || true
-grep "pattern \= re.compile" -B 2 mx.vm/mx_vm.py                        || true
+#echo "Applying and checking patch to mx/mx_vm.py..."
+#git apply ${SCRIPTS_LIB_DIR}/patch/mx_vm.py-VM-version-string-fix.patch || true
+#grep "pattern \= re.compile" -B 2 mx.vm/mx_vm.py                        || true
 
 set -x
 ${MX} --dy ${GRAALVM_SUITE_RUNTIMES} \
