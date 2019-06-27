@@ -12,8 +12,7 @@ if [[ -z ${IMAGE_VERSION:-""} ]]; then
   read -p "Enter a version number for this build, for e.g. use Python version if relevant, python-2.7 or python-3.7, otherwise it defaults to 'latest': " IMAGE_VERSION
 fi
 
-IMAGE_NAME=${IMAGE_NAME:-graalvm-suite-jdk8:python-${PYTHON_VERSION}}
-IMAGE_VERSION=${IMAGE_VERSION:-latest}
+IMAGE_NAME=${IMAGE_NAME:-graalvm-suite-jdk8:${IMAGE_VERSION}}
 GRAAL_DOCKER_FULL_TAG_NAME="${DOCKER_USER_NAME}/${IMAGE_NAME}"
 
 docker login --username=${DOCKER_USER_NAME}
@@ -25,7 +24,7 @@ if [[ -z "${IMAGE_ID}" ]]; then
     exit 1
 else
     set -x
-    docker tag ${IMAGE_ID} ${GRAAL_DOCKER_FULL_TAG_NAME}:${IMAGE_VERSION}
+    docker tag ${IMAGE_ID} ${GRAAL_DOCKER_FULL_TAG_NAME}
     docker push ${GRAAL_DOCKER_FULL_TAG_NAME}
     set +x
 fi

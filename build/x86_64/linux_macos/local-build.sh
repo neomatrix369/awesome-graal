@@ -24,8 +24,8 @@ export LC_ALL="en_US.UTF-8"
 export LC_CTYPE="en_US.UTF-8"
 
 if [[ "$(uname)" == "Linux" ]]; then
-    sysctl -w fs.file-max=2097152
-    sysctl -w vm.max_map_count=67108864
+    #sysctl -w fs.file-max=2097152
+    #sysctl -w vm.max_map_count=67108864
 
     export PKG_INCLUDE_FLAGS_OVERRIDE="${PKG_INCLUDE_FLAGS_OVERRIDE:-} -I/usr/local/include -I/usr/include -I/usr/share"
     export PKG_LDFLAGS_OVERRIDE="${PKG_LDFLAGS_OVERRIDE:-} -L/usr/local/lib -L/usr/lib -L/usr/share -L/lib -L/lib/x86_64-linux-gnu -L/usr/lib/x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/5"
