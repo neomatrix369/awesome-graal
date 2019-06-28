@@ -29,7 +29,7 @@ else
   ${sudoCMD} apt-get update
   wget http://releases.llvm.org/${LLVM_VERSION}.0/clang+llvm-${LLVM_VERSION}.0-x86_64-linux-gnu-ubuntu-16.04.tar.xz
   tar xf clang+llvm-${LLVM_VERSION}.0-x86_64-linux-gnu-ubuntu-16.04.tar.xz
-  mv clang+llvm-${LLVM_VERSION}.0-x86_64-linux-gnu-ubuntu-16.04 /opt/
+  ${sudoCMD} mv clang+llvm-${LLVM_VERSION}.0-x86_64-linux-gnu-ubuntu-16.04 /opt/
 
   echo "Creating softlink for opt at /usr/bin/opt"
   ${sudoCMD} ln -fs "/opt/clang+llvm-${LLVM_VERSION}.0-x86_64-linux-gnu-ubuntu-16.04/bin/opt" /usr/bin/opt || true
