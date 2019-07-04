@@ -41,7 +41,6 @@ jobs:
               do echo -n "."
             done
             tail -f ./jdk8-with-graal-docker/docker-build.logs
-          timeout: 30m
           no_output_timeout: 20m
       - run:
           name: Archiving artifacts
