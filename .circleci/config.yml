@@ -33,7 +33,7 @@ jobs:
           name: Define Environment Variables and update JAVA_HOME and PATH at Runtime
           command: |
             echo "Current directory: ${PWD}"
-            echo 'export JAVA_VERSION=jdk1.8.0'                                   >> ${BASH_ENV}
+            echo 'export JAVA_VERSION=jdk8u212-b03'                               >> ${BASH_ENV}
             echo 'export JAVA_HOME=/usr/lib/jvm/jdk1.8.0/'                        >> ${BASH_ENV}
             echo 'export PATH=${JAVA_HOME}/bin:${PATH}'                           >> ${BASH_ENV}
             echo 'export BASEDIR=${PWD}'                                          >> ${BASH_ENV}
