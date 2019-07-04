@@ -25,5 +25,6 @@ cd ${BASEDIR}/graal/vm
 
 set -x
 ${MX} --dy ${GRAALVM_SUITE_RUNTIMES} \
+      --force-bash-launchers=true \
       --J @"${JAVA_OPTS}" --java-home=${JDK8_JVMCI_HOME} build
 set +x
