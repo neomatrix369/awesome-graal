@@ -14,6 +14,7 @@ jobs:
           command: |
             echo "Current directory: ${PWD}"
             echo 'export BASEDIR=${PWD}'                                          >> ${BASH_ENV}
+            echo 'DOCKER_USER_NAME=neomatrix369'                                  >> ${BASH_ENV}
             echo 'export JDK_GRAAL_FOLDER_NAME=jdk8-with-graal-docker'            >> ${BASH_ENV}
             echo 'export BUILD_ARTIFACTS_DIR=${BASEDIR}/${JDK_GRAAL_FOLDER_NAME}' >> ${BASH_ENV}
             echo 'export JAVA_HOME=/usr/lib/jvm/jdk1.8.0/'                        >> ${BASH_ENV}
