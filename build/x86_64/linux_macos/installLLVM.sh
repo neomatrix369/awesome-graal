@@ -27,10 +27,13 @@ else
   fi
 
   ${sudoCMD} apt-get update
-  wget http://releases.llvm.org/${LLVM_VERSION}.0/clang+llvm-${LLVM_VERSION}.0-x86_64-linux-gnu-ubuntu-16.04.tar.xz
-  tar xf clang+llvm-${LLVM_VERSION}.0-x86_64-linux-gnu-ubuntu-16.04.tar.xz
-  ${sudoCMD} mv clang+llvm-${LLVM_VERSION}.0-x86_64-linux-gnu-ubuntu-16.04 /opt/
+  OS_PLATFORM="x86_64-linux-gnu-ubuntu-16.04"
+  wget http://releases.llvm.org/${LLVM_VERSION}.0/clang+llvm-${LLVM_VERSION}.0-${OS_PLATFORM}.tar.xz
+  tar xf clang+llvm-${LLVM_VERSION}.0-${OS_PLATFORM}.tar.xz
+  ${sudoCMD} mv clang+llvm-${LLVM_VERSION}.0-${OS_PLATFORM} /opt/
 
   echo "Creating softlink for opt at /usr/bin/opt"
-  ${sudoCMD} ln -fs "/opt/clang+llvm-${LLVM_VERSION}.0-x86_64-linux-gnu-ubuntu-16.04/bin/opt" /usr/bin/opt || true
+  ${sudoCMD} ln -fs "/opt/clang+llvm-${LLVM_VERSION}.0-${OS_PLATFORM}/bin/opt" /usr/bin/opt || true
+
+  export PATH="/opt/clang+llvm-${LLVM_VERSION}.0-${OS_PLATFORM}/bin/opt:${PATH}"
 fi
