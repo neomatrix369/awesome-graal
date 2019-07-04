@@ -4,18 +4,28 @@ set -e
 set -u
 set -o pipefail
 
+if [[ -z ${DOCKER_USER_NAME:-""} ]]; then
+  read -p "Docker username (must exist on Docker Hub): " INPUT_DOCKER_USER_NAME
+  export DOCKER_USER_NAME=${INPUT_DOCKER_USER_NAME}
+fi
+
 echo ""
-echo "* Building base docker image ${JDK_PYTHON_BASE_IMAGE_TAG}"
+echo "* Building base docker image ${DOCKER_USER_NAME}/${JDK_PYTHON_BASE_IMAGE_TAG}"
 echo ""
 
 CURRENT_DIR=$(dirname "$0")
+echo "* Fetching docker image ${DOCKER_USER_NAME}/${JDK_PYTHON_BASE_IMAGE_TAG} from Docker Hub"
+docker pull ${DOCKER_USER_NAME}/${JDK_PYTHON_BASE_IMAGE_TAG} || true
 docker build \
-            -t ${JDK_PYTHON_BASE_IMAGE_TAG}                      \
+            -t ${DOCKER_USER_NAME}/${JDK_PYTHON_BASE_IMAGE_TAG}                      \
             --build-arg JDK_BASE_IMAGE_TAG=${JDK_BASE_IMAGE_TAG} \
             -f ${CURRENT_DIR}/Dockerfile-python-${PYTHON_VERSION:-2.7} .
 
 echo ""
-echo "* Building docker image ${DOCKER_IMAGE_TAG}, inheriting from base image ${JDK_PYTHON_BASE_IMAGE_TAG}"
+echo "* Fetching docker image ${DOCKER_USER_NAME}/${DOCKER_IMAGE_TAG} from Docker Hub"
+docker pull ${DOCKER_USER_NAME}/${DOCKER_IMAGE_TAG} || true
+echo ""
+echo "* Building docker image ${DOCKER_USER_NAME}/${DOCKER_IMAGE_TAG}, inheriting from base image ${DOCKER_USER_NAME}/${JDK_PYTHON_BASE_IMAGE_TAG}"
 echo ""
 
 docker build \

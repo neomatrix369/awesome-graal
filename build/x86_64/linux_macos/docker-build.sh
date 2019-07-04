@@ -41,9 +41,14 @@ export BUILD_LOGS="${HOST_OUTPUT_DIR}/docker-build.logs"
 export CONTAINER_SCRIPTS_DIR="${CONTAINER_HOME_DIR}/scripts"
 export CONTAINER_OUTPUT_DIR="${CONTAINER_HOME_DIR}/output"
 
+if [[ -z ${DOCKER_USER_NAME:-""} ]]; then
+  read -p "Docker username (must exist on Docker Hub): " INPUT_DOCKER_USER_NAME
+  export DOCKER_USER_NAME=${INPUT_DOCKER_USER_NAME}
+fi
+
 echo "*************************************************"
 echo "* "
-echo "* Building image and running container ${DOCKER_IMAGE_TAG}"
+echo "* Building image and running container ${DOCKER_USER_NAME}/${DOCKER_IMAGE_TAG}"
 echo "* "
 echo "* Build logs are sent to a separate log, run the below command to see logs"
 echo "* tail -f ${HOST_OUTPUT_DIR}/docker-build.logs"
@@ -54,6 +59,7 @@ echo "******************* Parameters ******************"
 echo "DEBUG=${DEBUG}"
 echo ""
 echo "JAVA_VERSION=${JAVA_VERSION}"
+echo "DOCKER_USER_NAME=${DOCKER_USER_NAME}"
 echo "DOCKER_IMAGE_TAG=${DOCKER_IMAGE_TAG}"
 echo "JDK_BASE_IMAGE_TAG=${JDK_BASE_IMAGE_TAG}"
 echo "JDK_PYTHON_BASE_IMAGE_TAG=${JDK_PYTHON_BASE_IMAGE_TAG}"
@@ -90,7 +96,7 @@ else
 	${CURRENT_DIR}/run-docker-container.sh
 	echo "*************************************************"
 	echo "* "
-	echo "* Finished running container ${DOCKER_IMAGE_TAG}"
+	echo "* Finished running container ${DOCKER_USER_NAME}/${DOCKER_IMAGE_TAG}"
 	echo "* "
 	echo "*************************************************"
 fi
