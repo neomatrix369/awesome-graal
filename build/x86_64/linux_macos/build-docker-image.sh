@@ -29,7 +29,7 @@ echo "* Building docker image ${DOCKER_USER_NAME}/${DOCKER_IMAGE_TAG}, inheritin
 echo ""
 
 docker build \
-            -t ${DOCKER_IMAGE_TAG} \
+            -t ${DOCKER_USER_NAME}/${DOCKER_IMAGE_TAG} \
             --build-arg USER_IN_CONTAINER=${USER_IN_CONTAINER}                 \
             --build-arg GRAAL_JVMCI_8_TAG=${GRAAL_JVMCI_8_TAG}                 \
             --build-arg JDK_PYTHON_BASE_IMAGE_TAG=${JDK_PYTHON_BASE_IMAGE_TAG} \
