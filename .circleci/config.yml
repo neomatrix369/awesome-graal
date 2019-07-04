@@ -10,18 +10,39 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Define Environment Variables at Runtime
+          name: Install Os dependencies
+          command: ./build/x86_64/linux_macos/osDependencies.sh
+          timeout: 2m
+      - run:
+          name: Build and install make via script
+          command: ./build/x86_64/linux_macos/installMake.sh
+          timeout: 1m
+      - run:
+          name: Install llvm via a script
+          command: ./build/x86_64/linux_macos/installLLVM.sh
+          timeout: 1m
+      - run:
+          name: Install ruby via a script
+          command: ./build/x86_64/linux_macos/installRuby.sh
+          timeout: 1m
+      - run:
+          name: Download and install Java 8 SDK
+          command: ./build/x86_64/linux_macos/installJDK.sh
+          timeout: 2m
+      - run:
+          name: Define Environment Variables and update JAVA_HOME and PATH at Runtime
           command: |
             echo "Current directory: ${PWD}"
-            echo 'export BASEDIR=${PWD}'                                          >> ${BASH_ENV}
-            echo 'DOCKER_USER_NAME=neomatrix369'                                  >> ${BASH_ENV}
-            echo 'export JDK_GRAAL_FOLDER_NAME=jdk8-with-graal-docker'            >> ${BASH_ENV}
-            echo 'export BUILD_ARTIFACTS_DIR=${BASEDIR}/${JDK_GRAAL_FOLDER_NAME}' >> ${BASH_ENV}
+            echo 'export DOCKER_USER_NAME=neomatrix369'                           >> ${BASH_ENV}
+            echo 'export JAVA_VERSION=jdk1.8.0'                                   >> ${BASH_ENV}
             echo 'export JAVA_HOME=/usr/lib/jvm/jdk1.8.0/'                        >> ${BASH_ENV}
             echo 'export PATH=${JAVA_HOME}/bin:${PATH}'                           >> ${BASH_ENV}
+            echo 'export BASEDIR=${PWD}'                                          >> ${BASH_ENV}
             echo 'export SCRIPTS_LIB_DIR=${BASEDIR}/build/x86_64/linux_macos/lib' >> ${BASH_ENV}
             echo 'export MX=${BASEDIR}/mx/mx'                                     >> ${BASH_ENV}
+            echo 'export JDK_GRAAL_FOLDER_NAME=jdk8-with-graal'                   >> ${BASH_ENV}
             echo 'export GRAAL_JVMCI_8_TAG=master'                                >> ${BASH_ENV}
+            echo 'export BUILD_ARTIFACTS_DIR=${BASEDIR}/${JDK_GRAAL_FOLDER_NAME}' >> ${BASH_ENV}
             echo 'export RUN_TESTS="true"'                                        >> ${BASH_ENV}
             echo 'export GRAALVM_SUITE_RUNTIMES="/substratevm,/tools,sulong,/graal-nodejs,truffleruby,graalpython"' >> ${BASH_ENV}
             echo 'export FASTR_RELEASE="true"'                                    >> ${BASH_ENV}
@@ -31,26 +52,20 @@ jobs:
             source ${BASH_ENV}
           when: always
       - run:
-          name: Run script to build in a docker container
-          command: |
-            cd ${BASEDIR}/build/x86_64/linux_macos
-            SKIP_BUILD_IMAGE=true ./docker-build.sh &
-            echo "Waiting for log file ./jdk8-with-graal-docker/docker-build.logs to become available"
-            while [ ! -f "./jdk8-with-graal-docker/docker-build.logs" ]; 
-              do echo -n "."
-            done
-            tail -f ./jdk8-with-graal-docker/docker-build.logs
-          no_output_timeout: 20m
+          name: Run local build
+          command: ./build/x86_64/linux_macos/local-build.sh
+          timeout: 20m
+          no_output_timeout: 15m
       - run:
           name: Archiving artifacts
           command: |
-            ${BASEDIR}/build/x86_64/linux_macos/lib/archivingArtifacts.sh ${BASEDIR} ${MX} ${JDK_GRAAL_FOLDER_NAME} ${BUILD_ARTIFACTS_DIR}
+            ./build/x86_64/linux_macos/lib/archivingArtifacts.sh ${BASEDIR} ${MX} ${JDK_GRAAL_FOLDER_NAME} ${BUILD_ARTIFACTS_DIR}
           timeout: 3m
           no_output_timeout: 2m
       - run:
           name: Collecting and archiving logs (debug and error logs)
           command: |
-            ${BASEDIR}/build/x86_64/linux_macos/lib/archivingLogs.sh ${BASEDIR}
+            ./build/x86_64/linux_macos/lib/archivingLogs.sh ${BASEDIR}
           timeout: 3m
           no_output_timeout: 2m
           when: always
@@ -58,5 +73,5 @@ jobs:
           name: Uploading logs
           path: logs/
       - store_artifacts:
-          name: Uploading artifacts in jdk8-with-graal-docker
-          path: jdk8-with-graal-docker/
+          name: Uploading artifacts in jdk8-with-graal-local
+          path: jdk8-with-graal-local/
