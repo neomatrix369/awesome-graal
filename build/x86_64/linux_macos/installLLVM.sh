@@ -35,5 +35,5 @@ else
   echo "Creating softlink for opt at /usr/bin/opt"
   ${sudoCMD} ln -fs "/opt/clang+llvm-${LLVM_VERSION}.0-${OS_PLATFORM}/bin/opt" /usr/bin/opt || true
 
-  export PATH="/opt/clang+llvm-${LLVM_VERSION}.0-${OS_PLATFORM}/bin/opt:${PATH}"
+  export PATH="/opt/clang+llvm-${LLVM_VERSION}.0-${OS_PLATFORM}/bin:${PATH}"
 fi

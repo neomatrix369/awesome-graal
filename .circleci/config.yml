@@ -37,6 +37,9 @@ jobs:
             echo 'export JAVA_VERSION=jdk1.8.0'                                   >> ${BASH_ENV}
             echo 'export JAVA_HOME=/usr/lib/jvm/jdk1.8.0/'                        >> ${BASH_ENV}
             echo 'export PATH=${JAVA_HOME}/bin:${PATH}'                           >> ${BASH_ENV}
+            echo 'export OS_PLATFORM="x86_64-linux-gnu-ubuntu-16.04"'             >> ${BASH_ENV}
+            echo 'export LLVM_VERSION=${1:-6.0}'                                  >> ${BASH_ENV}
+            echo 'export PATH="/opt/clang+llvm-${LLVM_VERSION}.0-${OS_PLATFORM}/bin/:${PATH}"' >> ${BASH_ENV}
             echo 'export BASEDIR=${PWD}'                                          >> ${BASH_ENV}
             echo 'export SCRIPTS_LIB_DIR=${BASEDIR}/build/x86_64/linux_macos/lib' >> ${BASH_ENV}
             echo 'export MX=${BASEDIR}/mx/mx'                                     >> ${BASH_ENV}
