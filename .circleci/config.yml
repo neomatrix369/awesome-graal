@@ -34,14 +34,11 @@ jobs:
       - run:
           name: Run script to build in a docker container
           command: |
-            SKIP_BUILD_IMAGE=true ${BASEDIR}/build/x86_64/linux_macos/docker-build.sh
+            cd ${BASEDIR}/build/x86_64/linux_macos
+            SKIP_BUILD_IMAGE=true ./docker-build.sh &
+            tail -f ./jdk8-with-graal-docker/docker-build.logs
           timeout: 30m
           no_output_timeout: 20m
-      - run:
-          name: Display logs
-          command: |
-            cat ${BASEDIR}/jdk8-with-graal-docker/docker-build.logs
-          when: always
       - run:
           name: Archiving artifacts
           command: |
