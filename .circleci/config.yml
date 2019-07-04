@@ -36,6 +36,10 @@ jobs:
           command: |
             cd ${BASEDIR}/build/x86_64/linux_macos
             SKIP_BUILD_IMAGE=true ./docker-build.sh &
+            echo "Waiting for log file ./jdk8-with-graal-docker/docker-build.logs to become available"
+            while [ ! -f "./jdk8-with-graal-docker/docker-build.logs" ]; 
+              do echo -n "."
+            done
             tail -f ./jdk8-with-graal-docker/docker-build.logs
           timeout: 30m
           no_output_timeout: 20m

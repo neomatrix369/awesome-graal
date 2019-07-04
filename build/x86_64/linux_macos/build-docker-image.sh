@@ -17,8 +17,8 @@ CURRENT_DIR=$(dirname "$0")
 echo "* Fetching docker image ${DOCKER_USER_NAME}/${JDK_PYTHON_BASE_IMAGE_TAG} from Docker Hub"
 docker pull ${DOCKER_USER_NAME}/${JDK_PYTHON_BASE_IMAGE_TAG} || true
 docker build \
-            -t ${DOCKER_USER_NAME}/${JDK_PYTHON_BASE_IMAGE_TAG}                      \
-            --build-arg JDK_BASE_IMAGE_TAG=${DOCKER_USER_NAME}/${JDK_BASE_IMAGE_TAG} \
+            -t ${DOCKER_USER_NAME}/${JDK_PYTHON_BASE_IMAGE_TAG}    \
+            --build-arg JDK_BASE_IMAGE_TAG=${JDK_BASE_IMAGE_TAG}   \
             -f ${CURRENT_DIR}/Dockerfile-python-${PYTHON_VERSION:-2.7} .
 
 echo ""
