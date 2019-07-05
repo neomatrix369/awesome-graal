@@ -23,8 +23,13 @@ ${SCRIPTS_LIB_DIR}/applyPatches.sh ${BASEDIR}
 
 cd ${BASEDIR}/graal/vm
 
+MAX_CPUS=${MAX_CPUS:-$(getAvailableThreads)}
+echo ">>>> Setting MAX_CPUS=${MAX_CPUS}"
+
 set -x
-${MX} --dy ${GRAALVM_SUITE_RUNTIMES} \
-      --force-bash-launchers=true \
-      --J @"${JAVA_OPTS}" --java-home=${JDK8_JVMCI_HOME} build
+${MX} --max-cpus ${MAX_CPUS}         \
+      --dy ${GRAALVM_SUITE_RUNTIMES} \
+      --java-home=${JDK8_JVMCI_HOME} \
+      --force-bash-launchers=true    \
+      "-A-J${JAVA_OPTS}" build
 set +x

@@ -9,22 +9,62 @@ jobs:
       image: ubuntu-1604:201903-01
     steps:
       - checkout
+      - restore_cache:
+          keys:
+            - os-deps-{{ arch }}-{{ .Branch }}
       - run:
           name: Install Os dependencies
           command: ./build/x86_64/linux_macos/osDependencies.sh
           timeout: 2m
+      - save_cache:
+          key: os-deps-{{ arch }}-{{ .Branch }}
+          paths:
+            - "vendor/apt"
+            - "vendor/apt/archives"
+      - restore_cache:
+          keys:
+            - make-{{ arch }}-{{ .Branch }}
       - run:
           name: Build and install make via script
           command: ./build/x86_64/linux_macos/installMake.sh
           timeout: 1m
+      - save_cache:
+          key: make-{{ arch }}-{{ .Branch }}
+          paths:
+            - /make-*/
+            - /usr/bin/make
+            - /usr/local/bin/make
+            - /usr/share/man/man1/make.1.gz
+      - restore_cache:
+          keys:
+            - llvm-{{ arch }}-{{ .Branch }}
       - run:
           name: Install llvm via a script
           command: ./build/x86_64/linux_macos/installLLVM.sh
           timeout: 1m
+      - save_cache:
+          key: llvm-{{ arch }}-{{ .Branch }}
+          paths:
+            - /opt/clang+llvm-7.0*
+            - /usr/share/doc/
+            - /usr/share/lintian/overrides/
+      - restore_cache:
+          keys:
+            - ruby-{{ arch }}-{{ .Branch }}
       - run:
           name: Install ruby via a script
           command: ./build/x86_64/linux_macos/installRuby.sh
           timeout: 1m
+      - save_cache:
+          key: ruby-{{ arch }}-{{ .Branch }}
+          paths:
+            - /usr/local/rvm/
+            - /usr/lib/ruby/
+            - /var/lib/dpkg/info/*ruby*
+            - /usr/bin/*ruby*
+            - /usr/share/doc/*ruby*
+            - /usr/share/man/man1/*ruby*
+            - /usr/lib/x86_64-linux-gnu/*ruby*
       - run:
           name: Download and install Java 8 SDK
           command: ./build/x86_64/linux_macos/installJDK.sh
