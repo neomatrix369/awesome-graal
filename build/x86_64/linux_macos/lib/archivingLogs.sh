@@ -22,3 +22,11 @@ cp ${BASEDIR}/${LIBFFI_FOLDER}/libffi*.log ${BASEDIR}/logs/${LIBFFI_FOLDER} || t
 
 echo "Copying the strace log files in /tmp/ into ${BASEDIR}/logs/"
 cp /tmp/strace-graal-compiler*.logs ${BASEDIR}/logs/ || true
+
+for logFile in $(find . -type f -name "*.log" -o -name "*.logs" || true); do
+	echo "Logfile collected: ${logFile}"
+	PATH_TO_LOG_FILE=$(dirname ${logFile})
+	DESTINATION_FOLDER="${BASEDIR}/logs/${PATH_TO_LOG_FILE}"
+	mkdir -p "${DESTINATION_FOLDER}"
+	cp -f "${logFile}" "${DESTINATION_FOLDER}"
+done
