@@ -7,7 +7,7 @@
 
 ---
 
-Graal compiler (JDK8): [![Graal compiler (JDK8)](https://img.shields.io/docker/pulls/neomatrix369/graal-jdk8.svg)](https://hub.docker.com/r/neomatrix369/graal-jdk8) | GraalVM Suite (JDK8): [![GraalVM Suite (JDK8)](https://img.shields.io/docker/pulls/neomatrix369/graalvm-suite-jdk8.svg)](https://hub.docker.com/r/neomatrix369/graalvm-suite-jdk8) | Jupyter-Java on GraalVM : [![Jupyter-Java](https://img.shields.io/docker/pulls/neomatrix369/jupyter-java.svg)](https://hub.docker.com/r/neomatrix369/jupyter-java) | Zeppelin on GraalVM: [![Zeppelin](https://img.shields.io/docker/pulls/neomatrix369/zeppelin.svg)](https://hub.docker.com/r/neomatrix369/zeppelin)
+Graal compiler (JDK8): [![Graal compiler (JDK8)](https://img.shields.io/docker/pulls/neomatrix369/graal-jdk8.svg)](https://hub.docker.com/r/neomatrix369/graal-jdk8) | GraalVM Suite (JDK8): [![GraalVM Suite (JDK8)](https://img.shields.io/docker/pulls/neomatrix369/graalvm-suite-jdk8.svg)](https://hub.docker.com/r/neomatrix369/graalvm-suite-jdk8) | Dataiku DSS on GraalVM: [![Dataiku DSS](https://img.shields.io/docker/pulls/neomatrix369/dataiku-dss.svg)](https://hub.docker.com/r/neomatrix369/dataiku-dss) | Grakn on GraalVM: [![Grakn](https://img.shields.io/docker/pulls/neomatrix369/grakn.svg)](https://hub.docker.com/r/neomatrix369/grakn) | Jupyter-Java on GraalVM: [![Jupyter-Java](https://img.shields.io/docker/pulls/neomatrix369/jupyter-java.svg)](https://hub.docker.com/r/neomatrix369/jupyter-java) | Zeppelin on GraalVM: [![Zeppelin](https://img.shields.io/docker/pulls/neomatrix369/zeppelin.svg)](https://hub.docker.com/r/neomatrix369/zeppelin)
 
 ---
 
@@ -34,6 +34,7 @@ A curated list of awesome resources for Graal, GraalVM, Truffle and related topi
 - [Why?](https://www.graalvm.org/docs/why-graal/#for-java-programs)
 - [Getting Started: Running Java](https://www.graalvm.org/docs/getting-started/#running-java)
 - Examples
+    - [Dataiku Data Science Studio](https://github.com/neomatrix369/awesome-ai-ml-dl/blob/master/examples/data/dataiku/README.md) | [folder](https://github.com/neomatrix369/awesome-ai-ml-dl/blob/master/examples/data/dataiku/)
     - [Java Performance Examples](https://www.graalvm.org/docs/examples/java-performance-examples/)
     - [Java stream API benchmark](https://www.graalvm.org/docs/examples/java-simple-stream-benchmark/)
     - [Grakn/Graql graph database](https://github.com/neomatrix369/awesome-ai-ml-dl/tree/master/examples/data/databases/graph/grakn/README.md) | [folder](https://github.com/neomatrix369/awesome-ai-ml-dl/tree/master/examples/data/databases/graph/grakn)
