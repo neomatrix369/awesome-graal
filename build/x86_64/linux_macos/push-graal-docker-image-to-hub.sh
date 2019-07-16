@@ -23,14 +23,21 @@ push_image() {
 	IMAGE_ID=$(docker images ${FULL_IMAGE_NAME} -q | head -n1 || true)
 
 	if [[ -z "${IMAGE_ID}" ]]; then
-	    echo "Docker image '${GRAAL_DOCKER_FULL_TAG_NAME}' not found in the local repository"
-	    exit 1
-	else
-	    set -x
-	    docker tag ${IMAGE_ID} ${GRAAL_DOCKER_FULL_TAG_NAME}
-	    docker push ${GRAAL_DOCKER_FULL_TAG_NAME}
-	    set +x
+	    echo "Docker image '${FULL_IMAGE_NAME}' not found in the local repository"
+	    IMAGE_ID=$(docker images ${GRAAL_DOCKER_FULL_TAG_NAME} -q | head -n1 || true)
+	   
+	    if [[ -z "${IMAGE_ID}" ]]; then
+	    	echo "Docker image '${GRAAL_DOCKER_FULL_TAG_NAME}' not found in the local repository"
+	    	exit 1
+	    fi
+
+	    echo "Docker image '${GRAAL_DOCKER_FULL_TAG_NAME}' found in the local repository"
 	fi
+
+    set -x
+    docker tag ${IMAGE_ID} ${GRAAL_DOCKER_FULL_TAG_NAME}
+    docker push ${GRAAL_DOCKER_FULL_TAG_NAME}
+    set +x
 }
 
 push_image jdk-python-base ${PYTHON_VERSION}
