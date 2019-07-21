@@ -81,6 +81,10 @@ A curated list of awesome resources for Graal, GraalVM, Truffle and related topi
 - [Tools Reference](https://www.graalvm.org/docs/reference-manual/tools/)
 - [Native Images](https://www.graalvm.org/docs/reference-manual/aot-compilation/)
 
+### Performance (startup & runtime)
+- [Are We Fast Yet? Comparing Language Implementations with Objects, Closures, and Arrays](https://github.com/smarr/are-we-fast-yet) - by @smarr
+- [Investigating startup with bytestacks](https://cl4es.github.io/2018/11/23/Investigating-Startup-Using-Bytestacks.html)
+
 ### Related JEPs
 
 - [JEP 317: Experimental Java-Based JIT Compiler - OpenJDK](http://openjdk.java.net/jeps/317)
