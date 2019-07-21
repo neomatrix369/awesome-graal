@@ -40,6 +40,7 @@ A curated list of awesome resources for Graal, GraalVM, Truffle and related topi
     - [Grakn/Graql graph database](https://github.com/neomatrix369/awesome-ai-ml-dl/tree/master/examples/data/databases/graph/grakn/README.md) | [folder](https://github.com/neomatrix369/awesome-ai-ml-dl/tree/master/examples/data/databases/graph/grakn)
     - [Java/Kotlin Native Example](https://www.graalvm.org/docs/examples/java-kotlin-aot/)
     - [Native Image Example](https://www.graalvm.org/docs/examples/native-list-dir/)
+    - [Native-image: using Profile Guide Optimisation options](https://github.com/graalvm/graalvm-demos/tree/master/scala-days-2018/streams#profile-guided-optimizations-with-native-image) | Slide 18](https://static.rainfocus.com/oracle/oow18/sess/1526041579721001pM2J/PF/2018-10-24%20SubstrateVM%20CodeOne_15404788159460019swO.pdf)
     - [Command line apps with Clojure and GraalVM](https://www.astrecipes.net/blog/2018/07/20/cmd-line-apps-with-clojure-and-graalvm/)
     - [GraalVM Polyglot with Clojure and JavaScript](https://blog.taylorwood.io/2018/11/26/graal-polyglot.html)
     - [Clojure: GraalVM Native Image HTTPS Support](https://blog.taylorwood.io/2018/10/04/graalvm-https.html)
@@ -140,6 +141,11 @@ A curated list of awesome resources for Graal, GraalVM, Truffle and related topi
   - [SOMns - A Simple Newspeak Implementation](https://github.com/smarr/SOMns)
   - [Mumbler is a lisp programming language](https://github.com/cesquivias/mumbler)
 - [Implement your tools](https://www.graalvm.org/docs/graalvm-as-a-platform/implement-instrument/)
+
+### Performance (startup & runtime)
+- [Are We Fast Yet? Comparing Language Implementations with Objects, Closures, and Arrays](https://github.com/smarr/are-we-fast-yet) - by @smarr
+- [Investigating startup with bytestacks](https://cl4es.github.io/2018/11/23/Investigating-Startup-Using-Bytestacks.html)
+- [Comparison bash script: graal](https://github.com/rmannibucau/docosh/blob/master/graalcomparison.sh)
 
 ### Related JEPs
 
