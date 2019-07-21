@@ -81,6 +81,70 @@ A curated list of awesome resources for Graal, GraalVM, Truffle and related topi
 - [Tools Reference](https://www.graalvm.org/docs/reference-manual/tools/)
 - [Native Images](https://www.graalvm.org/docs/reference-manual/aot-compilation/)
 
+#### Javascript / NodeJS
+
+- [Why?](https://www.graalvm.org/docs/why-graal/#for-nodejs-programs)
+- [Getting Started](https://www.graalvm.org/docs/getting-started/#running-javascript)
+- Examples
+  - [JavaScript, Java, R Polyglot Application](https://www.graalvm.org/docs/examples/polyglot-javascript-java-r/)
+  - [Running JavaScript Functions as Stored Procedures in Database](https://www.graalvm.org/docs/examples/mle-oracle/)
+  - [Oracle Database Example](https://www.graalvm.org/docs/examples/mle-oracle/)
+  - [GraalVM demos: Another Polyglot JavaScript, Java, R application](https://github.com/graalvm/graalvm-demos/tree/master/functionGraphDemo)
+  - [Galaaz Demo: GraalVM, TruffleRuby, FastR, ggplot2, gridExtra](https://github.com/graalvm/graalvm-demos/tree/master/galaaz-ggplot)
+  - [GraalVM demos: Polyglot JavaScript, Java, R application](https://github.com/graalvm/graalvm-demos/tree/master/polyglot-javascript-java-r)
+- [GraalVM Updater](https://www.graalvm.org/docs/reference-manual/graal-updater/)
+- [Compatibility](https://www.graalvm.org/docs/reference-manual/compatibility/)
+- [Reference Manual](https://www.graalvm.org/docs/reference-manual/languages/js/)
+
+#### Polyglot
+
+- [Getting started: combined languages](https://www.graalvm.org/docs/getting-started/#combine-languages)
+- Examples
+  - [Polyglot JavaScript, Java, R application](https://www.graalvm.org/docs/examples/polyglot-javascript-java-r/) 
+  - [GraalVM Polyglot with Clojure and JavaScript](https://blog.taylorwood.io/2018/11/26/graal-polyglot.html)
+- [Language Compatibility Tool](https://www.graalvm.org/docs/reference-manual/compatibility/)
+- [GraalVM Updater](https://www.graalvm.org/docs/reference-manual/graal-updater/)
+- [Reference Manual](https://www.graalvm.org/docs/reference-manual/polyglot/) | [Top 10 Things To Do With GraalVM](https://medium.com/graalvm/graalvm-ten-things-12d9111f307d)
+- [GraalVM as a platform: Embed languages](https://www.graalvm.org/docs/graalvm-as-a-platform/embed/)
+
+#### LLVM
+
+- [Getting Started](https://www.graalvm.org/docs/getting-started/#running-llvm-interpreter)
+- [Compatibility](https://www.graalvm.org/docs/reference-manual/compatibility/)
+- [Reference Manual](https://www.graalvm.org/docs/reference-manual/languages/llvm/) | [Top 10 Things To Do With GraalVM](https://medium.com/graalvm/graalvm-ten-things-12d9111f307d)
+
+#### Your Platforms, languages and Tools
+
+##### Your Platforms
+
+- [Why?](https://www.graalvm.org/docs/why-graal/#for-your-platform)
+- [Reference Manual](https://www.graalvm.org/docs/reference-manual/tools/)
+- [GraalVM as a Platform](https://www.graalvm.org/docs/graalvm-as-a-platform/)
+  - [Embed Languages](https://www.graalvm.org/docs/graalvm-as-a-platform/embed/)
+
+##### Your Languages and Tools
+
+- [Why?](https://www.graalvm.org/docs/why-graal/#for-your-languages-and-tools)
+- [Reference Manual](https://www.graalvm.org/docs/reference-manual/tools/)
+- [Implement your language](https://www.graalvm.org/docs/graalvm-as-a-platform/implement-language/)
+  - [Truffle Language Implementation Framework](https://github.com/oracle/graal/tree/master/truffle) 
+  - [Simple Language framework built using Truffle API](https://github.com/graalvm/simplelanguage)
+  - [cesquivias's GitHub page on Truffle](https://cesquivias.github.io/)
+    - [Writing a Language in Truffle. Part 1: A Simple, Slow Interpreter](https://cesquivias.github.io/blog/2014/10/13/writing-a-language-in-truffle-part-1-a-simple-slow-interpreter/)
+    - [Writing a Language in Truffle. Part 2: Using Truffle and Graal](https://cesquivias.github.io/blog/2014/12/02/writing-a-language-in-truffle-part-2-using-truffle-and-graal/)
+    - [Writing a Language in Truffle. Part 3: Making my Language (Much) Faster](https://cesquivias.github.io/blog/2015/01/08/writing-a-language-in-truffle-part-3-making-my-language-much-faster/)
+    - [Writing a Language in Truffle. Part 4: Adding Features the Truffle Way](https://cesquivias.github.io/blog/2015/01/15/writing-a-language-in-truffle-part-4-adding-features-the-truffle-way/)
+- Examples
+  - [implementation of the if statement](https://github.com/graalvm/simplelanguage/blob/master/language/src/main/java/com/oracle/truffle/sl/nodes/controlflow/SLIfNode.java)
+  - [A SOM Smalltalk implemented on top of Oracle's Truffle Framework ](https://github.com/SOM-st/TruffleSOM), also see http://som-st.github.io/
+  - [SOMns - A Simple Newspeak Implementation](https://github.com/smarr/SOMns)
+  - [Mumbler is a lisp programming language](https://github.com/cesquivias/mumbler)
+- [Implement your tools](https://www.graalvm.org/docs/graalvm-as-a-platform/implement-instrument/)
+
+### Performance (startup & runtime)
+- [Are We Fast Yet? Comparing Language Implementations with Objects, Closures, and Arrays](https://github.com/smarr/are-we-fast-yet) - by @smarr
+- [Investigating startup with bytestacks](https://cl4es.github.io/2018/11/23/Investigating-Startup-Using-Bytestacks.html)
+
 ### Related JEPs
 
 - [JEP 317: Experimental Java-Based JIT Compiler - OpenJDK](http://openjdk.java.net/jeps/317)
