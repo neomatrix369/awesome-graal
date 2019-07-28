@@ -26,7 +26,6 @@ cd ${BASEDIR}/graal/compiler
 export JVMCI_VERSION_CHECK='ignore'
 echo ">>>> Setting environment variable JVMCI_VERSION_CHECK=${JVMCI_VERSION_CHECK}"
 echo ">>>> Setting BUILD_GRAAL_COMPILER_VERBOSE_MODE_FLAG=${BUILD_GRAAL_COMPILER_VERBOSE_MODE_FLAG:-}"
-export JAVA_OPTS="${MAX_HEAP_SIZE_FLAG:-} -XX:+HeapDumpOnOutOfMemoryError -XX:+ShowMessageBoxOnError -XX:ErrorFile=${BASEDIR}/hs_err_pid%p.log -XX:HeapDumpPath=${BASEDIR}/java-heap-dump-%p ${JAVA_OPTS:-}"
 echo ">>>> Setting JAVA_OPTS=${JAVA_OPTS}"
 
 MAX_CPUS=${MAX_CPUS:-$(getAvailableThreads)}

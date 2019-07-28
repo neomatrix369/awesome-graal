@@ -22,12 +22,15 @@ export DOCKER_IMAGE_TAG="graalvm-suite-jdk8:python-${PYTHON_VERSION}"
 export USER_IN_CONTAINER=${USER_IN_CONTAINER:-"graal"}
 export GRAAL_JVMCI_8_TAG=${GRAAL_JVMCI_8_TAG:-master}
 export CONTAINER_HOME_DIR="/home/${USER_IN_CONTAINER}"
+export CONTAINER_SCRIPTS_DIR="${CONTAINER_HOME_DIR}/scripts"
+export CONTAINER_OUTPUT_DIR="${CONTAINER_HOME_DIR}/output"
 export MAKE_VERSION=${MAKE_VERSION:-4.2.1}
 export LLVM_VERSION=${LLVM_VERSION:-7.0}
 export RUBY_VERSION=${RUBY_VERSION:-2.2.2}
 export GRAALVM_SUITE_RUNTIMES=${GRAALVM_SUITE_RUNTIMES:-"/substratevm,/tools,sulong,/graal-nodejs,truffleruby,graalpython,/fastr"}
 export DOCKER_MEMORY=4096M
 export DOCKER_JAVA_OPTS="-Xmx2g -XX:MaxPermSize=1g -XX:+PrintFlagsFinal"
+export JAVA_OPTS="${MAX_HEAP_SIZE_FLAG:-} -XX:+HeapDumpOnOutOfMemoryError -XX:+ShowMessageBoxOnError -XX:ErrorFile=${CONTAINER_OUTPUT_DIR}/hs_err_pid%p.log -XX:HeapDumpPath=${CONTAINER_OUTPUT_DIR}/java-heap-dump-%p ${JAVA_OPTS:-}"
 
 export HOST_REPOS_DIR=${HOST_REPOS_DIR:-""}
 if [[ ! -z "${HOST_REPOS_DIR}" ]]; then
@@ -37,9 +40,6 @@ fi
 export HOST_OUTPUT_DIR="$(pwd)/jdk8-with-graal-docker"
 mkdir -p "${HOST_OUTPUT_DIR}"
 export BUILD_LOGS="${HOST_OUTPUT_DIR}/docker-build.logs"
-
-export CONTAINER_SCRIPTS_DIR="${CONTAINER_HOME_DIR}/scripts"
-export CONTAINER_OUTPUT_DIR="${CONTAINER_HOME_DIR}/output"
 
 if [[ -z ${DOCKER_USER_NAME:-""} ]]; then
   read -p "Docker username (must exist on Docker Hub): " INPUT_DOCKER_USER_NAME
@@ -80,6 +80,7 @@ echo ""
 echo "BUILD_LOGS=${BUILD_LOGS}"
 echo "RUN_TESTS=${RUN_TESTS}"
 echo "DOCKER_JAVA_OPTS=${DOCKER_JAVA_OPTS}"
+echo "JAVA_OPTS=${JAVA_OPTS}"
 echo "DOCKER_MEMORY=${DOCKER_MEMORY}"
 echo "JAVA_HOME=${JAVA_HOME}"
 echo "*************************************************"
