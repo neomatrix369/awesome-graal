@@ -11,25 +11,25 @@ jobs:
       - checkout
       - restore_cache:
           keys:
-            - os-deps-{{ arch }}-{{ .Branch }}
+            - os-deps-v2-{{ arch }}-{{ .Branch }}
       - run:
           name: Install Os dependencies
           command: ./build/x86_64/linux_macos/osDependencies.sh
           timeout: 2m
       - save_cache:
-          key: os-deps-{{ arch }}-{{ .Branch }}
+          key: os-deps-v2-{{ arch }}-{{ .Branch }}
           paths:
             - "vendor/apt"
             - "vendor/apt/archives"
       - restore_cache:
           keys:
-            - make-{{ arch }}-{{ .Branch }}
+            - make-v2-{{ arch }}-{{ .Branch }}
       - run:
           name: Build and install make via script
           command: ./build/x86_64/linux_macos/installMake.sh
           timeout: 1m
       - save_cache:
-          key: make-{{ arch }}-{{ .Branch }}
+          key: make-v2-{{ arch }}-{{ .Branch }}
           paths:
             - /make-*/
             - /usr/bin/make
@@ -37,26 +37,26 @@ jobs:
             - /usr/share/man/man1/make.1.gz
       - restore_cache:
           keys:
-            - llvm-{{ arch }}-{{ .Branch }}
+            - llvm-v2-{{ arch }}-{{ .Branch }}
       - run:
           name: Install llvm via a script
           command: ./build/x86_64/linux_macos/installLLVM.sh
           timeout: 1m
       - save_cache:
-          key: llvm-{{ arch }}-{{ .Branch }}
+          key: llvm-v2-{{ arch }}-{{ .Branch }}
           paths:
             - /opt/clang+llvm-7.0*
             - /usr/share/doc/
             - /usr/share/lintian/overrides/
       - restore_cache:
           keys:
-            - ruby-{{ arch }}-{{ .Branch }}
+            - ruby-v2-{{ arch }}-{{ .Branch }}
       - run:
           name: Install ruby via a script
           command: ./build/x86_64/linux_macos/installRuby.sh
           timeout: 1m
       - save_cache:
-          key: ruby-{{ arch }}-{{ .Branch }}
+          key: ruby-v2-{{ arch }}-{{ .Branch }}
           paths:
             - /usr/local/rvm/
             - /usr/lib/ruby/
