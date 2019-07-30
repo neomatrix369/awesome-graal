@@ -89,6 +89,9 @@ createGraalComponentsArchiveAndSha() {
     moveFilesToOutputFolder ${outputArchiveFilename} ${shaSumFilename} ${OUTPUT_DIR}
 }
 
+echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+echo "Archiving artifacts"
+echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 createJDKArchiveAndSha
 createJREArchiveAndSha
 createGraalComponentsArchiveAndSha

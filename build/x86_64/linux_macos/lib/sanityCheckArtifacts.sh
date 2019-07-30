@@ -7,7 +7,10 @@ set -o pipefail
 BASEDIR=$1
 JDK_GRAAL_FOLDER_NAME=$2
 
+echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 echo "Simple sanity checking of the JDK artifact"
+echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+
 cd ${BASEDIR}/${JDK_GRAAL_FOLDER_NAME}
 ls -lash bin
 set -x

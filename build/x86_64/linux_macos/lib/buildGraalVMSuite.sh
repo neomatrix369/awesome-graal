@@ -4,6 +4,10 @@ set -e
 set -u
 set -o pipefail
 
+echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+echo "Building GraalVM Suite"
+echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+
 source ${SCRIPTS_LIB_DIR}/utils.sh
 
 BASEDIR=$1
@@ -31,5 +35,5 @@ ${MX} --max-cpus ${MAX_CPUS}         \
       --dy ${GRAALVM_SUITE_RUNTIMES} \
       --java-home=${JDK8_JVMCI_HOME} \
       --force-bash-launchers=true    \
-      "-A-J${JAVA_OPTS}" build
+      build
 set +x

@@ -4,6 +4,10 @@ set -e
 set -u
 set -o pipefail
 
+echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+echo "Building JDK/JVMCI"
+echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+
 source ${SCRIPTS_LIB_DIR}/utils.sh
 GRAAL_JVMCI_8_TAG=${GRAAL_JVMCI_8_TAG:-master}
 

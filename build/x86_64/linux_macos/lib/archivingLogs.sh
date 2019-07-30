@@ -8,6 +8,10 @@ source ${SCRIPTS_LIB_DIR}/utils.sh
 
 BASEDIR=$1
 
+echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+echo "Archiving logs"
+echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+
 echo "Creating the '${BASEDIR}/logs' folder"
 mkdir -p ${BASEDIR}/logs
 
