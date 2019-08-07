@@ -227,6 +227,7 @@ See [Papers, presentations/slides & videos](papers-presentations-slides-videos.m
 
 - General
     - [Building Wholly Graal with Truffle!](https://neomatrix369.wordpress.com/2018/06/11/building-wholly-graal-with-truffle/)
+    - [How to build Graal-enabled JDK8 on CircleCI?](https://medium.com/@neomatrix369/how-to-build-graal-enabled-jdk8-on-circleci-3e20ae07a5d3)
 
 - Graal
     - [Add Graal JIT Compilation to Your JVM Language in 5 Easy Steps ...](http://stefan-marr.de/2015/12/add-graal-jit-compilation-to-your-jvm-language-in-5-easy-steps-step-5/)
