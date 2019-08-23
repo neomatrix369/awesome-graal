@@ -69,7 +69,7 @@ jobs:
           name: Run JDK JVMCI Tests
           command: ./build/x86_64/linux_macos/lib/run_JDK_JVMCI_Tests.sh ${BASEDIR} ${MX}
       - run:
-          name: Setting up environment and Build Graal Compiler
+          name: Setting up environment and Build GraalVM Compiler
           command: |
             echo ">>>> Currently JAVA_HOME=${JAVA_HOME}"
             JDK8_JVMCI_HOME="$(cd ${BASEDIR}/graal-jvmci-8/ && ${MX} --java-home ${JAVA_HOME} jdkhome)"
@@ -77,7 +77,7 @@ jobs:
             echo "export JAVA_HOME=${JDK8_JVMCI_HOME}" >> ${BASH_ENV}
             source ${BASH_ENV}
       - run:
-          name: Build the Graal Compiler and embed it into the JDK (JDK8 with JVMCI enabled)
+          name: Build the GraalVM Compiler and embed it into the JDK (JDK8 with JVMCI enabled)
           command: |
             echo ">>>> Using JDK8_JVMCI_HOME as JAVA_HOME (${JAVA_HOME})"
             ./build/x86_64/linux_macos/lib/buildGraalCompiler.sh ${BASEDIR} ${MX} ${BUILD_ARTIFACTS_DIR}
