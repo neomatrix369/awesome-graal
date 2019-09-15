@@ -143,9 +143,15 @@ A curated list of awesome resources for Graal, GraalVM, Truffle and related topi
 - [Implement your tools](https://www.graalvm.org/docs/graalvm-as-a-platform/implement-instrument/)
 
 ### Performance (startup & runtime)
+
 - [Are We Fast Yet? Comparing Language Implementations with Objects, Closures, and Arrays](https://github.com/smarr/are-we-fast-yet) - by @smarr
 - [Investigating startup with bytestacks](https://cl4es.github.io/2018/11/23/Investigating-Startup-Using-Bytestacks.html)
 - [Comparison bash script: graal](https://github.com/rmannibucau/docosh/blob/master/graalcomparison.sh)
+- [Better Java Streams performance with GraalVM](https://medium.com/graalvm/stream-api-performance-with-graalvm-be6cfe7fbb52)
+- [Under the hood of GraalVM JIT optimizations](https://medium.com/graalvm/under-the-hood-of-graalvm-jit-optimizations-d6e931394797)
+- [GraalVM 19.1: Compiling Faster](https://medium.com/graalvm/graalvm-19-1-compiling-faster-a0041066dee4?source=collection_home---6------1-----------------------)
+- [Isolates and Compressed References: More Flexible and Efficient Memory Management via GraalVM](https://medium.com/graalvm/isolates-and-compressed-references-more-flexible-and-efficient-memory-management-for-graalvm-a044cc50b67e?source=collection_home---6------10-----------------------)
+- [GraalVM’s JavaScript engine on JDK11 with high performance](https://medium.com/graalvm/graalvms-javascript-engine-on-jdk11-with-high-performance-3e79f968a819)
 
 ### Related JEPs
 
