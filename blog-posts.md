@@ -87,6 +87,7 @@
 
     - [Instant Netty Startup using GraalVM Native Image Generation](https://medium.com/graalvm/instant-netty-startup-using-graalvm-native-image-generation-ed6f14ff7692?source=collection_archive---------1-----------------------)
     - [Understanding Class Initialization in GraalVM Native Image Generation](https://medium.com/graalvm/understanding-class-initialization-in-graalvm-native-image-generation-d765b7e4d6ed)
+    - [Updates on Class Initialization in GraalVM Native Image Generation](https://medium.com/graalvm/updates-on-class-initialization-in-graalvm-native-image-generation-c61faca461f7)
     - [Safe and sandboxed execution of native code](https://medium.com/graalvm/safe-and-sandboxed-execution-of-native-code-f6096b35c360)
     - [Simplifying native-image generation with Maven plugin and embeddable configuration](https://medium.com/graalvm/simplifying-native-image-generation-with-maven-plugin-and-embeddable-configuration-d5b283b92f57?source=collection_home---6------7-----------------------)
     - [Improving performance of GraalVM native images with profile-guided optimizations](https://medium.com/graalvm/improving-performance-of-graalvm-native-images-with-profile-guided-optimizations-9c431a834edb)
