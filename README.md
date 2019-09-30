@@ -152,6 +152,7 @@ A curated list of awesome resources for Graal, GraalVM, Truffle and related topi
 - [GraalVM 19.1: Compiling Faster](https://medium.com/graalvm/graalvm-19-1-compiling-faster-a0041066dee4?source=collection_home---6------1-----------------------)
 - [Isolates and Compressed References: More Flexible and Efficient Memory Management via GraalVM](https://medium.com/graalvm/isolates-and-compressed-references-more-flexible-and-efficient-memory-management-for-graalvm-a044cc50b67e?source=collection_home---6------10-----------------------)
 - [GraalVM’s JavaScript engine on JDK11 with high performance](https://medium.com/graalvm/graalvms-javascript-engine-on-jdk11-with-high-performance-3e79f968a819)
+- [Compiler Explorer](https://godbolt.org/) - online IDE, run code, see asm, rustic compiler
 
 ### Related JEPs
 

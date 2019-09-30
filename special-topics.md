@@ -32,6 +32,9 @@
 - APU
   - [Applying AMD's "Kaveri" APU for Heterogeneous Computing](https://www.hotchips.org/wp-content/uploads/hc_archives/hc26/HC26-11-day1-epub/HC26.11-2-Mobile-Processors-epub/HC26.11.220-Bouvier-Kaveri-AMD-Final.pdf)
 
+- Others
+  - [Compiler Explorer](https://godbolt.org/) - online IDE, run code, see asm, rustic compiler
+
 # Contributing
 
 Contributions are very welcome, please share back with the wider community (and get credited for it)!
