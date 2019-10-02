@@ -186,14 +186,15 @@ See [Github links](./github-links.md)
     - [Compiler (deprecated by graal)](http://hg.openjdk.java.net/graal/graal-core/)
 
 ### Download links
-- [Graal and Truffle Builds (JDK8/OpenJDK8)](http://lafo.ssw.uni-linz.ac.at/builds/)
-- [jruby graal-vm-0.19 on Homebrew - Libraries.io](https://libraries.io/homebrew/jruby/graal-vm-0.19)
+- [GraalVM.org Downloads](http://www.graalvm.org/downloads/)
 - Oracle Labs GraalVM
     - [Programming Languages and Runtimes ...](http://www.oracle.com/technetwork/oracle-labs/program-languages/overview/index.html)
     - [Download](http://www.oracle.com/technetwork/oracle-labs/program-languages/downloads/index.html)
     - [Learn more](http://www.oracle.com/technetwork/oracle-labs/program-languages/learnmore/index.html)
     - [Java](http://www.oracle.com/technetwork/oracle-labs/program-languages/java/index.html)    
-- [GraalVM.org Downloads](http://www.graalvm.org/downloads/)
+- [Homebrew Tap for GraalVM](https://github.com/graalvm/homebrew-tap/): `brew cask install graalvm/tap/graalvm-ce`
+- [Graal and Truffle Builds (JDK8/OpenJDK8)](http://lafo.ssw.uni-linz.ac.at/builds/)
+- [jruby graal-vm-0.19 on Homebrew - Libraries.io](https://libraries.io/homebrew/jruby/graal-vm-0.19)
 
 ### Projects, Wikipedia pages, discussion forums & blog posts
 
