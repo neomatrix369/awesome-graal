@@ -114,6 +114,14 @@ A curated list of awesome resources for Graal, GraalVM, Truffle and related topi
 - [Compatibility](https://www.graalvm.org/docs/reference-manual/compatibility/)
 - [Reference Manual](https://www.graalvm.org/docs/reference-manual/languages/llvm/) | [Top 10 Things To Do With GraalVM](https://medium.com/graalvm/graalvm-ten-things-12d9111f307d)
 
+
+#### Third-Party Language Implementations (not officially supported by GraalVM)
+
+- [SOMns, a Simple Newspeak Implementation](https://github.com/smarr/SOMns)
+- [grCUDA, Polyglot CUDA integration for the GraalVM](https://github.com/NVIDIA/grcuda)
+- [GraalSqueak, a Squeak/Smalltalk bytecode interpreter with support for the Smalltalk programming environment](https://github.com/hpi-swa/graalsqueak)
+
+
 #### Your Platforms, languages and Tools
 
 ##### Your Platforms
@@ -138,7 +146,6 @@ A curated list of awesome resources for Graal, GraalVM, Truffle and related topi
 - Examples
   - [implementation of the if statement](https://github.com/graalvm/simplelanguage/blob/master/language/src/main/java/com/oracle/truffle/sl/nodes/controlflow/SLIfNode.java)
   - [A SOM Smalltalk implemented on top of Oracle's Truffle Framework ](https://github.com/SOM-st/TruffleSOM), also see http://som-st.github.io/
-  - [SOMns - A Simple Newspeak Implementation](https://github.com/smarr/SOMns)
   - [Mumbler is a lisp programming language](https://github.com/cesquivias/mumbler)
 - [Implement your tools](https://www.graalvm.org/docs/graalvm-as-a-platform/implement-instrument/)
 
