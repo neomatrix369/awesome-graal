@@ -41,9 +41,11 @@
     - (Devoxx BE): Graal.JS - high-performance JavaScript on the JVM by Christian Wirth: [Video](https://www.youtube.com/watch?v=OUo3BFMwQFo)
     - Node.js for Java: [Video](https://www.youtube.com/watch?v=Q_AkHdxBbYw)
 
-- SmallTalk
-    - ([ICOOOLPS 2018](https://2018.ecoop.org/track/ICOOOLPS-2018-papers)): GraalSqueak: A Fast Smalltalk Bytecode Interpreter Written in an AST Interpreter Framework: [Paper](https://dl.acm.org/citation.cfm?id=3242948)
-    - [Graal, GraalVM and SmallTalk (Squeak)](https://github.com/hpi-swa/graalsqueak) | [GraalSqueak - Truffle stuff](https://fniephaus.com/2018/icooolps18-graalsqueak.pdf) | [PolyJuS: A Squeak/Smalltalk-based Polyglot Notebook System for the GraalVM](https://2019.programming-conference.org/event/px-2019-papers-polyjus-a-squeak-smalltalk-based-polyglot-notebook-system-for-the-graalvm)
+- Smalltalk
+    - ([MPLR 2019](https://conf.researchr.org/details/mplr-2019/mplr-2019-papers/2/GraalSqueak-Toward-a-Smalltalk-based-Tooling-Platform-for-Polyglot-Programming)): GraalSqueak: Toward a Smalltalk-based Tooling Platform for Polyglot Programming: [Paper](https://doi.org/10.1145/3357390.3361024) | [Preprint](https://fniephaus.com/2019/mplr19-graalsqueak.pdf)
+    - ([MoreVMs 2019](https://2019.programming-conference.org/details/MoreVMs-2019/10/Efficient-Implementation-of-Smalltalk-Activation-Records-in-Language-Implementation-F)): Efficient Implementation of Smalltalk Activation Records in Language Implementation Frameworks: [Paper](https://doi.org/10.1145/3328433.3328440) | [Preprint](https://fniephaus.com/2019/morevms19-efficient-activation-records.pdf)
+    - ([PX 2019](https://2019.programming-conference.org/details/px-2019-papers/3/PolyJuS-A-Squeak-Smalltalk-based-Polyglot-Notebook-System-for-the-GraalVM)): PolyJuS: A Squeak/Smalltalk-based Polyglot Notebook System for the GraalVM: [Paper](https://doi.org/10.1145/3328433.3328434) | [Preprint](https://fniephaus.com/2019/px19-polyglot-notebooks.pdf)
+    - ([ICOOOLPS 2018](https://2018.ecoop.org/track/ICOOOLPS-2018-papers)): GraalSqueak: A Fast Smalltalk Bytecode Interpreter Written in an AST Interpreter Framework: [Paper](https://doi.org/10.1145/3242947.3242948) | [Preprint](https://fniephaus.com/2018/icooolps18-graalsqueak.pdf)
 
 - Sulong
     - Sulong: Fast LLVM IR Execution on the JVM with Truffle by Manuel Rigger: [Slides](http://llvm.org/devmtg/2016-01/slides/Sulong.pdf)
