@@ -82,6 +82,10 @@ A curated list of awesome resources for Graal, GraalVM, Truffle and related topi
 - [Tools Reference](https://www.graalvm.org/docs/reference-manual/tools/)
 - [Native Images](https://www.graalvm.org/docs/reference-manual/aot-compilation/)
 
+#### JRuby
+
+- [Running JRuby on the Graal JIT](http://blog.headius.com/2018/07/running-jruby-on-graal-jit.html)
+
 #### Javascript / NodeJS
 
 - [Why?](https://www.graalvm.org/docs/why-graal/#for-nodejs-programs)
