@@ -111,6 +111,7 @@ A curated list of awesome resources for Graal, GraalVM, Truffle and related topi
 - [GraalVM Updater](https://www.graalvm.org/docs/reference-manual/graal-updater/)
 - [Reference Manual](https://www.graalvm.org/docs/reference-manual/polyglot/) | [Top 10 Things To Do With GraalVM](https://medium.com/graalvm/graalvm-ten-things-12d9111f307d)
 - [GraalVM as a platform: Embed languages](https://www.graalvm.org/docs/graalvm-as-a-platform/embed/)
+- [IPolyglot: A polyglot Jupyter kernel for the GraalVM](https://github.com/hpi-swa/ipolyglot)
 
 #### LLVM
 
