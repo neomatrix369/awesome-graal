@@ -1,4 +1,4 @@
-# helloworld
+# helloworld [![License](https://img.shields.io/badge/License-EPL%201.0-red.svg)](https://opensource.org/licenses/EPL-1.0)
 
 A helloworld application written in clojure built and run on GraalVM
 
@@ -65,7 +65,7 @@ Footprint of clojure hello world graalvm native image
 
 ## License
 
-Copyright © 2018
+Copyright © 2019
 
 Distributed under the Eclipse Public License either version 1.0 or (at
 your option) any later version.
