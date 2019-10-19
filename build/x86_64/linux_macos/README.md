@@ -1,4 +1,4 @@
-# Building JVMCI for JDK8, Graal & Truffle
+# Building JVMCI for JDK8, Graal & Truffle [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
 ## Pre-requisites
 
