@@ -121,6 +121,16 @@ A curated list of awesome resources for Graal, GraalVM, Truffle and related topi
 - [Reference Manual](https://www.graalvm.org/docs/reference-manual/languages/llvm/) | [Top 10 Things To Do With GraalVM](https://medium.com/graalvm/graalvm-ten-things-12d9111f307d)
 
 
+### Wasm
+
+- [asmble: Compile WebAssembly to JVM and other WASM tools](https://github.com/cretz/asmble)
+- [WebAssembly on GraalVM](https://github.com/oracle/graal/issues/1358)
+- [Towards a WebAssembly standalone runtime on GraalVM](https://dl.acm.org/citation.cfm?id=3362780)
+- [Running WebAssembly on the JVM](https://renato.athaydes.com/posts/running-wasm-on-the-jvm.html)
+  - [asmble: Compile WebAssembly to JVM and other WASM tools](https://github.com/cretz/asmble)
+  - [Gradle-plugin](https://github.com/renatoathaydes/wasm-on-jvm)
+- [Awesome-wasm-runtimes](https://github.com/appcypher/awesome-wasm-runtimes)
+
 #### Third-Party Language Implementations (not officially supported by GraalVM)
 
 - [SOMns, a Simple Newspeak Implementation](https://github.com/smarr/SOMns)
