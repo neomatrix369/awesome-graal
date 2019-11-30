@@ -123,13 +123,19 @@ A curated list of awesome resources for Graal, GraalVM, Truffle and related topi
 
 ### Wasm
 
-- [asmble: Compile WebAssembly to JVM and other WASM tools](https://github.com/cretz/asmble)
-- [WebAssembly on GraalVM](https://github.com/oracle/graal/issues/1358)
+- [Awesome WebAssembly Runtimes](https://github.com/appcypher/awesome-wasm-runtimes)
 - [Towards a WebAssembly standalone runtime on GraalVM](https://dl.acm.org/citation.cfm?id=3362780)
 - [Running WebAssembly on the JVM](https://renato.athaydes.com/posts/running-wasm-on-the-jvm.html)
   - [asmble: Compile WebAssembly to JVM and other WASM tools](https://github.com/cretz/asmble)
   - [Gradle-plugin](https://github.com/renatoathaydes/wasm-on-jvm)
-- [Awesome-wasm-runtimes](https://github.com/appcypher/awesome-wasm-runtimes)
+- Discussions on [oracle/graal GitHub](https://github.com/oracle/graal)
+  - [WebAssembly and GraalVM](https://github.com/oracle/graal/issues/1358) 
+  - [Compiling via Emscripten](https://github.com/oracle/graal/issues/336)
+  - [wasm, wat and wasm2c conversations](https://github.com/oracle/graal/issues?utf8=%E2%9C%93&q=is%3Aissue+is%3Aopen+wasm)
+- [GraalWASM: current WebAssembly for GraalVM work by the good folks from the GraalVM team](https://github.com/oracle/graal/tree/master/wasm)
+- **WebAssembly for Java developers: [slides](https://speakerdeck.com/dalexandrov/webassembly-from-the-java-perspective), [code](https://github.com/dalexandrov/WebAssemblyFromJava) and [Talk: Devoxx/VoxxedDays video](https://www.youtube.com/watch?time_continue=2&v=93z9SaLQVVw&feature=emb_logo) by [Dmitry Alexandrov](https://twitter.com/bercut2000/)**
+- [Talk: Rust, WebAssembly, and the future of Serverless by Steve Klabnik](https://www.youtube.com/watch?v=CMB6AlE1QuI)
+- [Talk: An Introduction to WebAssembly by Guy Royse](https://www.youtube.com/watch?v=9o4R2fOgd7M&list=PLKuh52zVrL6mRDyCLA4VYczKtdMBZDjAD&index=3)
 
 #### Third-Party Language Implementations (not officially supported by GraalVM)
 
