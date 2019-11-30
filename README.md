@@ -41,7 +41,7 @@ A curated list of awesome resources for Graal, GraalVM, Truffle and related topi
     - [Grakn/Graql graph database](https://github.com/neomatrix369/awesome-ai-ml-dl/tree/master/examples/data/databases/graph/grakn/README.md) | [folder](https://github.com/neomatrix369/awesome-ai-ml-dl/tree/master/examples/data/databases/graph/grakn)
     - [Java/Kotlin Native Example](https://www.graalvm.org/docs/examples/java-kotlin-aot/)
     - [Native Image Example](https://www.graalvm.org/docs/examples/native-list-dir/)
-    - [Native-image: using Profile Guide Optimisation options](https://github.com/graalvm/graalvm-demos/tree/master/scala-days-2018/streams#profile-guided-optimizations-with-native-image) | Slide 18](https://static.rainfocus.com/oracle/oow18/sess/1526041579721001pM2J/PF/2018-10-24%20SubstrateVM%20CodeOne_15404788159460019swO.pdf)
+    - [Native-image: using Profile Guide Optimisation options](https://github.com/graalvm/graalvm-demos/tree/master/scala-days-2018/streams#profile-guided-optimizations-with-native-image) | [Slide 18](https://static.rainfocus.com/oracle/oow18/sess/1526041579721001pM2J/PF/2018-10-24%20SubstrateVM%20CodeOne_15404788159460019swO.pdf)
     - [Command line apps with Clojure and GraalVM](https://www.astrecipes.net/blog/2018/07/20/cmd-line-apps-with-clojure-and-graalvm/)
     - [GraalVM Polyglot with Clojure and JavaScript](https://blog.taylorwood.io/2018/11/26/graal-polyglot.html)
     - [Clojure: GraalVM Native Image HTTPS Support](https://blog.taylorwood.io/2018/10/04/graalvm-https.html)
@@ -188,9 +188,12 @@ A curated list of awesome resources for Graal, GraalVM, Truffle and related topi
 
 - [graal-dev mailing list](http://mail.openjdk.java.net/mailman/listinfo/graal-dev)
 - [graal-changes mailing list](http://mail.openjdk.java.net/mailman/listinfo/graal-changes)
-- [Gitter channel: graal-core](https://gitter.im/graalvm/graal-core) 
-- [Gitter channel: truffleruby](https://gitter.im/graalvm/truffleruby) 
-- [Twitter list: Wholly Graal of Compilers](https://twitter.com/theNeomatrix369/lists/wholly-graal-of-compilers) 
+- **[GraalVM slack channel invite](https://join.slack.com/t/graalvm/shared_invite/enQtODM1NTQzNDIyMjk0LTNlYjBhNTdiNDQxNTdkNDE0ZmFlNzMwNDcyOWZjOTEzN2UyMTM5MTk5YjY1ZDgwMWU2NGQwNjVhZWVhOWRiOGQ)**
+- **[GraalVM slack channel](https://graalvm.slack.com/)**
+- Gitter channels are being phased out, please join the slack channels (links above)
+  + ~~[Gitter channel: graal-core](https://gitter.im/graalvm/graal-core)~~
+  + ~~[Gitter channel: truffleruby](https://gitter.im/graalvm/truffleruby)~~
++ [Twitter list: Wholly Graal of Compilers](https://twitter.com/theNeomatrix369/lists/wholly-graal-of-compilers) 
 - [GraalVM.org community](http://www.graalvm.org/community/) 
 
 ### Github links
