@@ -136,6 +136,7 @@ A curated list of awesome resources for Graal, GraalVM, Truffle and related topi
 - **WebAssembly for Java developers: [slides](https://speakerdeck.com/dalexandrov/webassembly-from-the-java-perspective), [code](https://github.com/dalexandrov/WebAssemblyFromJava) and [Talk: Devoxx/VoxxedDays video](https://www.youtube.com/watch?time_continue=2&v=93z9SaLQVVw&feature=emb_logo) by [Dmitry Alexandrov](https://twitter.com/bercut2000/)**
 - [Talk: Rust, WebAssembly, and the future of Serverless by Steve Klabnik](https://www.youtube.com/watch?v=CMB6AlE1QuI)
 - [Talk: An Introduction to WebAssembly by Guy Royse](https://www.youtube.com/watch?v=9o4R2fOgd7M&list=PLKuh52zVrL6mRDyCLA4VYczKtdMBZDjAD&index=3)
+- **[Blog: GraalVM now supports WebAssembly!](https://medium.com/graalvm/announcing-graalwasm-a-webassembly-engine-in-graalvm-25cd0400a7f2)**
 
 #### Third-Party Language Implementations (not officially supported by GraalVM)
 
