@@ -38,7 +38,7 @@ A curated list of awesome resources for Graal, GraalVM, Truffle and related topi
     - [Dataiku Data Science Studio](https://github.com/neomatrix369/awesome-ai-ml-dl/blob/master/examples/data/dataiku/README.md) | [folder](https://github.com/neomatrix369/awesome-ai-ml-dl/blob/master/examples/data/dataiku/)
     - [Java Performance Examples](https://www.graalvm.org/docs/examples/java-performance-examples/)
     - [Java stream API benchmark](https://www.graalvm.org/docs/examples/java-simple-stream-benchmark/)
-    - [Grakn/Graql graph database](https://github.com/neomatrix369/awesome-ai-ml-dl/tree/master/examples/data/databases/graph/grakn/README.md) | [folder](https://github.com/neomatrix369/awesome-ai-ml-dl/tree/master/examples/data/databases/graph/grakn)
+    - **[Grakn/Graql graph database running on the GraalVM and other JVMs](https://github.com/neomatrix369/awesome-ai-ml-dl/tree/master/examples/data/databases/graph/grakn/README.md) | [folder](https://github.com/neomatrix369/awesome-ai-ml-dl/tree/master/examples/data/databases/graph/grakn)**
     - [Java/Kotlin Native Example](https://www.graalvm.org/docs/examples/java-kotlin-aot/)
     - [Native Image Example](https://www.graalvm.org/docs/examples/native-list-dir/)
     - [Native-image: using Profile Guide Optimisation options](https://github.com/graalvm/graalvm-demos/tree/master/scala-days-2018/streams#profile-guided-optimizations-with-native-image) | [Slide 18](https://static.rainfocus.com/oracle/oow18/sess/1526041579721001pM2J/PF/2018-10-24%20SubstrateVM%20CodeOne_15404788159460019swO.pdf)
