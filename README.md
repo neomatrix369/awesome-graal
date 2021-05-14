@@ -121,7 +121,7 @@ A curated list of awesome resources for Graal, GraalVM, Truffle and related topi
 - [Reference Manual](https://www.graalvm.org/docs/reference-manual/languages/llvm/) | [Top 10 Things To Do With GraalVM](https://medium.com/graalvm/graalvm-ten-things-12d9111f307d)
 
 
-### Wasm
+#### Wasm
 
 - [Awesome WebAssembly Runtimes](https://github.com/appcypher/awesome-wasm-runtimes)
 - [Towards a WebAssembly standalone runtime on GraalVM](https://dl.acm.org/citation.cfm?id=3362780)
@@ -138,12 +138,27 @@ A curated list of awesome resources for Graal, GraalVM, Truffle and related topi
 - [Talk: An Introduction to WebAssembly by Guy Royse](https://www.youtube.com/watch?v=9o4R2fOgd7M&list=PLKuh52zVrL6mRDyCLA4VYczKtdMBZDjAD&index=3)
 - **[Blog: GraalVM now supports WebAssembly!](https://medium.com/graalvm/announcing-graalwasm-a-webassembly-engine-in-graalvm-25cd0400a7f2)**
 
+#### native-image
+
+- [What is native-image](https://www.graalvm.org/docs/getting-started/#native-images)
+- [Reference manual](https://www.graalvm.org/reference-manual/native-image/)
+- [Security guide](https://www.graalvm.org/docs/security-guide/#native-image)
+- Other resources
+  - Blogs 
+    + [How to create a native-image using @micronautfw 2.0.0.RC1 with a complete library toolkit @graalvm with minimal effort and impressive performance in the @java ecosystem](https://twitter.com/Ruuben4/status/1275315872803028992)
+    + [UPX to compress GraalVM Images](https://twitter.com/juliendubois/status/1337005381436977152)
+  - Workshop resources
+    - Kris Foster's talks at LJC
+      - https://github.com/krisfoster/Native-Image-Workshop/
+      - https://krisfoster.github.io/Native-Image-Workshop/
+    - [native-image workshop on 25th Nov 2019](https://www.graalvm.org/uploads/workshop-nov-2019/2019-11-25-GraalVMCommunityWorkshop-NativeImage.pdf)
+
+
 #### Third-Party Language Implementations (not officially supported by GraalVM)
 
 - [SOMns, a Simple Newspeak Implementation](https://github.com/smarr/SOMns)
 - [grCUDA, Polyglot CUDA integration for the GraalVM](https://github.com/NVIDIA/grcuda)
 - [GraalSqueak, a Squeak/Smalltalk bytecode interpreter with support for the Smalltalk programming environment](https://github.com/hpi-swa/graalsqueak)
-
 
 #### Your Platforms, languages and Tools
 
