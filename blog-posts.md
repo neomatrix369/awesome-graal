@@ -1,11 +1,11 @@
-### Blog posts
+# Blog posts
 
-- General
+## General
 
     - [Chris Seaton’s blog](http://chrisseaton.com/)
     - [Oracle's Graal project empowers language creation on the JVM ...](http://www.infoworld.com/article/2688340/application-development/oracles-graal-project-empowers-language-creation-on-the-jvm.html)
     
-- Performance, Benchmarking, Tools
+## Performance, Benchmarking, Tools
 
     - [Benchmarking a Go AI in Ruby: CRuby vs. Rubinius vs. JRuby vs. Truffle](https://pragtob.wordpress.com/2017/01/24/benchmarking-a-go-ai-in-ruby-cruby-vs-rubinius-vs-jruby-vs-truffle-a-year-later/)
     - [Better Java Streams performance with GraalVM](https://medium.com/graalvm/stream-api-performance-with-graalvm-be6cfe7fbb52)
@@ -20,7 +20,7 @@
     - [Isolates and Compressed References: More Flexible and Efficient Memory Management via GraalVM](https://medium.com/graalvm/isolates-and-compressed-references-more-flexible-and-efficient-memory-management-for-graalvm-a044cc50b67e?source=collection_home---6------10-----------------------)
     - [GraalVM’s JavaScript engine on JDK11 with high performance](https://medium.com/graalvm/graalvms-javascript-engine-on-jdk11-with-high-performance-3e79f968a819)
 
-- GraalVM
+## GraalVM
 
     - [Getting started with GraalVM - Koichi Sakata | A blog about Java](http://jyukutyo.hatenablog.jp/entry/2017/05/26/135438)
     - [GraalVM and Truffle/JS: Programming Languages and Runtimes ...](https://news.ycombinator.com/item?id=8380627)
@@ -31,7 +31,7 @@
     - [Graal VM Options for Graal EE 1.0](https://chriswhocodes.com/graal_options_graal_ee_1.0.html)    
     - [Evaluating JavaScript in Java with GraalVM](https://amarszalek.net/blog/2018/06/08/evaluating-javascript-in-java-graalvm/)    
 
-- Graal, Truffle    
+## Graal, Truffle    
 
     - [Graal & Truffle – Mike's blog](https://blog.plan99.net/graal-truffle-134d8f28fb69)
     - [Graal and Truffle could accelerate programming language design ...](http://cesquivias.github.io/tags/truffle.html)
@@ -40,34 +40,34 @@
     - [Writing a Language in Truffle - Parts 1 thru 4](http://cesquivias.github.io/tags/truffle.html)
     - [Truffle served in a Holy Graal: Graal and Truffle for polyglot language interpretation on the JVM](https://neomatrix369.wordpress.com/2017/12/07/truffle-served-in-a-holy-graal-graal-and-truffle-for-polyglot-language-interpretation-on-the-jvm/) [reblogged on [Java Advent Calendar](https://www.javaadvent.com/2017/12/truffle-served-holy-graal-graal-truffle-polyglot-language-interpretation-jvm.html)]
 
-- Polyglot
+## Polyglot
 
    - [Enhance your Java Spring application with R data science](https://medium.com/graalvm/enhance-your-java-spring-application-with-r-data-science-b669a8c28bea)
    - [Analyzing the Heap of GraalVM Polyglot Applications](https://medium.com/graalvm/analyzing-the-heap-of-graalvm-polyglot-applications-b9963e68a6a)
    - [Bringing Modern Programming Languages to the Oracle Database with GraalVM](https://medium.com/graalvm/bringing-modern-programming-languages-to-the-oracle-database-with-graalvm-80914d0c0167)
    - [Multi-threaded Java ←→JavaScript language interoperability in GraalVM](https://medium.com/graalvm/multi-threaded-java-javascript-language-interoperability-in-graalvm-2f19c1f9c37b)
 
-- TruffleRuby
+## TruffleRuby
    
    - [TruffleRuby by Chris Seaton](http://chrisseaton.com/rubytruffle/)
    - [TruffleRuby on the Substrate VM - Kevin Menard's Weblog](http://nirvdrum.com/2017/02/15/truffleruby-on-the-substrate-vm.html)
    - [Projects That Are Making Blazing Fast Ruby a Reality](https://www.sitepoint.com/projects-that-are-making-blazing-fast-ruby-a-reality/)
 
-- Scala
+## Scala
 
    - [Getting started with GraalVM for Scala](https://medium.com/graalvm/getting-started-with-graalvm-for-scala-d0a006dec1d1)
    - [Compiling Scala Faster with GraalVM](https://medium.com/graalvm/compiling-scala-faster-with-graalvm-86c5c0857fa3?source=collection_home---6------23-----------------------)
 
-- R, Data Science
+## R, Data Science
 
    - [Enhance your Java Spring application with R data science](https://medium.com/graalvm/enhance-your-java-spring-application-with-r-data-science-b669a8c28bea)
    - [Faster R with FastR](https://medium.com/graalvm/faster-r-with-fastr-4b8db0e0dceb)
 
-- Clojure
+## Clojure
 
    - [See examples under Languages & Platforms > Java & other JVM languages](java--other-jvm-languages)
 
-- Java 
+## Java 
 
    - [Enhance your Java Spring application with R data science](https://medium.com/graalvm/enhance-your-java-spring-application-with-r-data-science-b669a8c28bea)
    - [Using Java libraries from a Node.js application. Testcontainers example](https://medium.com/graalvm/using-testcontainers-from-a-node-js-application-3aa2273bf3bb)
@@ -75,7 +75,7 @@
     - [Enhance your Java Spring application with R data science](https://medium.com/graalvm/enhance-your-java-spring-application-with-r-data-science-b669a8c28bea)
     - [Multi-threaded Java ←→JavaScript language interoperability in GraalVM](https://medium.com/graalvm/multi-threaded-java-javascript-language-interoperability-in-graalvm-2f19c1f9c37b)
 
-- JavaScript, NodeJS, Nashorn
+## JavaScript, NodeJS, Nashorn
 
     - [Oracle GraalVM announces support for Nashorn migration](https://medium.com/graalvm/oracle-graalvm-announces-support-for-nashorn-migration-c04810d75c1f)
     - [GraalVM’s JavaScript engine on JDK11 with high performance](https://medium.com/graalvm/graalvms-javascript-engine-on-jdk11-with-high-performance-3e79f968a819)
@@ -83,7 +83,7 @@
     - [Using Java libraries from a Node.js application. Testcontainers example](https://medium.com/graalvm/using-testcontainers-from-a-node-js-application-3aa2273bf3bb)
     - [Multi-threaded Java ←→JavaScript language interoperability in GraalVM](https://medium.com/graalvm/multi-threaded-java-javascript-language-interoperability-in-graalvm-2f19c1f9c37b)
 
-- Native image
+## Native image
 
     - [Instant Netty Startup using GraalVM Native Image Generation](https://medium.com/graalvm/instant-netty-startup-using-graalvm-native-image-generation-ed6f14ff7692?source=collection_archive---------1-----------------------)
     - [Understanding Class Initialization in GraalVM Native Image Generation](https://medium.com/graalvm/understanding-class-initialization-in-graalvm-native-image-generation-d765b7e4d6ed)
@@ -92,6 +92,8 @@
     - [Simplifying native-image generation with Maven plugin and embeddable configuration](https://medium.com/graalvm/simplifying-native-image-generation-with-maven-plugin-and-embeddable-configuration-d5b283b92f57?source=collection_home---6------7-----------------------)
     - [Improving performance of GraalVM native images with profile-guided optimizations](https://medium.com/graalvm/improving-performance-of-graalvm-native-images-with-profile-guided-optimizations-9c431a834edb)
     - [libgraal: GraalVM compiler as a precompiled GraalVM native image](https://medium.com/graalvm/libgraal-graalvm-compiler-as-a-precompiled-graalvm-native-image-26e354bee5c?source=collection_home---6------0-----------------------)
+    - [How to create a native-image using @micronautfw 2.0.0.RC1 with a complete library toolkit @graalvm with minimal effort and impressive performance in the @java ecosystem](https://twitter.com/Ruuben4/status/1275315872803028992)
+    - [UPX to compress GraalVM Images](https://twitter.com/juliendubois/status/1337005381436977152)
 
 # Contributing
 
