@@ -140,18 +140,32 @@ A curated list of awesome resources for Graal, GraalVM, Truffle and related topi
 
 #### native-image
 
-- [What is native-image](https://www.graalvm.org/docs/getting-started/#native-images)
+- [What is native-image?](https://www.graalvm.org/docs/getting-started/#native-images)
+- Docs 
+  * [Substrate VM](https://github.com/oracle/graal/tree/master/substratevm#substrate-vm)
+  * [Substrate VM: options](https://github.com/oracle/graal/blob/master/substratevm/OPTIONS.md)
+  * [Substrate VM: reflection](https://github.com/oracle/graal/blob/master/substratevm/REFLECTION.md)
 - [Reference manual](https://www.graalvm.org/reference-manual/native-image/)
+    + [Ahead-of-time Compilation](https://www.graalvm.org/docs/reference-manual/aot-compilation/#ahead-of-time-compilation)
+    + [Prerequisites](https://www.graalvm.org/docs/reference-manual/aot-compilation/#prerequisites)
+    + [Image Generation Options](https://www.graalvm.org/docs/reference-manual/aot-compilation/#image-generation-options)
+    + [Generating Heap Dumps](https://www.graalvm.org/docs/reference-manual/aot-compilation/#generating-heap-dumps)
 - [Security guide](https://www.graalvm.org/docs/security-guide/#native-image)
 - Other resources
   - Blogs 
-    + [How to create a native-image using @micronautfw 2.0.0.RC1 with a complete library toolkit @graalvm with minimal effort and impressive performance in the @java ecosystem](https://twitter.com/Ruuben4/status/1275315872803028992)
-    + [UPX to compress GraalVM Images](https://twitter.com/juliendubois/status/1337005381436977152)
+  - see ['Native-image'](https://github.com/neomatrix369/awesome-graal/blob/master/blog-posts.md#native-image) in [Blog posts](https://github.com/neomatrix369/awesome-graal/blob/master/blog-posts.md)
   - Workshop resources
     - Kris Foster's talks at LJC
       - https://github.com/krisfoster/Native-Image-Workshop/
       - https://krisfoster.github.io/Native-Image-Workshop/
     - [native-image workshop on 25th Nov 2019](https://www.graalvm.org/uploads/workshop-nov-2019/2019-11-25-GraalVMCommunityWorkshop-NativeImage.pdf)
+- Examples
+    - [Native Image Examples](https://www.graalvm.org/docs/examples/native-list-dir/)
+    - [An example Clojure CLI HTTP/S client using GraalVM native image](https://github.com/taylorwood/clojurl)
+    - [A simple native HTTP server with GraalVM](https://melix.github.io/blog/2019/03/simple-http-server-graal.html)
+    - [Example of Akka HTTP server compiled with GraalVM native-image](https://github.com/vmencik/akka-graal-native)
+    - [GraalVM Native Image HTTPS Support](https://blog.taylorwood.io/2018/10/04/graalvm-https.html)
+    - [A 7MB native-image Java app that runs in 30ms and uses only 4MB of RAM!](https://sites.google.com/a/athaydes.com/renato-athaydes/posts/a7mbnative-imagejavaappthatrunsin30msandusesonly4mbofram)
 
 
 #### Third-Party Language Implementations (not officially supported by GraalVM)
