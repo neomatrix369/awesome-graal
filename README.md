@@ -39,7 +39,7 @@ A curated list of awesome resources for Graal, GraalVM, Truffle and related topi
     - [Java Performance Examples](https://www.graalvm.org/docs/examples/java-performance-examples/)
     - [Java stream API benchmark](https://www.graalvm.org/docs/examples/java-simple-stream-benchmark/)
     - **[Grakn/Graql graph database running on the GraalVM and other JVMs](https://github.com/neomatrix369/awesome-ai-ml-dl/tree/master/examples/data/databases/graph/grakn/README.md) | [folder](https://github.com/neomatrix369/awesome-ai-ml-dl/tree/master/examples/data/databases/graph/grakn)**
-    - [Java/Kotlin Native Example](https://www.graalvm.org/docs/examples/java-kotlin-aot/)
+    - [Java/Kotlin Native Example](https://www.graalvm.org/22.0/examples/java-kotlin-aot/)
     - [Native Image Example](https://www.graalvm.org/docs/examples/native-list-dir/)
     - [Native-image: using Profile Guide Optimisation options](https://github.com/graalvm/graalvm-demos/tree/master/scala-days-2018/streams#profile-guided-optimizations-with-native-image) | [Slide 18](https://static.rainfocus.com/oracle/oow18/sess/1526041579721001pM2J/PF/2018-10-24%20SubstrateVM%20CodeOne_15404788159460019swO.pdf)
     - [Command line apps with Clojure and GraalVM](https://www.astrecipes.net/blog/2018/07/20/cmd-line-apps-with-clojure-and-graalvm/)
