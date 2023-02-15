@@ -35,6 +35,7 @@
     - Adopting GraalVM by Petr Zapletal: [Slides](https://www.slideshare.net/PetrZapletal1/adopting-graalvm-scale-by-the-bay-2018) | [Video](https://www.youtube.com/watch?v=CM4zA3bdlzA)
     
 - Java, Scala, Kotlin, & JVM languages
+    - SouJava Talks: Java in the cloud with GraalVM by Alina Yurenko: [Video](https://www.youtube.com/watch?v=1vRNEWQD-Oc)  
     - (JVMLS 2017): Polyglot Native: Java, Scala, Kotlin, & JVM languages by Christian Wimmer: [Video](https://www.youtube.com/watch?v=5BMHIeMXTqA&list=PLX8CzqL3ArzXJ2EGftrmz4SzS6NRr6p2n&index=5)     
  
 - Javascript, Node.js
