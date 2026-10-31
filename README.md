@@ -166,6 +166,7 @@ A curated list of awesome resources for Graal, GraalVM, Truffle and related topi
     - [Example of Akka HTTP server compiled with GraalVM native-image](https://github.com/vmencik/akka-graal-native)
     - [GraalVM Native Image HTTPS Support](https://blog.taylorwood.io/2018/10/04/graalvm-https.html)
     - [A 7MB native-image Java app that runs in 30ms and uses only 4MB of RAM!](https://sites.google.com/a/athaydes.com/renato-athaydes/posts/a7mbnative-imagejavaappthatrunsin30msandusesonly4mbofram)
+    - [Janzeer node](https://github.com/janzeerOrg/janzeer-node) - a Layer-1 blockchain validator shipped as a single native image (Spring Boot 3, Kotlin, Netty, Hibernate) for linux-x64, arm64 and Windows; runs mainnet on a 2 GB VPS and on a Raspberry Pi 3
 
 
 #### Third-Party Language Implementations (not officially supported by GraalVM)
